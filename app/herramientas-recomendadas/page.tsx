@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
@@ -23,6 +24,9 @@ export default function RecommendedToolsPage() {
       <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-600">
         Una guía para evaluar herramientas con criterio: compatibilidad, curva de aprendizaje, coste, mantenimiento, materiales disponibles y utilidad real en proyectos técnicos.
       </p>
+      <Link className="mt-6 inline-flex rounded-md bg-slate-950 px-5 py-3 text-sm font-black text-white hover:bg-blue-800" href="/calculadora-precio-impresion-3d">
+        Abrir calculadora de precio 3D
+      </Link>
       <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {groups.map((group) => (
           <article key={group} className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">

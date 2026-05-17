@@ -29,6 +29,7 @@ export function Footer() {
           <ul className="mt-3 grid gap-2 text-sm text-slate-400">
             <li><Link className="hover:text-white" href="/guias">Guías</Link></li>
             <li><Link className="hover:text-white" href="/recursos">Recursos</Link></li>
+            <li><Link className="hover:text-white" href="/calculadora-precio-impresion-3d">Calculadora 3D</Link></li>
             <li><Link className="hover:text-white" href="/servicios">Servicios</Link></li>
             <li><Link className="hover:text-white" href="/herramientas-recomendadas">Herramientas recomendadas</Link></li>
             <li><Link className="hover:text-white" href="/contacto">Contacto</Link></li>

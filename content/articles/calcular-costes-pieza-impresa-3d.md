@@ -17,6 +17,7 @@ Calcular coste de impresión 3D no es solo multiplicar gramos por precio de bobi
 - Empieza por gramos estimados en el laminador.
 - Suma margen para soportes, brim y piezas fallidas.
 - Considera tiempo de máquina y revisión del archivo.
+- Si quieres una estimación rápida, usa la [calculadora de precio de impresión 3D](/calculadora-precio-impresion-3d).
 - Para masa, usa [cómo calcular el peso aproximado de una pieza 3D](/blog/calcular-peso-aproximado-pieza-3d).
 
 ## Material

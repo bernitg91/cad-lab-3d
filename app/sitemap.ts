@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/blog",
     "/categorias",
     "/recursos",
+    "/calculadora-precio-impresion-3d",
     "/servicios",
     "/herramientas-recomendadas",
     "/guias",

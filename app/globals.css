@@ -96,3 +96,25 @@ a {
   padding: 0.15rem 0.35rem;
   font-size: 0.95em;
 }
+
+.article-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.article-body th,
+.article-body td {
+  border: 1px solid var(--line);
+  padding: 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.article-body th {
+  background: #eef4fb;
+  color: #10233f;
+  font-weight: 800;
+}

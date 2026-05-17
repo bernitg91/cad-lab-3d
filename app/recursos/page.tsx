@@ -39,6 +39,12 @@ const resources = [
     description: "Revisión de renders, storytelling, planos, detalles, proceso y presentación final.",
     href: "/blog/checklist-portfolio-diseno-industrial",
     cta: "Revisar portfolio"
+  },
+  {
+    title: "Calculadora de precio de impresión 3D",
+    description: "Herramienta gratuita para estimar material, horas de máquina, electricidad, mano de obra, riesgo, margen e IVA.",
+    href: "/calculadora-precio-impresion-3d",
+    cta: "Calcular presupuesto"
   }
 ];
 

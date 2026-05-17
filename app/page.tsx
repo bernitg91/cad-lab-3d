@@ -162,6 +162,11 @@ export default function HomePage() {
             <h2 className="mt-2 text-2xl font-black text-slate-950">Herramientas</h2>
             <p className="mt-2 text-sm leading-6 text-slate-600">Criterios para elegir software, filamentos, medición y recursos sin comprar a ciegas.</p>
           </Link>
+          <Link className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm hover:border-blue-300" href="/calculadora-precio-impresion-3d">
+            <p className="text-sm font-black uppercase tracking-wide text-teal-700">Presupuestos FDM</p>
+            <h2 className="mt-2 text-2xl font-black text-slate-950">Calculadora 3D</h2>
+            <p className="mt-2 text-sm leading-6 text-slate-600">Calcula precio por pieza y lote con material, electricidad, desgaste, mano de obra, margen e IVA.</p>
+          </Link>
         </div>
       </section>
 
