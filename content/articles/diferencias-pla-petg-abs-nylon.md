@@ -18,6 +18,7 @@ PLA, PETG, ABS y Nylon aparecen en casi cualquier comparativa de impresión 3D, 
 - PETG es equilibrado para piezas útiles.
 - ABS resiste más calor, pero exige control de impresión.
 - Nylon es tenaz y resistente al desgaste, pero necesita secado.
+- Para una recomendación rápida, prueba el [selector de material para impresión 3D](/selector-material-impresion-3d).
 
 ## PLA
 

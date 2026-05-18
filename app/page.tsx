@@ -146,7 +146,7 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-        <div className="grid gap-5 md:grid-cols-3">
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           <Link className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm hover:border-blue-300" href="/guias">
             <p className="text-sm font-black uppercase tracking-wide text-teal-700">Rutas de lectura</p>
             <h2 className="mt-2 text-2xl font-black text-slate-950">Guías por tema</h2>
@@ -166,6 +166,11 @@ export default function HomePage() {
             <p className="text-sm font-black uppercase tracking-wide text-teal-700">Presupuestos FDM</p>
             <h2 className="mt-2 text-2xl font-black text-slate-950">Calculadora 3D</h2>
             <p className="mt-2 text-sm leading-6 text-slate-600">Calcula precio por pieza y lote con material, electricidad, desgaste, mano de obra, margen e IVA.</p>
+          </Link>
+          <Link className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm hover:border-blue-300" href="/selector-material-impresion-3d">
+            <p className="text-sm font-black uppercase tracking-wide text-teal-700">Materiales FDM</p>
+            <h2 className="mt-2 text-2xl font-black text-slate-950">Selector material</h2>
+            <p className="mt-2 text-sm leading-6 text-slate-600">Elige material según calor, exterior, impacto, flexibilidad, facilidad y acabado.</p>
           </Link>
         </div>
       </section>

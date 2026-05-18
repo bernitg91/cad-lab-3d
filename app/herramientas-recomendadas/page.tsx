@@ -27,6 +27,17 @@ export default function RecommendedToolsPage() {
       <Link className="mt-6 inline-flex rounded-md bg-slate-950 px-5 py-3 text-sm font-black text-white hover:bg-blue-800" href="/calculadora-precio-impresion-3d">
         Abrir calculadora de precio 3D
       </Link>
+      <div className="mt-6 flex flex-wrap gap-3">
+        <Link className="rounded-md border border-slate-300 px-4 py-2 text-sm font-bold text-slate-700 hover:border-blue-300 hover:text-blue-700" href="/calculadora-peso-pieza-3d">
+          Calcular peso
+        </Link>
+        <Link className="rounded-md border border-slate-300 px-4 py-2 text-sm font-bold text-slate-700 hover:border-blue-300 hover:text-blue-700" href="/selector-material-impresion-3d">
+          Elegir material
+        </Link>
+        <Link className="rounded-md border border-slate-300 px-4 py-2 text-sm font-bold text-slate-700 hover:border-blue-300 hover:text-blue-700" href="/checklist-impresion-3d">
+          Checklist impresión
+        </Link>
+      </div>
       <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {groups.map((group) => (
           <article key={group} className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">

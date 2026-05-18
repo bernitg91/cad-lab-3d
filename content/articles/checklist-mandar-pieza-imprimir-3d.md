@@ -17,6 +17,7 @@ Mandar una pieza a imprimir sin revisar suele acabar en pérdida de tiempo. Una 
 - Revisa unidades, escala y geometría cerrada.
 - Comprueba orientación, soportes, paredes y tolerancias.
 - Mira la vista previa del laminador capa por capa en zonas críticas.
+- Puedes usar la [checklist interactiva de impresión 3D](/checklist-impresion-3d) para marcar cada punto.
 - Si la pieza debe resistir, revisa [cómo diseñar una pieza resistente para FDM](/blog/disenar-pieza-resistente-fdm).
 
 ## Revisión CAD

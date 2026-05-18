@@ -45,6 +45,24 @@ const resources = [
     description: "Herramienta gratuita para estimar material, horas de máquina, electricidad, mano de obra, riesgo, margen e IVA.",
     href: "/calculadora-precio-impresion-3d",
     cta: "Calcular presupuesto"
+  },
+  {
+    title: "Calculadora de peso de pieza 3D",
+    description: "Estima gramos de filamento con volumen CAD, densidad, relleno, paredes, soportes y cantidad.",
+    href: "/calculadora-peso-pieza-3d",
+    cta: "Estimar peso"
+  },
+  {
+    title: "Selector de material FDM",
+    description: "Compara PLA, PETG, TPU, ABS, ASA y Nylon según uso exterior, calor, impacto, flexibilidad y acabado.",
+    href: "/selector-material-impresion-3d",
+    cta: "Elegir material"
+  },
+  {
+    title: "Checklist interactiva de impresión 3D",
+    description: "Revisa archivo, orientación, material, parámetros, cama, filamento y control final antes de imprimir.",
+    href: "/checklist-impresion-3d",
+    cta: "Abrir checklist"
   }
 ];
 

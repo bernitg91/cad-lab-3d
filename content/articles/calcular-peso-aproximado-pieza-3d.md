@@ -17,6 +17,7 @@ Calcular el peso aproximado de una pieza ayuda a estimar coste, ergonomía, cons
 - Para piezas macizas usa volumen por densidad.
 - Para FDM, el laminador estima mejor porque incluye paredes, tapas y relleno.
 - Registra peso estimado y peso real para calibrar tus proyectos.
+- Si tienes el volumen CAD, usa la [calculadora de peso de pieza 3D](/calculadora-peso-pieza-3d).
 - Si la pieza será funcional, revisa también [cómo elegir filamento para piezas funcionales](/blog/elegir-filamento-piezas-funcionales).
 
 ## Fórmula básica
