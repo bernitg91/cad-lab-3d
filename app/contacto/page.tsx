@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/ContactForm";
 import { createPageMetadata } from "@/lib/seo";
+import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Contacto",
@@ -19,11 +20,12 @@ export default function ContactPage() {
         </p>
         <div className="mt-8 grid gap-3 text-sm leading-6 text-slate-600">
           <p className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm">Consultas de modelado CAD, revisión de piezas o preparación de archivos.</p>
+          <p className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm">Presupuestos de impresión 3D personalizada para prototipos, soportes, carcasas y piezas no críticas.</p>
           <p className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm">Dudas sobre contenido, recursos, colaboraciones o propuestas de artículos.</p>
           <p className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm">Documentación, renders y optimización para impresión 3D.</p>
         </div>
       </div>
-      <ContactForm />
+      <ContactForm contactEmail={siteConfig.contactEmail} />
     </section>
   );
 }

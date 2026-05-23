@@ -47,6 +47,12 @@ const resources = [
     cta: "Calcular presupuesto"
   },
   {
+    title: "Servicio de impresión 3D personalizada",
+    description: "Página para solicitar presupuesto de piezas FDM, prototipos, soportes, carcasas y revisión de archivos.",
+    href: "/impresion-3d-personalizada",
+    cta: "Pedir valoración"
+  },
+  {
     title: "Calculadora de peso de pieza 3D",
     description: "Estima gramos de filamento con volumen CAD, densidad, relleno, paredes, soportes y cantidad.",
     href: "/calculadora-peso-pieza-3d",

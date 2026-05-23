@@ -18,7 +18,7 @@ Un buen informe técnico no es un diario de lo que hiciste. Es una explicación 
 - Justifica material, proceso, cálculos y decisiones descartadas.
 - Cada imagen debe tener función, escala o pie descriptivo.
 - Si documentas un producto completo, complementa con [cómo documentar un proyecto de diseño industrial](/blog/documentar-proyecto-diseno-industrial).
-- Para plantillas futuras, revisa la página de [recursos](/recursos).
+- Para estructuras de trabajo, checklists y guías relacionadas, revisa la página de [recursos](/recursos).
 
 ## Estructura recomendada
 

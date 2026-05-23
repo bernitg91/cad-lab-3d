@@ -4,8 +4,10 @@
 
 - Build local verificado con `npm run build`.
 - 42 artículos publicados en contenido local Markdown.
+- Herramientas SEO publicadas: calculadora de precio, calculadora de peso, selector de material y checklist de impresión 3D.
+- Servicio de impresión 3D personalizada publicado con ejemplos reales.
 - SEO técnico preparado: canonical, Open Graph, Twitter Card, sitemap, robots y JSON-LD.
-- Monetización futura preparada sin anuncios reales ni enlaces afiliados falsos.
+- Monetización preparada con script de AdSense condicionado a entorno Production e ID real. No hay bloques manuales de anuncios ni enlaces afiliados falsos.
 - URL pública actual: `https://cadlab3d.com`.
 - Dominio principal conectado: `https://cadlab3d.com`.
 - Redirección `www`: `https://www.cadlab3d.com` redirige al dominio principal.
@@ -16,7 +18,7 @@ Resultado desde este entorno:
 
 - Proyecto Vercel creado: `cad-lab-3d`.
 - Producción publicada y verificada: `https://cadlab3d.com`.
-- Último deployment listo: `dpl_J9y1BR7BvHvH8hZsbNAjWYrHa2h2`.
+- Último deployment listo: se debe comprobar en Vercel tras cada push a `main`.
 - `NEXT_PUBLIC_SITE_URL` configurado en Vercel como `https://cadlab3d.com`.
 - Rutas principales, `robots.txt` y `sitemap.xml` respondieron `200`.
 
@@ -33,10 +35,9 @@ Estado actual:
 
 Estado actual:
 
-- No hay remote configurado.
-- No se puede hacer push hasta crear o conectar un repositorio remoto.
+- Repositorio remoto configurado en GitHub.
+- Vercel está conectado a GitHub y puede desplegar automáticamente los cambios de `main`.
 - Se ha añadido CI en `.github/workflows/ci.yml` para ejecutar `npm ci` y `npm run build` en `main` y pull requests.
-- Vercel puede desplegar manualmente desde este workspace, pero la integración GitHub automática requiere conectar un repositorio.
 
 ## Google Search Console
 
@@ -51,20 +52,19 @@ No se puede conectar Search Console sin cuenta Google y verificación de propied
 
 ## Google AdSense
 
-El proyecto ya incluye una integración técnica apagada para AdSense:
+El proyecto ya incluye una integración técnica para AdSense:
 
 - El script oficial se carga solo si `NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT` contiene un ID real `ca-pub-...`.
-- `/ads.txt` genera la línea de Google solo si `GOOGLE_ADSENSE_PUBLISHER_ID` contiene un ID real `pub-...`.
-- Sin esos valores, no se muestran anuncios ni se publica ningún identificador falso.
+- `/ads.txt` se sirve como archivo estático desde `public/ads.txt` con la línea oficial del editor.
+- No hay bloques manuales de anuncios, llamadas a clicar anuncios ni placeholders publicitarios activos.
 
-Pasos futuros:
+Pasos pendientes:
 
-1. Solicitar AdSense desde la cuenta Google propietaria.
-2. Completar datos legales reales.
-3. Validar que no hay páginas vacías ni recursos engañosos.
-4. Esperar algo de indexación y contenido orgánico.
-5. Configurar los IDs reales de AdSense en Vercel.
-6. Redeplegar y comprobar `/ads.txt`.
+1. Solicitar de nuevo la revisión desde la cuenta Google propietaria.
+2. Confirmar o activar una CMP válida si AdSense lo solicita para EEE, Reino Unido y Suiza.
+3. Completar datos legales reales si el proyecto empieza a vender servicios de forma habitual.
+4. Mantener indexación y contenido orgánico mediante Search Console.
+5. Redeplegar y comprobar `/ads.txt` y que el script de AdSense se carga solo en producción.
 
 ## Afiliados
 
@@ -79,12 +79,12 @@ No hay enlaces afiliados activos. Pasos futuros:
 
 Preparado:
 
-- Página de recursos con productos futuros.
+- Página de recursos con guías, checklists y herramientas disponibles.
 - Página de servicios CAD.
-- Contacto visual sin backend.
+- Página de impresión 3D personalizada.
+- Contacto mediante email real.
 
 Pendiente:
 
 - Crear archivos descargables reales.
-- Conectar formulario.
 - Definir condiciones de servicio y datos reales del responsable.

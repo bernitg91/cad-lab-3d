@@ -33,6 +33,7 @@ export function Footer() {
             <li><Link className="hover:text-white" href="/calculadora-precio-impresion-3d">Calculadora 3D</Link></li>
             <li><Link className="hover:text-white" href="/selector-material-impresion-3d">Selector material FDM</Link></li>
             <li><Link className="hover:text-white" href="/servicios">Servicios</Link></li>
+            <li><Link className="hover:text-white" href="/impresion-3d-personalizada">Impresión 3D personalizada</Link></li>
             <li><Link className="hover:text-white" href="/herramientas-recomendadas">Herramientas recomendadas</Link></li>
             <li><Link className="hover:text-white" href="/contacto">Contacto</Link></li>
           </ul>

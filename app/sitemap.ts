@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/checklist-impresion-3d",
     "/metodologia",
     "/servicios",
+    "/impresion-3d-personalizada",
     "/herramientas-recomendadas",
     "/guias",
     "/sobre-mi",

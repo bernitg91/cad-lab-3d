@@ -23,11 +23,11 @@ export default function CookiesPage() {
         </p>
         <h2>Gestión del consentimiento</h2>
         <p>
-          El consentimiento para cookies no esenciales se gestiona mediante las herramientas disponibles para usuarios del Espacio Económico Europeo, Reino Unido y Suiza, de acuerdo con la normativa aplicable.
+          El consentimiento para cookies no esenciales se gestiona mediante las herramientas disponibles para usuarios del Espacio Económico Europeo, Reino Unido y Suiza, de acuerdo con la normativa aplicable. Si el sitio muestra anuncios de Google, debe usarse una plataforma de gestión del consentimiento compatible con los requisitos vigentes de Google para esos territorios.
         </p>
         <h2>Cookies publicitarias y Google</h2>
         <p>
-          Google AdSense puede usar cookies y tecnologías similares para personalizar anuncios, limitar la frecuencia de visualización y medir anuncios. Puedes consultar y gestionar opciones de consentimiento cuando el mensaje correspondiente esté disponible.
+          Google AdSense puede usar cookies y tecnologías similares para personalizar anuncios, limitar la frecuencia de visualización, medir anuncios y evitar fraude. Google y otros proveedores externos pueden usar cookies para publicar anuncios basados en visitas anteriores a este sitio u otros sitios. Puedes consultar y gestionar opciones de consentimiento cuando el mensaje correspondiente esté disponible.
         </p>
         <h2>Cómo cambiar preferencias</h2>
         <p>

@@ -18,7 +18,7 @@ Exportar CAD parece un paso final, pero puede arruinar una entrega o fabricació
 - Revisa unidades, versión, escala y nombre de archivo.
 - No exportes desde modelos incompletos o suprimidos.
 - Para STL, sigue [cómo preparar un archivo STL](/blog/preparar-archivo-stl-impresion-3d).
-- Para preparar entregas repetibles, revisa las plantillas futuras en [recursos](/recursos).
+- Para preparar entregas repetibles, revisa las guías y checklists disponibles en [recursos](/recursos).
 
 ## Formatos habituales
 

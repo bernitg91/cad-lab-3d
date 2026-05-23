@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { createPageMetadata } from "@/lib/seo";
+import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Aviso legal",
@@ -17,7 +18,7 @@ export default function LegalNoticePage() {
         </p>
         <h2>Titularidad</h2>
         <p>
-          CAD Lab 3D actúa como responsable editorial del contenido publicado en este dominio. Para consultas sobre titularidad, correcciones, retirada de contenido o colaboración, utiliza la página de contacto. Si el proyecto incorpora venta directa de productos o servicios de forma continuada, esta página se ampliará con los datos fiscales y legales que correspondan.
+          CAD Lab 3D actúa como responsable editorial del contenido publicado en este dominio. Para consultas sobre titularidad, correcciones, retirada de contenido o colaboración, utiliza la página de contacto o escribe a {siteConfig.contactEmail}. Si el proyecto incorpora venta directa de productos o servicios de forma continuada, esta página se ampliará con los datos fiscales y legales que correspondan.
         </p>
         <h2>Contenido</h2>
         <p>

@@ -2,7 +2,6 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { ArticleCard } from "@/components/ArticleCard";
 import { Newsletter } from "@/components/Newsletter";
-import { AdPlaceholder } from "@/components/AdPlaceholder";
 import { categories } from "@/lib/categories";
 import { getFeaturedArticles } from "@/lib/articles";
 import { absoluteUrl, siteConfig } from "@/lib/site";
@@ -121,11 +120,15 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
-            {["Modelado y revisión CAD", "Optimización para impresión 3D", "Renders y documentación técnica"].map((item) => (
-              <div key={item} className="rounded-lg border border-slate-200 p-5">
-                <h3 className="font-black text-slate-950">{item}</h3>
+            {[
+              { title: "Modelado y revisión CAD", href: "/servicios" },
+              { title: "Impresión 3D personalizada", href: "/impresion-3d-personalizada" },
+              { title: "Renders y documentación técnica", href: "/servicios" }
+            ].map((item) => (
+              <Link key={item.title} href={item.href} className="rounded-lg border border-slate-200 p-5 hover:border-blue-300 hover:shadow-sm">
+                <h3 className="font-black text-slate-950">{item.title}</h3>
                 <p className="mt-2 text-sm leading-6 text-slate-600">Apoyo puntual para ordenar archivos, revisar decisiones técnicas y mejorar entregas de proyecto.</p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -178,7 +181,6 @@ export default function HomePage() {
       <section className="mx-auto grid max-w-7xl gap-6 px-4 py-14 sm:px-6 lg:grid-cols-[1fr_320px] lg:px-8">
         <Newsletter />
         <div className="grid gap-4">
-          <AdPlaceholder />
           <Link className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm hover:border-blue-300" href="/contacto">
             <h2 className="text-xl font-black text-slate-950">¿Tienes un proyecto técnico?</h2>
             <p className="mt-2 text-sm leading-6 text-slate-600">Envía tu consulta sobre modelado, revisión, documentación o preparación de archivos.</p>

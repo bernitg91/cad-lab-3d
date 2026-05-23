@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { AffiliateBox } from "@/components/AffiliateBox";
-import { AdPlaceholder } from "@/components/AdPlaceholder";
 import { ArticleCard } from "@/components/ArticleCard";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CopyLinkButton } from "@/components/CopyLinkButton";
@@ -121,7 +120,6 @@ export default async function ArticlePage({ params }: PageProps) {
         </div>
         <div className="grid content-start gap-5 lg:sticky lg:top-24">
           <TableOfContents headings={article.headings} />
-          <AdPlaceholder />
           <RecommendedResources />
           <AffiliateBox />
         </div>

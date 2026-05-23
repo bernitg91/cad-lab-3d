@@ -9,11 +9,30 @@ export const metadata: Metadata = createPageMetadata({
 });
 
 const services = [
-  "Modelado CAD de piezas y conceptos",
-  "Optimización de piezas para impresión 3D",
-  "Renders técnicos para portfolio o presentación",
-  "Documentación técnica de proyectos",
-  "Preparación de archivos para fabricación"
+  {
+    title: "Modelado CAD de piezas y conceptos",
+    href: "/servicios"
+  },
+  {
+    title: "Impresión 3D personalizada",
+    href: "/impresion-3d-personalizada"
+  },
+  {
+    title: "Optimización de piezas para impresión 3D",
+    href: "/impresion-3d-personalizada"
+  },
+  {
+    title: "Renders técnicos para portfolio o presentación",
+    href: "/servicios"
+  },
+  {
+    title: "Documentación técnica de proyectos",
+    href: "/servicios"
+  },
+  {
+    title: "Preparación de archivos para fabricación",
+    href: "/servicios"
+  }
 ];
 
 const process = ["Brief", "Modelado o revisión", "Entrega", "Ajustes"];
@@ -28,12 +47,15 @@ export default function ServicesPage() {
       </p>
       <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {services.map((service) => (
-          <article key={service} className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
+          <article key={service.title} className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
             <p className="text-xs font-black uppercase tracking-wide text-teal-700">Servicio</p>
-            <h2 className="mt-2 text-xl font-black text-slate-950">{service}</h2>
+            <h2 className="mt-2 text-xl font-black text-slate-950">{service.title}</h2>
             <p className="mt-3 text-sm leading-6 text-slate-600">
               Enfoque práctico para estudiantes, prototipos y proyectos técnicos que necesitan archivos ordenados, criterios de fabricación y una presentación limpia.
             </p>
+            <Link className="mt-4 inline-flex text-sm font-bold text-blue-700 hover:text-blue-900" href={service.href}>
+              Ver detalle
+            </Link>
           </article>
         ))}
       </div>

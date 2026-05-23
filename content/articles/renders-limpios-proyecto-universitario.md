@@ -74,4 +74,4 @@ Los renders limpios hacen que un proyecto parezca más claro y profesional sin e
 
 ## Recomendación práctica final
 
-Prepara una plantilla de tres vistas y reutilizala en cada entrega: general, detalle y uso.
+Prepara una plantilla de tres vistas y reutilízala en cada entrega: general, detalle y uso.

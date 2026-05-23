@@ -35,19 +35,21 @@ Crea `.env.local` a partir de `.env.example`:
 
 ```bash
 NEXT_PUBLIC_SITE_URL=https://cadlab3d.com
+NEXT_PUBLIC_CONTACT_EMAIL=bbernat.torres@gmail.com
 NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT=
-GOOGLE_ADSENSE_PUBLISHER_ID=
 VERCEL_ENV=
 VERCEL_URL=
 ```
 
 `NEXT_PUBLIC_SITE_URL` define el dominio usado por canonical URLs, Open Graph, `robots.txt` y `sitemap.xml`. En Vercel está configurado como `https://cadlab3d.com`. Si no existe, la app usa `https://cadlab3d.com` como fallback editable.
 
+`NEXT_PUBLIC_CONTACT_EMAIL` define el email mostrado en contacto, páginas legales y formularios de servicios. El formulario prepara un email con `mailto:` para que el usuario lo revise antes de enviarlo.
+
 `VERCEL_ENV` y `VERCEL_URL` las define Vercel automáticamente. No las configures manualmente salvo para pruebas controladas. Cuando `VERCEL_ENV=preview`, la app usa la URL automática del despliegue (`https://$VERCEL_URL`) para canonical y Open Graph, evitando que una preview parezca la versión final de producción.
 
-`NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT` activa el script de AdSense solo si contiene un ID real con formato `ca-pub-...`. `GOOGLE_ADSENSE_PUBLISHER_ID` genera `/ads.txt` solo si contiene el ID de vendedor con formato `pub-...`. No uses valores inventados.
+`NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT` activa el script de AdSense solo si contiene un ID real con formato `ca-pub-...`. El archivo `public/ads.txt` contiene la línea oficial del editor. No uses valores inventados.
 
-En despliegues preview, el script de AdSense y la línea real de `/ads.txt` permanecen desactivados aunque existan variables configuradas. Los anuncios reales deben cargarse solo en Production.
+En despliegues preview, el script de AdSense permanece desactivado aunque existan variables configuradas. El archivo `/ads.txt` se sirve como archivo estático para el dominio publicado. Los anuncios reales deben cargarse solo en Production.
 
 ## Editar artículos
 
@@ -81,8 +83,8 @@ Para crear un artículo nuevo:
 2. Framework: Next.js.
 3. Build command: `npm run build`.
 4. Output: configuración automática de Next.js.
-5. Añade `NEXT_PUBLIC_SITE_URL` en las variables de entorno de Vercel con el dominio definitivo.
-6. Despliega y revisa `/`, `/blog`, `/recursos`, `/servicios`, `/sitemap.xml` y `/robots.txt`.
+5. Añade `NEXT_PUBLIC_SITE_URL` y `NEXT_PUBLIC_CONTACT_EMAIL` en las variables de entorno de Vercel si quieres sobrescribir los valores por defecto.
+6. Despliega y revisa `/`, `/blog`, `/recursos`, `/servicios`, `/impresion-3d-personalizada`, `/sitemap.xml` y `/robots.txt`.
 
 La configuración no secreta de Vercel está en `vercel.json`. El estado de publicación, dominio y monetización está documentado en `launch-readiness.md`.
 
@@ -104,12 +106,12 @@ Comportamiento preparado en esta web:
 - En Preview, canonical URLs y Open Graph usan la URL temporal del despliegue.
 - En Production, canonical URLs y Open Graph usan `NEXT_PUBLIC_SITE_URL`, actualmente `https://cadlab3d.com`.
 - En Preview no se carga el script de AdSense.
-- En Preview `/ads.txt` no publica la línea real de Google.
-- En Production, si `NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT` y `GOOGLE_ADSENSE_PUBLISHER_ID` están configuradas, se publican el script y `/ads.txt`.
+- `/ads.txt` se sirve como archivo estático desde `public/ads.txt`.
+- En Production, si `NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT` está configurada, se publica el script de AdSense.
 
 Variables recomendadas en Vercel:
 
-- Production: `NEXT_PUBLIC_SITE_URL=https://cadlab3d.com`, IDs reales de AdSense solo cuando corresponda.
+- Production: `NEXT_PUBLIC_SITE_URL=https://cadlab3d.com`, `NEXT_PUBLIC_CONTACT_EMAIL=bbernat.torres@gmail.com`, ID real de AdSense solo cuando corresponda.
 - Preview: no definir `NEXT_PUBLIC_SITE_URL` si quieres que la preview use su URL automática; no definir IDs de AdSense.
 - Development: valores vacíos o locales.
 
@@ -155,10 +157,10 @@ No incluyas secretos ni credenciales en el repositorio.
 
 ## Checklist antes de solicitar AdSense
 
-Aunque el proyecto ya cuenta con 42 artículos, no conviene solicitar AdSense hasta revisar calidad, completar datos legales reales y comprobar que existe cierta tracción orgánica. Antes de aplicar, prepara:
+El proyecto cuenta con 42 artículos, herramientas propias y páginas legales. Antes de volver a solicitar revisión tras un rechazo por contenido de poco valor, comprueba:
 
-- 25-30 artículos útiles, originales y suficientemente completos.
-- Páginas legales revisadas y completadas con datos reales.
+- Artículos útiles, originales y suficientemente completos.
+- Páginas legales revisadas, contacto visible y email real.
 - Navegación clara entre inicio, blog, categorías, recursos, contacto y legales.
 - Tráfico orgánico inicial desde Google Search Console.
 - Sin contenido copiado, duplicado o generado sin revisión.
@@ -170,7 +172,6 @@ Cuando Google proporcione los datos reales, configura en Vercel:
 
 ```bash
 NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT=ca-pub-XXXXXXXXXXXXXXXX
-GOOGLE_ADSENSE_PUBLISHER_ID=pub-XXXXXXXXXXXXXXXX
 ```
 
 Después redepliega y comprueba que `/ads.txt` devuelve la línea oficial de Google.
@@ -188,11 +189,11 @@ No uses `npm audit fix --force` si propone bajar Next a una versión antigua o r
 
 ## Preparar para publicar
 
-- Completa datos reales en política de privacidad, política de cookies y aviso legal.
-- Conecta el formulario de contacto a un backend o servicio externo.
+- Revisa si hace falta añadir datos fiscales completos en política de privacidad, política de cookies y aviso legal.
+- Si el volumen de consultas crece, conecta el formulario de contacto a un backend o servicio externo.
 - Conecta la newsletter solo con consentimiento y política de datos completa.
 - Activa anuncios o afiliados solo cuando haya contenido suficiente y textos legales revisados.
-- No añadas scripts de AdSense hasta tener aprobación, ID real de editor `ca-pub-...` y configuración proporcionada por Google.
+- Mantén AdSense sin bloques manuales engañosos y revisa el consentimiento de cookies antes de servir anuncios personalizados.
 
 ## Estructura
 
