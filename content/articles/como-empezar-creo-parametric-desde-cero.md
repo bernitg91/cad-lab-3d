@@ -5,7 +5,7 @@ description: "Ruta práctica para aprender Creo Parametric si partes de cero: in
 category: "Creo Parametric"
 categorySlug: "creo-parametric"
 date: "2026-05-01"
-readingTime: "8 min"
+readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: true
 ---
@@ -51,6 +51,40 @@ Cuando controles piezas sueltas, pasa a ensamblajes pequeños. Aprende restricci
 El error más habitual es modelar como si Creo fuera un programa de dibujo libre. Si dependes de mover líneas a mano, el modelo será frágil. Otro error frecuente es crear redondeos demasiado pronto: déjalos para el final para evitar fallos si cambias la geometría base.
 
 También conviene evitar nombres genéricos como `Extrude 1` o `Sketch 4` en proyectos largos. Nombrar operaciones clave ayuda a revisar el modelo semanas después.
+
+## Ejemplo aplicado
+
+Un buen primer ejercicio en Creo no es una pieza espectacular, sino una pieza que puedas modificar. Por ejemplo, un soporte con dos taladros, una base y un nervio central. Si al cambiar el ancho de la base los taladros siguen centrados y el nervio no se rompe, estás aprendiendo intención de diseño. Si todo falla, el ejercicio te está mostrando dónde faltan referencias.
+
+## Criterios de revisión
+
+Antes de dar por bueno el trabajo, revisa estos puntos:
+
+- Mantén croquis completamente definidos y referencias estables.
+- Ordena el árbol para que la intención de diseño se entienda al modificar la pieza.
+- Deja redondeos y chaflanes al final siempre que no formen parte de la función principal.
+- Nombra operaciones clave cuando el modelo vaya a revisarse semanas después.
+
+### Señal de que vas por buen camino
+
+El resultado empieza a ser fiable cuando puedes explicar qué decisión tomaste, qué alternativa descartaste y qué dato usarías para repetir o mejorar el proyecto. Si solo tienes una captura final o una pieza impresa sin parámetros, todavía falta documentación técnica.
+
+## Rutina de práctica
+
+1. Modela una pieza pequeña con croquis completamente definidos.
+2. Cambia dos cotas principales y observa si el árbol se mantiene estable.
+3. Crea un plano simple con vistas y cotas funcionales.
+4. Rehaz la misma pieza una semana después intentando usar menos operaciones y mejores referencias.
+
+### Evidencias que conviene guardar
+
+El aprendizaje real aparece cuando puedes modificar el modelo sin reconstruirlo desde cero. Guarda versiones y compara cómo mejora el árbol entre ejercicios.
+
+## Límites y siguiente paso
+
+No intentes aprender todo el programa de golpe. Si una pieza se rompe al modificarla, no lo veas como fracaso: es una señal de que debes revisar referencias, orden del árbol y dependencia entre operaciones.
+
+Para ampliar el tema, revisa también [guía de Creo Parametric](/categorias/creo-parametric), [guías por tema](/guias), [recursos técnicos](/recursos). Ese enlazado ayuda a conectar decisiones de CAD, material, fabricación y documentación en un flujo de trabajo más completo.
 
 ## Conclusión
 

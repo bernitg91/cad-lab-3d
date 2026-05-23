@@ -5,7 +5,7 @@ description: "Lista práctica para revisar geometría, tolerancias, orientación
 category: "Recursos"
 categorySlug: "recursos"
 date: "2026-03-18"
-readingTime: "6 min"
+readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: false
 ---
@@ -52,6 +52,40 @@ Comprueba nombre del archivo, versión, material, color y notas de montaje. Si t
 - No revisar la primera capa en piezas grandes.
 - Aceptar soportes en superficies funcionales sin valorar rediseñar.
 - No anotar material y parámetros usados para repetir la pieza después.
+
+## Ejemplo aplicado
+
+En un proyecto universitario, una pieza puede pasar de correcta a fallida por un detalle pequeño: escala exportada en pulgadas, soportes sobre una cara visible o una orientación que separa capas justo en la zona cargada. La checklist sirve para detectar esos fallos antes de gastar seis horas de máquina. También ayuda a justificar decisiones si el tutor pregunta por material, orientación o tolerancias.
+
+## Criterios de revisión
+
+Antes de dar por bueno el trabajo, revisa estos puntos:
+
+- Convierte la lista en una comprobación real antes de entregar o fabricar.
+- Añade fecha, versión y responsable de revisión cuando trabajes en equipo.
+- Guarda capturas o notas del resultado para mejorar la checklist en el siguiente proyecto.
+- No uses una plantilla sin adaptarla al alcance y al nivel técnico del trabajo.
+
+### Señal de que vas por buen camino
+
+El resultado empieza a ser fiable cuando puedes explicar qué decisión tomaste, qué alternativa descartaste y qué dato usarías para repetir o mejorar el proyecto. Si solo tienes una captura final o una pieza impresa sin parámetros, todavía falta documentación técnica.
+
+## Cómo usar esta guía sin convertirla en una lista vacía
+
+1. Adapta cada punto al proyecto real y elimina lo que no aplique.
+2. Marca los puntos revisados con fecha o versión del archivo.
+3. Añade observaciones cuando un punto falle; ahí está el aprendizaje.
+4. Guarda la checklist junto al informe, portfolio o carpeta de fabricación.
+
+### Evidencias que conviene guardar
+
+Una checklist útil deja rastro: versión revisada, decisión tomada y siguiente acción. Si solo se marca todo sin pensar, no aporta valor.
+
+## Límites y siguiente paso
+
+Una plantilla o checklist no garantiza calidad por sí sola. Debe adaptarse al proyecto, revisarse con evidencias y actualizarse cuando aparezcan errores. El valor está en cómo se usa, no en marcar puntos de forma automática.
+
+Para ampliar el tema, revisa también [recursos técnicos](/recursos), [guías por tema](/guias), [checklist interactiva de impresión 3D](/checklist-impresion-3d). Ese enlazado ayuda a conectar decisiones de CAD, material, fabricación y documentación en un flujo de trabajo más completo.
 
 ## Conclusión
 

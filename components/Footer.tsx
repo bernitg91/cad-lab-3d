@@ -10,7 +10,7 @@ export function Footer() {
           <p className="mt-3 max-w-md text-sm leading-6 text-slate-400">
             Guías prácticas sobre CAD, diseño industrial, impresión 3D y documentación técnica para estudiantes y makers exigentes.
           </p>
-          <p className="mt-5 text-xs text-slate-500">© {new Date().getFullYear()} CAD Lab 3D. Contenido educativo y recursos técnicos en desarrollo.</p>
+          <p className="mt-5 text-xs text-slate-500">© {new Date().getFullYear()} CAD Lab 3D. Contenido educativo y recursos técnicos actualizados de forma periódica.</p>
         </div>
         <div>
           <p className="font-bold text-white">Categorías</p>
@@ -29,6 +29,7 @@ export function Footer() {
           <ul className="mt-3 grid gap-2 text-sm text-slate-400">
             <li><Link className="hover:text-white" href="/guias">Guías</Link></li>
             <li><Link className="hover:text-white" href="/recursos">Recursos</Link></li>
+            <li><Link className="hover:text-white" href="/metodologia">Metodología editorial</Link></li>
             <li><Link className="hover:text-white" href="/calculadora-precio-impresion-3d">Calculadora 3D</Link></li>
             <li><Link className="hover:text-white" href="/selector-material-impresion-3d">Selector material FDM</Link></li>
             <li><Link className="hover:text-white" href="/servicios">Servicios</Link></li>
@@ -46,6 +47,7 @@ export function Footer() {
             <li><Link className="hover:text-white" href="/politica-privacidad">Política de privacidad</Link></li>
             <li><Link className="hover:text-white" href="/politica-cookies">Política de cookies</Link></li>
             <li><Link className="hover:text-white" href="/aviso-legal">Aviso legal</Link></li>
+            <li><Link className="hover:text-white" href="/metodologia">Metodología</Link></li>
           </ul>
         </div>
       </div>

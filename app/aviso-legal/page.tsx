@@ -17,7 +17,7 @@ export default function LegalNoticePage() {
         </p>
         <h2>Titularidad</h2>
         <p>
-          La identificación completa del titular se completará con los datos legales reales que correspondan. Para consultas sobre el sitio, utiliza la página de contacto.
+          CAD Lab 3D actúa como responsable editorial del contenido publicado en este dominio. Para consultas sobre titularidad, correcciones, retirada de contenido o colaboración, utiliza la página de contacto. Si el proyecto incorpora venta directa de productos o servicios de forma continuada, esta página se ampliará con los datos fiscales y legales que correspondan.
         </p>
         <h2>Contenido</h2>
         <p>
@@ -30,6 +30,10 @@ export default function LegalNoticePage() {
         <h2>Responsabilidad</h2>
         <p>
           CAD Lab 3D no se responsabiliza de usos incorrectos de la información, errores de fabricación, decisiones técnicas sin validación o daños derivados de aplicar el contenido sin criterio profesional.
+        </p>
+        <h2>Correcciones</h2>
+        <p>
+          Si detectas un error técnico, una explicación mejorable o una referencia que deba actualizarse, puedes comunicarlo desde la página de contacto. Las correcciones relevantes se revisarán para mantener el contenido útil y claro.
         </p>
       </div>
     </section>

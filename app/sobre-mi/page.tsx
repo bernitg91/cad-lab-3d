@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
@@ -22,6 +23,9 @@ export default function AboutPage() {
         <p>
           El objetivo es crear una biblioteca práctica de contenidos que ayude a pasar de una idea o entrega académica a un resultado más claro, fabricable y defendible.
         </p>
+        <p>
+          No se publican datos personales concretos porque el proyecto está planteado como una marca editorial técnica. El foco está en el método: explicar decisiones, documentar pruebas, comparar materiales y convertir errores habituales en guías reutilizables.
+        </p>
       </div>
       <div className="mt-10 grid gap-5 md:grid-cols-2">
         <section className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
@@ -44,6 +48,18 @@ export default function AboutPage() {
           </div>
         </section>
       </div>
+      <section className="article-body mt-10 rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+        <h2>Cómo se trabaja el contenido</h2>
+        <p>
+          Cada artículo intenta responder a una situación frecuente: preparar un STL, elegir tolerancias, justificar una decisión en una memoria o estimar el coste de una pieza. Por eso las guías incluyen ejemplos aplicados, errores frecuentes, criterios de revisión y enlaces a recursos relacionados.
+        </p>
+        <p>
+          Si una recomendación depende de material, impresora, escala, software o nivel de exigencia, se indica como orientación y no como regla absoluta. En proyectos críticos siempre conviene validar con pruebas, documentación técnica o revisión profesional.
+        </p>
+        <p>
+          Puedes consultar la <Link href="/metodologia">metodología editorial</Link> para entender cómo se revisan las guías y qué límites tiene el contenido.
+        </p>
+      </section>
     </section>
   );
 }

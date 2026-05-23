@@ -5,7 +5,7 @@ description: "Errores habituales al exportar STL, STEP, planos PDF y archivos pa
 category: "Recursos"
 categorySlug: "recursos"
 date: "2026-05-05"
-readingTime: "7 min"
+readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: false
 ---
@@ -34,6 +34,40 @@ Nombra archivos con versión y fecha si el proyecto cambia mucho. Evita `final_f
 - Olvidar unidades.
 - Enviar un STL facetado por baja resolución.
 - No abrir el archivo exportado para comprobarlo.
+
+## Ejemplo aplicado
+
+Enviar un STEP y un STL con nombres casi iguales puede provocar confusión si uno está actualizado y el otro no. Antes de compartir, abre el archivo exportado en otro visor o vuelve a importarlo en el CAD. Si la escala, las caras o las operaciones críticas no se ven bien, el problema debe corregirse antes de enviarlo a fabricación.
+
+## Criterios de revisión
+
+Antes de dar por bueno el trabajo, revisa estos puntos:
+
+- Convierte la lista en una comprobación real antes de entregar o fabricar.
+- Añade fecha, versión y responsable de revisión cuando trabajes en equipo.
+- Guarda capturas o notas del resultado para mejorar la checklist en el siguiente proyecto.
+- No uses una plantilla sin adaptarla al alcance y al nivel técnico del trabajo.
+
+### Señal de que vas por buen camino
+
+El resultado empieza a ser fiable cuando puedes explicar qué decisión tomaste, qué alternativa descartaste y qué dato usarías para repetir o mejorar el proyecto. Si solo tienes una captura final o una pieza impresa sin parámetros, todavía falta documentación técnica.
+
+## Cómo usar esta guía sin convertirla en una lista vacía
+
+1. Adapta cada punto al proyecto real y elimina lo que no aplique.
+2. Marca los puntos revisados con fecha o versión del archivo.
+3. Añade observaciones cuando un punto falle; ahí está el aprendizaje.
+4. Guarda la checklist junto al informe, portfolio o carpeta de fabricación.
+
+### Evidencias que conviene guardar
+
+Una checklist útil deja rastro: versión revisada, decisión tomada y siguiente acción. Si solo se marca todo sin pensar, no aporta valor.
+
+## Límites y siguiente paso
+
+Una plantilla o checklist no garantiza calidad por sí sola. Debe adaptarse al proyecto, revisarse con evidencias y actualizarse cuando aparezcan errores. El valor está en cómo se usa, no en marcar puntos de forma automática.
+
+Para ampliar el tema, revisa también [recursos técnicos](/recursos), [guías por tema](/guias), [checklist interactiva de impresión 3D](/checklist-impresion-3d). Ese enlazado ayuda a conectar decisiones de CAD, material, fabricación y documentación en un flujo de trabajo más completo.
 
 ## Conclusión
 

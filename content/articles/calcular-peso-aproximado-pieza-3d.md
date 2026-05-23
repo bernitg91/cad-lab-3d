@@ -5,7 +5,7 @@ description: "Método práctico para estimar el peso de una pieza 3D usando volu
 category: "Diseño industrial"
 categorySlug: "diseno-industrial"
 date: "2026-04-08"
-readingTime: "6 min"
+readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: false
 ---
@@ -53,6 +53,40 @@ Exporta el STL, abre el laminador, configura material, paredes, relleno y altura
 - Usar densidad de una ficha distinta al filamento real.
 - Ignorar soportes, purga, brim o piezas de prueba.
 - Estimar coste solo por gramos y olvidar tiempo de máquina.
+
+## Ejemplo aplicado
+
+Un soporte CAD de 60 cm3 no pesa lo mismo si se fabrica macizo, con 20% de relleno o con cuatro perímetros. En una carcasa, las paredes y tapas pueden representar más material que el relleno. Una forma práctica es comparar tres datos: peso teórico macizo, peso estimado por el laminador y peso real medido después de imprimir. Esa comparación te enseña cómo se comportan tus perfiles.
+
+## Criterios de revisión
+
+Antes de dar por bueno el trabajo, revisa estos puntos:
+
+- Define función, usuario, restricciones y criterio de fabricación antes de cerrar la geometría.
+- Separa decisiones estéticas de decisiones técnicas para explicar mejor el proyecto.
+- Revisa espesores, radios, tolerancias, montaje y mantenimiento antes de fabricar.
+- Documenta cambios de diseño con capturas o versiones para que la evolución sea entendible.
+
+### Señal de que vas por buen camino
+
+El resultado empieza a ser fiable cuando puedes explicar qué decisión tomaste, qué alternativa descartaste y qué dato usarías para repetir o mejorar el proyecto. Si solo tienes una captura final o una pieza impresa sin parámetros, todavía falta documentación técnica.
+
+## Proceso de diseño recomendado
+
+1. Escribe el problema en una frase y convierte esa frase en requisitos medibles.
+2. Haz una primera solución simple y revisa dónde falla antes de añadir detalles visuales.
+3. Comprueba fabricación, montaje, mantenimiento y documentación antes de preparar renders finales.
+4. Cierra el proyecto con una revisión crítica: qué funciona, qué falta probar y qué cambiarías en la siguiente iteración.
+
+### Evidencias que conviene guardar
+
+Un buen proyecto no se sostiene solo con imágenes finales. Conserva bocetos, alternativas descartadas, capturas CAD, pruebas de impresión, planos y notas de decisión.
+
+## Límites y siguiente paso
+
+Una recomendación de diseño solo tiene sentido dentro de un contexto: usuario, función, proceso, presupuesto y tiempo. Si el proyecto cambia de prototipo académico a pieza para uso real, revisa seguridad, normativa aplicable y validación con más rigor.
+
+Para ampliar el tema, revisa también [guías por tema](/guias), [recursos técnicos](/recursos), [servicios de apoyo CAD](/servicios). Ese enlazado ayuda a conectar decisiones de CAD, material, fabricación y documentación en un flujo de trabajo más completo.
 
 ## Conclusión
 

@@ -18,7 +18,9 @@ export default function CookiesPage() {
         <h2>Cookies técnicas</h2>
         <p>Ayudan al funcionamiento básico del sitio y a recordar preferencias esenciales.</p>
         <h2>Cookies analíticas</h2>
-        <p>Podrían utilizarse para entender qué contenidos resultan más útiles y mejorar la estructura editorial.</p>
+        <p>
+          Pueden utilizarse para entender qué contenidos resultan más útiles, detectar errores de navegación y mejorar la estructura editorial. Los datos se analizan de forma agregada siempre que sea posible.
+        </p>
         <h2>Gestión del consentimiento</h2>
         <p>
           El consentimiento para cookies no esenciales se gestiona mediante las herramientas disponibles para usuarios del Espacio Económico Europeo, Reino Unido y Suiza, de acuerdo con la normativa aplicable.
@@ -26,6 +28,10 @@ export default function CookiesPage() {
         <h2>Cookies publicitarias y Google</h2>
         <p>
           Google AdSense puede usar cookies y tecnologías similares para personalizar anuncios, limitar la frecuencia de visualización y medir anuncios. Puedes consultar y gestionar opciones de consentimiento cuando el mensaje correspondiente esté disponible.
+        </p>
+        <h2>Cómo cambiar preferencias</h2>
+        <p>
+          Además de las opciones de consentimiento que aparezcan en el sitio, puedes revisar la configuración de privacidad del navegador para bloquear, eliminar o limitar cookies. Si bloqueas cookies no esenciales, el contenido seguirá siendo accesible, aunque algunas mediciones o funciones externas podrían no operar igual.
         </p>
       </div>
     </section>

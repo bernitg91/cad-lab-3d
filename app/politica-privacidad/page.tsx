@@ -15,7 +15,7 @@ export default function PrivacyPage() {
       </p>
       <h2>Responsable del sitio</h2>
       <p>
-        La identificación completa del responsable se completará con los datos legales reales que correspondan. Para consultas de privacidad, utiliza la página de contacto.
+        El responsable editorial del sitio es CAD Lab 3D. Para consultas relacionadas con privacidad, contenido o ejercicio de derechos, utiliza la página de contacto. Si el proyecto incorpora actividad comercial directa, estos datos se ampliarán con la información fiscal y legal que corresponda.
       </p>
       <h2>Datos que podrían tratarse</h2>
       <p>
@@ -27,7 +27,10 @@ export default function PrivacyPage() {
       </p>
       <h2>Cookies, publicidad y proveedores externos</h2>
       <p>
-        La web utiliza Google AdSense y puede utilizar otros proveedores publicitarios o de analítica. Google y otros proveedores externos pueden usar cookies para medir visitas, mostrar anuncios personalizados o no personalizados y evaluar rendimiento publicitario según el consentimiento aplicable.
+        La web puede utilizar servicios de analítica, medición de rendimiento y publicidad de terceros, incluido Google AdSense. Google y otros proveedores externos pueden usar cookies o tecnologías similares para medir visitas, evitar fraude, mostrar anuncios personalizados o no personalizados y evaluar rendimiento publicitario según el consentimiento aplicable.
+      </p>
+      <p>
+        En usuarios del Espacio Económico Europeo, Reino Unido y Suiza, la publicidad personalizada y otras cookies no esenciales deben gestionarse mediante un mecanismo de consentimiento compatible con la normativa aplicable.
       </p>
       <h2>Enlaces de afiliado</h2>
       <p>
@@ -39,7 +42,7 @@ export default function PrivacyPage() {
       </p>
       <h2>Derechos</h2>
       <p>
-        Puedes solicitar información, rectificación o supresión de datos utilizando la página de contacto. Esta política deberá completarse con los datos legales del responsable antes de iniciar una actividad comercial plena.
+        Puedes solicitar información, rectificación o supresión de datos utilizando la página de contacto. La solicitud se revisará atendiendo al alcance real de los datos disponibles y a las obligaciones legales aplicables.
       </p>
     </LegalPage>
   );

@@ -9,11 +9,26 @@ export const metadata: Metadata = createPageMetadata({
 });
 
 const groups = [
-  "Software CAD",
-  "Impresoras 3D",
-  "Filamentos",
-  "Herramientas de medición",
-  "Recursos para estudiantes"
+  {
+    title: "Software CAD",
+    points: ["Historial paramétrico estable", "Exportación STEP/STL fiable", "Planos técnicos claros", "Comunidad y documentación"]
+  },
+  {
+    title: "Impresoras 3D",
+    points: ["Volumen útil real", "Nivelación y primera capa", "Repuestos disponibles", "Perfiles de laminador mantenidos"]
+  },
+  {
+    title: "Filamentos",
+    points: ["Uso previsto", "Temperatura y humedad", "Facilidad de impresión", "Repetibilidad entre bobinas"]
+  },
+  {
+    title: "Herramientas de medición",
+    points: ["Calibre digital", "Galgas o reglas", "Registro de medidas", "Comparación con tolerancias objetivo"]
+  },
+  {
+    title: "Recursos para estudiantes",
+    points: ["Plantillas editables", "Checklists", "Ejemplos de memoria", "Biblioteca de decisiones técnicas"]
+  }
 ];
 
 export default function RecommendedToolsPage() {
@@ -38,17 +53,41 @@ export default function RecommendedToolsPage() {
           Checklist impresión
         </Link>
       </div>
+      <div className="article-body mt-8 max-w-3xl">
+        <h2>Cómo elegir sin comprar por impulso</h2>
+        <p>
+          Esta página no publica enlaces comerciales activos. Su objetivo es ordenar criterios antes de invertir dinero o tiempo en una herramienta. Para CAD Lab 3D, una herramienta recomendable no es la más conocida, sino la que encaja con el proyecto, se puede aprender con documentación suficiente y permite repetir resultados.
+        </p>
+      </div>
       <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {groups.map((group) => (
-          <article key={group} className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
-            <h2 className="text-xl font-black text-slate-950">{group}</h2>
+          <article key={group.title} className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
+            <h2 className="text-xl font-black text-slate-950">{group.title}</h2>
             <p className="mt-3 text-sm leading-6 text-slate-600">
               Revisa necesidades reales, formatos compatibles, repuestos, documentación disponible y límites técnicos antes de invertir tiempo o dinero.
             </p>
+            <ul className="mt-4 grid gap-2 text-sm leading-6 text-slate-700">
+              {group.points.map((point) => (
+                <li key={point} className="flex gap-2">
+                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-teal-500" />
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
             <p className="mt-4 rounded-md bg-slate-50 px-3 py-2 text-xs font-semibold text-slate-500">Sin enlaces comerciales activos. Las recomendaciones afiliadas se marcarán de forma transparente si se incorporan.</p>
           </article>
         ))}
       </div>
+      <section className="article-body mt-10 rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+        <h2>Checklist antes de recomendar una herramienta</h2>
+        <p>
+          Antes de recomendar software, material o equipo, conviene responder: qué problema resuelve, qué limitaciones tiene, cuánto cuesta mantenerlo, qué formatos acepta, qué aprendizaje exige y qué alternativas gratuitas o más simples existen. Esta revisión evita llenar la web de listas comerciales sin valor práctico.
+        </p>
+        <h3>Cuándo una herramienta no merece aparecer</h3>
+        <p>
+          Si no aporta una mejora clara, no se puede explicar su uso o depende de una promoción puntual, es mejor no incluirla. La prioridad es que el lector aprenda a decidir, no que haga clic en una lista de productos.
+        </p>
+      </section>
     </section>
   );
 }
