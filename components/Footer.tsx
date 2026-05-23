@@ -29,6 +29,9 @@ export function Footer() {
           <ul className="mt-3 grid gap-2 text-sm text-slate-400">
             <li><Link className="hover:text-white" href="/guias">Guías</Link></li>
             <li><Link className="hover:text-white" href="/recursos">Recursos</Link></li>
+            <li><Link className="hover:text-white" href="/casos-practicos-impresion-3d">Casos prácticos</Link></li>
+            <li><Link className="hover:text-white" href="/glosario">Glosario técnico</Link></li>
+            <li><Link className="hover:text-white" href="/preguntas-frecuentes">Preguntas frecuentes</Link></li>
             <li><Link className="hover:text-white" href="/metodologia">Metodología editorial</Link></li>
             <li><Link className="hover:text-white" href="/calculadora-precio-impresion-3d">Calculadora 3D</Link></li>
             <li><Link className="hover:text-white" href="/selector-material-impresion-3d">Selector material FDM</Link></li>
@@ -49,6 +52,7 @@ export function Footer() {
             <li><Link className="hover:text-white" href="/politica-cookies">Política de cookies</Link></li>
             <li><Link className="hover:text-white" href="/aviso-legal">Aviso legal</Link></li>
             <li><Link className="hover:text-white" href="/metodologia">Metodología</Link></li>
+            <li><Link className="hover:text-white" href="/preguntas-frecuentes">FAQ</Link></li>
           </ul>
         </div>
       </div>

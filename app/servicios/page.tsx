@@ -78,9 +78,14 @@ export default function ServicesPage() {
         <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-300">
           Envía una descripción del objetivo, software usado, formato disponible y fecha aproximada para revisar la mejor forma de abordarlo.
         </p>
-        <Link className="mt-5 inline-flex rounded-md bg-teal-500 px-5 py-3 text-sm font-black text-slate-950 hover:bg-teal-300" href="/contacto">
-          Ir a contacto
-        </Link>
+        <div className="mt-5 flex flex-wrap gap-3">
+          <Link className="rounded-md bg-teal-500 px-5 py-3 text-sm font-black text-slate-950 hover:bg-teal-300" href="/contacto">
+            Ir a contacto
+          </Link>
+          <Link className="rounded-md border border-white/20 px-5 py-3 text-sm font-bold text-white hover:bg-white/10" href="/casos-practicos-impresion-3d">
+            Ver casos prácticos
+          </Link>
+        </div>
       </div>
     </section>
   );

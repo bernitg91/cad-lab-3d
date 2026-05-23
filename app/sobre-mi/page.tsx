@@ -34,6 +34,7 @@ export default function AboutPage() {
             <li>Tutoriales de CAD, piezas FDM y documentación técnica.</li>
             <li>Guías sobre materiales, tolerancias, renders y portfolios.</li>
             <li>Recursos para informes, checklists y proyectos CAD.</li>
+            <li>Casos prácticos con piezas impresas reales y aprendizajes técnicos.</li>
             <li>Servicios de apoyo en modelado y presentación técnica.</li>
           </ul>
         </section>
@@ -44,6 +45,7 @@ export default function AboutPage() {
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
             <a className="rounded-md bg-teal-500 px-4 py-2 text-sm font-black text-slate-950 hover:bg-teal-300" href="/guias">Ver guías</a>
+            <a className="rounded-md border border-white/20 px-4 py-2 text-sm font-bold text-white hover:bg-white/10" href="/casos-practicos-impresion-3d">Casos reales</a>
             <a className="rounded-md border border-white/20 px-4 py-2 text-sm font-bold text-white hover:bg-white/10" href="/contacto">Contacto</a>
           </div>
         </section>

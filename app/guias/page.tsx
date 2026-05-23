@@ -81,6 +81,10 @@ export default function GuidesPage() {
           <h2 className="text-xl font-black">Recursos y plantillas</h2>
           <p className="mt-2 text-sm leading-6 text-slate-300">Checklists, estructuras y guías relacionadas para trabajar con más orden.</p>
         </Link>
+        <Link className="rounded-lg bg-slate-950 p-5 text-white hover:bg-blue-900" href="/casos-practicos-impresion-3d">
+          <h2 className="text-xl font-black">Casos prácticos</h2>
+          <p className="mt-2 text-sm leading-6 text-slate-300">Piezas reales con objetivo, revisión técnica y aprendizajes de impresión FDM.</p>
+        </Link>
         <Link className="rounded-lg bg-slate-950 p-5 text-white hover:bg-blue-900" href="/servicios">
           <h2 className="text-xl font-black">Servicios CAD</h2>
           <p className="mt-2 text-sm leading-6 text-slate-300">Apoyo para modelado, renders, revisión y documentación técnica.</p>
@@ -88,6 +92,14 @@ export default function GuidesPage() {
         <Link className="rounded-lg bg-slate-950 p-5 text-white hover:bg-blue-900" href="/herramientas-recomendadas">
           <h2 className="text-xl font-black">Herramientas</h2>
           <p className="mt-2 text-sm leading-6 text-slate-300">Criterios para elegir software, materiales y equipos antes de comprar.</p>
+        </Link>
+        <Link className="rounded-lg bg-slate-950 p-5 text-white hover:bg-blue-900" href="/glosario">
+          <h2 className="text-xl font-black">Glosario técnico</h2>
+          <p className="mt-2 text-sm leading-6 text-slate-300">Definiciones para leer guías de CAD, FDM, materiales, FEM y documentación.</p>
+        </Link>
+        <Link className="rounded-lg bg-slate-950 p-5 text-white hover:bg-blue-900" href="/preguntas-frecuentes">
+          <h2 className="text-xl font-black">FAQ</h2>
+          <p className="mt-2 text-sm leading-6 text-slate-300">Respuestas rápidas sobre servicios, archivos, límites técnicos y contacto.</p>
         </Link>
       </div>
     </section>

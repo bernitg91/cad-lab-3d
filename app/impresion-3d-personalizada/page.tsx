@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
+import { portfolioItems } from "@/lib/portfolio";
 import { createPageMetadata, jsonLd } from "@/lib/seo";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
@@ -64,57 +65,6 @@ const examples = [
   "Piezas de prueba para validar tolerancias, encajes, clips o espesores.",
   "Maquetas funcionales para explicar una idea en una presentación técnica.",
   "Recambios no críticos cuando la geometría sea imprimible y el uso sea razonable."
-];
-
-const portfolio = [
-  {
-    title: "Soporte personalizado para relojes",
-    description: "Pieza funcional de exposición con apoyos repetidos, base estable y geometría preparada para uso cotidiano.",
-    image: "/images/impresion-3d-personalizada/soporte-relojes-fdm.jpg",
-    alt: "Soporte impreso en 3D para relojes sobre fondo claro"
-  },
-  {
-    title: "Caja prototipo con borde reforzado",
-    description: "Contenedor impreso para validar volumen, rigidez, montaje perimetral y acabado antes de una versión final.",
-    image: "/images/impresion-3d-personalizada/caja-prototipo-fdm.jpg",
-    alt: "Caja prototipo impresa en 3D con borde reforzado"
-  },
-  {
-    title: "Bandeja organizadora a medida",
-    description: "Objeto de uso diario con paredes suaves, borde elevado y forma adaptada a una necesidad concreta.",
-    image: "/images/impresion-3d-personalizada/bandeja-organizadora-fdm.jpg",
-    alt: "Bandeja organizadora roja impresa en 3D"
-  },
-  {
-    title: "Jarrón decorativo con textura helicoidal",
-    description: "Pieza visual para comprobar acabado, repetición de patrón, continuidad de capas y presencia estética.",
-    image: "/images/impresion-3d-personalizada/jarron-decorativo-fdm.jpg",
-    alt: "Jarrón verde impreso en 3D con textura helicoidal"
-  },
-  {
-    title: "Adaptador funcional de pequeño formato",
-    description: "Pieza compacta para validar diámetro interior, apoyo, encaje y tolerancia en una geometría sencilla.",
-    image: "/images/impresion-3d-personalizada/adaptador-aro-funcional-fdm.jpg",
-    alt: "Adaptador negro impreso en 3D con abertura circular"
-  },
-  {
-    title: "Panel técnico con relieves",
-    description: "Prototipo plano con zonas elevadas para revisar forma, textura, superficies y lectura del diseño.",
-    image: "/images/impresion-3d-personalizada/panel-prototipo-tecnico-fdm.jpg",
-    alt: "Panel técnico gris impreso en 3D con relieves"
-  },
-  {
-    title: "Piezas de prueba y útiles de escritorio",
-    description: "Muestras para estudiar escala, agarre, proporciones y repetición dimensional antes de fabricar más unidades.",
-    image: "/images/impresion-3d-personalizada/utiles-escritorio-fdm.jpg",
-    alt: "Piezas verdes impresas en 3D junto a material de escritorio"
-  },
-  {
-    title: "Pieza decorativa por capas",
-    description: "Geometría visual con patrón escalonado para mostrar precisión de contornos y acabado FDM visible.",
-    image: "/images/impresion-3d-personalizada/pieza-decorativa-azul-fdm.jpg",
-    alt: "Pieza decorativa azul impresa en 3D con patrón por capas"
-  }
 ];
 
 export default function Custom3DPrintingPage() {
@@ -195,7 +145,7 @@ export default function Custom3DPrintingPage() {
             </p>
           </div>
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {portfolio.map((item) => (
+            {portfolioItems.map((item) => (
               <article key={item.title} className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
                 <div className="relative aspect-[4/5] bg-slate-100">
                   <Image

@@ -53,6 +53,24 @@ const resources = [
     cta: "Pedir valoración"
   },
   {
+    title: "Casos prácticos de impresión 3D",
+    description: "Ejemplos reales de piezas impresas con objetivo de diseño, revisión técnica y aprendizaje útil.",
+    href: "/casos-practicos-impresion-3d",
+    cta: "Ver casos"
+  },
+  {
+    title: "Glosario de CAD e impresión 3D",
+    description: "Definiciones rápidas para entender tolerancias, materiales, FEM, laminado y documentación técnica.",
+    href: "/glosario",
+    cta: "Consultar glosario"
+  },
+  {
+    title: "Preguntas frecuentes",
+    description: "Respuestas sobre servicios, archivos, materiales, límites técnicos, contenido y contacto.",
+    href: "/preguntas-frecuentes",
+    cta: "Leer FAQ"
+  },
+  {
     title: "Calculadora de peso de pieza 3D",
     description: "Estima gramos de filamento con volumen CAD, densidad, relleno, paredes, soportes y cantidad.",
     href: "/calculadora-peso-pieza-3d",

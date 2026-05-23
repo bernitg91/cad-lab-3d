@@ -6,6 +6,7 @@
 - 42 artículos publicados en contenido local Markdown.
 - Herramientas SEO publicadas: calculadora de precio, calculadora de peso, selector de material y checklist de impresión 3D.
 - Servicio de impresión 3D personalizada publicado con ejemplos reales.
+- Casos prácticos de impresión 3D, glosario técnico y FAQ publicados para reforzar contenido propio y señales de confianza.
 - SEO técnico preparado: canonical, Open Graph, Twitter Card, sitemap, robots y JSON-LD.
 - Monetización preparada con script de AdSense condicionado a entorno Production e ID real. No hay bloques manuales de anuncios ni enlaces afiliados falsos.
 - URL pública actual: `https://cadlab3d.com`.
@@ -82,6 +83,8 @@ Preparado:
 - Página de recursos con guías, checklists y herramientas disponibles.
 - Página de servicios CAD.
 - Página de impresión 3D personalizada.
+- Página de casos prácticos con piezas reales.
+- Glosario técnico y FAQ.
 - Contacto mediante email real.
 
 Pendiente:

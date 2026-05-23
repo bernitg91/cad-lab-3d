@@ -12,6 +12,10 @@ Esta revisión no garantiza la aprobación. La decisión final depende de Google
 
 - Se añadió una página comercial real para impresión 3D personalizada: `/impresion-3d-personalizada`.
 - Se incorporaron fotos reales de piezas impresas en 3D para reforzar confianza y demostrar actividad real.
+- Se añadió una página de casos prácticos con análisis técnico: `/casos-practicos-impresion-3d`.
+- Se añadió un glosario técnico de CAD, FDM, materiales, FEM y documentación: `/glosario`.
+- Se añadió una página de preguntas frecuentes con datos estructurados FAQPage: `/preguntas-frecuentes`.
+- Se reforzó la home con herramientas propias, últimos artículos, casos reales y señales de calidad editorial.
 - Se configuró el correo de contacto público: `bbernat.torres@gmail.com`.
 - El formulario de contacto ya no simula un envío; prepara un correo real mediante `mailto`.
 - Se retiraron placeholders de anuncios para evitar bloques vacíos o elementos que parezcan publicidad activa.
@@ -37,6 +41,7 @@ Esta revisión no garantiza la aprobación. La decisión final depende de Google
 - Rutas principales comprobadas en servidor local: todas respondieron `200`.
 - Páginas principales comprobadas con un único `H1`, canonical y Open Graph.
 - Página `/impresion-3d-personalizada` comprobada visualmente: imágenes cargan, email visible y sin errores de consola.
+- Nuevas rutas añadidas al sitemap y enlazadas desde home, recursos, guías, footer o navegación principal.
 
 ## Riesgos reducidos
 

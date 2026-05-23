@@ -1,9 +1,11 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ArticleCard } from "@/components/ArticleCard";
 import { Newsletter } from "@/components/Newsletter";
 import { categories } from "@/lib/categories";
-import { getFeaturedArticles } from "@/lib/articles";
+import { getAllArticles, getFeaturedArticles } from "@/lib/articles";
+import { portfolioItems } from "@/lib/portfolio";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 import { createPageMetadata, jsonLd } from "@/lib/seo";
 
@@ -14,7 +16,9 @@ export const metadata: Metadata = createPageMetadata({
 });
 
 export default function HomePage() {
+  const articles = getAllArticles();
   const featuredArticles = getFeaturedArticles();
+  const latestArticles = articles.slice(0, 6);
   const structuredData = [
     {
       "@context": "https://schema.org",
@@ -61,32 +65,63 @@ export default function HomePage() {
                 Servicios técnicos
               </Link>
             </div>
+            <dl className="mt-8 grid max-w-2xl grid-cols-2 gap-3 sm:grid-cols-4">
+              {[
+                [String(articles.length), "artículos"],
+                ["4", "herramientas"],
+                ["8", "categorías"],
+                ["8", "casos reales"]
+              ].map(([value, label]) => (
+                <div key={label} className="rounded-lg border border-slate-200 bg-white/80 p-4 shadow-sm">
+                  <dt className="text-xs font-black uppercase tracking-wide text-slate-500">{label}</dt>
+                  <dd className="mt-1 text-2xl font-black text-slate-950">{value}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
           <div className="rounded-lg border border-slate-200 bg-white p-5 shadow-xl">
-            <div className="aspect-[4/3] rounded-md bg-slate-950 p-5 text-white">
-              <div className="grid h-full grid-cols-6 grid-rows-5 gap-2">
-                <div className="col-span-4 row-span-3 rounded border border-teal-300/60 bg-slate-900 p-4">
-                  <div className="h-3 w-28 rounded bg-teal-300" />
-                  <div className="mt-7 grid grid-cols-3 gap-3">
-                    <div className="aspect-square rounded border border-blue-300/60" />
-                    <div className="aspect-square rounded border border-blue-300/60 bg-blue-400/20" />
-                    <div className="aspect-square rounded border border-blue-300/60" />
-                  </div>
-                </div>
-                <div className="col-span-2 row-span-5 rounded border border-slate-600 bg-slate-900 p-4">
-                  <div className="mb-3 h-2 w-16 rounded bg-blue-400" />
-                  <div className="grid gap-2">
-                    <div className="h-2 rounded bg-slate-700" />
-                    <div className="h-2 rounded bg-slate-700" />
-                    <div className="h-2 rounded bg-slate-700" />
-                    <div className="h-20 rounded border border-teal-400/50" />
-                  </div>
-                </div>
-                <div className="col-span-4 row-span-2 rounded border border-slate-600 bg-slate-900 p-4">
-                  <div className="h-full rounded bg-gradient-to-r from-teal-400/30 via-blue-400/20 to-transparent" />
-                </div>
-              </div>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-md bg-slate-100">
+              <Image
+                src="/images/impresion-3d-personalizada/pieza-decorativa-azul-fdm.jpg"
+                alt="Pieza azul impresa en 3D con geometría por capas"
+                fill
+                priority
+                sizes="(min-width: 1024px) 44vw, 100vw"
+                className="object-cover"
+              />
             </div>
+            <div className="mt-4 grid gap-2 text-xs leading-5 text-slate-600 sm:grid-cols-3">
+              <p className="rounded-md bg-slate-50 p-3 font-semibold">Contenido propio y revisable.</p>
+              <p className="rounded-md bg-slate-50 p-3 font-semibold">Herramientas gratuitas sin registro.</p>
+              <p className="rounded-md bg-slate-50 p-3 font-semibold">Ejemplos reales de piezas FDM.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-14">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+            <div>
+              <p className="text-sm font-black uppercase tracking-wide text-teal-700">Herramientas propias</p>
+              <h2 className="mt-2 text-3xl font-black text-slate-950">Calculadoras y checklists para trabajar mejor</h2>
+            </div>
+            <Link className="text-sm font-bold text-blue-700 hover:text-blue-900" href="/recursos">
+              Ver recursos
+            </Link>
+          </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {[
+              ["Calculadora de precio 3D", "Calcula precio por pieza y lote con material, electricidad, desgaste, mano de obra, margen e IVA.", "/calculadora-precio-impresion-3d"],
+              ["Calculadora de peso", "Estima gramos con volumen, densidad, relleno, paredes, soportes y cantidad.", "/calculadora-peso-pieza-3d"],
+              ["Selector de material FDM", "Compara PLA, PETG, TPU, ABS, ASA y Nylon según uso real.", "/selector-material-impresion-3d"],
+              ["Checklist de impresión", "Revisa archivo, orientación, material, cama, filamento y control final.", "/checklist-impresion-3d"]
+            ].map(([title, text, href]) => (
+              <Link key={href} href={href} className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm hover:border-blue-300">
+                <h3 className="text-xl font-black text-slate-950">{title}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">{text}</p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -105,6 +140,36 @@ export default function HomePage() {
           {featuredArticles.map((article) => (
             <ArticleCard key={article.slug} article={article} />
           ))}
+        </div>
+      </section>
+
+      <section className="bg-white py-14">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+            <div>
+              <p className="text-sm font-black uppercase tracking-wide text-teal-700">Casos prácticos</p>
+              <h2 className="mt-2 text-3xl font-black text-slate-950">Piezas reales con criterio técnico</h2>
+              <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600">
+                La web no se queda en teoría: también muestra piezas impresas y explica qué revisar en cada caso.
+              </p>
+            </div>
+            <Link className="text-sm font-bold text-blue-700 hover:text-blue-900" href="/casos-practicos-impresion-3d">
+              Ver casos
+            </Link>
+          </div>
+          <div className="mt-8 grid gap-5 md:grid-cols-3">
+            {portfolioItems.slice(0, 3).map((item) => (
+              <Link key={item.title} href="/casos-practicos-impresion-3d" className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm hover:border-blue-300">
+                <div className="relative aspect-[4/3] bg-slate-100">
+                  <Image src={item.image} alt={item.alt} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover" />
+                </div>
+                <div className="p-5">
+                  <h3 className="font-black text-slate-950">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-600">{item.description}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -149,6 +214,27 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+        <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+          <div>
+            <p className="text-sm font-black uppercase tracking-wide text-teal-700">Actualización continua</p>
+            <h2 className="mt-2 text-3xl font-black text-slate-950">Últimas guías publicadas</h2>
+            <p className="mt-3 text-sm leading-6 text-slate-600">
+              Nuevos contenidos para reforzar clusters de impresión 3D, CAD, materiales, FEM y documentación técnica.
+            </p>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {latestArticles.map((article) => (
+              <Link key={article.slug} className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm hover:border-blue-300" href={`/blog/${article.slug}`}>
+                <p className="text-xs font-black uppercase tracking-wide text-teal-700">{article.category}</p>
+                <h3 className="mt-1 font-black text-slate-950">{article.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-slate-600">{article.description}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           <Link className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm hover:border-blue-300" href="/guias">
             <p className="text-sm font-black uppercase tracking-wide text-teal-700">Rutas de lectura</p>
@@ -174,6 +260,16 @@ export default function HomePage() {
             <p className="text-sm font-black uppercase tracking-wide text-teal-700">Materiales FDM</p>
             <h2 className="mt-2 text-2xl font-black text-slate-950">Selector material</h2>
             <p className="mt-2 text-sm leading-6 text-slate-600">Elige material según calor, exterior, impacto, flexibilidad, facilidad y acabado.</p>
+          </Link>
+          <Link className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm hover:border-blue-300" href="/casos-practicos-impresion-3d">
+            <p className="text-sm font-black uppercase tracking-wide text-teal-700">Piezas reales</p>
+            <h2 className="mt-2 text-2xl font-black text-slate-950">Casos prácticos</h2>
+            <p className="mt-2 text-sm leading-6 text-slate-600">Ejemplos de impresión 3D con objetivo, revisión técnica y aprendizaje de diseño.</p>
+          </Link>
+          <Link className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm hover:border-blue-300" href="/glosario">
+            <p className="text-sm font-black uppercase tracking-wide text-teal-700">Referencia</p>
+            <h2 className="mt-2 text-2xl font-black text-slate-950">Glosario técnico</h2>
+            <p className="mt-2 text-sm leading-6 text-slate-600">Definiciones de CAD, FDM, materiales, tolerancias, FEM y documentación.</p>
           </Link>
         </div>
       </section>

@@ -22,6 +22,10 @@ const criteria = [
     text: "Se priorizan listas de revisión, ejemplos aplicados, criterios de validación y enlaces internos para que el lector pueda seguir un flujo completo."
   },
   {
+    title: "Evidencia propia",
+    text: "Cuando se muestran servicios o ejemplos de impresión 3D, se usan piezas reales y se explica qué se aprende de ellas sin inventar ensayos ni testimonios."
+  },
+  {
     title: "Transparencia comercial",
     text: "Los contenidos no incluyen enlaces de afiliado activos ni anuncios manuales integrados en los artículos. Si se añaden en el futuro, se marcarán de forma visible."
   }
@@ -58,11 +62,18 @@ export default function MethodologyPage() {
         <p>
           El contenido se revisa cuando se detectan errores, cuando cambia una herramienta o cuando una guía necesita más ejemplos. Las páginas de herramientas y recursos se diseñan para crecer sin publicar enlaces comerciales ficticios ni descargas vacías.
         </p>
+        <h2>Uso de ejemplos reales</h2>
+        <p>
+          Las páginas de servicios y casos prácticos muestran piezas impresas reales para aportar contexto propio. Las descripciones se mantienen prudentes: explican objetivo, revisión y aprendizaje, pero no prometen resistencias, certificaciones o resultados que no se hayan validado.
+        </p>
       </div>
 
       <div className="mt-10 flex flex-wrap gap-3">
         <Link className="rounded-md bg-slate-950 px-5 py-3 text-sm font-black text-white hover:bg-blue-800" href="/guias">
           Ver guías
+        </Link>
+        <Link className="rounded-md border border-slate-300 px-5 py-3 text-sm font-black text-slate-800 hover:border-blue-300 hover:text-blue-700" href="/casos-practicos-impresion-3d">
+          Ver casos prácticos
         </Link>
         <Link className="rounded-md border border-slate-300 px-5 py-3 text-sm font-black text-slate-800 hover:border-blue-300 hover:text-blue-700" href="/contacto">
           Enviar corrección o sugerencia

@@ -12,6 +12,23 @@ export const metadata: Metadata = createPageMetadata({
 
 export default function CategoriesPage() {
   const articles = getAllArticles();
+  const routes = [
+    {
+      title: "Ruta FDM funcional",
+      text: "Empieza por errores comunes, material, orientación, tolerancias y cálculo de precio.",
+      href: "/categorias/impresion-3d"
+    },
+    {
+      title: "Ruta documentación técnica",
+      text: "Prepara informes, memorias, fichas técnicas, portfolios y presentación de proyectos.",
+      href: "/categorias/proyectos-universitarios"
+    },
+    {
+      title: "Ruta materiales",
+      text: "Compara PLA, PETG, TPU, ABS, ASA, Nylon y criterios de selección por uso.",
+      href: "/categorias/materiales"
+    }
+  ];
 
   return (
     <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
@@ -31,6 +48,18 @@ export default function CategoriesPage() {
           );
         })}
       </div>
+      <section className="mt-12 rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+        <p className="text-sm font-black uppercase tracking-wide text-teal-700">Por dónde empezar</p>
+        <h2 className="mt-2 text-2xl font-black text-slate-950">Rutas recomendadas por intención</h2>
+        <div className="mt-6 grid gap-4 md:grid-cols-3">
+          {routes.map((route) => (
+            <Link key={route.title} href={route.href} className="rounded-md bg-slate-50 p-4 hover:bg-blue-50">
+              <h3 className="font-black text-slate-950">{route.title}</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-600">{route.text}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
     </section>
   );
 }

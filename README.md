@@ -84,7 +84,7 @@ Para crear un artículo nuevo:
 3. Build command: `npm run build`.
 4. Output: configuración automática de Next.js.
 5. Añade `NEXT_PUBLIC_SITE_URL` y `NEXT_PUBLIC_CONTACT_EMAIL` en las variables de entorno de Vercel si quieres sobrescribir los valores por defecto.
-6. Despliega y revisa `/`, `/blog`, `/recursos`, `/servicios`, `/impresion-3d-personalizada`, `/sitemap.xml` y `/robots.txt`.
+6. Despliega y revisa `/`, `/blog`, `/recursos`, `/servicios`, `/impresion-3d-personalizada`, `/casos-practicos-impresion-3d`, `/glosario`, `/preguntas-frecuentes`, `/sitemap.xml` y `/robots.txt`.
 
 La configuración no secreta de Vercel está en `vercel.json`. El estado de publicación, dominio y monetización está documentado en `launch-readiness.md`.
 
@@ -157,11 +157,12 @@ No incluyas secretos ni credenciales en el repositorio.
 
 ## Checklist antes de solicitar AdSense
 
-El proyecto cuenta con 42 artículos, herramientas propias y páginas legales. Antes de volver a solicitar revisión tras un rechazo por contenido de poco valor, comprueba:
+El proyecto cuenta con 42 artículos, herramientas propias, casos prácticos con fotos reales, glosario técnico, FAQ y páginas legales. Antes de volver a solicitar revisión tras un rechazo por contenido de poco valor, comprueba:
 
 - Artículos útiles, originales y suficientemente completos.
 - Páginas legales revisadas, contacto visible y email real.
 - Navegación clara entre inicio, blog, categorías, recursos, contacto y legales.
+- Casos prácticos, glosario, FAQ y metodología accesibles desde la navegación interna.
 - Tráfico orgánico inicial desde Google Search Console.
 - Sin contenido copiado, duplicado o generado sin revisión.
 - Sin páginas vacías, recursos falsamente descargables o secciones rotas.
