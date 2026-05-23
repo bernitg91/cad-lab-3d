@@ -65,19 +65,6 @@ export default function HomePage() {
                 Servicios técnicos
               </Link>
             </div>
-            <dl className="mt-8 grid max-w-2xl grid-cols-2 gap-3 sm:grid-cols-4">
-              {[
-                [String(articles.length), "artículos"],
-                ["4", "herramientas"],
-                ["8", "categorías"],
-                ["8", "casos reales"]
-              ].map(([value, label]) => (
-                <div key={label} className="rounded-lg border border-slate-200 bg-white/80 p-4 shadow-sm">
-                  <dt className="text-xs font-black uppercase tracking-wide text-slate-500">{label}</dt>
-                  <dd className="mt-1 text-2xl font-black text-slate-950">{value}</dd>
-                </div>
-              ))}
-            </dl>
           </div>
           <div className="rounded-lg border border-slate-200 bg-white p-5 shadow-xl">
             <div className="relative aspect-[4/3] overflow-hidden rounded-md bg-slate-100">
@@ -90,11 +77,9 @@ export default function HomePage() {
                 className="object-cover"
               />
             </div>
-            <div className="mt-4 grid gap-2 text-xs leading-5 text-slate-600 sm:grid-cols-3">
-              <p className="rounded-md bg-slate-50 p-3 font-semibold">Contenido propio y revisable.</p>
-              <p className="rounded-md bg-slate-50 p-3 font-semibold">Herramientas gratuitas sin registro.</p>
-              <p className="rounded-md bg-slate-50 p-3 font-semibold">Ejemplos reales de piezas FDM.</p>
-            </div>
+            <p className="mt-4 text-sm leading-6 text-slate-600">
+              Ejemplo de pieza FDM con geometría por capas, útil para observar acabado, contornos y continuidad de impresión.
+            </p>
           </div>
         </div>
       </section>
@@ -103,7 +88,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
             <div>
-              <p className="text-sm font-black uppercase tracking-wide text-teal-700">Herramientas propias</p>
+              <p className="text-sm font-black uppercase tracking-wide text-teal-700">Herramientas prácticas</p>
               <h2 className="mt-2 text-3xl font-black text-slate-950">Calculadoras y checklists para trabajar mejor</h2>
             </div>
             <Link className="text-sm font-bold text-blue-700 hover:text-blue-900" href="/recursos">
@@ -150,7 +135,7 @@ export default function HomePage() {
               <p className="text-sm font-black uppercase tracking-wide text-teal-700">Casos prácticos</p>
               <h2 className="mt-2 text-3xl font-black text-slate-950">Piezas reales con criterio técnico</h2>
               <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600">
-                La web no se queda en teoría: también muestra piezas impresas y explica qué revisar en cada caso.
+                Ejemplos de piezas impresas con notas sobre objetivo, diseño, revisión y aspectos que conviene comprobar antes de fabricar.
               </p>
             </div>
             <Link className="text-sm font-bold text-blue-700 hover:text-blue-900" href="/casos-practicos-impresion-3d">
@@ -216,10 +201,10 @@ export default function HomePage() {
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
-            <p className="text-sm font-black uppercase tracking-wide text-teal-700">Actualización continua</p>
+            <p className="text-sm font-black uppercase tracking-wide text-teal-700">Nuevas guías</p>
             <h2 className="mt-2 text-3xl font-black text-slate-950">Últimas guías publicadas</h2>
             <p className="mt-3 text-sm leading-6 text-slate-600">
-              Nuevos contenidos para reforzar clusters de impresión 3D, CAD, materiales, FEM y documentación técnica.
+              Artículos recientes sobre impresión 3D, CAD, materiales, FEM y documentación técnica.
             </p>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
@@ -242,7 +227,7 @@ export default function HomePage() {
             <p className="mt-2 text-sm leading-6 text-slate-600">Accesos ordenados para aprender CAD, impresión 3D, materiales y documentación.</p>
           </Link>
           <Link className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm hover:border-blue-300" href="/servicios">
-            <p className="text-sm font-black uppercase tracking-wide text-teal-700">Conversión</p>
+            <p className="text-sm font-black uppercase tracking-wide text-teal-700">Consultas técnicas</p>
             <h2 className="mt-2 text-2xl font-black text-slate-950">Servicios CAD</h2>
             <p className="mt-2 text-sm leading-6 text-slate-600">Consultas sobre modelado, revisión, renders y archivos de fabricación para proyectos técnicos.</p>
           </Link>

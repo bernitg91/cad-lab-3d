@@ -137,7 +137,7 @@ export default function GlossaryPage() {
               Ver guías
             </Link>
             <Link className="rounded-md border border-white/20 px-4 py-2 text-sm font-bold text-white hover:bg-white/10" href="/casos-practicos-impresion-3d">
-              Ver casos reales
+              Ver casos prácticos
             </Link>
           </div>
         </div>

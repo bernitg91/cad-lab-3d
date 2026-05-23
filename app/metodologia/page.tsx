@@ -64,7 +64,7 @@ export default function MethodologyPage() {
         </p>
         <h2>Uso de ejemplos reales</h2>
         <p>
-          Las páginas de servicios y casos prácticos muestran piezas impresas reales para aportar contexto propio. Las descripciones se mantienen prudentes: explican objetivo, revisión y aprendizaje, pero no prometen resistencias, certificaciones o resultados que no se hayan validado.
+          Las páginas de servicios y casos prácticos muestran piezas impresas reales para aportar contexto técnico. Las descripciones se mantienen prudentes: explican objetivo, revisión y aprendizaje, pero no prometen resistencias, certificaciones o resultados que no se hayan validado.
         </p>
       </div>
 
