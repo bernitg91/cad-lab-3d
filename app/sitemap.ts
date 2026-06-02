@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/calculadora-peso-pieza-3d",
     "/selector-material-impresion-3d",
     "/checklist-impresion-3d",
+    "/guia-impresion-3d-fdm",
     "/casos-practicos-impresion-3d",
     "/glosario",
     "/preguntas-frecuentes",

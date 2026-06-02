@@ -27,6 +27,8 @@ Esta revisión no garantiza la aprobación. La decisión final depende de Google
 - Se reforzaron `/contacto`, `/servicios`, `/categorias` y `/sobre-mi` para evitar páginas demasiado cortas.
 - Se reescribieron bloques repetidos en los 42 artículos para reducir señales de contenido generado en serie.
 - Se eliminaron de páginas visibles las referencias comerciales innecesarias a afiliación futura.
+- Se añadió una guía pilar específica: `/guia-impresion-3d-fdm`.
+- Se ampliaron los casos prácticos con material orientativo, uso y puntos críticos de revisión.
 
 ## Criterios consultados
 
@@ -38,6 +40,7 @@ Esta revisión no garantiza la aprobación. La decisión final depende de Google
 ## Comprobaciones técnicas
 
 - Artículos publicados: 42.
+- Páginas pilar principales: guía FDM, casos prácticos, impresión 3D personalizada, recursos, herramientas y guías por categoría.
 - Longitud mínima de artículo detectada: 624 palabras.
 - Todos los artículos tienen frontmatter obligatorio.
 - No hay slugs duplicados.
@@ -50,6 +53,7 @@ Esta revisión no garantiza la aprobación. La decisión final depende de Google
 - `sitemap.xml` incluye páginas principales, categorías y artículos.
 - Build de producción ejecutado correctamente.
 - Rutas principales comprobadas en servidor local: todas respondieron `200`.
+- Nueva guía `/guia-impresion-3d-fdm`: responde `200`, tiene contenido sustancial y está enlazada desde home, guías, recursos, footer y sitemap.
 - Descargas principales comprobadas en servidor local: responden `200`.
 - Páginas principales comprobadas con un único `H1`, canonical y Open Graph.
 - Página `/impresion-3d-personalizada` comprobada visualmente: imágenes cargan, email visible y sin errores de consola.

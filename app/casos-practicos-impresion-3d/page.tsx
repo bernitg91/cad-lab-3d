@@ -110,6 +110,20 @@ export default function PracticalCasesPage() {
                   <p className="text-xs font-black uppercase tracking-wide text-teal-700">Caso {index + 1}</p>
                   <h3 className="mt-2 text-2xl font-black text-slate-950">{item.title}</h3>
                   <p className="mt-3 text-sm leading-6 text-slate-600">{item.description}</p>
+                  <div className="mt-5 grid gap-3 rounded-lg border border-slate-200 bg-slate-50 p-4 text-sm leading-6 text-slate-700 md:grid-cols-3">
+                    <div>
+                      <p className="font-black text-slate-950">Material orientativo</p>
+                      <p className="mt-1">{item.material}</p>
+                    </div>
+                    <div>
+                      <p className="font-black text-slate-950">Uso</p>
+                      <p className="mt-1">{item.use}</p>
+                    </div>
+                    <div>
+                      <p className="font-black text-slate-950">Puntos críticos</p>
+                      <p className="mt-1">{item.criticalPoints.join(", ")}</p>
+                    </div>
+                  </div>
                   <div className="mt-5 grid gap-4 md:grid-cols-3">
                     <div className="rounded-md bg-slate-50 p-4">
                       <p className="text-sm font-black text-slate-950">Objetivo</p>
@@ -133,6 +147,10 @@ export default function PracticalCasesPage() {
 
       <section className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 lg:grid-cols-[1fr_0.9fr] lg:px-8">
         <div className="article-body">
+          <h2>Qué diferencia un caso práctico de una galería</h2>
+          <p>
+            Una galería solo enseña piezas terminadas. Un caso práctico útil explica por qué se imprimió la pieza, qué material puede tener sentido, qué zonas conviene revisar y qué límite técnico no debe ignorarse. Por eso cada ejemplo incluye objetivo, revisión, aprendizaje y puntos críticos.
+          </p>
           <h2>Cómo valorar si una pieza es buena candidata para FDM</h2>
           <p>
             Una pieza es buena candidata cuando su función se puede validar con el material disponible, sus tolerancias no son imposibles para la impresora y la orientación de impresión no debilita las zonas importantes. También ayuda que el modelo tenga espesores coherentes, radios en esquinas y superficies pensadas para el acabado real del proceso.

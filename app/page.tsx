@@ -61,6 +61,9 @@ export default function HomePage() {
               <Link className="rounded-md border border-slate-300 bg-white px-5 py-3 text-sm font-black text-slate-800 hover:border-blue-300 hover:text-blue-700" href="/recursos">
                 Ver recursos
               </Link>
+              <Link className="rounded-md border border-slate-300 bg-white px-5 py-3 text-sm font-black text-slate-800 hover:border-blue-300 hover:text-blue-700" href="/guia-impresion-3d-fdm">
+                Guía FDM
+              </Link>
               <Link className="rounded-md border border-slate-300 bg-white px-5 py-3 text-sm font-black text-slate-800 hover:border-blue-300 hover:text-blue-700" href="/servicios">
                 Servicios técnicos
               </Link>

@@ -11,6 +11,7 @@ export const metadata: Metadata = createPageMetadata({
 });
 
 const guideGroups = [
+  { title: "Guía completa de impresión 3D FDM", href: "/guia-impresion-3d-fdm" },
   { title: "Creo Parametric", href: "/categorias/creo-parametric" },
   { title: "SolidWorks", href: "/categorias/solidworks" },
   { title: "Impresión 3D", href: "/categorias/impresion-3d" },

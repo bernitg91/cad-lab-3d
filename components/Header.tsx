@@ -5,6 +5,7 @@ const navItems = [
   { href: "/blog", label: "Blog" },
   { href: "/categorias", label: "Categorías" },
   { href: "/guias", label: "Guías" },
+  { href: "/guia-impresion-3d-fdm", label: "Guía FDM" },
   { href: "/recursos", label: "Recursos" },
   { href: "/casos-practicos-impresion-3d", label: "Casos" },
   { href: "/servicios", label: "Servicios" },

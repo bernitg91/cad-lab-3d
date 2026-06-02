@@ -28,6 +28,7 @@ export function Footer() {
           <p className="font-bold text-white">Proyecto</p>
           <ul className="mt-3 grid gap-2 text-sm text-slate-400">
             <li><Link className="hover:text-white" href="/guias">Guías</Link></li>
+            <li><Link className="hover:text-white" href="/guia-impresion-3d-fdm">Guía impresión 3D FDM</Link></li>
             <li><Link className="hover:text-white" href="/recursos">Recursos</Link></li>
             <li><Link className="hover:text-white" href="/casos-practicos-impresion-3d">Casos prácticos</Link></li>
             <li><Link className="hover:text-white" href="/glosario">Glosario técnico</Link></li>
