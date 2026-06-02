@@ -58,33 +58,26 @@ Un buen primer ejercicio en Creo no es una pieza espectacular, sino una pieza qu
 
 ## Criterios de revisión
 
-Antes de dar por bueno el trabajo, revisa estos puntos:
+Para aplicar bien esta guía sobre **empezar en Creo Parametric desde cero**, utiliza esta revisión:
 
-- Mantén croquis completamente definidos y referencias estables.
-- Ordena el árbol para que la intención de diseño se entienda al modificar la pieza.
-- Deja redondeos y chaflanes al final siempre que no formen parte de la función principal.
-- Nombra operaciones clave cuando el modelo vaya a revisarse semanas después.
+- Mantén croquis definidos, referencias estables y operaciones con intención clara.
+- Comprueba que el modelo se puede modificar sin romper relaciones importantes.
+- Nombra operaciones o parámetros cuando ayuden a entender el archivo.
+- Prepara una pieza sencilla, un ensamblaje básico y un plano antes de pasar a modelos complejos.
 
-### Señal de que vas por buen camino
+## Aplicación práctica
 
-El resultado empieza a ser fiable cuando puedes explicar qué decisión tomaste, qué alternativa descartaste y qué dato usarías para repetir o mejorar el proyecto. Si solo tienes una captura final o una pieza impresa sin parámetros, todavía falta documentación técnica.
+Practica con una pieza pequeña que tenga extrusión, corte, redondeo, patrón y una cota modificable. Cambia una dimensión principal y revisa si el modelo conserva la intención de diseño.
 
-## Rutina de práctica
+### Registro recomendado
 
-1. Modela una pieza pequeña con croquis completamente definidos.
-2. Cambia dos cotas principales y observa si el árbol se mantiene estable.
-3. Crea un plano simple con vistas y cotas funcionales.
-4. Rehaz la misma pieza una semana después intentando usar menos operaciones y mejores referencias.
-
-### Evidencias que conviene guardar
-
-El aprendizaje real aparece cuando puedes modificar el modelo sin reconstruirlo desde cero. Guarda versiones y compara cómo mejora el árbol entre ejercicios.
+Guarda solo evidencias útiles: capturas, medidas, parámetros, fotos del prototipo o notas de descarte. El objetivo es que otra persona pueda entender qué decisión se tomó y qué habría que revisar en la siguiente versión.
 
 ## Límites y siguiente paso
 
-No intentes aprender todo el programa de golpe. Si una pieza se rompe al modificarla, no lo veas como fracaso: es una señal de que debes revisar referencias, orden del árbol y dependencia entre operaciones.
+Aprender comandos aislados no basta para modelar bien. Lo importante es construir modelos que puedan cambiar, documentarse y explicarse dentro de un proyecto técnico.
 
-Para ampliar el tema, revisa también [guía de Creo Parametric](/categorias/creo-parametric), [guías por tema](/guias), [recursos técnicos](/recursos). Ese enlazado ayuda a conectar decisiones de CAD, material, fabricación y documentación en un flujo de trabajo más completo.
+Para continuar, consulta también [guías por tema](/guias), [documentación de proyectos CAD](/blog/documentar-proyecto-diseno-industrial) y [recursos técnicos](/recursos).
 
 ## Conclusión
 

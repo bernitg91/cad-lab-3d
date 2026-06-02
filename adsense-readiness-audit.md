@@ -1,6 +1,6 @@
 # Revisión de preparación para AdSense
 
-Fecha de revisión: 23 de mayo de 2026
+Fecha de revisión: 2 de junio de 2026
 
 ## Contexto
 
@@ -15,7 +15,7 @@ Esta revisión no garantiza la aprobación. La decisión final depende de Google
 - Se añadió una página de casos prácticos con análisis técnico: `/casos-practicos-impresion-3d`.
 - Se añadió un glosario técnico de CAD, FDM, materiales, FEM y documentación: `/glosario`.
 - Se añadió una página de preguntas frecuentes con datos estructurados FAQPage: `/preguntas-frecuentes`.
-- Se reforzó la home con herramientas propias, últimos artículos, casos reales y señales de calidad editorial.
+- Se ajustó la home para que no muestre contadores artificiales ni frases orientadas a justificar monetización.
 - Se configuró el correo de contacto público: `bbernat.torres@gmail.com`.
 - El formulario de contacto ya no simula un envío; prepara un correo real mediante `mailto`.
 - Se retiraron placeholders de anuncios para evitar bloques vacíos o elementos que parezcan publicidad activa.
@@ -23,11 +23,22 @@ Esta revisión no garantiza la aprobación. La decisión final depende de Google
 - Se reforzaron las páginas legales con referencias a cookies, proveedores externos, Google AdSense, consentimiento y revisión legal futura.
 - Se limpiaron frases públicas que sonaban a recursos pendientes o incompletos.
 - Se añadió la nueva ruta a navegación, footer, recursos, servicios y sitemap.
+- Se añadieron descargas reales en texto para plantillas y checklists dentro de `/recursos`.
+- Se reforzaron `/contacto`, `/servicios`, `/categorias` y `/sobre-mi` para evitar páginas demasiado cortas.
+- Se reescribieron bloques repetidos en los 42 artículos para reducir señales de contenido generado en serie.
+- Se eliminaron de páginas visibles las referencias comerciales innecesarias a afiliación futura.
+
+## Criterios consultados
+
+- Google AdSense exige contenido propio, original, de calidad y atractivo para una audiencia concreta.
+- Google recomienda revisar si las páginas ofrecen algo especial, navegación clara y contenido interesante o exclusivo.
+- La documentación de Google Search sobre contenido útil prioriza contenido fiable, centrado en personas y basado en conocimiento o experiencia real.
+- En comparación con servicios de impresión 3D ya publicados en España, las páginas fuertes muestran proceso, materiales, ejemplos, FAQ, forma de pedir presupuesto y límites claros del servicio.
 
 ## Comprobaciones técnicas
 
 - Artículos publicados: 42.
-- Longitud mínima de artículo detectada: 483 palabras.
+- Longitud mínima de artículo detectada: 624 palabras.
 - Todos los artículos tienen frontmatter obligatorio.
 - No hay slugs duplicados.
 - Todos los artículos incluyen "Resumen rápido".
@@ -39,14 +50,18 @@ Esta revisión no garantiza la aprobación. La decisión final depende de Google
 - `sitemap.xml` incluye páginas principales, categorías y artículos.
 - Build de producción ejecutado correctamente.
 - Rutas principales comprobadas en servidor local: todas respondieron `200`.
+- Descargas principales comprobadas en servidor local: responden `200`.
 - Páginas principales comprobadas con un único `H1`, canonical y Open Graph.
 - Página `/impresion-3d-personalizada` comprobada visualmente: imágenes cargan, email visible y sin errores de consola.
 - Nuevas rutas añadidas al sitemap y enlazadas desde home, recursos, guías, footer o navegación principal.
+- Auditoría de enlaces internos en código y Markdown: sin rutas rotas detectadas.
 
 ## Riesgos reducidos
 
 - Páginas vacías o meramente "próximamente".
 - Recursos simulados sin utilidad real.
+- Textos repetidos en artículos que podían parecer contenido de baja diferenciación.
+- Páginas visibles que hablaban de afiliados o monetización en vez de utilidad técnica.
 - Formularios que prometen envíos inexistentes.
 - Bloques de anuncios engañosos o invasivos.
 - Falta de página de contacto clara.

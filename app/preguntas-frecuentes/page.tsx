@@ -41,9 +41,9 @@ const faqs = [
       "No. No se aceptan piezas destinadas a usos peligrosos, armas, elementos de seguridad crítica o componentes que requieran certificación. Las piezas FDM tienen límites y deben usarse con criterio."
   },
   {
-    question: "¿Hay enlaces de afiliado?",
+    question: "¿Cómo se decide si una guía está completa?",
     answer:
-      "Actualmente no hay enlaces de afiliado activos. Si se incorporan en el futuro, se marcarán de forma visible y se mantendrán criterios de recomendación claros."
+      "Una guía se considera completa cuando explica el problema, muestra criterios de decisión, incluye errores frecuentes, enlaza recursos relacionados y deja una recomendación práctica que se puede aplicar sin depender de una explicación externa."
   },
   {
     question: "¿Cómo se actualizan los artículos?",

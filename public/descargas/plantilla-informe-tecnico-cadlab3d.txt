@@ -1,0 +1,41 @@
+PLANTILLA DE INFORME TECNICO - CAD LAB 3D
+
+1. Titulo del proyecto
+- Nombre de la pieza, producto o sistema.
+- Autor, asignatura o contexto del trabajo.
+- Fecha y version del documento.
+
+2. Objetivo
+- Que problema se quiere resolver.
+- Que resultado se espera obtener.
+- Que limitaciones existen: tiempo, material, impresora, software o presupuesto.
+
+3. Requisitos
+- Funcion principal.
+- Dimensiones importantes.
+- Material previsto.
+- Tolerancias o zonas de montaje.
+- Condiciones de uso: interior, exterior, temperatura, carga o manipulacion.
+
+4. Metodologia
+- Software CAD utilizado.
+- Proceso de modelado.
+- Versiones o alternativas estudiadas.
+- Parametros de impresion o fabricacion si aplica.
+
+5. Resultados
+- Imagen general del modelo.
+- Detalles de uniones, encajes, soportes o zonas criticas.
+- Tabla de material, peso, tiempo de impresion y coste estimado.
+- Problemas encontrados y cambios realizados.
+
+6. Conclusiones
+- Que decisiones funcionaron.
+- Que limitaciones quedan abiertas.
+- Que se cambiaria en una siguiente version.
+
+7. Anexos
+- Planos.
+- Capturas del laminador.
+- Fotografias del prototipo.
+- Tabla de parametros y versiones.

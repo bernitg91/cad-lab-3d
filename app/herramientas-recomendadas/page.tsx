@@ -56,7 +56,7 @@ export default function RecommendedToolsPage() {
       <div className="article-body mt-8 max-w-3xl">
         <h2>Cómo elegir sin comprar por impulso</h2>
         <p>
-          Esta página no publica enlaces comerciales activos. Su objetivo es ordenar criterios antes de invertir dinero o tiempo en una herramienta. Para CAD Lab 3D, una herramienta recomendable no es la más conocida, sino la que encaja con el proyecto, se puede aprender con documentación suficiente y permite repetir resultados.
+          Antes de comprar software, material o equipo, conviene separar necesidad real, presupuesto, mantenimiento y compatibilidad. Una herramienta recomendable no es la más conocida, sino la que encaja con el proyecto, se puede aprender con documentación suficiente y permite repetir resultados.
         </p>
       </div>
       <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -74,14 +74,14 @@ export default function RecommendedToolsPage() {
                 </li>
               ))}
             </ul>
-            <p className="mt-4 rounded-md bg-slate-50 px-3 py-2 text-xs font-semibold text-slate-500">Sin enlaces comerciales activos. Las recomendaciones afiliadas se marcarán de forma transparente si se incorporan.</p>
+            <p className="mt-4 rounded-md bg-slate-50 px-3 py-2 text-xs font-semibold text-slate-500">Criterio principal: que la herramienta ayude a trabajar con más precisión, menos pruebas fallidas y mejor documentación.</p>
           </article>
         ))}
       </div>
       <section className="article-body mt-10 rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
         <h2>Checklist antes de recomendar una herramienta</h2>
         <p>
-          Antes de recomendar software, material o equipo, conviene responder: qué problema resuelve, qué limitaciones tiene, cuánto cuesta mantenerlo, qué formatos acepta, qué aprendizaje exige y qué alternativas gratuitas o más simples existen. Esta revisión evita llenar la web de listas comerciales sin valor práctico.
+          Antes de elegir software, material o equipo, responde: qué problema resuelve, qué limitaciones tiene, cuánto cuesta mantenerlo, qué formatos acepta, qué aprendizaje exige y qué alternativas gratuitas o más simples existen. Esta revisión evita decisiones impulsivas y ayuda a explicar la compra dentro de un proyecto técnico.
         </p>
         <h3>Cuándo una herramienta no merece aparecer</h3>
         <p>

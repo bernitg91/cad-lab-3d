@@ -1,0 +1,32 @@
+CHECKLIST DE IMPRESION 3D FDM - CAD LAB 3D
+
+Archivo
+[ ] El STL/STEP corresponde a la ultima version.
+[ ] Las unidades estan revisadas.
+[ ] La escala coincide con las medidas esperadas.
+[ ] La geometria no tiene huecos, caras invertidas ni cuerpos sueltos.
+
+Diseño
+[ ] Espesores compatibles con la boquilla.
+[ ] Radios o chaflanes en zonas fragiles.
+[ ] Holguras previstas para encajes.
+[ ] Zonas funcionales protegidas de soportes innecesarios.
+
+Laminador
+[ ] Material correcto seleccionado.
+[ ] Altura de capa adecuada al uso.
+[ ] Paredes, tapas y relleno revisados.
+[ ] Soportes comprobados capa a capa.
+[ ] Tiempo, peso y coste aproximado registrados.
+
+Impresora
+[ ] Cama limpia y nivelada.
+[ ] Filamento seco y cargado correctamente.
+[ ] Temperaturas coherentes con el material.
+[ ] Primera capa observada antes de dejar la impresion.
+
+Control final
+[ ] Medidas criticas comprobadas.
+[ ] Superficie y capas revisadas.
+[ ] Encajes probados sin forzar.
+[ ] Cambios anotados para repetir o mejorar la pieza.

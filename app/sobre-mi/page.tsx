@@ -24,7 +24,7 @@ export default function AboutPage() {
           El objetivo es crear una biblioteca práctica de contenidos que ayude a pasar de una idea o entrega académica a un resultado más claro, fabricable y defendible.
         </p>
         <p>
-          No se publican datos personales concretos porque el proyecto está planteado como una marca editorial técnica. El foco está en el método: explicar decisiones, documentar pruebas, comparar materiales y convertir errores habituales en guías reutilizables.
+          El foco está en el método: explicar decisiones, documentar pruebas, comparar materiales y convertir errores habituales en guías reutilizables. Las recomendaciones se redactan como orientación técnica y se revisan cuando hace falta añadir límites, ejemplos o correcciones.
         </p>
       </div>
       <div className="mt-10 grid gap-5 md:grid-cols-2">
@@ -45,7 +45,7 @@ export default function AboutPage() {
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
             <a className="rounded-md bg-teal-500 px-4 py-2 text-sm font-black text-slate-950 hover:bg-teal-300" href="/guias">Ver guías</a>
-            <a className="rounded-md border border-white/20 px-4 py-2 text-sm font-bold text-white hover:bg-white/10" href="/casos-practicos-impresion-3d">Casos reales</a>
+            <a className="rounded-md border border-white/20 px-4 py-2 text-sm font-bold text-white hover:bg-white/10" href="/casos-practicos-impresion-3d">Casos prácticos</a>
             <a className="rounded-md border border-white/20 px-4 py-2 text-sm font-bold text-white hover:bg-white/10" href="/contacto">Contacto</a>
           </div>
         </section>

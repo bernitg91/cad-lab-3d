@@ -55,33 +55,26 @@ Una memoria técnica mejora mucho cuando registra decisiones, no solo resultados
 
 ## Criterios de revisión
 
-Antes de dar por bueno el trabajo, revisa estos puntos:
+Para aplicar bien esta guía sobre **documentar un proyecto de diseño industrial**, utiliza esta revisión:
 
-- Explica objetivo, requisitos, método, decisiones, resultados y limitaciones.
-- Incluye evidencia visual: croquis, CAD, planos, capturas del laminador, prototipos o tablas.
-- No presentes solo el resultado final; muestra por qué descartaste alternativas.
-- Cierra cada apartado con una conclusión técnica breve, no con texto decorativo.
+- Comprueba que objetivo, requisitos, método, resultados y conclusiones se entienden sin explicación oral.
+- Cada imagen debe aportar una evidencia: CAD, plano, prueba, render, tabla o prototipo.
+- Evita llenar la memoria con capturas bonitas si no explican una decisión.
+- Cierra cada apartado con una conclusión técnica breve.
 
-### Señal de que vas por buen camino
+## Aplicación práctica
 
-El resultado empieza a ser fiable cuando puedes explicar qué decisión tomaste, qué alternativa descartaste y qué dato usarías para repetir o mejorar el proyecto. Si solo tienes una captura final o una pieza impresa sin parámetros, todavía falta documentación técnica.
+Elige una entrega concreta y revisa si cada apartado responde a una pregunta útil: qué se buscaba, cómo se hizo, qué se obtuvo y qué limitación queda abierta. Si una imagen no ayuda a responder eso, cambia la imagen o añade contexto.
 
-## Cómo convertirlo en una entrega sólida
+### Registro recomendado
 
-1. Empieza por una estructura clara: objetivo, requisitos, método, desarrollo, resultados y conclusiones.
-2. Relaciona cada decisión con un requisito o una limitación técnica.
-3. Incluye imágenes que demuestren proceso, no solo estética: CAD, planos, pruebas, tablas o prototipos.
-4. Revisa que el texto pueda entenderse sin que tú estés delante explicándolo.
-
-### Evidencias que conviene guardar
-
-La señal de una buena entrega es que otra persona pueda repetir el razonamiento: qué problema había, qué solución se propuso, cómo se validó y qué límites siguen abiertos.
+Guarda solo evidencias útiles: capturas, medidas, parámetros, fotos del prototipo o notas de descarte. El objetivo es que otra persona pueda entender qué decisión se tomó y qué habría que revisar en la siguiente versión.
 
 ## Límites y siguiente paso
 
-Una estructura de informe no sustituye el criterio técnico. Si una asignatura pide un formato concreto, respétalo primero y adapta estas pautas después. Lo importante es que el documento explique decisiones, resultados y límites con claridad.
+Estas pautas no sustituyen el formato de una asignatura. Si el profesor pide una estructura concreta, úsala primero y adapta estas recomendaciones para reforzar claridad, trazabilidad y lectura técnica.
 
-Para ampliar el tema, revisa también [recursos técnicos](/recursos), [guías por tema](/guias), [contacto](/contacto). Ese enlazado ayuda a conectar decisiones de CAD, material, fabricación y documentación en un flujo de trabajo más completo.
+Para continuar, consulta también [recursos técnicos](/recursos), [guías por tema](/guias) y [metodología editorial](/metodologia).
 
 ## Conclusión
 

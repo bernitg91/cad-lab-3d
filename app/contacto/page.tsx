@@ -24,6 +24,15 @@ export default function ContactPage() {
           <p className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm">Dudas sobre contenido, recursos, colaboraciones o propuestas de artículos.</p>
           <p className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm">Documentación, renders y optimización para impresión 3D.</p>
         </div>
+        <section className="article-body mt-8 rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
+          <h2>Qué incluir en el mensaje</h2>
+          <p>
+            Para valorar una pieza o una revisión técnica, conviene enviar el objetivo, el uso previsto, dimensiones aproximadas, cantidad, material deseado y archivos disponibles. Si no tienes modelo, puedes describir la idea con un croquis, una foto de referencia o una lista de medidas.
+          </p>
+          <p>
+            No se aceptan encargos relacionados con armas, usos peligrosos, piezas de seguridad crítica o componentes que requieran certificación. Las consultas deben centrarse en prototipos, soportes, carcasas, organización, piezas funcionales no críticas y documentación técnica.
+          </p>
+        </section>
       </div>
       <ContactForm contactEmail={siteConfig.contactEmail} />
     </section>

@@ -36,6 +36,12 @@ export default function CategoriesPage() {
       <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-600">
         Accede a cada área del blog y encuentra contenido organizado por herramientas, materiales y procesos de trabajo.
       </p>
+      <div className="article-body mt-8 max-w-3xl">
+        <h2>Cómo usar las categorías</h2>
+        <p>
+          Las categorías no son solo etiquetas. Están pensadas como rutas de aprendizaje: primero entender el problema, después elegir material o herramienta, revisar el diseño y terminar documentando el resultado. Si estás preparando una pieza FDM, empieza por impresión 3D y materiales. Si estás preparando una entrega universitaria, combina proyectos universitarios, diseño industrial y recursos.
+        </p>
+      </div>
       <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {categories.map((category) => {
           const count = articles.filter((article) => article.categorySlug === category.slug).length;

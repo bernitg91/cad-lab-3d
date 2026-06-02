@@ -59,33 +59,26 @@ Para un soporte de pared, el filamento no se elige igual que para una figura. De
 
 ## Criterios de revisión
 
-Antes de dar por bueno el trabajo, revisa estos puntos:
+Para aplicar bien esta guía sobre **elegir el mejor filamento para piezas funcionales**, utiliza esta revisión:
 
-- No elijas material solo por resistencia teórica: revisa temperatura, humedad, rigidez, impacto y facilidad de impresión.
-- Guarda muestras impresas con la misma geometría para comparar comportamiento real.
-- Documenta proveedor, color, lote y condiciones de secado cuando el material sea sensible.
-- Relaciona cada material con un uso concreto, no con una lista genérica de ventajas.
+- Empieza por la función de la pieza, no por el material que tienes cargado en la impresora.
+- Comprueba temperatura de uso, rigidez necesaria, exposición exterior, flexibilidad y riesgo de impacto.
+- Si el montaje exige encaje o rosca, revisa tolerancias con el material real.
+- Registra por qué elegiste una opción y qué limitación queda pendiente de prueba.
 
-### Señal de que vas por buen camino
+## Aplicación práctica
 
-El resultado empieza a ser fiable cuando puedes explicar qué decisión tomaste, qué alternativa descartaste y qué dato usarías para repetir o mejorar el proyecto. Si solo tienes una captura final o una pieza impresa sin parámetros, todavía falta documentación técnica.
+Aplica la decisión a una pieza concreta y compara dos materiales razonables. Anota qué cambia en impresión, acabado, tolerancia, coste y riesgo de fallo. La elección mejora cuando puedes justificar por qué descartas otra opción.
 
-## Cómo validar la elección del material
+### Registro recomendado
 
-1. Define el entorno de uso: interior, exterior, temperatura, humedad, carga, impactos y contacto con otras piezas.
-2. Elige dos materiales candidatos y compáralos con una pieza de prueba pequeña, no solo con fichas comerciales.
-3. Ajusta parámetros de impresión para cada material; no uses el mismo perfil para todos.
-4. Revisa el resultado después de unas horas o días de uso si la pieza va a trabajar en condiciones reales.
-
-### Evidencias que conviene guardar
-
-Anota proveedor, temperatura, ventilación, cama, secado, velocidad y observaciones. Con materiales técnicos, esos datos importan tanto como el nombre del polímero.
+Guarda solo evidencias útiles: capturas, medidas, parámetros, fotos del prototipo o notas de descarte. El objetivo es que otra persona pueda entender qué decisión se tomó y qué habría que revisar en la siguiente versión.
 
 ## Límites y siguiente paso
 
-Los rangos de comportamiento son orientativos. Dos filamentos del mismo material pueden cambiar por aditivos, humedad, color, marca o almacenamiento. Si la pieza va a trabajar con carga, calor o exterior, valida con una muestra y no con una ficha genérica.
+Las fichas de material dan una orientación, pero el comportamiento final depende del fabricante, secado, parámetros, geometría y uso real de la pieza. En piezas exigentes, la prueba física manda sobre la teoría.
 
-Para ampliar el tema, revisa también [selector de material FDM](/selector-material-impresion-3d), [guía de materiales](/categorias/materiales), [calculadora de peso de pieza 3D](/calculadora-peso-pieza-3d). Ese enlazado ayuda a conectar decisiones de CAD, material, fabricación y documentación en un flujo de trabajo más completo.
+Para continuar, consulta también [guía de materiales](/blog/diferencias-pla-petg-abs-nylon), [selector de material FDM](/selector-material-impresion-3d) y [recursos técnicos](/recursos).
 
 ## Conclusión
 

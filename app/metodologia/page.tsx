@@ -26,8 +26,8 @@ const criteria = [
     text: "Cuando se muestran servicios o ejemplos de impresión 3D, se usan piezas reales y se explica qué se aprende de ellas sin inventar ensayos ni testimonios."
   },
   {
-    title: "Transparencia comercial",
-    text: "Los contenidos no incluyen enlaces de afiliado activos ni anuncios manuales integrados en los artículos. Si se añaden en el futuro, se marcarán de forma visible."
+    title: "Revisión editorial",
+    text: "Se corrigen repeticiones, enlaces rotos, explicaciones vagas y ejemplos que no aportan una decisión técnica clara."
   }
 ];
 
@@ -60,9 +60,9 @@ export default function MethodologyPage() {
         </p>
         <h2>Actualización y mejora</h2>
         <p>
-          El contenido se revisa cuando se detectan errores, cuando cambia una herramienta o cuando una guía necesita más ejemplos. Las páginas de herramientas y recursos se diseñan para crecer sin publicar enlaces comerciales ficticios ni descargas vacías.
+          El contenido se revisa cuando se detectan errores, cuando cambia una herramienta o cuando una guía necesita más ejemplos. Las páginas de herramientas y recursos se mantienen con enlaces funcionales, explicaciones completas y rutas claras hacia guías relacionadas.
         </p>
-        <h2>Uso de ejemplos reales</h2>
+        <h2>Uso de ejemplos prácticos</h2>
         <p>
           Las páginas de servicios y casos prácticos muestran piezas impresas reales para aportar contexto técnico. Las descripciones se mantienen prudentes: explican objetivo, revisión y aprendizaje, pero no prometen resistencias, certificaciones o resultados que no se hayan validado.
         </p>

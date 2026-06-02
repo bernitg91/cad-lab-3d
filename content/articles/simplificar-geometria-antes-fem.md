@@ -44,33 +44,26 @@ Eliminar un redondeo pequeño puede acelerar el mallado, pero eliminar un radio 
 
 ## Criterios de revisión
 
-Antes de dar por bueno el trabajo, revisa estos puntos:
+Para aplicar bien esta guía sobre **simplificar geometría antes de un FEM**, utiliza esta revisión:
 
-- Define hipótesis, material, restricciones, cargas y unidades antes de interpretar colores.
-- Simplifica la geometría solo cuando no cambie el comportamiento que quieres estudiar.
-- Comprueba reacciones, deformadas y concentración de tensiones antes de aceptar el resultado.
-- Documenta límites del modelo para no vender el FEM como una verdad absoluta.
+- Documenta hipótesis, cargas, restricciones, material y simplificaciones antes de mirar colores del resultado.
+- Comprueba si la malla captura la zona importante sin gastar tiempo en detalles decorativos.
+- Distingue deformación exagerada, tensión máxima local y tendencia global de comportamiento.
+- No presentes un FEM como validación absoluta si no hay ensayo o contraste.
 
-### Señal de que vas por buen camino
+## Aplicación práctica
 
-El resultado empieza a ser fiable cuando puedes explicar qué decisión tomaste, qué alternativa descartaste y qué dato usarías para repetir o mejorar el proyecto. Si solo tienes una captura final o una pieza impresa sin parámetros, todavía falta documentación técnica.
+Aplica el análisis a una pregunta concreta: dónde se concentra tensión, qué geometría conviene comparar o qué zona necesita refuerzo. Si el FEM no responde a una decisión, probablemente está sobrando en la memoria.
 
-## Flujo mínimo para no sobrerrepresentar el FEM
+### Registro recomendado
 
-1. Define qué pregunta quieres responder antes de crear el estudio.
-2. Simplifica la geometría con criterio y documenta qué detalles has eliminado.
-3. Aplica material, cargas y restricciones de forma coherente con el caso real.
-4. Interpreta deformada, tensiones y reacciones junto con las hipótesis, no como una imagen aislada.
-
-### Evidencias que conviene guardar
-
-Incluye capturas de condiciones de contorno, malla, deformada y tabla de resultados. Si una zona concentra tensión por una arista idealizada, indícalo para evitar conclusiones exageradas.
+Guarda solo evidencias útiles: capturas, medidas, parámetros, fotos del prototipo o notas de descarte. El objetivo es que otra persona pueda entender qué decisión se tomó y qué habría que revisar en la siguiente versión.
 
 ## Límites y siguiente paso
 
-Un FEM básico no valida por sí solo una pieza crítica. Si hay seguridad, cargas reales complejas, fatiga, temperatura, impacto o normativa, hace falta una revisión técnica más profunda y, cuando proceda, ensayos físicos.
+Un análisis básico depende de supuestos. Cambiar restricciones, cargas, contacto o material puede modificar mucho el resultado. Para piezas críticas, el FEM debe acompañarse de validación y revisión especializada.
 
-Para ampliar el tema, revisa también [guía de simulación FEM](/categorias/simulacion-fem), [documentación técnica](/categorias/proyectos-universitarios), [servicios de apoyo CAD](/servicios). Ese enlazado ayuda a conectar decisiones de CAD, material, fabricación y documentación en un flujo de trabajo más completo.
+Para continuar, consulta también [guías de simulación FEM](/guias), [documentación técnica](/blog/documentar-analisis-fem-basico) y [recursos técnicos](/recursos).
 
 ## Conclusión
 

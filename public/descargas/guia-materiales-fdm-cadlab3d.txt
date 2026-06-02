@@ -1,0 +1,38 @@
+GUIA RAPIDA DE MATERIALES FDM - CAD LAB 3D
+
+PLA
+- Uso habitual: prototipos, piezas visuales, soportes sencillos.
+- Ventaja: facil de imprimir.
+- Limite: baja resistencia termica.
+
+PETG
+- Uso habitual: piezas funcionales no criticas, soportes, carcasas.
+- Ventaja: mejor resistencia y tenacidad que PLA en muchos usos.
+- Limite: puede generar hilos y requiere ajuste fino.
+
+TPU
+- Uso habitual: piezas flexibles, protectores, apoyos, juntas simples.
+- Ventaja: flexibilidad.
+- Limite: impresion lenta y mas exigente.
+
+ABS
+- Uso habitual: piezas tecnicas con necesidad de temperatura moderada.
+- Ventaja: resistencia termica superior a PLA.
+- Limite: warping, olor y necesidad de entorno controlado.
+
+ASA
+- Uso habitual: exterior, piezas expuestas a luz solar y temperatura.
+- Ventaja: mejor comportamiento exterior que ABS.
+- Limite: requiere control de temperatura y ventilacion.
+
+Nylon
+- Uso habitual: piezas tecnicas resistentes y sometidas a desgaste.
+- Ventaja: tenacidad.
+- Limite: absorbe humedad y exige secado.
+
+Decision practica
+1. Si es visual o maqueta: PLA.
+2. Si necesita algo mas funcional: PETG.
+3. Si debe flexar: TPU.
+4. Si estara en exterior: ASA.
+5. Si exige tenacidad y se puede controlar humedad: Nylon.

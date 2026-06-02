@@ -44,33 +44,26 @@ Cuando compartes un STEP, la otra persona no recibe tu árbol paramétrico compl
 
 ## Criterios de revisión
 
-Antes de dar por bueno el trabajo, revisa estos puntos:
+Para aplicar bien esta guía sobre **preparar un archivo STEP para compartir CAD**, utiliza esta revisión:
 
-- Convierte la lista en una comprobación real antes de entregar o fabricar.
-- Añade fecha, versión y responsable de revisión cuando trabajes en equipo.
-- Guarda capturas o notas del resultado para mejorar la checklist en el siguiente proyecto.
-- No uses una plantilla sin adaptarla al alcance y al nivel técnico del trabajo.
+- Comprueba nombre de archivo, versión, unidades, escala y formato antes de compartir.
+- Incluye capturas o notas suficientes para entender por qué se exportó así.
+- Evita mezclar archivos finales con versiones de prueba sin identificarlas.
+- Guarda una copia del CAD original aunque entregues STL, STEP o PDF.
 
-### Señal de que vas por buen camino
+## Aplicación práctica
 
-El resultado empieza a ser fiable cuando puedes explicar qué decisión tomaste, qué alternativa descartaste y qué dato usarías para repetir o mejorar el proyecto. Si solo tienes una captura final o una pieza impresa sin parámetros, todavía falta documentación técnica.
+Usa una carpeta de proyecto con subcarpetas para CAD, exportaciones, capturas, planos y pruebas. La revisión es más rápida cuando cada archivo tiene nombre, fecha y propósito claro.
 
-## Cómo usar esta guía sin convertirla en una lista vacía
+### Registro recomendado
 
-1. Adapta cada punto al proyecto real y elimina lo que no aplique.
-2. Marca los puntos revisados con fecha o versión del archivo.
-3. Añade observaciones cuando un punto falle; ahí está el aprendizaje.
-4. Guarda la checklist junto al informe, portfolio o carpeta de fabricación.
-
-### Evidencias que conviene guardar
-
-Una checklist útil deja rastro: versión revisada, decisión tomada y siguiente acción. Si solo se marca todo sin pensar, no aporta valor.
+Guarda solo evidencias útiles: capturas, medidas, parámetros, fotos del prototipo o notas de descarte. El objetivo es que otra persona pueda entender qué decisión se tomó y qué habría que revisar en la siguiente versión.
 
 ## Límites y siguiente paso
 
-Una plantilla o checklist no garantiza calidad por sí sola. Debe adaptarse al proyecto, revisarse con evidencias y actualizarse cuando aparezcan errores. El valor está en cómo se usa, no en marcar puntos de forma automática.
+Una plantilla o checklist no garantiza calidad por sí sola. Tiene valor cuando se adapta al proyecto, se marca con evidencias y se actualiza después de detectar fallos.
 
-Para ampliar el tema, revisa también [recursos técnicos](/recursos), [guías por tema](/guias), [checklist interactiva de impresión 3D](/checklist-impresion-3d). Ese enlazado ayuda a conectar decisiones de CAD, material, fabricación y documentación en un flujo de trabajo más completo.
+Para continuar, consulta también [recursos técnicos](/recursos), [glosario](/glosario) y [guías por tema](/guias).
 
 ## Conclusión
 

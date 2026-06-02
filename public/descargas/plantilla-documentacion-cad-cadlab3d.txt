@@ -1,0 +1,42 @@
+PLANTILLA PARA DOCUMENTAR UN PROYECTO CAD - CAD LAB 3D
+
+Datos del proyecto
+- Nombre:
+- Objetivo:
+- Software:
+- Version del archivo:
+- Fecha:
+
+Requisitos de diseño
+- Funcion principal:
+- Medidas clave:
+- Material previsto:
+- Proceso de fabricacion:
+- Restricciones:
+
+Historial de versiones
+- V1: idea inicial y problemas detectados.
+- V2: cambios de geometria.
+- V3: revision de tolerancias, espesores o montaje.
+- Version final: cambios pendientes y limites.
+
+Capturas recomendadas
+- Vista general.
+- Croquis principal.
+- Arbol de operaciones o estructura del modelo.
+- Detalle de uniones, radios, encajes o nervios.
+- Plano o cotas clave.
+- Vista de laminador si se imprime.
+
+Decision tecnica
+- Que alternativa se eligio.
+- Por que se descarto otra opcion.
+- Que dato valida la decision.
+- Que prueba faltaria para confirmar el resultado.
+
+Entrega
+- CAD final.
+- STL o STEP.
+- Plano basico.
+- Capturas.
+- Notas de fabricacion.

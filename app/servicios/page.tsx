@@ -11,27 +11,33 @@ export const metadata: Metadata = createPageMetadata({
 const services = [
   {
     title: "Modelado CAD de piezas y conceptos",
-    href: "/servicios"
+    href: "/contacto",
+    text: "Piezas sencillas, soportes, carcasas, adaptadores y conceptos iniciales preparados con medidas claras y geometría ordenada."
   },
   {
     title: "Impresión 3D personalizada",
-    href: "/impresion-3d-personalizada"
+    href: "/impresion-3d-personalizada",
+    text: "Valoración de archivos STL o STEP, orientación de impresión, selección de material FDM y presupuesto por pieza o lote."
   },
   {
     title: "Optimización de piezas para impresión 3D",
-    href: "/impresion-3d-personalizada"
+    href: "/impresion-3d-personalizada",
+    text: "Revisión de espesores, radios, tolerancias, encajes, soportes y zonas débiles antes de fabricar."
   },
   {
     title: "Renders técnicos para portfolio o presentación",
-    href: "/servicios"
+    href: "/contacto",
+    text: "Vistas limpias, detalles de unión, materiales coherentes y composición visual para explicar el proyecto sin ocultar la pieza."
   },
   {
     title: "Documentación técnica de proyectos",
-    href: "/servicios"
+    href: "/contacto",
+    text: "Estructura de memoria, fichas técnicas, capturas CAD, planos básicos, criterios de revisión y explicación de decisiones."
   },
   {
     title: "Preparación de archivos para fabricación",
-    href: "/servicios"
+    href: "/contacto",
+    text: "Revisión de unidades, escala, formatos STL/STEP, versiones de archivo, geometría cerrada y requisitos mínimos de entrega."
   }
 ];
 
@@ -51,7 +57,7 @@ export default function ServicesPage() {
             <p className="text-xs font-black uppercase tracking-wide text-teal-700">Servicio</p>
             <h2 className="mt-2 text-xl font-black text-slate-950">{service.title}</h2>
             <p className="mt-3 text-sm leading-6 text-slate-600">
-              Enfoque práctico para estudiantes, prototipos y proyectos técnicos que necesitan archivos ordenados, criterios de fabricación y una presentación limpia.
+              {service.text}
             </p>
             <Link className="mt-4 inline-flex text-sm font-bold text-blue-700 hover:text-blue-900" href={service.href}>
               Ver detalle
@@ -72,6 +78,23 @@ export default function ServicesPage() {
             </div>
           ))}
         </div>
+      </section>
+      <section className="article-body mt-10 rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+        <h2>Alcance de los servicios</h2>
+        <p>
+          El trabajo se orienta a proyectos académicos, prototipos, piezas FDM no críticas, documentación técnica y preparación de archivos. Antes de presupuestar, se revisa si el objetivo es viable con impresión 3D FDM o si conviene ajustar geometría, material, orientación o tolerancias.
+        </p>
+        <h3>Información necesaria para valorar un encargo</h3>
+        <ul>
+          <li>Archivo STL, STEP o descripción con medidas si todavía no existe modelo.</li>
+          <li>Uso previsto de la pieza: visual, funcional, montaje, soporte, carcasa o maqueta.</li>
+          <li>Cantidad, plazo aproximado, color, material deseado y nivel de acabado esperado.</li>
+          <li>Restricciones importantes: temperatura, encaje, esfuerzos, exterior, desmontaje o mantenimiento.</li>
+        </ul>
+        <h3>Límites técnicos</h3>
+        <p>
+          No se prometen resistencias certificadas ni se aceptan piezas de seguridad crítica. En componentes sometidos a carga, calor o responsabilidad funcional, el resultado debe validarse con pruebas reales y criterios profesionales.
+        </p>
       </section>
       <div className="mt-10 rounded-lg bg-slate-950 p-6 text-white md:p-8">
         <h2 className="text-2xl font-black">¿Tienes una pieza, informe o portfolio que mejorar?</h2>

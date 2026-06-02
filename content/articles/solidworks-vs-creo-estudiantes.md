@@ -47,33 +47,26 @@ Si tu universidad usa Creo, aprenderlo bien te dará ventaja en asignaturas con 
 
 ## Criterios de revisión
 
-Antes de dar por bueno el trabajo, revisa estos puntos:
+Para aplicar bien esta guía sobre **SolidWorks vs Creo: cuál conviene más para estudiantes**, utiliza esta revisión:
 
-- Evita piezas dependientes de croquis frágiles o referencias improvisadas.
-- Comprueba ensamblajes con relaciones simples antes de añadir detalles.
-- Crea planos solo cuando el modelo esté suficientemente estable.
-- Documenta versiones si el archivo se comparte con compañeros o tutores.
+- Compara flujo de modelado, facilidad de cambio, documentación y compatibilidad con el entorno donde vas a trabajar.
+- No elijas software solo por popularidad; revisa qué se usa en tu asignatura, prácticas o proyecto.
+- Prepara ejemplos pequeños para probar árbol de operaciones, ensamblaje y plano.
+- Evita piezas dependientes de referencias improvisadas si vas a enseñarlas en portfolio.
 
-### Señal de que vas por buen camino
+## Aplicación práctica
 
-El resultado empieza a ser fiable cuando puedes explicar qué decisión tomaste, qué alternativa descartaste y qué dato usarías para repetir o mejorar el proyecto. Si solo tienes una captura final o una pieza impresa sin parámetros, todavía falta documentación técnica.
+Modela la misma pieza sencilla en dos flujos distintos y observa cuál se modifica mejor. Esa prueba enseña más que comparar listas de funciones sin contexto.
 
-## Rutina de práctica
+### Registro recomendado
 
-1. Empieza por piezas con intención clara: soporte, tapa, eje, carcasa o ensamblaje pequeño.
-2. Controla croquis y relaciones antes de añadir redondeos o detalles secundarios.
-3. Prueba cambios de dimensiones para detectar referencias débiles.
-4. Genera un plano o captura técnica para comunicar la pieza a otra persona.
-
-### Evidencias que conviene guardar
-
-Una pieza útil no solo se ve bien: se puede editar, medir, compartir y documentar. Esa diferencia se nota rápido en proyectos de equipo.
+Guarda solo evidencias útiles: capturas, medidas, parámetros, fotos del prototipo o notas de descarte. El objetivo es que otra persona pueda entender qué decisión se tomó y qué habría que revisar en la siguiente versión.
 
 ## Límites y siguiente paso
 
-La rapidez de modelado no debe ocultar errores de intención. Si el archivo se comparte o se usará para planos, dedica tiempo a relaciones estables, nombres claros y versiones controladas.
+La mejor herramienta depende del objetivo. Para aprender CAD, importa más entender referencias, cotas, operaciones, planos y cambios de diseño que memorizar una interfaz concreta.
 
-Para ampliar el tema, revisa también [guía de SolidWorks](/categorias/solidworks), [guías por tema](/guias), [recursos técnicos](/recursos). Ese enlazado ayuda a conectar decisiones de CAD, material, fabricación y documentación en un flujo de trabajo más completo.
+Para continuar, consulta también [guías por tema](/guias), [modelado paramétrico frente a directo](/blog/modelado-parametrico-vs-directo) y [recursos técnicos](/recursos).
 
 ## Conclusión
 
