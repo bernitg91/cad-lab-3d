@@ -15,6 +15,7 @@ export type ArticleMeta = {
   category: string;
   categorySlug: CategorySlug;
   date: string;
+  updatedDate?: string;
   readingTime: string;
   author: string;
   featured?: boolean;

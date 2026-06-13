@@ -1,32 +1,32 @@
-CHECKLIST DE IMPRESION 3D FDM - CAD LAB 3D
+CHECKLIST DE IMPRESIÓN 3D FDM - CAD LAB 3D
 
 Archivo
-[ ] El STL/STEP corresponde a la ultima version.
-[ ] Las unidades estan revisadas.
+[ ] El STL o STEP corresponde a la última versión.
+[ ] Las unidades están revisadas.
 [ ] La escala coincide con las medidas esperadas.
-[ ] La geometria no tiene huecos, caras invertidas ni cuerpos sueltos.
+[ ] La geometría no tiene huecos, caras invertidas ni cuerpos sueltos.
 
 Diseño
-[ ] Espesores compatibles con la boquilla.
-[ ] Radios o chaflanes en zonas fragiles.
-[ ] Holguras previstas para encajes.
-[ ] Zonas funcionales protegidas de soportes innecesarios.
+[ ] Los espesores son compatibles con la boquilla.
+[ ] Hay radios o chaflanes en las zonas frágiles.
+[ ] Se han previsto holguras para los encajes.
+[ ] Las zonas funcionales están protegidas de soportes innecesarios.
 
 Laminador
-[ ] Material correcto seleccionado.
-[ ] Altura de capa adecuada al uso.
-[ ] Paredes, tapas y relleno revisados.
-[ ] Soportes comprobados capa a capa.
-[ ] Tiempo, peso y coste aproximado registrados.
+[ ] Está seleccionado el material correcto.
+[ ] La altura de capa es adecuada para el uso.
+[ ] Se han revisado paredes, tapas y relleno.
+[ ] Los soportes se han comprobado capa a capa.
+[ ] Se han registrado tiempo, peso y coste aproximado.
 
 Impresora
-[ ] Cama limpia y nivelada.
-[ ] Filamento seco y cargado correctamente.
-[ ] Temperaturas coherentes con el material.
-[ ] Primera capa observada antes de dejar la impresion.
+[ ] La cama está limpia y nivelada.
+[ ] El filamento está seco y cargado correctamente.
+[ ] Las temperaturas son coherentes con el material.
+[ ] Se observará la primera capa antes de dejar la impresión.
 
 Control final
-[ ] Medidas criticas comprobadas.
-[ ] Superficie y capas revisadas.
-[ ] Encajes probados sin forzar.
-[ ] Cambios anotados para repetir o mejorar la pieza.
+[ ] Se han comprobado las medidas críticas.
+[ ] Se han revisado la superficie y la unión entre capas.
+[ ] Los encajes se han probado sin forzar.
+[ ] Se han anotado los cambios necesarios para repetir o mejorar la pieza.

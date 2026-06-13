@@ -5,6 +5,7 @@ description: "Checklist práctica para exportar, revisar y laminar un STL antes 
 category: "Impresión 3D"
 categorySlug: "impresion-3d"
 date: "2026-05-13"
+updatedDate: "2026-06-13"
 readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: false
@@ -12,7 +13,7 @@ featured: false
 
 Preparar un STL no es pulsar exportar y confiar. El archivo debe conservar escala, detalle suficiente y geometría cerrada para que el laminador pueda convertirlo en capas sin sorpresas.
 
-## Resumen rápido
+## Qué debe conservar el archivo
 
 - Revisa unidades y escala antes de exportar.
 - Usa una resolución adecuada: ni facetado visible ni archivo gigante sin necesidad.
@@ -27,14 +28,14 @@ En el CAD, exporta desde el modelo final y no desde una versión de trabajo. Com
 
 Importa el STL y confirma dimensiones. Después revisa orientación, soportes, tiempo, masa y recorrido por capas. Si ves paredes que desaparecen, probablemente el espesor es inferior a lo que puede imprimir la boquilla.
 
-## Errores frecuentes
+## Exportaciones que generan problemas
 
 - Exportar una pieza en pulgadas y laminarla como milímetros.
 - Usar un STL antiguo con el mismo nombre que el corregido.
 - No revisar normales, huecos o cuerpos solapados.
 - Mandar a imprimir sin comprobar si los soportes caen en caras funcionales.
 
-## Ejemplo aplicado
+## Caso de una superficie curva
 
 Un STL correcto debe abrirse con escala real, sin caras invertidas ni geometría rota. Antes de imprimir una pieza importante, importa el STL en el laminador y revisa si aparecen huecos, paredes demasiado finas o detalles que desaparecen por el diámetro de boquilla. Exportar no es el final: la revisión en laminador es parte del proceso.
 
@@ -53,10 +54,10 @@ Usa nombres que identifiquen pieza y revisión, por ejemplo `soporte_sensor_rev0
 Compara las dimensiones que muestra el laminador con una cota conocida del CAD. Después revisa la primera capa, las capas donde comienzan agujeros o puentes y la última capa. Este recorrido detecta muchos errores de escala, cuerpos solapados y detalles perdidos antes de consumir material.
 
 
-## Conclusión
+## Exportar también requiere revisión
 
 Un STL correcto reduce errores de fabricación, pero la validación real ocurre en el laminador. CAD y slicer deben revisarse juntos.
 
-## Recomendación práctica final
+## Control final en el laminador
 
 Crea una carpeta por versión con CAD, STL y captura del laminador. Así puedes repetir la impresión o explicar qué cambió si algo falla.

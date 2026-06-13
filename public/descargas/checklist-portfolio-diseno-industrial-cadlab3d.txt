@@ -1,33 +1,33 @@
-CHECKLIST DE PORTFOLIO DE DISENO INDUSTRIAL - CAD LAB 3D
+CHECKLIST DE PORTFOLIO DE DISEÑO INDUSTRIAL - CAD LAB 3D
 
 Proyecto
 [ ] El problema se entiende en una frase.
-[ ] Hay contexto de usuario, uso o necesidad.
-[ ] Se explican requisitos y limitaciones.
+[ ] Hay contexto sobre el usuario, el uso o la necesidad.
+[ ] Se explican los requisitos y las limitaciones.
 
 Proceso
 [ ] Se muestran bocetos, alternativas o iteraciones.
-[ ] Las decisiones no aparecen como decoracion, sino como criterio.
-[ ] Se indica que cambio entre versiones.
+[ ] Las decisiones se presentan con un criterio, no como decoración.
+[ ] Se indica qué cambió entre versiones.
 
-CAD y fabricacion
+CAD y fabricación
 [ ] Hay vistas claras del modelo.
-[ ] Se muestran detalles de union, montaje o fabricacion.
+[ ] Se muestran detalles de unión, montaje o fabricación.
 [ ] Las cotas principales se entienden.
-[ ] El material o proceso elegido tiene justificacion.
+[ ] El material o proceso elegido tiene justificación.
 
-Imagenes
+Imágenes
 [ ] Los renders no ocultan la forma.
 [ ] El fondo no compite con el producto.
-[ ] Hay detalle, vista general y contexto de uso.
-[ ] Las imagenes tienen calidad suficiente para pantalla y PDF.
+[ ] Hay vista general, detalle y contexto de uso.
+[ ] Las imágenes tienen calidad suficiente para pantalla y PDF.
 
 Texto
 [ ] Cada proyecto tiene objetivo, proceso, resultado y aprendizaje.
-[ ] No hay parrafos largos sin informacion tecnica.
+[ ] No hay párrafos largos sin información técnica.
 [ ] Se evita exagerar resultados no validados.
 
-Revision final
-[ ] El portfolio se entiende sin explicacion oral.
-[ ] Los proyectos tienen orden logico.
-[ ] No hay enlaces rotos ni archivos pesados innecesarios.
+Revisión final
+[ ] El portfolio se entiende sin explicación oral.
+[ ] Los proyectos siguen un orden lógico.
+[ ] No hay enlaces rotos ni archivos innecesariamente pesados.

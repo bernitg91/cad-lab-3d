@@ -1,38 +1,40 @@
-GUIA RAPIDA DE MATERIALES FDM - CAD LAB 3D
+GUÍA RÁPIDA DE MATERIALES FDM - CAD LAB 3D
 
 PLA
-- Uso habitual: prototipos, piezas visuales, soportes sencillos.
-- Ventaja: facil de imprimir.
-- Limite: baja resistencia termica.
+- Uso habitual: prototipos, piezas visuales y soportes sencillos.
+- Ventaja: es fácil de imprimir.
+- Límite: baja resistencia térmica.
 
 PETG
-- Uso habitual: piezas funcionales no criticas, soportes, carcasas.
-- Ventaja: mejor resistencia y tenacidad que PLA en muchos usos.
-- Limite: puede generar hilos y requiere ajuste fino.
+- Uso habitual: piezas funcionales no críticas, soportes y carcasas.
+- Ventaja: ofrece más tenacidad que PLA en muchos usos.
+- Límite: puede generar hilos y requiere ajustar la retracción.
 
 TPU
-- Uso habitual: piezas flexibles, protectores, apoyos, juntas simples.
-- Ventaja: flexibilidad.
-- Limite: impresion lenta y mas exigente.
+- Uso habitual: piezas flexibles, protectores, apoyos y juntas simples.
+- Ventaja: flexibilidad y absorción de impacto.
+- Límite: impresión lenta y más exigente.
 
 ABS
-- Uso habitual: piezas tecnicas con necesidad de temperatura moderada.
-- Ventaja: resistencia termica superior a PLA.
-- Limite: warping, olor y necesidad de entorno controlado.
+- Uso habitual: piezas técnicas con una necesidad térmica moderada.
+- Ventaja: mayor resistencia térmica que PLA.
+- Límite: contracción, emisiones y necesidad de un entorno controlado.
 
 ASA
-- Uso habitual: exterior, piezas expuestas a luz solar y temperatura.
-- Ventaja: mejor comportamiento exterior que ABS.
-- Limite: requiere control de temperatura y ventilacion.
+- Uso habitual: exterior y piezas expuestas a radiación ultravioleta.
+- Ventaja: buen comportamiento en exteriores.
+- Límite: requiere control térmico y ventilación.
 
 Nylon
-- Uso habitual: piezas tecnicas resistentes y sometidas a desgaste.
-- Ventaja: tenacidad.
-- Limite: absorbe humedad y exige secado.
+- Uso habitual: piezas técnicas tenaces o sometidas a desgaste.
+- Ventaja: resistencia al desgaste y tenacidad.
+- Límite: absorbe humedad y exige secado.
 
-Decision practica
-1. Si es visual o maqueta: PLA.
-2. Si necesita algo mas funcional: PETG.
-3. Si debe flexar: TPU.
-4. Si estara en exterior: ASA.
-5. Si exige tenacidad y se puede controlar humedad: Nylon.
+Decisión práctica
+1. Para una maqueta o pieza visual: PLA.
+2. Para una pieza funcional general: PETG.
+3. Para una pieza flexible: TPU.
+4. Para exterior: ASA.
+5. Para tenacidad y desgaste, si puedes controlar la humedad: Nylon.
+
+Estos criterios son orientativos. Comprueba siempre la ficha del filamento concreto y realiza una prueba antes de fabricar una pieza exigente.

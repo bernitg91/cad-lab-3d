@@ -5,6 +5,7 @@ description: "Introducción al análisis por elementos finitos para estudiantes:
 category: "Simulación FEM"
 categorySlug: "simulacion-fem"
 date: "2026-04-16"
+updatedDate: "2026-06-13"
 readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: true
@@ -12,7 +13,7 @@ featured: true
 
 FEM significa método de elementos finitos. En lugar de resolver una pieza como un volumen continuo perfecto, el software la divide en pequeñas partes llamadas elementos y calcula una aproximación de tensiones, deformaciones y desplazamientos.
 
-## Resumen rápido
+## Preguntas que sí puede responder
 
 - FEM sirve para comparar diseños y detectar zonas críticas.
 - El resultado depende de cargas, restricciones, material y malla.
@@ -47,14 +48,14 @@ No conviene simular piezas triviales si no conoces cargas, materiales o condicio
 
 Los colores no son una respuesta. Revisa escala, unidades, factor de seguridad, deformación máxima y si las restricciones son razonables. Una deformación exagerada en pantalla puede ser solo una visualización amplificada.
 
-## Errores frecuentes
+## Errores de planteamiento habituales
 
 - Bloquear una cara completa cuando en la realidad solo hay un apoyo parcial.
 - Usar material genérico sin revisar módulo elástico o límite elástico.
 - Aceptar tensiones máximas en singularidades sin interpretar la zona.
 - Presentar capturas de colores sin unidades, escala ni conclusión.
 
-## Ejemplo aplicado
+## Comparación de dos versiones de soporte
 
 Un FEM tiene sentido cuando quieres comparar alternativas o entender una zona crítica, no cuando solo buscas una imagen llamativa. Por ejemplo, puedes comparar dos diseños de soporte con la misma carga y material. Aunque el valor absoluto no sea perfecto, la comparación puede ayudarte a decidir qué geometría tiene mejor comportamiento.
 
@@ -71,10 +72,10 @@ Cuando el objetivo es elegir entre dos geometrías, conserva material, carga, ap
 La NASA ha publicado advertencias sobre análisis aparentemente precisos que producen gráficos convincentes sin una idealización o verificación adecuada. Esa idea resume bien el uso responsable del FEM: el software calcula el modelo que le das, no la realidad que imaginabas.
 
 
-## Conclusión
+## Qué significa interpretar con criterio
 
 FEM es una herramienta de razonamiento, no una máquina de verdad absoluta. Sirve para comparar y validar hipótesis si el modelo representa bien la realidad.
 
-## Recomendación práctica final
+## Primera simulación recomendada
 
 Antes de simular, escribe en una frase qué quieres comprobar. Si no puedes formular la pregunta, el análisis todavía no está listo.

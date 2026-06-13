@@ -5,6 +5,7 @@ description: "Ruta práctica para aprender Creo Parametric si partes de cero: in
 category: "Creo Parametric"
 categorySlug: "creo-parametric"
 date: "2026-05-01"
+updatedDate: "2026-06-13"
 readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: true
@@ -12,7 +13,7 @@ featured: true
 
 Empezar en Creo Parametric puede parecer duro porque la herramienta está pensada para entornos profesionales. La clave no es aprender todos los botones, sino entender el flujo paramétrico: crear referencias, controlar dimensiones y construir modelos que puedan modificarse sin romperse.
 
-## Resumen rápido
+## Ruta inicial en una mirada
 
 - Empieza por croquis completamente definidos y piezas pequeñas.
 - Aprende a leer el árbol del modelo antes de memorizar comandos.
@@ -52,7 +53,7 @@ El error más habitual es modelar como si Creo fuera un programa de dibujo libre
 
 También conviene evitar nombres genéricos como `Extrude 1` o `Sketch 4` en proyectos largos. Nombrar operaciones clave ayuda a revisar el modelo semanas después.
 
-## Ejemplo aplicado
+## Primer ejercicio completo
 
 Un buen primer ejercicio en Creo no es una pieza espectacular, sino una pieza que puedas modificar. Por ejemplo, un soporte con dos taladros, una base y un nervio central. Si al cambiar el ancho de la base los taladros siguen centrados y el nervio no se rompe, estás aprendiendo intención de diseño. Si todo falla, el ejercicio te está mostrando dónde faltan referencias.
 
@@ -67,10 +68,10 @@ La prueba no consiste en terminar rápido, sino en observar qué operaciones sob
 Un modelo académico también necesita disciplina. Agrupa operaciones relacionadas, renombra las que definen función y evita referencias externas innecesarias. Antes de entregar, regenera el modelo desde el inicio y comprueba que no quedan avisos ocultos. La documentación oficial de PTC incluye tutoriales de piezas, ensamblajes y planos; úsala para contrastar el nombre y el comportamiento de las herramientas cuando cambie la versión del programa.
 
 
-## Conclusión
+## Qué deberías dominar al terminar
 
 Creo se aprende mejor con piezas pequeñas, repetibles y bien documentadas. No intentes memorizar comandos: entiende referencias, restricciones y cambios de diseño.
 
-## Recomendación práctica final
+## Siguiente práctica recomendada
 
 Crea una carpeta con cinco ejercicios: soporte, carcasa simple, eje, tapa atornillada y ensamblaje de dos piezas. Rehazlos cada semana hasta que puedas modificarlos sin que el árbol falle.

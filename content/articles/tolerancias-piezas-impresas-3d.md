@@ -5,6 +5,7 @@ description: "Criterios prácticos para definir holguras en encajes, agujeros, e
 category: "Impresión 3D"
 categorySlug: "impresion-3d"
 date: "2026-05-10"
+updatedDate: "2026-06-13"
 readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: false
@@ -12,7 +13,7 @@ featured: false
 
 En CAD, dos piezas pueden encajar perfecto. En FDM, la realidad incluye boquilla, contracción, calibración y orientación. Por eso las tolerancias deben probarse.
 
-## Resumen rápido
+## Variables que cambian la holgura
 
 - Deja holgura en piezas que deben encajar.
 - Prueba tolerancias con cupones pequeños antes de imprimir un conjunto grande.
@@ -27,14 +28,14 @@ Cómo punto de partida, muchos encajes FDM necesitan décimas de milímetro por 
 
 Los agujeros impresos suelen salir más pequeños. Si un tornillo, eje o pasador debe entrar, diseña una prueba con varios diámetros y registra el resultado.
 
-## Errores frecuentes
+## Errores al copiar tolerancias genéricas
 
 - Copiar tolerancias de mecanizado como si FDM fuera CNC.
 - No considerar orientación de agujeros.
 - Ajustar el CAD sin calibrar primero la impresora.
 - Diseñar un ensamblaje completo sin imprimir pruebas de encaje.
 
-## Ejemplo aplicado
+## Caso de un adaptador circular
 
 Una holgura que funciona en PLA puede no funcionar igual en PETG, TPU o Nylon. También cambia con orientación, flujo y primera capa. Por eso es mejor crear una pieza de prueba con varias holguras y guardarla como referencia de tu impresora. Las tolerancias reales se aprenden midiendo.
 
@@ -53,10 +54,10 @@ Los agujeros pequeños suelen cerrarse más de lo esperado por el trazado de per
 Guarda la probeta con su fecha y perfil. Si cambias flujo, boquilla o material, imprime otra y compárala. Con el tiempo tendrás datos de tu proceso en lugar de aplicar una cifra genérica a todas las piezas.
 
 
-## Conclusión
+## La tolerancia se valida físicamente
 
 Las tolerancias en FDM son datos de proceso. Se aprenden midiendo tu máquina, no solo leyendo tablas.
 
-## Recomendación práctica final
+## Probeta recomendada
 
 Imprime una placa con ranuras y cilindros variando holguras. Guárdala como referencia para futuros proyectos.

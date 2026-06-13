@@ -5,6 +5,7 @@ description: "Lista de fallos habituales al diseñar para FDM: tolerancias, orie
 category: "Impresión 3D"
 categorySlug: "impresion-3d"
 date: "2026-04-24"
+updatedDate: "2026-06-13"
 readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: true
@@ -12,7 +13,7 @@ featured: true
 
 Una pieza que se ve perfecta en CAD no siempre se imprime bien. La impresión 3D FDM tiene limitaciones físicas: capas, boquilla, contracción, temperatura y anisotropía. Diseñar para FDM significa pensar en fabricación desde el primer croquis.
 
-## Resumen rápido
+## Revisión inicial de diseño
 
 - Diseña espesores compatibles con la boquilla.
 - Deja tolerancias para encajes y piezas móviles.
@@ -43,14 +44,14 @@ Los soportes aumentan tiempo, material y acabado irregular. Rediseñar una pieza
 
 Textos, nervios y radios muy pequeños pueden desaparecer. Ajusta detalle mínimo a tu boquilla, altura de capa y calibración.
 
-## Errores frecuentes
+## Fallos de diseño que más se repiten
 
 - Exportar el STL sin revisar unidades y escala.
 - Poner agujeros nominales sin compensar cierre de material.
 - Diseñar clips o pestañas con capas orientadas en la peor dirección.
 - Elegir material por color antes que por uso; para eso ayuda [esta guía de filamentos funcionales](/blog/elegir-filamento-piezas-funcionales).
 
-## Ejemplo aplicado
+## Caso de una bandeja de base amplia
 
 Un error típico es diseñar una pieza como si fuera mecanizada: paredes finas, esquinas vivas, voladizos imposibles y tolerancias sin holgura. En FDM conviene pensar en capas, boquilla, soportes y contracción. Si una geometría necesita demasiados soportes o deja la zona funcional sobre una superficie rugosa, quizá la solución no es imprimir mejor, sino rediseñar.
 
@@ -65,10 +66,10 @@ Activa la visualización por tipo de línea si el laminador la ofrece. Así podr
 En una bandeja grande, el problema no suele ser el relleno, sino mantener una base plana y unas paredes estables. Añadir un borde rígido, radios interiores y un espesor compatible con varios perímetros puede mejorar más el resultado que subir el relleno. La pieza roja mostrada en los [casos prácticos](/casos-practicos-impresion-3d) es un buen ejemplo de cómo la continuidad del contorno y la geometría del borde condicionan el acabado.
 
 
-## Conclusión
+## Diseñar para el proceso real
 
 Diseñar para impresión 3D no es solo exportar un STL. Es adaptar geometría, tolerancias y orientación al proceso real.
 
-## Recomendación práctica final
+## Comprobación antes de exportar
 
 Antes de imprimir una pieza funcional, haz una versión reducida con la zona crítica: encaje, rosca, bisagra o clip. Validar esa zona ahorra horas y material.

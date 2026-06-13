@@ -5,6 +5,7 @@ description: "Criterios para elegir orientación en FDM según carga, capas, sop
 category: "Impresión 3D"
 categorySlug: "impresion-3d"
 date: "2026-05-13"
+updatedDate: "2026-06-13"
 readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: false
@@ -12,7 +13,7 @@ featured: false
 
 La orientación de una pieza FDM puede cambiar más la resistencia que el porcentaje de relleno. Como las capas se unen entre sí, la dirección de la carga importa tanto como la forma de la pieza.
 
-## Resumen rápido
+## Decisiones que controla la orientación
 
 - Evita que la fuerza principal separe capas.
 - Reduce soportes en superficies funcionales.
@@ -27,14 +28,14 @@ Antes de laminar, dibuja mentalmente dónde empuja, tira o flexa la pieza. Una p
 
 La mejor orientación mecánica puede dejar peor acabado visible o pedir soportes. En una pieza técnica, decide qué cara es funcional, qué cara es visible y qué zona soporta carga.
 
-## Errores frecuentes
+## Orientaciones que suelen debilitar la pieza
 
 - Colocar la cara más grande en la cama sin pensar en la dirección de esfuerzo.
 - Aceptar soportes dentro de agujeros o encajes.
 - Imprimir clips en una orientación que separa capas al flexar.
 - Comparar materiales sin mantener la misma orientación de prueba.
 
-## Ejemplo aplicado
+## Caso de carga y dirección de capas
 
 Una escuadra puede imprimirse de muchas formas, pero no todas resisten igual. Si la carga abre las capas, fallará antes. Si la orientación deja la base plana pero debilita el brazo vertical, quizá convenga rediseñar la pieza en dos partes o añadir nervios. La mejor orientación equilibra resistencia, soportes y acabado funcional.
 
@@ -51,10 +52,10 @@ Imprime dos probetas que reproduzcan solo la unión crítica, con el mismo mater
 La orientación también altera la precisión: un agujero vertical suele salir diferente a uno horizontal. Si el ensamblaje depende de una medida, combina la prueba mecánica con una medición de calibre.
 
 
-## Conclusión
+## La orientación forma parte del diseño
 
 Orientar bien significa elegir el fallo menos probable, no solo ahorrar tiempo. Una orientación correcta puede hacer viable una pieza simple.
 
-## Recomendación práctica final
+## Comparación física recomendada
 
 Para piezas críticas, imprime una versión pequeña de la zona cargada en dos orientaciones y compáralas manualmente antes de fabricar la pieza completa.

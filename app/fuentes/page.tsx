@@ -19,7 +19,7 @@ const sources = [
   {
     area: "SolidWorks",
     name: "SOLIDWORKS Design Help",
-    href: "https://help.solidworks.com/2025/english/solidworks/sldworks/c_fundamentals.htm",
+    href: "https://help.solidworks.com/2026/english/SolidWorks/sldworks/r_help_fundamentals.htm",
     use: "Conceptos básicos, documentos de pieza y ensamblaje, dibujos y comportamiento de funciones."
   },
   {
@@ -27,6 +27,24 @@ const sources = [
     name: "Prusa Filament Material Guide",
     href: "https://help.prusa3d.com/filament-material-guide",
     use: "Comparación orientativa de impresión, hardware y características de familias de filamento."
+  },
+  {
+    area: "Diseño para FDM",
+    name: "Prusa: modelar pensando en impresión 3D",
+    href: "https://help.prusa3d.com/article/modeling-with-3d-printing-in-mind_164135",
+    use: "Criterios sobre sólidos, mallas, geometría imprimible y preparación de modelos."
+  },
+  {
+    area: "Calibración FDM",
+    name: "Prusa: calibración de la primera capa",
+    href: "https://help.prusa3d.com/article/first-layer-calibration-i3_112364",
+    use: "Referencia visual para revisar la distancia de la boquilla y la adhesión inicial."
+  },
+  {
+    area: "Archivos 3D",
+    name: "Prusa: modelos dañados para impresión",
+    href: "https://help.prusa3d.com/article/corrupted-3d-models-for-printing_2205",
+    use: "Identificación y reparación de problemas frecuentes en mallas destinadas al laminador."
   },
   {
     area: "Simulación FEM",
@@ -39,12 +57,6 @@ const sources = [
     name: "NASA: no todos los mapas de colores son precisos",
     href: "https://www.nasa.gov/centers-and-facilities/nesc/finite-element-analyses-not-all-beautiful-color-plots-are-precise-or-accurate/",
     use: "Advertencias sobre idealización, verificación e interpretación de resultados visuales."
-  },
-  {
-    area: "Calidad de contenido",
-    name: "Google Search: contenido útil y centrado en las personas",
-    href: "https://developers.google.com/search/docs/fundamentals/creating-helpful-content?hl=es",
-    use: "Criterios editoriales de originalidad, autoría, experiencia y utilidad para el lector."
   }
 ];
 

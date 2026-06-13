@@ -5,6 +5,7 @@ description: "Guía para documentar cargas, restricciones, material, malla, resu
 category: "Simulación FEM"
 categorySlug: "simulacion-fem"
 date: "2026-05-08"
+updatedDate: "2026-06-13"
 readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: false
@@ -12,7 +13,7 @@ featured: false
 
 Un análisis FEM sin documentación es difícil de defender. La imagen de colores no basta: hay que explicar hipótesis, entradas, resultados y límites.
 
-## Resumen rápido
+## Qué debe quedar registrado
 
 - Define qué pregunta responde el análisis.
 - Documenta material, cargas, restricciones y malla.
@@ -28,14 +29,14 @@ Indica qué simplificaciones aplicaste: geometría eliminada, contactos ignorado
 
 Incluye desplazamiento máximo, tensión relevante, factor de seguridad si aplica y una interpretación. Explica si las tensiones máximas aparecen en zonas de singularidad.
 
-## Errores frecuentes
+## Omisiones que debilitan el informe
 
 - No explicar condiciones de contorno.
 - Mostrar resultados sin unidades.
 - Usar una malla sin justificar.
 - Concluir que una pieza es segura solo por un color azul.
 
-## Ejemplo aplicado
+## Estructura de un análisis sencillo
 
 Un FEM básico de un soporte no debería limitarse a una captura de colores. Incluye material, carga aplicada, restricciones, tamaño de malla aproximado, deformada y una lectura crítica. Si el máximo aparece en una arista viva, explica si es una singularidad o una zona realmente crítica. Esa aclaración cambia por completo la calidad del informe.
 
@@ -54,10 +55,10 @@ Una tabla breve puede relacionar entrada, valor, origen y efecto esperado. Por e
 Un análisis lineal con material elástico no valida fatiga, impacto, fluencia, contactos complejos ni comportamiento anisótropo de una pieza FDM. Indicar estas limitaciones no debilita el informe; demuestra que el resultado se interpreta dentro de su alcance.
 
 
-## Conclusión
+## Qué hace defendible el documento
 
 Documentar FEM es demostrar que entiendes el modelo, no solo que sabes ejecutar el software.
 
-## Recomendación práctica final
+## Revisión final recomendada
 
 Antes de exportar capturas, escribe una tabla con entradas del análisis y otra con resultados. Eso ordena el informe.

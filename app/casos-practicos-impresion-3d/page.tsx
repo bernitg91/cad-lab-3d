@@ -176,7 +176,7 @@ export default function PracticalCasesPage() {
               ["Elegir material FDM", "/selector-material-impresion-3d"],
               ["Calcular precio de impresión", "/calculadora-precio-impresion-3d"],
               ["Servicio de impresión 3D", "/impresion-3d-personalizada"],
-              ["Guías de impresión 3D", "/categorias/impresion-3d"]
+              ["Guía completa de impresión 3D", "/guia-impresion-3d-fdm"]
             ].map(([label, href]) => (
               <Link key={href} className="rounded-md border border-slate-200 px-4 py-3 text-sm font-bold text-slate-700 hover:border-blue-300 hover:text-blue-700" href={href}>
                 {label}

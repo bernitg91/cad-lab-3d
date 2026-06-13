@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound, permanentRedirect } from "next/navigation";
-import { AffiliateBox } from "@/components/AffiliateBox";
 import { ArticleCard } from "@/components/ArticleCard";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CopyLinkButton } from "@/components/CopyLinkButton";
@@ -8,6 +8,7 @@ import { Newsletter } from "@/components/Newsletter";
 import { RecommendedResources } from "@/components/RecommendedResources";
 import { TableOfContents } from "@/components/TableOfContents";
 import { formatDate, getAllArticles, getArchivedArticleRedirect, getArticleBySlug, getRelatedArticles } from "@/lib/articles";
+import { getArticleSupport } from "@/lib/article-support";
 import { MarkdownContent } from "@/lib/markdown";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 import { createPageMetadata, jsonLd } from "@/lib/seo";
@@ -31,6 +32,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
   if (!article) return {};
+  const support = getArticleSupport(article.slug);
 
   return createPageMetadata({
     title: article.title,
@@ -38,7 +40,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     path: `/blog/${article.slug}`,
     type: "article",
     publishedTime: article.date,
-    authors: [article.author]
+    authors: [article.author],
+    image: support.evidence?.image
   });
 }
 
@@ -50,6 +53,7 @@ export default async function ArticlePage({ params }: PageProps) {
   if (!article) notFound();
 
   const relatedArticles = getRelatedArticles(article);
+  const support = getArticleSupport(article.slug);
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -57,7 +61,7 @@ export default async function ArticlePage({ params }: PageProps) {
     headline: article.title,
     description: article.description,
     datePublished: article.date,
-    dateModified: article.date,
+    dateModified: article.updatedDate || article.date,
     author: {
       "@type": "Organization",
       name: siteConfig.name,
@@ -69,6 +73,7 @@ export default async function ArticlePage({ params }: PageProps) {
       url: absoluteUrl("/")
     },
     articleSection: article.category,
+    ...(support.evidence ? { image: absoluteUrl(support.evidence.image) } : {}),
     inLanguage: "es-ES"
   };
   const breadcrumbJsonLd = {
@@ -109,6 +114,12 @@ export default async function ArticlePage({ params }: PageProps) {
             <p className="mt-5 text-lg leading-8 text-slate-600">{article.description}</p>
             <div className="mt-6 flex flex-wrap items-center gap-3 text-sm font-semibold text-slate-500">
               <span>{formatDate(article.date)}</span>
+              {article.updatedDate ? (
+                <>
+                  <span aria-hidden="true">·</span>
+                  <span>Actualizado el {formatDate(article.updatedDate)}</span>
+                </>
+              ) : null}
               <span aria-hidden="true">·</span>
               <a className="hover:text-blue-700" href="/sobre-mi">{article.author}</a>
               <span aria-hidden="true">·</span>
@@ -123,7 +134,40 @@ export default async function ArticlePage({ params }: PageProps) {
 
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[minmax(0,1fr)_320px] lg:px-8">
         <div>
+          {support.evidence ? (
+            <figure className="mb-10 overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
+              <div className="relative aspect-[4/3] bg-slate-100 sm:aspect-[16/9]">
+                <Image
+                  src={support.evidence.image}
+                  alt={support.evidence.alt}
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 820px, 100vw"
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="border-t border-slate-200 px-5 py-4 text-sm leading-6 text-slate-600">
+                {support.evidence.caption}
+              </figcaption>
+            </figure>
+          ) : null}
           <MarkdownContent content={article.content} />
+          {support.sources.length > 0 ? (
+            <section className="mt-10 rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+              <p className="text-sm font-black uppercase tracking-wide text-teal-700">Referencias consultadas</p>
+              <h2 className="mt-2 text-xl font-black text-slate-950">Documentación para comprobar y ampliar</h2>
+              <ul className="mt-4 grid gap-4">
+                {support.sources.map((source) => (
+                  <li key={source.href} className="border-l-4 border-slate-200 pl-4">
+                    <a className="font-bold text-blue-700 hover:text-blue-900" href={source.href} target="_blank" rel="noreferrer">
+                      {source.name}
+                    </a>
+                    <p className="mt-1 text-sm leading-6 text-slate-600">{source.note}</p>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ) : null}
           <section className="mt-10 rounded-lg border border-slate-200 bg-slate-50 p-6">
             <p className="text-sm font-black uppercase tracking-wide text-teal-700">Autoría y revisión</p>
             <h2 className="mt-2 text-xl font-black text-slate-950">Contenido preparado por CAD Lab 3D</h2>
@@ -143,7 +187,6 @@ export default async function ArticlePage({ params }: PageProps) {
         <div className="grid content-start gap-5 lg:sticky lg:top-24">
           <TableOfContents headings={article.headings} />
           <RecommendedResources />
-          <AffiliateBox />
         </div>
       </div>
 

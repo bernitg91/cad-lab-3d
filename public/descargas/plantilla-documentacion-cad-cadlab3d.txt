@@ -4,39 +4,39 @@ Datos del proyecto
 - Nombre:
 - Objetivo:
 - Software:
-- Version del archivo:
+- Versión del archivo:
 - Fecha:
 
 Requisitos de diseño
-- Funcion principal:
+- Función principal:
 - Medidas clave:
 - Material previsto:
-- Proceso de fabricacion:
+- Proceso de fabricación:
 - Restricciones:
 
 Historial de versiones
 - V1: idea inicial y problemas detectados.
-- V2: cambios de geometria.
-- V3: revision de tolerancias, espesores o montaje.
-- Version final: cambios pendientes y limites.
+- V2: cambios de geometría.
+- V3: revisión de tolerancias, espesores o montaje.
+- Versión final: cambios pendientes y límites.
 
 Capturas recomendadas
 - Vista general.
 - Croquis principal.
-- Arbol de operaciones o estructura del modelo.
+- Árbol de operaciones o estructura del modelo.
 - Detalle de uniones, radios, encajes o nervios.
 - Plano o cotas clave.
-- Vista de laminador si se imprime.
+- Vista del laminador si la pieza se imprime.
 
-Decision tecnica
-- Que alternativa se eligio.
-- Por que se descarto otra opcion.
-- Que dato valida la decision.
-- Que prueba faltaria para confirmar el resultado.
+Decisión técnica
+- Qué alternativa se eligió.
+- Por qué se descartó otra opción.
+- Qué dato respalda la decisión.
+- Qué prueba faltaría para confirmar el resultado.
 
 Entrega
 - CAD final.
 - STL o STEP.
-- Plano basico.
+- Plano básico.
 - Capturas.
-- Notas de fabricacion.
+- Notas de fabricación.

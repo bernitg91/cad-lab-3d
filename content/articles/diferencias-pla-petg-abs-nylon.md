@@ -5,6 +5,7 @@ description: "Comparativa clara de filamentos habituales para impresión 3D: fac
 category: "Materiales"
 categorySlug: "materiales"
 date: "2026-03-30"
+updatedDate: "2026-06-13"
 readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: false
@@ -12,7 +13,7 @@ featured: false
 
 PLA, PETG, ABS y Nylon aparecen en casi cualquier comparativa de impresión 3D, pero no sirven para lo mismo. Elegir bien evita piezas deformadas, frágiles o difíciles de imprimir.
 
-## Resumen rápido
+## Comparación inicial
 
 - PLA es fácil y rígido, pero limitado por temperatura.
 - PETG es equilibrado para piezas útiles.
@@ -43,14 +44,14 @@ Nylon es tenaz, resistente al desgaste y muy interesante para piezas funcionales
 - Impacto: PETG y Nylon suelen superar a PLA.
 - Acabado sencillo: PLA suele ganar.
 
-## Errores frecuentes
+## Elecciones de material que suelen fallar
 
 - Elegir ABS sin ventilación ni entorno controlado.
 - Imprimir PETG con demasiada ventilación y poca adhesión entre capas.
 - Guardar Nylon abierto durante días antes de imprimir.
 - Aplicar la misma geometría a todos los materiales sin ajustar tolerancias.
 
-## Ejemplo aplicado
+## Cuatro usos, cuatro decisiones
 
 Para una tapa decorativa de escritorio, PLA puede ser suficiente. Para un soporte que se queda en un coche al sol, PETG o ASA suelen tener más sentido. Para una guía que roza con otra pieza, Nylon puede ser interesante si puedes secarlo y controlar la impresión. El material correcto depende del entorno, no de cuál aparezca primero en una comparativa.
 
@@ -65,10 +66,10 @@ También conviene separar rigidez de resistencia al impacto. PLA suele sentirse 
 Anota fabricante, material, fecha de apertura, secado, temperatura, altura de capa, orientación y modo de fallo. Una fotografía de la rotura aporta más información que escribir simplemente “material fuerte” o “resultado malo”.
 
 
-## Conclusión
+## Cómo elegir sin simplificar demasiado
 
 No existe material universal. Para aprender, PLA. Para piezas útiles generales, PETG. Para temperatura, ABS. Para desgaste y tenacidad, Nylon. Para decidir con más detalle, usa [la guía de filamento para piezas funcionales](/blog/elegir-filamento-piezas-funcionales).
 
-## Recomendación práctica final
+## Prueba de material recomendada
 
 Compra pequeñas cantidades antes de una bobina grande y crea una pieza de prueba propia: clip, soporte o bisagra. Será más útil que una ficha técnica aislada.

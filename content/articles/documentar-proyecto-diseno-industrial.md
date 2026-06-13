@@ -5,6 +5,7 @@ description: "Método para documentar proyectos de diseño industrial desde el p
 category: "Proyectos universitarios"
 categorySlug: "proyectos-universitarios"
 date: "2026-03-22"
+updatedDate: "2026-06-13"
 readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: false
@@ -12,7 +13,7 @@ featured: false
 
 Documentar un proyecto de diseño industrial significa explicar por qué el producto existe, cómo se ha desarrollado y qué decisiones justifican el resultado final. No basta con mostrar renders.
 
-## Resumen rápido
+## Mapa del proyecto
 
 - Empieza por problema, usuario y requisitos.
 - Muestra alternativas, decisiones descartadas y cambios.
@@ -42,14 +43,14 @@ Muestra bocetos, alternativas CAD, pruebas de forma y decisiones descartadas. Un
 
 Incluye fotografías del prototipo, problemas encontrados y cambios aplicados. Si usas impresión 3D, documenta orientación, material, tiempo y ajustes importantes.
 
-## Errores frecuentes
+## Fallos de trazabilidad habituales
 
 - Presentar solo el resultado final sin proceso.
 - No explicar por qué se eligió una solución frente a otra.
 - Separar estética, fabricación y ergonomía como si no estuvieran conectadas.
 - No incluir evidencias de prueba o aprendizaje del prototipo.
 
-## Ejemplo aplicado
+## Caso de documentación de un prototipo
 
 Una memoria técnica mejora mucho cuando registra decisiones, no solo resultados. Si elegiste PETG frente a PLA, explica si fue por temperatura, impacto o uso exterior. Si aumentaste un radio, indica si buscabas resistencia, fabricación o ergonomía. Esa trazabilidad demuestra que el proyecto no avanzó por intuición sin control.
 
@@ -68,10 +69,10 @@ Guarda croquis que expliquen alternativas, capturas del CAD antes y después de 
 En una sola página puedes anotar objetivo de la semana, cambio realizado, motivo, prueba y siguiente decisión. Ese registro evita reconstruir el proceso de memoria la noche antes de entregar y aporta material útil para el portfolio.
 
 
-## Conclusión
+## Qué debe entender otra persona
 
 Una buena documentación convierte un resultado final en un proceso comprensible. Eso mejora informes, portfolio y defensa oral.
 
-## Recomendación práctica final
+## Entregable recomendado
 
 Durante el proyecto, guarda capturas semanales. Documentar al final desde cero es mucho más difícil y suele dejar huecos.

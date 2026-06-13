@@ -5,6 +5,7 @@ description: "Guía para crear renders de producto limpios y técnicos que expli
 category: "Diseño industrial"
 categorySlug: "diseno-industrial"
 date: "2026-03-26"
+updatedDate: "2026-06-13"
 readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: false
@@ -12,7 +13,7 @@ featured: false
 
 Un render de portfolio no debe ser solo bonito. Debe explicar el producto, sus decisiones de diseño y su calidad técnica. Un buen render ayuda a entender forma, función, material y escala.
 
-## Resumen rápido
+## Qué debe explicar un render técnico
 
 - El render debe explicar producto, función y detalle técnico.
 - Usa fondo simple, luz suave y materiales creibles.
@@ -40,14 +41,14 @@ Incluye varias vistas:
 
 Asigna materiales coherentes. No todo debe ser metal brillante. Un plástico técnico con rugosidad adecuada puede comunicar mejor que un acabado espectacular pero falso.
 
-## Errores frecuentes
+## Recursos visuales que ocultan el diseño
 
 - Usar perspectiva extrema que deforma la pieza.
 - Aplicar materiales brillantes sin relación con el producto real.
 - Exportar imágenes pequeñas o comprimidas.
 - Mostrar solo renders finales y ocultar proceso, planos o prototipos.
 
-## Ejemplo aplicado
+## Caso de presentación de un producto
 
 Un render técnico debe enseñar forma, función y calidad del modelo. Una vista explotada, un detalle de unión o una comparación antes/después puede aportar más que una escena dramática. En portfolio, cada imagen debe responder una pregunta: qué es, cómo funciona o qué decisión demuestra.
 
@@ -66,10 +67,10 @@ Usa una luz principal amplia, un relleno suave y suficiente contraste para separ
 Guarda una versión amplia para portfolio y otra optimizada para PDF. Comprueba que textos, líneas y detalles sigan siendo legibles al tamaño final. Nombra los archivos por proyecto y vista; así podrás sustituir una imagen sin romper el orden de la presentación.
 
 
-## Conclusión
+## Renderizar para comunicar decisiones
 
 El render técnico debe apoyar el relato del proyecto. Si una imagen no explica nada, probablemente sobra.
 
-## Recomendación práctica final
+## Serie de vistas recomendada
 
 Prepara una plantilla con tres cámaras fijas: general, detalle y explosionado. Así todos tus proyectos tendrán coherencia visual en el portfolio.

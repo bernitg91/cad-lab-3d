@@ -5,6 +5,7 @@ description: "Estructura clara para redactar informes técnicos de proyectos CAD
 category: "Proyectos universitarios"
 categorySlug: "proyectos-universitarios"
 date: "2026-04-12"
+updatedDate: "2026-06-13"
 readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: false
@@ -12,7 +13,7 @@ featured: false
 
 Un buen informe técnico no es un diario de lo que hiciste. Es una explicación ordenada del problema, las decisiones, los cálculos, el proceso y los resultados. Su objetivo es que otra persona entienda y pueda evaluar tu proyecto.
 
-## Resumen rápido
+## Estructura mínima del informe
 
 - Escribe objetivos medibles antes de redactar el desarrollo.
 - Justifica material, proceso, cálculos y decisiones descartadas.
@@ -42,13 +43,13 @@ Define objetivos medibles. "Hacer una pieza resistente" es demasiado general. Me
 
 Incluye capturas CAD limpias, vistas con escala, planos acotados y fotografías del prototipo. Cada imagen debe aportar información y tener pie descriptivo.
 
-## Errores frecuentes
+## Problemas que restan claridad
 
 Los fallos más comunes son mezclar proceso con resultados, no justificar materiales, olvidar unidades y presentar capturas borrosas. También es habitual poner conclusiones que no responden a los objetivos iniciales.
 
 Otro error es dejar planos y anexos fuera de control de versiones. Guarda el CAD, PDF y capturas finales con nombres coherentes para poder reconstruir la entrega.
 
-## Ejemplo aplicado
+## Caso de un proyecto CAD universitario
 
 Un informe universitario gana calidad cuando separa lo que se hizo, por qué se hizo y qué se aprendió. Si documentas una pieza impresa, no pongas solo fotos: añade parámetros, material, problemas encontrados y cambios. Esa información demuestra método y permite repetir o mejorar el proyecto.
 
@@ -67,10 +68,10 @@ Comprueba numeración de figuras, unidades, referencias cruzadas y legibilidad d
 Una lectura final puede hacerse buscando solo decisiones: material, geometría, fabricación y validación. Si alguna aparece sin motivo o sin prueba, el documento todavía tiene un hueco.
 
 
-## Conclusión
+## Qué debe demostrar la memoria
 
 Un informe técnico claro demuestra criterio, no solo horas de trabajo. Ordenar bien el documento suele mejorar la percepción del proyecto.
 
-## Recomendación práctica final
+## Revisión antes de entregar
 
 Antes de entregar, revisa si cada objetivo inicial tiene una respuesta concreta en resultados o conclusiones.

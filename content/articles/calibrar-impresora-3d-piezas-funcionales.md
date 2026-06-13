@@ -5,6 +5,7 @@ description: "Pasos prácticos para calibrar una impresora FDM antes de imprimir
 category: "Impresión 3D"
 categorySlug: "impresion-3d"
 date: "2026-05-13"
+updatedDate: "2026-06-13"
 readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: false
@@ -12,7 +13,7 @@ featured: false
 
 Una pieza funcional exige más que una impresora capaz de hacer figuras decorativas. Si necesitas encajes, agujeros fiables o resistencia, la calibración debe centrarse en dimensiones, adhesión entre capas y repetibilidad.
 
-## Resumen rápido
+## Diagnóstico antes de calibrar
 
 - Nivela la cama y revisa la primera capa antes de cualquier prueba seria.
 - Ajusta flujo, temperatura y retracción con el material real.
@@ -31,14 +32,14 @@ El flujo afecta espesor de pared, agujeros y encajes. Imprime un cubo o una piez
 
 Para piezas funcionales, una temperatura demasiado baja puede mejorar el acabado superficial pero empeorar la unión entre capas. Haz una torre de temperatura o prueba mecánica sencilla con el material que usarás en el proyecto.
 
-## Errores frecuentes
+## Fallos que confunden la calibración
 
 - Calibrar con PLA y luego imprimir PETG o Nylon sin repetir ajustes.
 - Corregir tolerancias en CAD cuando el problema real es flujo o primera capa.
 - Medir solo una pieza y asumir que la impresora ya es estable.
 - Usar perfiles descargados sin comprobar dimensiones reales.
 
-## Ejemplo aplicado
+## Prueba de control antes de una pieza funcional
 
 Antes de imprimir una bisagra, una mordaza o un soporte atornillado, imprime una pieza de calibración con agujeros, salientes y una pared fina. Mide con calibre y anota diferencias. Si el agujero nominal de 6 mm sale a 5,7 mm, no tiene sentido corregir toda la carcasa a ciegas: primero debes saber si el problema está en flujo, expansión horizontal o contracción del material.
 
@@ -53,10 +54,10 @@ Para una impresora que se utilizará con encajes, registra tres resultados disti
 Repite la placa de control al cambiar de diámetro de boquilla, tipo de material, perfil de laminado o después de una intervención mecánica. No hace falta recalibrar toda la máquina por cada bobina, pero sí comprobar el comportamiento cuando cambia una condición que afecta al caudal o a la contracción.
 
 
-## Conclusión
+## Cuándo dar la calibración por válida
 
 Calibrar para piezas funcionales significa reducir incertidumbre. No necesitas perseguir perfección absoluta, pero sí conocer cómo se comporta tu impresora con tu material.
 
-## Recomendación práctica final
+## Siguiente prueba recomendada
 
 Crea una placa de calibración propia con agujeros, pestañas y encajes que uses a menudo. Guárdala junto a tus perfiles de laminador y repítela cuando cambies material, boquilla o impresora.

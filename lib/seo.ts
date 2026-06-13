@@ -8,6 +8,7 @@ type SeoOptions = {
   type?: "website" | "article";
   publishedTime?: string;
   authors?: string[];
+  image?: string;
 };
 
 export function createPageMetadata({
@@ -16,9 +17,11 @@ export function createPageMetadata({
   path,
   type = "website",
   publishedTime,
-  authors
+  authors,
+  image
 }: SeoOptions): Metadata {
   const url = absoluteUrl(path);
+  const socialImage = image ? absoluteUrl(image) : undefined;
 
   return {
     title,
@@ -33,12 +36,14 @@ export function createPageMetadata({
       siteName: siteConfig.name,
       locale: siteConfig.locale,
       type,
+      ...(socialImage ? { images: [{ url: socialImage }] } : {}),
       ...(type === "article" ? { publishedTime, authors } : {})
     },
     twitter: {
       card: "summary_large_image",
       title: title === siteConfig.name ? siteConfig.name : `${title} | ${siteConfig.name}`,
-      description
+      description,
+      ...(socialImage ? { images: [socialImage] } : {})
     }
   };
 }
