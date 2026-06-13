@@ -53,28 +53,20 @@ Incluye fotografías del prototipo, problemas encontrados y cambios aplicados. S
 
 Una memoria técnica mejora mucho cuando registra decisiones, no solo resultados. Si elegiste PETG frente a PLA, explica si fue por temperatura, impacto o uso exterior. Si aumentaste un radio, indica si buscabas resistencia, fabricación o ergonomía. Esa trazabilidad demuestra que el proyecto no avanzó por intuición sin control.
 
-## Criterios de revisión
+## El hilo que debe conectar todo el proyecto
 
-Para aplicar bien esta guía sobre **documentar un proyecto de diseño industrial**, utiliza esta revisión:
+Cada requisito debería aparecer de nuevo en una decisión y en una comprobación. Si el producto debe transportarse con una mano, esa necesidad debe influir en dimensiones, masa, agarre y prueba de uso. Si debe fabricarse por FDM, la orientación, los espesores y el número de piezas deben reflejarlo desde el CAD, no añadirse al final como una explicación decorativa.
 
-- Comprueba que objetivo, requisitos, método, resultados y conclusiones se entienden sin explicación oral.
-- Cada imagen debe aportar una evidencia: CAD, plano, prueba, render, tabla o prototipo.
-- Evita llenar la memoria con capturas bonitas si no explican una decisión.
-- Cierra cada apartado con una conclusión técnica breve.
+Una tabla de requisitos ayuda a mantener ese hilo. Incluye el requisito, cómo se ha interpretado, qué decisión lo responde y qué evidencia permite comprobarlo. No todos los criterios necesitan una cifra; la ergonomía puede validarse con una prueba comparativa, mientras que una dimensión de montaje sí requiere medida.
 
-## Aplicación práctica
+## Qué imágenes merece la pena conservar
 
-Elige una entrega concreta y revisa si cada apartado responde a una pregunta útil: qué se buscaba, cómo se hizo, qué se obtuvo y qué limitación queda abierta. Si una imagen no ayuda a responder eso, cambia la imagen o añade contexto.
+Guarda croquis que expliquen alternativas, capturas del CAD antes y después de un cambio importante, fotografías del prototipo en uso y detalles de los fallos. Evita llenar la memoria con veinte vistas casi iguales. Una imagen buena debe permitir entender una decisión sin depender de una explicación larga.
 
-### Registro recomendado
+### Ejemplo de registro semanal
 
-Guarda solo evidencias útiles: capturas, medidas, parámetros, fotos del prototipo o notas de descarte. El objetivo es que otra persona pueda entender qué decisión se tomó y qué habría que revisar en la siguiente versión.
+En una sola página puedes anotar objetivo de la semana, cambio realizado, motivo, prueba y siguiente decisión. Ese registro evita reconstruir el proceso de memoria la noche antes de entregar y aporta material útil para el portfolio.
 
-## Límites y siguiente paso
-
-Estas pautas no sustituyen el formato de una asignatura. Si el profesor pide una estructura concreta, úsala primero y adapta estas recomendaciones para reforzar claridad, trazabilidad y lectura técnica.
-
-Para continuar, consulta también [recursos técnicos](/recursos), [guías por tema](/guias) y [metodología editorial](/metodologia).
 
 ## Conclusión
 

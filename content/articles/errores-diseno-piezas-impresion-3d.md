@@ -14,10 +14,10 @@ Una pieza que se ve perfecta en CAD no siempre se imprime bien. La impresión 3D
 
 ## Resumen rápido
 
-- Disena espesores compatibles con la boquilla.
-- Deja tolerancias para encajes y piezas moviles.
+- Diseña espesores compatibles con la boquilla.
+- Deja tolerancias para encajes y piezas móviles.
 - Orienta la pieza según carga, acabado y soportes.
-- Para piezas resistentes, continúa con [cómo diseñar una pieza resistente para FDM](/blog/disenar-pieza-resistente-fdm).
+- Para piezas resistentes, continúa con la [guía completa de diseño e impresión FDM](/guia-impresion-3d-fdm).
 
 ## Espesores demasiado finos
 
@@ -54,28 +54,16 @@ Textos, nervios y radios muy pequeños pueden desaparecer. Ajusta detalle mínim
 
 Un error típico es diseñar una pieza como si fuera mecanizada: paredes finas, esquinas vivas, voladizos imposibles y tolerancias sin holgura. En FDM conviene pensar en capas, boquilla, soportes y contracción. Si una geometría necesita demasiados soportes o deja la zona funcional sobre una superficie rugosa, quizá la solución no es imprimir mejor, sino rediseñar.
 
-## Criterios de revisión
+## Revisión de cinco minutos en el laminador
 
-Para aplicar bien esta guía sobre **Errores comunes al diseñar piezas para impresión 3D**, utiliza esta revisión:
+Antes de generar el archivo de impresión, recorre la vista por capas desde la primera hasta la última. Busca paredes que aparecen y desaparecen, puentes largos, islas que empiezan sin apoyo y cambios bruscos de sección. Revisa también dónde se colocan las costuras y si los soportes tocan una cara de ajuste.
 
-- Antes de lanzar una impresión larga, revisa el archivo como si fueras a repetirlo dentro de un mes.
-- Comprueba unidades, orientación, soportes, primera capa, paredes y zonas de encaje.
-- Si la pieza tiene zonas críticas, valida primero una muestra parcial o una versión reducida.
-- Guarda material, boquilla, altura de capa, relleno, tiempo estimado y observaciones del resultado.
+Activa la visualización por tipo de línea si el laminador la ofrece. Así podrás distinguir perímetros, relleno, puentes y soportes. Una pared que en CAD parece maciza puede terminar formada por una sola línea si su espesor no encaja con el ancho de extrusión.
 
-## Aplicación práctica
+## Caso práctico: una bandeja alargada
 
-Trabaja con una pieza concreta: importa el archivo en el laminador, revisa la vista por capas, localiza la zona más delicada y decide qué parámetro afecta más al resultado. Después imprime una prueba pequeña si el fallo puede costar muchas horas.
+En una bandeja grande, el problema no suele ser el relleno, sino mantener una base plana y unas paredes estables. Añadir un borde rígido, radios interiores y un espesor compatible con varios perímetros puede mejorar más el resultado que subir el relleno. La pieza roja mostrada en los [casos prácticos](/casos-practicos-impresion-3d) es un buen ejemplo de cómo la continuidad del contorno y la geometría del borde condicionan el acabado.
 
-### Registro recomendado
-
-Guarda solo evidencias útiles: capturas, medidas, parámetros, fotos del prototipo o notas de descarte. El objetivo es que otra persona pueda entender qué decisión se tomó y qué habría que revisar en la siguiente versión.
-
-## Límites y siguiente paso
-
-Las recomendaciones de FDM dependen de impresora, boquilla, material, humedad, tamaño de pieza y orientación. Una solución válida para PLA pequeño puede fallar en PETG, TPU o en una pieza con más horas de impresión.
-
-Para continuar, consulta también [checklist interactiva de impresión 3D](/checklist-impresion-3d), [calculadora de precio de impresión 3D](/calculadora-precio-impresion-3d) y [selector de material FDM](/selector-material-impresion-3d).
 
 ## Conclusión
 

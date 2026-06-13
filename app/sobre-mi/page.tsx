@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { createPageMetadata } from "@/lib/seo";
+import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Sobre mí",
@@ -11,20 +12,20 @@ export const metadata: Metadata = createPageMetadata({
 export default function AboutPage() {
   return (
     <section className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
-      <p className="text-sm font-black uppercase tracking-wide text-teal-700">Sobre el proyecto</p>
+      <p className="text-sm font-black uppercase tracking-wide text-teal-700">Quién prepara el contenido</p>
       <h1 className="mt-3 text-4xl font-black text-slate-950">Sobre CAD Lab 3D</h1>
       <div className="mt-8 space-y-5 text-lg leading-8 text-slate-600">
         <p>
-          CAD Lab 3D nace como un espacio de aprendizaje para estudiantes de ingeniería en diseño industrial, fabricación digital, simulación básica y desarrollo de producto.
+          CAD Lab 3D está a cargo de un estudiante de ingeniería en diseño industrial interesado en CAD, impresión 3D FDM, simulación y desarrollo de producto. La web reúne apuntes de trabajo, pruebas, recursos y explicaciones que resultan útiles al preparar piezas y proyectos técnicos.
         </p>
         <p>
-          La idea es documentar procesos reales: modelar piezas con criterio, preparar archivos para impresión 3D, comparar materiales, entender simulaciones básicas y presentar proyectos técnicos con claridad.
+          El contenido parte de problemas concretos: una pieza que no encaja, un STL mal exportado, una orientación débil, una memoria sin trazabilidad o un análisis FEM que necesita explicar mejor sus supuestos. Cuando se muestran piezas impresas, se utilizan fotografías propias y se separa lo observado de lo que todavía requeriría ensayo.
         </p>
         <p>
-          El objetivo es crear una biblioteca práctica de contenidos que ayude a pasar de una idea o entrega académica a un resultado más claro, fabricable y defendible.
+          No se publican certificaciones, testimonios ni resultados de resistencia que no puedan respaldarse. Las cifras de proceso se presentan como orientaciones y se contrastan con documentación oficial, porque una misma recomendación puede cambiar con material, impresora, geometría o versión del software.
         </p>
         <p>
-          El foco está en el método: explicar decisiones, documentar pruebas, comparar materiales y convertir errores habituales en guías reutilizables. Las recomendaciones se redactan como orientación técnica y se revisan cuando hace falta añadir límites, ejemplos o correcciones.
+          Para correcciones, dudas o propuestas relacionadas con el proyecto puedes escribir a <a className="font-bold text-blue-700 hover:text-blue-900" href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a>.
         </p>
       </div>
       <div className="mt-10 grid gap-5 md:grid-cols-2">
@@ -35,7 +36,7 @@ export default function AboutPage() {
             <li>Guías sobre materiales, tolerancias, renders y portfolios.</li>
             <li>Recursos para informes, checklists y proyectos CAD.</li>
             <li>Casos prácticos con piezas impresas reales y aprendizajes técnicos.</li>
-            <li>Servicios de apoyo en modelado y presentación técnica.</li>
+            <li>Fuentes oficiales para ampliar y comprobar la información.</li>
           </ul>
         </section>
         <section className="rounded-lg bg-slate-950 p-6 text-white">
@@ -59,7 +60,7 @@ export default function AboutPage() {
           Si una recomendación depende de material, impresora, escala, software o nivel de exigencia, se indica como orientación y no como regla absoluta. En proyectos críticos siempre conviene validar con pruebas, documentación técnica o revisión profesional.
         </p>
         <p>
-          Puedes consultar la <Link href="/metodologia">metodología editorial</Link> para entender cómo se revisan las guías y qué límites tiene el contenido.
+          Puedes consultar la <Link href="/metodologia">metodología editorial</Link> para entender cómo se revisan las guías, y la página de <Link href="/fuentes">fuentes técnicas</Link> para comprobar las referencias principales.
         </p>
       </section>
     </section>

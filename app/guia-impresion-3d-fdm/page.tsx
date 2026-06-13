@@ -134,7 +134,7 @@ export default function FdmGuidePage() {
       </section>
 
       <section className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 lg:grid-cols-[0.75fr_1.25fr] lg:px-8">
-        <aside className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm lg:sticky lg:top-28 lg:h-fit">
+        <aside className="min-w-0 rounded-lg border border-slate-200 bg-white p-6 shadow-sm lg:sticky lg:top-28 lg:h-fit">
           <h2 className="text-xl font-black text-slate-950">Resumen de la guía</h2>
           <ul className="mt-4 grid gap-2 text-sm leading-6 text-slate-700">
             <li><a className="font-bold hover:text-blue-700" href="#proceso">Proceso FDM</a></li>
@@ -147,7 +147,7 @@ export default function FdmGuidePage() {
           </ul>
         </aside>
 
-        <div className="article-body">
+        <div className="article-body min-w-0">
           <h2 id="proceso">Cómo funciona una impresión 3D FDM</h2>
           <p>
             FDM significa que la impresora deposita filamento fundido capa a capa. El resultado depende de tres decisiones conectadas: cómo está diseñada la pieza, cómo se orienta en la cama y cómo se configura el laminador. Si una de las tres falla, la pieza puede salir débil, deformada, con mal acabado o fuera de medida.
@@ -170,7 +170,7 @@ export default function FdmGuidePage() {
           <p>
             No existe un material universal. PLA puede ser perfecto para una maqueta y mala elección para una pieza cerca de calor. PETG puede funcionar bien en una carcasa, pero exigir más ajuste de retracciones. TPU sirve para flexibles, pero no conviene tratarlo como si fuera PLA. La elección debe partir del uso, no de la bobina disponible.
           </p>
-          <div className="not-prose my-6 overflow-hidden rounded-lg border border-slate-200">
+          <div className="not-prose my-6 overflow-x-auto rounded-lg border border-slate-200">
             <table className="w-full border-collapse text-left text-sm">
               <thead className="bg-slate-950 text-white">
                 <tr>

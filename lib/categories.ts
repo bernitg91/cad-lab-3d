@@ -46,3 +46,18 @@ export const categories: Category[] = [
 export function getCategory(slug: string) {
   return categories.find((category) => category.slug === slug);
 }
+
+const categoryGuidePaths: Record<string, string> = {
+  "creo-parametric": "/guia-cad-parametrico",
+  solidworks: "/guia-cad-parametrico",
+  "impresion-3d": "/guia-impresion-3d-fdm",
+  materiales: "/guia-materiales-fdm",
+  "diseno-industrial": "/guia-documentacion-tecnica",
+  "simulacion-fem": "/guia-simulacion-fem",
+  "proyectos-universitarios": "/guia-documentacion-tecnica",
+  recursos: "/recursos"
+};
+
+export function getCategoryGuidePath(slug: string) {
+  return categoryGuidePaths[slug] ?? "/categorias";
+}

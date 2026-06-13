@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { ArticleCard } from "@/components/ArticleCard";
 import { Newsletter } from "@/components/Newsletter";
-import { categories } from "@/lib/categories";
 import { getAllArticles, getFeaturedArticles } from "@/lib/articles";
 import { portfolioItems } from "@/lib/portfolio";
 import { absoluteUrl, siteConfig } from "@/lib/site";
@@ -189,12 +188,20 @@ export default function HomePage() {
 
       <section className="bg-white py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-black text-slate-950">Categorías principales</h2>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {categories.map((category) => (
-              <Link key={category.slug} href={`/categorias/${category.slug}`} className="rounded-lg border border-slate-200 p-5 hover:border-teal-300 hover:shadow-sm">
-                <h3 className="font-black text-slate-950">{category.name}</h3>
-                <p className="mt-2 text-sm leading-6 text-slate-600">{category.description}</p>
+          <p className="text-sm font-black uppercase tracking-wide text-teal-700">Rutas de aprendizaje</p>
+          <h2 className="mt-2 text-3xl font-black text-slate-950">Empieza por una guía completa</h2>
+          <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-600">Cada ruta reúne decisiones relacionadas para que no tengas que reconstruir el proceso saltando entre entradas aisladas.</p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            {[
+              ["Impresión 3D FDM", "Diseño, laminado y control final.", "/guia-impresion-3d-fdm"],
+              ["Materiales FDM", "Selección por uso y fabricación.", "/guia-materiales-fdm"],
+              ["CAD paramétrico", "Modelos que admiten cambios.", "/guia-cad-parametrico"],
+              ["Simulación FEM", "Hipótesis, malla y resultados.", "/guia-simulacion-fem"],
+              ["Documentación", "Decisiones, pruebas y memoria.", "/guia-documentacion-tecnica"]
+            ].map(([title, description, href]) => (
+              <Link key={href} href={href} className="border-t-4 border-slate-950 bg-white p-5 shadow-sm ring-1 ring-slate-200 hover:border-teal-500 hover:ring-blue-200">
+                <h3 className="font-black text-slate-950">{title}</h3>
+                <p className="mt-2 text-sm leading-6 text-slate-600">{description}</p>
               </Link>
             ))}
           </div>
@@ -234,10 +241,10 @@ export default function HomePage() {
             <h2 className="mt-2 text-2xl font-black text-slate-950">Servicios CAD</h2>
             <p className="mt-2 text-sm leading-6 text-slate-600">Consultas sobre modelado, revisión, renders y archivos de fabricación para proyectos técnicos.</p>
           </Link>
-          <Link className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm hover:border-blue-300" href="/herramientas-recomendadas">
-            <p className="text-sm font-black uppercase tracking-wide text-teal-700">Criterios de compra</p>
-            <h2 className="mt-2 text-2xl font-black text-slate-950">Herramientas</h2>
-            <p className="mt-2 text-sm leading-6 text-slate-600">Criterios para elegir software, filamentos, medición y recursos sin comprar a ciegas.</p>
+          <Link className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm hover:border-blue-300" href="/fuentes">
+            <p className="text-sm font-black uppercase tracking-wide text-teal-700">Referencias</p>
+            <h2 className="mt-2 text-2xl font-black text-slate-950">Fuentes técnicas</h2>
+            <p className="mt-2 text-sm leading-6 text-slate-600">Documentación oficial utilizada para contrastar software, materiales y simulación.</p>
           </Link>
           <Link className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm hover:border-blue-300" href="/calculadora-precio-impresion-3d">
             <p className="text-sm font-black uppercase tracking-wide text-teal-700">Presupuestos FDM</p>

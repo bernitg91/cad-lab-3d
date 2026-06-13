@@ -17,7 +17,7 @@ La orientación de una pieza FDM puede cambiar más la resistencia que el porcen
 - Evita que la fuerza principal separe capas.
 - Reduce soportes en superficies funcionales.
 - Prioriza la orientación de trabajo frente a la orientación más bonita.
-- Complementa esta guía con [cómo diseñar una pieza resistente para FDM](/blog/disenar-pieza-resistente-fdm).
+- Complementa esta guía con el flujo de diseño de la [guía completa de impresión 3D FDM](/guia-impresion-3d-fdm).
 
 ## Identifica la carga principal
 
@@ -38,28 +38,18 @@ La mejor orientación mecánica puede dejar peor acabado visible o pedir soporte
 
 Una escuadra puede imprimirse de muchas formas, pero no todas resisten igual. Si la carga abre las capas, fallará antes. Si la orientación deja la base plana pero debilita el brazo vertical, quizá convenga rediseñar la pieza en dos partes o añadir nervios. La mejor orientación equilibra resistencia, soportes y acabado funcional.
 
-## Criterios de revisión
+## Cómo comparar dos orientaciones
 
-Para aplicar bien esta guía sobre **orientar una pieza en impresión 3D para que sea más resistente**, utiliza esta revisión:
+Haz una tabla con cuatro columnas: dirección de carga, superficie apoyada, soportes y cara funcional. La orientación más resistente puede dejar peor acabado en un alojamiento; la que necesita menos soportes puede colocar una pestaña a contracapa. Ver el compromiso por escrito evita escoger únicamente la posición que reduce el tiempo estimado.
 
-- Antes de lanzar una impresión larga, revisa el archivo como si fueras a repetirlo dentro de un mes.
-- Comprueba unidades, orientación, soportes, primera capa, paredes y zonas de encaje.
-- Si la pieza tiene zonas críticas, valida primero una muestra parcial o una versión reducida.
-- Guarda material, boquilla, altura de capa, relleno, tiempo estimado y observaciones del resultado.
+Para clips, ganchos y brazos en voladizo, observa cómo cruzan las líneas de capa la zona que flexa. Si la grieta probable puede avanzar entre capas, cambia la orientación o rediseña la transición con más sección y radios. En piezas atornilladas, evita que la fuerza de apriete tienda a separar capas alrededor del agujero.
 
-## Aplicación práctica
+### Ensayo sencillo y comparable
 
-Trabaja con una pieza concreta: importa el archivo en el laminador, revisa la vista por capas, localiza la zona más delicada y decide qué parámetro afecta más al resultado. Después imprime una prueba pequeña si el fallo puede costar muchas horas.
+Imprime dos probetas que reproduzcan solo la unión crítica, con el mismo material, perímetros y altura de capa. Cárgalas de la misma forma y registra dónde empiezan a deformarse o romper. No es un ensayo normalizado, pero sirve para comparar decisiones dentro del mismo proyecto sin gastar una pieza completa.
 
-### Registro recomendado
+La orientación también altera la precisión: un agujero vertical suele salir diferente a uno horizontal. Si el ensamblaje depende de una medida, combina la prueba mecánica con una medición de calibre.
 
-Guarda solo evidencias útiles: capturas, medidas, parámetros, fotos del prototipo o notas de descarte. El objetivo es que otra persona pueda entender qué decisión se tomó y qué habría que revisar en la siguiente versión.
-
-## Límites y siguiente paso
-
-Las recomendaciones de FDM dependen de impresora, boquilla, material, humedad, tamaño de pieza y orientación. Una solución válida para PLA pequeño puede fallar en PETG, TPU o en una pieza con más horas de impresión.
-
-Para continuar, consulta también [checklist interactiva de impresión 3D](/checklist-impresion-3d), [calculadora de precio de impresión 3D](/calculadora-precio-impresion-3d) y [selector de material FDM](/selector-material-impresion-3d).
 
 ## Conclusión
 

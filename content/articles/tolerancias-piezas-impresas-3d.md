@@ -17,7 +17,7 @@ En CAD, dos piezas pueden encajar perfecto. En FDM, la realidad incluye boquilla
 - Deja holgura en piezas que deben encajar.
 - Prueba tolerancias con cupones pequeños antes de imprimir un conjunto grande.
 - Diferencia encaje libre, encaje ajustado y pieza movil.
-- Relaciona este tema con [encajes y clips para impresión 3D](/blog/disenar-encajes-clips-impresion-3d).
+- Relaciona este tema con la sección de encajes de la [guía completa de impresión 3D FDM](/guia-impresion-3d-fdm).
 
 ## Holgura inicial
 
@@ -38,28 +38,20 @@ Los agujeros impresos suelen salir más pequeños. Si un tornillo, eje o pasador
 
 Una holgura que funciona en PLA puede no funcionar igual en PETG, TPU o Nylon. También cambia con orientación, flujo y primera capa. Por eso es mejor crear una pieza de prueba con varias holguras y guardarla como referencia de tu impresora. Las tolerancias reales se aprenden midiendo.
 
-## Criterios de revisión
+## Diseñar una probeta de encajes útil
 
-Para aplicar bien esta guía sobre **elegir tolerancias para piezas impresas en 3D**, utiliza esta revisión:
+Una buena probeta debe reproducir la unión real: eje y agujero, lengüeta y ranura o tapa y carcasa. Incluye varias holguras identificadas en la propia pieza, por ejemplo 0,15; 0,25; 0,35 y 0,45 mm por lado. Imprime con el mismo material, orientación, boquilla y altura de capa previstos para el proyecto.
 
-- Antes de lanzar una impresión larga, revisa el archivo como si fueras a repetirlo dentro de un mes.
-- Comprueba unidades, orientación, soportes, primera capa, paredes y zonas de encaje.
-- Si la pieza tiene zonas críticas, valida primero una muestra parcial o una versión reducida.
-- Guarda material, boquilla, altura de capa, relleno, tiempo estimado y observaciones del resultado.
+No pruebes solo si “entra” o “no entra”. Clasifica el ajuste: bloqueado, presión fuerte, deslizante con resistencia, libre o excesivo. Mide las zonas accesibles con calibre y anota si la primera capa ha creado pie de elefante. Esa deformación puede arruinar un encaje correcto en el resto de la altura.
 
-## Aplicación práctica
+## Agujeros no equivalen a contornos exteriores
 
-Trabaja con una pieza concreta: importa el archivo en el laminador, revisa la vista por capas, localiza la zona más delicada y decide qué parámetro afecta más al resultado. Después imprime una prueba pequeña si el fallo puede costar muchas horas.
+Los agujeros pequeños suelen cerrarse más de lo esperado por el trazado de perímetros y la resolución del proceso. Un cilindro exterior y un agujero con el mismo diámetro nominal no tienen por qué mostrar la misma desviación. Para tornillos, decide si necesitas paso libre, roscado posterior o inserto térmico; cada solución requiere una geometría distinta.
 
-### Registro recomendado
+### Mantener una biblioteca propia
 
-Guarda solo evidencias útiles: capturas, medidas, parámetros, fotos del prototipo o notas de descarte. El objetivo es que otra persona pueda entender qué decisión se tomó y qué habría que revisar en la siguiente versión.
+Guarda la probeta con su fecha y perfil. Si cambias flujo, boquilla o material, imprime otra y compárala. Con el tiempo tendrás datos de tu proceso en lugar de aplicar una cifra genérica a todas las piezas.
 
-## Límites y siguiente paso
-
-Las recomendaciones de FDM dependen de impresora, boquilla, material, humedad, tamaño de pieza y orientación. Una solución válida para PLA pequeño puede fallar en PETG, TPU o en una pieza con más horas de impresión.
-
-Para continuar, consulta también [checklist interactiva de impresión 3D](/checklist-impresion-3d), [calculadora de precio de impresión 3D](/calculadora-precio-impresion-3d) y [selector de material FDM](/selector-material-impresion-3d).
 
 ## Conclusión
 

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { AffiliateBox } from "@/components/AffiliateBox";
 import { ArticleCard } from "@/components/ArticleCard";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -7,7 +7,7 @@ import { CopyLinkButton } from "@/components/CopyLinkButton";
 import { Newsletter } from "@/components/Newsletter";
 import { RecommendedResources } from "@/components/RecommendedResources";
 import { TableOfContents } from "@/components/TableOfContents";
-import { formatDate, getAllArticles, getArticleBySlug, getRelatedArticles } from "@/lib/articles";
+import { formatDate, getAllArticles, getArchivedArticleRedirect, getArticleBySlug, getRelatedArticles } from "@/lib/articles";
 import { MarkdownContent } from "@/lib/markdown";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 import { createPageMetadata, jsonLd } from "@/lib/seo";
@@ -23,6 +23,13 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const article = getArticleBySlug(slug);
+  const archivedRedirect = getArchivedArticleRedirect(slug);
+  if (!article && archivedRedirect) {
+    return {
+      robots: { index: false, follow: true },
+      alternates: { canonical: absoluteUrl(archivedRedirect) }
+    };
+  }
   if (!article) return {};
 
   return createPageMetadata({
@@ -37,6 +44,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function ArticlePage({ params }: PageProps) {
   const { slug } = await params;
+  const archivedRedirect = getArchivedArticleRedirect(slug);
+  if (archivedRedirect) permanentRedirect(archivedRedirect);
   const article = getArticleBySlug(slug);
   if (!article) notFound();
 
@@ -50,8 +59,9 @@ export default async function ArticlePage({ params }: PageProps) {
     datePublished: article.date,
     dateModified: article.date,
     author: {
-      "@type": "Person",
-      name: article.author
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: absoluteUrl("/sobre-mi")
     },
     publisher: {
       "@type": "Organization",
@@ -100,7 +110,7 @@ export default async function ArticlePage({ params }: PageProps) {
             <div className="mt-6 flex flex-wrap items-center gap-3 text-sm font-semibold text-slate-500">
               <span>{formatDate(article.date)}</span>
               <span aria-hidden="true">·</span>
-              <span>{article.author}</span>
+              <a className="hover:text-blue-700" href="/sobre-mi">{article.author}</a>
               <span aria-hidden="true">·</span>
               <span>{article.readingTime}</span>
             </div>
@@ -114,6 +124,18 @@ export default async function ArticlePage({ params }: PageProps) {
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[minmax(0,1fr)_320px] lg:px-8">
         <div>
           <MarkdownContent content={article.content} />
+          <section className="mt-10 rounded-lg border border-slate-200 bg-slate-50 p-6">
+            <p className="text-sm font-black uppercase tracking-wide text-teal-700">Autoría y revisión</p>
+            <h2 className="mt-2 text-xl font-black text-slate-950">Contenido preparado por CAD Lab 3D</h2>
+            <p className="mt-3 text-sm leading-6 text-slate-600">
+              Esta guía se apoya en práctica con CAD e impresión FDM, documentación técnica y fuentes oficiales. Los valores de tolerancia, temperatura o resistencia son orientativos y deben validarse con la impresora, el material y la geometría reales.
+            </p>
+            <div className="mt-4 flex flex-wrap gap-4 text-sm font-bold">
+              <a className="text-blue-700 hover:text-blue-900" href="/sobre-mi">Sobre el proyecto</a>
+              <a className="text-blue-700 hover:text-blue-900" href="/fuentes">Fuentes técnicas</a>
+              <a className="text-blue-700 hover:text-blue-900" href="/metodologia">Metodología editorial</a>
+            </div>
+          </section>
           <div className="mt-10">
             <Newsletter />
           </div>

@@ -19,35 +19,35 @@ const resources = [
   {
     title: "Plantilla de informe técnico",
     description: "Estructura editable para objetivos, requisitos, metodología, resultados, conclusiones y anexos.",
-    href: "/blog/preparar-informe-tecnico-universitario",
+    href: "/guia-documentacion-tecnica",
     downloadHref: "/descargas/plantilla-informe-tecnico-cadlab3d.txt",
     cta: "Ver guía relacionada"
   },
   {
     title: "Checklist de impresión 3D",
     description: "Lista previa para revisar escala, tolerancias, soportes, material, orientación y parámetros del laminador.",
-    href: "/blog/checklist-mandar-pieza-imprimir-3d",
+    href: "/checklist-impresion-3d",
     downloadHref: "/descargas/checklist-impresion-3d-cadlab3d.txt",
     cta: "Leer checklist"
   },
   {
     title: "Guía de selección de materiales",
     description: "Comparativa práctica para elegir entre PLA, PETG, ABS, Nylon y materiales funcionales.",
-    href: "/blog/diferencias-pla-petg-abs-nylon",
+    href: "/guia-materiales-fdm",
     downloadHref: "/descargas/guia-materiales-fdm-cadlab3d.txt",
     cta: "Comparar materiales"
   },
   {
     title: "Plantilla para documentar proyectos CAD",
     description: "Guion para registrar versiones, decisiones, capturas, planos, renders y cambios de diseño.",
-    href: "/blog/documentar-proyecto-diseno-industrial",
+    href: "/guia-documentacion-tecnica",
     downloadHref: "/descargas/plantilla-documentacion-cad-cadlab3d.txt",
     cta: "Ver estructura"
   },
   {
     title: "Checklist para portfolio de diseño industrial",
     description: "Revisión de renders, storytelling, planos, detalles, proceso y presentación final.",
-    href: "/blog/checklist-portfolio-diseno-industrial",
+    href: "/guia-documentacion-tecnica",
     downloadHref: "/descargas/checklist-portfolio-diseno-industrial-cadlab3d.txt",
     cta: "Revisar portfolio"
   },
@@ -113,7 +113,7 @@ export default function ResourcesPage() {
         <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {resources.map((resource) => (
             <article key={resource.title} className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
-              <div className="mb-5 h-24 rounded-md bg-gradient-to-br from-slate-900 via-blue-900 to-teal-700" />
+              <div className="mb-5 flex h-16 items-center border-l-4 border-teal-500 bg-slate-950 px-4 text-xs font-black uppercase tracking-wide text-slate-300">Recurso CAD Lab 3D</div>
               <p className="mb-2 inline-flex rounded bg-teal-50 px-2.5 py-1 text-xs font-black uppercase tracking-wide text-teal-700">Guía disponible</p>
               <h2 className="text-xl font-black text-slate-950">{resource.title}</h2>
               <p className="mt-2 text-sm leading-6 text-slate-600">{resource.description}</p>

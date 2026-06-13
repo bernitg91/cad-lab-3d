@@ -39,28 +39,20 @@ Incluye desplazamiento máximo, tensión relevante, factor de seguridad si aplic
 
 Un FEM básico de un soporte no debería limitarse a una captura de colores. Incluye material, carga aplicada, restricciones, tamaño de malla aproximado, deformada y una lectura crítica. Si el máximo aparece en una arista viva, explica si es una singularidad o una zona realmente crítica. Esa aclaración cambia por completo la calidad del informe.
 
-## Criterios de revisión
+## Estructura mínima de un informe FEM
 
-Para aplicar bien esta guía sobre **documentar un análisis FEM básico**, utiliza esta revisión:
+Empieza con la pregunta que intenta responder el análisis. Después incluye una imagen limpia de la geometría, las simplificaciones realizadas, las propiedades del material, las cargas y las restricciones. La malla debe mostrarse al menos en la zona de interés, junto con su tamaño característico o el criterio utilizado para refinarla.
 
-- Documenta hipótesis, cargas, restricciones, material y simplificaciones antes de mirar colores del resultado.
-- Comprueba si la malla captura la zona importante sin gastar tiempo en detalles decorativos.
-- Distingue deformación exagerada, tensión máxima local y tendencia global de comportamiento.
-- No presentes un FEM como validación absoluta si no hay ensayo o contraste.
+Los resultados necesitan unidades, escala y una lectura escrita. No basta con indicar la tensión máxima: explica dónde aparece, si es estable al refinar la malla y si coincide con una zona físicamente razonable. Añade desplazamiento máximo y, cuando proceda, una comparación entre dos diseños o una comprobación manual sencilla.
 
-## Aplicación práctica
+### Tabla de trazabilidad
 
-Aplica el análisis a una pregunta concreta: dónde se concentra tensión, qué geometría conviene comparar o qué zona necesita refuerzo. Si el FEM no responde a una decisión, probablemente está sobrando en la memoria.
+Una tabla breve puede relacionar entrada, valor, origen y efecto esperado. Por ejemplo: carga de 120 N tomada del requisito del proyecto; apoyo cilíndrico representado mediante restricción radial; módulo elástico obtenido de la ficha del material. Esta trazabilidad permite localizar qué supuesto debe cambiar si el resultado no representa el ensayo o el uso real.
 
-### Registro recomendado
+## Qué no puede demostrar el modelo
 
-Guarda solo evidencias útiles: capturas, medidas, parámetros, fotos del prototipo o notas de descarte. El objetivo es que otra persona pueda entender qué decisión se tomó y qué habría que revisar en la siguiente versión.
+Un análisis lineal con material elástico no valida fatiga, impacto, fluencia, contactos complejos ni comportamiento anisótropo de una pieza FDM. Indicar estas limitaciones no debilita el informe; demuestra que el resultado se interpreta dentro de su alcance.
 
-## Límites y siguiente paso
-
-Un análisis básico depende de supuestos. Cambiar restricciones, cargas, contacto o material puede modificar mucho el resultado. Para piezas críticas, el FEM debe acompañarse de validación y revisión especializada.
-
-Para continuar, consulta también [guías de simulación FEM](/guias), [documentación técnica](/blog/documentar-analisis-fem-basico) y [recursos técnicos](/recursos).
 
 ## Conclusión
 

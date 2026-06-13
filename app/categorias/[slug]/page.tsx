@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { ArticleCard } from "@/components/ArticleCard";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { categories, getCategory } from "@/lib/categories";
@@ -19,17 +19,22 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const category = getCategory(slug);
   if (!category) return {};
 
+  const articles = getAllArticles().filter((article) => article.categorySlug === category.slug);
+
   return {
     ...createPageMetadata({
       title: category.name,
       description: category.description,
       path: `/categorias/${category.slug}`
-    })
+    }),
+    robots: { index: articles.length >= 3, follow: true }
   };
 }
 
 export default async function CategoryPage({ params }: PageProps) {
   const { slug } = await params;
+  if (slug === "creo-parametric" || slug === "solidworks") permanentRedirect("/guia-cad-parametrico");
+  if (slug === "recursos") permanentRedirect("/recursos");
   const category = getCategory(slug);
   if (!category) notFound();
 

@@ -19,7 +19,7 @@ const criteria = [
   },
   {
     title: "Trazabilidad",
-    text: "Se priorizan listas de revisión, ejemplos aplicados, criterios de validación y enlaces internos para que el lector pueda seguir un flujo completo."
+    text: "Cada recomendación importante debe indicar su contexto, la decisión a la que ayuda y, cuando procede, una fuente oficial o una prueba relacionada."
   },
   {
     title: "Evidencia propia",
@@ -52,7 +52,7 @@ export default function MethodologyPage() {
       <div className="article-body mt-10">
         <h2>Cómo se estructura una guía</h2>
         <p>
-          Las guías combinan explicación, ejemplo aplicado, errores frecuentes, criterios de revisión y una recomendación práctica final. El objetivo no es sustituir manuales oficiales de software ni normas técnicas, sino ayudar a preparar mejor trabajos universitarios, prototipos y piezas FDM habituales.
+          Las guías principales se organizan alrededor de un flujo completo: definir el problema, tomar decisiones, comprobarlas y documentar el resultado. Los artículos del blog resuelven dudas más concretas y se mantienen publicados solo cuando añaden una explicación distinta a la guía pilar.
         </p>
         <h2>Qué límites tiene el contenido</h2>
         <p>
@@ -60,11 +60,15 @@ export default function MethodologyPage() {
         </p>
         <h2>Actualización y mejora</h2>
         <p>
-          El contenido se revisa cuando se detectan errores, cuando cambia una herramienta o cuando una guía necesita más ejemplos. Las páginas de herramientas y recursos se mantienen con enlaces funcionales, explicaciones completas y rutas claras hacia guías relacionadas.
+          El contenido se revisa cuando se detectan errores, cambia una herramienta o una página se solapa con otra. En ese último caso se consolida en una guía más completa en lugar de mantener varias versiones casi iguales. Los enlaces y descargas se comprueban durante la revisión del sitio.
         </p>
         <h2>Uso de ejemplos prácticos</h2>
         <p>
           Las páginas de servicios y casos prácticos muestran piezas impresas reales para aportar contexto técnico. Las descripciones se mantienen prudentes: explican objetivo, revisión y aprendizaje, pero no prometen resistencias, certificaciones o resultados que no se hayan validado.
+        </p>
+        <h2>Fuentes externas</h2>
+        <p>
+          Para funciones de software se prioriza documentación del fabricante. Para materiales se combinan guías de impresión y fichas del filamento concreto. Para FEM se utilizan recursos técnicos que insisten en idealización, verificación y límites. Las referencias principales están reunidas en <Link href="/fuentes">fuentes técnicas</Link>.
         </p>
       </div>
 

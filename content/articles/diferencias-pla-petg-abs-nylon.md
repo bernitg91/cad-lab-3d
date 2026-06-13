@@ -54,28 +54,16 @@ Nylon es tenaz, resistente al desgaste y muy interesante para piezas funcionales
 
 Para una tapa decorativa de escritorio, PLA puede ser suficiente. Para un soporte que se queda en un coche al sol, PETG o ASA suelen tener más sentido. Para una guía que roza con otra pieza, Nylon puede ser interesante si puedes secarlo y controlar la impresión. El material correcto depende del entorno, no de cuál aparezca primero en una comparativa.
 
-## Criterios de revisión
+## La comparación cambia con la geometría
 
-Para aplicar bien esta guía sobre **PLA, PETG, ABS y Nylon**, utiliza esta revisión:
+Las propiedades de una probeta no describen por completo una pieza FDM. La unión entre capas, el número de perímetros, la orientación y la presencia de muescas pueden dominar el fallo. Un PLA con cuatro perímetros y una orientación favorable puede superar a un material más tenaz mal orientado. Por eso, al comparar filamentos, conserva la misma geometría y el mismo criterio de carga.
 
-- Empieza por la función de la pieza, no por el material que tienes cargado en la impresora.
-- Comprueba temperatura de uso, rigidez necesaria, exposición exterior, flexibilidad y riesgo de impacto.
-- Si el montaje exige encaje o rosca, revisa tolerancias con el material real.
-- Registra por qué elegiste una opción y qué limitación queda pendiente de prueba.
+También conviene separar rigidez de resistencia al impacto. PLA suele sentirse rígido, pero puede fracturarse de forma brusca. PETG flexa algo más y tolera mejor ciertos golpes. Nylon puede deformarse bastante antes de romper, aunque exige más control de humedad y dimensiones. ABS añade resistencia térmica, pero una pieza con mala adhesión entre capas no aprovechará esa ventaja.
 
-## Aplicación práctica
+### Registro mínimo de una prueba
 
-Aplica la decisión a una pieza concreta y compara dos materiales razonables. Anota qué cambia en impresión, acabado, tolerancia, coste y riesgo de fallo. La elección mejora cuando puedes justificar por qué descartas otra opción.
+Anota fabricante, material, fecha de apertura, secado, temperatura, altura de capa, orientación y modo de fallo. Una fotografía de la rotura aporta más información que escribir simplemente “material fuerte” o “resultado malo”.
 
-### Registro recomendado
-
-Guarda solo evidencias útiles: capturas, medidas, parámetros, fotos del prototipo o notas de descarte. El objetivo es que otra persona pueda entender qué decisión se tomó y qué habría que revisar en la siguiente versión.
-
-## Límites y siguiente paso
-
-Las fichas de material dan una orientación, pero el comportamiento final depende del fabricante, secado, parámetros, geometría y uso real de la pieza. En piezas exigentes, la prueba física manda sobre la teoría.
-
-Para continuar, consulta también [guía de materiales](/blog/diferencias-pla-petg-abs-nylon), [selector de material FDM](/selector-material-impresion-3d) y [recursos técnicos](/recursos).
 
 ## Conclusión
 

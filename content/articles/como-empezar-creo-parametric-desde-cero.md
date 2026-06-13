@@ -56,28 +56,16 @@ También conviene evitar nombres genéricos como `Extrude 1` o `Sketch 4` en pro
 
 Un buen primer ejercicio en Creo no es una pieza espectacular, sino una pieza que puedas modificar. Por ejemplo, un soporte con dos taladros, una base y un nervio central. Si al cambiar el ancho de la base los taladros siguen centrados y el nervio no se rompe, estás aprendiendo intención de diseño. Si todo falla, el ejercicio te está mostrando dónde faltan referencias.
 
-## Criterios de revisión
+## Una práctica completa de 45 minutos
 
-Para aplicar bien esta guía sobre **empezar en Creo Parametric desde cero**, utiliza esta revisión:
+Modela una escuadra sencilla a partir de un croquis totalmente restringido. Crea la base, añade el brazo vertical, genera dos taladros mediante una referencia al plano medio y termina con un nervio. Guarda una versión antes de añadir redondeos. Después modifica tres parámetros: ancho total, distancia entre agujeros y espesor.
 
-- Mantén croquis definidos, referencias estables y operaciones con intención clara.
-- Comprueba que el modelo se puede modificar sin romper relaciones importantes.
-- Nombra operaciones o parámetros cuando ayuden a entender el archivo.
-- Prepara una pieza sencilla, un ensamblaje básico y un plano antes de pasar a modelos complejos.
+La prueba no consiste en terminar rápido, sino en observar qué operaciones sobreviven al cambio. Si un taladro pierde su posición, revisa la referencia. Si el nervio falla, comprueba si depende de una arista que desaparece al variar el espesor. Este ejercicio enseña más sobre Creo que repetir comandos aislados.
 
-## Aplicación práctica
+## Orden y mantenimiento del árbol
 
-Practica con una pieza pequeña que tenga extrusión, corte, redondeo, patrón y una cota modificable. Cambia una dimensión principal y revisa si el modelo conserva la intención de diseño.
+Un modelo académico también necesita disciplina. Agrupa operaciones relacionadas, renombra las que definen función y evita referencias externas innecesarias. Antes de entregar, regenera el modelo desde el inicio y comprueba que no quedan avisos ocultos. La documentación oficial de PTC incluye tutoriales de piezas, ensamblajes y planos; úsala para contrastar el nombre y el comportamiento de las herramientas cuando cambie la versión del programa.
 
-### Registro recomendado
-
-Guarda solo evidencias útiles: capturas, medidas, parámetros, fotos del prototipo o notas de descarte. El objetivo es que otra persona pueda entender qué decisión se tomó y qué habría que revisar en la siguiente versión.
-
-## Límites y siguiente paso
-
-Aprender comandos aislados no basta para modelar bien. Lo importante es construir modelos que puedan cambiar, documentarse y explicarse dentro de un proyecto técnico.
-
-Para continuar, consulta también [guías por tema](/guias), [documentación de proyectos CAD](/blog/documentar-proyecto-diseno-industrial) y [recursos técnicos](/recursos).
 
 ## Conclusión
 

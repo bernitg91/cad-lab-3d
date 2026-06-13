@@ -3,13 +3,10 @@ import Link from "next/link";
 const navItems = [
   { href: "/", label: "Inicio" },
   { href: "/blog", label: "Blog" },
-  { href: "/categorias", label: "Categorías" },
   { href: "/guias", label: "Guías" },
-  { href: "/guia-impresion-3d-fdm", label: "Guía FDM" },
   { href: "/recursos", label: "Recursos" },
   { href: "/casos-practicos-impresion-3d", label: "Casos" },
   { href: "/servicios", label: "Servicios" },
-  { href: "/impresion-3d-personalizada", label: "Impresión 3D" },
   { href: "/sobre-mi", label: "Sobre mí" },
   { href: "/contacto", label: "Contacto" }
 ];

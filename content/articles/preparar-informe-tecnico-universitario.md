@@ -52,28 +52,20 @@ Otro error es dejar planos y anexos fuera de control de versiones. Guarda el CAD
 
 Un informe universitario gana calidad cuando separa lo que se hizo, por qué se hizo y qué se aprendió. Si documentas una pieza impresa, no pongas solo fotos: añade parámetros, material, problemas encontrados y cambios. Esa información demuestra método y permite repetir o mejorar el proyecto.
 
-## Criterios de revisión
+## Cómo convertir datos en una conclusión
 
-Para aplicar bien esta guía sobre **preparar un informe técnico universitario**, utiliza esta revisión:
+Una conclusión útil responde a los objetivos con evidencias. En lugar de escribir “la pieza se imprimió correctamente”, indica qué se verificó: encaje, masa, tiempo, estabilidad o acabado. Si el objetivo era reducir material, compara la versión inicial y la final con el mismo criterio. Si una prueba falló, explica qué decisión cambia a partir de ese resultado.
 
-- Comprueba que objetivo, requisitos, método, resultados y conclusiones se entienden sin explicación oral.
-- Cada imagen debe aportar una evidencia: CAD, plano, prueba, render, tabla o prototipo.
-- Evita llenar la memoria con capturas bonitas si no explican una decisión.
-- Cierra cada apartado con una conclusión técnica breve.
+### Ejemplo de redacción técnica
 
-## Aplicación práctica
+Una frase débil sería: “Se eligió PETG porque es mejor”. Una versión defendible sería: “Se eligió PETG para la segunda iteración porque la pieza debía soportar manipulación frecuente y una temperatura superior a la prevista para el prototipo visual; se mantuvieron orientación y geometría para comparar el cambio de material”. La segunda frase deja claro requisito, decisión y método.
 
-Elige una entrega concreta y revisa si cada apartado responde a una pregunta útil: qué se buscaba, cómo se hizo, qué se obtuvo y qué limitación queda abierta. Si una imagen no ayuda a responder eso, cambia la imagen o añade contexto.
+## Revisión antes de exportar el PDF
 
-### Registro recomendado
+Comprueba numeración de figuras, unidades, referencias cruzadas y legibilidad de planos. Abre el PDF final en otro dispositivo para detectar fuentes sustituidas, imágenes borrosas o páginas cortadas. Revisa también que anexos, nombres de archivo y versiones coincidan con la entrega real.
 
-Guarda solo evidencias útiles: capturas, medidas, parámetros, fotos del prototipo o notas de descarte. El objetivo es que otra persona pueda entender qué decisión se tomó y qué habría que revisar en la siguiente versión.
+Una lectura final puede hacerse buscando solo decisiones: material, geometría, fabricación y validación. Si alguna aparece sin motivo o sin prueba, el documento todavía tiene un hueco.
 
-## Límites y siguiente paso
-
-Estas pautas no sustituyen el formato de una asignatura. Si el profesor pide una estructura concreta, úsala primero y adapta estas recomendaciones para reforzar claridad, trazabilidad y lectura técnica.
-
-Para continuar, consulta también [recursos técnicos](/recursos), [guías por tema](/guias) y [metodología editorial](/metodologia).
 
 ## Conclusión
 

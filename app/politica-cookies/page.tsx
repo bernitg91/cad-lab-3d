@@ -3,7 +3,7 @@ import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Política de cookies",
-  description: "Información base sobre cookies técnicas, analíticas y publicitarias previstas para CAD Lab 3D.",
+  description: "Información sobre cookies técnicas, analítica de Vercel, publicidad de Google y gestión del consentimiento en CAD Lab 3D.",
   path: "/politica-cookies"
 });
 
@@ -13,13 +13,14 @@ export default function CookiesPage() {
       <h1 className="text-4xl font-black text-slate-950">Política de cookies</h1>
       <div className="article-body mt-8">
         <p>
-          CAD Lab 3D puede utilizar cookies técnicas, de preferencias, analíticas y publicitarias para mantener el sitio, medir el rendimiento y mostrar publicidad cuando corresponda.
+          CAD Lab 3D utiliza tecnologías técnicas y de medición para mantener el sitio y conocer el rendimiento de sus páginas. El código de Google AdSense puede estar presente para verificar el dominio y mostrar publicidad únicamente cuando el sitio sea autorizado.
         </p>
+        <p><strong>Última actualización:</strong> 13 de junio de 2026.</p>
         <h2>Cookies técnicas</h2>
         <p>Ayudan al funcionamiento básico del sitio y a recordar preferencias esenciales.</p>
         <h2>Cookies analíticas</h2>
         <p>
-          Pueden utilizarse para entender qué contenidos resultan más útiles, detectar errores de navegación y mejorar la estructura editorial. Los datos se analizan de forma agregada siempre que sea posible.
+          Vercel Web Analytics se utiliza para entender qué contenidos resultan más útiles, detectar problemas de navegación y mejorar la estructura editorial. La información se consulta de forma agregada.
         </p>
         <h2>Gestión del consentimiento</h2>
         <p>
@@ -27,7 +28,7 @@ export default function CookiesPage() {
         </p>
         <h2>Cookies publicitarias y Google</h2>
         <p>
-          Google AdSense puede usar cookies y tecnologías similares para personalizar anuncios, limitar la frecuencia de visualización, medir anuncios y evitar fraude. Google y otros proveedores externos pueden usar cookies para publicar anuncios basados en visitas anteriores a este sitio u otros sitios. Puedes consultar y gestionar opciones de consentimiento cuando el mensaje correspondiente esté disponible.
+          Google AdSense puede usar cookies y tecnologías similares para personalizar anuncios, limitar la frecuencia de visualización, medir anuncios y evitar fraude una vez aprobado el sitio. Google y otros proveedores externos pueden usar cookies para publicar anuncios basados en visitas anteriores a este sitio u otros sitios. Puedes consultar y gestionar opciones de consentimiento cuando el mensaje correspondiente esté disponible.
         </p>
         <h2>Cómo cambiar preferencias</h2>
         <p>

@@ -17,7 +17,7 @@ Preparar un STL no es pulsar exportar y confiar. El archivo debe conservar escal
 - Revisa unidades y escala antes de exportar.
 - Usa una resolución adecuada: ni facetado visible ni archivo gigante sin necesidad.
 - Abre el STL en el laminador y revisa la vista previa por capas.
-- Antes de enviar, pasa por el [checklist de impresión 3D](/blog/checklist-mandar-pieza-imprimir-3d).
+- Antes de enviar, pasa por el [checklist interactivo de impresión 3D](/checklist-impresion-3d).
 
 ## Ajustes de exportación
 
@@ -38,28 +38,20 @@ Importa el STL y confirma dimensiones. Después revisa orientación, soportes, t
 
 Un STL correcto debe abrirse con escala real, sin caras invertidas ni geometría rota. Antes de imprimir una pieza importante, importa el STL en el laminador y revisa si aparecen huecos, paredes demasiado finas o detalles que desaparecen por el diámetro de boquilla. Exportar no es el final: la revisión en laminador es parte del proceso.
 
-## Criterios de revisión
+## Resolución de malla: ni facetada ni innecesaria
 
-Para aplicar bien esta guía sobre **preparar un archivo STL para impresión 3D**, utiliza esta revisión:
+El STL aproxima las superficies curvas mediante triángulos. Una resolución demasiado baja deja cilindros facetados y puede afectar a alojamientos; una resolución extrema crea archivos pesados sin mejorar lo que la boquilla puede fabricar. Amplía una curva crítica en el laminador y comprueba que el contorno sea suave a la escala de impresión.
 
-- Antes de lanzar una impresión larga, revisa el archivo como si fueras a repetirlo dentro de un mes.
-- Comprueba unidades, orientación, soportes, primera capa, paredes y zonas de encaje.
-- Si la pieza tiene zonas críticas, valida primero una muestra parcial o una versión reducida.
-- Guarda material, boquilla, altura de capa, relleno, tiempo estimado y observaciones del resultado.
+Guarda también un formato editable o neutro, como el archivo CAD original y STEP cuando proceda. El STL no conserva operaciones, cotas ni intención de diseño, por lo que no debería ser la única copia de una pieza que quizá necesite cambios.
 
-## Aplicación práctica
+## Control de versión antes de compartir
 
-Trabaja con una pieza concreta: importa el archivo en el laminador, revisa la vista por capas, localiza la zona más delicada y decide qué parámetro afecta más al resultado. Después imprime una prueba pequeña si el fallo puede costar muchas horas.
+Usa nombres que identifiquen pieza y revisión, por ejemplo `soporte_sensor_rev03.stl`. Evita `final`, `final2` o `bueno_ahora_si`. Incluye una captura de la orientación prevista y, si otra persona va a imprimir, indica unidades, material recomendado, boquilla, altura de capa y zonas que no deben recibir soportes.
 
-### Registro recomendado
+### Comprobación final
 
-Guarda solo evidencias útiles: capturas, medidas, parámetros, fotos del prototipo o notas de descarte. El objetivo es que otra persona pueda entender qué decisión se tomó y qué habría que revisar en la siguiente versión.
+Compara las dimensiones que muestra el laminador con una cota conocida del CAD. Después revisa la primera capa, las capas donde comienzan agujeros o puentes y la última capa. Este recorrido detecta muchos errores de escala, cuerpos solapados y detalles perdidos antes de consumir material.
 
-## Límites y siguiente paso
-
-Las recomendaciones de FDM dependen de impresora, boquilla, material, humedad, tamaño de pieza y orientación. Una solución válida para PLA pequeño puede fallar en PETG, TPU o en una pieza con más horas de impresión.
-
-Para continuar, consulta también [checklist interactiva de impresión 3D](/checklist-impresion-3d), [calculadora de precio de impresión 3D](/calculadora-precio-impresion-3d) y [selector de material FDM](/selector-material-impresion-3d).
 
 ## Conclusión
 

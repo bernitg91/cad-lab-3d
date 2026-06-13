@@ -51,28 +51,20 @@ Asigna materiales coherentes. No todo debe ser metal brillante. Un plástico té
 
 Un render técnico debe enseñar forma, función y calidad del modelo. Una vista explotada, un detalle de unión o una comparación antes/después puede aportar más que una escena dramática. En portfolio, cada imagen debe responder una pregunta: qué es, cómo funciona o qué decisión demuestra.
 
-## Criterios de revisión
+## Una secuencia de imágenes que cuenta el proyecto
 
-Para aplicar bien esta guía sobre **hacer renders técnicos para un portfolio**, utiliza esta revisión:
+Empieza con una vista general sobre fondo neutro. Continúa con una imagen que muestre uso o escala, después una vista explotada o un detalle de unión y termina con una evidencia de proceso: plano, prototipo o comparación entre versiones. Cuatro imágenes con funciones distintas explican mejor que diez perspectivas decorativas.
 
-- Define usuario, función, contexto de uso y restricción principal antes de cerrar la geometría.
-- Revisa montaje, mantenimiento, espesores, radios, tolerancias y coherencia visual.
-- Separa decisiones estéticas de decisiones técnicas para explicar mejor el proyecto.
-- Guarda una captura o nota por cada cambio importante de diseño.
+Mantén cámara, horizonte y proporciones coherentes. Una focal moderada evita deformar el producto; las perspectivas muy angulares pueden hacer que una carcasa parezca más agresiva, pero dificultan leer dimensiones y relaciones entre piezas.
 
-## Aplicación práctica
+## Luz, material y acabado
 
-Toma una pieza o producto y escribe qué problema resuelve. Después revisa una zona funcional, una zona de montaje y una decisión visual. Si no puedes justificar una decisión con una necesidad, simplifícala o elimínala.
+Usa una luz principal amplia, un relleno suave y suficiente contraste para separar aristas. El material debe comunicar la decisión real del proyecto. Si el prototipo será FDM mate, un plástico con reflejo de automóvil puede generar expectativas falsas. Puedes mejorar la lectura sin fingir un proceso de fabricación diferente.
 
-### Registro recomendado
+### Exportación para pantalla y memoria
 
-Guarda solo evidencias útiles: capturas, medidas, parámetros, fotos del prototipo o notas de descarte. El objetivo es que otra persona pueda entender qué decisión se tomó y qué habría que revisar en la siguiente versión.
+Guarda una versión amplia para portfolio y otra optimizada para PDF. Comprueba que textos, líneas y detalles sigan siendo legibles al tamaño final. Nombra los archivos por proyecto y vista; así podrás sustituir una imagen sin romper el orden de la presentación.
 
-## Límites y siguiente paso
-
-Un prototipo visual puede comunicar forma, pero no valida resistencia, ergonomía ni fabricación. Cuando el proyecto pase de presentación a uso real, revisa requisitos, ensayos y límites con más rigor.
-
-Para continuar, consulta también [guías de diseño industrial](/guias), [casos prácticos de impresión 3D](/casos-practicos-impresion-3d) y [recursos técnicos](/recursos).
 
 ## Conclusión
 

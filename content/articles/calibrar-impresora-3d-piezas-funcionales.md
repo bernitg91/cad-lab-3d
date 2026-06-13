@@ -17,7 +17,7 @@ Una pieza funcional exige más que una impresora capaz de hacer figuras decorati
 - Nivela la cama y revisa la primera capa antes de cualquier prueba seria.
 - Ajusta flujo, temperatura y retracción con el material real.
 - Valida tolerancias con piezas pequeñas antes de imprimir un conjunto completo.
-- Conecta esta guía con [tolerancias para piezas impresas en 3D](/blog/tolerancias-piezas-impresas-3d) y el [checklist antes de imprimir](/blog/checklist-mandar-pieza-imprimir-3d).
+- Conecta esta guía con [tolerancias para piezas impresas en 3D](/blog/tolerancias-piezas-impresas-3d) y el [checklist antes de imprimir](/checklist-impresion-3d).
 
 ## Primera capa y adhesión
 
@@ -42,28 +42,16 @@ Para piezas funcionales, una temperatura demasiado baja puede mejorar el acabado
 
 Antes de imprimir una bisagra, una mordaza o un soporte atornillado, imprime una pieza de calibración con agujeros, salientes y una pared fina. Mide con calibre y anota diferencias. Si el agujero nominal de 6 mm sale a 5,7 mm, no tiene sentido corregir toda la carcasa a ciegas: primero debes saber si el problema está en flujo, expansión horizontal o contracción del material.
 
-## Criterios de revisión
+## Orden de calibración que evita correcciones falsas
 
-Para aplicar bien esta guía sobre **calibrar una impresora 3D antes de piezas funcionales**, utiliza esta revisión:
+Conviene ajustar una variable cada vez. Empieza por la mecánica básica: correas tensas, ruedas sin holgura, boquilla limpia y cama estable. Después revisa primera capa, temperatura, flujo y, por último, compensaciones dimensionales. Si cambias flujo y expansión horizontal a la vez, una medida correcta puede ocultar dos errores que se compensan entre sí.
 
-- Antes de lanzar una impresión larga, revisa el archivo como si fueras a repetirlo dentro de un mes.
-- Comprueba unidades, orientación, soportes, primera capa, paredes y zonas de encaje.
-- Si la pieza tiene zonas críticas, valida primero una muestra parcial o una versión reducida.
-- Guarda material, boquilla, altura de capa, relleno, tiempo estimado y observaciones del resultado.
+Para una impresora que se utilizará con encajes, registra tres resultados distintos: dimensión exterior, diámetro de agujero y separación entre dos paredes. No siempre se desvían en la misma dirección. Una pieza de 20 mm puede medir bien mientras un agujero de 6 mm queda cerrado por el trazado de perímetros.
 
-## Aplicación práctica
+### Cuándo repetir la prueba
 
-Trabaja con una pieza concreta: importa el archivo en el laminador, revisa la vista por capas, localiza la zona más delicada y decide qué parámetro afecta más al resultado. Después imprime una prueba pequeña si el fallo puede costar muchas horas.
+Repite la placa de control al cambiar de diámetro de boquilla, tipo de material, perfil de laminado o después de una intervención mecánica. No hace falta recalibrar toda la máquina por cada bobina, pero sí comprobar el comportamiento cuando cambia una condición que afecta al caudal o a la contracción.
 
-### Registro recomendado
-
-Guarda solo evidencias útiles: capturas, medidas, parámetros, fotos del prototipo o notas de descarte. El objetivo es que otra persona pueda entender qué decisión se tomó y qué habría que revisar en la siguiente versión.
-
-## Límites y siguiente paso
-
-Las recomendaciones de FDM dependen de impresora, boquilla, material, humedad, tamaño de pieza y orientación. Una solución válida para PLA pequeño puede fallar en PETG, TPU o en una pieza con más horas de impresión.
-
-Para continuar, consulta también [checklist interactiva de impresión 3D](/checklist-impresion-3d), [calculadora de precio de impresión 3D](/calculadora-precio-impresion-3d) y [selector de material FDM](/selector-material-impresion-3d).
 
 ## Conclusión
 

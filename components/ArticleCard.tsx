@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { getCategoryGuidePath } from "@/lib/categories";
 import { formatDate } from "@/lib/date";
 import type { ArticleMeta } from "@/types/article";
 
@@ -6,7 +7,7 @@ export function ArticleCard({ article }: { article: ArticleMeta }) {
   return (
     <article className="group flex h-full flex-col rounded-lg border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-md">
       <div className="flex flex-wrap items-center gap-2 text-xs font-bold uppercase tracking-wide text-teal-700">
-        <Link href={`/categorias/${article.categorySlug}`} className="rounded bg-teal-50 px-2.5 py-1">
+        <Link href={getCategoryGuidePath(article.categorySlug)} className="rounded bg-teal-50 px-2.5 py-1">
           {article.category}
         </Link>
         <span className="text-slate-400">{article.readingTime}</span>

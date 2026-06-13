@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { categories } from "@/lib/categories";
 
 export function Footer() {
   return (
@@ -13,15 +12,14 @@ export function Footer() {
           <p className="mt-5 text-xs text-slate-500">© {new Date().getFullYear()} CAD Lab 3D. Contenido educativo y recursos técnicos actualizados de forma periódica.</p>
         </div>
         <div>
-          <p className="font-bold text-white">Categorías</p>
+          <p className="font-bold text-white">Guías principales</p>
           <ul className="mt-3 grid gap-2 text-sm text-slate-400">
-            {categories.slice(0, 6).map((category) => (
-              <li key={category.slug}>
-                <Link className="hover:text-white" href={`/categorias/${category.slug}`}>
-                  {category.name}
-                </Link>
-              </li>
-            ))}
+            <li><Link className="hover:text-white" href="/guia-impresion-3d-fdm">Impresión 3D FDM</Link></li>
+            <li><Link className="hover:text-white" href="/guia-materiales-fdm">Materiales FDM</Link></li>
+            <li><Link className="hover:text-white" href="/guia-cad-parametrico">CAD paramétrico</Link></li>
+            <li><Link className="hover:text-white" href="/guia-simulacion-fem">Simulación FEM</Link></li>
+            <li><Link className="hover:text-white" href="/guia-documentacion-tecnica">Documentación técnica</Link></li>
+            <li><Link className="hover:text-white" href="/categorias">Todas las categorías</Link></li>
           </ul>
         </div>
         <div>
@@ -34,11 +32,11 @@ export function Footer() {
             <li><Link className="hover:text-white" href="/glosario">Glosario técnico</Link></li>
             <li><Link className="hover:text-white" href="/preguntas-frecuentes">Preguntas frecuentes</Link></li>
             <li><Link className="hover:text-white" href="/metodologia">Metodología editorial</Link></li>
+            <li><Link className="hover:text-white" href="/fuentes">Fuentes técnicas</Link></li>
             <li><Link className="hover:text-white" href="/calculadora-precio-impresion-3d">Calculadora 3D</Link></li>
             <li><Link className="hover:text-white" href="/selector-material-impresion-3d">Selector material FDM</Link></li>
             <li><Link className="hover:text-white" href="/servicios">Servicios</Link></li>
             <li><Link className="hover:text-white" href="/impresion-3d-personalizada">Impresión 3D personalizada</Link></li>
-            <li><Link className="hover:text-white" href="/herramientas-recomendadas">Herramientas recomendadas</Link></li>
             <li><Link className="hover:text-white" href="/contacto">Contacto</Link></li>
           </ul>
         </div>
@@ -53,6 +51,7 @@ export function Footer() {
             <li><Link className="hover:text-white" href="/politica-cookies">Política de cookies</Link></li>
             <li><Link className="hover:text-white" href="/aviso-legal">Aviso legal</Link></li>
             <li><Link className="hover:text-white" href="/metodologia">Metodología</Link></li>
+            <li><Link className="hover:text-white" href="/fuentes">Fuentes</Link></li>
             <li><Link className="hover:text-white" href="/preguntas-frecuentes">FAQ</Link></li>
           </ul>
         </div>

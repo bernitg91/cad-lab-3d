@@ -45,28 +45,18 @@ Si no tienes experiencia, SolidWorks puede ser una entrada más suave. Si tu uni
 
 Si tu universidad usa Creo, aprenderlo bien te dará ventaja en asignaturas con piezas paramétricas y planos. Si un entorno de prácticas usa SolidWorks, su flujo puede resultar más rápido para empezar. La elección no debería basarse solo en cuál parece más fácil, sino en qué industria, profesores o proyectos tienes cerca.
 
-## Criterios de revisión
+## Comparación mediante un mismo ejercicio
 
-Para aplicar bien esta guía sobre **SolidWorks vs Creo: cuál conviene más para estudiantes**, utiliza esta revisión:
+Modela en ambos programas una pieza con base, nervio, patrón de agujeros y plano acotado. Mide el tiempo de la primera versión, pero también el de introducir tres cambios: aumentar espesor, desplazar el patrón y sustituir un taladro por una ranura. El programa que te permite controlar mejor esas modificaciones puede ser más útil que el que termina antes la geometría inicial.
 
-- Compara flujo de modelado, facilidad de cambio, documentación y compatibilidad con el entorno donde vas a trabajar.
-- No elijas software solo por popularidad; revisa qué se usa en tu asignatura, prácticas o proyecto.
-- Prepara ejemplos pequeños para probar árbol de operaciones, ensamblaje y plano.
-- Evita piezas dependientes de referencias improvisadas si vas a enseñarlas en portfolio.
+Revisa además cómo gestiona cada uno referencias, configuraciones o familias, ensamblajes y actualización de planos. Para un proyecto universitario pequeño quizá no notes grandes diferencias; en un conjunto con muchas relaciones, el orden del modelo empieza a importar mucho más.
 
-## Aplicación práctica
+## Qué conocimiento sí se transfiere
 
-Modela la misma pieza sencilla en dos flujos distintos y observa cuál se modifica mejor. Esa prueba enseña más que comparar listas de funciones sin contexto.
+Los nombres de las herramientas cambian, pero un croquis bien restringido, una referencia estable, un plano legible y una revisión de interferencias siguen siendo necesarios. Aprende a pensar en intención de diseño y no solo en la secuencia de clics. Las ayudas oficiales de PTC y SOLIDWORKS son la referencia adecuada para confirmar funciones concretas de cada versión.
 
-### Registro recomendado
+Antes de decidir por empleabilidad, revisa ofertas y empresas de tu zona en ese momento. La demanda de software cambia por sector y ubicación, así que no conviene convertir una observación puntual en una regla universal.
 
-Guarda solo evidencias útiles: capturas, medidas, parámetros, fotos del prototipo o notas de descarte. El objetivo es que otra persona pueda entender qué decisión se tomó y qué habría que revisar en la siguiente versión.
-
-## Límites y siguiente paso
-
-La mejor herramienta depende del objetivo. Para aprender CAD, importa más entender referencias, cotas, operaciones, planos y cambios de diseño que memorizar una interfaz concreta.
-
-Para continuar, consulta también [guías por tema](/guias), [modelado paramétrico frente a directo](/blog/modelado-parametrico-vs-directo) y [recursos técnicos](/recursos).
 
 ## Conclusión
 

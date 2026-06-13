@@ -157,7 +157,9 @@ No incluyas secretos ni credenciales en el repositorio.
 
 ## Checklist antes de solicitar AdSense
 
-El proyecto cuenta con 42 artículos, herramientas propias, casos prácticos con fotos reales, glosario técnico, FAQ y páginas legales. Antes de volver a solicitar revisión tras un rechazo por contenido de poco valor, comprueba:
+La publicación prioriza un conjunto editorial reducido y diferenciado, acompañado de guías pilar, herramientas, casos prácticos con fotografías propias, glosario técnico, preguntas frecuentes y páginas legales. Los artículos antiguos que se solapaban se conservan en el repositorio, pero redirigen a la guía o herramienta más útil y no aparecen en el sitemap.
+
+Antes de volver a solicitar revisión tras un rechazo por contenido de poco valor, comprueba:
 
 - Artículos útiles, originales y suficientemente completos.
 - Páginas legales revisadas, contacto visible y email real.

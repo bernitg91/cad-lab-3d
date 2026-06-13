@@ -57,28 +57,20 @@ Una pieza en buen material puede fallar por mala orientación, pocos perímetros
 
 Para un soporte de pared, el filamento no se elige igual que para una figura. Debes preguntar si habrá carga constante, temperatura, humedad, impactos o tornillos. Un PETG bien calibrado puede ser más útil que un material teóricamente superior mal impreso. La pieza final depende tanto del material como del perfil y la orientación.
 
-## Criterios de revisión
+## Un método de descarte antes de comparar marcas
 
-Para aplicar bien esta guía sobre **elegir el mejor filamento para piezas funcionales**, utiliza esta revisión:
+Empieza por eliminar materiales incompatibles con el entorno. Si la pieza estará cerca de una fuente de calor, no uses PLA por comodidad sin comprobar la temperatura real. Si trabajará al exterior, considera radiación UV, agua y cambios térmicos. Si necesita flexar, un material rígido puede fallar aunque tenga buena resistencia a tracción.
 
-- Empieza por la función de la pieza, no por el material que tienes cargado en la impresora.
-- Comprueba temperatura de uso, rigidez necesaria, exposición exterior, flexibilidad y riesgo de impacto.
-- Si el montaje exige encaje o rosca, revisa tolerancias con el material real.
-- Registra por qué elegiste una opción y qué limitación queda pendiente de prueba.
+Después revisa lo que tu impresora puede procesar de forma repetible. ABS, ASA y Nylon suelen exigir más control ambiental que PLA o PETG. Una bobina avanzada no mejora el proyecto si produce alabeo, humedad o capas mal unidas. La facilidad de fabricación forma parte del criterio técnico.
 
-## Aplicación práctica
+### Tres piezas, tres decisiones distintas
 
-Aplica la decisión a una pieza concreta y compara dos materiales razonables. Anota qué cambia en impresión, acabado, tolerancia, coste y riesgo de fallo. La elección mejora cuando puedes justificar por qué descartas otra opción.
+- Una maqueta dimensional suele priorizar estabilidad, detalle y coste: PLA es una opción lógica.
+- Un soporte de taller puede necesitar tenacidad y cierta resistencia térmica: PETG suele ser un punto de partida razonable.
+- Una guía sometida a roce puede beneficiarse de Nylon, siempre que se controle humedad, tolerancia y orientación.
 
-### Registro recomendado
+Comprueba estas decisiones con la guía oficial del fabricante del filamento y con una muestra pequeña de la zona crítica. Las familias de material comparten tendencias, pero cada formulación puede imprimir y comportarse de manera diferente.
 
-Guarda solo evidencias útiles: capturas, medidas, parámetros, fotos del prototipo o notas de descarte. El objetivo es que otra persona pueda entender qué decisión se tomó y qué habría que revisar en la siguiente versión.
-
-## Límites y siguiente paso
-
-Las fichas de material dan una orientación, pero el comportamiento final depende del fabricante, secado, parámetros, geometría y uso real de la pieza. En piezas exigentes, la prueba física manda sobre la teoría.
-
-Para continuar, consulta también [guía de materiales](/blog/diferencias-pla-petg-abs-nylon), [selector de material FDM](/selector-material-impresion-3d) y [recursos técnicos](/recursos).
 
 ## Conclusión
 

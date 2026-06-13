@@ -1,108 +1,62 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { categories } from "@/lib/categories";
+import { ArticleCard } from "@/components/ArticleCard";
 import { getAllArticles } from "@/lib/articles";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Guías",
-  description: "Guías principales de Creo Parametric, SolidWorks, impresión 3D, materiales, simulación FEM, portfolio y documentación técnica.",
+  title: "Guías técnicas de CAD, FDM, materiales y FEM",
+  description: "Guías completas para modelar, imprimir, seleccionar materiales, simular y documentar proyectos técnicos.",
   path: "/guias"
 });
 
-const guideGroups = [
-  { title: "Guía completa de impresión 3D FDM", href: "/guia-impresion-3d-fdm" },
-  { title: "Creo Parametric", href: "/categorias/creo-parametric" },
-  { title: "SolidWorks", href: "/categorias/solidworks" },
-  { title: "Impresión 3D", href: "/categorias/impresion-3d" },
-  { title: "Materiales", href: "/categorias/materiales" },
-  { title: "Simulación FEM", href: "/categorias/simulacion-fem" },
-  { title: "Portfolio y documentación técnica", href: "/categorias/proyectos-universitarios" }
+const guides = [
+  { title: "Impresión 3D FDM", href: "/guia-impresion-3d-fdm", text: "Desde el diseño y el STL hasta orientación, laminado, calibración, coste y control final." },
+  { title: "Materiales FDM", href: "/guia-materiales-fdm", text: "Decide entre PLA, PETG, TPU, ABS, ASA y Nylon con criterios de uso y fabricación." },
+  { title: "CAD paramétrico", href: "/guia-cad-parametrico", text: "Organiza croquis, referencias, árbol, ensamblajes, planos y exportaciones fiables." },
+  { title: "Simulación FEM", href: "/guia-simulacion-fem", text: "Plantea el problema, simplifica la geometría y revisa malla, resultados y límites." },
+  { title: "Documentación técnica", href: "/guia-documentacion-tecnica", text: "Conecta requisitos, decisiones, prototipos, planos, renders y conclusiones." }
 ];
 
 export default function GuidesPage() {
   const articles = getAllArticles();
 
   return (
-    <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <main className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
       <p className="text-sm font-black uppercase tracking-wide text-teal-700">Rutas de aprendizaje</p>
-      <h1 className="mt-3 max-w-3xl text-4xl font-black text-slate-950">Guías para estudiar, diseñar, fabricar y documentar con criterio</h1>
-      <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-600">
-        Accesos directos a las áreas principales del proyecto para que el contenido pueda crecer de forma ordenada.
+      <h1 className="mt-3 max-w-4xl text-4xl font-black text-slate-950">Guías para estudiar, diseñar, fabricar y documentar con criterio</h1>
+      <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-600">
+        Las guías principales reúnen el contexto que suele faltar al leer artículos sueltos. Empieza por una ruta completa y utiliza las entradas del blog para resolver dudas concretas.
       </p>
-      <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-        {guideGroups.map((guide) => (
-          <Link key={guide.title} href={guide.href} className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm hover:border-blue-300">
-            <h2 className="text-xl font-black text-slate-950">{guide.title}</h2>
-            <p className="mt-3 text-sm leading-6 text-slate-600">
-              Artículos, checklists y ejemplos prácticos para avanzar desde conceptos básicos hasta decisiones de proyecto.
-            </p>
+
+      <div className="mt-10 divide-y divide-slate-200 border-y border-slate-200">
+        {guides.map((guide, index) => (
+          <Link key={guide.href} href={guide.href} className="group grid gap-3 py-7 md:grid-cols-[80px_280px_1fr] md:items-center">
+            <span className="text-sm font-black text-teal-700">0{index + 1}</span>
+            <h2 className="text-2xl font-black text-slate-950 group-hover:text-blue-700">{guide.title}</h2>
+            <p className="text-sm leading-6 text-slate-600">{guide.text}</p>
           </Link>
         ))}
       </div>
-      <div className="mt-10 grid gap-5 lg:grid-cols-2">
-        {categories.slice(0, 6).map((category) => {
-          const categoryArticles = articles.filter((article) => article.categorySlug === category.slug).slice(0, 4);
-          return (
-            <section key={category.slug} className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <p className="text-xs font-black uppercase tracking-wide text-teal-700">Guía pilar</p>
-                  <h2 className="mt-1 text-xl font-black text-slate-950">{category.name}</h2>
-                </div>
-                <Link className="text-sm font-bold text-blue-700 hover:text-blue-900" href={`/categorias/${category.slug}`}>
-                  Ver categoría
-                </Link>
-              </div>
-              <ul className="mt-4 grid gap-2 text-sm text-slate-700">
-                {categoryArticles.map((article) => (
-                  <li key={article.slug}>
-                    <Link className="font-semibold hover:text-blue-700" href={`/blog/${article.slug}`}>
-                      {article.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          );
-        })}
-      </div>
-      <div className="mt-10 rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
-        <h2 className="text-2xl font-black text-slate-950">Categorías disponibles</h2>
-        <div className="mt-4 flex flex-wrap gap-2">
-          {categories.map((category) => (
-            <Link key={category.slug} className="rounded-md bg-slate-100 px-3 py-2 text-sm font-bold text-slate-700 hover:bg-blue-50 hover:text-blue-700" href={`/categorias/${category.slug}`}>
-              {category.name}
-            </Link>
-          ))}
+
+      <section className="mt-14">
+        <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+          <div>
+            <p className="text-sm font-black uppercase tracking-wide text-teal-700">Lecturas específicas</p>
+            <h2 className="mt-2 text-3xl font-black text-slate-950">Artículos seleccionados y revisados</h2>
+          </div>
+          <Link className="text-sm font-bold text-blue-700 hover:text-blue-900" href="/blog">Ver el blog</Link>
         </div>
-      </div>
-      <div className="mt-6 grid gap-4 md:grid-cols-3">
-        <Link className="rounded-lg bg-slate-950 p-5 text-white hover:bg-blue-900" href="/recursos">
-          <h2 className="text-xl font-black">Recursos y plantillas</h2>
-          <p className="mt-2 text-sm leading-6 text-slate-300">Checklists, estructuras y guías relacionadas para trabajar con más orden.</p>
-        </Link>
-        <Link className="rounded-lg bg-slate-950 p-5 text-white hover:bg-blue-900" href="/casos-practicos-impresion-3d">
-          <h2 className="text-xl font-black">Casos prácticos</h2>
-          <p className="mt-2 text-sm leading-6 text-slate-300">Piezas reales con objetivo, revisión técnica y aprendizajes de impresión FDM.</p>
-        </Link>
-        <Link className="rounded-lg bg-slate-950 p-5 text-white hover:bg-blue-900" href="/servicios">
-          <h2 className="text-xl font-black">Servicios CAD</h2>
-          <p className="mt-2 text-sm leading-6 text-slate-300">Apoyo para modelado, renders, revisión y documentación técnica.</p>
-        </Link>
-        <Link className="rounded-lg bg-slate-950 p-5 text-white hover:bg-blue-900" href="/herramientas-recomendadas">
-          <h2 className="text-xl font-black">Herramientas</h2>
-          <p className="mt-2 text-sm leading-6 text-slate-300">Criterios para elegir software, materiales y equipos antes de comprar.</p>
-        </Link>
-        <Link className="rounded-lg bg-slate-950 p-5 text-white hover:bg-blue-900" href="/glosario">
-          <h2 className="text-xl font-black">Glosario técnico</h2>
-          <p className="mt-2 text-sm leading-6 text-slate-300">Definiciones para leer guías de CAD, FDM, materiales, FEM y documentación.</p>
-        </Link>
-        <Link className="rounded-lg bg-slate-950 p-5 text-white hover:bg-blue-900" href="/preguntas-frecuentes">
-          <h2 className="text-xl font-black">FAQ</h2>
-          <p className="mt-2 text-sm leading-6 text-slate-300">Respuestas rápidas sobre servicios, archivos, límites técnicos y contacto.</p>
-        </Link>
-      </div>
-    </section>
+        <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {articles.slice(0, 6).map((article) => <ArticleCard key={article.slug} article={article} />)}
+        </div>
+      </section>
+
+      <section className="mt-14 grid gap-5 md:grid-cols-3">
+        <Link className="border-l-4 border-teal-500 bg-slate-950 p-6 text-white" href="/recursos"><h2 className="text-xl font-black">Recursos aplicables</h2><p className="mt-2 text-sm leading-6 text-slate-300">Calculadoras, checklist y plantillas para trabajar sobre un proyecto real.</p></Link>
+        <Link className="border-l-4 border-teal-500 bg-slate-950 p-6 text-white" href="/casos-practicos-impresion-3d"><h2 className="text-xl font-black">Casos prácticos</h2><p className="mt-2 text-sm leading-6 text-slate-300">Fotografías propias y observaciones de piezas impresas.</p></Link>
+        <Link className="border-l-4 border-teal-500 bg-slate-950 p-6 text-white" href="/fuentes"><h2 className="text-xl font-black">Fuentes técnicas</h2><p className="mt-2 text-sm leading-6 text-slate-300">Documentación oficial utilizada para contrastar las guías.</p></Link>
+      </section>
+    </main>
   );
 }

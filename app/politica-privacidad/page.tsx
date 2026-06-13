@@ -14,9 +14,10 @@ export default function PrivacyPage() {
       <p>
         CAD Lab 3D es un proyecto informativo sobre CAD, diseño industrial, impresión 3D y documentación técnica. Esta política explica qué datos pueden tratarse al navegar por el sitio, usar formularios o interactuar con servicios de terceros.
       </p>
+      <p><strong>Última actualización:</strong> 13 de junio de 2026.</p>
       <h2>Responsable del sitio</h2>
       <p>
-        El responsable editorial del sitio es CAD Lab 3D. Para consultas relacionadas con privacidad, contenido o ejercicio de derechos, utiliza la página de contacto o escribe a {siteConfig.contactEmail}. Si el proyecto incorpora actividad comercial directa de forma continuada, estos datos se ampliarán con la información fiscal y legal que corresponda.
+        El responsable editorial del sitio es CAD Lab 3D. Para consultas relacionadas con privacidad, contenido o ejercicio de derechos, utiliza la página de contacto o escribe a <a href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a>.
       </p>
       <h2>Datos que podrían tratarse</h2>
       <p>
@@ -28,7 +29,7 @@ export default function PrivacyPage() {
       </p>
       <h2>Cookies, publicidad y proveedores externos</h2>
       <p>
-        La web puede utilizar servicios de analítica, medición de rendimiento y publicidad de terceros, incluido Google AdSense. Google y otros proveedores externos pueden usar cookies o tecnologías similares para medir visitas, evitar fraude, mostrar anuncios personalizados o no personalizados y evaluar rendimiento publicitario según el consentimiento aplicable.
+        La web utiliza Vercel Web Analytics para conocer visitas y rendimiento de páginas de forma agregada. También puede cargar el código de Google AdSense para verificar el dominio y, cuando Google lo autorice, mostrar publicidad. Google y otros proveedores externos pueden usar cookies o tecnologías similares para medir visitas, evitar fraude, mostrar anuncios personalizados o no personalizados y evaluar rendimiento publicitario según el consentimiento aplicable.
       </p>
       <p>
         Los proveedores externos, incluido Google, pueden utilizar cookies para publicar anuncios basados en visitas anteriores a este sitio u otros sitios. El uso de cookies publicitarias permite a Google y a sus partners mostrar anuncios en función de esas visitas. Los usuarios pueden gestionar la publicidad personalizada desde la configuración de anuncios de Google y desde las opciones de consentimiento disponibles.
@@ -48,9 +49,9 @@ export default function PrivacyPage() {
       <p>
         Puedes solicitar información, rectificación o supresión de datos utilizando la página de contacto. La solicitud se revisará atendiendo al alcance real de los datos disponibles y a las obligaciones legales aplicables.
       </p>
-      <h2>Revisión legal</h2>
+      <h2>Cambios en esta política</h2>
       <p>
-        Esta política es una base editable para un proyecto web en crecimiento. Si CAD Lab 3D empieza a vender servicios de forma habitual, incorporar pagos, usar más proveedores o captar datos adicionales, deberá revisarse y adaptarse a la situación legal real.
+        Esta política se actualizará cuando cambien los servicios de medición, publicidad, formularios o tratamiento de datos. La fecha de revisión se indicará al inicio de la página.
       </p>
     </LegalPage>
   );

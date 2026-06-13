@@ -16,6 +16,7 @@ export function ArticleExplorer({ articles }: { articles: ArticleMeta[] }) {
       return matchesCategory && searchable.includes(query.toLowerCase());
     });
   }, [articles, category, query]);
+  const availableCategories = categories.filter((item) => articles.some((article) => article.categorySlug === item.slug));
 
   return (
     <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
@@ -37,7 +38,7 @@ export function ArticleExplorer({ articles }: { articles: ArticleMeta[] }) {
             className="h-11 rounded-md border border-slate-300 px-3 text-base outline-none focus:border-blue-600 focus:ring-4 focus:ring-blue-100"
           >
             <option value="todas">Todas</option>
-            {categories.map((item) => (
+            {availableCategories.map((item) => (
               <option key={item.slug} value={item.slug}>
                 {item.name}
               </option>
