@@ -1,12 +1,13 @@
 import type { MetadataRoute } from "next";
 import { getAllArticles } from "@/lib/articles";
+import { caseStudies } from "@/lib/case-studies";
 import { absoluteUrl } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const siteUpdatedAt = new Date("2026-06-23");
   const staticPages = [
     "",
     "/blog",
-    "/categorias",
     "/recursos",
     "/calculadora-precio-impresion-3d",
     "/calculadora-peso-pieza-3d",
@@ -33,11 +34,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...staticPages.map((page) => ({
       url: absoluteUrl(page || "/"),
-      lastModified: new Date()
+      lastModified: siteUpdatedAt
     })),
     ...getAllArticles().map((article) => ({
       url: absoluteUrl(`/blog/${article.slug}`),
-      lastModified: new Date(article.date)
+      lastModified: new Date(article.updatedDate || article.date)
+    })),
+    ...caseStudies.map((study) => ({
+      url: absoluteUrl(`/casos-practicos-impresion-3d/${study.slug}`),
+      lastModified: new Date(study.updatedAt)
     }))
   ];
 }

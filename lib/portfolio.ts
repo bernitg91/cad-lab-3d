@@ -1,5 +1,20 @@
-export const portfolioItems = [
+export type PortfolioItem = {
+  slug?: string;
+  title: string;
+  description: string;
+  image: string;
+  alt: string;
+  material: string;
+  use: string;
+  criticalPoints: string[];
+  objective: string;
+  review: string;
+  lesson: string;
+};
+
+export const portfolioItems: PortfolioItem[] = [
   {
+    slug: "soporte-personalizado-relojes",
     title: "Soporte personalizado para relojes",
     description: "Pieza funcional de exposición con apoyos repetidos, base estable y geometría preparada para uso cotidiano.",
     image: "/images/impresion-3d-personalizada/soporte-relojes-fdm.jpg",
@@ -12,6 +27,7 @@ export const portfolioItems = [
     lesson: "En objetos de exposición importa tanto la función como la limpieza visual: una base simple y repetible facilita imprimir varias unidades con el mismo criterio."
   },
   {
+    slug: "caja-prototipo-borde-reforzado",
     title: "Caja prototipo con borde reforzado",
     description: "Contenedor impreso para validar volumen, rigidez, montaje perimetral y acabado antes de una versión final.",
     image: "/images/impresion-3d-personalizada/caja-prototipo-fdm.jpg",
@@ -24,6 +40,7 @@ export const portfolioItems = [
     lesson: "Las cajas grandes deben diseñarse con bordes, radios y refuerzos pensados para FDM; una pared aparentemente sencilla puede deformarse si no se controla."
   },
   {
+    slug: "bandeja-organizadora-medida",
     title: "Bandeja organizadora a medida",
     description: "Objeto de uso diario con paredes suaves, borde elevado y forma adaptada a una necesidad concreta.",
     image: "/images/impresion-3d-personalizada/bandeja-organizadora-fdm.jpg",
@@ -48,6 +65,7 @@ export const portfolioItems = [
     lesson: "En piezas decorativas el diseño puede ocultar o convertir las capas FDM en parte del acabado, siempre que el patrón sea coherente."
   },
   {
+    slug: "adaptador-funcional-tolerancias",
     title: "Adaptador funcional de pequeño formato",
     description: "Pieza compacta para validar diámetro interior, apoyo, encaje y tolerancia en una geometría sencilla.",
     image: "/images/impresion-3d-personalizada/adaptador-aro-funcional-fdm.jpg",

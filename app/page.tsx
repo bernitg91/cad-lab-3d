@@ -146,7 +146,11 @@ export default function HomePage() {
           </div>
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             {portfolioItems.slice(0, 3).map((item) => (
-              <Link key={item.title} href="/casos-practicos-impresion-3d" className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm hover:border-blue-300">
+              <Link
+                key={item.title}
+                href={item.slug ? `/casos-practicos-impresion-3d/${item.slug}` : "/casos-practicos-impresion-3d"}
+                className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm hover:border-blue-300"
+              >
                 <div className="relative aspect-[4/3] bg-slate-100">
                   <Image src={item.image} alt={item.alt} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover" />
                 </div>

@@ -138,6 +138,14 @@ export default function PracticalCasesPage() {
                       <p className="mt-2 text-sm leading-6 text-slate-600">{item.lesson}</p>
                     </div>
                   </div>
+                  {item.slug ? (
+                    <Link
+                      className="mt-5 inline-flex rounded-md bg-slate-950 px-4 py-2 text-sm font-black text-white hover:bg-blue-800"
+                      href={`/casos-practicos-impresion-3d/${item.slug}`}
+                    >
+                      Leer el análisis completo
+                    </Link>
+                  ) : null}
                 </div>
               </article>
             ))}

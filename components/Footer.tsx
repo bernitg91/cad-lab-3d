@@ -19,7 +19,7 @@ export function Footer() {
             <li><Link className="hover:text-white" href="/guia-cad-parametrico">CAD paramétrico</Link></li>
             <li><Link className="hover:text-white" href="/guia-simulacion-fem">Simulación FEM</Link></li>
             <li><Link className="hover:text-white" href="/guia-documentacion-tecnica">Documentación técnica</Link></li>
-            <li><Link className="hover:text-white" href="/categorias">Todas las categorías</Link></li>
+            <li><Link className="hover:text-white" href="/guias">Todas las guías</Link></li>
           </ul>
         </div>
         <div>
