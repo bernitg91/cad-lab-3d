@@ -11,65 +11,60 @@ author: "CAD Lab 3D"
 featured: false
 ---
 
-PLA, PETG, ABS y Nylon aparecen en casi cualquier comparativa de impresión 3D, pero no sirven para lo mismo. Elegir bien evita piezas deformadas, frágiles o difíciles de imprimir.
+PLA, PETG, ABS y Nylon son familias de filamento, no cuatro recetas idénticas entre fabricantes. Comparten tendencias, pero pigmentos, cargas y aditivos cambian propiedades e impresión. Utiliza esta comparativa para descartar opciones y valida después la formulación concreta con su ficha técnica y una muestra.
 
-## Comparación inicial
+## Comparación práctica inicial
 
-- PLA es fácil y rígido, pero limitado por temperatura.
-- PETG es equilibrado para piezas útiles.
-- ABS resiste más calor, pero exige control de impresión.
-- Nylon es tenaz y resistente al desgaste, pero necesita secado.
-- Para una recomendación rápida, prueba el [selector de material para impresión 3D](/selector-material-impresion-3d).
+| Familia | Ventaja habitual | Limitación habitual | Punto de partida de uso |
+| --- | --- | --- | --- |
+| PLA | Facilidad, rigidez y detalle | Baja tolerancia al calor y fractura más brusca | Maquetas, útiles ligeros y prototipos visuales |
+| PETG | Equilibrio entre facilidad y tenacidad | Hilos, puentes y detalle más sensibles al ajuste | Soportes, carcasas y piezas de uso general |
+| ABS | Mejor comportamiento térmico y postprocesado posible | Contracción, alabeo y mayores requisitos de entorno | Carcasas y componentes con temperatura moderada |
+| Nylon | Tenacidad, flexión y desgaste | Absorbe humedad y exige control de impresión | Engranajes, guías, clips y piezas sometidas a roce |
 
-## PLA
+La tabla no garantiza resultados. La geometría, orientación, unión entre capas y estado del filamento pueden dominar el fallo. Para convertir estas tendencias en una decisión, utiliza también [cómo elegir filamento para piezas funcionales](/blog/elegir-filamento-piezas-funcionales).
 
-PLA es fácil, rígido y visualmente limpio. Va muy bien para maquetas, prototipos estéticos, útiles ligeros y piezas educativas. Su punto débil es la temperatura: puede deformarse en ambientes calientes.
+## PLA: sencillo y rígido, con límites térmicos
 
-## PETG
+PLA suele ser la opción más accesible para aprender, comprobar dimensiones y crear prototipos visuales. Su rigidez ayuda a que una pieza se sienta sólida y permite buen detalle con perfiles habituales. Puede ser suficiente para plantillas, organizadores o carcasas de escritorio sin exposición térmica.
 
-PETG combina facilidad razonable con más tenacidad que PLA. Es útil para soportes, piezas de uso diario y elementos con algo de flexibilidad. Puede generar hilos y requiere ajustar retracción.
+No lo elijas por comodidad si la pieza quedará al sol, dentro de un vehículo o cerca de una fuente de calor. Tampoco confundas rigidez con resistencia al impacto: algunas formulaciones pueden romper de forma relativamente brusca. Revisa el uso real y la ficha de la bobina.
 
-## ABS
+## PETG: opción equilibrada para uso general
 
-ABS resiste mejor temperatura y se puede postprocesar, pero tiende a contraerse y deformarse. Necesita cama caliente, entorno controlado y buena ventilación.
+PETG suele ofrecer más tenacidad y tolerancia ambiental que PLA, manteniendo una dificultad razonable. Se utiliza a menudo en soportes, protectores y componentes que necesitan cierta flexibilidad. Puede adherirse con fuerza a algunas superficies y producir hilos si temperatura y retracción no están ajustadas.
 
-## Nylon
+Una ventilación excesiva o una temperatura demasiado baja pueden perjudicar la unión entre capas. Sigue las indicaciones del fabricante y calibra con el perfil real. Si la pieza debe encajar, comprueba además la variación dimensional con [pruebas de tolerancia FDM](/blog/pruebas-tolerancia-fdm).
 
-Nylon es tenaz, resistente al desgaste y muy interesante para piezas funcionales. Su problema principal es la humedad: si absorbe agua, imprime peor y pierde calidad.
+## ABS: temperatura y contracción
 
-## Comparación rápida
+ABS puede mantener mejor sus propiedades en ambientes cálidos y admite ciertos procesos de acabado, pero su contracción aumenta el riesgo de esquinas levantadas y separación de capas. Una temperatura de entorno estable suele ser más importante que perseguir una cifra aislada de cama.
 
-- Facilidad: PLA, PETG, ABS, Nylon.
-- Temperatura: Nylon y ABS por encima de PLA.
-- Impacto: PETG y Nylon suelen superar a PLA.
-- Acabado sencillo: PLA suele ganar.
+Necesita medidas de ventilación y uso acordes con la documentación del fabricante y de la impresora. No conviertas una habitación ocupada en recinto de impresión improvisado. La guía para [evitar warping en impresión 3D](/blog/evitar-warping-impresion-3d) ayuda a separar causas de geometría, adhesión y ambiente.
 
-## Elecciones de material que suelen fallar
+## Nylon: tenacidad con control de humedad
 
-- Elegir ABS sin ventilación ni entorno controlado.
-- Imprimir PETG con demasiada ventilación y poca adhesión entre capas.
-- Guardar Nylon abierto durante días antes de imprimir.
-- Aplicar la misma geometría a todos los materiales sin ajustar tolerancias.
+Nylon resulta interesante para clips, guías y piezas con desgaste porque puede deformarse más antes de fallar que materiales rígidos. Sin embargo, absorbe humedad con facilidad. Un filamento húmedo puede generar superficie irregular, burbujas y propiedades inconsistentes.
 
-## Cuatro usos, cuatro decisiones
+Guardar y secar la bobina según la ficha del producto forma parte del proceso. Algunas formulaciones también requieren una superficie o temperatura que no todas las impresoras alcanzan de forma fiable. Comprueba compatibilidad antes de comprar una bobina grande.
 
-Para una tapa decorativa de escritorio, PLA puede ser suficiente. Para un soporte que se queda en un coche al sol, PETG o ASA suelen tener más sentido. Para una guía que roza con otra pieza, Nylon puede ser interesante si puedes secarlo y controlar la impresión. El material correcto depende del entorno, no de cuál aparezca primero en una comparativa.
+## Método para elegir y validar
 
-## La comparación cambia con la geometría
+1. **Define el entorno:** temperatura, agua, radiación, químicos y contacto con personas.
+2. **Define la carga:** rigidez, impacto, flexión, desgaste y número de ciclos.
+3. **Descarta incompatibles:** no puntúes materiales que no soportan el uso o tu impresora.
+4. **Compara fichas concretas:** no mezcles datos de familias y marcas diferentes.
+5. **Imprime la zona crítica:** un clip, agujero o unión en la orientación final.
+6. **Registra el fallo:** deformación, rotura entre capas, desgaste o pérdida de ajuste.
 
-Las propiedades de una probeta no describen por completo una pieza FDM. La unión entre capas, el número de perímetros, la orientación y la presencia de muescas pueden dominar el fallo. Un PLA con cuatro perímetros y una orientación favorable puede superar a un material más tenaz mal orientado. Por eso, al comparar filamentos, conserva la misma geometría y el mismo criterio de carga.
+Si diseñas una envolvente, consulta [cómo elegir material para una carcasa impresa](/blog/material-carcasa-impresa-3d). Para componentes cargados, combina la selección con [diseño resistente para FDM](/blog/disenar-pieza-resistente-fdm).
 
-También conviene separar rigidez de resistencia al impacto. PLA suele sentirse rígido, pero puede fracturarse de forma brusca. PETG flexa algo más y tolera mejor ciertos golpes. Nylon puede deformarse bastante antes de romper, aunque exige más control de humedad y dimensiones. ABS añade resistencia térmica, pero una pieza con mala adhesión entre capas no aprovechará esa ventaja.
+## Errores y limitaciones de la comparativa
 
-### Registro mínimo de una prueba
+Evita comparar una pieza PLA bien calibrada con otra Nylon húmeda y atribuir toda la diferencia al polímero. Mantén geometría, orientación y criterio de prueba cuando quieras aprender del material. Tampoco extrapoles una probeta a una pieza con muescas, roscas o capas orientadas de otro modo.
 
-Anota fabricante, material, fecha de apertura, secado, temperatura, altura de capa, orientación y modo de fallo. Una fotografía de la rotura aporta más información que escribir simplemente “material fuerte” o “resultado malo”.
+Los valores de resistencia y temperatura de una ficha pueden proceder de probetas y procesos distintos a tu FDM. En aplicaciones críticas, esta guía no sustituye especificación, ensayo ni revisión de seguridad. Sirve para formular una hipótesis y diseñar una validación.
 
+## Conclusión
 
-## Cómo elegir sin simplificar demasiado
-
-No existe material universal. Para aprender, PLA. Para piezas útiles generales, PETG. Para temperatura, ABS. Para desgaste y tenacidad, Nylon. Para decidir con más detalle, usa [la guía de filamento para piezas funcionales](/blog/elegir-filamento-piezas-funcionales).
-
-## Prueba de material recomendada
-
-Compra pequeñas cantidades antes de una bobina grande y crea una pieza de prueba propia: clip, soporte o bisagra. Será más útil que una ficha técnica aislada.
+PLA prioriza facilidad y rigidez; PETG ofrece equilibrio; ABS aporta capacidad térmica con más control de proceso; Nylon destaca por tenacidad y desgaste, pero exige gestión de humedad. El mejor material es el que cumple el entorno real y puedes imprimir de forma repetible, no el que encabeza una tabla genérica.

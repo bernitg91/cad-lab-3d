@@ -3,13 +3,15 @@
 @tailwind utilities;
 
 :root {
-  --background: #f7f9fc;
-  --foreground: #111827;
-  --primary: #10233f;
+  --background: #f3f6f8;
+  --foreground: #122033;
+  --ink: #091625;
+  --primary: #163b70;
   --accent: #0f9f8f;
   --accent-blue: #2563eb;
-  --muted: #64748b;
-  --line: #d9e2ec;
+  --signal: #f97316;
+  --muted: #637083;
+  --line: #d6e0e8;
 }
 
 * {
@@ -18,13 +20,16 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
   margin: 0;
+  overflow-x: clip;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), sans-serif;
+  text-rendering: optimizeLegibility;
 }
 
 a {
@@ -44,25 +49,86 @@ a {
   background-size: 32px 32px;
 }
 
+.blueprint-grid {
+  background-image:
+    linear-gradient(rgba(80, 173, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(80, 173, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(rgba(80, 173, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(80, 173, 255, 0.035) 1px, transparent 1px);
+  background-size: 40px 40px, 40px 40px, 8px 8px, 8px 8px;
+}
+
+.calibration-rail {
+  position: relative;
+}
+
+.calibration-rail::before {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 10px;
+  content: "";
+  opacity: 0.45;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0 9px,
+      rgba(103, 232, 249, 0.85) 9px 10px,
+      transparent 10px 19px,
+      rgba(103, 232, 249, 0.35) 19px 20px
+    );
+}
+
+.image-scanline {
+  position: relative;
+}
+
+.image-scanline::after {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background: linear-gradient(115deg, transparent 0 62%, rgba(37, 99, 235, 0.12) 62% 63%, transparent 63%);
+}
+
+.focus-ring:focus-visible {
+  outline: 3px solid #67e8f9;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .lift-on-hover {
+    transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+  }
+
+  .lift-on-hover:hover {
+    transform: translateY(-3px);
+  }
+}
+
 .article-body {
   color: #243044;
-  font-size: 1.0625rem;
-  line-height: 1.8;
+  font-size: 1.09375rem;
+  line-height: 1.82;
 }
 
 .article-body h2 {
   color: #10233f;
-  font-size: clamp(1.45rem, 2vw, 2rem);
-  line-height: 1.25;
-  margin: 2.4rem 0 0.8rem;
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(1.9rem, 3vw, 2.55rem);
+  line-height: 1.08;
+  margin: 3rem 0 0.9rem;
   font-weight: 800;
+  scroll-margin-top: 7rem;
 }
 
 .article-body h3 {
   color: #172554;
-  font-size: 1.16rem;
-  margin: 1.6rem 0 0.45rem;
+  font-family: var(--font-display), sans-serif;
+  font-size: 1.45rem;
+  line-height: 1.2;
+  margin: 2rem 0 0.55rem;
   font-weight: 800;
+  scroll-margin-top: 7rem;
 }
 
 .article-body p {
@@ -80,6 +146,7 @@ a {
 
 .article-body strong {
   color: #0f172a;
+  font-weight: 750;
 }
 
 .article-body blockquote {
@@ -105,6 +172,19 @@ a {
   line-height: 1.55;
 }
 
+.article-body .table-scroll {
+  margin: 1.4rem 0 2rem;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  background: white;
+}
+
+.article-body .table-scroll table {
+  min-width: 620px;
+  margin: 0;
+}
+
 .article-body th,
 .article-body td {
   border: 1px solid var(--line);
@@ -117,4 +197,11 @@ a {
   background: #eef4fb;
   color: #10233f;
   font-weight: 800;
+}
+
+@media (max-width: 640px) {
+  .article-body {
+    font-size: 1.02rem;
+    line-height: 1.75;
+  }
 }

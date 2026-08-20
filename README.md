@@ -37,6 +37,9 @@ Crea `.env.local` a partir de `.env.example`:
 NEXT_PUBLIC_SITE_URL=https://cadlab3d.com
 NEXT_PUBLIC_CONTACT_EMAIL=bbernat.torres@gmail.com
 NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT=
+NEXT_PUBLIC_ADSENSE_HOME_FEED_SLOT=
+NEXT_PUBLIC_ADSENSE_ARTICLE_MID_SLOT=
+NEXT_PUBLIC_ADSENSE_ARTICLE_END_SLOT=
 VERCEL_ENV=
 VERCEL_URL=
 ```
@@ -47,7 +50,7 @@ VERCEL_URL=
 
 `VERCEL_ENV` y `VERCEL_URL` las define Vercel automáticamente. No las configures manualmente salvo para pruebas controladas. Cuando `VERCEL_ENV=preview`, la app usa la URL automática del despliegue (`https://$VERCEL_URL`) para canonical y Open Graph, evitando que una preview parezca la versión final de producción.
 
-`NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT` activa el script de AdSense solo si contiene un ID real con formato `ca-pub-...`. El archivo `public/ads.txt` contiene la línea oficial del editor. No uses valores inventados.
+`NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT` activa el script de AdSense solo si contiene un ID real con formato `ca-pub-...`. Las tres variables `NEXT_PUBLIC_ADSENSE_*_SLOT` aceptan únicamente los identificadores numéricos de unidades reales para portada y artículos. Si faltan, los espacios se colapsan y no aparece ningún placeholder. El archivo `public/ads.txt` contiene la línea oficial del editor. No uses valores inventados.
 
 En despliegues preview, el script de AdSense permanece desactivado aunque existan variables configuradas. El archivo `/ads.txt` se sirve como archivo estático para el dominio publicado. Los anuncios reales deben cargarse solo en Production.
 
@@ -196,7 +199,7 @@ No uses `npm audit fix --force` si propone bajar Next a una versión antigua o r
 - Si el volumen de consultas crece, conecta el formulario de contacto a un backend o servicio externo.
 - Conecta la newsletter solo con consentimiento y política de datos completa.
 - Activa anuncios o afiliados solo cuando haya contenido suficiente y textos legales revisados.
-- Mantén AdSense sin bloques manuales engañosos y revisa el consentimiento de cookies antes de servir anuncios personalizados.
+- Mantén una densidad conservadora de anuncios, usa únicamente unidades reales claramente etiquetadas y revisa el consentimiento de cookies antes de servir anuncios personalizados.
 
 ## Estructura
 

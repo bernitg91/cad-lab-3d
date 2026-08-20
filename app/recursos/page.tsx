@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Newsletter } from "@/components/Newsletter";
+import { ExploreMore } from "@/components/Newsletter";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
@@ -132,7 +132,7 @@ export default function ResourcesPage() {
         </div>
       </section>
       <section className="mx-auto grid max-w-7xl gap-6 px-4 pb-14 sm:px-6 lg:grid-cols-[1fr_320px] lg:px-8">
-        <Newsletter />
+        <ExploreMore />
         <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
           <h2 className="text-xl font-black text-slate-950">¿Necesitas adaptar un recurso?</h2>
           <p className="mt-2 text-sm leading-6 text-slate-600">

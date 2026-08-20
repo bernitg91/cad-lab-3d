@@ -11,67 +11,62 @@ author: "CAD Lab 3D"
 featured: false
 ---
 
-Un buen informe técnico no es un diario de lo que hiciste. Es una explicación ordenada del problema, las decisiones, los cálculos, el proceso y los resultados. Su objetivo es que otra persona entienda y pueda evaluar tu proyecto.
+Un informe técnico universitario debe permitir que otra persona entienda **qué problema resolviste, con qué condiciones, por qué tomaste cada decisión y qué evidencia respalda el resultado**. No es un diario cronológico ni una colección de capturas. Su calidad depende de la trazabilidad entre objetivos, método, resultados y conclusiones.
 
-## Estructura mínima del informe
+## 1. Define la pregunta antes de redactar
 
-- Escribe objetivos medibles antes de redactar el desarrollo.
-- Justifica material, proceso, cálculos y decisiones descartadas.
-- Cada imagen debe tener función, escala o pie descriptivo.
-- Si documentas un producto completo, complementa con [cómo documentar un proyecto de diseño industrial](/blog/documentar-proyecto-diseno-industrial).
-- Para estructuras de trabajo, checklists y guías relacionadas, revisa la página de [recursos](/recursos).
+Empieza por convertir el enunciado en objetivos verificables. «Diseñar un soporte resistente» es demasiado abierto; conviene indicar la carga prevista, el espacio disponible, el proceso de fabricación y el criterio con el que evaluarás el resultado. Si una cifra procede del enunciado, de una norma o de una estimación, identifica su origen. Si todavía no ha sido validada, declárala como hipótesis.
 
-## Estructura recomendada
+Separa los **requisitos obligatorios** de las preferencias. Dimensiones de interfaz, seguridad o compatibilidad pueden ser obligatorias; color, acabado o una forma concreta quizá sean decisiones revisables. Esta distinción evita presentar como necesidad algo que solo fue una elección del equipo.
 
-Una estructura sencilla funciona en la mayoría de entregas:
+Para proyectos de producto, la guía sobre [cómo documentar un proyecto de diseño industrial](/blog/documentar-proyecto-diseno-industrial) ayuda a ordenar investigación, desarrollo y prototipo sin mezclarlos.
 
-1. Portada y resumen.
-2. Objetivos.
-3. Requisitos y restricciones.
-4. Desarrollo del diseño.
-5. Calculos, simulación o validación.
-6. Fabricación o prototipo.
-7. Resultados.
-8. Conclusiones y mejoras.
-9. Bibliografía y anexos.
+## 2. Construye una estructura que siga el razonamiento
 
-## Objetivos y requisitos
+Una organización habitual puede ser:
 
-Define objetivos medibles. "Hacer una pieza resistente" es demasiado general. Mejor: "diseñar un soporte capaz de sujetar 2 kg con deformación visible mínima y fabricable en FDM".
+1. resumen y alcance;
+2. objetivos, requisitos y restricciones;
+3. alternativas consideradas;
+4. desarrollo del diseño y cálculos;
+5. fabricación, simulación o protocolo de prueba;
+6. resultados y discusión;
+7. conclusiones, límites y siguientes pasos;
+8. bibliografía y anexos.
 
-## Imágenes y planos
+No es una plantilla rígida. Un proyecto centrado en FEM necesitará describir cargas, apoyos, material y malla; uno de fabricación FDM necesitará parámetros, orientación y control dimensional. La guía para [estructurar una memoria técnica](/blog/estructurar-memoria-tecnica-diseno-industrial) puede servir como base, pero adapta el índice a lo que realmente debe evaluarse.
 
-Incluye capturas CAD limpias, vistas con escala, planos acotados y fotografías del prototipo. Cada imagen debe aportar información y tener pie descriptivo.
+### Diferencia método, resultado y discusión
 
-## Problemas que restan claridad
+El método explica qué hiciste para obtener los datos. El resultado presenta esos datos sin ocultar los desfavorables. La discusión interpreta por qué ocurrieron y qué significan para el diseño. Mezclarlos produce frases ambiguas y dificulta comprobar el trabajo.
 
-Los fallos más comunes son mezclar proceso con resultados, no justificar materiales, olvidar unidades y presentar capturas borrosas. También es habitual poner conclusiones que no responden a los objetivos iniciales.
+## 3. Justifica decisiones con evidencias
 
-Otro error es dejar planos y anexos fuera de control de versiones. Guarda el CAD, PDF y capturas finales con nombres coherentes para poder reconstruir la entrega.
+Cada decisión relevante debería conectar requisito, opciones y criterio. «Se eligió PETG porque es mejor» no indica nada comprobable. Una redacción más sólida sería: «Se seleccionó PETG para la iteración funcional porque se esperaba manipulación frecuente; se mantuvieron geometría y orientación para comparar el efecto del material». Aun así, si no realizaste una comparación controlada, no atribuyas al material una mejora que no mediste.
 
-## Caso de un proyecto CAD universitario
+Aplica el mismo enfoque a geometría, proceso y software. Puedes usar una matriz de decisión, un cálculo sencillo, bibliografía o una prueba de prototipo, pero explica sus límites. La guía para [explicar decisiones de diseño en una memoria](/blog/explicar-decisiones-diseno-memoria) desarrolla este vínculo entre argumentos y evidencia.
 
-Un informe universitario gana calidad cuando separa lo que se hizo, por qué se hizo y qué se aprendió. Si documentas una pieza impresa, no pongas solo fotos: añade parámetros, material, problemas encontrados y cambios. Esa información demuestra método y permite repetir o mejorar el proyecto.
+## 4. Usa imágenes que aporten información
 
-## Cómo convertir datos en una conclusión
+Una figura necesita número, pie y referencia en el texto. Indica qué debe observar el lector: una interferencia, el cambio entre versiones o la dirección de una carga. Evita capturas con menús innecesarios, fondos oscuros o cotas ilegibles. Para piezas fabricables, incorpora planos siguiendo los criterios de [preparación de planos desde CAD](/blog/preparar-planos-tecnicos-modelo-cad).
 
-Una conclusión útil responde a los objetivos con evidencias. En lugar de escribir “la pieza se imprimió correctamente”, indica qué se verificó: encaje, masa, tiempo, estabilidad o acabado. Si el objetivo era reducir material, compara la versión inicial y la final con el mismo criterio. Si una prueba falló, explica qué decisión cambia a partir de ese resultado.
+### Qué conviene mostrar
 
-### Ejemplo de redacción técnica
+Combina una vista general con detalles de las decisiones críticas. Si existe prototipo, muestra la configuración de prueba y no solo una fotografía final. Si incluyes un render, aclara que representa una intención visual y no una validación física. Tablas y gráficos deben tener unidades, variables identificadas y condiciones comparables.
 
-Una frase débil sería: “Se eligió PETG porque es mejor”. Una versión defendible sería: “Se eligió PETG para la segunda iteración porque la pieza debía soportar manipulación frecuente y una temperatura superior a la prevista para el prototipo visual; se mantuvieron orientación y geometría para comparar el cambio de material”. La segunda frase deja claro requisito, decisión y método.
+## 5. Convierte los datos en conclusiones defendibles
 
-## Revisión antes de exportar el PDF
+Una conclusión debe responder uno por uno a los objetivos. En vez de «la pieza funcionó correctamente», especifica si se verificó el encaje, la estabilidad, la masa o la deformación, y bajo qué condiciones. Un resultado fallido también es útil si explica qué hipótesis se descarta o qué cambio requiere la siguiente iteración.
 
-Comprueba numeración de figuras, unidades, referencias cruzadas y legibilidad de planos. Abre el PDF final en otro dispositivo para detectar fuentes sustituidas, imágenes borrosas o páginas cortadas. Revisa también que anexos, nombres de archivo y versiones coincidan con la entrega real.
+Incluye limitaciones: resolución del instrumento, muestra pequeña, material distinto al final o una carga simplificada. **Reconocer una limitación no debilita el informe; evita que el resultado prometa más de lo que demuestra.** No generalices un único prototipo a todos los materiales o procesos.
 
-Una lectura final puede hacerse buscando solo decisiones: material, geometría, fabricación y validación. Si alguna aparece sin motivo o sin prueba, el documento todavía tiene un hueco.
+## 6. Checklist antes de entregar
 
+- Comprueba que cada objetivo aparece respondido en resultados o conclusiones.
+- Revisa unidades, símbolos, cifras significativas y coherencia entre texto y planos.
+- Numera figuras y tablas y cita su fuente cuando no sean propias.
+- Verifica que CAD, imágenes, anexos y PDF pertenecen a la misma revisión.
+- Abre el PDF al 100 % en otro dispositivo para detectar páginas cortadas o fuentes sustituidas.
+- Confirma que la bibliografía permite localizar las fuentes.
 
-## Qué debe demostrar la memoria
-
-Un informe técnico claro demuestra criterio, no solo horas de trabajo. Ordenar bien el documento suele mejorar la percepción del proyecto.
-
-## Revisión antes de entregar
-
-Antes de entregar, revisa si cada objetivo inicial tiene una respuesta concreta en resultados o conclusiones.
+Los errores que más restan credibilidad son ocultar condiciones de una prueba, usar capturas como única evidencia, copiar afirmaciones sin fuente y concluir sobre objetivos que nunca se midieron. Una última lectura centrada solo en decisiones —material, geometría, fabricación y validación— revela rápidamente dónde falta una justificación.

@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound, permanentRedirect } from "next/navigation";
+import { AdSlot } from "@/components/AdSlot";
 import { ArticleCard } from "@/components/ArticleCard";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CopyLinkButton } from "@/components/CopyLinkButton";
-import { Newsletter } from "@/components/Newsletter";
+import { ExploreMore } from "@/components/Newsletter";
 import { RecommendedResources } from "@/components/RecommendedResources";
 import { TableOfContents } from "@/components/TableOfContents";
 import { formatDate, getAllArticles, getArchivedArticleRedirect, getArticleBySlug, getRelatedArticles } from "@/lib/articles";
@@ -75,7 +76,8 @@ export default async function ArticlePage({ params }: PageProps) {
     publisher: {
       "@type": "Organization",
       name: siteConfig.name,
-      url: absoluteUrl("/")
+      url: absoluteUrl("/"),
+      logo: absoluteUrl("/brand/cadlab3d-mark.png")
     },
     articleSection: article.category,
     ...(support.evidence ? { image: absoluteUrl(support.evidence.image) } : {}),
@@ -110,14 +112,14 @@ export default async function ArticlePage({ params }: PageProps) {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(articleJsonLd)} />
       <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(breadcrumbJsonLd)} />
-      <article className="border-b border-slate-200 bg-gradient-to-b from-slate-50 to-white">
-        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+      <article className="technical-grid border-b border-slate-200 bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
           <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: article.title }]} />
           <header className="mx-auto mt-8 max-w-4xl text-center">
-            <p className="inline-flex rounded-full border border-teal-200 bg-teal-50 px-4 py-1.5 text-xs font-black uppercase tracking-[0.16em] text-teal-800">{article.category}</p>
-            <h1 className="mx-auto mt-5 text-balance text-4xl font-black leading-[1.08] text-slate-950 sm:text-5xl lg:text-6xl">{article.title}</h1>
+            <p className="inline-flex border-y border-teal-300 px-4 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-teal-900">{article.category}</p>
+            <h1 className="mx-auto mt-6 text-balance font-display text-5xl font-black leading-[0.95] text-slate-950 sm:text-6xl lg:text-7xl">{article.title}</h1>
             <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600 sm:text-xl">{article.description}</p>
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-3 text-sm font-semibold text-slate-500">
+            <div className="mt-7 flex flex-wrap items-center justify-center gap-3 font-mono text-[10px] font-semibold uppercase tracking-[0.1em] text-slate-500">
               <span>{formatDate(article.date)}</span>
               {article.updatedDate ? (
                 <>
@@ -134,8 +136,8 @@ export default async function ArticlePage({ params }: PageProps) {
               <CopyLinkButton />
             </div>
           </header>
-          <figure className="mx-auto mt-10 max-w-5xl overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl shadow-slate-950/10">
-            <div className="relative aspect-[4/3] bg-slate-100 sm:aspect-[16/9]">
+          <figure className="calibration-rail mx-auto mt-10 max-w-5xl pl-4">
+            <div className="image-scanline relative aspect-[4/3] overflow-hidden border border-slate-300 bg-slate-100 shadow-xl shadow-slate-950/10 sm:aspect-[16/9]">
               <Image
                 src={support.evidence.image}
                 alt={support.evidence.alt}
@@ -145,23 +147,33 @@ export default async function ArticlePage({ params }: PageProps) {
                 className="object-cover"
               />
             </div>
-            <figcaption className="border-t border-slate-200 px-5 py-4 text-left text-sm leading-6 text-slate-600 sm:px-7">
+            <figcaption className="border-x border-b border-slate-200 bg-white px-5 py-4 text-left text-sm leading-6 text-slate-600 sm:px-7">
               {support.evidence.caption}
             </figcaption>
+            <div className="mt-2 flex justify-between font-mono text-[8px] uppercase tracking-[0.14em] text-slate-400"><span>Vista principal</span><span>Ref. {article.slug.slice(0, 18)}</span></div>
           </figure>
         </div>
       </article>
 
-      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[minmax(0,1fr)_320px] lg:px-8">
-        <div>
-          <aside className="mb-10 rounded-xl border border-blue-200 bg-blue-50 p-6 sm:p-7">
-            <p className="text-xs font-black uppercase tracking-[0.16em] text-blue-800">Idea principal</p>
+      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[minmax(0,760px)_300px] lg:justify-center lg:gap-10 lg:px-8">
+        <aside className="order-first grid content-start gap-5 lg:order-last lg:sticky lg:top-28 lg:self-start">
+          <TableOfContents headings={article.headings} />
+          <div className="hidden lg:block"><RecommendedResources /></div>
+        </aside>
+        <div className="min-w-0 lg:order-first">
+          <aside className="mb-10 border-l-4 border-blue-700 bg-blue-50 p-6 sm:p-7">
+            <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-blue-800">La respuesta corta</p>
             <p className="mt-3 text-lg font-bold leading-8 text-slate-950">{support.insight.takeaway}</p>
           </aside>
 
           <MarkdownContent content={firstContent} />
 
-          <figure className="my-10 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-lg shadow-slate-950/5">
+          <AdSlot
+            clientId={process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT}
+            slot={process.env.NEXT_PUBLIC_ADSENSE_ARTICLE_MID_SLOT}
+          />
+
+          <figure className="my-10 overflow-hidden border border-slate-200 bg-white shadow-lg shadow-slate-950/5">
             <div className="relative aspect-[4/3] bg-slate-100 sm:aspect-[16/9]">
               <Image
                 src={support.inlineEvidence.image}
@@ -178,19 +190,23 @@ export default async function ArticlePage({ params }: PageProps) {
 
           {secondContent ? <MarkdownContent content={secondContent} /> : null}
 
-          <section className="mt-10 rounded-xl border border-teal-200 bg-teal-50/70 p-6 sm:p-7">
-            <p className="text-xs font-black uppercase tracking-[0.16em] text-teal-800">Nota de taller</p>
-            <h2 className="mt-2 text-2xl font-black text-slate-950">Cómo llevarlo a una pieza real</h2>
+          <section className="mt-10 border border-teal-200 bg-teal-50/70 p-6 sm:p-7">
+            <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-teal-800">Nota de taller</p>
+            <h2 className="mt-2 font-display text-3xl font-black leading-none text-slate-950">Cómo llevarlo a una pieza real</h2>
             <p className="mt-4 leading-7 text-slate-700">{support.insight.fieldNote}</p>
             <ul className="mt-5 grid gap-3">
               {support.insight.checks.map((check, index) => (
                 <li key={check} className="flex gap-3 rounded-lg border border-teal-100 bg-white/80 p-4 text-sm font-semibold leading-6 text-slate-700">
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-teal-700 text-xs font-black text-white">{index + 1}</span>
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center bg-teal-700 font-mono text-xs font-black text-white">{index + 1}</span>
                   <span>{check}</span>
                 </li>
               ))}
             </ul>
           </section>
+          <AdSlot
+            clientId={process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT}
+            slot={process.env.NEXT_PUBLIC_ADSENSE_ARTICLE_END_SLOT}
+          />
           {support.sources.length > 0 ? (
             <section className="mt-10 rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
               <p className="text-sm font-black uppercase tracking-wide text-teal-700">Referencias consultadas</p>
@@ -235,18 +251,14 @@ export default async function ArticlePage({ params }: PageProps) {
             </div>
           </section>
           <div className="mt-10">
-            <Newsletter />
+            <ExploreMore />
           </div>
-        </div>
-        <div className="grid content-start gap-5 lg:sticky lg:top-24">
-          <TableOfContents headings={article.headings} />
-          <RecommendedResources />
         </div>
       </div>
 
       {relatedArticles.length > 0 ? (
         <section className="mx-auto max-w-7xl px-4 pb-14 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-black text-slate-950">Artículos relacionados</h2>
+          <h2 className="font-display text-4xl font-black uppercase leading-none text-slate-950">Artículos relacionados</h2>
           <div className="mt-6 grid gap-5 md:grid-cols-3">
             {relatedArticles.map((related) => (
               <ArticleCard key={related.slug} article={related} />

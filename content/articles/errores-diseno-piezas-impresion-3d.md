@@ -11,65 +11,58 @@ author: "CAD Lab 3D"
 featured: true
 ---
 
-Una pieza que se ve perfecta en CAD no siempre se imprime bien. La impresión 3D FDM tiene limitaciones físicas: capas, boquilla, contracción, temperatura y anisotropía. Diseñar para FDM significa pensar en fabricación desde el primer croquis.
+Una pieza puede verse impecable en CAD y fallar en la primera capa. FDM no reproduce un sólido ideal: deposita líneas de material, crea uniones entre capas y sufre variaciones de temperatura y contracción. Por eso, **diseñar para impresión 3D es diseñar para un proceso**, no limitarse a guardar un STL.
 
-## Revisión inicial de diseño
+## Error 1: dibujar detalles que la máquina no puede resolver
 
-- Diseña espesores compatibles con la boquilla.
-- Deja tolerancias para encajes y piezas móviles.
-- Orienta la pieza según carga, acabado y soportes.
-- Para piezas resistentes, continúa con la [guía completa de diseño e impresión FDM](/guia-impresion-3d-fdm).
+El primer fallo es usar espesores, ranuras, textos o radios sin relacionarlos con el ancho de línea y la altura de capa. Una pared demasiado fina puede desaparecer en el laminador; otra apenas mayor puede convertirse en una sola línea débil. Con una boquilla de 0,4 mm, espesores como 1,2 o 1,6 mm pueden servir de punto de partida para conseguir varios perímetros, pero el ancho real de extrusión y el algoritmo del laminador cambian el resultado.
 
-## Espesores demasiado finos
+### Paredes y nervios
 
-Si una pared es más delgada que el ancho de boquilla o queda cerca del límite, el laminador puede ignorarla o imprimirla débil. Como regla inicial, usa paredes múltiples de la boquilla: con boquilla de 0,4 mm, prueba 1,2 mm o 1,6 mm para paredes funcionales.
+No diseñes todos los elementos con el mínimo imprimible. Una pared que solo debe cerrar una maqueta no trabaja igual que un soporte para tornillo. Reserva más sección alrededor de fijaciones, bisagras y cambios de geometría. La [guía de paredes, perímetros y tapas](/blog/paredes-perimetros-tapas-fdm) explica cómo conectar el espesor del CAD con las líneas que finalmente deposita la impresora.
 
-## Tolerancias insuficientes
+### Agujeros y encajes nominales
 
-Dos piezas que encajan perfecto en CAD pueden no entrar después de imprimir. Para un encaje manual, deja holgura. En FDM doméstica, una tolerancia de 0,2 a 0,4 mm por lado suele ser un punto de partida razonable, pero depende de la máquina.
+Un eje de 10 mm dentro de un agujero de 10 mm encaja en el modelo, pero no necesariamente después de imprimir. Los agujeros pueden cerrarse, las esquinas acumulan material y cada máquina tiene una desviación distinta. Una holgura de 0,2 a 0,4 mm por lado puede ser una **muestra inicial**, no una regla universal. Para decidirla, imprime una probeta como las de esta [guía de tolerancias FDM](/blog/pruebas-tolerancia-fdm).
 
-## Orientación ignorada
+## Error 2: elegir orientación solo para ahorrar tiempo
 
-La pieza es más débil entre capas. Si una pestaña trabaja a flexión y queda cargada separando capas, puede romperse aunque el material sea bueno.
+En FDM, la unión entre capas suele comportarse de forma diferente a las líneas continuas dentro de una capa. Si un clip flexa separando capas, puede romperse antes aunque aumentes el relleno. Antes de laminar, identifica la carga principal y la grieta probable. Después compara al menos dos orientaciones con la [guía para orientar piezas resistentes](/blog/orientar-pieza-impresion-3d-resistente).
 
-### Pregunta clave
+La orientación también cambia precisión y acabado. Un agujero horizontal puede necesitar soporte o quedar menos circular; una cara apoyada puede mostrar la textura de la cama; una superficie sobre soportes pierde calidad. **La mejor orientación equilibra resistencia, tolerancia, cara visible y soportes**, no solo minutos de impresión.
 
-Antes de exportar, pregúntate: **¿en qué dirección soportará carga esta pieza?**
+## Error 3: resolver con soportes lo que pide rediseño
 
-## Exceso de soportes
+Los soportes son útiles, pero dejan marcas, consumen material y pueden bloquear cavidades. Si aparecen dentro de un alojamiento, sobre una cara de ajuste o alrededor de un texto, prueba antes alguna de estas opciones:
 
-Los soportes aumentan tiempo, material y acabado irregular. Rediseñar una pieza para evitar voladizos suele ser mejor que aceptar soportes en zonas funcionales.
+- girar la pieza y volver a evaluar la carga;
+- dividirla en módulos con una unión accesible;
+- sustituir un techo plano por chaflanes o una transición gradual;
+- convertir un agujero horizontal pequeño en una forma imprimible y mecanizarlo después;
+- cambiar la zona funcional para que no apoye sobre soportes.
 
-## Detalles pequeños
+Dividir una pieza añade uniones y tolerancias, así que tampoco es gratis. Si habrá desmontajes, conviene diseñar la conexión pensando en acceso, repetibilidad y reparación.
 
-Textos, nervios y radios muy pequeños pueden desaparecer. Ajusta detalle mínimo a tu boquilla, altura de capa y calibración.
+## Error 4: ignorar material, temperatura y contracción
 
-## Fallos de diseño que más se repiten
+La geometría que funciona en PLA puede deformarse o requerir otros radios y holguras en PETG, ABS, ASA o nylon. Elegir filamento por color sin considerar calor, impacto, humedad o flexión conduce a conclusiones falsas. Consulta la [comparativa de filamentos funcionales](/blog/elegir-filamento-piezas-funcionales), pero valida siempre con la marca, el perfil y la impresora reales.
 
-- Exportar el STL sin revisar unidades y escala.
-- Poner agujeros nominales sin compensar cierre de material.
-- Diseñar clips o pestañas con capas orientadas en la peor dirección.
-- Elegir material por color antes que por uso; para eso ayuda [esta guía de filamentos funcionales](/blog/elegir-filamento-piezas-funcionales).
+Una base larga con esquinas vivas concentra tensiones al enfriarse. Engordar la pieza no siempre soluciona el problema: puede aumentar el gradiente térmico. Radios, una base menos continua, una orientación distinta o dividir el componente pueden ser decisiones mejores.
 
-## Caso de una bandeja de base amplia
+## Proceso práctico antes de imprimir
 
-Un error típico es diseñar una pieza como si fuera mecanizada: paredes finas, esquinas vivas, voladizos imposibles y tolerancias sin holgura. En FDM conviene pensar en capas, boquilla, soportes y contracción. Si una geometría necesita demasiados soportes o deja la zona funcional sobre una superficie rugosa, quizá la solución no es imprimir mejor, sino rediseñar.
+Sigue esta revisión cada vez que cierres un diseño funcional:
 
-## Revisión de cinco minutos en el laminador
+1. **Define el uso:** marca cargas, temperatura, zonas visibles y superficies de contacto.
+2. **Revisa espesores:** confirma que paredes, nervios y textos aparecen en la vista previa.
+3. **Comprueba encajes:** sustituye cotas nominales por holguras que puedas ensayar.
+4. **Compara orientaciones:** mira capas, soportes, acabado y precisión, no solo tiempo.
+5. **Recorre el laminado:** busca islas sin apoyo, puentes largos, paredes intermitentes y costuras en zonas críticas.
+6. **Imprime una probeta:** reproduce solo el clip, agujero, rosca o unión que más riesgo tenga.
+7. **Registra el resultado:** anota material, perfil, orientación y cambio necesario antes de repetir.
 
-Antes de generar el archivo de impresión, recorre la vista por capas desde la primera hasta la última. Busca paredes que aparecen y desaparecen, puentes largos, islas que empiezan sin apoyo y cambios bruscos de sección. Revisa también dónde se colocan las costuras y si los soportes tocan una cara de ajuste.
+## Errores de revisión y límites de estas pautas
 
-Activa la visualización por tipo de línea si el laminador la ofrece. Así podrás distinguir perímetros, relleno, puentes y soportes. Una pared que en CAD parece maciza puede terminar formada por una sola línea si su espesor no encaja con el ancho de extrusión.
+También se repiten fallos de proceso: exportar con unidades equivocadas, modificar el CAD después de laminar, confundir una pieza visual con una funcional o cambiar varias variables en cada prueba. La vista previa detecta problemas geométricos, pero **no garantiza resistencia ni precisión**. Una prueba manual tampoco sustituye un ensayo normalizado cuando la pieza es crítica o debe certificar prestaciones.
 
-## Caso práctico: una bandeja alargada
-
-En una bandeja grande, el problema no suele ser el relleno, sino mantener una base plana y unas paredes estables. Añadir un borde rígido, radios interiores y un espesor compatible con varios perímetros puede mejorar más el resultado que subir el relleno. La pieza roja mostrada en los [casos prácticos](/casos-practicos-impresion-3d) es un buen ejemplo de cómo la continuidad del contorno y la geometría del borde condicionan el acabado.
-
-
-## Diseñar para el proceso real
-
-Diseñar para impresión 3D no es solo exportar un STL. Es adaptar geometría, tolerancias y orientación al proceso real.
-
-## Comprobación antes de exportar
-
-Antes de imprimir una pieza funcional, haz una versión reducida con la zona crítica: encaje, rosca, bisagra o clip. Validar esa zona ahorra horas y material.
+Antes de fabricar, abre el STL definitivo, verifica su escala y aplica el [checklist para mandar una pieza a imprimir](/blog/checklist-mandar-pieza-imprimir-3d). Si algo falla, corrige primero el diseño o el proceso; subir relleno sin diagnóstico rara vez compensa una orientación débil, un encaje sin holgura o una pared mal resuelta.

@@ -14,14 +14,14 @@ export default function BlogPage() {
 
   return (
     <>
-      <section className="border-b border-slate-200 bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <p className="text-sm font-black uppercase tracking-wide text-teal-700">
+      <section className="technical-grid border-b border-slate-200 bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-18">
+          <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-teal-800">
             Biblioteca técnica · {articles.length} artículos
           </p>
-          <h1 className="mt-3 text-4xl font-black text-slate-950">Blog de CAD Lab 3D</h1>
-          <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-600">
-            Tutoriales y guías para resolver dudas reales de modelado, fabricación digital, materiales y documentación de proyectos.
+          <h1 className="mt-3 max-w-4xl font-display text-5xl font-black uppercase leading-[0.92] text-slate-950 sm:text-6xl">Biblioteca de decisiones CAD y fabricación</h1>
+          <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-600">
+            Busca por problema, material o fase del proyecto. Cada guía explica qué revisar, cómo comprobarlo y qué límite no conviene ocultar.
           </p>
         </div>
       </section>

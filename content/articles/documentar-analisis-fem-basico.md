@@ -11,54 +11,75 @@ author: "CAD Lab 3D"
 featured: false
 ---
 
-Un análisis FEM sin documentación es difícil de defender. La imagen de colores no basta: hay que explicar hipótesis, entradas, resultados y límites.
+Una imagen de tensiones con muchos colores no demuestra que un análisis FEM sea correcto. Un informe defendible permite reconstruir la pregunta, las simplificaciones, las entradas y la interpretación. Documentar no es adornar el resultado: es mostrar dónde termina la evidencia del modelo.
 
-## Qué debe quedar registrado
+## Empieza por la pregunta y el alcance
 
-- Define qué pregunta responde el análisis.
-- Documenta material, cargas, restricciones y malla.
-- Presenta resultados con unidades y escala.
-- Si aún no tienes base, empieza por [qué es un análisis FEM](/blog/que-es-analisis-fem-cuando-usarlo).
-- Para estructurar la entrega completa, revisa también [recursos](/recursos).
+Escribe qué quieres conocer antes de abrir el software. Por ejemplo: “comparar el desplazamiento de dos geometrías bajo la misma carga” es más preciso que “comprobar la pieza”. Define si el estudio es lineal, estático y de pequeñas deformaciones, cuando esas sean las hipótesis usadas.
 
-## Hipótesis del modelo
+Indica también qué no pretende resolver. Un modelo elástico estático no caracteriza automáticamente impacto, fatiga, fluencia, pandeo ni contacto no lineal. Si dudas sobre la utilidad del método, revisa [qué es un análisis FEM y cuándo usarlo](/blog/que-es-analisis-fem-cuando-usarlo).
 
-Indica qué simplificaciones aplicaste: geometría eliminada, contactos ignorados, simetría o cargas equivalentes. Esto no debilita el informe; lo hace más honesto.
+## Registra geometría e hipótesis
 
-## Resultados
+Incluye una vista limpia del modelo y enumera detalles eliminados, simetrías, cuerpos simplificados y contactos. Cada simplificación debe tener un motivo: reducir coste de cálculo, evitar detalles no estructurales o representar solo una región.
 
-Incluye desplazamiento máximo, tensión relevante, factor de seguridad si aplica y una interpretación. Explica si las tensiones máximas aparecen en zonas de singularidad.
+La guía para [simplificar geometría antes de FEM](/blog/simplificar-geometria-antes-fem) ayuda a eliminar detalles sin borrar el camino de carga. Si sustituyes un tornillo por una unión rígida o una superficie por un apoyo ideal, explica cómo puede afectar a la rigidez y a las tensiones locales.
 
-## Omisiones que debilitan el informe
+## Crea trazabilidad de las entradas
 
-- No explicar condiciones de contorno.
-- Mostrar resultados sin unidades.
-- Usar una malla sin justificar.
-- Concluir que una pieza es segura solo por un color azul.
+Una tabla corta evita que las cifras queden dispersas entre capturas.
 
-## Estructura de un análisis sencillo
+| Entrada | Valor y unidad | Origen | Motivo o incertidumbre |
+| --- | --- | --- | --- |
+| Material | Propiedades usadas | Ficha, norma o supuesto | Modelo isotrópico, temperatura, lote |
+| Carga | Magnitud y dirección | Requisito o cálculo | Reparto y combinación |
+| Restricción | Grados de libertad | Montaje real | Rigidez idealizada |
+| Contacto | Tipo y parámetros | Interfaz física | Fricción o separación omitida |
+| Malla | Tipo y tamaño | Estudio de sensibilidad | Refinamiento local |
 
-Un FEM básico de un soporte no debería limitarse a una captura de colores. Incluye material, carga aplicada, restricciones, tamaño de malla aproximado, deformada y una lectura crítica. Si el máximo aparece en una arista viva, explica si es una singularidad o una zona realmente crítica. Esa aclaración cambia por completo la calidad del informe.
+No escribas únicamente el nombre comercial del material. Registra las propiedades introducidas, sus unidades y la fuente. En una pieza FDM, un material isotrópico puede ser una simplificación fuerte debido a las capas; decláralo en lugar de presentar el resultado como validación completa.
 
-## Estructura mínima de un informe FEM
+## Documenta malla y comprobaciones
 
-Empieza con la pregunta que intenta responder el análisis. Después incluye una imagen limpia de la geometría, las simplificaciones realizadas, las propiedades del material, las cargas y las restricciones. La malla debe mostrarse al menos en la zona de interés, junto con su tamaño característico o el criterio utilizado para refinarla.
+Muestra la malla global y un detalle de la zona crítica. Indica tipo de elemento, tamaño característico, refinamientos y criterio de calidad si el programa lo ofrece. Una imagen sin escala o datos no permite evaluar resolución.
 
-Los resultados necesitan unidades, escala y una lectura escrita. No basta con indicar la tensión máxima: explica dónde aparece, si es estable al refinar la malla y si coincide con una zona físicamente razonable. Añade desplazamiento máximo y, cuando proceda, una comparación entre dos diseños o una comprobación manual sencilla.
+### Sensibilidad de malla
 
-### Tabla de trazabilidad
+Compara al menos dos niveles razonables en el resultado que realmente importa. Si el desplazamiento se estabiliza pero la tensión máxima sigue creciendo en una esquina ideal, puede existir una singularidad. No elimines el valor incómodo: explica si es un pico local, cómo cambia con la malla y qué lectura física tiene.
 
-Una tabla breve puede relacionar entrada, valor, origen y efecto esperado. Por ejemplo: carga de 120 N tomada del requisito del proyecto; apoyo cilíndrico representado mediante restricción radial; módulo elástico obtenido de la ficha del material. Esta trazabilidad permite localizar qué supuesto debe cambiar si el resultado no representa el ensayo o el uso real.
+Incluye comprobaciones sencillas cuando sea posible: reacción total frente a carga aplicada, orden de magnitud de una deformación manual o simetría esperada. Una coincidencia no prueba todo el modelo, pero una incoherencia puede revelar un error temprano.
 
-## Qué no puede demostrar el modelo
+## Presenta resultados con interpretación
 
-Un análisis lineal con material elástico no valida fatiga, impacto, fluencia, contactos complejos ni comportamiento anisótropo de una pieza FDM. Indicar estas limitaciones no debilita el informe; demuestra que el resultado se interpreta dentro de su alcance.
+Cada figura necesita variable, unidades, escala, deformada real o amplificada y ubicación del máximo relevante. Explica si la deformación tiene sentido y si la zona crítica coincide con el camino de carga. Evita recortar la leyenda para que la captura parezca más limpia.
 
+No conviertas automáticamente una tensión máxima en factor de seguridad sin comprobar criterio de fallo, material y naturaleza del pico. Si comparas diseños, usa la misma escala visual y las mismas condiciones. Relaciona cada conclusión con la pregunta inicial.
 
-## Qué hace defendible el documento
+## Estructura práctica del informe
 
-Documentar FEM es demostrar que entiendes el modelo, no solo que sabes ejecutar el software.
+1. Objetivo y alcance.
+2. Geometría, versión y simplificaciones.
+3. Materiales, contactos, cargas y restricciones.
+4. Malla y sensibilidad.
+5. Resultados con unidades e interpretación.
+6. Comprobaciones independientes.
+7. Limitaciones, conclusión y siguiente validación.
 
-## Revisión final recomendada
+Integra esta estructura en [cómo preparar un informe técnico universitario](/blog/preparar-informe-tecnico-universitario) y conserva las decisiones del proyecto con [documentación de diseño industrial](/blog/documentar-proyecto-diseno-industrial).
 
-Antes de exportar capturas, escribe una tabla con entradas del análisis y otra con resultados. Eso ordena el informe.
+## Checklist y errores frecuentes
+
+- [ ] La pregunta del análisis aparece en la primera página.
+- [ ] La versión del CAD y las unidades están identificadas.
+- [ ] Cada entrada tiene fuente o se declara como supuesto.
+- [ ] Cargas y restricciones se ven en una figura comprensible.
+- [ ] La malla se justifica en la zona de interés.
+- [ ] Los resultados incluyen unidades, escala y lectura escrita.
+- [ ] Las singularidades y limitaciones se explican.
+- [ ] La conclusión no excede lo que el modelo puede demostrar.
+
+Los errores más frecuentes son fijar en exceso el modelo, usar una malla por defecto sin revisión, mostrar solo el resultado “bonito” y llamar segura a la pieza sin ensayo ni criterio de aceptación. Tampoco debe confundirse precisión numérica con exactitud física: más decimales no corrigen una condición de contorno equivocada.
+
+## Conclusión
+
+Un FEM básico queda bien documentado cuando otra persona puede reconstruirlo, cuestionar sus supuestos y relacionar cada conclusión con una entrada. Mostrar incertidumbre y límites no debilita el trabajo; evita que una simulación exploratoria se presente como certificación.

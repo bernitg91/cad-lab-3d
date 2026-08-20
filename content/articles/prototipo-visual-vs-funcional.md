@@ -11,43 +11,56 @@ author: "CAD Lab 3D"
 featured: false
 ---
 
-No todos los prototipos buscan lo mismo. Un prototipo visual comunica forma y proporción. Un prototipo funcional prueba comportamiento, montaje o resistencia. Confundirlos lleva a malas decisiones.
+Un prototipo no es una versión pequeña del producto final: es una herramienta para responder una pregunta. Un modelo visual permite evaluar forma, proporción o lenguaje de producto; uno funcional comprueba uso, montaje o comportamiento. **La diferencia está en la evidencia que necesitas**, no en que uno sea bonito y el otro rudimentario.
 
-## Resumen rápido
+## 1. Qué valida cada tipo de prototipo
 
-- Visual: valida apariencia, volumen, ergonomía básica y presentación.
-- Funcional: valida uso, encaje, resistencia o mecanismo.
-- El material y el acabado dependen de la pregunta que quieres responder.
-- Amplía con [materiales para prototipos funcionales](/blog/materiales-prototipos-funcionales) y [validación antes de fabricar](/blog/revision-diseno-antes-fabricar).
+Un prototipo visual ayuda a decidir si el volumen parece equilibrado, si los elementos se reconocen, si la escala encaja en el contexto o si una propuesta se puede comunicar. Puede usar un material fácil de trabajar y acabados que aproximen la intención, siempre que se identifiquen como representación.
 
-## Prototipo visual
+Un prototipo funcional debe reproducir las variables necesarias para una prueba concreta: recorrido de un mecanismo, acceso de montaje, flexibilidad de un clip, estabilidad de una base o ajuste entre piezas. No siempre necesita el acabado final, pero material, geometría y proceso deben ser suficientemente representativos para la pregunta planteada.
 
-Sirve para enseñar forma, tamaño, color aproximado o lenguaje de producto. Puede imprimirse rápido, con material fácil y sin exigir propiedades finales.
+| Aspecto | Prototipo visual | Prototipo funcional |
+| --- | --- | --- |
+| Pregunta principal | ¿Se entiende y se percibe como buscamos? | ¿Realiza la función definida? |
+| Prioridad | Forma, escala, superficie, comunicación | Montaje, movimiento, ajuste o respuesta física |
+| Evidencia habitual | Observación, comparación, evaluación de usuario | Medición, ensayo o criterio de aceptación |
+| Riesgo al interpretarlo | Confundir apariencia con producto final | Extrapolar una prueba limitada a todas las condiciones |
 
-## Prototipo funcional
+## 2. Empieza por una hipótesis verificable
 
-Debe probar una función concreta: flexión, montaje, encaje, agarre, estabilidad o resistencia. Puede ser menos bonito, pero debe representar el comportamiento que quieres evaluar.
+Antes de modelar, completa la frase: «Este prototipo sirve para comprobar…». Si respondes «que el diseño está bien», el objetivo sigue siendo demasiado amplio. Es mejor separar preguntas: «que la mano alcance el mando», «que la tapa se pueda desmontar» o «que el volumen quepa en el espacio disponible».
 
-## Documentación
+Define después cómo decidirás el resultado. Un criterio puede ser cualitativo —usuarios distinguen sin explicación la zona de agarre— o cuantitativo —el componente se introduce sin interferencia en la plantilla de montaje—. Las cifras deben proceder del proyecto y validarse; no copies límites genéricos sin considerar uso y proceso.
 
-En una memoria, indica qué tipo de prototipo estás mostrando. Si es visual, no lo presentes como validación mecánica. Si es funcional, explica prueba, material y limitaciones.
+## 3. Diseña el prototipo mínimo que responda la pregunta
 
-## Errores frecuentes
+No es necesario fabricar el producto completo para cada decisión. Para estudiar ergonomía puede bastar una envolvente a escala; para un cierre, imprime solo la esquina con clip; para una articulación, aísla el mecanismo. Esta estrategia reduce tiempo y permite iterar varias alternativas.
 
-- Defender resistencia con una maqueta visual.
-- Gastar demasiado tiempo en acabado cuando falta validar uso.
-- Elegir material por apariencia y no por función.
-- No explicar límites del prototipo en la entrega.
+### Elegir proceso y material
 
-## Ejemplo aplicado
+En una maqueta visual, color, textura y calidad superficial pueden pesar más que resistencia. En una prueba funcional, el comportamiento del material puede cambiar la conclusión. Consulta [materiales para prototipos funcionales](/blog/materiales-prototipos-funcionales) y documenta cualquier diferencia respecto al producto previsto.
 
-Un prototipo visual puede servir para revisar proporción, ergonomía o presentación. Un prototipo funcional debe probar montaje, resistencia, movimiento o tolerancias. Mezclarlos sin definir objetivo genera malas conclusiones: una pieza bonita puede fallar funcionalmente y una pieza funcional puede no estar lista para enseñar como producto final.
+Si utilizas FDM, orientación, paredes y relleno también influyen. Una pieza impresa en una dirección conveniente para el acabado puede no representar la dirección de carga real. La guía para [orientar una pieza FDM resistente](/blog/orientar-pieza-impresion-3d-resistente) ayuda a plantear esta limitación.
 
+## 4. Ejecuta y registra una prueba sencilla
 
-## Conclusión
+Prepara el prototipo con una revisión identificada y no cambies varias variables a la vez si quieres comparar. Fotografía la configuración, anota material y parámetros relevantes y registra tanto el resultado esperado como los fallos. En encajes, una [prueba de tolerancias FDM](/blog/pruebas-tolerancia-fdm) aporta más información que imprimir repetidamente una carcasa completa.
 
-El valor de un prototipo depende de la pregunta que responde. Separar visual y funcional mejora decisiones y documentación.
+### Proceso práctico
 
-## Recomendación práctica final
+1. Escribe una única pregunta de validación.
+2. Define el criterio con el que aceptarás, modificarás o descartarás la solución.
+3. Decide qué características deben ser representativas y cuáles puedes simplificar.
+4. Fabrica la menor geometría que mantenga esas características.
+5. Prueba, mide o recoge observaciones sin cambiar el criterio a mitad del ensayo.
+6. Registra la decisión para la siguiente versión.
 
-Antes de imprimir, escribe en la hoja de proyecto: "este prototipo sirve para comprobar...". Si la frase no es clara, redefine el objetivo.
+## 5. Cómo presentarlo en una memoria o portfolio
+
+Etiqueta cada prototipo como visual, funcional o mixto y explica su alcance. Muestra una fotografía con escala o configuración de ensayo, no solo un render. Si validaste apariencia con un material provisional, no atribuyas a esa pieza propiedades mecánicas. Si validaste un mecanismo aislado, no afirmes que el producto completo está resuelto.
+
+La guía para [documentar un proyecto de diseño industrial](/blog/documentar-proyecto-diseno-industrial) permite integrar pregunta, iteración y resultado. Antes de pasar a fabricación, aplica además una [revisión de diseño](/blog/revision-diseno-antes-fabricar) que reúna función, montaje, material y documentación.
+
+## 6. Errores y límites
+
+Los errores habituales son dedicar acabado a una pieza que aún no valida la función, usar un material elegido solo por color en una prueba mecánica y probar demasiadas variables simultáneas. Todo prototipo tiene límites de escala, proceso y condiciones. **Una pieza bonita puede no funcionar y una prueba funcional puede no representar el aspecto final**; decirlo explícitamente hace que la conclusión sea más fiable.

@@ -11,51 +11,62 @@ author: "CAD Lab 3D"
 featured: false
 ---
 
-La resistencia de una pieza FDM no depende solo del porcentaje de relleno. Muchas veces es más importante la orientación, el número de paredes, la continuidad de fibras de material y la forma de las zonas cargadas.
+La resistencia de una pieza FDM no se resuelve seleccionando un 100 % de relleno. La carga, la orientación de capas, la geometría y la calidad de unión entre trayectorias suelen importar más. El objetivo es construir un camino continuo para la fuerza y validar el modo de fallo previsto.
 
-## Resumen rápido
+## Empieza por el caso de carga
 
-- Orienta capas para que no se separen con la carga principal.
-- Aumenta paredes antes de subir relleno sin criterio.
-- Usa radios, nervios y transiciones suaves.
-- Evita los fallos base descritos en [errores comunes al diseñar para impresión 3D](/blog/errores-diseno-piezas-impresion-3d).
+Describe qué fuerza actúa, en qué dirección, dónde se aplica y cómo se apoya la pieza. Distingue una carga puntual ocasional de una carga mantenida, un impacto o una vibración repetida. Si no conoces el uso, no puedes decidir orientación ni espesores con criterio.
 
-## Orientación de capas
+Dibuja un esquema simple con flechas y marca zonas de tracción, compresión y flexión. Identifica también muescas, agujeros y cambios de sección. Para proyectos con mayor complejidad, [qué es un análisis FEM y cuándo usarlo](/blog/que-es-analisis-fem-cuando-usarlo) ayuda a decidir si una simulación aporta valor; no sustituye la prueba de una pieza FDM anisótropa.
 
-Las capas son el punto débil. Si una fuerza intenta separar capas, la pieza puede fallar con facilidad. Orienta la pieza para que las capas trabajen a favor de la carga principal.
+## Orienta las capas para la carga principal
 
-## Paredes antes que relleno
+La unión entre capas suele ser más sensible que una trayectoria continua dentro de la capa. Una pestaña vertical puede abrirse por delaminación si la fuerza tira perpendicularmente a las capas. Girar el modelo puede mejorar esa dirección, aunque aumente soportes o empeore otra superficie.
 
-Subir de 20% a 60% de relleno no siempre mejora tanto como aumentar perímetros. En piezas con esfuerzos externos, las paredes soportan gran parte de la carga.
+No existe una orientación perfecta para cargas en varias direcciones. Prioriza el fallo más crítico, divide la pieza si eso permite orientar cada parte mejor o rediseña la unión. Consulta [cómo orientar una pieza para impresión resistente](/blog/orientar-pieza-impresion-3d-resistente) para comparar resistencia, acabado y soportes.
 
-## Radios y transiciones
+## Distribuye material donde trabaja
 
-Las esquinas internas vivas concentran tensiones. Añadir radios distribuye mejor los esfuerzos y mejora la vida de la pieza.
+### Paredes y perímetros
 
-### Nervios bien colocados
+En muchas geometrías, las superficies exteriores están más alejadas del eje de flexión y contribuyen de forma importante a la rigidez. Aumentar perímetros puede resultar más útil que llenar el centro sin criterio. La guía de [paredes, perímetros y tapas FDM](/blog/paredes-perimetros-tapas-fdm) explica cómo leer su efecto en el laminador.
 
-Los nervios aumentan rigidez sin llenar toda la pieza. Deben conectarse con la dirección de carga y tener espesores imprimibles.
+### Radios, nervios y transiciones
 
-## Material y parámetros
+Una esquina interna viva concentra tensiones. Añade radios y evita saltos bruscos de espesor. Usa nervios para conectar la zona cargada con el apoyo, pero termina sus encuentros con transiciones imprimibles. Un nervio desconectado del camino de carga añade masa sin resolver el problema.
 
-PETG, ABS, Nylon o compuestos pueden mejorar prestaciones, pero requieren parámetros correctos. Una mala adhesión entre capas anula la ventaja del material.
+En agujeros atornillados, deja material suficiente alrededor y piensa en cómo se transmite el apriete. Los insertos térmicos o tornillos no corrigen una pared demasiado fina. Dimensiona la unión según el componente real y crea una muestra antes de cerrar el diseño.
 
-## Errores frecuentes
+## Elige relleno, material y perfil como sistema
 
-- Creer que 100% de relleno siempre es la opción más resistente.
-- Diseñar esquinas internas vivas en zonas cargadas.
-- No probar la pieza en la misma orientación de uso.
-- Cambiar material sin recalibrar temperatura y ventilación.
+El relleno estabiliza paredes y distribuye cargas, pero su porcentaje no predice por sí solo la resistencia. El patrón, orientación, perímetros y tapas alteran el resultado. Revisa [cómo elegir relleno según la pieza](/blog/relleno-impresion-3d-segun-pieza) y compara cambios manteniendo las demás variables constantes.
 
-## Ejemplo aplicado
+PETG, ABS, Nylon o formulaciones reforzadas pueden aportar ventajas, pero también exigen secado, temperatura, ventilación o boquillas compatibles. Una capa mal adherida anula la ventaja teórica del material. Elige con [la comparativa PLA, PETG, ABS y Nylon](/blog/diferencias-pla-petg-abs-nylon) y la ficha concreta del fabricante.
 
-Si imprimes un gancho con las capas en la dirección incorrecta, puede partir por delaminación aunque tenga mucho relleno. Si lo orientas para que la carga trabaje a lo largo de las líneas de material y añades radios en la base, la mejora puede ser mayor que subir relleno sin criterio. La resistencia nace en la geometría y la orientación.
+Para piezas funcionales, prioriza un perfil estable y suficiente adhesión entre capas sobre un acabado superficial perfecto. Reduce ventilación o aumenta temperatura solo dentro de rangos seguros y comprobados para tu equipo y filamento.
 
+## Proceso de diseño y prueba
+
+1. Define carga, apoyo, entorno y consecuencia del fallo.
+2. Modela un camino de carga con transiciones suaves.
+3. Selecciona dos orientaciones posibles y compara soportes y capas.
+4. Lamina ambas con iguales parámetros de material y paredes.
+5. Imprime una probeta representativa de la zona crítica, no necesariamente toda la pieza.
+6. Aplica una prueba repetible y registra fuerza o condición de fallo si dispones de medios adecuados.
+7. Cambia una variable y repite.
+
+Fotografía la rotura. Una separación limpia entre capas sugiere un problema diferente a una grieta que nace en un radio pequeño. Ese modo de fallo orienta la siguiente iteración.
+
+## Errores frecuentes y límites
+
+- Aumentar relleno hasta 100 % sin revisar orientación ni paredes.
+- Diseñar esquinas vivas y taladros cerca del borde.
+- Probar la pieza en una dirección distinta a la de servicio.
+- Comparar materiales con perfiles y orientaciones diferentes.
+- Declarar una capacidad de carga a partir de una única impresión.
+
+Las propiedades de una ficha técnica suelen proceder de probetas y condiciones controladas, no de tu geometría FDM. Temperatura, humedad, fatiga y fluencia pueden reducir prestaciones con el tiempo. Un soporte relacionado con seguridad requiere factores, ensayos y revisión profesional acordes al riesgo.
 
 ## Conclusión
 
-Una pieza FDM resistente se diseña pensando en capas, carga y geometría. El relleno es solo una parte de la decisión.
-
-## Recomendación práctica final
-
-Imprime dos probetas con distinta orientación y rómpelas de forma controlada. Ver la diferencia ayuda más que leer diez tablas.
+Diseña desde la carga hacia la geometría: orienta capas, refuerza el camino de fuerza y elimina concentraciones antes de añadir material al azar. Después valida con una muestra representativa y registra el modo de fallo. Esa secuencia produce aprendizaje técnico, no solo una pieza aparentemente maciza.

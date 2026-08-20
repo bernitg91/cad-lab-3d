@@ -11,59 +11,62 @@ author: "CAD Lab 3D"
 featured: false
 ---
 
-Calcular el peso aproximado de una pieza ayuda a estimar coste, ergonomía, consumo de material y viabilidad. En CAD puedes obtener volumen, pero en impresión 3D FDM el relleno y las paredes cambian el resultado real.
+Estimar el peso de una pieza sirve para revisar ergonomía, coste, consumo de material y capacidad de carga. El método cambia según la fabricación: en una pieza maciza basta con volumen y densidad; en FDM intervienen paredes, tapas, relleno, soportes y purga.
 
-## Resumen rápido
-
-- Para piezas macizas usa volumen por densidad.
-- Para FDM, el laminador estima mejor porque incluye paredes, tapas y relleno.
-- Registra peso estimado y peso real para calibrar tus proyectos.
-- Si tienes el volumen CAD, usa la [calculadora de peso de pieza 3D](/calculadora-peso-pieza-3d).
-- Si la pieza será funcional, revisa también [cómo elegir filamento para piezas funcionales](/blog/elegir-filamento-piezas-funcionales).
-
-## Fórmula básica
+## Fórmula para una pieza maciza
 
 La relación general es:
 
-`masa = volumen x densidad`
+`masa = volumen × densidad`
 
-Si el volumen está en centímetros cúbicos y la densidad en gramos por centímetro cúbico, el resultado será gramos.
+Si el volumen está en centímetros cúbicos y la densidad en gramos por centímetro cúbico, la masa resultará en gramos. Muchos programas CAD muestran el volumen en milímetros cúbicos: para convertirlo, divide entre 1.000 antes de aplicar una densidad expresada en g/cm³.
 
-## Densidades orientativas
+Como referencia inicial, PLA y PETG suelen situarse alrededor de 1,2–1,3 g/cm³, mientras que ABS y varios Nylon pueden estar cerca de 1,0–1,2 g/cm³. **No uses esos rangos como ficha técnica**: pigmentos, fibras, cargas y formulaciones modifican la densidad. Prioriza el dato del fabricante de tu material.
 
-Cómo referencia inicial:
+### Ejemplo teórico
 
-- PLA: cerca de 1,24 g/cm3.
-- PETG: cerca de 1,27 g/cm3.
-- ABS: cerca de 1,04 g/cm3.
-- Nylon: cerca de 1,14 g/cm3.
+Un modelo macizo de 48 cm³ fabricado con un material de densidad declarada de 1,24 g/cm³ tendría una masa teórica de 59,52 g. El cálculo no contempla tolerancias de fabricación, humedad, vacíos ni elementos añadidos. Es una base para comparar conceptos, no una promesa de peso final.
 
-Estos valores pueden variar según fabricante y aditivos.
+## Por qué el porcentaje de relleno no basta
 
-## Piezas FDM con relleno
+Una pieza FDM con un 20 % de relleno **no pesa el 20 % de su versión maciza**. Las paredes exteriores, las capas superiores e inferiores y los detalles pequeños pueden ocupar una parte importante del volumen. En una carcasa fina, aumentar perímetros puede influir más que cambiar el relleno.
 
-En FDM, una pieza al 20% de relleno no pesa exactamente el 20% de una pieza maciza. Las paredes, tapas y suelos pueden representar gran parte del material. El laminador suele dar una estimación más realista que el CAD.
+Para entender esa diferencia, revisa [paredes, perímetros y tapas en FDM](/blog/paredes-perimetros-tapas-fdm) y [cómo elegir el relleno según la pieza](/blog/relleno-impresion-3d-segun-pieza). Ambos parámetros deben evaluarse juntos: reducir relleno mientras se mantienen muchas tapas puede ahorrar muy poco.
 
-## Método recomendado
+El laminador calcula las trayectorias reales y suele ofrecer una estimación mejor para FDM. Asegúrate de introducir el diámetro y la densidad correctos del filamento. Algunos perfiles heredan una densidad genérica y muestran una masa coherente en apariencia, pero incorrecta para la bobina utilizada.
 
-Exporta el STL, abre el laminador, configura material, paredes, relleno y altura de capa. Compara la masa estimada con el cálculo teórico del CAD para entender la diferencia.
+## Método recomendado en tres niveles
 
-## Errores frecuentes
+### 1. Calcula el máximo teórico en CAD
 
-- Mezclar milímetros cúbicos con centímetros cúbicos.
-- Usar densidad de una ficha distinta al filamento real.
-- Ignorar soportes, purga, brim o piezas de prueba.
-- Estimar coste solo por gramos y olvidar tiempo de máquina.
+Obtén volumen, aplica la densidad y guarda el resultado como “masa maciza teórica”. Este valor permite comparar materiales o detectar un error de unidades. Si el laminador predice más que la pieza maciza sin contar soportes, revisa la configuración.
 
-## Ejemplo aplicado
+### 2. Lamina con el perfil real
 
-Un soporte CAD de 60 cm3 no pesa lo mismo si se fabrica macizo, con 20% de relleno o con cuatro perímetros. En una carcasa, las paredes y tapas pueden representar más material que el relleno. Una forma práctica es comparar tres datos: peso teórico macizo, peso estimado por el laminador y peso real medido después de imprimir. Esa comparación te enseña cómo se comportan tus perfiles.
+Configura orientación, paredes, tapas, relleno, soportes, brim y purga. Registra tanto los gramos de la pieza como el material auxiliar cuando el programa los separe. Si todavía dudas sobre la geometría, consulta [cómo optimizar una pieza para reducir material y peso](/blog/optimizar-pieza-reducir-material-peso) antes de reducir espesores sin criterio.
 
+### 3. Pesa y corrige después de imprimir
+
+Usa una báscula con resolución adecuada al tamaño de la pieza. Retira soportes y brim si quieres comparar solo el componente terminado; pésalos aparte si analizas consumo. Calcula la desviación entre estimación y realidad y anota el perfil empleado.
+
+## Checklist de estimación
+
+- [ ] Unidades del CAD verificadas.
+- [ ] Densidad tomada de la bobina o ficha correcta.
+- [ ] Perfil de laminado correspondiente a la impresora y boquilla.
+- [ ] Paredes, tapas y relleno definidos.
+- [ ] Soportes, brim y purga incluidos según el objetivo del cálculo.
+- [ ] Insertos, tornillos, adhesivo u otros componentes sumados aparte.
+- [ ] Peso real registrado después de fabricar.
+
+Este último punto resulta especialmente útil al [calcular el coste de una pieza impresa](/blog/calcular-costes-pieza-impresa-3d), porque una diferencia pequeña por unidad puede importar en un lote.
+
+## Errores frecuentes y limitaciones
+
+El error más común es mezclar mm³ con cm³. También es frecuente multiplicar el volumen total por el porcentaje de relleno, ignorando las paredes; usar la densidad de “PLA genérico” para una formulación cargada; o comparar el peso del laminador con una pieza que aún conserva soportes.
+
+La masa tampoco indica por sí sola si el diseño es resistente. Dos piezas del mismo peso pueden comportarse de manera distinta por su orientación, nervios y distribución de material. Antes de aligerar una zona cargada, consulta [cómo diseñar una pieza resistente para FDM](/blog/disenar-pieza-resistente-fdm) y valida el cambio con una muestra o cálculo apropiado.
 
 ## Conclusión
 
-El CAD sirve para estimar piezas macizas. El laminador sirve para estimar piezas impresas. Usar ambos datos te da una visión más completa.
-
-## Recomendación práctica final
-
-Guarda una tabla con peso estimado y peso real de tus impresiones. Después de diez piezas, tus estimaciones serán mucho más fiables.
+Usa el CAD para establecer la masa maciza, el laminador para predecir la fabricación y la báscula para corregir tus estimaciones. Guardar esos tres valores, junto al material y al perfil, crea una referencia propia mucho más útil que cualquier densidad genérica aislada.

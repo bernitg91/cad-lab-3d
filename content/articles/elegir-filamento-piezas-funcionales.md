@@ -11,72 +11,81 @@ author: "CAD Lab 3D"
 featured: false
 ---
 
-Elegir filamento no debería empezar por el color ni por lo que haya en la estantería. Una pieza funcional necesita responder a condiciones concretas: carga, temperatura, rigidez, impacto, desgaste y ambiente.
+El mejor filamento para una pieza funcional no es el más resistente en una tabla, sino el que cumple el entorno real y tu impresora puede procesar de forma repetible. La selección debe comenzar por requisitos y terminar con una muestra, no por el color o una recomendación genérica.
 
-## Criterios antes de elegir bobina
+## Traduce el uso en requisitos
 
-- Define carga, temperatura, flexibilidad y ambiente antes de elegir.
-- PETG suele ser un buen punto medio para piezas útiles.
-- Nylon y ABS pueden ser mejores, pero exigen más control de impresión.
-- Para comparar familias, revisa [diferencias entre PLA, PETG, ABS y Nylon](/blog/diferencias-pla-petg-abs-nylon).
-- La página de [herramientas recomendadas](/herramientas-recomendadas) queda preparada para futuras comparativas sin enlaces activos.
+Describe la pieza antes de comparar materiales. Pregunta qué carga recibe, cuánto tiempo dura, si flexa, roza, cae o permanece apretada. Añade temperatura, humedad, radiación solar, sustancias de contacto y acabado necesario.
 
-## Define la función de la pieza
+Clasifica cada criterio como imprescindible, deseable o irrelevante. Esto evita elegir un material difícil por una propiedad que el proyecto no necesita. Para una carcasa de escritorio quizá importen rigidez y acabado; para una guía móvil pesan más desgaste y estabilidad dimensional.
 
-Haz una lista breve:
+### Preguntas mínimas
 
-- Qué carga soporta.
-- Si estará al sol o cerca de calor.
-- Si necesita flexar o ser rígida.
-- Si habrá rozamiento.
-- Si el acabado importa.
+- ¿La carga es estática, cíclica o de impacto?
+- ¿Cuál es la temperatura real de servicio, no solo la ambiente?
+- ¿Necesita ser rígida o deformarse sin romper?
+- ¿Habrá agua, químicos, exterior o rozamiento?
+- ¿Debe aceptar tornillos, insertos, pegado o acabado?
+- ¿Qué consecuencia tiene el fallo?
 
-Con esa lista, el material se elige con más criterio.
+Si el uso es una envolvente, amplía el análisis con [cómo elegir material para una carcasa impresa](/blog/material-carcasa-impresa-3d).
 
-## PLA, PETG, ABS y Nylon
+## Descarta familias incompatibles
 
-PLA es fácil de imprimir y rígido, pero su resistencia a temperatura es baja. PETG es una opción equilibrada para piezas útiles, con mejor tenacidad y resistencia química. ABS resiste mejor temperatura, aunque exige control de warping y ventilación. Nylon ofrece gran tenacidad y resistencia al desgaste, pero absorbe humedad y requiere más cuidado.
+Usa tendencias generales para una primera criba. PLA prioriza facilidad, detalle y rigidez, pero puede quedar limitado por temperatura. PETG suele equilibrar tenacidad y facilidad. ABS aporta mejor comportamiento térmico, aunque aumenta requisitos de ambiente y ventilación. Nylon destaca en tenacidad y desgaste, pero requiere un control serio de humedad.
 
-## No todo depende del material
+La [comparativa entre PLA, PETG, ABS y Nylon](/blog/diferencias-pla-petg-abs-nylon) desarrolla estas diferencias. Después consulta la ficha de la **formulación concreta**: dos bobinas de la misma familia pueden usar aditivos diferentes. No mezcles valores de un fabricante con el material que tienes en la impresora.
 
-Una pieza en buen material puede fallar por mala orientación, pocos perímetros o relleno insuficiente. Para piezas funcionales, revisa:
+## Comprueba que puedes imprimirlo bien
 
-- Número de paredes.
-- Orientación de capas.
-- Temperatura de impresión.
-- Humedad del filamento.
-- Radios en esquinas internas.
+Un material avanzado no aporta nada si tu equipo no alcanza sus condiciones de trabajo de forma segura y estable. Revisa temperatura admisible de hotend y cama, tipo de superficie, necesidad de recinto, ventilación, abrasión de la boquilla y método de secado. Sigue siempre la documentación del fabricante.
 
-## Decisiones de material que salen caras
+También cuenta la repetibilidad. Si una pieza de Nylon sale bien una vez pero la bobina absorbe humedad antes del segundo lote, el proceso no está controlado. Registra apertura, almacenamiento, secado y perfil. Antes de fabricar un conjunto, aplica [calibración para piezas funcionales](/blog/calibrar-impresora-3d-piezas-funcionales).
 
-- Usar PLA en piezas que quedan dentro de un coche o cerca de calor.
-- Imprimir Nylon sin secarlo correctamente.
-- Comparar materiales sin mantener iguales orientación, perímetros y relleno.
-- Olvidar que el diseño puede importar más que el filamento.
+## Diseña material, geometría y orientación juntos
 
-## Selección para un soporte funcional
+No esperes que el filamento compense una esquina viva, pocas paredes o capas mal orientadas. Un PLA bien orientado puede superar en una dirección a un material más tenaz con delaminación. La pieza impresa es anisótropa y su comportamiento no coincide automáticamente con una probeta de ficha.
 
-Para un soporte de pared, el filamento no se elige igual que para una figura. Debes preguntar si habrá carga constante, temperatura, humedad, impactos o tornillos. Un PETG bien calibrado puede ser más útil que un material teóricamente superior mal impreso. La pieza final depende tanto del material como del perfil y la orientación.
+Revisa [cómo diseñar una pieza resistente para FDM](/blog/disenar-pieza-resistente-fdm) antes de comparar bobinas. Mantén constantes geometría, orientación, perímetros y criterio de prueba; de lo contrario no sabrás qué variable produjo el cambio.
 
-## Un método de descarte antes de comparar marcas
+### Ejemplos de descarte, no recetas
 
-Empieza por eliminar materiales incompatibles con el entorno. Si la pieza estará cerca de una fuente de calor, no uses PLA por comodidad sin comprobar la temperatura real. Si trabajará al exterior, considera radiación UV, agua y cambios térmicos. Si necesita flexar, un material rígido puede fallar aunque tenga buena resistencia a tracción.
+- Una maqueta dimensional puede priorizar detalle y estabilidad: PLA suele ser un punto de partida razonable.
+- Un soporte de taller con golpes moderados puede justificar probar PETG.
+- Una guía sometida a roce puede llevar a evaluar Nylon si puedes mantenerlo seco.
+- Una carcasa cerca de calor puede descartar PLA, pero exige conocer la temperatura y validar la alternativa.
 
-Después revisa lo que tu impresora puede procesar de forma repetible. ABS, ASA y Nylon suelen exigir más control ambiental que PLA o PETG. Una bobina avanzada no mejora el proyecto si produce alabeo, humedad o capas mal unidas. La facilidad de fabricación forma parte del criterio técnico.
+Son hipótesis iniciales. Carga, formulación y proceso pueden cambiar la decisión.
 
-### Tres piezas, tres decisiones distintas
+## Proceso de prueba antes de comprar más
 
-- Una maqueta dimensional suele priorizar estabilidad, detalle y coste: PLA es una opción lógica.
-- Un soporte de taller puede necesitar tenacidad y cierta resistencia térmica: PETG suele ser un punto de partida razonable.
-- Una guía sometida a roce puede beneficiarse de Nylon, siempre que se controle humedad, tolerancia y orientación.
+1. Elige dos materiales que superen los requisitos imprescindibles.
+2. Obtén una cantidad pequeña o usa una bobina disponible en buen estado.
+3. Modela una muestra con la zona crítica: clip, agujero, nervio o superficie de roce.
+4. Imprime con orientación y parámetros representativos de la pieza final.
+5. Acondiciona las muestras de la misma forma antes de comparar.
+6. Aplica una prueba repetible y registra deformación, rotura, desgaste o pérdida de ajuste.
+7. Elige considerando también fallos, tiempo, acabado y facilidad de repetición.
 
-Comprueba estas decisiones con la guía oficial del fabricante del filamento y con una muestra pequeña de la zona crítica. Las familias de material comparten tendencias, pero cada formulación puede imprimir y comportarse de manera diferente.
+Si el proyecto aún está en fase de aprendizaje, [materiales para prototipos funcionales](/blog/materiales-prototipos-funcionales) ofrece criterios para separar comprobación de concepto y solución final.
 
+## Checklist de decisión
 
-## Elegir material también es diseñar
+- [ ] Entorno y carga definidos.
+- [ ] Propiedades tomadas de la ficha de la bobina concreta.
+- [ ] Impresora y boquilla compatibles.
+- [ ] Almacenamiento, secado y seguridad resueltos.
+- [ ] Geometría y orientación revisadas.
+- [ ] Muestra crítica impresa y comparada.
+- [ ] Modo de fallo y límites registrados.
+- [ ] Coste y disponibilidad considerados para futuras unidades.
 
-El mejor filamento es el que responde al uso real de la pieza y a las capacidades de tu impresora. Para muchos proyectos, PETG es un buen punto de partida funcional.
+## Errores frecuentes y límites
 
-## Ensayo previo recomendado
+Evita elegir solo por resistencia a tracción, confundir rigidez con tenacidad, imprimir Nylon húmedo o comparar piezas con orientaciones distintas. Tampoco uses PLA cerca de calor sin medir el entorno ni adoptes ABS sin las condiciones de proceso y ventilación indicadas.
 
-Crea una tabla sencilla con material, temperatura, rigidez, resistencia a impacto y dificultad de impresión. Úsala antes de comprar bobinas nuevas.
+Una prueba doméstica no certifica comportamiento a largo plazo, contacto alimentario, fuego, químicos o seguridad. Para aplicaciones críticas hacen falta especificaciones y ensayos acordes al riesgo. Esta guía sirve para estructurar la selección, no para declarar universalmente apta una pieza.
+
+## Conclusión
+
+Define el uso, descarta materiales incompatibles, comprueba capacidades de impresión y valida la zona crítica. La mejor elección equilibra prestaciones, fabricación y repetibilidad. Registrar la prueba convierte la siguiente selección en una decisión basada en datos propios.

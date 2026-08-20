@@ -11,58 +11,73 @@ author: "CAD Lab 3D"
 featured: false
 ---
 
-Mandar una pieza a imprimir sin revisar suele acabar en pérdida de tiempo. Una checklist sencilla reduce errores y ayuda a detectar problemas antes de gastar material.
+Enviar una pieza a impresión sin una revisión final puede desperdiciar horas por un error de escala, una versión antigua o un soporte colocado sobre una cara funcional. Esta checklist sirve tanto para imprimir en tu propia máquina como para entregar el archivo a un servicio externo. Adáptala al riesgo y al proceso de fabricación.
 
-## Resumen rápido
+## 1. Confirma el objetivo y la versión
 
-- Revisa unidades, escala y geometría cerrada.
-- Comprueba orientación, soportes, paredes y tolerancias.
-- Mira la vista previa del laminador capa por capa en zonas críticas.
-- Puedes usar la [checklist interactiva de impresión 3D](/checklist-impresion-3d) para marcar cada punto.
-- Si la pieza debe resistir, revisa [cómo diseñar una pieza resistente para FDM](/blog/disenar-pieza-resistente-fdm).
+Antes de abrir el laminador, define qué debe hacer la pieza. Una maqueta visual permite decisiones distintas a un soporte cargado o a una tapa que debe encajar. Anota dimensiones críticas, acabado visible, cantidad, material previsto y fecha necesaria.
 
-## Revisión CAD
+- [ ] El nombre del archivo identifica proyecto y revisión.
+- [ ] La versión enviada es la aprobada, no una exportación antigua.
+- [ ] Las unidades y la escala están confirmadas.
+- [ ] Se conoce la función: visual, dimensional o funcional.
+- [ ] Las caras críticas y zonas de montaje están señaladas.
 
-Comprueba que la pieza tiene unidades correctas, escala real y geometría cerrada. Revisa también que los taladros, ranuras y encajes tengan tolerancias.
+Si aún no está claro qué se pretende demostrar, distingue entre prototipo visual y prototipo funcional antes de escoger parámetros caros sin necesidad.
 
-## Revisión de fabricación
+## 2. Revisa la geometría CAD
 
-Antes de laminar, responde:
+Comprueba que el cuerpo esté cerrado, sin caras invertidas, volúmenes duplicados ni detalles que desaparezcan al exportar. Revisa espesores, radios internos, agujeros y acceso de herramientas. Una geometría puede laminar sin avisos y seguir siendo imposible de montar.
 
-- Qué cara irá apoyada en la cama.
-- Dónde aparecerán soportes.
-- Si las capas favorecen la resistencia.
-- Si hay paredes demasiado finas.
-- Si el material elegido soporta el uso.
+### Ajustes y tolerancias
 
-## Revisión del laminador
+Los encajes no deberían usar automáticamente la misma medida nominal en ambas piezas. La holgura depende de máquina, material, orientación y tipo de unión. Consulta [tolerancias para piezas impresas en 3D](/blog/tolerancias-piezas-impresas-3d) y, para un ajuste importante, imprime una muestra pequeña antes de toda la carcasa.
 
-Mira la vista previa capa por capa en zonas críticas. Verifica tiempo, masa, soportes, perímetros, relleno y temperaturas.
+- [ ] Las paredes superan el mínimo reproducible del proceso previsto.
+- [ ] Agujeros, pasadores y ranuras incluyen la holgura elegida.
+- [ ] Hay radios en cambios bruscos de sección cuando la pieza soporta carga.
+- [ ] Tornillos, insertos o componentes comerciales tienen espacio real.
+- [ ] El archivo exportado conserva la resolución necesaria sin ser innecesariamente pesado.
 
-### Punto importante
+La guía para [preparar un STL para impresión 3D](/blog/preparar-archivo-stl-impresion-3d) amplía la comprobación de exportación y malla.
 
-No confíes solo en que el laminador no muestre errores. Una pieza puede laminar correctamente y aun así estar mal diseñada.
+## 3. Decide orientación, material y soportes
 
-## Revisión final
+La cara apoyada en la cama afecta al acabado y a las medidas iniciales. La dirección de capas afecta a la resistencia. No elijas orientación solo para acortar el tiempo: identifica primero la carga principal, las superficies de contacto y las caras visibles.
 
-Comprueba nombre del archivo, versión, material, color y notas de montaje. Si trabajas para otra persona, envía una captura de la orientación prevista.
+- [ ] La orientación favorece la resistencia en la dirección necesaria.
+- [ ] Los soportes no dañan una cara de ajuste si existe alternativa.
+- [ ] Los voladizos y puentes son razonables para la máquina.
+- [ ] La base ofrece adhesión suficiente o se ha previsto brim.
+- [ ] El material soporta temperatura, humedad, impacto y flexión de uso.
 
-## Errores frecuentes
+Para piezas cargadas, utiliza [cómo orientar una pieza resistente](/blog/orientar-pieza-impresion-3d-resistente). Si la duda es el polímero, revisa [cómo elegir filamento para piezas funcionales](/blog/elegir-filamento-piezas-funcionales).
 
-- Mandar un STL antiguo con el mismo nombre que la versión corregida.
-- No revisar la primera capa en piezas grandes.
-- Aceptar soportes en superficies funcionales sin valorar rediseñar.
-- No anotar material y parámetros usados para repetir la pieza después.
+## 4. Inspecciona la vista previa del laminador
 
-## Ejemplo aplicado
+No basta con que el programa termine sin errores. Recorre las capas en las zonas críticas y comprueba que existen los perímetros, tapas y puentes esperados. Busca islas que empiecen en el aire, relleno interrumpido, paredes que desaparecen y movimientos sobre detalles finos.
 
-En un proyecto universitario, una pieza puede pasar de correcta a fallida por un detalle pequeño: escala exportada en pulgadas, soportes sobre una cara visible o una orientación que separa capas justo en la zona cargada. La checklist sirve para detectar esos fallos antes de gastar seis horas de máquina. También ayuda a justificar decisiones si el tutor pregunta por material, orientación o tolerancias.
+- [ ] Impresora, boquilla y filamento del perfil son correctos.
+- [ ] Temperaturas y ventilación corresponden a la bobina utilizada.
+- [ ] Perímetros, tapas y relleno responden a la función.
+- [ ] Los soportes tienen acceso para retirarlos.
+- [ ] Tiempo y gramos entran en el límite del proyecto.
+- [ ] Se ha guardado el archivo de proyecto del laminador, no solo el G-code.
 
+El G-code debe generarse para la máquina concreta. No envíes a otra impresora un archivo ya laminado salvo que el receptor lo solicite y confirme compatibilidad.
 
-## Conclusión
+## 5. Prepara una entrega inequívoca
 
-Una checklist no ralentiza el trabajo; evita repetirlo. Cuanto más técnica sea la pieza, más importante es revisar antes de imprimir.
+Crea una carpeta limpia con el modelo, una imagen de orientación y una nota breve. Indica material, color, cantidad, escala, caras críticas, tolerancias acordadas y acabado posterior. Si el servicio debe decidir algún parámetro, déjalo explícito en vez de asumirlo.
 
-## Recomendación práctica final
+Un mensaje útil puede decir: “Revisión B, PETG negro, dos unidades; no colocar soportes en la cara interior marcada; agujero de 6 mm destinado a tornillo pasante; confirmar orientación antes de producir”. Esa nota reduce interpretaciones sin imponer valores que el proveedor deba validar.
 
-Copia esta checklist en tu gestor de tareas y úsala cada vez. En proyectos universitarios, añádela como anexo para demostrar control del proceso.
+## Errores frecuentes y limitaciones
+
+Los fallos habituales son sobrescribir revisiones con el mismo nombre, exportar en pulgadas como si fueran milímetros, aceptar soportes automáticos sin revisar y no comunicar qué superficie debe quedar limpia. También se olvida que un STL no conserva por sí mismo material, color ni intención de montaje.
+
+Esta checklist reduce errores previsibles, pero **no valida la seguridad de una pieza**. Un componente sometido a carga, calor, contacto alimentario o uso crítico necesita requisitos, material y ensayos adecuados. Si el diseño aún cambia, aplica primero una [revisión de diseño antes de fabricar](/blog/revision-diseno-antes-fabricar).
+
+## Cierre práctico
+
+Guarda esta lista junto al proyecto y registra cualquier fallo que la revisión no detectó. La mejor checklist no es la más larga, sino la que se actualiza con problemas reales y permite repetir la pieza meses después sin reconstruir todas las decisiones.

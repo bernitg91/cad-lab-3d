@@ -11,68 +11,76 @@ author: "CAD Lab 3D"
 featured: false
 ---
 
-Documentar un proyecto de diseño industrial significa explicar por qué el producto existe, cómo se ha desarrollado y qué decisiones justifican el resultado final. No basta con mostrar renders.
+Documentar un proyecto de diseño industrial significa hacer visible la cadena que une problema, requisitos, decisiones y pruebas. No basta con reconstruir el proceso al final ni con ordenar renders. Un registro ligero durante el trabajo permite justificar el resultado, preparar la memoria y detectar contradicciones antes de fabricar.
 
-## Mapa del proyecto
+## Crea un mapa del proyecto desde el inicio
 
-- Empieza por problema, usuario y requisitos.
-- Muestra alternativas, decisiones descartadas y cambios.
-- Documenta prototipo, fabricación y validación.
-- Refuerza la entrega con [renders técnicos para portfolio](/blog/renders-tecnicos-portfolio).
+Abre una estructura básica con contexto, usuario, objetivo, requisitos, alternativas, desarrollo, prototipo y validación. No necesitas completar todos los apartados el primer día: sirven como lugares donde guardar evidencias conforme aparecen.
 
-## Problema y usuario
+La guía para [estructurar una memoria técnica](/blog/estructurar-memoria-tecnica-diseno-industrial) ayuda a convertir ese archivo de trabajo en un documento final. Mantén separados el registro cronológico —qué pasó— y la memoria argumentada —por qué importa— para no llenar la entrega de detalles sin función.
 
-Empieza definiendo el problema, el contexto de uso y las necesidades del usuario. Si no queda claro qué problema resuelve el producto, el resto del proyecto pierde fuerza.
+## Convierte observaciones en requisitos
 
-## Requisitos de diseño
+Una necesidad como “debe ser fácil de transportar” todavía es demasiado abierta. Tradúcela en criterios que puedas relacionar con decisiones: volumen máximo, masa objetivo, tipo de agarre o situación de uso. No todos los requisitos necesitan una cifra, pero sí una forma de comprobarse.
 
-Transforma observaciones en requisitos:
+| Requisito | Decisión asociada | Evidencia prevista | Estado |
+| --- | --- | --- | --- |
+| Montaje sin herramienta especial | Tornillería estándar y acceso frontal | Prueba de montaje | Pendiente/validado |
+| Fabricación FDM | Paredes y orientación adaptadas | Vista del laminador y prototipo | Pendiente/validado |
+| Transporte con una mano | Asa y distribución de masa | Prueba de uso | Pendiente/validado |
 
-- Dimensiones máximas.
-- Peso objetivo.
-- Materiales posibles.
-- Coste aproximado.
-- Restricciones de fabricación.
-- Seguridad y ergonomía.
+Registra el origen de cada requisito: observación, briefing, norma, limitación de taller o supuesto del equipo. Si cambia, deja constancia de la revisión en vez de editar el pasado como si nunca hubiera existido.
 
-## Desarrollo formal y técnico
+## Mantén un registro de decisiones
 
-Muestra bocetos, alternativas CAD, pruebas de forma y decisiones descartadas. Un proyecto serio explica también lo que no funcionó.
+Para cada cambio relevante, guarda fecha, alternativa, criterio, decisión y consecuencia. Una entrada puede ser tan corta como: “Se aumenta el radio interior porque la primera probeta fisuró en esa transición; se repetirá la prueba con la misma orientación”. Esa frase aporta más trazabilidad que diez capturas sin comentario.
 
-## Prototipo y validación
+La guía sobre [cómo explicar decisiones de diseño](/blog/explicar-decisiones-diseno-memoria) ayuda a separar razones técnicas de preferencias personales. Incluye opciones descartadas cuando enseñan una restricción real; no hace falta conservar cada boceto menor.
 
-Incluye fotografías del prototipo, problemas encontrados y cambios aplicados. Si usas impresión 3D, documenta orientación, material, tiempo y ajustes importantes.
+### Nombra archivos y revisiones
 
-## Fallos de trazabilidad habituales
+Usa nombres que identifiquen proyecto, pieza y versión. No sobrescribas el único CAD funcional antes de un cambio importante. Exporta PDF, STEP o STL desde una revisión conocida y registra qué archivo llegó a prototipo. Esta disciplina evita analizar una pieza diferente a la mostrada en la memoria.
 
-- Presentar solo el resultado final sin proceso.
-- No explicar por qué se eligió una solución frente a otra.
-- Separar estética, fabricación y ergonomía como si no estuvieran conectadas.
-- No incluir evidencias de prueba o aprendizaje del prototipo.
+## Captura evidencias que expliquen el proceso
 
-## Caso de documentación de un prototipo
+Guarda bocetos comparativos, capturas limpias del CAD, detalles de ensamblaje, orientación de fabricación y fotografías de pruebas. Una imagen debe responder una pregunta. Evita acumular vistas repetidas o interfaces completas cuando solo importa una unión.
 
-Una memoria técnica mejora mucho cuando registra decisiones, no solo resultados. Si elegiste PETG frente a PLA, explica si fue por temperatura, impacto o uso exterior. Si aumentaste un radio, indica si buscabas resistencia, fabricación o ergonomía. Esa trazabilidad demuestra que el proyecto no avanzó por intuición sin control.
+Incluye escala, unidad y pie breve cuando no sean evidentes. En fotografías de prototipo, muestra el contexto de uso y también los fallos. Si existe una grieta, una interferencia o una zona incómoda, documentarla demuestra aprendizaje y justifica la iteración.
 
-## El hilo que debe conectar todo el proyecto
+## Documenta prototipo y validación
 
-Cada requisito debería aparecer de nuevo en una decisión y en una comprobación. Si el producto debe transportarse con una mano, esa necesidad debe influir en dimensiones, masa, agarre y prueba de uso. Si debe fabricarse por FDM, la orientación, los espesores y el número de piezas deben reflejarlo desde el CAD, no añadirse al final como una explicación decorativa.
+Distingue [prototipo visual y prototipo funcional](/blog/prototipo-visual-vs-funcional). El primero puede validar forma o presentación; el segundo debe relacionarse con una función concreta. No llames validación a “parece resistente” si no había criterio ni procedimiento.
 
-Una tabla de requisitos ayuda a mantener ese hilo. Incluye el requisito, cómo se ha interpretado, qué decisión lo responde y qué evidencia permite comprobarlo. No todos los criterios necesitan una cifra; la ergonomía puede validarse con una prueba comparativa, mientras que una dimensión de montaje sí requiere medida.
+Para cada prueba, anota:
 
-## Qué imágenes merece la pena conservar
+1. pregunta que intenta responder;
+2. versión y configuración del prototipo;
+3. procedimiento y condiciones;
+4. observación o medida obtenida;
+5. decisión que se toma después;
+6. limitaciones de la prueba.
 
-Guarda croquis que expliquen alternativas, capturas del CAD antes y después de un cambio importante, fotografías del prototipo en uso y detalles de los fallos. Evita llenar la memoria con veinte vistas casi iguales. Una imagen buena debe permitir entender una decisión sin depender de una explicación larga.
+Una prueba de usuario con pocas personas puede revelar problemas de agarre, pero no representa automáticamente a toda la población. Una muestra FDM puede comprobar montaje, pero no necesariamente el comportamiento del material de producción. Declarar esos límites evita conclusiones excesivas.
 
-### Ejemplo de registro semanal
+## Checklist de cierre
 
-En una sola página puedes anotar objetivo de la semana, cambio realizado, motivo, prueba y siguiente decisión. Ese registro evita reconstruir el proceso de memoria la noche antes de entregar y aporta material útil para el portfolio.
+- [ ] Problema, usuario y alcance se entienden sin contexto oral.
+- [ ] Cada requisito tiene origen y forma de comprobación.
+- [ ] Las decisiones principales comparan alternativas.
+- [ ] Las imágenes tienen versión, escala o pie cuando hace falta.
+- [ ] El prototipo indica material, proceso y configuración relevante.
+- [ ] Los resultados se conectan con requisitos, no solo con impresiones.
+- [ ] Quedan claros los límites y el siguiente paso.
+- [ ] Anexos, referencias y archivos entregados coinciden con el texto.
 
+Para la redacción y formato final, aplica también [cómo preparar un informe técnico universitario](/blog/preparar-informe-tecnico-universitario).
 
-## Qué debe entender otra persona
+## Errores frecuentes y límites
 
-Una buena documentación convierte un resultado final en un proceso comprensible. Eso mejora informes, portfolio y defensa oral.
+Los fallos habituales son documentar solo al final, presentar una cronología sin criterio, borrar alternativas descartadas y mostrar resultados sin indicar versión. También debilita el trabajo afirmar que una solución es “sostenible”, “ergonómica” o “segura” sin método ni evidencia.
 
-## Entregable recomendado
+No conviertas el documento en un almacén de todo el proyecto. Lleva los cálculos, tablas extensas y material secundario a anexos; conserva en el cuerpo la información necesaria para seguir el razonamiento. Cuando prepares una versión pública, elimina datos personales, licencias, información de clientes y detalles confidenciales.
 
-Durante el proyecto, guarda capturas semanales. Documentar al final desde cero es mucho más difícil y suele dejar huecos.
+## Conclusión
+
+La documentación de calidad se construye durante el proyecto. Un mapa estable, una tabla de requisitos, un registro de decisiones y evidencias con versión permiten explicar no solo qué diseñaste, sino por qué el resultado es coherente con el problema y qué falta todavía por validar.

@@ -47,6 +47,7 @@ function getArticleFiles(): Article[] {
     .map((file) => {
       const fileContent = fs.readFileSync(path.join(articlesDirectory, file), "utf8");
       const { meta, content } = parseFrontmatter(fileContent);
+      const readingMinutes = Math.max(1, Math.ceil(content.split(/\s+/).filter(Boolean).length / 210));
       const headings = Array.from(content.matchAll(/^(##|###)\s+(.+)$/gm)).map((heading) => ({
         id: slugifyHeading(heading[2]),
         text: heading[2],
@@ -55,6 +56,7 @@ function getArticleFiles(): Article[] {
 
       return {
         ...meta,
+        readingTime: `${readingMinutes} min de lectura`,
         content,
         headings
       };

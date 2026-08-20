@@ -11,39 +11,57 @@ author: "CAD Lab 3D"
 featured: false
 ---
 
-El relleno no debe elegirse por costumbre. Un 20% puede ser suficiente para una maqueta, insuficiente para un soporte y excesivo para una pieza que realmente necesita más paredes.
+El relleno es la estructura interna que genera el laminador entre las paredes de una pieza FDM. Elegirlo por costumbre —por ejemplo, aplicar el mismo porcentaje a todo— puede aumentar tiempo y material sin mejorar la zona que realmente trabaja. La decisión debe considerar función, orientación, paredes, tapas y forma de aplicar la carga.
 
-## Resumen rápido
+## 1. Empieza por la función de la pieza
 
-- Piezas estéticas: relleno bajo y buen acabado exterior.
-- Piezas funcionales: más paredes, orientación correcta y relleno con criterio.
-- Piezas grandes: busca equilibrio entre peso, tiempo y rigidez.
-- Para reducir masa, lee [cómo optimizar una pieza para reducir material y peso](/blog/optimizar-pieza-reducir-material-peso).
+Una maqueta visual solo necesita sostener su forma y cerrar correctamente las superficies. Un útil de taller puede recibir compresión, flexión o tornillos. Una carcasa grande quizá necesite rigidez para no vibrar, aunque soporte poca carga. Escribe el modo de uso y señala por dónde entran las fuerzas antes de tocar el porcentaje.
 
-## Porcentaje y patrón
+La siguiente tabla no prescribe valores universales; indica qué variable conviene priorizar en cada caso:
 
-El porcentaje controla cuánto material interno se usa. El patrón afecta rigidez, tiempo y comportamiento. Para prototipos simples, un relleno moderado suele bastar. Para soportes, una estructura tipo gyroid o grid puede repartir mejor esfuerzos, según el laminador.
+| Tipo de pieza | Prioridad habitual | Qué revisar antes de subir relleno |
+| --- | --- | --- |
+| Maqueta o volumen visual | Tiempo y acabado exterior | Tapas, soporte de superficies y estabilidad |
+| Carcasa | Rigidez de paredes y uniones | Perímetros, nervios, tornillos y orientación |
+| Soporte funcional | Trayectoria de carga | Orientación, radios, paredes y zonas macizas locales |
+| Pieza ligera | Relación rigidez-masa | Geometría hueca, nervios y patrón interno |
 
-## Paredes antes que relleno
+## 2. Porcentaje y patrón no significan lo mismo
 
-En muchas piezas, aumentar perímetros mejora más que subir el relleno. Si la carga entra por la superficie, las paredes trabajan mucho. Esto conecta directamente con [piezas resistentes para FDM](/blog/disenar-pieza-resistente-fdm).
+El porcentaje controla cuánto espacio interior ocupa la estructura según el cálculo del laminador. El patrón define cómo se distribuye. Rejilla, líneas, cúbico o gyroid pueden producir recorridos, tiempos y rigideces distintos. Los nombres y algoritmos también varían entre programas, así que compara la vista previa y no solo la etiqueta.
 
-## Errores frecuentes
+Un porcentaje alto no convierte automáticamente la pieza en resistente. Si la carga separa las capas, existe una esquina aguda o el material no es adecuado, el relleno puede aportar poco. Consulta [cómo diseñar una pieza resistente para FDM](/blog/disenar-pieza-resistente-fdm) para trabajar primero la geometría.
 
-- Usar 100% de relleno para todo.
-- No revisar tiempo y consumo antes de imprimir.
-- Bajar relleno en piezas con tapas superiores grandes y acabar con hundimientos.
-- Comparar resistencia sin controlar orientación y material.
+### Tapas y apoyo interno
 
-## Ejemplo aplicado
+El relleno también sostiene capas superiores. Una superficie amplia con poco soporte interno puede mostrar hundimiento o mala textura. Antes de aumentar toda la densidad, revisa número de tapas, orientación de la pieza, puentes y un patrón que ofrezca apoyo suficiente. La guía sobre [paredes, perímetros y tapas](/blog/paredes-perimetros-tapas-fdm) explica cómo se relacionan estas variables.
 
-Una pieza decorativa puede funcionar con poco relleno. Un soporte con tornillos quizá necesita más paredes, no necesariamente más relleno. Una pieza que debe pesar poco puede usar relleno bajo y nervios. La decisión correcta combina función, orientación, material y tiempo disponible.
+## 3. Las paredes suelen gobernar la respuesta
 
+En muchas geometrías, la parte exterior está más alejada del eje de flexión y contribuye mucho a la rigidez. Añadir perímetros puede ser más eficiente que llenar el núcleo. Esto no es una regla absoluta: una carga concentrada, una rosca, una zona de aplastamiento o una unión pueden necesitar material interno.
 
-## Conclusión
+Utiliza modificadores del laminador cuando sea posible para reforzar solo una región. Alrededor de tornillos o apoyos puede interesar mayor densidad local, más paredes o una geometría CAD específica. Imprimir todo al 100 % es una solución costosa que además puede introducir acumulación térmica y no corrige un diseño débil.
 
-El relleno es una variable más del diseño. No compensa una geometría débil ni una mala orientación.
+## 4. Orientación y material cambian la decisión
 
-## Recomendación práctica final
+La estructura interna trabaja junto con las capas. Orienta la pieza para que las trayectorias principales acompañen las cargas y revisa soportes y superficie funcional. La guía para [orientar piezas según resistencia](/blog/orientar-pieza-impresion-3d-resistente) debe preceder a cualquier comparación de porcentajes.
 
-Guarda tres perfiles de laminador: maqueta rápida, prototipo funcional y pieza resistente. Ajústalos con pruebas reales de tu impresora.
+El material modifica rigidez, temperatura de uso y comportamiento al impacto. Un patrón que funciona en una probeta de PLA no demuestra el mismo resultado en PETG, ABS o nylon. Si la elección está abierta, revisa las [diferencias entre PLA, PETG, ABS y nylon](/blog/diferencias-pla-petg-abs-nylon) y valida con el material final.
+
+## 5. Proceso práctico para elegir relleno
+
+1. Define función, dirección de carga y criterio de fallo.
+2. Corrige orientación, radios, espesores y uniones en el CAD.
+3. Elige paredes y tapas suficientes para la envolvente.
+4. Selecciona un patrón compatible con la carga y el tiempo disponible.
+5. Compara en el laminador masa, duración y trayectorias de dos o tres variantes.
+6. Imprime una probeta o la zona crítica con las mismas condiciones.
+7. Registra perfil y resultado antes de reutilizarlo.
+
+Si el objetivo principal es ahorrar masa, combina estas decisiones con [optimización de pieza para reducir material](/blog/optimizar-pieza-reducir-material-peso); los vaciados y nervios diseñados pueden ser más controlables que un cambio global de porcentaje.
+
+## 6. Errores y límites
+
+Comparar piezas con distinta orientación, material o número de paredes impide atribuir el cambio al relleno. También es un error interpretar la masa estimada como resistencia o aplicar 100 % sin revisar la vista previa. Los perfiles del laminador son puntos de partida: **la resistencia real exige pruebas representativas**, especialmente en componentes de seguridad.
+
+Guarda perfiles separados para maqueta, prototipo y pieza funcional, pero documenta qué condiciones validaste. Un buen perfil acelera decisiones repetidas; no sustituye analizar cada geometría nueva.

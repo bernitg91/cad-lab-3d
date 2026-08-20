@@ -11,43 +11,61 @@ author: "CAD Lab 3D"
 featured: false
 ---
 
-Una geometría demasiado detallada puede hacer que un análisis FEM sea lento, inestable o difícil de interpretar. Simplificar no significa falsear el modelo: significa dejar lo necesario para responder la pregunta técnica.
+Simplificar un modelo antes de FEM consiste en conservar la física necesaria para responder la pregunta y retirar detalles que solo encarecen el mallado. No es «hacer el CAD más ligero» sin criterio. Cada supresión cambia la idealización y debe poder justificarse por su efecto esperado en cargas, rigidez, contactos o resultados locales.
 
-## Resumen rápido
+## 1. Formula primero la pregunta del análisis
 
-- Elimina detalles que no afectan a la respuesta buscada.
-- Conserva apoyos, cargas, espesores y zonas críticas.
-- Documenta cualquier simplificación en el informe.
-- Revisa [qué es un análisis FEM](/blog/que-es-analisis-fem-cuando-usarlo) y [documentar un análisis FEM básico](/blog/documentar-analisis-fem-basico).
+No puedes decidir qué detalle sobra si no sabes qué resultado importa. Para estudiar desplazamiento global de un soporte quizá puedas omitir un texto grabado. Para evaluar tensión alrededor de un agujero, ese agujero y sus radios son precisamente la zona que debes conservar.
 
-## Qué detalles eliminar
+Escribe el objetivo, la región de interés y el tipo de resultado. Después revisa [qué es un análisis FEM y cuándo usarlo](/blog/que-es-analisis-fem-cuando-usarlo) para confirmar que cargas, apoyos y material están suficientemente definidos. Si el problema aún es ambiguo, simplificar puede esconder incertidumbre en vez de resolverla.
 
-Textos grabados, chaflanes estéticos, roscas modeladas y radios mínimos pueden complicar la malla sin cambiar la conclusión. Si no influyen en la carga o rigidez global, considera suprimirlos.
+## 2. Clasifica la geometría por su función
 
-## Qué no debes eliminar
+Crea una copia del CAD y separa los detalles en tres grupos:
 
-No elimines nervios, cambios de espesor, agujeros de fijación o radios en zonas donde esperas concentración de esfuerzos. Quitar esos detalles puede cambiar el resultado.
+- **conservar:** interfaces de carga, apoyos, contactos, espesores y zonas de resultado;
+- **simplificar:** detalles cuyo efecto puede representarse de otra manera;
+- **eliminar:** elementos decorativos sin influencia prevista en la pregunta.
 
-## Malla y tiempo de cálculo
+Textos, logotipos, moleteados, roscas modeladas y chaflanes pequeños suelen ser candidatos a retirada en un estudio global. Sin embargo, una rosca puede ser esencial si estudias el contacto local, y un radio pequeño puede gobernar una concentración de tensiones. La clasificación depende del alcance.
 
-Una geometría limpia permite una malla más estable. Si el modelo tiene caras minúsculas o detalles irrelevantes, el mallador puede generar elementos pobres o demasiados elementos.
+### Comparar tamaño y efecto
 
-## Errores frecuentes
+No uses solo una regla de tamaño. Un detalle pequeño en una superficie libre puede ser irrelevante, mientras una ranura pequeña que atraviesa la trayectoria de carga puede cambiar la rigidez o iniciar un fallo. Pregunta si el detalle altera sección resistente, contacto, apoyo, masa distribuida o punto donde leerás resultados.
 
-- Simular el modelo completo con todos los detalles estéticos.
-- Eliminar agujeros o apoyos que definen la carga real.
-- No documentar que se ha simplificado.
-- Confundir una simulación rápida con una simulación valida.
+## 3. Simplifica ensamblajes y contactos
 
-## Ejemplo aplicado
+Suprime componentes que no transmiten carga relevante y sustituye tornillería por conectores o condiciones equivalentes solo cuando esa idealización sea adecuada. En un conjunto simétrico, una fracción del modelo puede reducir coste si geometría, carga y respuesta respetan la simetría. Documenta el plano de corte y las restricciones aplicadas.
 
-Eliminar un redondeo pequeño puede acelerar el mallado, pero eliminar un radio en una zona de tensión puede cambiar el resultado. Simplificar no es borrar detalles sin criterio: es conservar lo que afecta al comportamiento y quitar lo que solo complica el cálculo.
+Los contactos requieren atención. Unir todos los componentes como «pegados» puede hacer el modelo más rígido; permitir separación o deslizamiento puede ser más realista y también más difícil de resolver. **La estabilidad numérica no es una razón suficiente para elegir un contacto falso.**
 
+### Modelos de cascarón, viga y sólido
 
-## Conclusión
+Piezas delgadas pueden representarse con cascarones y perfiles esbeltos con vigas, siempre que conozcas los supuestos del elemento y definas secciones correctamente. Esto no es solo borrar operaciones: es cambiar el tipo de modelo. Compara una versión sencilla o un caso de referencia antes de aplicar la idealización a un conjunto complejo.
 
-Simplificar geometría es una decisión técnica. Debe responder a la pregunta del análisis y quedar registrada en la documentación.
+## 4. Evita caras pequeñas y transiciones problemáticas
 
-## Recomendación práctica final
+Detalles cortos crean aristas y caras diminutas que obligan al mallador a generar elementos pequeños. Busca operaciones de reparación, eliminación de caras o reconocimiento de agujeros, pero revisa el resultado visualmente. Eliminar una cara no debe cerrar accidentalmente un paso, unir cuerpos o modificar el espesor.
 
-Antes de mallar, marca en el CAD tres grupos: conservar, simplificar y eliminar. Si dudas con una zona, conserva la geometría o justifica la simplificación.
+Tras simplificar, comprueba volumen o masa cuando sean relevantes y superpone la geometría original con la idealizada. Esta comparación detecta cambios mayores que pueden pasar desapercibidos al observar modelos por separado.
+
+## 5. Verifica que la simplificación no gobierna el resultado
+
+Sigue un proceso reproducible:
+
+1. guarda el modelo original y crea una revisión para análisis;
+2. registra la pregunta y las regiones críticas;
+3. clasifica detalles en conservar, simplificar y eliminar;
+4. aplica cambios por grupos, no todos a la vez;
+5. comprueba contactos, espesores, masa e interfaces;
+6. ejecuta un análisis inicial y revisa deformada y reacciones;
+7. recupera un detalle dudoso y compara el resultado relevante;
+8. documenta diferencias y modelo elegido.
+
+Si recuperar un detalle cambia de forma importante la conclusión, debe conservarse o representarse mejor. La malla también necesita una comprobación independiente; simplificar reduce dificultades, pero no demuestra convergencia.
+
+## 6. Documenta decisiones y límites
+
+Incluye capturas antes/después, una lista de supresiones y la razón de cada grupo. La guía para [documentar un análisis FEM básico](/blog/documentar-analisis-fem-basico) permite registrar geometría, material, malla, cargas y resultados, y la de [preparar un informe técnico](/blog/preparar-informe-tecnico-universitario) ayuda a expresar las limitaciones.
+
+Los errores más frecuentes son borrar todos los radios, eliminar fijaciones que definen el apoyo, unir contactos para lograr convergencia y presentar el modelo simplificado como geometría real. **Una simulación más rápida no es necesariamente más válida.** La simplificación correcta es aquella cuya influencia has razonado, comprobado cuando era crítica y dejado trazable para otra persona.

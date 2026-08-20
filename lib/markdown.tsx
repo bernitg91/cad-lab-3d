@@ -14,8 +14,15 @@ function renderInline(text: string) {
 
     const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
     if (linkMatch) {
+      const external = /^https?:\/\//.test(linkMatch[2]);
       return (
-        <a key={index} className="font-semibold text-blue-700 underline decoration-blue-300 underline-offset-4" href={linkMatch[2]}>
+        <a
+          key={index}
+          className="font-semibold text-blue-700 underline decoration-blue-300 underline-offset-4 hover:text-blue-900"
+          href={linkMatch[2]}
+          target={external ? "_blank" : undefined}
+          rel={external ? "noreferrer" : undefined}
+        >
           {linkMatch[1]}
         </a>
       );
@@ -25,12 +32,44 @@ function renderInline(text: string) {
   });
 }
 
+function parseTable(block: string) {
+  const rows = block
+    .trim()
+    .split("\n")
+    .map((row) => row.trim().replace(/^\||\|$/g, "").split("|").map((cell) => cell.trim()));
+
+  if (rows.length < 2 || !rows[1].every((cell) => /^:?-{3,}:?$/.test(cell))) return null;
+
+  return { headers: rows[0], rows: rows.slice(2) };
+}
+
 export function MarkdownContent({ content }: { content: string }) {
   const blocks = content.split(/\n\n+/);
 
   return (
     <div className="article-body">
       {blocks.map((block, index) => {
+        const table = parseTable(block);
+
+        if (table) {
+          return (
+            <div className="table-scroll" key={index}>
+              <table>
+                <thead>
+                  <tr>{table.headers.map((header, cellIndex) => <th key={cellIndex}>{renderInline(header)}</th>)}</tr>
+                </thead>
+                <tbody>
+                  {table.rows.map((row, rowIndex) => (
+                    <tr key={rowIndex}>
+                      {table.headers.map((_, cellIndex) => <td key={cellIndex}>{renderInline(row[cellIndex] ?? "")}</td>)}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          );
+        }
+
         if (block.startsWith("### ")) {
           const text = block.replace("### ", "");
           return (

@@ -11,71 +11,65 @@ author: "CAD Lab 3D"
 featured: true
 ---
 
-FEM significa método de elementos finitos. En lugar de resolver una pieza como un volumen continuo perfecto, el software la divide en pequeñas partes llamadas elementos y calcula una aproximación de tensiones, deformaciones y desplazamientos.
+FEM significa método de elementos finitos. El software divide una geometría continua en elementos conectados y resuelve una aproximación del comportamiento definido por el modelo. Puede calcular desplazamientos, deformaciones o tensiones, pero **no simula automáticamente la realidad**: responde a las propiedades, cargas, apoyos y simplificaciones que has introducido.
 
-## Preguntas que sí puede responder
+## 1. Qué preguntas puede responder un FEM
 
-- FEM sirve para comparar diseños y detectar zonas críticas.
-- El resultado depende de cargas, restricciones, material y malla.
-- No sustituye ensayos ni criterio técnico.
-- En informes universitarios, documenta bien hipótesis y límites como en [esta guía de informe técnico](/blog/preparar-informe-tecnico-universitario).
+El análisis es útil cuando la pregunta está bien acotada. Puede ayudarte a localizar zonas que merecen refuerzo, comparar dos geometrías bajo las mismas condiciones, estimar cómo se deforma una pieza o estudiar la sensibilidad a una carga. También permite preparar una iteración antes de fabricar, siempre que la incertidumbre del modelo se mantenga visible.
 
-## Para qué sirve
+«¿Aguantará?» es una pregunta demasiado ambigua. Conviene definir qué condición se considera fallo, qué carga se espera, cómo se apoya la pieza y qué material representa. Si esos datos se desconocen, el modelo puede servir para explorar escenarios, pero no para certificar un resultado.
 
-Un análisis FEM ayuda a comparar diseños, detectar zonas críticas y entender cómo se deforma una pieza. No sustituye el criterio técnico ni los ensayos, pero permite tomar mejores decisiones antes de fabricar.
+## 2. Los cinco componentes del modelo
 
-## Elementos básicos
+Todo FEM necesita decisiones sobre:
 
-Todo análisis necesita:
+- **geometría:** qué detalles se conservan y cuáles se idealizan;
+- **material:** propiedades y modelo de comportamiento aplicables;
+- **restricciones:** cómo se impiden movimientos en los apoyos reales;
+- **cargas:** magnitud, dirección, distribución e hipótesis;
+- **malla:** tipo y tamaño de elementos según la geometría y la respuesta buscada.
 
-- Geometría simplificada.
-- Material con propiedades realistas.
-- Restricciones que representen apoyos reales.
-- Cargas equivalentes al uso previsto.
-- Malla adecuada.
+Una entrada incorrecta no se corrige usando una malla más fina. Antes de calcular, revisa la guía para [simplificar geometría antes de FEM](/blog/simplificar-geometria-antes-fem): eliminar detalles irrelevantes puede mejorar el mallado, mientras quitar un radio o un apoyo crítico puede cambiar la conclusión.
 
-Si una de estas partes es falsa, el resultado puede ser bonito pero inútil.
+### Condiciones de contorno
 
-## Cuándo usarlo
+Los apoyos suelen ser la fuente de los errores más graves. Bloquear una cara completa porque resulta cómodo puede crear una rigidez que no existe. Una carga puntual idealizada también puede generar una concentración no representativa. Describe cómo se transmite realmente la fuerza y utiliza contactos, simetrías o cargas distribuidas cuando estén justificados, no solo porque produzcan un cálculo estable.
 
-Usa FEM cuando una pieza soporte carga, cuando quieras reducir peso, cuando haya zonas con concentración de esfuerzos o cuando necesites justificar una decisión en un informe técnico.
+## 3. Cuándo merece la pena usarlo
 
-### Cuándo no merece la pena
+FEM aporta valor al comparar alternativas, estudiar zonas con cambios de sección, reducir masa o preparar una prueba física. También puede ser una herramienta didáctica para relacionar cálculo, geometría y comportamiento. Si solo necesitas una estimación simple de una barra o una placa, un cálculo manual puede ser más rápido y transparente.
 
-No conviene simular piezas triviales si no conoces cargas, materiales o condiciones de contorno. En esos casos, primero define el problema.
+### Cuándo conviene parar
 
-## Leer resultados sin engañarse
+No avances a conclusiones si desconoces el material, la carga o el apoyo principal. Tampoco uses FEM únicamente para crear una imagen llamativa. En piezas impresas, un material isótropo genérico puede no representar la anisotropía de capas; los resultados exigirán hipótesis adicionales y validación experimental.
 
-Los colores no son una respuesta. Revisa escala, unidades, factor de seguridad, deformación máxima y si las restricciones son razonables. Una deformación exagerada en pantalla puede ser solo una visualización amplificada.
+## 4. Lee resultados sin quedarte con los colores
 
-## Errores de planteamiento habituales
+Comprueba primero la forma deformada: el movimiento debe concordar con la carga y las restricciones. Verifica unidades, escala y el factor de amplificación visual; una deformación muy visible en pantalla puede estar exagerada para facilitar su lectura.
 
-- Bloquear una cara completa cuando en la realidad solo hay un apoyo parcial.
-- Usar material genérico sin revisar módulo elástico o límite elástico.
-- Aceptar tensiones máximas en singularidades sin interpretar la zona.
-- Presentar capturas de colores sin unidades, escala ni conclusión.
+Después revisa reacciones, desplazamiento y tensiones en regiones relevantes. Un máximo aislado junto a una esquina perfecta, una carga puntual o una restricción rígida puede ser una singularidad numérica. Observa cómo se distribuye alrededor y si converge al refinar la malla. **El valor máximo de la leyenda no siempre es el dato que debe gobernar el diseño.**
 
-## Comparación de dos versiones de soporte
+Una comprobación de orden de magnitud mediante un cálculo sencillo aporta contexto. Si FEM y cálculo manual difieren mucho, investiga hipótesis y unidades antes de justificar la diferencia por «mayor precisión» del software.
 
-Un FEM tiene sentido cuando quieres comparar alternativas o entender una zona crítica, no cuando solo buscas una imagen llamativa. Por ejemplo, puedes comparar dos diseños de soporte con la misma carga y material. Aunque el valor absoluto no sea perfecto, la comparación puede ayudarte a decidir qué geometría tiene mejor comportamiento.
+## 5. Compara diseños de forma justa
 
-## Tres comprobaciones de coherencia
+Para evaluar dos soportes, conserva material, carga, apoyos y criterio de malla. Cambia solo la geometría que quieres estudiar. Compara masa, desplazamiento y una medida de tensión en regiones equivalentes, no capturas con escalas de color distintas.
 
-Primero revisa la deformada: la pieza debe moverse en una dirección compatible con la carga y los apoyos. Segundo, compara el orden de magnitud con un cálculo manual sencillo o con la experiencia de una pieza parecida. Tercero, repite el análisis con una malla algo más fina en la zona crítica. Si el resultado principal cambia mucho, todavía no hay convergencia suficiente para sacar una conclusión.
+Este flujo básico ayuda a mantener trazabilidad:
 
-Las tensiones en esquinas perfectas, puntos de carga o restricciones rígidas pueden crecer al refinar la malla. No todas representan un fallo físico; algunas son singularidades creadas por la idealización. Mira la distribución alrededor del máximo y pregunta si esa unión existe de la misma forma en la pieza real.
+1. formula la pregunta y el criterio de comparación;
+2. registra hipótesis y datos de entrada;
+3. simplifica la geometría con justificación;
+4. aplica material, apoyos y cargas;
+5. revisa calidad de malla y resuelve;
+6. comprueba equilibrio, deformada y sensibilidad de malla;
+7. compara con cálculo o ensayo cuando sea posible;
+8. documenta conclusión y límites.
 
-## Comparar diseños de forma justa
+La guía para [documentar un análisis FEM básico](/blog/documentar-analisis-fem-basico) ayuda a convertir este proceso en una memoria reproducible, y la de [informe técnico universitario](/blog/preparar-informe-tecnico-universitario) permite integrarlo con el resto del proyecto.
 
-Cuando el objetivo es elegir entre dos geometrías, conserva material, carga, apoyos y criterio de malla. Cambiar varias condiciones a la vez impide saber qué mejora proviene del diseño. Presenta desplazamiento, tensión en una región comparable y masa de cada alternativa, no solo una captura coloreada.
+## 6. Errores y límites habituales
 
-La NASA ha publicado advertencias sobre análisis aparentemente precisos que producen gráficos convincentes sin una idealización o verificación adecuada. Esa idea resume bien el uso responsable del FEM: el software calcula el modelo que le das, no la realidad que imaginabas.
+Usar un material genérico sin comprobar propiedades, confundir tensión admisible con límite de la biblioteca, ocultar la escala y presentar un único mallado son prácticas débiles. También lo es informar un «factor de seguridad» sin explicar carga, criterio de fallo y variabilidad.
 
-
-## Qué significa interpretar con criterio
-
-FEM es una herramienta de razonamiento, no una máquina de verdad absoluta. Sirve para comparar y validar hipótesis si el modelo representa bien la realidad.
-
-## Primera simulación recomendada
-
-Antes de simular, escribe en una frase qué quieres comprobar. Si no puedes formular la pregunta, el análisis todavía no está listo.
+FEM no sustituye ensayos, normativa ni revisión profesional cuando hay consecuencias de seguridad. Sí es una excelente herramienta de razonamiento si puedes explicar qué representa el modelo, qué no representa y qué evidencia necesitarías para validar sus predicciones.

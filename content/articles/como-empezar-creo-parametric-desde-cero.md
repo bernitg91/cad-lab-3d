@@ -11,67 +11,66 @@ author: "CAD Lab 3D"
 featured: true
 ---
 
-Empezar en Creo Parametric puede parecer duro porque la herramienta está pensada para entornos profesionales. La clave no es aprender todos los botones, sino entender el flujo paramétrico: crear referencias, controlar dimensiones y construir modelos que puedan modificarse sin romperse.
+Creo Parametric puede resultar exigente al principio porque da mucha importancia a referencias, regeneración y estructura del modelo. La forma más rápida de progresar no es memorizar iconos, sino aprender a construir piezas que acepten cambios sin romperse. Esta ruta propone ejercicios pequeños y verificables.
 
-## Ruta inicial en una mirada
+## Prepara un entorno de aprendizaje estable
 
-- Empieza por croquis completamente definidos y piezas pequeñas.
-- Aprende a leer el árbol del modelo antes de memorizar comandos.
-- Practica ensamblajes y planos solo cuando controles piezas simples.
-- Si vienes de SolidWorks, revisa también [SolidWorks vs Creo para estudiantes](/blog/solidworks-vs-creo-estudiantes).
+Comprueba la versión instalada y utiliza la ayuda oficial correspondiente: algunos nombres, ubicaciones y flujos cambian entre versiones. Crea una carpeta por proyecto y define desde el principio unidades, plantilla y sistema de nombres. Evitarás descubrir al final que una pieza estaba en otra escala o que no sabes qué archivo pertenece al conjunto.
 
-## Qué debes aprender primero
+Dedica la primera sesión a localizar árbol del modelo, planos de referencia, cinta de herramientas, panel de operaciones y comando de regeneración. No intentes personalizar toda la interfaz todavía. Si vienes de otro programa, lee [SolidWorks frente a Creo para estudiantes](/blog/solidworks-vs-creo-estudiantes) para separar conceptos comunes de hábitos específicos.
 
-Antes de hacer piezas complejas, domina tres ideas:
+## Aprende primero la intención paramétrica
 
-- El árbol del modelo cuenta la historia de la pieza.
-- Cada croquis necesita referencias claras.
-- Las cotas importantes deben representar intención de diseño, no medidas colocadas al azar.
+Un modelo paramétrico describe relaciones. Un agujero que debe permanecer centrado debería depender de un plano medio o de una relación geométrica, no de dos cotas elegidas por casualidad. Antes de modelar, identifica qué dimensiones controlará una futura revisión.
 
-Si una pieza se puede modificar cambiando dos o tres cotas principales, vas por buen camino.
+### Croquis que sobreviven a los cambios
 
-## Flujo básico de una pieza
+Empieza en un plano principal, usa geometría de referencia y deja el croquis completamente definido sin añadir restricciones redundantes. Prioriza referencias estables: planos y ejes suelen resistir mejor los cambios que una arista creada por una operación posterior.
 
-Empieza siempre con una pieza simple. Crea un croquis en un plano principal, define simetrías, añade cotas y evita dejar geometría sin restringir. Después usa extrusión, corte, redondeo y chaflán.
+Practica con un rectángulo simétrico, un círculo posicionado desde ejes y un perfil con relaciones de igualdad. Cambia sus cotas principales y observa si conserva la forma esperada. La comparación entre [modelado paramétrico y modelado directo](/blog/modelado-parametrico-vs-directo) te ayudará a entender por qué aquí importa tanto el árbol.
 
-### Ejercicio recomendado
+## Ruta de cuatro ejercicios
 
-Modela un soporte en L con dos taladros. Aunque parezca sencillo, te obliga a practicar:
+### 1. Soporte en L
 
-- Croquis completamente definido.
-- Extrusiones con espesor controlado.
-- Taladros posicionados desde referencias lógicas.
-- Redondeos al final del árbol.
+Crea una base extruida, un brazo vertical, dos agujeros y radios finales. Coloca los agujeros desde referencias lógicas. Cambia ancho, espesor y separación para comprobar que todo regenera.
 
-## Ensamblajes y planos
+### 2. Tapa con patrón
 
-Cuando controles piezas sueltas, pasa a ensamblajes pequeños. Aprende restricciones coincidentes, concéntricas y de distancia. Después genera un plano con vistas, cotas generales, material y escala.
+Modela una tapa sencilla con pared, reborde y varios tornillos repetidos mediante patrón. Modifica el número o la separación sin reconstruir cada agujero. Aprende a identificar qué operación debe ir antes en el árbol.
 
-## Errores comunes al empezar
+### 3. Eje escalonado
 
-El error más habitual es modelar como si Creo fuera un programa de dibujo libre. Si dependes de mover líneas a mano, el modelo será frágil. Otro error frecuente es crear redondeos demasiado pronto: déjalos para el final para evitar fallos si cambias la geometría base.
+Usa una revolución para construir diámetros y longitudes. Añade un chaflán y una ranura. Este ejercicio introduce secciones axiales y muestra cuándo una revolución comunica mejor la intención que varias extrusiones.
 
-También conviene evitar nombres genéricos como `Extrude 1` o `Sketch 4` en proyectos largos. Nombrar operaciones clave ayuda a revisar el modelo semanas después.
+**4. Ensamblaje de dos piezas.**
 
-## Primer ejercicio completo
+Monta el soporte y un pasador mediante restricciones coincidentes y concéntricas. Deja solo los grados de libertad necesarios. Después cambia una dimensión de la pieza y verifica que el ensamblaje sigue siendo válido.
 
-Un buen primer ejercicio en Creo no es una pieza espectacular, sino una pieza que puedas modificar. Por ejemplo, un soporte con dos taladros, una base y un nervio central. Si al cambiar el ancho de la base los taladros siguen centrados y el nervio no se rompe, estás aprendiendo intención de diseño. Si todo falla, el ejercicio te está mostrando dónde faltan referencias.
+## Pasa a ensamblajes y planos con criterio
 
-## Una práctica completa de 45 minutos
+No necesitas dominar toda la creación de piezas para empezar un conjunto pequeño, pero sí debes regenerar sin errores. En ensamblajes, evita resolver una posición con restricciones innecesarias que compitan entre sí. Renombra componentes y usa un origen claro.
 
-Modela una escuadra sencilla a partir de un croquis totalmente restringido. Crea la base, añade el brazo vertical, genera dos taladros mediante una referencia al plano medio y termina con un nervio. Guarda una versión antes de añadir redondeos. Después modifica tres parámetros: ancho total, distancia entre agujeros y espesor.
+Al crear un plano, añade vistas suficientes, escala, material y cotas que comuniquen fabricación o comprobación. No copies todas las cotas del croquis. Consulta [cómo preparar planos técnicos desde un modelo CAD](/blog/preparar-planos-tecnicos-modelo-cad) para seleccionar información en lugar de llenar la hoja.
 
-La prueba no consiste en terminar rápido, sino en observar qué operaciones sobreviven al cambio. Si un taladro pierde su posición, revisa la referencia. Si el nervio falla, comprueba si depende de una arista que desaparece al variar el espesor. Este ejercicio enseña más sobre Creo que repetir comandos aislados.
+## Checklist de práctica semanal
 
-## Orden y mantenimiento del árbol
+- [ ] Crear un croquis totalmente definido sin relaciones redundantes.
+- [ ] Modelar una pieza con pocas operaciones bien ordenadas.
+- [ ] Renombrar las operaciones que representan funciones importantes.
+- [ ] Cambiar tres cotas principales y regenerar desde el inicio.
+- [ ] Corregir una referencia rota sin reconstruir toda la pieza.
+- [ ] Montar dos componentes con las restricciones mínimas necesarias.
+- [ ] Exportar una copia y comprobarla siguiendo [errores habituales al exportar CAD](/blog/errores-exportar-archivos-cad).
 
-Un modelo académico también necesita disciplina. Agrupa operaciones relacionadas, renombra las que definen función y evita referencias externas innecesarias. Antes de entregar, regenera el modelo desde el inicio y comprueba que no quedan avisos ocultos. La documentación oficial de PTC incluye tutoriales de piezas, ensamblajes y planos; úsala para contrastar el nombre y el comportamiento de las herramientas cuando cambie la versión del programa.
+Guarda una versión antes de una modificación importante. El objetivo no es acumular archivos, sino comparar qué decisión produjo un modelo estable.
 
+## Errores frecuentes y límites
 
-## Qué deberías dominar al terminar
+Los principiantes suelen crear redondeos demasiado pronto, referenciar aristas frágiles, dejar croquis subdefinidos o convertir cada detalle en una operación independiente. Otro error es seguir un tutorial de forma mecánica: si no puedes cambiar medidas sin repetirlo, todavía no controlas el ejercicio.
 
-Creo se aprende mejor con piezas pequeñas, repetibles y bien documentadas. No intentes memorizar comandos: entiende referencias, restricciones y cambios de diseño.
+Esta ruta no sustituye la formación específica de módulos como superficies avanzadas, chapa, cableado o gestión de datos. Tampoco garantiza que un modelo sea fabricable. Antes de presentar un proyecto completo, aplica una [revisión de diseño antes de fabricar](/blog/revision-diseno-antes-fabricar).
 
-## Siguiente práctica recomendada
+## Qué deberías poder hacer al terminar
 
-Crea una carpeta con cinco ejercicios: soporte, carcasa simple, eje, tapa atornillada y ensamblaje de dos piezas. Rehazlos cada semana hasta que puedas modificarlos sin que el árbol falle.
+Tras repetir los cuatro ejercicios, deberías poder explicar el árbol, elegir referencias y modificar parámetros sin perder el control del modelo. Ese dominio básico vale más que una pieza espectacular construida con operaciones que no entiendes. Cuando el flujo sea estable, amplía dificultad y documenta qué cambió en cada versión.

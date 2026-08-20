@@ -11,43 +11,64 @@ author: "CAD Lab 3D"
 featured: false
 ---
 
-Una carcasa impresa en 3D puede ser estética, funcional o ambas. El material debe elegirse según el uso: interior, exterior, temperatura, golpes, tornillos, clips y acabado esperado.
+Una carcasa impresa en 3D puede ocultar componentes, soportar un montaje, proteger frente a golpes o presentar un concepto. Cada función exige algo distinto al material. Antes de escoger filamento por color o facilidad, **define ambiente, temperatura, uniones, esfuerzos y vida útil esperada**.
 
-## Resumen rápido
+## Traducir el uso en requisitos
 
-- PLA sirve para maquetas y carcasas de baja exigencia.
-- PETG suele ser mejor para uso general y algo de impacto.
-- ABS o ASA pueden interesar si hay calor o exterior, pero exigen más control.
-- Revisa también [diferencias entre PLA, PETG, ABS y Nylon](/blog/diferencias-pla-petg-abs-nylon) y [materiales para prototipos funcionales](/blog/materiales-prototipos-funcionales).
+Empieza describiendo dónde trabajará la carcasa. ¿Estará en interior o exterior? ¿Cerca de un motor, una ventana o una fuente de calor? ¿Recibirá golpes, limpieza frecuente o radiación solar? ¿Debe abrirse cada semana o solo una vez? ¿Protege electrónica, pero necesita ventilación?
 
-## Uso de la carcasa
+También diferencia prototipo y producto. Una maqueta en PLA puede validar volumen y acceso, aunque no represente el material final. Si quieres comprobar comportamiento, elige el material del prototipo según la pregunta, como explica la guía de [materiales para prototipos funcionales](/blog/materiales-prototipos-funcionales).
 
-No es lo mismo una carcasa para presentar un concepto que una caja que protege electrónica, soporta tornillos o se queda cerca de una fuente de calor. Define primero función y ambiente.
+## Comparación inicial de materiales FDM
 
-## Montaje y uniones
+Esta tabla orienta la primera selección, pero las formulaciones comerciales y los parámetros de impresión producen diferencias importantes.
 
-Si la carcasa usa tornillos, clips o insertos, el material debe tolerar montaje. Un clip fino en PLA puede partir antes que uno en PETG. Para carcasas desmontables, consulta [piezas desmontables y reparables](/blog/disenar-piezas-desmontables-reparables).
+| Material | Puede ser útil cuando… | Aspecto a vigilar |
+| --- | --- | --- |
+| PLA | importa el acabado, la rapidez y el uso interior moderado | pérdida de rigidez con calor y clips frágiles según diseño |
+| PETG | se busca tenacidad general, algo de flexibilidad y resistencia a humedad | hilos, puentes y ajuste de tolerancias |
+| ABS | se necesita mayor tolerancia térmica y postprocesado específico | contracción, emisiones y necesidad de entorno controlado |
+| ASA | la carcasa estará expuesta a exterior y radiación UV | warping, ventilación y dificultad de impresión |
+| Nylon | importan tenacidad, desgaste o clips repetidos | absorción de humedad, flexibilidad y control dimensional |
+| TPU | se necesita una funda, junta o absorción de impacto | poca rigidez y dificultad en puentes o paredes finas |
 
-## Acabado y postproceso
+No conviertas esta comparación en una clasificación absoluta. Consulta fichas técnicas del filamento real y revisa la [comparativa de PLA, PETG, ABS y nylon](/blog/diferencias-pla-petg-abs-nylon) antes de decidir.
 
-PLA suele dar buen acabado visual. PETG puede generar hilos, pero funciona bien en piezas útiles. Materiales con más contracción pueden requerir cama caliente, recinto o ajustes contra warping.
+## Diseñar pared, ventilación y temperatura juntas
 
-## Errores frecuentes
+La resistencia térmica no depende solo del nombre del polímero. Una pared larga, fina y precargada por tornillos puede deformarse antes que una geometría rígida. Distribuye espesores, evita masas aisladas y añade radios en transiciones. Para conectar el CAD con la extrusión, usa la guía de [espesores mínimos en plástico](/blog/espesores-minimos-piezas-plastico).
 
-- Elegir material solo por color.
-- Usar PLA en carcasas expuestas a calor.
-- Diseñar clips sin probar ciclos de apertura.
-- No considerar tolerancias entre tapa y base.
+Si la carcasa contiene electrónica, no cierres ventilaciones únicamente por estética. Estima dónde entra y sale aire, deja distancia a componentes calientes y evita que una rejilla debilite la zona atornillada. La impresión 3D no concede automáticamente aislamiento eléctrico, resistencia al fuego ni estanqueidad: esas propiedades requieren materiales clasificados, diseño específico y validación apropiada.
 
-## Ejemplo aplicado
+## Uniones que condicionan el material
 
-Una carcasa para interior, sin carga y con acabado visual puede funcionar en PLA. Una carcasa para exterior necesita pensar en temperatura, radiación UV, humedad y tornillería. Si además debe abrirse varias veces, el material debe tolerar clips o inserts. La elección depende del uso de la carcasa, no solo del precio del filamento.
+### Tornillos e insertos
 
+Un tornillo autorroscante puede dañar un alojamiento si el diámetro, la profundidad o el par no son adecuados. Los insertos térmicos facilitan desmontaje, pero exigen suficiente material alrededor y un proceso repetible. Imprime una sección con el alojamiento real y prueba el montaje antes de fabricar la carcasa entera.
 
-## Conclusión
+### Clips y pestañas
 
-El material de una carcasa debe responder al uso real. Para muchos proyectos estudiantiles, PLA sirve para forma y PETG para una versión más funcional.
+Un clip combina material, longitud flexible, espesor, radio y orientación de capas. Cambiar de PLA a PETG o nylon no arregla un clip corto, con esquina viva o impreso a contracapa. Sigue la guía de [diseño de encajes y clips](/blog/disenar-encajes-clips-impresion-3d) y registra cuántos ciclos representativos soporta la muestra.
 
-## Recomendación práctica final
+### Tapa y base
 
-Imprime una esquina de la carcasa con un clip, un tornillo y una zona visible. Esa muestra te dirá más que imprimir la carcasa completa a ciegas.
+La holgura entre mitades depende de máquina, material y orientación. No uses un ajuste nominal. Añade referencias de centrado que no sobredefinan el ensamblaje y deja acceso de herramienta. Si habrá mantenimiento, aplica criterios de [diseño reparable](/blog/disenar-piezas-desmontables-reparables).
+
+## Proceso práctico de selección
+
+1. Define uso, ambiente, temperatura, golpes y frecuencia de apertura.
+2. Marca las zonas críticas: fuentes de calor, tornillos, clips, juntas y rejillas.
+3. Descarta materiales que no cumplen una condición obligatoria según datos del fabricante.
+4. Elige dos candidatos y diseña el mismo cupón: esquina, unión, rejilla y acabado visible.
+5. Imprime con orientación y parámetros documentados.
+6. Comprueba encaje, deformación, montaje y acabado bajo condiciones representativas.
+7. Ajusta geometría antes de atribuir cada fallo al polímero.
+8. Fabrica una sección mayor y repite la evaluación antes de cerrar la revisión.
+
+Los materiales con contracción elevada pueden exigir una primera capa más controlada, temperatura estable y medidas específicas contra el warping.
+
+## Errores y limitaciones
+
+Elegir solo por apariencia, colocar PLA junto a calor sin validar, apretar tornillos sin controlar el montaje o prometer uso exterior por una única muestra son fallos comunes. También lo es suponer que una carcasa impresa es impermeable: líneas, costuras y uniones pueden permitir fugas.
+
+Una prueba doméstica permite comparar versiones, pero no certifica inflamabilidad, protección IP, aislamiento ni seguridad de producto. Cuando esas prestaciones sean necesarias, usa normas, ensayos y materiales adecuados. Para un proyecto *maker* o universitario, una decisión sólida deja claro **qué se validó, con qué muestra y qué sigue pendiente**.

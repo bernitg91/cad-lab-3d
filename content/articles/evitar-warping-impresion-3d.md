@@ -11,39 +11,62 @@ author: "CAD Lab 3D"
 featured: false
 ---
 
-El warping aparece cuando el material se contrae y vence la adhesión a la cama. Es más habitual en piezas grandes, esquinas vivas y materiales con contracción elevada.
+El *warping* ocurre cuando la contracción del material al enfriarse genera fuerzas capaces de levantar la pieza o deformar su base. Suele aparecer en esquinas, paredes largas y piezas con mucha superficie sobre la cama. No tiene un ajuste mágico: **hay que separar un problema de primera capa de un problema térmico o geométrico**.
 
-## Resumen rápido
+## Entender qué está fallando
 
-- Limpia y nivela la cama.
-- Controla temperatura, ventilación y corrientes de aire.
-- Usa brim o rediseña esquinas cuando haga falta.
-- El material también influye; revisa [diferencias entre PLA, PETG, ABS y Nylon](/blog/diferencias-pla-petg-abs-nylon).
+Observa cuándo empieza el defecto. Si la primera línea no se adhiere, queda redonda o presenta huecos, revisa limpieza, distancia de boquilla y flujo inicial. Si la pieza empieza plana y una esquina se levanta muchas capas después, el origen probablemente incluye contracción, corrientes de aire o geometría.
 
-## Factores principales
+Otros defectos pueden confundirse con warping. Una base abombada por exceso de temperatura, un borde comprimido por boquilla demasiado baja o capas que se separan en altura requieren diagnósticos distintos. Antes de cambiar el perfil completo, fotografía la capa inicial y anota en qué momento aparece la deformación.
 
-La contracción depende del material, la temperatura y el tamaño de la pieza. ABS tiende a deformarse más que PLA. Una cama sucia o mal nivelada empeora cualquier material.
+Para descartar problemas básicos de máquina, empieza por la [guía de calibración para piezas funcionales](/blog/calibrar-impresora-3d-piezas-funcionales).
 
-## Diseño contra warping
+## Adhesión de la primera capa
 
-Evita esquinas vivas grandes en contacto con la cama. Añadir radios o dividir la pieza puede reducir tensiones. Para piezas técnicas, valora orientar de otra forma aunque aumenten soportes.
+Una superficie con grasa o polvo reduce la adherencia incluso si parece limpia. Utiliza el método compatible con tu base y sigue las indicaciones de su fabricante; algunos recubrimientos pueden dañarse con productos o herramientas inadecuados. Comprueba también que la cama esté estable y que la primera capa tenga una altura uniforme en toda el área.
 
-## Errores frecuentes
+Un *brim* aumenta la superficie alrededor del contorno y puede ayudar en esquinas pequeñas. No corrige una nivelación deficiente ni una separación incorrecta entre boquilla y cama. Los adhesivos son auxiliares de proceso, no sustitutos de una primera capa controlada, y deben ser apropiados para el material y la superficie.
 
-- Subir temperatura sin revisar adhesión inicial.
-- Imprimir ABS abierto en una habitación fría.
-- Ignorar corrientes de aire.
-- Culpar al filamento sin revisar geometría y cama.
+## Temperatura, ventilación y material
 
-## Ejemplo aplicado
+Los materiales no se contraen igual. PLA suele tolerar entornos abiertos mejor que ABS o ASA, mientras que estos últimos pueden beneficiarse de una temperatura ambiente más estable. PETG puede adherirse con mucha fuerza a algunas camas, de modo que «más adhesión» tampoco siempre es seguro. Consulta las [diferencias entre PLA, PETG, ABS y nylon](/blog/diferencias-pla-petg-abs-nylon) y el perfil recomendado por el fabricante del filamento.
 
-Una pieza larga de ABS o ASA con esquinas cuadradas tiene más riesgo de levantarse que una pieza compacta con radios. Antes de culpar al material, revisa limpieza de cama, temperatura, ventilación, brim y orientación. A veces dividir la pieza o añadir radios en esquinas reduce más problemas que subir temperatura sin control.
+No copies temperaturas de otra impresora como valores definitivos. El sensor, la superficie, el caudal y el ambiente cambian el comportamiento. Ajusta dentro de rangos razonables para tu material y cambia una sola variable por prueba.
 
+### Corrientes y recinto
 
-## Conclusión
+Una puerta, aire acondicionado o ventilador puede enfriar una cara más rápido que otra. Para materiales sensibles, un recinto reduce cambios bruscos, pero exige considerar temperatura de electrónica, seguridad y ventilación de emisiones. No encierres una máquina sin revisar las recomendaciones del fabricante.
 
-Reducir warping combina máquina, material, laminado y diseño. No hay un único ajuste mágico.
+### Ventilador de capa
 
-## Recomendación práctica final
+Demasiada ventilación inicial puede reducir adhesión; muy poca puede perjudicar puentes y detalles. El equilibrio depende del material y la geometría. Programa transiciones graduales cuando el perfil lo permita y registra el cambio.
 
-Cuando una pieza se levante, cambia solo una variable por prueba: limpieza, brim, temperatura, ventilación u orientación. Así sabrás que funcionó.
+## Rediseñar la geometría que concentra tensión
+
+Una placa larga con cuatro esquinas vivas suele ser más problemática que una forma compacta y redondeada. Antes de añadir temperaturas o adhesivo sin límite, prueba:
+
+- redondear esquinas exteriores y evitar cambios abruptos de sección;
+- reducir superficies macizas que enfrían de forma desigual;
+- dividir la pieza si la unión posterior es viable;
+- añadir discos sacrificables en esquinas que luego puedan retirarse;
+- cambiar orientación tras revisar carga, soportes y precisión;
+- usar nervios y paredes equilibradas en vez de zonas macizas aisladas.
+
+Una orientación distinta puede reducir la huella sobre la cama, pero también debilitar el componente. Contrasta el cambio con la [guía de orientación resistente](/blog/orientar-pieza-impresion-3d-resistente) y revisa [paredes y tapas FDM](/blog/paredes-perimetros-tapas-fdm) antes de rediseñar.
+
+## Proceso de diagnóstico paso a paso
+
+1. Guarda una copia del perfil y anota material, lote y condiciones del entorno.
+2. Limpia la superficie con el procedimiento recomendado y comprueba su fijación.
+3. Imprime una prueba de primera capa en varias zonas; corrige uniformidad antes de continuar.
+4. Repite una sección pequeña de la geometría problemática, no la pieza completa.
+5. Si levanta más tarde, reduce corrientes y revisa temperatura de cama y ventilación.
+6. Añade *brim* para comprobar si falta superficie de anclaje.
+7. Compara una variante con radios, menor huella o sección más uniforme.
+8. Cambia una sola variable, etiqueta la muestra y registra el resultado.
+
+## Errores frecuentes y limitaciones
+
+Subir todas las temperaturas a la vez, aplicar adhesivo sobre una cama sucia o imprimir ABS abierto junto a una corriente son errores habituales. También lo es concluir que el filamento está mal después de una única pieza difícil. La humedad puede empeorar la extrusión, pero no explica automáticamente cada esquina levantada.
+
+Estas medidas sirven para diagnosticar y comparar; **no garantizan una pieza dimensionalmente estable**. Materiales, máquinas y geometrías grandes pueden necesitar control térmico específico. Si la precisión es crítica, mide la base completa y no solo la esquina visible. Cuando el defecto persista, revisa el diseño y el proceso como un sistema, documentando cada prueba para no volver al punto de partida.

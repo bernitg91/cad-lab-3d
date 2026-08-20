@@ -11,43 +11,58 @@ author: "CAD Lab 3D"
 featured: false
 ---
 
-Las tolerancias FDM no se aprenden solo leyendo recomendaciones. Cada impresora, material y perfil produce desviaciones. Una prueba pequeña te permite ajustar antes de gastar horas en una pieza completa.
+Las tolerancias en FDM dependen de la máquina, el material, el perfil, la orientación y la propia geometría. Por eso una cifra encontrada en internet solo puede ser un punto de partida. Una probeta pequeña permite convertir esa suposición en datos antes de imprimir una carcasa o un mecanismo completo.
 
-## Resumen rápido
+## 1. Define qué encaje necesitas probar
 
-- Diseña una pieza de prueba con varias holguras.
-- Mide resultados con calibre y anota material, boquilla y perfil.
-- Prueba agujeros, ejes, ranuras y encajes reales.
-- Parte de [cómo elegir tolerancias para piezas impresas en 3D](/blog/tolerancias-piezas-impresas-3d) y [encajes y clips para impresión 3D](/blog/disenar-encajes-clips-impresion-3d).
+No todas las uniones persiguen el mismo comportamiento. Una tapa desmontable necesita movimiento y acceso; un pasador a presión busca retención; un eje móvil debe girar sin un juego excesivo. Escribe la función y decide cómo clasificarás el resultado antes de diseñar la prueba.
 
-## Qué debe incluir una prueba
+La guía sobre [cómo elegir tolerancias para piezas impresas](/blog/tolerancias-piezas-impresas-3d) explica las variables generales. La probeta, en cambio, debe responder a tu combinación concreta de impresora, material y geometría.
 
-Una buena prueba de tolerancia incluye agujeros de distintos diámetros, ranuras, pestañas y un encaje macho-hembra. No hace falta que sea grande: lo importante es que represente las zonas que usarás en tu proyecto.
+### Reproduce la unión real
 
-## Cómo interpretar el resultado
+Un bloque genérico de agujeros no representa necesariamente una lengüeta, una ranura larga o un clip. Conserva en la muestra la orientación, el espesor alrededor del encaje, la longitud de contacto y la dirección de montaje. Si el diseño usa clips flexibles, conviene revisar además los criterios de [encajes y clips para impresión 3D](/blog/disenar-encajes-clips-impresion-3d).
 
-No te quedes solo con "entra" o "no entra". Clasifica cada holgura: suelta, suave, ajustada, forzada o imposible. Esa escala te ayuda a elegir tolerancias según el tipo de unión.
+## 2. Diseña una probeta comparable
 
-## Registro de resultados
+Incluye varias holguras alrededor del valor que consideras razonable, identificadas en relieve o en un plano adjunto. No hay un intervalo universal: el rango debe responder a la resolución de tu proceso y al tipo de ajuste. Mantén iguales el resto de dimensiones para que la holgura sea la variable principal.
 
-Anota material, temperatura, altura de capa, perímetros, velocidad y orientación. Si cambias cualquier variable importante, la prueba anterior deja de ser totalmente comparable.
+Evita que las muestras sean tan pequeñas que la primera capa domine todo el resultado. Separa cada unión lo suficiente para que el calor o la deformación de una no afecte a la siguiente. Si probarás agujeros verticales y horizontales, colócalos como casos distintos; **la orientación cambia cómo se construye su contorno**.
 
-## Errores frecuentes
+## 3. Imprime con condiciones representativas
 
-- Probar tolerancias con una pieza distinta a la geometría real.
-- No medir y decidir solo por sensación.
-- Usar una prueba de PLA para una pieza final en PETG.
-- Olvidar que la primera capa puede deformar medidas de encaje.
+Utiliza el mismo material, boquilla, altura de capa, orientación, perímetros y compensaciones previstos para la pieza final. Si cambias flujo o temperatura durante la serie, ya no podrás atribuir la diferencia únicamente a la holgura. Antes de empezar, conviene tener una base estable con la guía para [calibrar una impresora para piezas funcionales](/blog/calibrar-impresora-3d-piezas-funcionales).
 
-## Ejemplo aplicado
+Observa la primera capa. El «pie de elefante» puede cerrar una ranura o aumentar un contorno macho aunque el resto de la pieza sea correcto. No lijes la probeta antes de medir salvo que el posprocesado forme parte definida del proceso final; de lo contrario estarías evaluando otro método.
 
-Antes de diseñar una carcasa completa con encajes, imprime una tira con huecos de 0,1, 0,2, 0,3 y 0,4 mm de holgura. Prueba con el material y orientación reales. Esa muestra te da datos propios, más útiles que copiar tolerancias genéricas de internet.
+### Registra las condiciones
 
+Asocia a cada muestra un código y guarda material, perfil, fecha, orientación y revisión del archivo. Anota también cualquier cambio de boquilla o mantenimiento relevante. Una biblioteca física sin esa información resulta difícil de reutilizar.
 
-## Conclusión
+## 4. Mide y clasifica el ajuste
 
-Las pruebas de tolerancia convierten suposiciones en datos. Son especialmente útiles en proyectos con tapas, clips, ejes o piezas desmontables.
+No te quedes con «entra» o «no entra». Usa categorías consistentes: bloqueado, presión fuerte, ajustado desmontable, deslizante y libre. Describe cómo aplicaste la fuerza; la sensación manual no es un instrumento preciso, pero puede ser útil si se registra de la misma manera.
 
-## Recomendación práctica final
+Mide con calibre las zonas accesibles y compara nominal con fabricado. No fuerces una punta del calibre en un hueco irregular ni interpretes una única medida como forma perfecta. Para ejes o agujeros funcionales, toma varias lecturas y revisa si hay ovalización, costura o capas deformadas.
 
-Guarda una caja con tus pruebas físicas etiquetadas. Es una biblioteca de tolerancias más útil que cualquier tabla genérica.
+## 5. Aplica el resultado al diseño
+
+Elige la holgura que cumpla la función, no simplemente la menor que consigue entrar. Después valida una muestra de la unión completa, porque una carcasa grande puede deformarse de forma distinta a la probeta. Si las piezas se fabricarán varias veces, imprime más de una muestra para observar repetibilidad.
+
+Este es un proceso recomendado:
+
+1. define función y criterio de ajuste;
+2. diseña variantes cambiando una sola variable;
+3. imprime con el perfil final;
+4. inspecciona y mide sin modificar las muestras;
+5. registra la clasificación;
+6. incorpora el valor elegido al CAD;
+7. valida la unión real antes de producir el conjunto.
+
+Si la pieza va a soportar carga, recuerda que la holgura es solo una parte del problema. Revisa también [orientación y resistencia FDM](/blog/orientar-pieza-impresion-3d-resistente).
+
+## 6. Errores y limitaciones
+
+Usar una probeta de PLA para decidir una pieza final en PETG, cambiar simultáneamente material y orientación o medir solo una muestra produce conclusiones débiles. La humedad, el desgaste, la calibración y la forma del encaje pueden alterar el resultado con el tiempo.
+
+**Una prueba de tolerancias no crea una regla universal**. Crea una referencia documentada para un proceso concreto. Guarda la pieza etiquetada y repite la prueba cuando cambie una variable importante; así tendrás una biblioteca de fabricación más útil que una tabla genérica.

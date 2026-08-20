@@ -1,9 +1,11 @@
-import Link from "next/link";
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
+import { AdSlot } from "@/components/AdSlot";
 import { ArticleCard } from "@/components/ArticleCard";
-import { Newsletter } from "@/components/Newsletter";
+import { ExploreMore } from "@/components/Newsletter";
 import { getAllArticles, getFeaturedArticles } from "@/lib/articles";
+import { getArticleSupport } from "@/lib/article-support";
 import { portfolioItems } from "@/lib/portfolio";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 import { createPageMetadata, jsonLd } from "@/lib/seo";
@@ -11,12 +13,66 @@ import { createPageMetadata, jsonLd } from "@/lib/seo";
 export const metadata: Metadata = createPageMetadata({
   title: siteConfig.name,
   description: siteConfig.description,
-  path: "/"
+  path: "/",
+  image: "/images/editorial/documentacion-prototipo-evidencias.webp"
 });
+
+const topics = [
+  {
+    label: "Diseño CAD",
+    title: "Modelos preparados para cambiar",
+    text: "Referencias estables, intención de diseño y entregas que otra persona puede abrir.",
+    href: "/guia-cad-parametrico",
+    image: "/images/editorial/cad-parametrico-estudio.webp",
+    alt: "Diseñador revisando un modelo CAD paramétrico"
+  },
+  {
+    label: "Impresión 3D",
+    title: "Del laminador a una pieza útil",
+    text: "Orientación, paredes, tolerancias y control de fallos antes de repetir.",
+    href: "/guia-impresion-3d-fdm",
+    image: "/images/editorial/impresion-fdm-taller.webp",
+    alt: "Impresora FDM fabricando una pieza funcional"
+  },
+  {
+    label: "Materiales",
+    title: "Elegir por condiciones reales",
+    text: "Calor, impacto, exterior, flexibilidad y capacidad de la máquina.",
+    href: "/guia-materiales-fdm",
+    image: "/images/editorial/materiales-fdm-comparativa.webp",
+    alt: "Comparación de materiales y probetas FDM"
+  },
+  {
+    label: "Validación FEM",
+    title: "Simular para responder una pregunta",
+    text: "Hipótesis, apoyos, malla y comprobaciones antes de confiar en los colores.",
+    href: "/guia-simulacion-fem",
+    image: "/images/editorial/analisis-fem-validacion.webp",
+    alt: "Comparación entre simulación FEM y una pieza física"
+  },
+  {
+    label: "Documentación",
+    title: "Explicar decisiones con evidencia",
+    text: "Planos, medidas, prototipos y límites ordenados para que el proyecto se entienda.",
+    href: "/guia-documentacion-tecnica",
+    image: "/images/editorial/documentacion-prototipo-evidencias.webp",
+    alt: "Ilustración de un proyecto con prototipo, planos y calibre"
+  }
+];
+
+const tools = [
+  ["Precio de impresión", "Coste, tiempo, preparación, margen e IVA.", "/calculadora-precio-impresion-3d", "€"],
+  ["Peso aproximado", "Volumen, densidad, relleno, soportes y lote.", "/calculadora-peso-pieza-3d", "g"],
+  ["Selector de material", "Compara seis familias según el uso previsto.", "/selector-material-impresion-3d", "M"],
+  ["Checklist FDM", "Archivo, máquina, material y control final.", "/checklist-impresion-3d", "✓"]
+];
 
 export default function HomePage() {
   const articles = getAllArticles();
-  const featuredArticles = getFeaturedArticles();
+  const featured = getFeaturedArticles();
+  const featurePool = [...featured, ...articles.filter((article) => !featured.some((item) => item.slug === article.slug))].slice(0, 3);
+  const leadStory = featurePool[0];
+  const leadSupport = getArticleSupport(leadStory.slug);
   const latestArticles = articles.slice(0, 6);
   const structuredData = [
     {
@@ -24,6 +80,7 @@ export default function HomePage() {
       "@type": "Organization",
       name: siteConfig.name,
       url: absoluteUrl("/"),
+      logo: absoluteUrl("/brand/cadlab3d-mark.png"),
       description: siteConfig.description
     },
     {
@@ -43,244 +100,205 @@ export default function HomePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(structuredData)} />
-      <section className="technical-grid border-b border-slate-200 bg-white">
-        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:px-8 lg:py-20">
-          <div>
-            <p className="text-sm font-black uppercase tracking-wide text-teal-700">CAD, diseño industrial, FEM e impresión 3D</p>
-            <h1 className="mt-4 max-w-4xl text-4xl font-black leading-tight tracking-normal text-slate-950 sm:text-5xl lg:text-6xl">
-              Guías técnicas para diseñar, imprimir, simular y documentar mejores proyectos.
+
+      <section className="blueprint-grid overflow-hidden border-b border-slate-800 bg-[#091625] text-white">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[0.88fr_1.12fr] lg:items-center lg:px-8 lg:py-20">
+          <div className="relative z-10">
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">Publicación técnica en español</p>
+            <h1 className="mt-5 max-w-3xl font-display text-5xl font-black uppercase leading-[0.88] tracking-[-0.02em] text-white sm:text-6xl lg:text-7xl xl:text-[5.45rem]">
+              Diseñar es decidir. <span className="text-cyan-300">Comprobar</span> es lo que lo hace útil.
             </h1>
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-600">
-              CAD Lab 3D ayuda a estudiantes y perfiles junior a tomar mejores decisiones en CAD, FDM, materiales, portfolio y memorias técnicas.
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-300">
+              Guías para pasar del CAD a una pieza, simulación o memoria que resista preguntas: qué cambiar, qué medir y qué límite declarar.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link className="rounded-md bg-slate-950 px-5 py-3 text-sm font-black text-white hover:bg-blue-800" href="/blog">
-                Leer el blog
-              </Link>
-              <Link className="rounded-md border border-slate-300 bg-white px-5 py-3 text-sm font-black text-slate-800 hover:border-blue-300 hover:text-blue-700" href="/recursos">
-                Ver recursos
-              </Link>
-              <Link className="rounded-md border border-slate-300 bg-white px-5 py-3 text-sm font-black text-slate-800 hover:border-blue-300 hover:text-blue-700" href="/guia-impresion-3d-fdm">
-                Guía FDM
-              </Link>
-              <Link className="rounded-md border border-slate-300 bg-white px-5 py-3 text-sm font-black text-slate-800 hover:border-blue-300 hover:text-blue-700" href="/servicios">
-                Servicios técnicos
-              </Link>
+              <Link className="focus-ring rounded-md bg-teal-400 px-5 py-3 text-sm font-black text-slate-950 hover:bg-cyan-300" href="/guias">Empezar por una guía</Link>
+              <Link className="focus-ring rounded-md border border-white/20 px-5 py-3 text-sm font-bold text-white hover:border-cyan-300 hover:bg-white/5" href="/blog">Explorar 42 artículos</Link>
             </div>
           </div>
-          <div className="rounded-lg border border-slate-200 bg-white p-5 shadow-xl">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-md bg-slate-100">
+
+          <figure className="calibration-rail relative pl-5">
+            <div className="image-scanline relative aspect-[4/3] overflow-hidden border border-cyan-200/25 bg-slate-900 shadow-2xl shadow-black/40 sm:aspect-[16/10]">
               <Image
-                src="/images/impresion-3d-personalizada/pieza-decorativa-azul-fdm.jpg"
-                alt="Pieza azul impresa en 3D con geometría por capas"
+                src="/images/editorial/documentacion-prototipo-evidencias.webp"
+                alt="Ilustración editorial de un proyecto CAD documentado con prototipo, planos y medidas"
                 fill
                 priority
-                sizes="(min-width: 1024px) 44vw, 100vw"
+                sizes="(min-width: 1024px) 54vw, 100vw"
                 className="object-cover"
               />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#091625] via-[#091625]/75 to-transparent p-5 pt-16 sm:p-7">
+                <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-cyan-300">Pieza · plano · medida · decisión</p>
+                <p className="mt-2 max-w-lg font-display text-2xl font-bold leading-none text-white sm:text-3xl">La evidencia debe aparecer junto a la decisión que sostiene.</p>
+              </div>
             </div>
-            <p className="mt-4 text-sm leading-6 text-slate-600">
-              Ejemplo de pieza FDM con geometría por capas, útil para observar acabado, contornos y continuidad de impresión.
-            </p>
-          </div>
+            <div className="mt-3 flex justify-between font-mono text-[9px] uppercase tracking-[0.14em] text-slate-500">
+              <span>X 000.00</span><span>Y 000.00</span><span>Z 000.00</span>
+            </div>
+          </figure>
         </div>
       </section>
 
-      <section className="bg-white py-14">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
-            <div>
-              <p className="text-sm font-black uppercase tracking-wide text-teal-700">Herramientas prácticas</p>
-              <h2 className="mt-2 text-3xl font-black text-slate-950">Calculadoras y checklists para trabajar mejor</h2>
+      <section className="border-b border-slate-200 bg-white">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-y divide-slate-200 border-x border-slate-200 sm:grid-cols-4 sm:divide-y-0">
+          {[
+            [String(articles.length), "artículos revisados"],
+            ["5", "rutas temáticas"],
+            ["4", "herramientas abiertas"],
+            ["4", "casos documentados"]
+          ].map(([value, label]) => (
+            <div key={label} className="px-4 py-5 text-center sm:px-6">
+              <p className="font-display text-3xl font-black text-slate-950">{value}</p>
+              <p className="font-mono text-[9px] font-semibold uppercase tracking-[0.12em] text-slate-500">{label}</p>
             </div>
-            <Link className="text-sm font-bold text-blue-700 hover:text-blue-900" href="/recursos">
-              Ver recursos
-            </Link>
-          </div>
-          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            {[
-              ["Calculadora de precio 3D", "Calcula precio por pieza y lote con material, electricidad, desgaste, mano de obra, margen e IVA.", "/calculadora-precio-impresion-3d"],
-              ["Calculadora de peso", "Estima gramos con volumen, densidad, relleno, paredes, soportes y cantidad.", "/calculadora-peso-pieza-3d"],
-              ["Selector de material FDM", "Compara PLA, PETG, TPU, ABS, ASA y Nylon según uso real.", "/selector-material-impresion-3d"],
-              ["Checklist de impresión", "Revisa archivo, orientación, material, cama, filamento y control final.", "/checklist-impresion-3d"]
-            ].map(([title, text, href]) => (
-              <Link key={href} href={href} className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm hover:border-blue-300">
-                <h3 className="text-xl font-black text-slate-950">{title}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate-600">{text}</p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-        <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
-          <div>
-            <p className="text-sm font-black uppercase tracking-wide text-teal-700">Destacados</p>
-            <h2 className="mt-2 text-3xl font-black text-slate-950">Guías para empezar con criterio</h2>
-          </div>
-          <Link className="text-sm font-bold text-blue-700 hover:text-blue-900" href="/blog">
-            Ver todos los artículos
-          </Link>
-        </div>
-        <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-          {featuredArticles.map((article) => (
-            <ArticleCard key={article.slug} article={article} />
           ))}
         </div>
       </section>
 
-      <section className="bg-white py-14">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
-            <div>
-              <p className="text-sm font-black uppercase tracking-wide text-teal-700">Casos prácticos</p>
-              <h2 className="mt-2 text-3xl font-black text-slate-950">Piezas reales con criterio técnico</h2>
-              <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600">
-                Ejemplos de piezas impresas con notas sobre objetivo, diseño, revisión y aspectos que conviene comprobar antes de fabricar.
-              </p>
-            </div>
-            <Link className="text-sm font-bold text-blue-700 hover:text-blue-900" href="/casos-practicos-impresion-3d">
-              Ver casos
-            </Link>
-          </div>
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
-            {portfolioItems.slice(0, 3).map((item) => (
-              <Link
-                key={item.title}
-                href={item.slug ? `/casos-practicos-impresion-3d/${item.slug}` : "/casos-practicos-impresion-3d"}
-                className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm hover:border-blue-300"
-              >
-                <div className="relative aspect-[4/3] bg-slate-100">
-                  <Image src={item.image} alt={item.alt} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover" />
-                </div>
-                <div className="p-5">
-                  <h3 className="font-black text-slate-950">{item.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-slate-600">{item.description}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white py-14">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
-            <div>
-              <p className="text-sm font-black uppercase tracking-wide text-teal-700">Servicios</p>
-              <h2 className="mt-2 text-3xl font-black text-slate-950">Apoyo puntual para proyectos CAD</h2>
-            </div>
-            <Link className="text-sm font-bold text-blue-700 hover:text-blue-900" href="/servicios">
-              Ver servicios
-            </Link>
-          </div>
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
-            {[
-              { title: "Modelado y revisión CAD", href: "/servicios" },
-              { title: "Impresión 3D personalizada", href: "/impresion-3d-personalizada" },
-              { title: "Renders y documentación técnica", href: "/servicios" }
-            ].map((item) => (
-              <Link key={item.title} href={item.href} className="rounded-lg border border-slate-200 p-5 hover:border-blue-300 hover:shadow-sm">
-                <h3 className="font-black text-slate-950">{item.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-slate-600">Apoyo puntual para ordenar archivos, revisar decisiones técnicas y mejorar entregas de proyecto.</p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white py-14">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="text-sm font-black uppercase tracking-wide text-teal-700">Rutas de aprendizaje</p>
-          <h2 className="mt-2 text-3xl font-black text-slate-950">Empieza por una guía completa</h2>
-          <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-600">Cada ruta reúne decisiones relacionadas para que no tengas que reconstruir el proceso saltando entre entradas aisladas.</p>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-            {[
-              ["Impresión 3D FDM", "Diseño, laminado y control final.", "/guia-impresion-3d-fdm"],
-              ["Materiales FDM", "Selección por uso y fabricación.", "/guia-materiales-fdm"],
-              ["CAD paramétrico", "Modelos que admiten cambios.", "/guia-cad-parametrico"],
-              ["Simulación FEM", "Hipótesis, malla y resultados.", "/guia-simulacion-fem"],
-              ["Documentación", "Decisiones, pruebas y memoria.", "/guia-documentacion-tecnica"]
-            ].map(([title, description, href]) => (
-              <Link key={href} href={href} className="border-t-4 border-slate-950 bg-white p-5 shadow-sm ring-1 ring-slate-200 hover:border-teal-500 hover:ring-blue-200">
-                <h3 className="font-black text-slate-950">{title}</h3>
-                <p className="mt-2 text-sm leading-6 text-slate-600">{description}</p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-        <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+      <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-18">
+        <div className="flex flex-col gap-4 border-b border-slate-300 pb-6 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-sm font-black uppercase tracking-wide text-teal-700">Nuevas guías</p>
-            <h2 className="mt-2 text-3xl font-black text-slate-950">Últimas guías publicadas</h2>
-            <p className="mt-3 text-sm leading-6 text-slate-600">
-              Artículos recientes sobre impresión 3D, CAD, materiales, FEM y documentación técnica.
-            </p>
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.15em] text-teal-800">Selección editorial</p>
+            <h2 className="mt-2 font-display text-4xl font-black uppercase leading-none text-slate-950 sm:text-5xl">Empieza por una decisión real</h2>
           </div>
-          <div className="grid gap-3 sm:grid-cols-2">
-            {latestArticles.map((article) => (
-              <Link key={article.slug} className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm hover:border-blue-300" href={`/blog/${article.slug}`}>
-                <p className="text-xs font-black uppercase tracking-wide text-teal-700">{article.category}</p>
-                <h3 className="mt-1 font-black text-slate-950">{article.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-slate-600">{article.description}</p>
+          <Link className="text-sm font-bold text-blue-800 hover:text-blue-950" href="/blog">Ver toda la biblioteca →</Link>
+        </div>
+
+        <div className="mt-8 grid gap-6 lg:grid-cols-[1.45fr_0.75fr]">
+          <Link href={`/blog/${leadStory.slug}`} className="group grid overflow-hidden border border-slate-200 bg-white shadow-sm lg:grid-rows-[auto_1fr]">
+            <div className="image-scanline relative aspect-[16/10] overflow-hidden bg-slate-100">
+              <Image src={leadSupport.evidence.image} alt={leadSupport.evidence.alt} fill sizes="(min-width: 1024px) 68vw, 100vw" className="object-cover transition duration-500 group-hover:scale-[1.025]" />
+              <span className="absolute left-4 top-4 bg-[#091625] px-3 py-2 font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-cyan-300">Guía destacada</span>
+            </div>
+            <div className="p-6 sm:p-8">
+              <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-teal-800">{leadStory.category} · {leadStory.readingTime}</p>
+              <h3 className="mt-3 max-w-3xl font-display text-4xl font-black leading-[0.98] text-slate-950 group-hover:text-blue-800 sm:text-5xl">{leadStory.title}</h3>
+              <p className="mt-4 max-w-3xl text-base leading-7 text-slate-600">{leadStory.description}</p>
+            </div>
+          </Link>
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-1">
+            {featurePool.slice(1).map((article) => {
+              const support = getArticleSupport(article.slug);
+              return (
+                <Link key={article.slug} href={`/blog/${article.slug}`} className="lift-on-hover group grid grid-cols-[118px_1fr] overflow-hidden border border-slate-200 bg-white shadow-sm sm:grid-cols-1 lg:grid-cols-[148px_1fr]">
+                  <div className="relative min-h-36 overflow-hidden bg-slate-100 sm:aspect-[16/9] lg:aspect-auto">
+                    <Image src={support.evidence.image} alt={support.evidence.alt} fill sizes="(min-width: 1024px) 148px, (min-width: 640px) 50vw, 118px" className="object-cover transition duration-500 group-hover:scale-105" />
+                  </div>
+                  <div className="p-4 sm:p-5">
+                    <p className="font-mono text-[9px] font-semibold uppercase tracking-[0.13em] text-teal-800">{article.category}</p>
+                    <h3 className="mt-2 font-display text-2xl font-black leading-[1.02] text-slate-950 group-hover:text-blue-800">{article.title}</h3>
+                    <p className="mt-3 hidden text-sm leading-6 text-slate-600 lg:block">{article.description}</p>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <AdSlot
+        clientId={process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT}
+        slot={process.env.NEXT_PUBLIC_ADSENSE_HOME_FEED_SLOT}
+        className="mx-auto max-w-5xl"
+      />
+
+      <section className="border-y border-slate-200 bg-white py-14 lg:py-18">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.15em] text-teal-800">Explora por objetivo</p>
+            <h2 className="mt-2 font-display text-4xl font-black uppercase leading-none text-slate-950 sm:text-5xl">No estudies temas sueltos. Resuelve un flujo.</h2>
+          </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-6">
+            {topics.map((topic, index) => (
+              <Link key={topic.href} href={topic.href} className={`group relative min-h-[290px] overflow-hidden bg-slate-900 ${index < 2 ? "lg:col-span-3" : "lg:col-span-2"}`}>
+                <Image src={topic.image} alt={topic.alt} fill sizes={index < 2 ? "(min-width: 1024px) 50vw, 100vw" : "(min-width: 1024px) 33vw, 100vw"} className="object-cover opacity-80 transition duration-500 group-hover:scale-[1.035] group-hover:opacity-65" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#091625] via-[#091625]/20 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
+                  <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.15em] text-cyan-300">{topic.label}</p>
+                  <h3 className="mt-2 font-display text-3xl font-black leading-none text-white">{topic.title}</h3>
+                  <p className="mt-3 max-w-md text-sm leading-6 text-slate-300">{topic.text}</p>
+                </div>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-          <Link className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm hover:border-blue-300" href="/guias">
-            <p className="text-sm font-black uppercase tracking-wide text-teal-700">Rutas de lectura</p>
-            <h2 className="mt-2 text-2xl font-black text-slate-950">Guías por tema</h2>
-            <p className="mt-2 text-sm leading-6 text-slate-600">Accesos ordenados para aprender CAD, impresión 3D, materiales y documentación.</p>
-          </Link>
-          <Link className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm hover:border-blue-300" href="/servicios">
-            <p className="text-sm font-black uppercase tracking-wide text-teal-700">Consultas técnicas</p>
-            <h2 className="mt-2 text-2xl font-black text-slate-950">Servicios CAD</h2>
-            <p className="mt-2 text-sm leading-6 text-slate-600">Consultas sobre modelado, revisión, renders y archivos de fabricación para proyectos técnicos.</p>
-          </Link>
-          <Link className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm hover:border-blue-300" href="/fuentes">
-            <p className="text-sm font-black uppercase tracking-wide text-teal-700">Referencias</p>
-            <h2 className="mt-2 text-2xl font-black text-slate-950">Fuentes técnicas</h2>
-            <p className="mt-2 text-sm leading-6 text-slate-600">Documentación oficial utilizada para contrastar software, materiales y simulación.</p>
-          </Link>
-          <Link className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm hover:border-blue-300" href="/calculadora-precio-impresion-3d">
-            <p className="text-sm font-black uppercase tracking-wide text-teal-700">Presupuestos FDM</p>
-            <h2 className="mt-2 text-2xl font-black text-slate-950">Calculadora 3D</h2>
-            <p className="mt-2 text-sm leading-6 text-slate-600">Calcula precio por pieza y lote con material, electricidad, desgaste, mano de obra, margen e IVA.</p>
-          </Link>
-          <Link className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm hover:border-blue-300" href="/selector-material-impresion-3d">
-            <p className="text-sm font-black uppercase tracking-wide text-teal-700">Materiales FDM</p>
-            <h2 className="mt-2 text-2xl font-black text-slate-950">Selector material</h2>
-            <p className="mt-2 text-sm leading-6 text-slate-600">Elige material según calor, exterior, impacto, flexibilidad, facilidad y acabado.</p>
-          </Link>
-          <Link className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm hover:border-blue-300" href="/casos-practicos-impresion-3d">
-            <p className="text-sm font-black uppercase tracking-wide text-teal-700">Piezas reales</p>
-            <h2 className="mt-2 text-2xl font-black text-slate-950">Casos prácticos</h2>
-            <p className="mt-2 text-sm leading-6 text-slate-600">Ejemplos de impresión 3D con objetivo, revisión técnica y aprendizaje de diseño.</p>
-          </Link>
-          <Link className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm hover:border-blue-300" href="/glosario">
-            <p className="text-sm font-black uppercase tracking-wide text-teal-700">Referencia</p>
-            <h2 className="mt-2 text-2xl font-black text-slate-950">Glosario técnico</h2>
-            <p className="mt-2 text-sm leading-6 text-slate-600">Definiciones de CAD, FDM, materiales, tolerancias, FEM y documentación.</p>
-          </Link>
+      <section className="bg-[#10233f] py-14 text-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
+            <div>
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.15em] text-cyan-300">Banco de trabajo</p>
+              <h2 className="mt-3 font-display text-4xl font-black uppercase leading-none sm:text-5xl">Calcula antes de imprimir</h2>
+              <p className="mt-4 max-w-lg text-sm leading-6 text-slate-300">Herramientas abiertas para estimar, comparar y revisar. El resultado es un punto de partida; la pieza real manda.</p>
+            </div>
+            <div className="grid gap-px overflow-hidden border border-white/15 bg-white/15 sm:grid-cols-2">
+              {tools.map(([title, text, href, mark]) => (
+                <Link key={href} href={href} className="group grid grid-cols-[48px_1fr] gap-4 bg-[#10233f] p-5 hover:bg-[#163b70]">
+                  <span className="flex h-12 w-12 items-center justify-center border border-cyan-300/35 font-mono text-lg font-semibold text-cyan-300">{mark}</span>
+                  <span>
+                    <span className="block font-display text-2xl font-black leading-none text-white group-hover:text-cyan-200">{title}</span>
+                    <span className="mt-2 block text-sm leading-5 text-slate-300">{text}</span>
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-7xl gap-6 px-4 py-14 sm:px-6 lg:grid-cols-[1fr_320px] lg:px-8">
-        <Newsletter />
-        <div className="grid gap-4">
-          <Link className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm hover:border-blue-300" href="/contacto">
-            <h2 className="text-xl font-black text-slate-950">¿Tienes un proyecto técnico?</h2>
-            <p className="mt-2 text-sm leading-6 text-slate-600">Envía tu consulta sobre modelado, revisión, documentación o preparación de archivos.</p>
-          </Link>
+      <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-18">
+        <div className="flex flex-col gap-4 border-b border-slate-300 pb-6 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.15em] text-teal-800">Últimas publicaciones</p>
+            <h2 className="mt-2 font-display text-4xl font-black uppercase leading-none text-slate-950 sm:text-5xl">La biblioteca sigue creciendo en profundidad</h2>
+          </div>
+          <Link className="text-sm font-bold text-blue-800 hover:text-blue-950" href="/blog">Buscar por tema →</Link>
         </div>
+        <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {latestArticles.map((article) => <ArticleCard key={article.slug} article={article} />)}
+        </div>
+      </section>
+
+      <section className="border-y border-slate-200 bg-white py-14 lg:py-18">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
+            <div className="lg:sticky lg:top-28">
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.15em] text-teal-800">Evidencia propia</p>
+              <h2 className="mt-3 font-display text-4xl font-black uppercase leading-none text-slate-950 sm:text-5xl">Piezas reales, límites claros</h2>
+              <p className="mt-5 max-w-lg text-base leading-7 text-slate-600">Las fotografías permiten observar geometría, acabado y uso. No atribuimos resistencia, material o precisión si no están medidos.</p>
+              <Link className="mt-6 inline-flex border-b-2 border-blue-700 pb-1 text-sm font-black text-blue-800" href="/casos-practicos-impresion-3d">Ver todos los casos →</Link>
+            </div>
+            <div className="grid gap-5 sm:grid-cols-2">
+              {portfolioItems.slice(0, 4).map((item, index) => (
+                <Link key={item.title} href={item.slug ? `/casos-practicos-impresion-3d/${item.slug}` : "/casos-practicos-impresion-3d"} className={`group overflow-hidden border border-slate-200 bg-slate-50 ${index === 0 ? "sm:col-span-2" : ""}`}>
+                  <div className={`relative overflow-hidden bg-slate-100 ${index === 0 ? "aspect-[16/8]" : "aspect-[4/3]"}`}>
+                    <Image src={item.image} alt={item.alt} fill sizes={index === 0 ? "(min-width: 1024px) 58vw, 100vw" : "(min-width: 640px) 50vw, 100vw"} className="object-cover transition duration-500 group-hover:scale-[1.03]" />
+                  </div>
+                  <div className="p-5">
+                    <h3 className="font-display text-2xl font-black leading-none text-slate-950 group-hover:text-blue-800">{item.title}</h3>
+                    <p className="mt-3 text-sm leading-6 text-slate-600">{item.description}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto grid max-w-7xl gap-6 px-4 py-14 sm:px-6 lg:grid-cols-[1fr_330px] lg:px-8 lg:py-18">
+        <ExploreMore />
+        <aside className="border border-slate-200 bg-white p-6">
+          <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-teal-800">Por qué confiar</p>
+          <h2 className="mt-3 font-display text-3xl font-black leading-none text-slate-950">Método, fuentes y límites visibles</h2>
+          <p className="mt-4 text-sm leading-6 text-slate-600">Explicamos cómo se prepara cada guía y distinguimos una ilustración de una prueba física.</p>
+          <div className="mt-5 grid gap-2 text-sm font-bold text-blue-800">
+            <Link href="/metodologia">Metodología editorial →</Link>
+            <Link href="/fuentes">Fuentes técnicas →</Link>
+            <Link href="/sobre-mi">Sobre CAD Lab 3D →</Link>
+          </div>
+        </aside>
       </section>
     </>
   );
