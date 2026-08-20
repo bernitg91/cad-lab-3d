@@ -11,7 +11,7 @@ author: "CAD Lab 3D"
 featured: false
 ---
 
-PLA, PETG, ABS y Nylon son familias de filamento, no cuatro recetas idénticas entre fabricantes. Comparten tendencias, pero pigmentos, cargas y aditivos cambian propiedades e impresión. Utiliza esta comparativa para descartar opciones y valida después la formulación concreta con su ficha técnica y una muestra.
+PLA, PETG, ABS y Nylon son **familias de filamento, no cuatro recetas idénticas** entre fabricantes. Comparten tendencias, pero pigmentos, cargas y aditivos cambian propiedades e impresión. Utiliza esta comparativa para descartar opciones y valida después la formulación concreta con su ficha técnica y una muestra.
 
 ## Comparación práctica inicial
 
@@ -22,7 +22,7 @@ PLA, PETG, ABS y Nylon son familias de filamento, no cuatro recetas idénticas e
 | ABS | Mejor comportamiento térmico y postprocesado posible | Contracción, alabeo y mayores requisitos de entorno | Carcasas y componentes con temperatura moderada |
 | Nylon | Tenacidad, flexión y desgaste | Absorbe humedad y exige control de impresión | Engranajes, guías, clips y piezas sometidas a roce |
 
-La tabla no garantiza resultados. La geometría, orientación, unión entre capas y estado del filamento pueden dominar el fallo. Para convertir estas tendencias en una decisión, utiliza también [cómo elegir filamento para piezas funcionales](/blog/elegir-filamento-piezas-funcionales).
+**La tabla no garantiza resultados**. La geometría, orientación, unión entre capas y estado del filamento pueden dominar el fallo. Para convertir estas tendencias en una decisión, utiliza también [cómo elegir filamento para piezas funcionales](/blog/elegir-filamento-piezas-funcionales).
 
 ## PLA: sencillo y rígido, con límites térmicos
 

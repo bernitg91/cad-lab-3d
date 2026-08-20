@@ -2,23 +2,25 @@ import Image from "next/image";
 import Link from "next/link";
 import { getCategoryGuidePath } from "@/lib/categories";
 import { formatDate } from "@/lib/date";
-import { getArticleVisuals } from "@/lib/article-visuals";
+import { getArticlePhoto } from "@/lib/article-photos";
 import type { ArticleMeta } from "@/types/article";
 
 export function ArticleCard({ article }: { article: ArticleMeta }) {
-  const [heroVisual] = getArticleVisuals(article);
+  const photo = getArticlePhoto(article.slug);
 
   return (
     <article className="lift-on-hover group flex h-full flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm hover:border-blue-300 hover:shadow-xl hover:shadow-slate-950/10">
       <Link href={`/blog/${article.slug}`} aria-label={`Leer ${article.title}`} className="image-scanline relative block aspect-[16/9] overflow-hidden bg-slate-100">
         <Image
-          src={heroVisual.image}
-          alt={heroVisual.alt}
+          src={photo.image}
+          alt={photo.alt}
           fill
           sizes="(min-width: 1024px) 360px, (min-width: 768px) 50vw, 100vw"
-          unoptimized
-          className="object-contain transition duration-500 group-hover:scale-[1.03]"
+          className="object-cover transition duration-500 group-hover:scale-[1.035]"
         />
+        <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 to-transparent px-3 pb-2 pt-8 text-right font-mono text-[8px] font-semibold uppercase tracking-[0.08em] text-white/90">
+          {photo.creator} · {photo.licenseCode}
+        </span>
       </Link>
       <div className="flex flex-1 flex-col p-5">
         <div className="flex flex-wrap items-center gap-2 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-teal-800">

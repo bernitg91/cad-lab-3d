@@ -15,7 +15,7 @@ El relleno es la estructura interna que genera el laminador entre las paredes de
 
 ## 1. Empieza por la función de la pieza
 
-Una maqueta visual solo necesita sostener su forma y cerrar correctamente las superficies. Un útil de taller puede recibir compresión, flexión o tornillos. Una carcasa grande quizá necesite rigidez para no vibrar, aunque soporte poca carga. Escribe el modo de uso y señala por dónde entran las fuerzas antes de tocar el porcentaje.
+Una maqueta visual solo necesita sostener su forma y cerrar correctamente las superficies. Un útil de taller puede recibir compresión, flexión o tornillos. Una carcasa grande quizá necesite rigidez para no vibrar, aunque soporte poca carga. **Escribe el modo de uso y señala por dónde entran las fuerzas** antes de tocar el porcentaje.
 
 La siguiente tabla no prescribe valores universales; indica qué variable conviene priorizar en cada caso:
 
@@ -28,9 +28,9 @@ La siguiente tabla no prescribe valores universales; indica qué variable convie
 
 ## 2. Porcentaje y patrón no significan lo mismo
 
-El porcentaje controla cuánto espacio interior ocupa la estructura según el cálculo del laminador. El patrón define cómo se distribuye. Rejilla, líneas, cúbico o gyroid pueden producir recorridos, tiempos y rigideces distintos. Los nombres y algoritmos también varían entre programas, así que compara la vista previa y no solo la etiqueta.
+El porcentaje controla cuánto espacio interior ocupa la estructura según el cálculo del laminador. **El patrón define cómo se distribuye**. Rejilla, líneas, cúbico o gyroid pueden producir recorridos, tiempos y rigideces distintos. Los nombres y algoritmos también varían entre programas, así que compara la vista previa y no solo la etiqueta.
 
-Un porcentaje alto no convierte automáticamente la pieza en resistente. Si la carga separa las capas, existe una esquina aguda o el material no es adecuado, el relleno puede aportar poco. Consulta [cómo diseñar una pieza resistente para FDM](/blog/disenar-pieza-resistente-fdm) para trabajar primero la geometría.
+**Un porcentaje alto no convierte automáticamente la pieza en resistente**. Si la carga separa las capas, existe una esquina aguda o el material no es adecuado, el relleno puede aportar poco. Consulta [cómo diseñar una pieza resistente para FDM](/blog/disenar-pieza-resistente-fdm) para trabajar primero la geometría.
 
 ### Tapas y apoyo interno
 
@@ -38,15 +38,15 @@ El relleno también sostiene capas superiores. Una superficie amplia con poco so
 
 ## 3. Las paredes suelen gobernar la respuesta
 
-En muchas geometrías, la parte exterior está más alejada del eje de flexión y contribuye mucho a la rigidez. Añadir perímetros puede ser más eficiente que llenar el núcleo. Esto no es una regla absoluta: una carga concentrada, una rosca, una zona de aplastamiento o una unión pueden necesitar material interno.
+En muchas geometrías, la parte exterior está más alejada del eje de flexión y contribuye mucho a la rigidez. **Añadir perímetros puede ser más eficiente que llenar el núcleo**. Esto no es una regla absoluta: una carga concentrada, una rosca, una zona de aplastamiento o una unión pueden necesitar material interno.
 
-Utiliza modificadores del laminador cuando sea posible para reforzar solo una región. Alrededor de tornillos o apoyos puede interesar mayor densidad local, más paredes o una geometría CAD específica. Imprimir todo al 100 % es una solución costosa que además puede introducir acumulación térmica y no corrige un diseño débil.
+Utiliza modificadores del laminador cuando sea posible para reforzar solo una región. Alrededor de tornillos o apoyos puede interesar mayor densidad local, más paredes o una geometría CAD específica. **Imprimir todo al 100 % es una solución costosa** que además puede introducir acumulación térmica y no corrige un diseño débil.
 
 ## 4. Orientación y material cambian la decisión
 
-La estructura interna trabaja junto con las capas. Orienta la pieza para que las trayectorias principales acompañen las cargas y revisa soportes y superficie funcional. La guía para [orientar piezas según resistencia](/blog/orientar-pieza-impresion-3d-resistente) debe preceder a cualquier comparación de porcentajes.
+La estructura interna trabaja junto con las capas. **Orienta la pieza para que las trayectorias principales acompañen las cargas** y revisa soportes y superficie funcional. La guía para [orientar piezas según resistencia](/blog/orientar-pieza-impresion-3d-resistente) debe preceder a cualquier comparación de porcentajes.
 
-El material modifica rigidez, temperatura de uso y comportamiento al impacto. Un patrón que funciona en una probeta de PLA no demuestra el mismo resultado en PETG, ABS o nylon. Si la elección está abierta, revisa las [diferencias entre PLA, PETG, ABS y nylon](/blog/diferencias-pla-petg-abs-nylon) y valida con el material final.
+El material modifica rigidez, temperatura de uso y comportamiento al impacto. Un patrón que funciona en una probeta de PLA no demuestra el mismo resultado en PETG, ABS o nylon. Si la elección está abierta, revisa las [diferencias entre PLA, PETG, ABS y nylon](/blog/diferencias-pla-petg-abs-nylon) y **valida con el material final**.
 
 ## 5. Proceso práctico para elegir relleno
 

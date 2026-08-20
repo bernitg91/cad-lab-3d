@@ -11,21 +11,21 @@ author: "CAD Lab 3D"
 featured: true
 ---
 
-Creo Parametric puede resultar exigente al principio porque da mucha importancia a referencias, regeneración y estructura del modelo. La forma más rápida de progresar no es memorizar iconos, sino aprender a construir piezas que acepten cambios sin romperse. Esta ruta propone ejercicios pequeños y verificables.
+Creo Parametric puede resultar exigente al principio porque da mucha importancia a referencias, regeneración y estructura del modelo. La forma más rápida de progresar **no es memorizar iconos**, sino aprender a construir piezas que acepten cambios sin romperse. Esta ruta propone ejercicios pequeños y verificables.
 
 ## Prepara un entorno de aprendizaje estable
 
-Comprueba la versión instalada y utiliza la ayuda oficial correspondiente: algunos nombres, ubicaciones y flujos cambian entre versiones. Crea una carpeta por proyecto y define desde el principio unidades, plantilla y sistema de nombres. Evitarás descubrir al final que una pieza estaba en otra escala o que no sabes qué archivo pertenece al conjunto.
+Comprueba **la versión instalada** y utiliza **la ayuda oficial correspondiente**: algunos nombres, ubicaciones y flujos cambian entre versiones. Crea una carpeta por proyecto y define desde el principio unidades, plantilla y sistema de nombres. Evitarás descubrir al final que una pieza estaba en otra escala o que no sabes qué archivo pertenece al conjunto.
 
 Dedica la primera sesión a localizar árbol del modelo, planos de referencia, cinta de herramientas, panel de operaciones y comando de regeneración. No intentes personalizar toda la interfaz todavía. Si vienes de otro programa, lee [SolidWorks frente a Creo para estudiantes](/blog/solidworks-vs-creo-estudiantes) para separar conceptos comunes de hábitos específicos.
 
 ## Aprende primero la intención paramétrica
 
-Un modelo paramétrico describe relaciones. Un agujero que debe permanecer centrado debería depender de un plano medio o de una relación geométrica, no de dos cotas elegidas por casualidad. Antes de modelar, identifica qué dimensiones controlará una futura revisión.
+**Un modelo paramétrico describe relaciones**. Un agujero que debe permanecer centrado debería depender de un plano medio o de una relación geométrica, no de dos cotas elegidas por casualidad. Antes de modelar, identifica qué dimensiones controlará una futura revisión.
 
 ### Croquis que sobreviven a los cambios
 
-Empieza en un plano principal, usa geometría de referencia y deja el croquis completamente definido sin añadir restricciones redundantes. Prioriza referencias estables: planos y ejes suelen resistir mejor los cambios que una arista creada por una operación posterior.
+Empieza en un plano principal, usa geometría de referencia y deja **el croquis completamente definido** sin añadir restricciones redundantes. Prioriza referencias estables: planos y ejes suelen resistir mejor los cambios que una arista creada por una operación posterior.
 
 Practica con un rectángulo simétrico, un círculo posicionado desde ejes y un perfil con relaciones de igualdad. Cambia sus cotas principales y observa si conserva la forma esperada. La comparación entre [modelado paramétrico y modelado directo](/blog/modelado-parametrico-vs-directo) te ayudará a entender por qué aquí importa tanto el árbol.
 
@@ -49,7 +49,7 @@ Monta el soporte y un pasador mediante restricciones coincidentes y concéntrica
 
 ## Pasa a ensamblajes y planos con criterio
 
-No necesitas dominar toda la creación de piezas para empezar un conjunto pequeño, pero sí debes regenerar sin errores. En ensamblajes, evita resolver una posición con restricciones innecesarias que compitan entre sí. Renombra componentes y usa un origen claro.
+No necesitas dominar toda la creación de piezas para empezar un conjunto pequeño, pero sí debes **regenerar sin errores**. En ensamblajes, evita resolver una posición con restricciones innecesarias que compitan entre sí. Renombra componentes y usa un origen claro.
 
 Al crear un plano, añade vistas suficientes, escala, material y cotas que comuniquen fabricación o comprobación. No copies todas las cotas del croquis. Consulta [cómo preparar planos técnicos desde un modelo CAD](/blog/preparar-planos-tecnicos-modelo-cad) para seleccionar información en lugar de llenar la hoja.
 
@@ -63,11 +63,11 @@ Al crear un plano, añade vistas suficientes, escala, material y cotas que comun
 - [ ] Montar dos componentes con las restricciones mínimas necesarias.
 - [ ] Exportar una copia y comprobarla siguiendo [errores habituales al exportar CAD](/blog/errores-exportar-archivos-cad).
 
-Guarda una versión antes de una modificación importante. El objetivo no es acumular archivos, sino comparar qué decisión produjo un modelo estable.
+**Guarda una versión antes de una modificación importante**. El objetivo no es acumular archivos, sino comparar qué decisión produjo un modelo estable.
 
 ## Errores frecuentes y límites
 
-Los principiantes suelen crear redondeos demasiado pronto, referenciar aristas frágiles, dejar croquis subdefinidos o convertir cada detalle en una operación independiente. Otro error es seguir un tutorial de forma mecánica: si no puedes cambiar medidas sin repetirlo, todavía no controlas el ejercicio.
+Los principiantes suelen crear redondeos demasiado pronto, referenciar aristas frágiles, dejar croquis subdefinidos o convertir cada detalle en una operación independiente. Otro error es seguir un tutorial de forma mecánica: **si no puedes cambiar medidas sin repetirlo, todavía no controlas el ejercicio**.
 
 Esta ruta no sustituye la formación específica de módulos como superficies avanzadas, chapa, cableado o gestión de datos. Tampoco garantiza que un modelo sea fabricable. Antes de presentar un proyecto completo, aplica una [revisión de diseño antes de fabricar](/blog/revision-diseno-antes-fabricar).
 

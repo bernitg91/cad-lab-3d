@@ -30,7 +30,7 @@ El [proceso para diseñar una pieza resistente](/blog/disenar-pieza-resistente-f
 
 ## Relación entre espesor, forma y rigidez
 
-Aumentar espesor suele elevar la rigidez, pero también material y tiempo. No todas las zonas aportan lo mismo. Una pared plana y extensa puede flexar aunque sea relativamente gruesa, mientras que un borde plegado, una curvatura o un nervio bien situado mejoran su geometría sin macizar todo el volumen.
+**Aumentar espesor suele elevar la rigidez**, pero también material y tiempo. No todas las zonas aportan lo mismo. Una pared plana y extensa puede flexar aunque sea relativamente gruesa, mientras que un borde plegado, una curvatura o un nervio bien situado mejoran su geometría sin macizar todo el volumen.
 
 ### Nervios y cambios de sección
 
@@ -52,11 +52,11 @@ La orientación también cambia el comportamiento: una sección suficiente dentr
 
 ## Proceso para definir y validar el mínimo
 
-1. **Separa funciones:** identifica cierre, soporte, unión, estética y protección.
-2. **Marca zonas críticas:** agujeros, clips, impactos, voladizos y paredes largas.
-3. **Propón un espesor inicial:** relaciónalo con material, proceso y ancho de línea si es FDM.
-4. **Añade forma eficiente:** prueba radios, nervios, pliegues o curvaturas antes de engordar todo.
-5. **Revisa el laminado:** confirma perímetros continuos, tapas y ausencia de huecos inesperados.
+1. Separa funciones: identifica cierre, soporte, unión, estética y protección.
+2. Marca zonas críticas: agujeros, clips, impactos, voladizos y paredes largas.
+3. Propón un espesor inicial: relaciónalo con material, proceso y ancho de línea si es FDM.
+4. Añade forma eficiente: prueba radios, nervios, pliegues o curvaturas antes de engordar todo.
+5. Revisa el laminado: confirma perímetros continuos, tapas y ausencia de huecos inesperados.
 6. **Fabrica cupones locales:** imprime una esquina, un clip o una unión con dos o tres variantes.
 7. **Compara con el uso real:** mide deformación, encaje y daño tras montajes representativos.
 8. **Documenta el límite:** conserva parámetros, orientación y material para poder repetir la decisión.

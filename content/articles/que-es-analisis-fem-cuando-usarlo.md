@@ -29,7 +29,7 @@ Todo FEM necesita decisiones sobre:
 - **cargas:** magnitud, dirección, distribución e hipótesis;
 - **malla:** tipo y tamaño de elementos según la geometría y la respuesta buscada.
 
-Una entrada incorrecta no se corrige usando una malla más fina. Antes de calcular, revisa la guía para [simplificar geometría antes de FEM](/blog/simplificar-geometria-antes-fem): eliminar detalles irrelevantes puede mejorar el mallado, mientras quitar un radio o un apoyo crítico puede cambiar la conclusión.
+**Una entrada incorrecta no se corrige usando una malla más fina**. Antes de calcular, revisa la guía para [simplificar geometría antes de FEM](/blog/simplificar-geometria-antes-fem): eliminar detalles irrelevantes puede mejorar el mallado, mientras quitar un radio o un apoyo crítico puede cambiar la conclusión.
 
 ### Condiciones de contorno
 

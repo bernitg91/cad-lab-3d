@@ -11,7 +11,7 @@ author: "CAD Lab 3D"
 featured: false
 ---
 
-Estimar el peso de una pieza sirve para revisar ergonomía, coste, consumo de material y capacidad de carga. El método cambia según la fabricación: en una pieza maciza basta con volumen y densidad; en FDM intervienen paredes, tapas, relleno, soportes y purga.
+Estimar el peso de una pieza sirve para revisar **ergonomía, coste, consumo de material y capacidad de carga**. El método cambia según la fabricación: en una pieza maciza basta con volumen y densidad; en FDM intervienen paredes, tapas, relleno, soportes y purga.
 
 ## Fórmula para una pieza maciza
 
@@ -19,7 +19,7 @@ La relación general es:
 
 `masa = volumen × densidad`
 
-Si el volumen está en centímetros cúbicos y la densidad en gramos por centímetro cúbico, la masa resultará en gramos. Muchos programas CAD muestran el volumen en milímetros cúbicos: para convertirlo, divide entre 1.000 antes de aplicar una densidad expresada en g/cm³.
+Si el volumen está en centímetros cúbicos y la densidad en gramos por centímetro cúbico, la masa resultará en gramos. Muchos programas CAD muestran el volumen en milímetros cúbicos: para convertirlo, **divide entre 1.000** antes de aplicar una densidad expresada en g/cm³.
 
 Como referencia inicial, PLA y PETG suelen situarse alrededor de 1,2–1,3 g/cm³, mientras que ABS y varios Nylon pueden estar cerca de 1,0–1,2 g/cm³. **No uses esos rangos como ficha técnica**: pigmentos, fibras, cargas y formulaciones modifican la densidad. Prioriza el dato del fabricante de tu material.
 
@@ -39,15 +39,15 @@ El laminador calcula las trayectorias reales y suele ofrecer una estimación mej
 
 ### 1. Calcula el máximo teórico en CAD
 
-Obtén volumen, aplica la densidad y guarda el resultado como “masa maciza teórica”. Este valor permite comparar materiales o detectar un error de unidades. Si el laminador predice más que la pieza maciza sin contar soportes, revisa la configuración.
+Obtén volumen, aplica la densidad y guarda el resultado como **“masa maciza teórica”**. Este valor permite comparar materiales o detectar un error de unidades. Si el laminador predice más que la pieza maciza sin contar soportes, revisa la configuración.
 
 ### 2. Lamina con el perfil real
 
-Configura orientación, paredes, tapas, relleno, soportes, brim y purga. Registra tanto los gramos de la pieza como el material auxiliar cuando el programa los separe. Si todavía dudas sobre la geometría, consulta [cómo optimizar una pieza para reducir material y peso](/blog/optimizar-pieza-reducir-material-peso) antes de reducir espesores sin criterio.
+Configura **orientación, paredes, tapas, relleno, soportes, brim y purga**. Registra tanto los gramos de la pieza como el material auxiliar cuando el programa los separe. Si todavía dudas sobre la geometría, consulta [cómo optimizar una pieza para reducir material y peso](/blog/optimizar-pieza-reducir-material-peso) antes de reducir espesores sin criterio.
 
 ### 3. Pesa y corrige después de imprimir
 
-Usa una báscula con resolución adecuada al tamaño de la pieza. Retira soportes y brim si quieres comparar solo el componente terminado; pésalos aparte si analizas consumo. Calcula la desviación entre estimación y realidad y anota el perfil empleado.
+Usa una báscula con resolución adecuada al tamaño de la pieza. **Retira soportes y brim** si quieres comparar solo el componente terminado; pésalos aparte si analizas consumo. Calcula la desviación entre estimación y realidad y anota el perfil empleado.
 
 ## Checklist de estimación
 
@@ -63,7 +63,7 @@ Este último punto resulta especialmente útil al [calcular el coste de una piez
 
 ## Errores frecuentes y limitaciones
 
-El error más común es mezclar mm³ con cm³. También es frecuente multiplicar el volumen total por el porcentaje de relleno, ignorando las paredes; usar la densidad de “PLA genérico” para una formulación cargada; o comparar el peso del laminador con una pieza que aún conserva soportes.
+**El error más común es mezclar mm³ con cm³**. También es frecuente multiplicar el volumen total por el porcentaje de relleno, ignorando las paredes; usar la densidad de “PLA genérico” para una formulación cargada; o comparar el peso del laminador con una pieza que aún conserva soportes.
 
 La masa tampoco indica por sí sola si el diseño es resistente. Dos piezas del mismo peso pueden comportarse de manera distinta por su orientación, nervios y distribución de material. Antes de aligerar una zona cargada, consulta [cómo diseñar una pieza resistente para FDM](/blog/disenar-pieza-resistente-fdm) y valida el cambio con una muestra o cálculo apropiado.
 

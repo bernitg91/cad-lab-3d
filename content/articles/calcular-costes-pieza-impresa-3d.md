@@ -11,7 +11,7 @@ author: "CAD Lab 3D"
 featured: false
 ---
 
-Calcular el coste de una impresión 3D exige mirar más allá de los gramos de filamento. La máquina permanece ocupada, el archivo necesita preparación y una repetición puede consumir tanto tiempo como la primera unidad. Separar esas partidas permite comparar alternativas y explicar un presupuesto sin inventar una tarifa universal.
+Calcular el coste de una impresión 3D exige **mirar más allá de los gramos de filamento**. La máquina permanece ocupada, el archivo necesita preparación y una repetición puede consumir tanto tiempo como la primera unidad. Separar esas partidas permite comparar alternativas y explicar un presupuesto sin inventar una tarifa universal.
 
 ## Qué partidas forman el coste real
 
@@ -31,11 +31,11 @@ El **coste por gramo** se obtiene dividiendo el precio útil de la bobina entre 
 
 ### 1. Revisa el archivo antes de poner precio
 
-Confirma escala, geometría cerrada, tolerancias y calidad de exportación. Una pieza que necesita rediseño no tiene el mismo coste de preparación que un STL listo para laminar. La [checklist antes de mandar una pieza a imprimir](/blog/checklist-mandar-pieza-imprimir-3d) ayuda a detectar estos trabajos ocultos.
+Confirma **escala, geometría cerrada, tolerancias y calidad de exportación**. Una pieza que necesita rediseño no tiene el mismo coste de preparación que un STL listo para laminar. La [checklist antes de mandar una pieza a imprimir](/blog/checklist-mandar-pieza-imprimir-3d) ayuda a detectar estos trabajos ocultos.
 
 ### 2. Genera una estimación reproducible
 
-Configura en el laminador la impresora, boquilla, material, altura de capa, paredes, relleno, soportes y orientación que realmente usarías. Guarda el perfil o una captura. Sin esos datos, dos estimaciones de la misma geometría pueden producir tiempos y masas muy distintos.
+Configura en el laminador la impresora, boquilla, material, altura de capa, paredes, relleno, soportes y orientación que realmente usarías. **Guarda el perfil o una captura**. Sin esos datos, dos estimaciones de la misma geometría pueden producir tiempos y masas muy distintos.
 
 ### 3. Calcula cada partida por separado
 
@@ -43,7 +43,7 @@ Multiplica la masa total por el coste por gramo. Para el uso de máquina, define
 
 ### 4. Añade incertidumbre sin cobrarla dos veces
 
-Una geometría conocida, corta y sin soportes necesita menos margen que una impresión larga con Nylon húmedo o grandes voladizos. El margen debe responder a riesgos concretos, no ser un porcentaje automático que además duplique gastos ya incluidos.
+Una geometría conocida, corta y sin soportes necesita menos margen que una impresión larga con Nylon húmedo o grandes voladizos. **El margen debe responder a riesgos concretos**, no ser un porcentaje automático que además duplique gastos ya incluidos.
 
 ## Ejemplo orientativo de una pieza PETG
 
@@ -69,7 +69,7 @@ Si la pieza es funcional, conviene contrastar también la [elección de filament
 
 Los fallos más habituales son presupuestar antes de revisar el STL, cobrar solo filamento, ignorar el acabado y tratar una primera unidad como si fuera una serie estable. Tampoco debe confundirse **coste** con **precio**: el precio puede incluir impuestos, margen comercial, urgencia o servicio de diseño, según la actividad y la normativa aplicable.
 
-El laminador ofrece una predicción, no una garantía. Desgaste de boquilla, humedad, pausas o pequeñas variaciones de velocidad alteran el resultado. Registra masa estimada, masa real, tiempo previsto, tiempo real y causa de cualquier repetición. Tras varias piezas similares tendrás datos propios mucho más fiables que una calculadora genérica.
+**El laminador ofrece una predicción, no una garantía**. Desgaste de boquilla, humedad, pausas o pequeñas variaciones de velocidad alteran el resultado. Registra masa estimada, masa real, tiempo previsto, tiempo real y causa de cualquier repetición. Tras varias piezas similares tendrás datos propios mucho más fiables que una calculadora genérica.
 
 ## Conclusión
 

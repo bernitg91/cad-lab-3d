@@ -11,7 +11,7 @@ author: "CAD Lab 3D"
 featured: false
 ---
 
-En CAD, dos superficies pueden coincidir exactamente. En una pieza FDM intervienen ancho de extrusión, contracción, primera capa, calibración, orientación y forma de la unión. Por eso una cota nominal no define por sí sola el ajuste: necesitas seleccionar una holgura según la función y validarla con el proceso real.
+En CAD, dos superficies pueden coincidir exactamente. En una pieza FDM intervienen ancho de extrusión, contracción, primera capa, calibración, orientación y forma de la unión. Por eso una cota nominal no define por sí sola el ajuste: **necesitas seleccionar una holgura según la función y validarla con el proceso real**.
 
 ## 1. Distingue tolerancia y holgura
 
@@ -26,7 +26,7 @@ Define primero el tipo de unión:
 | Ajuste a presión | Retención mediante interferencia controlada | Rotura o imposibilidad de montar |
 | Clip flexible | Deformación temporal y recuperación | Fatiga o separación entre capas |
 
-No existe una cifra universal para cada fila. Utiliza referencias solo para establecer una primera serie de ensayo, no como resultado final.
+**No existe una cifra universal para cada fila**. Utiliza referencias solo para establecer una primera serie de ensayo, no como resultado final.
 
 ## 2. Identifica las variables del proceso
 
@@ -36,17 +36,17 @@ Material y perfil también importan. PLA, PETG o nylon pueden contraer y flexar 
 
 ### Primera capa y pie de elefante
 
-Una base demasiado aplastada aumenta el contorno exterior y reduce ranuras próximas a la cama. Antes de ampliar la holgura de todo el encaje, identifica si solo falla el borde inferior. Un chaflán de entrada o una corrección de primera capa puede resolver la causa sin dejar juego en el resto de la unión.
+Una base demasiado aplastada aumenta el contorno exterior y reduce ranuras próximas a la cama. **Antes de ampliar la holgura de todo el encaje, identifica si solo falla el borde inferior**. Un chaflán de entrada o una corrección de primera capa puede resolver la causa sin dejar juego en el resto de la unión.
 
 ## 3. Diseña la unión según su geometría
 
 Los agujeros suelen requerir una comprobación diferente a los ejes exteriores. El trazado de perímetros, la costura y la aproximación de curvas pueden producir desviaciones distintas aunque compartan diámetro nominal. Para tornillos, decide si buscas paso libre, roscado posterior, tornillo autorroscante o inserto; cada caso necesita geometría y prueba propias.
 
-En tapas y carcasas, las paredes largas pueden deformarse y acumular desviación. Un encaje corto que funciona en una probeta no garantiza una tapa de gran perímetro. Añadir entradas, topes y puntos de centrado ayuda a controlar el montaje. La guía para [diseñar encajes y clips](/blog/disenar-encajes-clips-impresion-3d) desarrolla estas formas.
+En tapas y carcasas, las paredes largas pueden deformarse y acumular desviación. **Un encaje corto que funciona en una probeta no garantiza una tapa de gran perímetro**. Añadir entradas, topes y puntos de centrado ayuda a controlar el montaje. La guía para [diseñar encajes y clips](/blog/disenar-encajes-clips-impresion-3d) desarrolla estas formas.
 
 ## 4. Establece una holgura inicial mediante ensayo
 
-Parte de un intervalo razonable para tu máquina y diseña varias muestras alrededor de él. Mantén constantes material, orientación, perfil y longitud de contacto. En lugar de imprimir el conjunto completo, utiliza el procedimiento de [pruebas de tolerancia FDM](/blog/pruebas-tolerancia-fdm) para clasificar cada ajuste y registrar medidas.
+Parte de un intervalo razonable para tu máquina y diseña varias muestras alrededor de él. **Mantén constantes material, orientación, perfil y longitud de contacto**. En lugar de imprimir el conjunto completo, utiliza el procedimiento de [pruebas de tolerancia FDM](/blog/pruebas-tolerancia-fdm) para clasificar cada ajuste y registrar medidas.
 
 ### Proceso de decisión
 
@@ -57,13 +57,13 @@ Parte de un intervalo razonable para tu máquina y diseña varias muestras alred
 5. Imprime con condiciones finales y etiqueta muestras.
 6. Mide y clasifica el ajuste sin lijar.
 7. Aplica la opción elegida al conjunto.
-8. Valida la unión completa y repite si cambia el proceso.
+8. **Valida la unión completa y repite si cambia el proceso**.
 
 Cuando el montaje deba resistir carga, combina el ajuste con paredes, orientación y radios. La guía de [diseño resistente para FDM](/blog/disenar-pieza-resistente-fdm) ayuda a evitar que una unión dimensionalmente correcta falle por otra causa.
 
 ## 5. Documenta una biblioteca propia
 
-Guarda probeta, STL, perfil, material, fecha y observaciones. Registra si el encaje fue libre, ajustado, forzado o bloqueado, y anota cualquier posprocesado. Repite cuando cambies boquilla, material o un ajuste importante. Una biblioteca física es útil solo si puedes reconstruir las condiciones.
+Guarda probeta, STL, perfil, material, fecha y observaciones. Registra si el encaje fue libre, ajustado, forzado o bloqueado, y anota cualquier posprocesado. Repite cuando cambies boquilla, material o un ajuste importante. **Una biblioteca física es útil solo si puedes reconstruir las condiciones**.
 
 ## 6. Errores y límites
 

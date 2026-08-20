@@ -25,6 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/guias",
     "/sobre-mi",
     "/fuentes",
+    "/licencias-imagenes",
     "/contacto",
     "/politica-privacidad",
     "/politica-cookies",

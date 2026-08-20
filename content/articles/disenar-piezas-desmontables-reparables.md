@@ -11,7 +11,7 @@ author: "CAD Lab 3D"
 featured: false
 ---
 
-Un producto reparable permite acceder al componente que falla, sustituirlo y volver a montar sin destruir el conjunto. Esa capacidad no aparece al añadir tornillos al final: se decide en la arquitectura, las uniones, las tolerancias y la documentación. Para un proyecto académico, además, demuestra que has pensado en todo el ciclo de uso.
+Un producto reparable permite **acceder al componente que falla, sustituirlo y volver a montar** sin destruir el conjunto. Esa capacidad no aparece al añadir tornillos al final: se decide en la arquitectura, las uniones, las tolerancias y la documentación. Para un proyecto académico, además, demuestra que has pensado en todo el ciclo de uso.
 
 ## Define el escenario de mantenimiento
 
@@ -28,7 +28,7 @@ La secuencia ideal lleva primero a los elementos más atendidos. Si para cambiar
 
 ## Divide el producto en módulos claros
 
-Separa funciones cuando hacerlo simplifique sustitución y fabricación, pero evita convertir cada detalle en una pieza. Cada interfaz añade tolerancias, elementos de unión y riesgo de montaje incorrecto. Define superficies de referencia para que los módulos se posicionen sin depender solo del apriete.
+Separa funciones cuando hacerlo simplifique sustitución y fabricación, pero **evita convertir cada detalle en una pieza**. Cada interfaz añade tolerancias, elementos de unión y riesgo de montaje incorrecto. Define superficies de referencia para que los módulos se posicionen sin depender solo del apriete.
 
 Piensa también en la consecuencia del fallo. Una cubierta estética puede usar una solución ligera; una pieza estructural necesita una retención acorde a la carga. La guía para [revisar un diseño antes de fabricar](/blog/revision-diseno-antes-fabricar) ayuda a comprobar que la división no crea nuevos puntos débiles.
 
@@ -46,7 +46,7 @@ Un clip necesita recorrido de flexión y una forma de liberarlo; consulta [cómo
 
 ### Evita depender de una sola unión
 
-Combina funciones: usa tetones o rebordes para posicionar y tornillos para retener. Así el tornillo no tiene que absorber también todo el esfuerzo lateral. Añade elementos antirrotación cuando un componente pueda montarse en una orientación equivocada.
+**Combina funciones**: usa tetones o rebordes para posicionar y tornillos para retener. Así el tornillo no tiene que absorber también todo el esfuerzo lateral. Añade elementos antirrotación cuando un componente pueda montarse en una orientación equivocada.
 
 ## Diseña acceso, tolerancias y manipulación
 
@@ -77,7 +77,7 @@ Registra la revisión del CAD y la compatibilidad de cada recambio. Si cambias u
 
 Es habitual ocultar tornillos sin dejar acceso, usar varios tipos casi iguales de fijación o diseñar una tapa sin punto de agarre. También falla la reparabilidad cuando el recambio no puede fabricarse o identificarse, aunque el CAD permita desmontarlo.
 
-Desmontable no significa automáticamente seguro ni sostenible. Algunas envolventes necesitan sellado, aislamiento o control de manipulación; cualquier cambio debe respetar esos requisitos. El diseño debe equilibrar acceso, durabilidad, seguridad y recursos, y documentar cuándo una unión permanente está justificada.
+**Desmontable no significa automáticamente seguro ni sostenible**. Algunas envolventes necesitan sellado, aislamiento o control de manipulación; cualquier cambio debe respetar esos requisitos. El diseño debe equilibrar acceso, durabilidad, seguridad y recursos, y documentar cuándo una unión permanente está justificada.
 
 ## Conclusión
 

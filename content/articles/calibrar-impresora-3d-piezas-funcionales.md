@@ -15,7 +15,7 @@ Una impresora capaz de producir figuras limpias no está necesariamente preparad
 
 ## Revisión mecánica antes de tocar el laminador
 
-No compenses mediante software un problema físico. Con la máquina fría y siguiendo las instrucciones del fabricante, revisa que no haya holguras anómalas, correas sueltas, conectores dañados ni residuos en la boquilla o la superficie de impresión. Comprueba también que el portabobinas deja avanzar el filamento sin tirones.
+**No compenses mediante software un problema físico**. Con la máquina fría y siguiendo las instrucciones del fabricante, revisa que no haya holguras anómalas, correas sueltas, conectores dañados ni residuos en la boquilla o la superficie de impresión. Comprueba también que el portabobinas deja avanzar el filamento sin tirones.
 
 La cama debe estar estable y la boquilla en buen estado. Una boquilla parcialmente obstruida puede parecer un error de flujo; una rueda con holgura puede generar dimensiones variables que ningún factor de escala solucionará. Si acabas de cambiar un componente, registra el cambio para saber por qué el perfil anterior deja de funcionar.
 

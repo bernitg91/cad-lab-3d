@@ -23,19 +23,19 @@ El espesor resultante depende del número de líneas y de su ancho, no solo del 
 
 Una maqueta visual, una carcasa atornillada y un soporte cargado no deberían compartir el mismo perfil por defecto. Clasifica la pieza:
 
-- **visual:** prioriza superficie y tiempo, sin atribuirle resistencia no evaluada;
-- **carcasa:** revisa rigidez, tornillos, golpes y posible entrada de polvo o líquido;
-- **pieza funcional:** relaciona paredes con carga, orientación y uniones;
-- **pieza para postproceso:** deja material suficiente para lijar, roscar o mecanizar;
-- **elemento flexible:** controla longitud y sección; más paredes pueden cambiar demasiado la flexión.
+- visual: prioriza superficie y tiempo, sin atribuirle resistencia no evaluada;
+- carcasa: revisa rigidez, tornillos, golpes y posible entrada de polvo o líquido;
+- pieza funcional: relaciona paredes con carga, orientación y uniones;
+- pieza para postproceso: deja material suficiente para lijar, roscar o mecanizar;
+- elemento flexible: controla longitud y sección; más paredes pueden cambiar demasiado la flexión.
 
-En una pieza cargada, añadir perímetros suele reforzar el contorno y los agujeros de manera más directa que llenar todo el interior. Sin embargo, no existe un número universal. Compara dos, tres o cuatro perímetros como variantes y conserva material, orientación y geometría para interpretar el resultado.
+En una pieza cargada, añadir perímetros suele reforzar el contorno y los agujeros de manera más directa que llenar todo el interior. Sin embargo, **no existe un número universal**. Compara dos, tres o cuatro perímetros como variantes y conserva material, orientación y geometría para interpretar el resultado.
 
 La guía para [diseñar una pieza resistente](/blog/disenar-pieza-resistente-fdm) ayuda a situar esta decisión dentro del conjunto de carga, radios y material.
 
 ## Dimensionar tapas superiores e inferiores
 
-Las tapas inferiores crean la base y las superiores deben puentear los huecos del relleno. Si tienen poco espesor, pueden aparecer líneas hundidas, agujeros o el patrón interior marcado. Pensar en milímetros suele ser más transferible que copiar un número de capas: seis capas de 0,1 mm y seis de 0,3 mm no producen la misma tapa.
+Las tapas inferiores crean la base y las superiores deben puentear los huecos del relleno. Si tienen poco espesor, pueden aparecer líneas hundidas, agujeros o el patrón interior marcado. **Pensar en milímetros suele ser más transferible que copiar un número de capas**: seis capas de 0,1 mm y seis de 0,3 mm no producen la misma tapa.
 
 ### Tapas superiores
 
@@ -55,11 +55,11 @@ El relleno sostiene tapas, conecta paredes y puede ayudar frente a cargas intern
 
 1. **Define la función:** visual, carcasa, unión, flexión o carga estructural.
 2. **Revisa el CAD:** identifica paredes, nervios, agujeros y superficies superiores amplias.
-3. **Lamina una referencia:** anota ancho de línea, paredes, tapas, relleno, masa y tiempo.
-4. **Recorre las capas:** busca líneas intermitentes, huecos estrechos y zonas con una sola pared.
+3. Lamina una referencia: anota ancho de línea, paredes, tapas, relleno, masa y tiempo.
+4. Recorre las capas: busca líneas intermitentes, huecos estrechos y zonas con una sola pared.
 5. **Ajusta una variable:** compara primero perímetros; después espesor de tapas o relleno.
-6. **Imprime una muestra:** reproduce agujero, pared y techo más exigentes.
-7. **Evalúa:** observa acabado, masa, tiempo, deformación y lugar de fallo.
+6. Imprime una muestra: reproduce agujero, pared y techo más exigentes.
+7. Evalúa: observa acabado, masa, tiempo, deformación y lugar de fallo.
 8. **Guarda el perfil:** nómbralo según material, boquilla y propósito, no como «perfil bueno».
 
 Antes de fabricar la pieza definitiva, verifica escala y archivos con el [checklist de impresión 3D](/blog/checklist-mandar-pieza-imprimir-3d).

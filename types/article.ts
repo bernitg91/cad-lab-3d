@@ -40,3 +40,33 @@ export type ArticleVisual = {
   height: 900;
   credit: "Ilustración original CADLAB3D";
 };
+
+export type ArticlePhotoLicenseCode =
+  | "CC0 1.0"
+  | "PDM 1.0"
+  | "CC BY 2.0"
+  | "Contenido propio";
+
+export type ArticlePhoto = {
+  slug: string;
+  image: string;
+  alt: string;
+  caption: string;
+  width: number;
+  height: number;
+  sha256: string;
+  openverseId?: string;
+  title: string;
+  creator: string;
+  creatorUrl: string;
+  sourceName: string;
+  sourceUrl: string;
+  originalUrl: string;
+  licenseCode: ArticlePhotoLicenseCode;
+  licenseName: string;
+  licenseUrl: string;
+  licenseVerificationUrl: string;
+  licenseVerificationMethod: string;
+  changes: string;
+  verifiedAt: string;
+};

@@ -15,7 +15,7 @@ Una memoria técnica de diseño industrial no es un diario de todo lo que ocurri
 
 ## Antes del índice: define propósito y lector
 
-La misma solución puede documentarse de forma distinta para una asignatura, una revisión de equipo o una entrega a fabricación. Antes de escribir, responde:
+La misma solución puede documentarse de forma distinta para una asignatura, una revisión de equipo o una entrega a fabricación. **Antes de escribir, responde**:
 
 - ¿qué debe poder evaluar el lector?;
 - ¿qué requisitos o rúbrica condicionan la entrega?;
@@ -44,15 +44,15 @@ No todos los proyectos necesitan los mismos capítulos, pero esta secuencia suel
 
 ### Objetivos y requisitos verificables
 
-Evita objetivos como «hacer un producto innovador» si no explicas cómo reconocerás el resultado. Formula requisitos observables: caber en un volumen definido, permitir determinado montaje, mantener acceso a componentes o reducir piezas respecto a una referencia. Si un valor todavía no está decidido, identifícalo como pendiente en lugar de inventarlo.
+Evita objetivos como «hacer un producto innovador» si no explicas cómo reconocerás el resultado. **Formula requisitos observables**: caber en un volumen definido, permitir determinado montaje, mantener acceso a componentes o reducir piezas respecto a una referencia. Si un valor todavía no está decidido, identifícalo como pendiente en lugar de inventarlo.
 
 ### Desarrollo conceptual sin diario cronológico
 
-No hace falta mostrar todos los bocetos. Selecciona los que expliquen una bifurcación importante y ordena el relato por decisiones: arquitectura, mecanismo, material, unión y fabricación. La guía para [explicar decisiones de diseño](/blog/explicar-decisiones-diseno-memoria) ayuda a conectar cada descarte con un criterio.
+**No hace falta mostrar todos los bocetos**. Selecciona los que expliquen una bifurcación importante y ordena el relato por decisiones: arquitectura, mecanismo, material, unión y fabricación. La guía para [explicar decisiones de diseño](/blog/explicar-decisiones-diseno-memoria) ayuda a conectar cada descarte con un criterio.
 
 ## Integrar CAD, imágenes y evidencias
 
-Cada figura debe tener una función. Una captura CAD puede mostrar una sección o un cambio dimensional; un render comunica forma y acabado; una fotografía demuestra el estado del prototipo; un plano define geometría para fabricar. No uses los cuatro como decoración intercambiable.
+**Cada figura debe tener una función**. Una captura CAD puede mostrar una sección o un cambio dimensional; un render comunica forma y acabado; una fotografía demuestra el estado del prototipo; un plano define geometría para fabricar. No uses los cuatro como decoración intercambiable.
 
 Numera las figuras, añade un pie breve y menciónalas desde el texto. Si una imagen necesita una explicación larga para entenderse, quizá requiere anotaciones, una vista de detalle o una sección. Para mejorar la presentación sin ocultar información técnica, revisa [cómo crear renders limpios](/blog/renders-limpios-proyecto-universitario).
 
@@ -76,4 +76,4 @@ Para conservar material durante el proyecto y no reconstruirlo al final, aplica 
 
 Los problemas más comunes son redactar al final sin evidencias del proceso, repetir la misma información en varios capítulos, mezclar resultados con expectativas y concluir sin volver a los objetivos. También resta claridad incluir capturas de interfaz completas cuando solo importa una geometría o llenar anexos que nunca se citan.
 
-Una memoria no demuestra por sí sola que el producto está validado: solo comunica las comprobaciones realmente realizadas. Si no hubo ensayo de durabilidad, dilo y propónlo como trabajo futuro. **Reconocer una limitación concreta fortalece la trazabilidad**; presentar estimaciones como resultados la debilita. La extensión final debe depender de lo necesario para evaluar el proyecto, no de alcanzar páginas mediante relleno.
+**Una memoria no demuestra por sí sola que el producto está validado**: solo comunica las comprobaciones realmente realizadas. Si no hubo ensayo de durabilidad, dilo y propónlo como trabajo futuro. **Reconocer una limitación concreta fortalece la trazabilidad**; presentar estimaciones como resultados la debilita. La extensión final debe depender de lo necesario para evaluar el proyecto, no de alcanzar páginas mediante relleno.

@@ -37,7 +37,7 @@ La tabla no declara un ganador universal. Solo hace visibles las consecuencias q
 
 ### Cuándo usar puntuaciones
 
-Una matriz ponderada puede ayudar si defines pesos antes de conocer el resultado y explicas cómo puntúas. No uses decimales aparentando una precisión inexistente. Mantén separados los requisitos de cumplimiento obligatorio y realiza una pequeña revisión de sensibilidad: si cambiar ligeramente un peso altera el ganador, la conclusión es frágil y merece más evidencia.
+Una matriz ponderada puede ayudar si defines pesos antes de conocer el resultado y explicas cómo puntúas. **No uses decimales aparentando una precisión inexistente**. Mantén separados los requisitos de cumplimiento obligatorio y realiza una pequeña revisión de sensibilidad: si cambiar ligeramente un peso altera el ganador, la conclusión es frágil y merece más evidencia.
 
 ## Elegir evidencias adecuadas
 
@@ -54,7 +54,7 @@ Un prototipo visual puede validar volumen y percepción, pero no necesariamente 
 Puedes construir un párrafo técnico con cinco piezas:
 
 1. **Requisito:** qué debía conseguirse o evitarse.
-2. **Alternativas:** qué opciones razonables se consideraron.
+2. Alternativas: qué opciones razonables se consideraron.
 3. **Criterio:** qué factores permitieron compararlas y con qué prioridad.
 4. **Evidencia:** qué dato, prueba, referencia o restricción respalda la elección.
 5. **Límite:** qué no se ha comprobado y qué riesgo permanece.

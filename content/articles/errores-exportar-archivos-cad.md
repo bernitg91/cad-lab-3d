@@ -15,7 +15,7 @@ Exportar CAD parece una tarea administrativa, pero forma parte del control técn
 
 ## Elegir el formato según el uso
 
-No existe un archivo universal. Cada formato conserva información distinta y responde a una fase del proyecto.
+**No existe un archivo universal**. Cada formato conserva información distinta y responde a una fase del proyecto.
 
 | Entrega | Conserva principalmente | Uso habitual | Riesgo que revisar |
 | --- | --- | --- | --- |
@@ -29,13 +29,13 @@ Un STL no sustituye un STEP si otra persona debe modificar el sólido. Un STEP t
 
 ## Comprobar el modelo antes de exportar
 
-Exporta desde una revisión identificada, no desde la pestaña que casualmente quedó abierta. Actualiza operaciones, resuelve advertencias y confirma qué cuerpos deben salir. En un ensamblaje, revisa piezas ocultas, suprimidas, duplicadas y componentes de referencia. Si el receptor no necesita tornillería comercial o geometría interna sensible, acuerda el alcance antes de eliminarla.
+Exporta **desde una revisión identificada**, no desde la pestaña que casualmente quedó abierta. Actualiza operaciones, resuelve advertencias y confirma qué cuerpos deben salir. En un ensamblaje, revisa piezas ocultas, suprimidas, duplicadas y componentes de referencia. Si el receptor no necesita tornillería comercial o geometría interna sensible, acuerda el alcance antes de eliminarla.
 
 ### Unidades y origen
 
 STL describe coordenadas pero no siempre comunica las unidades de manera fiable entre programas. Si una pieza de 50 mm aparece como 50 pulgadas o 50 metros, el archivo puede seguir siendo geométricamente válido. Añade la unidad al mensaje o nombre de entrega y confirma la dimensión principal al reabrirlo.
 
-El origen y la orientación también importan en ensamblajes, utillajes y archivos que se importarán automáticamente. Mover una pieza «para que se vea centrada» puede romper la referencia que espera otra persona.
+El origen y la orientación también importan en ensamblajes, utillajes y archivos que se importarán automáticamente. **Mover una pieza «para que se vea centrada» puede romper la referencia** que espera otra persona.
 
 ### Resolución y geometría
 
@@ -45,7 +45,7 @@ En mallas, una tolerancia de exportación demasiado gruesa crea curvas facetadas
 
 Nombres como `final_final_2.step` no explican qué cambió ni cuál debe fabricarse. Un patrón sencillo puede incluir proyecto, pieza, revisión y estado: `soporte_motor_R03_APROBACION.step`. La fecha puede ayudar en intercambios puntuales, pero **la revisión debe seguir siendo la referencia principal** si el proyecto usa control de cambios.
 
-No sobrescribas silenciosamente una entrega ya enviada. Si corriges una cota, aumenta la revisión y acompaña el archivo con una nota breve: qué cambia, qué archivos sustituye y si afecta a fabricación. Mantén coherencia entre STEP, STL y PDF; dos formatos con el mismo nombre base pero geometrías distintas son una fuente frecuente de errores.
+**No sobrescribas silenciosamente una entrega ya enviada**. Si corriges una cota, aumenta la revisión y acompaña el archivo con una nota breve: qué cambia, qué archivos sustituye y si afecta a fabricación. Mantén coherencia entre STEP, STL y PDF; dos formatos con el mismo nombre base pero geometrías distintas son una fuente frecuente de errores.
 
 ## Proceso de exportación y verificación
 

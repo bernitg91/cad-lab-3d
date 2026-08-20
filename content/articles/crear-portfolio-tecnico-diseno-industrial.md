@@ -11,7 +11,7 @@ author: "CAD Lab 3D"
 featured: false
 ---
 
-Un portfolio técnico de diseño industrial debe demostrar cómo conviertes un problema en una solución fabricable. Los renders atraen la mirada, pero las decisiones, los prototipos y la claridad con la que explicas tu papel generan confianza. La estructura siguiente funciona como punto de partida para estudiantes y perfiles junior.
+Un portfolio técnico de diseño industrial debe demostrar **cómo conviertes un problema en una solución fabricable**. Los renders atraen la mirada, pero las decisiones, los prototipos y la claridad con la que explicas tu papel generan confianza. La estructura siguiente funciona como punto de partida para estudiantes y perfiles junior.
 
 ## Decide qué perfil quieres comunicar
 

@@ -21,7 +21,7 @@ Si el proyecto incluye investigación, CAD, prototipo y planos, no dejes que los
 
 ## 2. Prepara el modelo para primeros planos
 
-Revisa continuidad visual, radios, separaciones, espesores e interferencias. Un detalle de alta resolución hace más visibles las decisiones descuidadas. Oculta geometría auxiliar y corrige componentes flotantes, pero no añadas funciones inexistentes solo para mejorar la imagen.
+Revisa continuidad visual, radios, separaciones, espesores e interferencias. Un detalle de alta resolución hace más visibles las decisiones descuidadas. Oculta geometría auxiliar y corrige componentes flotantes, pero **no añadas funciones inexistentes solo para mejorar la imagen**.
 
 Nombra piezas y guarda una revisión específica para render. Si el CAD sigue cambiando, registra qué versión aparece en el portfolio para no mezclarla con planos o fotografías posteriores.
 

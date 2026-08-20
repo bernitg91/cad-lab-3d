@@ -15,7 +15,7 @@ STEP es un formato habitual para intercambiar sólidos y superficies entre progr
 
 ## Acordar qué necesita el receptor
 
-Pregunta primero para qué se utilizará el archivo: visualizar, comprobar interferencias, modificar una pieza, preparar mecanizado o integrar un ensamblaje. Esa respuesta define el alcance y los documentos que deben acompañarlo.
+**Pregunta primero para qué se utilizará el archivo**: visualizar, comprobar interferencias, modificar una pieza, preparar mecanizado o integrar un ensamblaje. Esa respuesta define el alcance y los documentos que deben acompañarlo.
 
 - Para editar cotas e historial puede ser necesario el archivo nativo.
 - Para imprimir, quizá sea preferible un STL o 3MF ya verificado.
@@ -30,13 +30,13 @@ Abre la revisión autorizada y regenera el modelo. Resuelve operaciones fallidas
 
 ### Limpiar sin eliminar información necesaria
 
-Retira versiones antiguas, geometría de construcción y piezas que el receptor no necesita. Simplificar tornillería comercial o pequeños detalles puede reducir peso, pero acuerda el nivel de detalle si esas zonas sirven para comprobar interferencias. No borres interfaces, superficies de referencia ni tolerancias funcionales por hacer el archivo más ligero.
+Retira versiones antiguas, geometría de construcción y piezas que el receptor no necesita. Simplificar tornillería comercial o pequeños detalles puede reducir peso, pero acuerda el nivel de detalle si esas zonas sirven para comprobar interferencias. **No borres interfaces, superficies de referencia ni tolerancias funcionales** por hacer el archivo más ligero.
 
 Si la geometría importada se editará después, la diferencia entre [modelado paramétrico y directo](/blog/modelado-parametrico-vs-directo) ayuda a explicar qué podrá modificarse sin el árbol original.
 
 ### Unidades y coordenadas
 
-Confirma la unidad del documento y una dimensión conocida. Mantén el origen y los ejes acordados cuando la pieza se integrará en otro ensamblaje, utillaje o flujo automatizado. Centrar o girar el sólido para presentarlo puede destruir una referencia útil aunque la geometría siga siendo correcta.
+**Confirma la unidad del documento y una dimensión conocida**. Mantén el origen y los ejes acordados cuando la pieza se integrará en otro ensamblaje, utillaje o flujo automatizado. Centrar o girar el sólido para presentarlo puede destruir una referencia útil aunque la geometría siga siendo correcta.
 
 ## Exportar con un alcance claro
 
@@ -46,7 +46,7 @@ Usa un nombre como `proyecto_pieza_R04_REVISION.step`: proyecto, componente, rev
 
 ## Verificar el STEP fuera del original
 
-La comprobación esencial consiste en abrir el archivo exportado en un visor o CAD independiente. No basta con volver a mirar el modelo fuente.
+La comprobación esencial consiste en abrir el archivo exportado en un visor o CAD independiente. **No basta con volver a mirar el modelo fuente**.
 
 1. Cuenta los cuerpos o componentes esperados.
 2. Mide una dimensión general y una interfaz crítica.
@@ -61,9 +61,9 @@ La [revisión de diseño antes de fabricar](/blog/revision-diseno-antes-fabricar
 
 ## Preparar el paquete de entrega
 
-Un STEP comunica geometría, pero no siempre material, tolerancias, acabado o motivo del cambio. Acompáñalo con una nota breve que incluya revisión, unidad, propósito, componentes incluidos y limitaciones conocidas. Si va a fabricación, referencia los [planos técnicos](/blog/preparar-planos-tecnicos-modelo-cad) vigentes. Si también habrá impresión 3D, prepara por separado el [archivo STL](/blog/preparar-archivo-stl-impresion-3d) y comprueba que ambos representan la misma geometría.
+**Un STEP comunica geometría, pero no siempre material, tolerancias, acabado o motivo del cambio**. Acompáñalo con una nota breve que incluya revisión, unidad, propósito, componentes incluidos y limitaciones conocidas. Si va a fabricación, referencia los [planos técnicos](/blog/preparar-planos-tecnicos-modelo-cad) vigentes. Si también habrá impresión 3D, prepara por separado el [archivo STL](/blog/preparar-archivo-stl-impresion-3d) y comprueba que ambos representan la misma geometría.
 
-No compartas más información de la necesaria. Un archivo de intercambio puede revelar geometría interna o componentes que no forman parte del trabajo. Sigue las reglas del proyecto sobre confidencialidad y permisos antes de enviar datos a servicios externos.
+**No compartas más información de la necesaria**. Un archivo de intercambio puede revelar geometría interna o componentes que no forman parte del trabajo. Sigue las reglas del proyecto sobre confidencialidad y permisos antes de enviar datos a servicios externos.
 
 ## Checklist final
 

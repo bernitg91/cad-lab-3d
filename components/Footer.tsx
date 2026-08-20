@@ -21,6 +21,7 @@ const projectLinks = [
   ["Sobre CAD Lab 3D", "/sobre-mi"],
   ["Metodología editorial", "/metodologia"],
   ["Fuentes técnicas", "/fuentes"],
+  ["Licencias de imágenes", "/licencias-imagenes"],
   ["Servicios", "/servicios"],
   ["Contacto", "/contacto"]
 ];

@@ -19,7 +19,7 @@ Guarda la revisión original y registra material, volumen CAD, masa estimada, or
 
 El volumen del CAD permite comparar geometrías, pero la masa requiere una densidad correcta. En FDM, el laminador también considera relleno, perímetros y soportes. Utiliza la guía de [peso aproximado de una pieza 3D](/blog/calcular-peso-aproximado-pieza-3d) y mantén el mismo método al comparar versiones.
 
-No optimices una cota aislada si todavía no sabes cómo trabaja el componente. Dibuja apoyos, cargas y zonas de contacto. El material cercano a una fijación, una esquina cargada o un cambio de sección puede ser más importante que un volumen central grande.
+**No optimices una cota aislada si todavía no sabes cómo trabaja el componente**. Dibuja apoyos, cargas y zonas de contacto. El material cercano a una fijación, una esquina cargada o un cambio de sección puede ser más importante que un volumen central grande.
 
 ## Estrategias geométricas para usar mejor el material
 
@@ -43,7 +43,7 @@ Compara en el laminador volumen de pieza, material de soporte y tiempo total. Un
 
 ## Validar que la función se conserva
 
-Una simulación puede localizar zonas de interés, pero solo si materiales, cargas, contactos y malla representan el problema. No elimines material basándote únicamente en un mapa de colores. Empieza simplificando y documentando el modelo con la guía de [análisis FEM básico](/blog/documentar-analisis-fem-basico), y contrasta los resultados con una prueba física adecuada cuando la consecuencia lo justifique.
+Una simulación puede localizar zonas de interés, pero solo si materiales, cargas, contactos y malla representan el problema. **No elimines material basándote únicamente en un mapa de colores**. Empieza simplificando y documentando el modelo con la guía de [análisis FEM básico](/blog/documentar-analisis-fem-basico), y contrasta los resultados con una prueba física adecuada cuando la consecuencia lo justifique.
 
 En proyectos *maker*, una comparación controlada puede ser suficiente para aprender: fabrica la zona crítica de ambas versiones con el mismo material, orientación y perfil; aplica la misma carga; observa deformación y lugar de fallo. No lo presentes como ensayo normalizado si no lo es.
 
@@ -51,12 +51,12 @@ En proyectos *maker*, una comparación controlada puede ser suficiente para apre
 
 1. **Congela la referencia:** guarda masa, tiempo, coste y requisitos actuales.
 2. **Traza las cargas:** identifica apoyos, uniones y recorridos principales de fuerza.
-3. **Clasifica el material:** separa zonas críticas, secundarias y puramente estéticas.
-4. **Crea una sola variante:** aplica vaciado, nervio o reducción localizada, no todo a la vez.
+3. Clasifica el material: separa zonas críticas, secundarias y puramente estéticas.
+4. Crea una sola variante: aplica vaciado, nervio o reducción localizada, no todo a la vez.
 5. **Comprueba fabricabilidad:** revisa espesores, puentes, soportes y acceso de herramientas.
-6. **Compara métricas:** usa el mismo material, orientación y configuración.
+6. Compara métricas: usa el mismo material, orientación y configuración.
 7. **Ensaya la función:** registra deformación, encaje y modo de fallo.
-8. **Itera con evidencia:** conserva el cambio solo si mejora el conjunto de objetivos.
+8. Itera con evidencia: conserva el cambio solo si mejora el conjunto de objetivos.
 9. **Documenta la revisión:** explica qué se quitó, cuánto cambia y qué límite permanece.
 
 ## Errores frecuentes y límites

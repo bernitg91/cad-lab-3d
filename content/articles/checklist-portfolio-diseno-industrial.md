@@ -11,11 +11,11 @@ author: "CAD Lab 3D"
 featured: false
 ---
 
-Antes de enviar un portfolio, revísalo como lo haría alguien que dispone de pocos minutos: primero busca una idea clara de tu perfil y después decide si merece la pena profundizar. La checklist no pretende uniformar todos los portfolios, sino eliminar fricción y asegurar que cada proyecto demuestra una capacidad concreta.
+Antes de enviar un portfolio, revísalo como lo haría alguien que dispone de pocos minutos: primero busca **una idea clara de tu perfil** y después decide si merece la pena profundizar. La checklist no pretende uniformar todos los portfolios, sino eliminar fricción y asegurar que cada proyecto demuestra una capacidad concreta.
 
 ## 1. Define destinatario y objetivo
 
-Un portfolio para prácticas de CAD no debería priorizar lo mismo que uno dirigido a diseño de producto, visualización o fabricación. Escribe en una frase qué oportunidad buscas y qué tres capacidades deben quedar visibles. Esa frase no tiene que aparecer literalmente en el PDF, pero debe guiar la selección.
+Un portfolio para prácticas de CAD no debería priorizar lo mismo que uno dirigido a diseño de producto, visualización o fabricación. Escribe en una frase **qué oportunidad buscas y qué tres capacidades deben quedar visibles**. Esa frase no tiene que aparecer literalmente en el PDF, pero debe guiar la selección.
 
 - [ ] El perfil objetivo se entiende en portada o introducción.
 - [ ] Los primeros proyectos son relevantes para ese perfil.
@@ -27,7 +27,7 @@ Si aún estás definiendo la estructura, empieza por [cómo crear un portfolio t
 
 ## 2. Comprueba la historia de cada proyecto
 
-Cada caso necesita contexto, tu papel, restricciones, decisiones y resultado. En un trabajo de equipo, indica con precisión qué parte realizaste. No presentes una solución como éxito absoluto si no llegó a validarse: explica el alcance y el siguiente paso.
+Cada caso necesita **contexto, tu papel, restricciones, decisiones y resultado**. En un trabajo de equipo, indica con precisión qué parte realizaste. No presentes una solución como éxito absoluto si no llegó a validarse: explica el alcance y el siguiente paso.
 
 ### Prueba de lectura en 30 segundos
 
@@ -42,7 +42,7 @@ Si no puedes contestar sin leer varios párrafos, mejora títulos, pies de foto 
 
 ## 3. Revisa la evidencia técnica
 
-Un portfolio técnico no es una colección de interfaces del software. Incluye solo capturas que expliquen intención de diseño, montaje o fabricación. Una sección CAD puede combinar una vista limpia, un detalle de unión, un despiece y, si aporta valor, un plano parcial.
+**Un portfolio técnico no es una colección de interfaces del software**. Incluye solo capturas que expliquen intención de diseño, montaje o fabricación. Una sección CAD puede combinar una vista limpia, un detalle de unión, un despiece y, si aporta valor, un plano parcial.
 
 - [ ] Las cotas o especificaciones visibles son legibles y coherentes.
 - [ ] Se muestran prototipos, pruebas o iteraciones cuando existen.
@@ -54,9 +54,9 @@ Para seleccionar imágenes, consulta [renders técnicos para portfolio](/blog/re
 
 ## 4. Evalúa diseño editorial y legibilidad
 
-Mantén una cuadrícula, márgenes y estilos tipográficos consistentes. El texto debe poder leerse al tamaño de visualización real, no solo ampliando el archivo. Comprueba contraste, alineación, calidad de imagen y espacio en blanco. La consistencia suele comunicar más profesionalidad que una decoración distinta en cada proyecto.
+Mantén **una cuadrícula, márgenes y estilos tipográficos consistentes**. El texto debe poder leerse al tamaño de visualización real, no solo ampliando el archivo. Comprueba contraste, alineación, calidad de imagen y espacio en blanco. La consistencia suele comunicar más profesionalidad que una decoración distinta en cada proyecto.
 
-Haz dos recorridos: uno en pantalla de portátil y otro en móvil si enviarás un enlace. Exporta también una copia PDF y revisa que fuentes, transparencias y enlaces sobreviven. Comprime imágenes con criterio; un archivo enorme puede no llegar por correo, pero una compresión agresiva destruye planos y detalles.
+Haz **dos recorridos: uno en pantalla de portátil y otro en móvil** si enviarás un enlace. Exporta también una copia PDF y revisa que fuentes, transparencias y enlaces sobreviven. Comprime imágenes con criterio; un archivo enorme puede no llegar por correo, pero una compresión agresiva destruye planos y detalles.
 
 ### Jerarquía mínima por caso
 
@@ -76,7 +76,7 @@ Prepara además una explicación oral breve con [cómo presentar un proyecto CAD
 
 ## Errores frecuentes y límites
 
-Los problemas más comunes son incluir demasiados proyectos débiles, mostrar solo renders finales, ocultar la contribución individual y usar textos genéricos como “solución innovadora” sin evidencia. También resta credibilidad presentar resultados académicos como productos validados comercialmente.
+Los problemas más comunes son **incluir demasiados proyectos débiles**, mostrar solo renders finales, ocultar la contribución individual y usar textos genéricos como “solución innovadora” sin evidencia. También resta credibilidad presentar resultados académicos como productos validados comercialmente.
 
 No existe un número universal de páginas ni proyectos. La decisión depende del canal, del puesto y de la profundidad de cada caso. Elimina una pieza si no aporta una capacidad nueva; amplía otra si necesita contexto para entenderse. **Calidad, relevancia y lectura rápida** son criterios más útiles que alcanzar una longitud arbitraria.
 

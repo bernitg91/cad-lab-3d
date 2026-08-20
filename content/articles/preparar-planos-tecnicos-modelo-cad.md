@@ -15,7 +15,7 @@ Un plano técnico generado desde CAD no es una captura decorada con cotas. Es el
 
 ## 1. Decide para qué servirá el plano
 
-Antes de crear vistas, define el destinatario. Un plano para evaluar una asignatura puede necesitar explicar decisiones y construcción geométrica. Un plano de fabricación debe priorizar dimensiones funcionales, material, tolerancias y acabado. Un plano de conjunto debe aclarar posición, cantidad y relación entre componentes.
+Antes de crear vistas, **define el destinatario**. Un plano para evaluar una asignatura puede necesitar explicar decisiones y construcción geométrica. Un plano de fabricación debe priorizar dimensiones funcionales, material, tolerancias y acabado. Un plano de conjunto debe aclarar posición, cantidad y relación entre componentes.
 
 Esta decisión evita dos extremos: dibujar todo lo que permite el programa o reducir el plano a una imagen que solo entiende quien creó el modelo. Si el documento formará parte de una memoria, coordina su contenido con la guía para [preparar un informe técnico universitario](/blog/preparar-informe-tecnico-universitario).
 
@@ -27,17 +27,17 @@ Selecciona como principal la vista que mejor describa la forma y el uso de la pi
 
 Utiliza una sección para mostrar espesores, cavidades o alojamientos internos. Un detalle ampliado funciona mejor que saturar la vista general con notas pequeñas. Indica con claridad el plano de corte y la escala del detalle. En ensamblajes, una vista explosionada puede explicar el orden de montaje, mientras una sección del conjunto muestra contactos y posiciones finales.
 
-El objetivo no es alcanzar un número fijo de vistas. Haz una prueba sencilla: oculta el modelo 3D y pregunta si las vistas permiten reconstruir las zonas importantes sin suposiciones.
+El objetivo no es alcanzar un número fijo de vistas. **Haz una prueba sencilla: oculta el modelo 3D** y pregunta si las vistas permiten reconstruir las zonas importantes sin suposiciones.
 
 ## 3. Acota desde la función, no desde el historial CAD
 
-Prioriza dimensiones generales, interfaces, posiciones de agujeros, espesores críticos y distancias necesarias para inspeccionar la pieza. Evita cotas duplicadas o contradictorias y cadenas innecesarias que acumulen variaciones. La referencia de una posición debe relacionarse con superficies estables y útiles para fabricar o medir.
+Prioriza dimensiones generales, interfaces, posiciones de agujeros, espesores críticos y distancias necesarias para inspeccionar la pieza. **Evita cotas duplicadas o contradictorias** y cadenas innecesarias que acumulen variaciones. La referencia de una posición debe relacionarse con superficies estables y útiles para fabricar o medir.
 
 Las tolerancias no deben añadirse como decoración. Define una tolerancia cuando el funcionamiento dependa de ella y puedas justificarla según proceso y verificación. Para piezas FDM, las holguras del modelo deben validarse físicamente; la guía de [tolerancias en piezas impresas](/blog/tolerancias-piezas-impresas-3d) explica por qué una cota nominal no garantiza el encaje.
 
 ### Dimensiones que dependen del modelo
 
-Siempre que sea posible, usa cotas asociativas al CAD para que se actualicen con la geometría. Después de modificar el modelo, revisa el plano completo: una cota actualizada puede quedar fuera de posición, una sección puede perder referencia y una vista puede cambiar de escala. La automatización reduce errores, pero no sustituye la revisión.
+Siempre que sea posible, usa cotas asociativas al CAD para que se actualicen con la geometría. Después de modificar el modelo, revisa el plano completo: una cota actualizada puede quedar fuera de posición, una sección puede perder referencia y una vista puede cambiar de escala. **La automatización reduce errores, pero no sustituye la revisión**.
 
 ## 4. Completa cajetín, notas y control de revisión
 
@@ -49,7 +49,7 @@ Cuando compartas geometría además del PDF, sigue un proceso controlado para [p
 
 ## 5. Exporta y comprueba el PDF final
 
-No des por terminado el trabajo en la vista de dibujo del CAD. Exporta el PDF y revísalo al tamaño de salida. Comprueba grosores de línea, contraste, caracteres especiales, marcos y márgenes. Si el plano va a imprimirse, realiza una prueba o visualízalo al 100 %: una cota que solo se lee con un zoom elevado no funcionará en una hoja real.
+No des por terminado el trabajo en la vista de dibujo del CAD. **Exporta el PDF y revísalo al tamaño de salida**. Comprueba grosores de línea, contraste, caracteres especiales, marcos y márgenes. Si el plano va a imprimirse, realiza una prueba o visualízalo al 100 %: una cota que solo se lee con un zoom elevado no funcionará en una hoja real.
 
 ### Checklist práctico
 

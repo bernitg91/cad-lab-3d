@@ -11,13 +11,13 @@ author: "CAD Lab 3D"
 featured: false
 ---
 
-El mejor filamento para una pieza funcional no es el más resistente en una tabla, sino el que cumple el entorno real y tu impresora puede procesar de forma repetible. La selección debe comenzar por requisitos y terminar con una muestra, no por el color o una recomendación genérica.
+El mejor filamento para una pieza funcional **no es el más resistente en una tabla**, sino el que cumple el entorno real y tu impresora puede procesar de forma repetible. La selección debe comenzar por requisitos y terminar con una muestra, no por el color o una recomendación genérica.
 
 ## Traduce el uso en requisitos
 
 Describe la pieza antes de comparar materiales. Pregunta qué carga recibe, cuánto tiempo dura, si flexa, roza, cae o permanece apretada. Añade temperatura, humedad, radiación solar, sustancias de contacto y acabado necesario.
 
-Clasifica cada criterio como imprescindible, deseable o irrelevante. Esto evita elegir un material difícil por una propiedad que el proyecto no necesita. Para una carcasa de escritorio quizá importen rigidez y acabado; para una guía móvil pesan más desgaste y estabilidad dimensional.
+Clasifica cada criterio como **imprescindible, deseable o irrelevante**. Esto evita elegir un material difícil por una propiedad que el proyecto no necesita. Para una carcasa de escritorio quizá importen rigidez y acabado; para una guía móvil pesan más desgaste y estabilidad dimensional.
 
 ### Preguntas mínimas
 
@@ -38,13 +38,13 @@ La [comparativa entre PLA, PETG, ABS y Nylon](/blog/diferencias-pla-petg-abs-nyl
 
 ## Comprueba que puedes imprimirlo bien
 
-Un material avanzado no aporta nada si tu equipo no alcanza sus condiciones de trabajo de forma segura y estable. Revisa temperatura admisible de hotend y cama, tipo de superficie, necesidad de recinto, ventilación, abrasión de la boquilla y método de secado. Sigue siempre la documentación del fabricante.
+**Un material avanzado no aporta nada** si tu equipo no alcanza sus condiciones de trabajo de forma segura y estable. Revisa temperatura admisible de hotend y cama, tipo de superficie, necesidad de recinto, ventilación, abrasión de la boquilla y método de secado. Sigue siempre la documentación del fabricante.
 
-También cuenta la repetibilidad. Si una pieza de Nylon sale bien una vez pero la bobina absorbe humedad antes del segundo lote, el proceso no está controlado. Registra apertura, almacenamiento, secado y perfil. Antes de fabricar un conjunto, aplica [calibración para piezas funcionales](/blog/calibrar-impresora-3d-piezas-funcionales).
+También cuenta **la repetibilidad**. Si una pieza de Nylon sale bien una vez pero la bobina absorbe humedad antes del segundo lote, el proceso no está controlado. Registra apertura, almacenamiento, secado y perfil. Antes de fabricar un conjunto, aplica [calibración para piezas funcionales](/blog/calibrar-impresora-3d-piezas-funcionales).
 
 ## Diseña material, geometría y orientación juntos
 
-No esperes que el filamento compense una esquina viva, pocas paredes o capas mal orientadas. Un PLA bien orientado puede superar en una dirección a un material más tenaz con delaminación. La pieza impresa es anisótropa y su comportamiento no coincide automáticamente con una probeta de ficha.
+**No esperes que el filamento compense** una esquina viva, pocas paredes o capas mal orientadas. Un PLA bien orientado puede superar en una dirección a un material más tenaz con delaminación. La pieza impresa es anisótropa y su comportamiento no coincide automáticamente con una probeta de ficha.
 
 Revisa [cómo diseñar una pieza resistente para FDM](/blog/disenar-pieza-resistente-fdm) antes de comparar bobinas. Mantén constantes geometría, orientación, perímetros y criterio de prueba; de lo contrario no sabrás qué variable produjo el cambio.
 
@@ -55,7 +55,7 @@ Revisa [cómo diseñar una pieza resistente para FDM](/blog/disenar-pieza-resist
 - Una guía sometida a roce puede llevar a evaluar Nylon si puedes mantenerlo seco.
 - Una carcasa cerca de calor puede descartar PLA, pero exige conocer la temperatura y validar la alternativa.
 
-Son hipótesis iniciales. Carga, formulación y proceso pueden cambiar la decisión.
+**Son hipótesis iniciales**. Carga, formulación y proceso pueden cambiar la decisión.
 
 ## Proceso de prueba antes de comprar más
 
@@ -84,7 +84,7 @@ Si el proyecto aún está en fase de aprendizaje, [materiales para prototipos fu
 
 Evita elegir solo por resistencia a tracción, confundir rigidez con tenacidad, imprimir Nylon húmedo o comparar piezas con orientaciones distintas. Tampoco uses PLA cerca de calor sin medir el entorno ni adoptes ABS sin las condiciones de proceso y ventilación indicadas.
 
-Una prueba doméstica no certifica comportamiento a largo plazo, contacto alimentario, fuego, químicos o seguridad. Para aplicaciones críticas hacen falta especificaciones y ensayos acordes al riesgo. Esta guía sirve para estructurar la selección, no para declarar universalmente apta una pieza.
+**Una prueba doméstica no certifica** comportamiento a largo plazo, contacto alimentario, fuego, químicos o seguridad. Para aplicaciones críticas hacen falta especificaciones y ensayos acordes al riesgo. Esta guía sirve para estructurar la selección, no para declarar universalmente apta una pieza.
 
 ## Conclusión
 

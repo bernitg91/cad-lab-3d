@@ -21,7 +21,7 @@ Una pestaña que flexa como si separara páginas puede fallar en la unión de ca
 
 ### Cargas múltiples
 
-No todas las piezas tienen una dirección dominante. Una maneta recibe flexión y torsión; una carcasa atornillada combina apriete, golpes y deformación. Cuando no puedas favorecer todas las cargas, prioriza la condición más crítica, aumenta sección local o divide el componente para fabricar cada parte en una orientación adecuada.
+No todas las piezas tienen una dirección dominante. Una maneta recibe flexión y torsión; una carcasa atornillada combina apriete, golpes y deformación. Cuando no puedas favorecer todas las cargas, **prioriza la condición más crítica**, aumenta sección local o divide el componente para fabricar cada parte en una orientación adecuada.
 
 ## Comparar orientación, soporte y acabado
 
@@ -46,20 +46,20 @@ En clips y ganchos, observa tanto la dirección de las capas como el radio en la
 
 ## Cuándo rediseñar o dividir la pieza
 
-Si ninguna orientación evita un fallo importante, el problema ya no pertenece solo al laminador. Puedes añadir un nervio, girar la dirección de una pestaña, sustituir un agujero por una geometría autoportante o separar el componente. Una unión mecánica permite imprimir cada parte de forma favorable, pero añade holguras, piezas y montaje que también deben validarse.
+**Si ninguna orientación evita un fallo importante, el problema ya no pertenece solo al laminador**. Puedes añadir un nervio, girar la dirección de una pestaña, sustituir un agujero por una geometría autoportante o separar el componente. Una unión mecánica permite imprimir cada parte de forma favorable, pero añade holguras, piezas y montaje que también deben validarse.
 
 No dividas únicamente para eliminar soportes. Comprueba que la unión transmite la carga, que puede montarse y que no crea una nueva zona frágil. En componentes visuales, decide además dónde ocultar la junta y cómo afectará al postproceso.
 
 ## Proceso práctico en el laminador
 
 1. **Marca la carga:** anota apoyos, dirección principal y zona de fallo probable.
-2. **Crea tres candidatos:** no te quedes con la orientación automática.
+2. Crea tres candidatos: no te quedes con la orientación automática.
 3. **Revisa capas:** confirma cómo cruzan la unión crítica, clip o brazo.
-4. **Inspecciona soportes:** evita contacto con encajes, roscas y caras de referencia.
-5. **Mira por tipos de línea:** comprueba perímetros continuos, puentes y cambios bruscos.
-6. **Compara material y tiempo:** incluye soportes, no solo el cuerpo de la pieza.
+4. Inspecciona soportes: evita contacto con encajes, roscas y caras de referencia.
+5. Mira por tipos de línea: comprueba perímetros continuos, puentes y cambios bruscos.
+6. Compara material y tiempo: incluye soportes, no solo el cuerpo de la pieza.
 7. **Imprime una sección crítica:** conserva material, paredes y altura de capa.
-8. **Aplica la misma prueba:** registra deformación, lugar de rotura y precisión.
+8. Aplica la misma prueba: registra deformación, lugar de rotura y precisión.
 9. **Elige y documenta:** guarda captura de orientación y parámetros junto al resultado.
 
 El [relleno según tipo de pieza](/blog/relleno-impresion-3d-segun-pieza) puede afinar el perfil después de decidir orientación y paredes.

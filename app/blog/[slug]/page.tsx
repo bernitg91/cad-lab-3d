@@ -4,6 +4,7 @@ import { notFound, permanentRedirect } from "next/navigation";
 import { AdSlot } from "@/components/AdSlot";
 import { ArticleCard } from "@/components/ArticleCard";
 import { ArticleFigure } from "@/components/ArticleFigure";
+import { ArticlePhoto } from "@/components/ArticlePhoto";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CopyLinkButton } from "@/components/CopyLinkButton";
 import { ExploreMore } from "@/components/Newsletter";
@@ -11,6 +12,7 @@ import { RecommendedResources } from "@/components/RecommendedResources";
 import { TableOfContents } from "@/components/TableOfContents";
 import { formatDate, getAllArticles, getArchivedArticleRedirect, getArticleBySlug, getRelatedArticles } from "@/lib/articles";
 import { getArticleSupport } from "@/lib/article-support";
+import { getArticlePhoto } from "@/lib/article-photos";
 import { getArticleVisuals } from "@/lib/article-visuals";
 import { MarkdownContent } from "@/lib/markdown";
 import { absoluteUrl, siteConfig } from "@/lib/site";
@@ -35,7 +37,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
   if (!article) return {};
-  const visuals = getArticleVisuals(article);
+  const photo = getArticlePhoto(article.slug);
 
   return createPageMetadata({
     title: article.title,
@@ -44,8 +46,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     type: "article",
     publishedTime: article.date,
     authors: [article.author],
-    image: visuals[0].image,
-    imageAlt: visuals[0].alt
+    image: photo.image,
+    imageAlt: photo.alt
   });
 }
 
@@ -58,15 +60,21 @@ export default async function ArticlePage({ params }: PageProps) {
 
   const relatedArticles = getRelatedArticles(article);
   const support = getArticleSupport(article.slug);
+  const photo = getArticlePhoto(article.slug);
   const visuals = getArticleVisuals(article);
   const contentSections = article.content.split(/(?=^##\s)/m);
   const introduction = contentSections[0] ?? "";
   const bodySections = contentSections.slice(1);
-  const firstBoundary = Math.max(1, Math.floor(bodySections.length / 3));
-  const secondBoundary = Math.max(firstBoundary + 1, Math.floor((bodySections.length * 2) / 3));
+  const firstBoundary = Math.max(1, Math.ceil(bodySections.length / 4));
+  const secondBoundary = Math.max(firstBoundary + 1, Math.ceil(bodySections.length / 2));
+  const thirdBoundary = Math.max(secondBoundary + 1, Math.ceil((bodySections.length * 3) / 4));
   const firstContent = [introduction, ...bodySections.slice(0, firstBoundary)].join("").trim();
   const secondContent = bodySections.slice(firstBoundary, secondBoundary).join("").trim();
-  const thirdContent = bodySections.slice(secondBoundary).join("").trim();
+  const thirdContent = bodySections.slice(secondBoundary, thirdBoundary).join("").trim();
+  const fourthContent = bodySections.slice(thirdBoundary).join("").trim();
+  const photoCreatorType = photo.licenseCode === "Contenido propio" || photo.creator === "USDAgov" || photo.sourceName === "NASA"
+    ? "Organization"
+    : "Person";
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -87,13 +95,31 @@ export default async function ArticlePage({ params }: PageProps) {
       logo: absoluteUrl("/brand/cadlab3d-mark.png")
     },
     articleSection: article.category,
-    image: visuals.map((visual) => ({
-      "@type": "ImageObject",
-      url: absoluteUrl(visual.image),
-      width: visual.width,
-      height: visual.height,
-      caption: visual.caption
-    })),
+    image: [
+      {
+        "@type": "ImageObject",
+        url: absoluteUrl(photo.image),
+        contentUrl: absoluteUrl(photo.image),
+        width: photo.width,
+        height: photo.height,
+        caption: photo.caption,
+        creditText: `${photo.title} — ${photo.creator}`,
+        creator: { "@type": photoCreatorType, name: photo.creator },
+        license: photo.licenseUrl,
+        acquireLicensePage: absoluteUrl("/licencias-imagenes")
+      },
+      ...visuals.map((visual) => ({
+        "@type": "ImageObject",
+        url: absoluteUrl(visual.image),
+        contentUrl: absoluteUrl(visual.image),
+        width: visual.width,
+        height: visual.height,
+        caption: visual.caption,
+        creditText: visual.credit,
+        creator: { "@type": "Organization", name: siteConfig.name },
+        acquireLicensePage: absoluteUrl("/licencias-imagenes")
+      }))
+    ],
     inLanguage: "es-ES"
   };
   const breadcrumbJsonLd = {
@@ -149,7 +175,7 @@ export default async function ArticlePage({ params }: PageProps) {
               <CopyLinkButton />
             </div>
           </header>
-          <ArticleFigure visual={visuals[0]} label="Vista principal" reference={article.slug} hero />
+          <ArticlePhoto photo={photo} articleTitle={article.title} hero />
         </div>
       </article>
 
@@ -166,18 +192,22 @@ export default async function ArticlePage({ params }: PageProps) {
 
           <MarkdownContent content={firstContent} />
 
-          <ArticleFigure visual={visuals[1]} label="Proceso" reference={`${article.slug}-02`} />
+          <ArticleFigure visual={visuals[0]} label="Vista técnica" reference={`${article.slug}-01`} />
 
           {secondContent ? <MarkdownContent content={secondContent} /> : null}
+
+          <ArticleFigure visual={visuals[1]} label="Proceso" reference={`${article.slug}-02`} />
 
           <AdSlot
             clientId={process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT}
             slot={process.env.NEXT_PUBLIC_ADSENSE_ARTICLE_MID_SLOT}
           />
 
+          {thirdContent ? <MarkdownContent content={thirdContent} /> : null}
+
           <ArticleFigure visual={visuals[2]} label="Comprobaciones" reference={`${article.slug}-03`} />
 
-          {thirdContent ? <MarkdownContent content={thirdContent} /> : null}
+          {fourthContent ? <MarkdownContent content={fourthContent} /> : null}
 
           <section className="mt-10 border border-teal-200 bg-teal-50/70 p-6 sm:p-7">
             <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-teal-800">Nota de taller</p>

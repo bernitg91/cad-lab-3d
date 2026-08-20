@@ -33,7 +33,7 @@ La orientación también cambia precisión y acabado. Un agujero horizontal pued
 
 ## Error 3: resolver con soportes lo que pide rediseño
 
-Los soportes son útiles, pero dejan marcas, consumen material y pueden bloquear cavidades. Si aparecen dentro de un alojamiento, sobre una cara de ajuste o alrededor de un texto, prueba antes alguna de estas opciones:
+**Los soportes son útiles, pero dejan marcas**, consumen material y pueden bloquear cavidades. Si aparecen dentro de un alojamiento, sobre una cara de ajuste o alrededor de un texto, prueba antes alguna de estas opciones:
 
 - girar la pieza y volver a evaluar la carga;
 - dividirla en módulos con una unión accesible;
@@ -54,12 +54,12 @@ Una base larga con esquinas vivas concentra tensiones al enfriarse. Engordar la 
 Sigue esta revisión cada vez que cierres un diseño funcional:
 
 1. **Define el uso:** marca cargas, temperatura, zonas visibles y superficies de contacto.
-2. **Revisa espesores:** confirma que paredes, nervios y textos aparecen en la vista previa.
-3. **Comprueba encajes:** sustituye cotas nominales por holguras que puedas ensayar.
+2. Revisa espesores: confirma que paredes, nervios y textos aparecen en la vista previa.
+3. Comprueba encajes: sustituye cotas nominales por holguras que puedas ensayar.
 4. **Compara orientaciones:** mira capas, soportes, acabado y precisión, no solo tiempo.
-5. **Recorre el laminado:** busca islas sin apoyo, puentes largos, paredes intermitentes y costuras en zonas críticas.
+5. Recorre el laminado: busca islas sin apoyo, puentes largos, paredes intermitentes y costuras en zonas críticas.
 6. **Imprime una probeta:** reproduce solo el clip, agujero, rosca o unión que más riesgo tenga.
-7. **Registra el resultado:** anota material, perfil, orientación y cambio necesario antes de repetir.
+7. Registra el resultado: anota material, perfil, orientación y cambio necesario antes de repetir.
 
 ## Errores de revisión y límites de estas pautas
 

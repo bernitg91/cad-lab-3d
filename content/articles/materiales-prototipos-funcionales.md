@@ -30,7 +30,7 @@ La diferencia entre [prototipo visual y funcional](/blog/prototipo-visual-vs-fun
 | Junta o agarre flexible | TPU | la dureza y el espesor alteran mucho la respuesta |
 | Desgaste o flexión repetida | nylon u otro polímero técnico | secado, impresión y ensayo requieren control |
 
-Son candidatos iniciales, no equivalencias con un producto industrial. Incluso dos filamentos del mismo polímero pueden usar modificadores diferentes. Compara propiedades y condiciones en la guía para [elegir filamento funcional](/blog/elegir-filamento-piezas-funcionales) y en la ficha técnica de cada fabricante.
+**Son candidatos iniciales, no equivalencias con un producto industrial**. Incluso dos filamentos del mismo polímero pueden usar modificadores diferentes. Compara propiedades y condiciones en la guía para [elegir filamento funcional](/blog/elegir-filamento-piezas-funcionales) y en la ficha técnica de cada fabricante.
 
 ## Material, geometría y proceso forman un sistema
 
@@ -42,7 +42,7 @@ Cuando una prueba compara encajes, conserva máquina, perfil, orientación y aco
 
 ### Rigidez frente a tenacidad
 
-Una pieza que flexa menos no siempre resiste mejor los golpes; otra que soporta impacto puede deformarse demasiado para mantener un eje alineado. Describe el comportamiento que necesitas en lugar de pedir «máxima resistencia». Para un soporte, quizá importe rigidez; para una pestaña, deformación recuperable; para una guía, desgaste y fricción.
+**Una pieza que flexa menos no siempre resiste mejor los golpes**; otra que soporta impacto puede deformarse demasiado para mantener un eje alineado. Describe el comportamiento que necesitas en lugar de pedir «máxima resistencia». Para un soporte, quizá importe rigidez; para una pestaña, deformación recuperable; para una guía, desgaste y fricción.
 
 ### Ambiente y tiempo
 
@@ -52,13 +52,13 @@ La temperatura, humedad, radiación solar y contacto químico pueden cambiar el 
 
 1. **Formula la pregunta:** define una variable o comportamiento que evaluarás.
 2. **Fija un criterio:** establece qué observarás o medirás y en qué condiciones.
-3. **Elige la fidelidad mínima:** decide si basta una sección, una probeta o el conjunto.
-4. **Selecciona candidatos:** descarta materiales incompatibles con temperatura, ambiente o proceso.
+3. Elige la fidelidad mínima: decide si basta una sección, una probeta o el conjunto.
+4. Selecciona candidatos: descarta materiales incompatibles con temperatura, ambiente o proceso.
 5. **Controla parámetros:** registra impresora, boquilla, orientación, paredes, perfil y estado del material.
-6. **Compara de forma justa:** cambia una variable principal y mantén las demás estables.
+6. Compara de forma justa: cambia una variable principal y mantén las demás estables.
 7. **Documenta el fallo:** anota dónde empezó, cómo se deformó y qué limitó la prueba.
-8. **Itera geometría y material:** no atribuyas automáticamente el resultado a uno solo.
-9. **Escala con cautela:** una probeta pequeña no reproduce siempre la pieza completa.
+8. Itera geometría y material: no atribuyas automáticamente el resultado a uno solo.
+9. Escala con cautela: una probeta pequeña no reproduce siempre la pieza completa.
 
 Para estimar consumo antes de cada iteración, utiliza la guía de [cálculo de peso aproximado](/blog/calcular-peso-aproximado-pieza-3d).
 

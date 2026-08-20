@@ -15,7 +15,7 @@ Un informe técnico universitario debe permitir que otra persona entienda **qué
 
 ## 1. Define la pregunta antes de redactar
 
-Empieza por convertir el enunciado en objetivos verificables. «Diseñar un soporte resistente» es demasiado abierto; conviene indicar la carga prevista, el espacio disponible, el proceso de fabricación y el criterio con el que evaluarás el resultado. Si una cifra procede del enunciado, de una norma o de una estimación, identifica su origen. Si todavía no ha sido validada, declárala como hipótesis.
+Empieza por convertir el enunciado en objetivos verificables. «Diseñar un soporte resistente» es demasiado abierto; conviene indicar la carga prevista, el espacio disponible, el proceso de fabricación y el criterio con el que evaluarás el resultado. Si una cifra procede del enunciado, de una norma o de una estimación, **identifica su origen**. Si todavía no ha sido validada, declárala como hipótesis.
 
 Separa los **requisitos obligatorios** de las preferencias. Dimensiones de interfaz, seguridad o compatibilidad pueden ser obligatorias; color, acabado o una forma concreta quizá sean decisiones revisables. Esta distinción evita presentar como necesidad algo que solo fue una elección del equipo.
 
@@ -38,17 +38,17 @@ No es una plantilla rígida. Un proyecto centrado en FEM necesitará describir c
 
 ### Diferencia método, resultado y discusión
 
-El método explica qué hiciste para obtener los datos. El resultado presenta esos datos sin ocultar los desfavorables. La discusión interpreta por qué ocurrieron y qué significan para el diseño. Mezclarlos produce frases ambiguas y dificulta comprobar el trabajo.
+El método explica qué hiciste para obtener los datos. **El resultado presenta esos datos sin ocultar los desfavorables**. La discusión interpreta por qué ocurrieron y qué significan para el diseño. Mezclarlos produce frases ambiguas y dificulta comprobar el trabajo.
 
 ## 3. Justifica decisiones con evidencias
 
-Cada decisión relevante debería conectar requisito, opciones y criterio. «Se eligió PETG porque es mejor» no indica nada comprobable. Una redacción más sólida sería: «Se seleccionó PETG para la iteración funcional porque se esperaba manipulación frecuente; se mantuvieron geometría y orientación para comparar el efecto del material». Aun así, si no realizaste una comparación controlada, no atribuyas al material una mejora que no mediste.
+Cada decisión relevante debería conectar requisito, opciones y criterio. «Se eligió PETG porque es mejor» no indica nada comprobable. Una redacción más sólida sería: «Se seleccionó PETG para la iteración funcional porque se esperaba manipulación frecuente; se mantuvieron geometría y orientación para comparar el efecto del material». Aun así, si no realizaste una comparación controlada, **no atribuyas al material una mejora que no mediste**.
 
 Aplica el mismo enfoque a geometría, proceso y software. Puedes usar una matriz de decisión, un cálculo sencillo, bibliografía o una prueba de prototipo, pero explica sus límites. La guía para [explicar decisiones de diseño en una memoria](/blog/explicar-decisiones-diseno-memoria) desarrolla este vínculo entre argumentos y evidencia.
 
 ## 4. Usa imágenes que aporten información
 
-Una figura necesita número, pie y referencia en el texto. Indica qué debe observar el lector: una interferencia, el cambio entre versiones o la dirección de una carga. Evita capturas con menús innecesarios, fondos oscuros o cotas ilegibles. Para piezas fabricables, incorpora planos siguiendo los criterios de [preparación de planos desde CAD](/blog/preparar-planos-tecnicos-modelo-cad).
+**Una figura necesita número, pie y referencia en el texto**. Indica qué debe observar el lector: una interferencia, el cambio entre versiones o la dirección de una carga. Evita capturas con menús innecesarios, fondos oscuros o cotas ilegibles. Para piezas fabricables, incorpora planos siguiendo los criterios de [preparación de planos desde CAD](/blog/preparar-planos-tecnicos-modelo-cad).
 
 ### Qué conviene mostrar
 
@@ -56,7 +56,7 @@ Combina una vista general con detalles de las decisiones críticas. Si existe pr
 
 ## 5. Convierte los datos en conclusiones defendibles
 
-Una conclusión debe responder uno por uno a los objetivos. En vez de «la pieza funcionó correctamente», especifica si se verificó el encaje, la estabilidad, la masa o la deformación, y bajo qué condiciones. Un resultado fallido también es útil si explica qué hipótesis se descarta o qué cambio requiere la siguiente iteración.
+**Una conclusión debe responder uno por uno a los objetivos**. En vez de «la pieza funcionó correctamente», especifica si se verificó el encaje, la estabilidad, la masa o la deformación, y bajo qué condiciones. Un resultado fallido también es útil si explica qué hipótesis se descarta o qué cambio requiere la siguiente iteración.
 
 Incluye limitaciones: resolución del instrumento, muestra pequeña, material distinto al final o una carga simplificada. **Reconocer una limitación no debilita el informe; evita que el resultado prometa más de lo que demuestra.** No generalices un único prototipo a todos los materiales o procesos.
 

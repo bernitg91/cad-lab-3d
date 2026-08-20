@@ -17,7 +17,7 @@ El modelado paramétrico y el modelado directo no son programas concretos ni enf
 
 Un modelo paramétrico expresa intención mediante cotas, restricciones, referencias y una secuencia de operaciones. Si una familia de soportes cambia de ancho, una dimensión bien elegida puede actualizar agujeros, nervios y plano. Esta trazabilidad resulta útil cuando hay variantes, revisiones frecuentes o requisitos que deben justificarse.
 
-Sin embargo, un árbol largo no es automáticamente robusto. Referencias frágiles, croquis sin restringir, redondeos demasiado tempranos y nombres genéricos pueden hacer que un cambio simple rompa operaciones posteriores. Aprender a elegir referencias estables es tan importante como conocer comandos. Para empezar con una herramienta concreta, consulta la guía de [Creo Parametric desde cero](/blog/como-empezar-creo-parametric-desde-cero).
+Sin embargo, **un árbol largo no es automáticamente robusto**. Referencias frágiles, croquis sin restringir, redondeos demasiado tempranos y nombres genéricos pueden hacer que un cambio simple rompa operaciones posteriores. Aprender a elegir referencias estables es tan importante como conocer comandos. Para empezar con una herramienta concreta, consulta la guía de [Creo Parametric desde cero](/blog/como-empezar-creo-parametric-desde-cero).
 
 ### Buenas prácticas paramétricas
 
@@ -31,7 +31,7 @@ Sin embargo, un árbol largo no es automáticamente robusto. Referencias frágil
 
 La edición directa desplaza, elimina, sustituye o compensa caras sin reconstruir necesariamente la secuencia original. Es valiosa al recibir un STEP sin historial, corregir una interferencia puntual, simplificar geometría o explorar proporciones rápidamente.
 
-Su rapidez no elimina la necesidad de control. Si mueves una cara, revisa qué ocurre con agujeros, espesores, simetrías y superficies vecinas. Una edición puede resolver la apariencia local y romper una interfaz que no estaba visible. Antes de modificar un intercambio, sigue las comprobaciones de la guía para [preparar y revisar archivos STEP](/blog/preparar-archivo-step-compartir-cad).
+Su rapidez no elimina la necesidad de control. Si mueves una cara, revisa qué ocurre con agujeros, espesores, simetrías y superficies vecinas. **Una edición puede resolver la apariencia local y romper una interfaz que no estaba visible**. Antes de modificar un intercambio, sigue las comprobaciones de la guía para [preparar y revisar archivos STEP](/blog/preparar-archivo-step-compartir-cad).
 
 ## Comparación para elegir enfoque
 
@@ -43,20 +43,20 @@ Su rapidez no elimina la necesidad de control. Si mueves una cara, revisa qué o
 | Planos que cambian | Actualización asociativa si el modelo está bien construido | Correcciones geométricas que deben revisarse |
 | Reparación de geometría | Historial para localizar el origen | Herramientas para cerrar o mover caras |
 
-Esta tabla no obliga a usar un único método. Muchos programas combinan operaciones paramétricas con edición directa, reconocimiento de operaciones y modelado de superficies.
+Esta tabla no obliga a usar un único método. **Muchos programas combinan operaciones paramétricas con edición directa**, reconocimiento de operaciones y modelado de superficies.
 
 ## Flujo híbrido en un proyecto real
 
 Puedes importar una carcasa mediante STEP, eliminar detalles innecesarios con edición directa y añadir después taladros paramétricos controlados por una tabla. También puedes explorar una forma de manera directa y reconstruir la versión final con referencias estables cuando el concepto se aprueba.
 
-Lo importante es definir el punto de autoridad. Si el modelo original seguirá cambiando, editar una copia importada puede crear dos fuentes incompatibles. Si el STEP es la única geometría disponible, reconstruir todo quizá no compense. Documenta qué archivo manda y qué operaciones añadiste. La [revisión de diseño antes de fabricar](/blog/revision-diseno-antes-fabricar) ayuda a comprobar la versión final.
+**Lo importante es definir el punto de autoridad**. Si el modelo original seguirá cambiando, editar una copia importada puede crear dos fuentes incompatibles. Si el STEP es la única geometría disponible, reconstruir todo quizá no compense. Documenta qué archivo manda y qué operaciones añadiste. La [revisión de diseño antes de fabricar](/blog/revision-diseno-antes-fabricar) ayuda a comprobar la versión final.
 
 ## Proceso práctico para decidir
 
 1. Lista los cambios previsibles: medidas, variantes, interfaces o solo una corrección.
 2. Identifica la fuente: archivo nativo, STEP, malla o geometría de referencia.
 3. Decide si necesitas conservar intención y actualizar planos automáticamente.
-4. Elige paramétrico para relaciones repetibles y directo para modificaciones locales o importadas.
+4. Elige **paramétrico para relaciones repetibles** y **directo para modificaciones locales o importadas**.
 5. Si combinas métodos, separa claramente base recibida y operaciones propias.
 6. Prueba dos o tres cambios representativos antes de desarrollar todos los detalles.
 7. Regenera el modelo completo y revisa errores, espesores e interferencias.

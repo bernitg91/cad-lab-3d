@@ -15,7 +15,7 @@ Simplificar un modelo antes de FEM consiste en conservar la física necesaria pa
 
 ## 1. Formula primero la pregunta del análisis
 
-No puedes decidir qué detalle sobra si no sabes qué resultado importa. Para estudiar desplazamiento global de un soporte quizá puedas omitir un texto grabado. Para evaluar tensión alrededor de un agujero, ese agujero y sus radios son precisamente la zona que debes conservar.
+**No puedes decidir qué detalle sobra si no sabes qué resultado importa**. Para estudiar desplazamiento global de un soporte quizá puedas omitir un texto grabado. Para evaluar tensión alrededor de un agujero, ese agujero y sus radios son precisamente la zona que debes conservar.
 
 Escribe el objetivo, la región de interés y el tipo de resultado. Después revisa [qué es un análisis FEM y cuándo usarlo](/blog/que-es-analisis-fem-cuando-usarlo) para confirmar que cargas, apoyos y material están suficientemente definidos. Si el problema aún es ambiguo, simplificar puede esconder incertidumbre en vez de resolverla.
 
@@ -59,7 +59,7 @@ Sigue un proceso reproducible:
 4. aplica cambios por grupos, no todos a la vez;
 5. comprueba contactos, espesores, masa e interfaces;
 6. ejecuta un análisis inicial y revisa deformada y reacciones;
-7. recupera un detalle dudoso y compara el resultado relevante;
+7. **recupera un detalle dudoso y compara el resultado relevante**;
 8. documenta diferencias y modelo elegido.
 
 Si recuperar un detalle cambia de forma importante la conclusión, debe conservarse o representarse mejor. La malla también necesita una comprobación independiente; simplificar reduce dificultades, pero no demuestra convergencia.
