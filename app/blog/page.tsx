@@ -16,7 +16,9 @@ export default function BlogPage() {
     <>
       <section className="border-b border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <p className="text-sm font-black uppercase tracking-wide text-teal-700">Biblioteca técnica</p>
+          <p className="text-sm font-black uppercase tracking-wide text-teal-700">
+            Biblioteca técnica · {articles.length} artículos
+          </p>
           <h1 className="mt-3 text-4xl font-black text-slate-950">Blog de CAD Lab 3D</h1>
           <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-600">
             Tutoriales y guías para resolver dudas reales de modelado, fabricación digital, materiales y documentación de proyectos.

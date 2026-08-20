@@ -5,7 +5,7 @@ description: "Criterios prácticos para definir holguras en encajes, agujeros, e
 category: "Impresión 3D"
 categorySlug: "impresion-3d"
 date: "2026-05-10"
-updatedDate: "2026-06-13"
+updatedDate: "2026-08-20"
 readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: false

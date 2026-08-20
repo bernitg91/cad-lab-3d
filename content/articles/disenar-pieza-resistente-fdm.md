@@ -5,6 +5,7 @@ description: "Principios para mejorar la resistencia de piezas impresas en FDM: 
 category: "Impresión 3D"
 categorySlug: "impresion-3d"
 date: "2026-04-04"
+updatedDate: "2026-08-20"
 readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: false
@@ -50,28 +51,6 @@ PETG, ABS, Nylon o compuestos pueden mejorar prestaciones, pero requieren parám
 
 Si imprimes un gancho con las capas en la dirección incorrecta, puede partir por delaminación aunque tenga mucho relleno. Si lo orientas para que la carga trabaje a lo largo de las líneas de material y añades radios en la base, la mejora puede ser mayor que subir relleno sin criterio. La resistencia nace en la geometría y la orientación.
 
-## Criterios de revisión
-
-Para aplicar bien esta guía sobre **diseñar una pieza resistente para FDM**, utiliza esta revisión:
-
-- Antes de lanzar una impresión larga, revisa el archivo como si fueras a repetirlo dentro de un mes.
-- Comprueba unidades, orientación, soportes, primera capa, paredes y zonas de encaje.
-- Si la pieza tiene zonas críticas, valida primero una muestra parcial o una versión reducida.
-- Guarda material, boquilla, altura de capa, relleno, tiempo estimado y observaciones del resultado.
-
-## Aplicación práctica
-
-Trabaja con una pieza concreta: importa el archivo en el laminador, revisa la vista por capas, localiza la zona más delicada y decide qué parámetro afecta más al resultado. Después imprime una prueba pequeña si el fallo puede costar muchas horas.
-
-### Registro recomendado
-
-Guarda solo evidencias útiles: capturas, medidas, parámetros, fotos del prototipo o notas de descarte. El objetivo es que otra persona pueda entender qué decisión se tomó y qué habría que revisar en la siguiente versión.
-
-## Límites y siguiente paso
-
-Las recomendaciones de FDM dependen de impresora, boquilla, material, humedad, tamaño de pieza y orientación. Una solución válida para PLA pequeño puede fallar en PETG, TPU o en una pieza con más horas de impresión.
-
-Para continuar, consulta también [checklist interactiva de impresión 3D](/checklist-impresion-3d), [calculadora de precio de impresión 3D](/calculadora-precio-impresion-3d) y [selector de material FDM](/selector-material-impresion-3d).
 
 ## Conclusión
 

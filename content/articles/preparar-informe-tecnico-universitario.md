@@ -5,7 +5,7 @@ description: "Estructura clara para redactar informes técnicos de proyectos CAD
 category: "Proyectos universitarios"
 categorySlug: "proyectos-universitarios"
 date: "2026-04-12"
-updatedDate: "2026-06-13"
+updatedDate: "2026-08-20"
 readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: false

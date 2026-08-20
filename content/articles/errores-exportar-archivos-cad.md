@@ -5,6 +5,7 @@ description: "Errores habituales al exportar STL, STEP, planos PDF y archivos pa
 category: "Recursos"
 categorySlug: "recursos"
 date: "2026-05-05"
+updatedDate: "2026-08-20"
 readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: false
@@ -39,28 +40,6 @@ Nombra archivos con versión y fecha si el proyecto cambia mucho. Evita `final_f
 
 Enviar un STEP y un STL con nombres casi iguales puede provocar confusión si uno está actualizado y el otro no. Antes de compartir, abre el archivo exportado en otro visor o vuelve a importarlo en el CAD. Si la escala, las caras o las operaciones críticas no se ven bien, el problema debe corregirse antes de enviarlo a fabricación.
 
-## Criterios de revisión
-
-Para aplicar bien esta guía sobre **errores evitar al exportar archivos CAD**, utiliza esta revisión:
-
-- Comprueba nombre de archivo, versión, unidades, escala y formato antes de compartir.
-- Incluye capturas o notas suficientes para entender por qué se exportó así.
-- Evita mezclar archivos finales con versiones de prueba sin identificarlas.
-- Guarda una copia del CAD original aunque entregues STL, STEP o PDF.
-
-## Aplicación práctica
-
-Usa una carpeta de proyecto con subcarpetas para CAD, exportaciones, capturas, planos y pruebas. La revisión es más rápida cuando cada archivo tiene nombre, fecha y propósito claro.
-
-### Registro recomendado
-
-Guarda solo evidencias útiles: capturas, medidas, parámetros, fotos del prototipo o notas de descarte. El objetivo es que otra persona pueda entender qué decisión se tomó y qué habría que revisar en la siguiente versión.
-
-## Límites y siguiente paso
-
-Una plantilla o checklist no garantiza calidad por sí sola. Tiene valor cuando se adapta al proyecto, se marca con evidencias y se actualiza después de detectar fallos.
-
-Para continuar, consulta también [recursos técnicos](/recursos), [glosario](/glosario) y [guías por tema](/guias).
 
 ## Conclusión
 

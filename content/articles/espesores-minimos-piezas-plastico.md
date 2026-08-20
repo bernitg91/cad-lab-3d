@@ -5,6 +5,7 @@ description: "Criterios para definir espesores en piezas de plástico según rig
 category: "Materiales"
 categorySlug: "materiales"
 date: "2026-05-04"
+updatedDate: "2026-08-20"
 readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: false
@@ -38,28 +39,6 @@ Con boquilla de 0,4 mm, diseña paredes que el laminador pueda construir con var
 
 Una pared de 0,8 mm puede imprimirse, pero quizá no resista montaje, lijado o un tornillo cercano. En carcasas FDM pequeñas, muchas veces conviene pensar en múltiplos del ancho de línea y reforzar zonas de tornillo con bosses o nervios. El espesor mínimo no es solo el que sale de la boquilla; es el que cumple función.
 
-## Criterios de revisión
-
-Para aplicar bien esta guía sobre **elegir espesores mínimos en piezas de plástico**, utiliza esta revisión:
-
-- Empieza por la función de la pieza, no por el material que tienes cargado en la impresora.
-- Comprueba temperatura de uso, rigidez necesaria, exposición exterior, flexibilidad y riesgo de impacto.
-- Si el montaje exige encaje o rosca, revisa tolerancias con el material real.
-- Registra por qué elegiste una opción y qué limitación queda pendiente de prueba.
-
-## Aplicación práctica
-
-Aplica la decisión a una pieza concreta y compara dos materiales razonables. Anota qué cambia en impresión, acabado, tolerancia, coste y riesgo de fallo. La elección mejora cuando puedes justificar por qué descartas otra opción.
-
-### Registro recomendado
-
-Guarda solo evidencias útiles: capturas, medidas, parámetros, fotos del prototipo o notas de descarte. El objetivo es que otra persona pueda entender qué decisión se tomó y qué habría que revisar en la siguiente versión.
-
-## Límites y siguiente paso
-
-Las fichas de material dan una orientación, pero el comportamiento final depende del fabricante, secado, parámetros, geometría y uso real de la pieza. En piezas exigentes, la prueba física manda sobre la teoría.
-
-Para continuar, consulta también [guía de materiales](/blog/diferencias-pla-petg-abs-nylon), [selector de material FDM](/selector-material-impresion-3d) y [recursos técnicos](/recursos).
 
 ## Conclusión
 

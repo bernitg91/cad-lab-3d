@@ -5,6 +5,7 @@ description: "Buenas prácticas para exportar archivos STEP limpios, ligeros y f
 category: "Recursos"
 categorySlug: "recursos"
 date: "2026-05-04"
+updatedDate: "2026-08-20"
 readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: false
@@ -42,28 +43,6 @@ Usa nombres claros: proyecto, pieza, versión y fecha si hace falta. Evita envia
 
 Cuando compartes un STEP, la otra persona no recibe tu árbol paramétrico completo. Por eso conviene enviar también una captura, una nota de versión y el objetivo del archivo. Si el receptor debe fabricar, revisar o solo visualizar, el nivel de detalle y los archivos adjuntos pueden cambiar.
 
-## Criterios de revisión
-
-Para aplicar bien esta guía sobre **preparar un archivo STEP para compartir CAD**, utiliza esta revisión:
-
-- Comprueba nombre de archivo, versión, unidades, escala y formato antes de compartir.
-- Incluye capturas o notas suficientes para entender por qué se exportó así.
-- Evita mezclar archivos finales con versiones de prueba sin identificarlas.
-- Guarda una copia del CAD original aunque entregues STL, STEP o PDF.
-
-## Aplicación práctica
-
-Usa una carpeta de proyecto con subcarpetas para CAD, exportaciones, capturas, planos y pruebas. La revisión es más rápida cuando cada archivo tiene nombre, fecha y propósito claro.
-
-### Registro recomendado
-
-Guarda solo evidencias útiles: capturas, medidas, parámetros, fotos del prototipo o notas de descarte. El objetivo es que otra persona pueda entender qué decisión se tomó y qué habría que revisar en la siguiente versión.
-
-## Límites y siguiente paso
-
-Una plantilla o checklist no garantiza calidad por sí sola. Tiene valor cuando se adapta al proyecto, se marca con evidencias y se actualiza después de detectar fallos.
-
-Para continuar, consulta también [recursos técnicos](/recursos), [glosario](/glosario) y [guías por tema](/guias).
 
 ## Conclusión
 

@@ -5,6 +5,7 @@ description: "Principios para diseñar clips, pestañas y encajes impresos en FD
 category: "Impresión 3D"
 categorySlug: "impresion-3d"
 date: "2026-05-10"
+updatedDate: "2026-08-20"
 readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: false
@@ -38,28 +39,6 @@ PLA puede servir para clips muy ligeros, pero PETG o Nylon suelen tolerar mejor 
 
 Diseña un clip como una pieza que debe flexar de forma controlada. Si la pestaña es corta, gruesa y tiene una esquina viva en la base, romperá pronto. Una prueba útil es imprimir solo el clip y su alojamiento, sin toda la carcasa. Así puedes ajustar holgura, radio y longitud antes de comprometer una pieza grande.
 
-## Criterios de revisión
-
-Para aplicar bien esta guía sobre **diseñar encajes y clips para impresión 3D**, utiliza esta revisión:
-
-- Antes de lanzar una impresión larga, revisa el archivo como si fueras a repetirlo dentro de un mes.
-- Comprueba unidades, orientación, soportes, primera capa, paredes y zonas de encaje.
-- Si la pieza tiene zonas críticas, valida primero una muestra parcial o una versión reducida.
-- Guarda material, boquilla, altura de capa, relleno, tiempo estimado y observaciones del resultado.
-
-## Aplicación práctica
-
-Trabaja con una pieza concreta: importa el archivo en el laminador, revisa la vista por capas, localiza la zona más delicada y decide qué parámetro afecta más al resultado. Después imprime una prueba pequeña si el fallo puede costar muchas horas.
-
-### Registro recomendado
-
-Guarda solo evidencias útiles: capturas, medidas, parámetros, fotos del prototipo o notas de descarte. El objetivo es que otra persona pueda entender qué decisión se tomó y qué habría que revisar en la siguiente versión.
-
-## Límites y siguiente paso
-
-Las recomendaciones de FDM dependen de impresora, boquilla, material, humedad, tamaño de pieza y orientación. Una solución válida para PLA pequeño puede fallar en PETG, TPU o en una pieza con más horas de impresión.
-
-Para continuar, consulta también [checklist interactiva de impresión 3D](/checklist-impresion-3d), [calculadora de precio de impresión 3D](/calculadora-precio-impresion-3d) y [selector de material FDM](/selector-material-impresion-3d).
 
 ## Conclusión
 

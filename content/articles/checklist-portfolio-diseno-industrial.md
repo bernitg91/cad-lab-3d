@@ -5,6 +5,7 @@ description: "Lista práctica para revisar estructura, proyectos, renders, texto
 category: "Diseño industrial"
 categorySlug: "diseno-industrial"
 date: "2026-05-07"
+updatedDate: "2026-08-20"
 readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: false
@@ -42,28 +43,6 @@ Incluye CAD, planos, prototipos, detalles de ensamblaje o fabricación cuando ap
 
 Si tienes cinco proyectos, no todos deben ocupar el mismo espacio. Un rediseño de producto con investigación, CAD, prototipo y pruebas puede merecer cuatro páginas. Un render rápido quizá solo necesita una imagen y una frase de contexto. La revisión consiste en elegir qué demuestra criterio técnico y quitar lo que solo añade volumen.
 
-## Criterios de revisión
-
-Para aplicar bien esta guía sobre **checklist para revisar un portfolio de diseño industrial**, utiliza esta revisión:
-
-- Define usuario, función, contexto de uso y restricción principal antes de cerrar la geometría.
-- Revisa montaje, mantenimiento, espesores, radios, tolerancias y coherencia visual.
-- Separa decisiones estéticas de decisiones técnicas para explicar mejor el proyecto.
-- Guarda una captura o nota por cada cambio importante de diseño.
-
-## Aplicación práctica
-
-Toma una pieza o producto y escribe qué problema resuelve. Después revisa una zona funcional, una zona de montaje y una decisión visual. Si no puedes justificar una decisión con una necesidad, simplifícala o elimínala.
-
-### Registro recomendado
-
-Guarda solo evidencias útiles: capturas, medidas, parámetros, fotos del prototipo o notas de descarte. El objetivo es que otra persona pueda entender qué decisión se tomó y qué habría que revisar en la siguiente versión.
-
-## Límites y siguiente paso
-
-Un prototipo visual puede comunicar forma, pero no valida resistencia, ergonomía ni fabricación. Cuando el proyecto pase de presentación a uso real, revisa requisitos, ensayos y límites con más rigor.
-
-Para continuar, consulta también [guías de diseño industrial](/guias), [casos prácticos de impresión 3D](/casos-practicos-impresion-3d) y [recursos técnicos](/recursos).
 
 ## Conclusión
 

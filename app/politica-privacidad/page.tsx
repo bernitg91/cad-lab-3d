@@ -14,7 +14,7 @@ export default function PrivacyPage() {
       <p>
         CAD Lab 3D es un proyecto informativo sobre CAD, diseño industrial, impresión 3D y documentación técnica. Esta política explica qué datos pueden tratarse al navegar por el sitio, usar formularios o interactuar con servicios de terceros.
       </p>
-      <p><strong>Última actualización:</strong> 13 de junio de 2026.</p>
+      <p><strong>Última actualización:</strong> 20 de agosto de 2026.</p>
       <h2>Responsable del sitio</h2>
       <p>
         El responsable editorial del sitio es CAD Lab 3D. Para consultas relacionadas con privacidad, contenido o ejercicio de derechos, utiliza la página de contacto o escribe a <a href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a>.
@@ -29,7 +29,7 @@ export default function PrivacyPage() {
       </p>
       <h2>Cookies, publicidad y proveedores externos</h2>
       <p>
-        La web utiliza Vercel Web Analytics para conocer visitas y rendimiento de páginas de forma agregada. También puede cargar el código de Google AdSense para verificar el dominio y, cuando Google lo autorice, mostrar publicidad. Google y otros proveedores externos pueden usar cookies o tecnologías similares para medir visitas, evitar fraude, mostrar anuncios personalizados o no personalizados y evaluar rendimiento publicitario según el consentimiento aplicable.
+        La web utiliza Vercel Web Analytics para conocer visitas y rendimiento de páginas mediante datos agregados y anonimizados, sin crear perfiles individuales ni utilizar cookies de analítica. También puede cargar el código de Google AdSense para verificar el dominio y, cuando Google lo autorice, mostrar publicidad. Google y otros proveedores externos pueden usar cookies o tecnologías similares para medir visitas, evitar fraude, mostrar anuncios personalizados o no personalizados y evaluar rendimiento publicitario según el consentimiento aplicable.
       </p>
       <p>
         Los proveedores externos, incluido Google, pueden utilizar cookies para publicar anuncios basados en visitas anteriores a este sitio u otros sitios. El uso de cookies publicitarias permite a Google y a sus partners mostrar anuncios en función de esas visitas. Los usuarios pueden gestionar la publicidad personalizada desde la configuración de anuncios de Google y desde las opciones de consentimiento disponibles.

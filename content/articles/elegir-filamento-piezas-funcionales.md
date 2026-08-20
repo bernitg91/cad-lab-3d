@@ -5,7 +5,7 @@ description: "Criterios para elegir filamento en piezas que deben resistir carga
 category: "Materiales"
 categorySlug: "materiales"
 date: "2026-04-20"
-updatedDate: "2026-06-13"
+updatedDate: "2026-08-20"
 readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: false

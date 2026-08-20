@@ -46,6 +46,9 @@ export function ArticleExplorer({ articles }: { articles: ArticleMeta[] }) {
           </select>
         </label>
       </div>
+      <p className="mt-5 text-sm font-semibold text-slate-600" aria-live="polite">
+        {filteredArticles.length} {filteredArticles.length === 1 ? "artículo" : "artículos"}
+      </p>
       <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {filteredArticles.map((article) => (
           <ArticleCard key={article.slug} article={article} />

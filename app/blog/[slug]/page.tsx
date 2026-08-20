@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { notFound, permanentRedirect } from "next/navigation";
 import { ArticleCard } from "@/components/ArticleCard";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -54,6 +55,10 @@ export default async function ArticlePage({ params }: PageProps) {
 
   const relatedArticles = getRelatedArticles(article);
   const support = getArticleSupport(article.slug);
+  const contentSections = article.content.split(/(?=^##\s)/m);
+  const contentPivot = Math.max(1, Math.ceil(contentSections.length / 2));
+  const firstContent = contentSections.slice(0, contentPivot).join("").trim();
+  const secondContent = contentSections.slice(contentPivot).join("").trim();
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -105,14 +110,14 @@ export default async function ArticlePage({ params }: PageProps) {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(articleJsonLd)} />
       <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(breadcrumbJsonLd)} />
-      <article className="border-b border-slate-200 bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+      <article className="border-b border-slate-200 bg-gradient-to-b from-slate-50 to-white">
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
           <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: article.title }]} />
-          <div className="mt-8 max-w-3xl">
-            <p className="text-sm font-black uppercase tracking-wide text-teal-700">{article.category}</p>
-            <h1 className="mt-3 text-4xl font-black leading-tight text-slate-950 sm:text-5xl">{article.title}</h1>
-            <p className="mt-5 text-lg leading-8 text-slate-600">{article.description}</p>
-            <div className="mt-6 flex flex-wrap items-center gap-3 text-sm font-semibold text-slate-500">
+          <header className="mx-auto mt-8 max-w-4xl text-center">
+            <p className="inline-flex rounded-full border border-teal-200 bg-teal-50 px-4 py-1.5 text-xs font-black uppercase tracking-[0.16em] text-teal-800">{article.category}</p>
+            <h1 className="mx-auto mt-5 text-balance text-4xl font-black leading-[1.08] text-slate-950 sm:text-5xl lg:text-6xl">{article.title}</h1>
+            <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600 sm:text-xl">{article.description}</p>
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-3 text-sm font-semibold text-slate-500">
               <span>{formatDate(article.date)}</span>
               {article.updatedDate ? (
                 <>
@@ -121,37 +126,71 @@ export default async function ArticlePage({ params }: PageProps) {
                 </>
               ) : null}
               <span aria-hidden="true">·</span>
-              <a className="hover:text-blue-700" href="/sobre-mi">{article.author}</a>
+              <Link className="hover:text-blue-700" href="/sobre-mi">{article.author}</Link>
               <span aria-hidden="true">·</span>
               <span>{article.readingTime}</span>
             </div>
-            <div className="mt-6">
+            <div className="mt-6 flex justify-center">
               <CopyLinkButton />
             </div>
-          </div>
+          </header>
+          <figure className="mx-auto mt-10 max-w-5xl overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl shadow-slate-950/10">
+            <div className="relative aspect-[4/3] bg-slate-100 sm:aspect-[16/9]">
+              <Image
+                src={support.evidence.image}
+                alt={support.evidence.alt}
+                fill
+                priority
+                sizes="(min-width: 1280px) 1024px, (min-width: 768px) 90vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <figcaption className="border-t border-slate-200 px-5 py-4 text-left text-sm leading-6 text-slate-600 sm:px-7">
+              {support.evidence.caption}
+            </figcaption>
+          </figure>
         </div>
       </article>
 
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[minmax(0,1fr)_320px] lg:px-8">
         <div>
-          {support.evidence ? (
-            <figure className="mb-10 overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
-              <div className="relative aspect-[4/3] bg-slate-100 sm:aspect-[16/9]">
-                <Image
-                  src={support.evidence.image}
-                  alt={support.evidence.alt}
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 820px, 100vw"
-                  className="object-cover"
-                />
-              </div>
-              <figcaption className="border-t border-slate-200 px-5 py-4 text-sm leading-6 text-slate-600">
-                {support.evidence.caption}
-              </figcaption>
-            </figure>
-          ) : null}
-          <MarkdownContent content={article.content} />
+          <aside className="mb-10 rounded-xl border border-blue-200 bg-blue-50 p-6 sm:p-7">
+            <p className="text-xs font-black uppercase tracking-[0.16em] text-blue-800">Idea principal</p>
+            <p className="mt-3 text-lg font-bold leading-8 text-slate-950">{support.insight.takeaway}</p>
+          </aside>
+
+          <MarkdownContent content={firstContent} />
+
+          <figure className="my-10 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-lg shadow-slate-950/5">
+            <div className="relative aspect-[4/3] bg-slate-100 sm:aspect-[16/9]">
+              <Image
+                src={support.inlineEvidence.image}
+                alt={support.inlineEvidence.alt}
+                fill
+                sizes="(min-width: 1024px) 820px, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <figcaption className="border-t border-slate-200 px-5 py-4 text-sm leading-6 text-slate-600">
+              {support.inlineEvidence.caption}
+            </figcaption>
+          </figure>
+
+          {secondContent ? <MarkdownContent content={secondContent} /> : null}
+
+          <section className="mt-10 rounded-xl border border-teal-200 bg-teal-50/70 p-6 sm:p-7">
+            <p className="text-xs font-black uppercase tracking-[0.16em] text-teal-800">Nota de taller</p>
+            <h2 className="mt-2 text-2xl font-black text-slate-950">Cómo llevarlo a una pieza real</h2>
+            <p className="mt-4 leading-7 text-slate-700">{support.insight.fieldNote}</p>
+            <ul className="mt-5 grid gap-3">
+              {support.insight.checks.map((check, index) => (
+                <li key={check} className="flex gap-3 rounded-lg border border-teal-100 bg-white/80 p-4 text-sm font-semibold leading-6 text-slate-700">
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-teal-700 text-xs font-black text-white">{index + 1}</span>
+                  <span>{check}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
           {support.sources.length > 0 ? (
             <section className="mt-10 rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
               <p className="text-sm font-black uppercase tracking-wide text-teal-700">Referencias consultadas</p>
@@ -168,6 +207,21 @@ export default async function ArticlePage({ params }: PageProps) {
               </ul>
             </section>
           ) : null}
+          {relatedArticles.length > 0 ? (
+            <nav aria-label="Lecturas relacionadas" className="mt-10 rounded-xl border border-slate-200 bg-slate-50 p-6">
+              <p className="text-sm font-black uppercase tracking-wide text-teal-700">Continúa la ruta</p>
+              <h2 className="mt-2 text-xl font-black text-slate-950">Artículos que amplían esta decisión</h2>
+              <ul className="mt-4 grid gap-3">
+                {relatedArticles.map((related) => (
+                  <li key={related.slug}>
+                    <Link className="font-bold text-blue-700 underline decoration-blue-200 underline-offset-4 hover:text-blue-900" href={`/blog/${related.slug}`}>
+                      {related.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          ) : null}
           <section className="mt-10 rounded-lg border border-slate-200 bg-slate-50 p-6">
             <p className="text-sm font-black uppercase tracking-wide text-teal-700">Autoría y revisión</p>
             <h2 className="mt-2 text-xl font-black text-slate-950">Contenido preparado por CAD Lab 3D</h2>
@@ -175,9 +229,9 @@ export default async function ArticlePage({ params }: PageProps) {
               Esta guía se apoya en práctica con CAD e impresión FDM, documentación técnica y fuentes oficiales. Los valores de tolerancia, temperatura o resistencia son orientativos y deben validarse con la impresora, el material y la geometría reales.
             </p>
             <div className="mt-4 flex flex-wrap gap-4 text-sm font-bold">
-              <a className="text-blue-700 hover:text-blue-900" href="/sobre-mi">Sobre el proyecto</a>
-              <a className="text-blue-700 hover:text-blue-900" href="/fuentes">Fuentes técnicas</a>
-              <a className="text-blue-700 hover:text-blue-900" href="/metodologia">Metodología editorial</a>
+              <Link className="text-blue-700 hover:text-blue-900" href="/sobre-mi">Sobre el proyecto</Link>
+              <Link className="text-blue-700 hover:text-blue-900" href="/fuentes">Fuentes técnicas</Link>
+              <Link className="text-blue-700 hover:text-blue-900" href="/metodologia">Metodología editorial</Link>
             </div>
           </section>
           <div className="mt-10">

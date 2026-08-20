@@ -5,7 +5,7 @@ description: "Comparativa práctica entre SolidWorks y Creo Parametric para estu
 category: "SolidWorks"
 categorySlug: "solidworks"
 date: "2026-04-28"
-updatedDate: "2026-06-13"
+updatedDate: "2026-08-20"
 readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: true

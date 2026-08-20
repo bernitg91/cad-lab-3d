@@ -5,7 +5,7 @@ description: "Comparativa clara de filamentos habituales para impresión 3D: fac
 category: "Materiales"
 categorySlug: "materiales"
 date: "2026-03-30"
-updatedDate: "2026-06-13"
+updatedDate: "2026-08-20"
 readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: false

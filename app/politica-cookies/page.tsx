@@ -15,12 +15,12 @@ export default function CookiesPage() {
         <p>
           CAD Lab 3D utiliza tecnologías técnicas y de medición para mantener el sitio y conocer el rendimiento de sus páginas. El código de Google AdSense puede estar presente para verificar el dominio y mostrar publicidad únicamente cuando el sitio sea autorizado.
         </p>
-        <p><strong>Última actualización:</strong> 13 de junio de 2026.</p>
+        <p><strong>Última actualización:</strong> 20 de agosto de 2026.</p>
         <h2>Cookies técnicas</h2>
         <p>Ayudan al funcionamiento básico del sitio y a recordar preferencias esenciales.</p>
-        <h2>Cookies analíticas</h2>
+        <h2>Analítica sin cookies</h2>
         <p>
-          Vercel Web Analytics se utiliza para entender qué contenidos resultan más útiles, detectar problemas de navegación y mejorar la estructura editorial. La información se consulta de forma agregada.
+          Vercel Web Analytics se utiliza para entender qué contenidos resultan más útiles, detectar problemas de navegación y mejorar la estructura editorial. Esta medición se consulta de forma agregada y anonimizada y no instala cookies de analítica.
         </p>
         <h2>Gestión del consentimiento</h2>
         <p>

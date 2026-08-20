@@ -5,7 +5,7 @@ description: "Ruta práctica para aprender Creo Parametric si partes de cero: in
 category: "Creo Parametric"
 categorySlug: "creo-parametric"
 date: "2026-05-01"
-updatedDate: "2026-06-13"
+updatedDate: "2026-08-20"
 readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: true

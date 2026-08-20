@@ -5,6 +5,7 @@ description: "Criterios para simplificar modelos CAD antes de un análisis FEM s
 category: "Simulación FEM"
 categorySlug: "simulacion-fem"
 date: "2026-05-06"
+updatedDate: "2026-08-20"
 readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: false
@@ -42,28 +43,6 @@ Una geometría limpia permite una malla más estable. Si el modelo tiene caras m
 
 Eliminar un redondeo pequeño puede acelerar el mallado, pero eliminar un radio en una zona de tensión puede cambiar el resultado. Simplificar no es borrar detalles sin criterio: es conservar lo que afecta al comportamiento y quitar lo que solo complica el cálculo.
 
-## Criterios de revisión
-
-Para aplicar bien esta guía sobre **simplificar geometría antes de un FEM**, utiliza esta revisión:
-
-- Documenta hipótesis, cargas, restricciones, material y simplificaciones antes de mirar colores del resultado.
-- Comprueba si la malla captura la zona importante sin gastar tiempo en detalles decorativos.
-- Distingue deformación exagerada, tensión máxima local y tendencia global de comportamiento.
-- No presentes un FEM como validación absoluta si no hay ensayo o contraste.
-
-## Aplicación práctica
-
-Aplica el análisis a una pregunta concreta: dónde se concentra tensión, qué geometría conviene comparar o qué zona necesita refuerzo. Si el FEM no responde a una decisión, probablemente está sobrando en la memoria.
-
-### Registro recomendado
-
-Guarda solo evidencias útiles: capturas, medidas, parámetros, fotos del prototipo o notas de descarte. El objetivo es que otra persona pueda entender qué decisión se tomó y qué habría que revisar en la siguiente versión.
-
-## Límites y siguiente paso
-
-Un análisis básico depende de supuestos. Cambiar restricciones, cargas, contacto o material puede modificar mucho el resultado. Para piezas críticas, el FEM debe acompañarse de validación y revisión especializada.
-
-Para continuar, consulta también [guías de simulación FEM](/guias), [documentación técnica](/blog/documentar-analisis-fem-basico) y [recursos técnicos](/recursos).
 
 ## Conclusión
 

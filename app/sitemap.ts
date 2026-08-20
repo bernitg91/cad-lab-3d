@@ -4,7 +4,7 @@ import { caseStudies } from "@/lib/case-studies";
 import { absoluteUrl } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUpdatedAt = new Date("2026-06-23");
+  const siteUpdatedAt = new Date("2026-08-20");
   const staticPages = [
     "",
     "/blog",

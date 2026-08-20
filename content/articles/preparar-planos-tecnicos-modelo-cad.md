@@ -5,6 +5,7 @@ description: "Guía para generar planos técnicos claros desde CAD con vistas, c
 category: "Proyectos universitarios"
 categorySlug: "proyectos-universitarios"
 date: "2026-05-10"
+updatedDate: "2026-08-20"
 readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: false
@@ -42,28 +43,6 @@ El cajetín debe incluir nombre de pieza, autor o proyecto, fecha, escala, unida
 
 Un plano técnico no debe ser una captura con cotas al azar. Debe mostrar las vistas necesarias, cotas funcionales, tolerancias si aplican, material, escala y notas. Si una cota no ayuda a fabricar, comprobar o entender la pieza, probablemente sobra. Menos cotas, mejor elegidas, hacen un plano más profesional.
 
-## Criterios de revisión
-
-Para aplicar bien esta guía sobre **preparar planos técnicos desde un modelo CAD**, utiliza esta revisión:
-
-- Comprueba que objetivo, requisitos, método, resultados y conclusiones se entienden sin explicación oral.
-- Cada imagen debe aportar una evidencia: CAD, plano, prueba, render, tabla o prototipo.
-- Evita llenar la memoria con capturas bonitas si no explican una decisión.
-- Cierra cada apartado con una conclusión técnica breve.
-
-## Aplicación práctica
-
-Elige una entrega concreta y revisa si cada apartado responde a una pregunta útil: qué se buscaba, cómo se hizo, qué se obtuvo y qué limitación queda abierta. Si una imagen no ayuda a responder eso, cambia la imagen o añade contexto.
-
-### Registro recomendado
-
-Guarda solo evidencias útiles: capturas, medidas, parámetros, fotos del prototipo o notas de descarte. El objetivo es que otra persona pueda entender qué decisión se tomó y qué habría que revisar en la siguiente versión.
-
-## Límites y siguiente paso
-
-Estas pautas no sustituyen el formato de una asignatura. Si el profesor pide una estructura concreta, úsala primero y adapta estas recomendaciones para reforzar claridad, trazabilidad y lectura técnica.
-
-Para continuar, consulta también [recursos técnicos](/recursos), [guías por tema](/guias) y [metodología editorial](/metodologia).
 
 ## Conclusión
 

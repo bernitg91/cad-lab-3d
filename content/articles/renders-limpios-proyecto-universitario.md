@@ -5,6 +5,7 @@ description: "Consejos para crear renders claros, técnicos y coherentes para me
 category: "Proyectos universitarios"
 categorySlug: "proyectos-universitarios"
 date: "2026-05-07"
+updatedDate: "2026-08-20"
 readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: false
@@ -38,28 +39,6 @@ Mantén proporciones, márgenes y estilo gráfico entre renders. Si usas materia
 
 Un render universitario debe explicar el producto, no ocultarlo detrás de efectos. Usa fondo neutro, cámara clara, escala entendible y materiales coherentes. Si el render acompaña una memoria técnica, añade vistas de detalle o secciones cuando ayuden a explicar función, montaje o fabricación.
 
-## Criterios de revisión
-
-Para aplicar bien esta guía sobre **preparar renders limpios para un proyecto universitario**, utiliza esta revisión:
-
-- Comprueba que objetivo, requisitos, método, resultados y conclusiones se entienden sin explicación oral.
-- Cada imagen debe aportar una evidencia: CAD, plano, prueba, render, tabla o prototipo.
-- Evita llenar la memoria con capturas bonitas si no explican una decisión.
-- Cierra cada apartado con una conclusión técnica breve.
-
-## Aplicación práctica
-
-Elige una entrega concreta y revisa si cada apartado responde a una pregunta útil: qué se buscaba, cómo se hizo, qué se obtuvo y qué limitación queda abierta. Si una imagen no ayuda a responder eso, cambia la imagen o añade contexto.
-
-### Registro recomendado
-
-Guarda solo evidencias útiles: capturas, medidas, parámetros, fotos del prototipo o notas de descarte. El objetivo es que otra persona pueda entender qué decisión se tomó y qué habría que revisar en la siguiente versión.
-
-## Límites y siguiente paso
-
-Estas pautas no sustituyen el formato de una asignatura. Si el profesor pide una estructura concreta, úsala primero y adapta estas recomendaciones para reforzar claridad, trazabilidad y lectura técnica.
-
-Para continuar, consulta también [recursos técnicos](/recursos), [guías por tema](/guias) y [metodología editorial](/metodologia).
 
 ## Conclusión
 

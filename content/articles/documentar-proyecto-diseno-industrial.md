@@ -5,7 +5,7 @@ description: "Método para documentar proyectos de diseño industrial desde el p
 category: "Proyectos universitarios"
 categorySlug: "proyectos-universitarios"
 date: "2026-03-22"
-updatedDate: "2026-06-13"
+updatedDate: "2026-08-20"
 readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: false

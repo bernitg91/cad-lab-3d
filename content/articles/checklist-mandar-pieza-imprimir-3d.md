@@ -5,6 +5,7 @@ description: "Lista práctica para revisar geometría, tolerancias, orientación
 category: "Recursos"
 categorySlug: "recursos"
 date: "2026-03-18"
+updatedDate: "2026-08-20"
 readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: false
@@ -57,28 +58,6 @@ Comprueba nombre del archivo, versión, material, color y notas de montaje. Si t
 
 En un proyecto universitario, una pieza puede pasar de correcta a fallida por un detalle pequeño: escala exportada en pulgadas, soportes sobre una cara visible o una orientación que separa capas justo en la zona cargada. La checklist sirve para detectar esos fallos antes de gastar seis horas de máquina. También ayuda a justificar decisiones si el tutor pregunta por material, orientación o tolerancias.
 
-## Criterios de revisión
-
-Para aplicar bien esta guía sobre **checklist antes de mandar una pieza a imprimir en 3D**, utiliza esta revisión:
-
-- Comprueba nombre de archivo, versión, unidades, escala y formato antes de compartir.
-- Incluye capturas o notas suficientes para entender por qué se exportó así.
-- Evita mezclar archivos finales con versiones de prueba sin identificarlas.
-- Guarda una copia del CAD original aunque entregues STL, STEP o PDF.
-
-## Aplicación práctica
-
-Usa una carpeta de proyecto con subcarpetas para CAD, exportaciones, capturas, planos y pruebas. La revisión es más rápida cuando cada archivo tiene nombre, fecha y propósito claro.
-
-### Registro recomendado
-
-Guarda solo evidencias útiles: capturas, medidas, parámetros, fotos del prototipo o notas de descarte. El objetivo es que otra persona pueda entender qué decisión se tomó y qué habría que revisar en la siguiente versión.
-
-## Límites y siguiente paso
-
-Una plantilla o checklist no garantiza calidad por sí sola. Tiene valor cuando se adapta al proyecto, se marca con evidencias y se actualiza después de detectar fallos.
-
-Para continuar, consulta también [recursos técnicos](/recursos), [glosario](/glosario) y [guías por tema](/guias).
 
 ## Conclusión
 

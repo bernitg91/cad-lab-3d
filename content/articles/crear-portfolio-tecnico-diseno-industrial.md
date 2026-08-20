@@ -5,6 +5,7 @@ description: "Estructura práctica para crear un portfolio técnico con proceso,
 category: "Diseño industrial"
 categorySlug: "diseno-industrial"
 date: "2026-05-11"
+updatedDate: "2026-08-20"
 readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: false
@@ -39,28 +40,6 @@ Usa una imagen principal, dos o tres capturas de proceso, detalles técnicos, re
 
 Un portfolio puede incluir un proyecto de carcasa impresa en 3D, pero no basta con enseñar el render final. Añade una imagen del problema, una captura del CAD, una decisión sobre material, una vista de explosión si hay montaje y una foto o captura del prototipo. Ese conjunto cuenta una historia técnica mucho más creíble que una galería de imágenes bonitas.
 
-## Criterios de revisión
-
-Para aplicar bien esta guía sobre **crear un portfolio técnico de diseño industrial**, utiliza esta revisión:
-
-- Define usuario, función, contexto de uso y restricción principal antes de cerrar la geometría.
-- Revisa montaje, mantenimiento, espesores, radios, tolerancias y coherencia visual.
-- Separa decisiones estéticas de decisiones técnicas para explicar mejor el proyecto.
-- Guarda una captura o nota por cada cambio importante de diseño.
-
-## Aplicación práctica
-
-Toma una pieza o producto y escribe qué problema resuelve. Después revisa una zona funcional, una zona de montaje y una decisión visual. Si no puedes justificar una decisión con una necesidad, simplifícala o elimínala.
-
-### Registro recomendado
-
-Guarda solo evidencias útiles: capturas, medidas, parámetros, fotos del prototipo o notas de descarte. El objetivo es que otra persona pueda entender qué decisión se tomó y qué habría que revisar en la siguiente versión.
-
-## Límites y siguiente paso
-
-Un prototipo visual puede comunicar forma, pero no valida resistencia, ergonomía ni fabricación. Cuando el proyecto pase de presentación a uso real, revisa requisitos, ensayos y límites con más rigor.
-
-Para continuar, consulta también [guías de diseño industrial](/guias), [casos prácticos de impresión 3D](/casos-practicos-impresion-3d) y [recursos técnicos](/recursos).
 
 ## Conclusión
 

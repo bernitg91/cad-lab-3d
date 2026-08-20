@@ -5,6 +5,7 @@ description: "Guía para elegir porcentaje y patrón de relleno en piezas estét
 category: "Impresión 3D"
 categorySlug: "impresion-3d"
 date: "2026-05-12"
+updatedDate: "2026-08-20"
 readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: false
@@ -38,28 +39,6 @@ En muchas piezas, aumentar perímetros mejora más que subir el relleno. Si la c
 
 Una pieza decorativa puede funcionar con poco relleno. Un soporte con tornillos quizá necesita más paredes, no necesariamente más relleno. Una pieza que debe pesar poco puede usar relleno bajo y nervios. La decisión correcta combina función, orientación, material y tiempo disponible.
 
-## Criterios de revisión
-
-Para aplicar bien esta guía sobre **relleno usar en impresión 3D según el tipo de pieza**, utiliza esta revisión:
-
-- Antes de lanzar una impresión larga, revisa el archivo como si fueras a repetirlo dentro de un mes.
-- Comprueba unidades, orientación, soportes, primera capa, paredes y zonas de encaje.
-- Si la pieza tiene zonas críticas, valida primero una muestra parcial o una versión reducida.
-- Guarda material, boquilla, altura de capa, relleno, tiempo estimado y observaciones del resultado.
-
-## Aplicación práctica
-
-Trabaja con una pieza concreta: importa el archivo en el laminador, revisa la vista por capas, localiza la zona más delicada y decide qué parámetro afecta más al resultado. Después imprime una prueba pequeña si el fallo puede costar muchas horas.
-
-### Registro recomendado
-
-Guarda solo evidencias útiles: capturas, medidas, parámetros, fotos del prototipo o notas de descarte. El objetivo es que otra persona pueda entender qué decisión se tomó y qué habría que revisar en la siguiente versión.
-
-## Límites y siguiente paso
-
-Las recomendaciones de FDM dependen de impresora, boquilla, material, humedad, tamaño de pieza y orientación. Una solución válida para PLA pequeño puede fallar en PETG, TPU o en una pieza con más horas de impresión.
-
-Para continuar, consulta también [checklist interactiva de impresión 3D](/checklist-impresion-3d), [calculadora de precio de impresión 3D](/calculadora-precio-impresion-3d) y [selector de material FDM](/selector-material-impresion-3d).
 
 ## Conclusión
 

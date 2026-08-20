@@ -5,7 +5,7 @@ description: "Lista de fallos habituales al diseñar para FDM: tolerancias, orie
 category: "Impresión 3D"
 categorySlug: "impresion-3d"
 date: "2026-04-24"
-updatedDate: "2026-06-13"
+updatedDate: "2026-08-20"
 readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: true

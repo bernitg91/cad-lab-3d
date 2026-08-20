@@ -5,7 +5,7 @@ description: "Guía para documentar cargas, restricciones, material, malla, resu
 category: "Simulación FEM"
 categorySlug: "simulacion-fem"
 date: "2026-05-08"
-updatedDate: "2026-06-13"
+updatedDate: "2026-08-20"
 readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: false

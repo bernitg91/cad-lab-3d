@@ -5,7 +5,7 @@ description: "Guía para crear renders de producto limpios y técnicos que expli
 category: "Diseño industrial"
 categorySlug: "diseno-industrial"
 date: "2026-03-26"
-updatedDate: "2026-06-13"
+updatedDate: "2026-08-20"
 readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: false

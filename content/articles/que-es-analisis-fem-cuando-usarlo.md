@@ -5,7 +5,7 @@ description: "Introducción al análisis por elementos finitos para estudiantes:
 category: "Simulación FEM"
 categorySlug: "simulacion-fem"
 date: "2026-04-16"
-updatedDate: "2026-06-13"
+updatedDate: "2026-08-20"
 readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: true
