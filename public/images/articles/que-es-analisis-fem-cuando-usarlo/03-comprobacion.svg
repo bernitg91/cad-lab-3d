@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+    <title>Comprobaciones de Qué es un análisis FEM y cuándo usarlo</title><desc>Lámina técnica con puntos de control específicos para este artículo.</desc>
+    <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#2557a7" stroke-opacity="0.09" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="panel" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#fbfdff"/><stop offset="1" stop-color="#e9f1f5"/></linearGradient>
+    <linearGradient id="stress" x1="0" x2="1"><stop offset="0" stop-color="#087e8b"/><stop offset="0.55" stop-color="#ff9f1c"/><stop offset="1" stop-color="#dc2626"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#172033" flood-opacity="0.13"/></filter>
+  </defs><rect width="1600" height="900" fill="#fbfdff"/>
+    <rect width="1600" height="900" fill="url(#grid)"/>
+    <path d="M0 88H1600" stroke="#172033" stroke-opacity="0.14"/>
+    <path d="M82 0V900M1518 0V900" stroke="#172033" stroke-opacity="0.1"/>
+    <text x="82" y="55" fill="#172033" font-family="Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="3">CADLAB3D · LÁMINA 03 · PUNTOS DE COMPROBACIÓN</text>
+    <text x="1518" y="55" fill="#172033" fill-opacity="0.62" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="end" letter-spacing="1.8">QUE-ES-ANALISIS-FEM-CUANDO-U</text>
+    <g transform="translate(35 75) scale(.92)"><g transform="translate(70 115)">
+    <path d="M250 195v105" stroke="#ff9f1c" stroke-width="8"/><path d="M230 285l20 28 20-28" fill="#ff9f1c"/><path d="M395 195v105" stroke="#ff9f1c" stroke-width="8"/><path d="M375 285l20 28 20-28" fill="#ff9f1c"/><path d="M540 195v105" stroke="#ff9f1c" stroke-width="8"/><path d="M520 285l20 28 20-28" fill="#ff9f1c"/>
+    <path d="M145 448.91885497083916L223 451.7930018376849L188 586.7930018376849Z" fill="#087e8b" fill-opacity="0.13" stroke="#2557a7" stroke-width="2"/><path d="M145 448.91885497083916L179 580.9188549708392L188 586.7930018376849" fill="none" stroke="#2557a7" stroke-width="2"/><path d="M223 451.7930018376849L301 453.0852822678636L266 588.0852822678636Z" fill="#087e8b" fill-opacity="0.19" stroke="#2557a7" stroke-width="2"/><path d="M223 451.7930018376849L257 583.7930018376849L266 588.0852822678636" fill="none" stroke="#2557a7" stroke-width="2"/><path d="M301 453.0852822678636L379 392.6610327051156L344 527.6610327051155Z" fill="#087e8b" fill-opacity="0.25" stroke="#2557a7" stroke-width="2"/><path d="M301 453.0852822678636L335 585.0852822678636L344 527.6610327051155" fill="none" stroke="#2557a7" stroke-width="2"/><path d="M379 392.6610327051156L457 299.61798281621736L422 434.61798281621736Z" fill="#087e8b" fill-opacity="0.31" stroke="#2557a7" stroke-width="2"/><path d="M379 392.6610327051156L413 524.6610327051155L422 434.61798281621736" fill="none" stroke="#2557a7" stroke-width="2"/><path d="M457 299.61798281621736L535 290.2933506681843L500 425.2933506681843Z" fill="#ff9f1c" fill-opacity="0.37" stroke="#2557a7" stroke-width="2"/><path d="M457 299.61798281621736L491 431.61798281621736L500 425.2933506681843" fill="none" stroke="#2557a7" stroke-width="2"/><path d="M535 290.2933506681843L613 375.29169223401846L578 510.29169223401846Z" fill="#ff9f1c" fill-opacity="0.43" stroke="#2557a7" stroke-width="2"/><path d="M535 290.2933506681843L569 422.2933506681843L578 510.29169223401846" fill="none" stroke="#2557a7" stroke-width="2"/>
+    <rect x="120" y="610" width="550" height="24" fill="url(#stress)"/>
+    <text x="120" y="665" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#172033">BAJA</text>
+    <text x="670" y="665" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#172033" text-anchor="end">ALTA</text>
+    <g stroke="#172033" stroke-width="6"><path d="M140 535v80M625 535v80"/><path d="M110 615h60M595 615h60"/></g>
+  </g></g>
+    <g>
+      <circle cx="620" cy="300" r="16" fill="#ff9f1c" stroke="#fbfdff" stroke-width="5"/>
+      <path d="M638 300H872V233" fill="none" stroke="#ff9f1c" stroke-width="4"/>
+      <rect x="900" y="175" width="500" height="128" fill="#fbfdff" stroke="#172033" stroke-width="3" filter="url(#shadow)"/>
+      <rect x="900" y="175" width="58" height="128" fill="#172033"/>
+      <text x="929" y="249" fill="white" font-family="Arial, sans-serif" font-size="23" font-weight="800" text-anchor="middle">01</text>
+      <text x="988" y="229" fill="#172033" font-family="Arial, sans-serif" font-size="25" font-weight="800" text-anchor="start" letter-spacing="0"><tspan x="988" dy="0">Modelo evita apoyos</tspan><tspan x="988" dy="34">artificiales</tspan></text>
+    </g><g>
+      <circle cx="645" cy="465" r="16" fill="#ff9f1c" stroke="#fbfdff" stroke-width="5"/>
+      <path d="M663 465H987V448" fill="none" stroke="#ff9f1c" stroke-width="4"/>
+      <rect x="1015" y="390" width="500" height="128" fill="#fbfdff" stroke="#087e8b" stroke-width="3" filter="url(#shadow)"/>
+      <rect x="1015" y="390" width="58" height="128" fill="#087e8b"/>
+      <text x="1044" y="464" fill="white" font-family="Arial, sans-serif" font-size="23" font-weight="800" text-anchor="middle">02</text>
+      <text x="1103" y="444" fill="#172033" font-family="Arial, sans-serif" font-size="25" font-weight="800" text-anchor="start" letter-spacing="0"><tspan x="1103" dy="0">Malla converge en la zona</tspan><tspan x="1103" dy="34">crítica</tspan></text>
+    </g><g>
+      <circle cx="560" cy="620" r="16" fill="#ff9f1c" stroke="#fbfdff" stroke-width="5"/>
+      <path d="M578 620H847V668" fill="none" stroke="#ff9f1c" stroke-width="4"/>
+      <rect x="875" y="610" width="500" height="128" fill="#fbfdff" stroke="#172033" stroke-width="3" filter="url(#shadow)"/>
+      <rect x="875" y="610" width="58" height="128" fill="#172033"/>
+      <text x="904" y="684" fill="white" font-family="Arial, sans-serif" font-size="23" font-weight="800" text-anchor="middle">03</text>
+      <text x="963" y="664" fill="#172033" font-family="Arial, sans-serif" font-size="25" font-weight="800" text-anchor="start" letter-spacing="0"><tspan x="963" dy="0">Resultado conduce a una</tspan><tspan x="963" dy="34">decisión</tspan></text>
+    </g>
+    <rect x="90" y="795" width="1418" height="38" fill="#172033"/>
+    <text x="800" y="821" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="800" text-anchor="middle" letter-spacing="2">COMPROBAR ANTES DE FABRICAR · DOCUMENTAR DESPUÉS DE MEDIR</text>
+  </svg>

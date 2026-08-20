@@ -67,7 +67,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-slate-800">
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-6 text-xs leading-6 text-slate-500 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-6 text-xs leading-6 text-slate-300 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
           <p>© {new Date().getFullYear()} CAD Lab 3D · Contenido educativo; valida siempre materiales, medidas y requisitos reales.</p>
           <ul className="flex flex-wrap gap-x-4 gap-y-2">
             <li><Link className="hover:text-white" href="/politica-privacidad">Privacidad</Link></li>

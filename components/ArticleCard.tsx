@@ -2,21 +2,22 @@ import Image from "next/image";
 import Link from "next/link";
 import { getCategoryGuidePath } from "@/lib/categories";
 import { formatDate } from "@/lib/date";
-import { getArticleSupport } from "@/lib/article-support";
+import { getArticleVisuals } from "@/lib/article-visuals";
 import type { ArticleMeta } from "@/types/article";
 
 export function ArticleCard({ article }: { article: ArticleMeta }) {
-  const support = getArticleSupport(article.slug);
+  const [heroVisual] = getArticleVisuals(article);
 
   return (
     <article className="lift-on-hover group flex h-full flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm hover:border-blue-300 hover:shadow-xl hover:shadow-slate-950/10">
       <Link href={`/blog/${article.slug}`} aria-label={`Leer ${article.title}`} className="image-scanline relative block aspect-[16/9] overflow-hidden bg-slate-100">
         <Image
-          src={support.evidence.image}
-          alt={support.evidence.alt}
+          src={heroVisual.image}
+          alt={heroVisual.alt}
           fill
           sizes="(min-width: 1024px) 360px, (min-width: 768px) 50vw, 100vw"
-          className="object-cover transition duration-500 group-hover:scale-[1.03]"
+          unoptimized
+          className="object-contain transition duration-500 group-hover:scale-[1.03]"
         />
       </Link>
       <div className="flex flex-1 flex-col p-5">
@@ -24,7 +25,7 @@ export function ArticleCard({ article }: { article: ArticleMeta }) {
           <Link href={getCategoryGuidePath(article.categorySlug)} className="rounded bg-teal-50 px-2.5 py-1.5">
             {article.category}
           </Link>
-          <span className="text-slate-400">{article.readingTime}</span>
+          <span className="text-slate-600">{article.readingTime}</span>
         </div>
         <h2 className="mt-4 font-display text-[1.7rem] font-black leading-[1.05] text-slate-950">
           <Link href={`/blog/${article.slug}`} className="group-hover:text-blue-700">

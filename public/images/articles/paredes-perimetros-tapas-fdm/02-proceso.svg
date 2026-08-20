@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+    <title>Proceso visual de Guía de paredes, perímetros y tapas en FDM</title><desc>Tres pasos técnicos exclusivos para este artículo de CADLAB3D.</desc>
+    <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#1d4ed8" stroke-opacity="0.09" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="panel" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#f8fafc"/><stop offset="1" stop-color="#e7eff7"/></linearGradient>
+    <linearGradient id="stress" x1="0" x2="1"><stop offset="0" stop-color="#0f766e"/><stop offset="0.55" stop-color="#f59e0b"/><stop offset="1" stop-color="#dc2626"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#0f172a" flood-opacity="0.13"/></filter>
+  </defs><rect width="1600" height="900" fill="#f8fafc"/>
+    <rect width="1600" height="900" fill="url(#grid)"/>
+    <path d="M0 88H1600" stroke="#0f172a" stroke-opacity="0.14"/>
+    <path d="M82 0V900M1518 0V900" stroke="#0f172a" stroke-opacity="0.1"/>
+    <text x="82" y="55" fill="#0f172a" font-family="Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="3">CADLAB3D · LÁMINA 02 · SECUENCIA DE TRABAJO</text>
+    <text x="1518" y="55" fill="#0f172a" fill-opacity="0.62" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="end" letter-spacing="1.8">PAREDES-PERIMETROS-TAPAS-FDM</text>
+    <g transform="translate(90 215)">
+      <rect width="430" height="480" fill="url(#panel)" stroke="#0f172a" stroke-width="3" filter="url(#shadow)"/>
+      <rect width="430" height="58" fill="#0f172a"/>
+      <text x="30" y="38" fill="white" font-family="Arial, sans-serif" font-size="17" font-weight="800" letter-spacing="2">PASO 01</text>
+      <g transform="translate(128 95)"><g transform="rotate(0 82 82)"><path d="M28 25h108v120H28zM45 120h75M82 25v45M64 70h36l-9 27H73z" fill="none" stroke="#0f766e" stroke-width="6"/><path d="M58 118h50" stroke="#f59e0b" stroke-width="12"/></g></g>
+      <text x="38" y="360" fill="#0f172a" font-family="Arial, sans-serif" font-size="30" font-weight="800" text-anchor="start" letter-spacing="0"><tspan x="38" dy="0">Relacionar pared y ancho</tspan><tspan x="38" dy="38">de línea</tspan></text>
+      <path d="M38 462H392" stroke="#1d4ed8" stroke-opacity="0.35" stroke-width="3"/>
+    </g><g transform="translate(595 215)">
+      <rect width="430" height="480" fill="url(#panel)" stroke="#0f766e" stroke-width="5" filter="url(#shadow)"/>
+      <rect width="430" height="58" fill="#0f766e"/>
+      <text x="30" y="38" fill="white" font-family="Arial, sans-serif" font-size="17" font-weight="800" letter-spacing="2">PASO 02</text>
+      <g transform="translate(128 95)"><g transform="rotate(12 82 82)"><path d="M28 25h108v120H28zM45 120h75M82 25v45M64 70h36l-9 27H73z" fill="none" stroke="#0f766e" stroke-width="6"/><path d="M58 118h50" stroke="#f59e0b" stroke-width="12"/></g></g>
+      <text x="38" y="360" fill="#0f172a" font-family="Arial, sans-serif" font-size="30" font-weight="800" text-anchor="start" letter-spacing="0"><tspan x="38" dy="0">Configurar perímetros</tspan><tspan x="38" dy="38">continuos</tspan></text>
+      <path d="M38 462H392" stroke="#1d4ed8" stroke-opacity="0.35" stroke-width="3"/>
+    </g><g transform="translate(1100 215)">
+      <rect width="430" height="480" fill="url(#panel)" stroke="#0f172a" stroke-width="3" filter="url(#shadow)"/>
+      <rect width="430" height="58" fill="#0f172a"/>
+      <text x="30" y="38" fill="white" font-family="Arial, sans-serif" font-size="17" font-weight="800" letter-spacing="2">PASO 03</text>
+      <g transform="translate(128 95)"><g transform="rotate(24 82 82)"><path d="M28 25h108v120H28zM45 120h75M82 25v45M64 70h36l-9 27H73z" fill="none" stroke="#0f766e" stroke-width="6"/><path d="M58 118h50" stroke="#f59e0b" stroke-width="12"/></g></g>
+      <text x="38" y="360" fill="#0f172a" font-family="Arial, sans-serif" font-size="30" font-weight="800" text-anchor="start" letter-spacing="0"><tspan x="38" dy="0">Sostener correctamente</tspan><tspan x="38" dy="38">las tapas</tspan></text>
+      <path d="M38 462H392" stroke="#1d4ed8" stroke-opacity="0.35" stroke-width="3"/>
+    </g>
+    <path d="M520 455h55M1080 455h55" stroke="#f59e0b" stroke-width="8"/><path d="M560 438l24 17-24 17M1120 438l24 17-24 17" fill="none" stroke="#f59e0b" stroke-width="8"/>
+    <text x="800" y="820" fill="#0f172a" font-family="Arial, sans-serif" font-size="19" font-weight="700" text-anchor="middle" letter-spacing="1.5">UN CAMBIO CADA VEZ · REGISTRO DE DATOS · COMPARACIÓN</text>
+  </svg>

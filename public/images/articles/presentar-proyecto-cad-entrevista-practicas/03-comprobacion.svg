@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+    <title>Comprobaciones de Cómo presentar un proyecto CAD en una entrevista o prácticas</title><desc>Lámina técnica con puntos de control específicos para este artículo.</desc>
+    <defs>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M 36 0 L 0 0 0 36" fill="none" stroke="#1d4ed8" stroke-opacity="0.09" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="panel" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#f8fafc"/><stop offset="1" stop-color="#e7eff7"/></linearGradient>
+    <linearGradient id="stress" x1="0" x2="1"><stop offset="0" stop-color="#0f766e"/><stop offset="0.55" stop-color="#f59e0b"/><stop offset="1" stop-color="#dc2626"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#0f172a" flood-opacity="0.13"/></filter>
+  </defs><rect width="1600" height="900" fill="#f8fafc"/>
+    <rect width="1600" height="900" fill="url(#grid)"/>
+    <path d="M0 88H1600" stroke="#0f172a" stroke-opacity="0.14"/>
+    <path d="M82 0V900M1518 0V900" stroke="#0f172a" stroke-opacity="0.1"/>
+    <text x="82" y="55" fill="#0f172a" font-family="Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="3">CADLAB3D · LÁMINA 03 · PUNTOS DE COMPROBACIÓN</text>
+    <text x="1518" y="55" fill="#0f172a" fill-opacity="0.62" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="end" letter-spacing="1.8">PRESENTAR-PROYECTO-CAD-ENTRE</text>
+    <g transform="translate(35 75) scale(.92)"><g transform="translate(105 145)" filter="url(#shadow)">
+    <g transform="rotate(-4 310 280)"><rect x="65" y="55" width="420" height="555" fill="#f8fafc" stroke="#0f172a" stroke-width="5"/><rect x="105" y="105" width="255" height="28" fill="#1d4ed8" fill-opacity="0.18"/><rect x="105" y="155" width="335" height="10" fill="#0f172a" fill-opacity="0.18"/><rect x="105" y="185" width="280" height="10" fill="#0f172a" fill-opacity="0.14"/><path d="M125 315L230 245 360 310 245 385Z" fill="#0f766e" fill-opacity="0.14" stroke="#0f766e" stroke-width="4"/><path d="M125 315V249L230 179V245M230 179L360 244V310" fill="none" stroke="#0f172a" stroke-width="3"/><rect x="105" y="445" width="330" height="90" fill="url(#panel)" stroke="#1d4ed8" stroke-width="3"/></g>
+    <g transform="translate(390 205) rotate(5 150 190)"><rect x="0" y="0" width="300" height="390" fill="#f8fafc" stroke="#0f172a" stroke-width="5"/><circle cx="150" cy="145" r="78" fill="#f59e0b" fill-opacity="0.16" stroke="#f59e0b" stroke-width="5"/><path d="M88 145h124M150 83v124" stroke="#f59e0b" stroke-width="4"/><rect x="45" y="270" width="210" height="14" fill="#0f172a" fill-opacity="0.2"/><rect x="45" y="305" width="165" height="14" fill="#0f172a" fill-opacity="0.14"/></g>
+  </g></g>
+    <g>
+      <circle cx="620" cy="300" r="16" fill="#f59e0b" stroke="#f8fafc" stroke-width="5"/>
+      <path d="M638 300H872V233" fill="none" stroke="#f59e0b" stroke-width="4"/>
+      <rect x="900" y="175" width="500" height="128" fill="#f8fafc" stroke="#0f172a" stroke-width="3" filter="url(#shadow)"/>
+      <rect x="900" y="175" width="58" height="128" fill="#0f172a"/>
+      <text x="929" y="249" fill="white" font-family="Arial, sans-serif" font-size="23" font-weight="800" text-anchor="middle">01</text>
+      <text x="988" y="229" fill="#0f172a" font-family="Arial, sans-serif" font-size="25" font-weight="800" text-anchor="start" letter-spacing="0"><tspan x="988" dy="0">Contribución individual</tspan><tspan x="988" dy="34">resulta clara</tspan></text>
+    </g><g>
+      <circle cx="645" cy="465" r="16" fill="#f59e0b" stroke="#f8fafc" stroke-width="5"/>
+      <path d="M663 465H987V448" fill="none" stroke="#f59e0b" stroke-width="4"/>
+      <rect x="1015" y="390" width="500" height="128" fill="#f8fafc" stroke="#0f766e" stroke-width="3" filter="url(#shadow)"/>
+      <rect x="1015" y="390" width="58" height="128" fill="#0f766e"/>
+      <text x="1044" y="464" fill="white" font-family="Arial, sans-serif" font-size="23" font-weight="800" text-anchor="middle">02</text>
+      <text x="1103" y="444" fill="#0f172a" font-family="Arial, sans-serif" font-size="25" font-weight="800" text-anchor="start" letter-spacing="0"><tspan x="1103" dy="0">Capturas se leen a distancia</tspan></text>
+    </g><g>
+      <circle cx="560" cy="620" r="16" fill="#f59e0b" stroke="#f8fafc" stroke-width="5"/>
+      <path d="M578 620H847V668" fill="none" stroke="#f59e0b" stroke-width="4"/>
+      <rect x="875" y="610" width="500" height="128" fill="#f8fafc" stroke="#0f172a" stroke-width="3" filter="url(#shadow)"/>
+      <rect x="875" y="610" width="58" height="128" fill="#0f172a"/>
+      <text x="904" y="684" fill="white" font-family="Arial, sans-serif" font-size="23" font-weight="800" text-anchor="middle">03</text>
+      <text x="963" y="664" fill="#0f172a" font-family="Arial, sans-serif" font-size="25" font-weight="800" text-anchor="start" letter-spacing="0"><tspan x="963" dy="0">Explicación cabe en dos</tspan><tspan x="963" dy="34">minutos</tspan></text>
+    </g>
+    <rect x="90" y="795" width="1418" height="38" fill="#0f172a"/>
+    <text x="800" y="821" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="800" text-anchor="middle" letter-spacing="2">COMPROBAR ANTES DE FABRICAR · DOCUMENTAR DESPUÉS DE MEDIR</text>
+  </svg>

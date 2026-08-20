@@ -31,3 +31,12 @@ export type Category = {
   slug: CategorySlug;
   description: string;
 };
+
+export type ArticleVisual = {
+  image: string;
+  alt: string;
+  caption: string;
+  width: 1600;
+  height: 900;
+  credit: "Ilustración original CADLAB3D";
+};

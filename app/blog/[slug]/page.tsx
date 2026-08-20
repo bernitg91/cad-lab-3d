@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound, permanentRedirect } from "next/navigation";
 import { AdSlot } from "@/components/AdSlot";
 import { ArticleCard } from "@/components/ArticleCard";
+import { ArticleFigure } from "@/components/ArticleFigure";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CopyLinkButton } from "@/components/CopyLinkButton";
 import { ExploreMore } from "@/components/Newsletter";
@@ -11,6 +11,7 @@ import { RecommendedResources } from "@/components/RecommendedResources";
 import { TableOfContents } from "@/components/TableOfContents";
 import { formatDate, getAllArticles, getArchivedArticleRedirect, getArticleBySlug, getRelatedArticles } from "@/lib/articles";
 import { getArticleSupport } from "@/lib/article-support";
+import { getArticleVisuals } from "@/lib/article-visuals";
 import { MarkdownContent } from "@/lib/markdown";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 import { createPageMetadata, jsonLd } from "@/lib/seo";
@@ -34,7 +35,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
   if (!article) return {};
-  const support = getArticleSupport(article.slug);
+  const visuals = getArticleVisuals(article);
 
   return createPageMetadata({
     title: article.title,
@@ -43,7 +44,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     type: "article",
     publishedTime: article.date,
     authors: [article.author],
-    image: support.evidence?.image
+    image: visuals[0].image,
+    imageAlt: visuals[0].alt
   });
 }
 
@@ -56,10 +58,15 @@ export default async function ArticlePage({ params }: PageProps) {
 
   const relatedArticles = getRelatedArticles(article);
   const support = getArticleSupport(article.slug);
+  const visuals = getArticleVisuals(article);
   const contentSections = article.content.split(/(?=^##\s)/m);
-  const contentPivot = Math.max(1, Math.ceil(contentSections.length / 2));
-  const firstContent = contentSections.slice(0, contentPivot).join("").trim();
-  const secondContent = contentSections.slice(contentPivot).join("").trim();
+  const introduction = contentSections[0] ?? "";
+  const bodySections = contentSections.slice(1);
+  const firstBoundary = Math.max(1, Math.floor(bodySections.length / 3));
+  const secondBoundary = Math.max(firstBoundary + 1, Math.floor((bodySections.length * 2) / 3));
+  const firstContent = [introduction, ...bodySections.slice(0, firstBoundary)].join("").trim();
+  const secondContent = bodySections.slice(firstBoundary, secondBoundary).join("").trim();
+  const thirdContent = bodySections.slice(secondBoundary).join("").trim();
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -80,7 +87,13 @@ export default async function ArticlePage({ params }: PageProps) {
       logo: absoluteUrl("/brand/cadlab3d-mark.png")
     },
     articleSection: article.category,
-    ...(support.evidence ? { image: absoluteUrl(support.evidence.image) } : {}),
+    image: visuals.map((visual) => ({
+      "@type": "ImageObject",
+      url: absoluteUrl(visual.image),
+      width: visual.width,
+      height: visual.height,
+      caption: visual.caption
+    })),
     inLanguage: "es-ES"
   };
   const breadcrumbJsonLd = {
@@ -136,22 +149,7 @@ export default async function ArticlePage({ params }: PageProps) {
               <CopyLinkButton />
             </div>
           </header>
-          <figure className="calibration-rail mx-auto mt-10 max-w-5xl pl-4">
-            <div className="image-scanline relative aspect-[4/3] overflow-hidden border border-slate-300 bg-slate-100 shadow-xl shadow-slate-950/10 sm:aspect-[16/9]">
-              <Image
-                src={support.evidence.image}
-                alt={support.evidence.alt}
-                fill
-                priority
-                sizes="(min-width: 1280px) 1024px, (min-width: 768px) 90vw, 100vw"
-                className="object-cover"
-              />
-            </div>
-            <figcaption className="border-x border-b border-slate-200 bg-white px-5 py-4 text-left text-sm leading-6 text-slate-600 sm:px-7">
-              {support.evidence.caption}
-            </figcaption>
-            <div className="mt-2 flex justify-between font-mono text-[8px] uppercase tracking-[0.14em] text-slate-400"><span>Vista principal</span><span>Ref. {article.slug.slice(0, 18)}</span></div>
-          </figure>
+          <ArticleFigure visual={visuals[0]} label="Vista principal" reference={article.slug} hero />
         </div>
       </article>
 
@@ -168,27 +166,18 @@ export default async function ArticlePage({ params }: PageProps) {
 
           <MarkdownContent content={firstContent} />
 
+          <ArticleFigure visual={visuals[1]} label="Proceso" reference={`${article.slug}-02`} />
+
+          {secondContent ? <MarkdownContent content={secondContent} /> : null}
+
           <AdSlot
             clientId={process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT}
             slot={process.env.NEXT_PUBLIC_ADSENSE_ARTICLE_MID_SLOT}
           />
 
-          <figure className="my-10 overflow-hidden border border-slate-200 bg-white shadow-lg shadow-slate-950/5">
-            <div className="relative aspect-[4/3] bg-slate-100 sm:aspect-[16/9]">
-              <Image
-                src={support.inlineEvidence.image}
-                alt={support.inlineEvidence.alt}
-                fill
-                sizes="(min-width: 1024px) 820px, 100vw"
-                className="object-cover"
-              />
-            </div>
-            <figcaption className="border-t border-slate-200 px-5 py-4 text-sm leading-6 text-slate-600">
-              {support.inlineEvidence.caption}
-            </figcaption>
-          </figure>
+          <ArticleFigure visual={visuals[2]} label="Comprobaciones" reference={`${article.slug}-03`} />
 
-          {secondContent ? <MarkdownContent content={secondContent} /> : null}
+          {thirdContent ? <MarkdownContent content={thirdContent} /> : null}
 
           <section className="mt-10 border border-teal-200 bg-teal-50/70 p-6 sm:p-7">
             <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-teal-800">Nota de taller</p>

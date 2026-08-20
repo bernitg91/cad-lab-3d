@@ -4,9 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev --webpack",
-    "build": "next build --webpack",
+    "build": "node scripts/validate-article-visuals.cjs && next build --webpack && node scripts/validate-rendered-articles.cjs",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "visuals:generate": "node scripts/generate-article-visuals.cjs",
+    "validate:article-images": "node scripts/validate-article-visuals.cjs",
+    "validate:rendered-articles": "node scripts/validate-rendered-articles.cjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

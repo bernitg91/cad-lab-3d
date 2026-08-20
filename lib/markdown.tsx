@@ -53,7 +53,7 @@ export function MarkdownContent({ content }: { content: string }) {
 
         if (table) {
           return (
-            <div className="table-scroll" key={index}>
+            <div className="table-scroll" key={index} role="region" aria-label="Tabla de datos técnicos" tabIndex={0}>
               <table>
                 <thead>
                   <tr>{table.headers.map((header, cellIndex) => <th key={cellIndex}>{renderInline(header)}</th>)}</tr>
