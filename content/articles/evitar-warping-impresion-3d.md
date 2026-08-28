@@ -29,7 +29,7 @@ Un *brim* aumenta la superficie alrededor del contorno y puede ayudar en esquina
 
 ## Temperatura, ventilación y material
 
-Los materiales no se contraen igual. PLA suele tolerar entornos abiertos mejor que ABS o ASA, mientras que estos últimos pueden beneficiarse de una temperatura ambiente más estable. PETG puede adherirse con mucha fuerza a algunas camas, de modo que «más adhesión» tampoco siempre es seguro. Consulta las [diferencias entre PLA, PETG, ABS y nylon](/blog/diferencias-pla-petg-abs-nylon) y el perfil recomendado por el fabricante del filamento.
+Los materiales no se contraen igual. PLA suele tolerar entornos abiertos mejor que ABS o ASA, mientras que estos últimos pueden beneficiarse de una temperatura ambiente más estable. PETG puede adherirse con mucha fuerza a algunas camas, de modo que «más adhesión» tampoco siempre es seguro. Consulta cómo [elegir filamento para piezas funcionales](/blog/elegir-filamento-piezas-funcionales) y el perfil recomendado por el fabricante del filamento.
 
 **No copies temperaturas de otra impresora como valores definitivos**. El sensor, la superficie, el caudal y el ambiente cambian el comportamiento. Ajusta dentro de rangos razonables para tu material y cambia una sola variable por prueba.
 

@@ -35,7 +35,7 @@ Parte del rango recomendado por el fabricante y prueba en torno a la zona de uso
 
 Imprime una muestra sencilla con paredes conocidas y mídela cuando esté fría. Ajusta el caudal en pasos pequeños y confirma el resultado en más de una pieza. No conviertas una diferencia de diseño, contracción o medición en una corrección extrema de flujo.
 
-Si cambias de PLA a PETG o Nylon, vuelve a validar los parámetros relevantes. La guía de [diferencias entre PLA, PETG, ABS y Nylon](/blog/diferencias-pla-petg-abs-nylon) explica por qué un perfil no se traslada sin más entre familias.
+Si cambias de PLA a PETG o Nylon, vuelve a validar los parámetros relevantes. La guía para [elegir filamento en piezas funcionales](/blog/elegir-filamento-piezas-funcionales) explica por qué un perfil no se traslada sin más entre familias.
 
 ## Comprueba dimensiones y tolerancias reales
 
@@ -49,7 +49,7 @@ Antes de corregir el CAD, distingue entre:
 - expansión de la primera capa;
 - holgura de diseño insuficiente.
 
-Usa [pruebas de tolerancia FDM](/blog/pruebas-tolerancia-fdm) para construir una serie corta de holguras y consulta [tolerancias para piezas impresas](/blog/tolerancias-piezas-impresas-3d) antes de fijar una medida universal. El ajuste depende de impresora, orientación, material y tamaño.
+Usa las [pruebas de tolerancia FDM](/blog/pruebas-tolerancia-fdm) para construir una serie corta de holguras antes de fijar una medida universal. El ajuste depende de impresora, orientación, material y tamaño.
 
 ## Proceso de validación antes de la pieza final
 

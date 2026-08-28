@@ -50,9 +50,15 @@ function formatVerifiedDate(date: string) {
 }
 
 export default function ImageLicensesPage() {
-  const photos = getAllArticlePhotos();
+  const publishedArticles = getAllArticles();
+  const publishedArticleSlugs = new Set(
+    publishedArticles.map((article) => article.slug)
+  );
+  const photos = getAllArticlePhotos().filter((photo) =>
+    publishedArticleSlugs.has(photo.slug)
+  );
   const articleTitles = new Map(
-    getAllArticles().map((article) => [article.slug, article.title])
+    publishedArticles.map((article) => [article.slug, article.title])
   );
   const licenseCounts = new Map<ArticlePhotoLicenseCode, number>();
 
@@ -156,7 +162,7 @@ export default function ImageLicensesPage() {
                   </h3>
                   <p className="mt-2 text-sm leading-6 text-slate-600">
                     <span className="font-bold text-slate-900">{photo.title}</span>
-                    {" · Foto de "}
+                    {" · Imagen de "}
                     <a
                       className="text-blue-700 underline decoration-blue-300 underline-offset-2 hover:text-blue-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-500"
                       href={photo.creatorUrl}

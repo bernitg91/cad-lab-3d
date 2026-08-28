@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
 import { getAllArticles } from "@/lib/articles";
-import { caseStudies } from "@/lib/case-studies";
 import { absoluteUrl } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -24,8 +23,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/impresion-3d-personalizada",
     "/guias",
     "/sobre-mi",
+    "/metodologia",
     "/fuentes",
     "/licencias-imagenes",
+    "/preguntas-frecuentes",
     "/contacto",
     "/politica-privacidad",
     "/politica-cookies",
@@ -40,10 +41,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...getAllArticles().map((article) => ({
       url: absoluteUrl(`/blog/${article.slug}`),
       lastModified: new Date(article.updatedDate || article.date)
-    })),
-    ...caseStudies.map((study) => ({
-      url: absoluteUrl(`/casos-practicos-impresion-3d/${study.slug}`),
-      lastModified: new Date(study.updatedAt)
     }))
   ];
 }

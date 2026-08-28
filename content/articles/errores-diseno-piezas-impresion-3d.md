@@ -65,4 +65,4 @@ Sigue esta revisión cada vez que cierres un diseño funcional:
 
 También se repiten fallos de proceso: exportar con unidades equivocadas, modificar el CAD después de laminar, confundir una pieza visual con una funcional o cambiar varias variables en cada prueba. La vista previa detecta problemas geométricos, pero **no garantiza resistencia ni precisión**. Una prueba manual tampoco sustituye un ensayo normalizado cuando la pieza es crítica o debe certificar prestaciones.
 
-Antes de fabricar, abre el STL definitivo, verifica su escala y aplica el [checklist para mandar una pieza a imprimir](/blog/checklist-mandar-pieza-imprimir-3d). Si algo falla, corrige primero el diseño o el proceso; subir relleno sin diagnóstico rara vez compensa una orientación débil, un encaje sin holgura o una pared mal resuelta.
+Antes de fabricar, abre el STL definitivo, verifica su escala y aplica el [checklist de impresión 3D](/checklist-impresion-3d). Si algo falla, corrige primero el diseño o el proceso; subir relleno sin diagnóstico rara vez compensa una orientación débil, un encaje sin holgura o una pared mal resuelta.

@@ -34,7 +34,7 @@ Si el uso es una envolvente, amplía el análisis con [cómo elegir material par
 
 Usa tendencias generales para una primera criba. PLA prioriza facilidad, detalle y rigidez, pero puede quedar limitado por temperatura. PETG suele equilibrar tenacidad y facilidad. ABS aporta mejor comportamiento térmico, aunque aumenta requisitos de ambiente y ventilación. Nylon destaca en tenacidad y desgaste, pero requiere un control serio de humedad.
 
-La [comparativa entre PLA, PETG, ABS y Nylon](/blog/diferencias-pla-petg-abs-nylon) desarrolla estas diferencias. Después consulta la ficha de la **formulación concreta**: dos bobinas de la misma familia pueden usar aditivos diferentes. No mezcles valores de un fabricante con el material que tienes en la impresora.
+Estas diferencias sirven para descartar familias incompatibles, pero después debes consultar la ficha de la **formulación concreta**: dos bobinas de la misma familia pueden usar aditivos diferentes. No mezcles valores de un fabricante con el material que tienes en la impresora.
 
 ## Comprueba que puedes imprimirlo bien
 

@@ -27,7 +27,7 @@ Dedica la primera sesión a localizar árbol del modelo, planos de referencia, c
 
 Empieza en un plano principal, usa geometría de referencia y deja **el croquis completamente definido** sin añadir restricciones redundantes. Prioriza referencias estables: planos y ejes suelen resistir mejor los cambios que una arista creada por una operación posterior.
 
-Practica con un rectángulo simétrico, un círculo posicionado desde ejes y un perfil con relaciones de igualdad. Cambia sus cotas principales y observa si conserva la forma esperada. La comparación entre [modelado paramétrico y modelado directo](/blog/modelado-parametrico-vs-directo) te ayudará a entender por qué aquí importa tanto el árbol.
+Practica con un rectángulo simétrico, un círculo posicionado desde ejes y un perfil con relaciones de igualdad. Cambia sus cotas principales y observa si conserva la forma esperada. La [guía de CAD paramétrico](/guia-cad-parametrico) te ayudará a entender por qué aquí importa tanto el árbol.
 
 ## Ruta de cuatro ejercicios
 
@@ -51,7 +51,7 @@ Monta el soporte y un pasador mediante restricciones coincidentes y concéntrica
 
 No necesitas dominar toda la creación de piezas para empezar un conjunto pequeño, pero sí debes **regenerar sin errores**. En ensamblajes, evita resolver una posición con restricciones innecesarias que compitan entre sí. Renombra componentes y usa un origen claro.
 
-Al crear un plano, añade vistas suficientes, escala, material y cotas que comuniquen fabricación o comprobación. No copies todas las cotas del croquis. Consulta [cómo preparar planos técnicos desde un modelo CAD](/blog/preparar-planos-tecnicos-modelo-cad) para seleccionar información en lugar de llenar la hoja.
+Al crear un plano, añade vistas suficientes, escala, material y cotas que comuniquen fabricación o comprobación. No copies todas las cotas del croquis. Consulta la [guía de documentación técnica](/guia-documentacion-tecnica) para seleccionar información en lugar de llenar la hoja.
 
 ## Checklist de práctica semanal
 
@@ -69,7 +69,7 @@ Al crear un plano, añade vistas suficientes, escala, material y cotas que comun
 
 Los principiantes suelen crear redondeos demasiado pronto, referenciar aristas frágiles, dejar croquis subdefinidos o convertir cada detalle en una operación independiente. Otro error es seguir un tutorial de forma mecánica: **si no puedes cambiar medidas sin repetirlo, todavía no controlas el ejercicio**.
 
-Esta ruta no sustituye la formación específica de módulos como superficies avanzadas, chapa, cableado o gestión de datos. Tampoco garantiza que un modelo sea fabricable. Antes de presentar un proyecto completo, aplica una [revisión de diseño antes de fabricar](/blog/revision-diseno-antes-fabricar).
+Esta ruta no sustituye la formación específica de módulos como superficies avanzadas, chapa, cableado o gestión de datos. Tampoco garantiza que un modelo sea fabricable. Antes de presentar un proyecto completo, aplica la revisión de la [guía de CAD paramétrico](/guia-cad-parametrico).
 
 ## Qué deberías poder hacer al terminar
 

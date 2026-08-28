@@ -17,7 +17,7 @@ Las tolerancias en FDM dependen de la máquina, el material, el perfil, la orien
 
 No todas las uniones persiguen el mismo comportamiento. Una tapa desmontable necesita movimiento y acceso; un pasador a presión busca retención; un eje móvil debe girar sin un juego excesivo. **Escribe la función y decide cómo clasificarás el resultado** antes de diseñar la prueba.
 
-La guía sobre [cómo elegir tolerancias para piezas impresas](/blog/tolerancias-piezas-impresas-3d) explica las variables generales. La probeta, en cambio, debe responder a tu combinación concreta de impresora, material y geometría.
+Las variables generales orientan el primer rango, pero la probeta debe responder a tu combinación concreta de impresora, material y geometría.
 
 ### Reproduce la unión real
 

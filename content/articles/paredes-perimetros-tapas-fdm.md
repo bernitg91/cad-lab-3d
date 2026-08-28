@@ -47,9 +47,9 @@ Más capas inferiores pueden añadir robustez, pero no solucionan una primera ca
 
 ## Coordinar CAD, paredes y relleno
 
-El laminador no conoce la intención del diseñador. Una pared CAD de 1 mm puede resolverse con líneas ajustadas, una trayectoria central o pequeños huecos según el software y el perfil. Diseña espesores coherentes con el proceso y confirma cada nervio en la vista por capas. La guía de [espesores mínimos en plástico](/blog/espesores-minimos-piezas-plastico) explica cómo decidir por función, no solo por imprimibilidad.
+El laminador no conoce la intención del diseñador. Una pared CAD de 1 mm puede resolverse con líneas ajustadas, una trayectoria central o pequeños huecos según el software y el perfil. Diseña espesores coherentes con el proceso y confirma cada nervio en la vista por capas. La [guía de materiales FDM](/guia-materiales-fdm) explica cómo decidir por función, no solo por imprimibilidad.
 
-El relleno sostiene tapas, conecta paredes y puede ayudar frente a cargas internas, pero su porcentaje no cuenta toda la historia. Patrón, orientación, perímetros y geometría modifican el comportamiento. Consulta [qué relleno usar según la pieza](/blog/relleno-impresion-3d-segun-pieza) después de fijar una envolvente razonable.
+El relleno sostiene tapas, conecta paredes y puede ayudar frente a cargas internas, pero su porcentaje no cuenta toda la historia. Patrón, orientación, perímetros y geometría modifican el comportamiento. Compara el relleno solo después de fijar una envolvente razonable y mantén constantes las demás variables.
 
 ## Proceso práctico de ajuste
 
@@ -62,7 +62,7 @@ El relleno sostiene tapas, conecta paredes y puede ayudar frente a cargas intern
 7. Evalúa: observa acabado, masa, tiempo, deformación y lugar de fallo.
 8. **Guarda el perfil:** nómbralo según material, boquilla y propósito, no como «perfil bueno».
 
-Antes de fabricar la pieza definitiva, verifica escala y archivos con el [checklist de impresión 3D](/blog/checklist-mandar-pieza-imprimir-3d).
+Antes de fabricar la pieza definitiva, verifica escala y archivos con el [checklist de impresión 3D](/checklist-impresion-3d).
 
 ## Errores frecuentes y límites
 

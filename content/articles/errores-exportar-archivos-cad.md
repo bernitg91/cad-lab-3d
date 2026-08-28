@@ -25,7 +25,7 @@ Exportar CAD parece una tarea administrativa, pero forma parte del control técn
 | Archivo nativo | Operaciones, relaciones y referencias | Editar el proyecto original | Versiones, vínculos externos y compatibilidad |
 | Imagen o render | Apariencia visual | Presentación y aprobación estética | No contiene geometría fabricable |
 
-Un STL no sustituye un STEP si otra persona debe modificar el sólido. Un STEP tampoco sustituye unos planos cuando importan tolerancias, material, acabado o criterios de inspección. Para preparar cada caso, consulta [cómo exportar un STL](/blog/preparar-archivo-stl-impresion-3d), [cómo compartir un STEP](/blog/preparar-archivo-step-compartir-cad) y [cómo preparar planos desde CAD](/blog/preparar-planos-tecnicos-modelo-cad).
+Un STL no sustituye un STEP si otra persona debe modificar el sólido. Un STEP tampoco sustituye unos planos cuando importan tolerancias, material, acabado o criterios de inspección. Para preparar cada caso, consulta [cómo exportar un STL](/blog/preparar-archivo-stl-impresion-3d) y la [guía de documentación técnica](/guia-documentacion-tecnica); para el STEP, aplica las comprobaciones de integridad descritas en este mismo artículo.
 
 ## Comprobar el modelo antes de exportar
 
@@ -62,7 +62,7 @@ Utiliza este checklist antes de compartir:
 9. Adjunta plano, captura o nota de versión si el formato no comunica todo el contexto.
 10. Conserva una copia exacta de lo enviado para poder rastrear la entrega.
 
-La [revisión de diseño antes de fabricar](/blog/revision-diseno-antes-fabricar) añade controles útiles cuando el archivo va directamente a producción.
+La revisión de la [guía de CAD paramétrico](/guia-cad-parametrico) añade controles útiles cuando el archivo va directamente a producción.
 
 ## Errores frecuentes y limitaciones
 

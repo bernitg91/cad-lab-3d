@@ -14,13 +14,15 @@ const resourceLinks = [
   ["Calculadora de peso", "/calculadora-peso-pieza-3d"],
   ["Selector de material", "/selector-material-impresion-3d"],
   ["Checklist de impresión", "/checklist-impresion-3d"],
-  ["Casos prácticos", "/casos-practicos-impresion-3d"]
+  ["Galería de piezas", "/casos-practicos-impresion-3d"],
+  ["Glosario técnico", "/glosario"]
 ];
 
 const projectLinks = [
   ["Sobre CAD Lab 3D", "/sobre-mi"],
   ["Metodología editorial", "/metodologia"],
   ["Fuentes técnicas", "/fuentes"],
+  ["Preguntas frecuentes", "/preguntas-frecuentes"],
   ["Licencias de imágenes", "/licencias-imagenes"],
   ["Servicios", "/servicios"],
   ["Contacto", "/contacto"]

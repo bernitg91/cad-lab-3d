@@ -36,6 +36,8 @@ Crea `.env.local` a partir de `.env.example`:
 ```bash
 NEXT_PUBLIC_SITE_URL=https://cadlab3d.com
 NEXT_PUBLIC_CONTACT_EMAIL=bbernat.torres@gmail.com
+NEXT_PUBLIC_AUTHOR_NAME=
+NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=
 NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT=
 NEXT_PUBLIC_ADSENSE_HOME_FEED_SLOT=
 NEXT_PUBLIC_ADSENSE_ARTICLE_MID_SLOT=
@@ -47,6 +49,10 @@ VERCEL_URL=
 `NEXT_PUBLIC_SITE_URL` define el dominio usado por canonical URLs, Open Graph, `robots.txt` y `sitemap.xml`. En Vercel está configurado como `https://cadlab3d.com`. Si no existe, la app usa `https://cadlab3d.com` como fallback editable.
 
 `NEXT_PUBLIC_CONTACT_EMAIL` define el email mostrado en contacto, páginas legales y formularios de servicios. El formulario prepara un email con `mailto:` para que el usuario lo revise antes de enviarlo.
+
+`NEXT_PUBLIC_AUTHOR_NAME` permite publicar el nombre real del responsable editorial cuando este autorice hacerlo. Si queda vacío, la firma visible continúa siendo `CAD Lab 3D`; no uses nombres o credenciales inventados.
+
+`NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` publica la metaetiqueta de verificación de Google Search Console. Configúrala solo con el token que entregue la propiedad real del dominio.
 
 `VERCEL_ENV` y `VERCEL_URL` las define Vercel automáticamente. No las configures manualmente salvo para pruebas controladas. Cuando `VERCEL_ENV=preview`, la app usa la URL automática del despliegue (`https://$VERCEL_URL`) para canonical y Open Graph, evitando que una preview parezca la versión final de producción.
 

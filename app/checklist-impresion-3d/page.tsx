@@ -79,7 +79,7 @@ function SeoContent() {
         </ul>
         <h2>Cómo usarla en proyectos universitarios</h2>
         <p>Guarda la checklist completada como evidencia de proceso. En una memoria técnica puede servir para justificar decisiones de fabricación y control de calidad.</p>
-        <p>Si tu pieza tiene encajes, combina esta revisión con la guía de <Link href="/blog/tolerancias-piezas-impresas-3d">tolerancias para piezas impresas en 3D</Link>.</p>
+        <p>Si tu pieza tiene encajes, combina esta revisión con las <Link href="/blog/pruebas-tolerancia-fdm">pruebas de tolerancia FDM</Link>.</p>
       </div>
     </section>
   );

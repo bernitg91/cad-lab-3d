@@ -1,21 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getAllArticles } from "@/lib/articles";
 
 const navItems = [
   { href: "/guia-cad-parametrico", label: "Diseño CAD" },
   { href: "/guia-impresion-3d-fdm", label: "Impresión 3D" },
   { href: "/guia-materiales-fdm", label: "Materiales" },
   { href: "/guia-simulacion-fem", label: "FEM" },
-  { href: "/casos-practicos-impresion-3d", label: "Casos" },
+  { href: "/casos-practicos-impresion-3d", label: "Piezas" },
   { href: "/blog", label: "Artículos" }
 ];
 
 export function Header() {
+  const articleCount = getAllArticles().length;
+
   return (
     <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur-xl">
       <div className="border-b border-slate-800 bg-[#091625] text-slate-300">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-1.5 text-[11px] font-semibold sm:px-6 lg:px-8">
-          <p className="font-mono uppercase tracking-[0.12em]">42 artículos técnicos · casos y fuentes enlazadas</p>
+          <p className="font-mono uppercase tracking-[0.12em]">{articleCount} artículos técnicos · piezas y fuentes enlazadas</p>
           <div className="hidden items-center gap-4 sm:flex">
             <Link className="hover:text-cyan-300" href="/metodologia">Cómo revisamos</Link>
             <Link className="hover:text-cyan-300" href="/contacto">Contacto</Link>
@@ -33,14 +36,14 @@ export function Header() {
 
         <nav aria-label="Navegación principal" className="hidden items-center gap-0.5 text-sm font-bold text-slate-700 xl:flex">
           {navItems.map((item) => (
-            <Link key={item.href} href={item.href} className="focus-ring rounded-md px-3 py-2 hover:bg-slate-100 hover:text-blue-800">
+            <Link key={item.href} href={item.href} prefetch={item.href === "/blog" ? false : undefined} className="focus-ring rounded-md px-3 py-2 hover:bg-slate-100 hover:text-blue-800">
               {item.label}
             </Link>
           ))}
         </nav>
 
         <div className="hidden items-center gap-2 lg:flex">
-          <Link className="focus-ring rounded-md px-3 py-2 text-sm font-bold text-slate-700 hover:bg-slate-100" href="/blog">Buscar</Link>
+          <Link className="focus-ring rounded-md px-3 py-2 text-sm font-bold text-slate-700 hover:bg-slate-100" href="/blog" prefetch={false}>Buscar</Link>
           <Link className="focus-ring rounded-md bg-[#0f9f8f] px-4 py-2.5 text-sm font-black text-[#091625] hover:bg-cyan-300" href="/recursos">Herramientas</Link>
         </div>
 

@@ -6,8 +6,8 @@ import { createPageMetadata, jsonLd } from "@/lib/seo";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Casos prácticos de impresión 3D",
-  description: "Ejemplos reales de piezas impresas en 3D FDM con criterios de diseño, revisión técnica, tolerancias, materiales y aprendizajes útiles.",
+  title: "Galería comentada de piezas impresas en 3D",
+  description: "Piezas FDM fotografiadas y comentadas con observaciones visibles, preguntas de revisión y límites de lo que no se ha medido.",
   path: "/casos-practicos-impresion-3d"
 });
 
@@ -15,7 +15,7 @@ export default function PracticalCasesPage() {
   const itemListJsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Casos prácticos de impresión 3D FDM",
+    name: "Galería comentada de piezas de impresión 3D FDM",
     url: absoluteUrl("/casos-practicos-impresion-3d"),
     itemListElement: portfolioItems.map((item, index) => ({
       "@type": "ListItem",
@@ -43,7 +43,7 @@ export default function PracticalCasesPage() {
       {
         "@type": "ListItem",
         position: 2,
-        name: "Casos prácticos de impresión 3D",
+        name: "Galería comentada de piezas impresas en 3D",
         item: absoluteUrl("/casos-practicos-impresion-3d")
       }
     ]
@@ -55,12 +55,12 @@ export default function PracticalCasesPage() {
       <section className="technical-grid border-b border-slate-200 bg-white">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1fr_0.85fr] lg:items-center lg:px-8">
           <div>
-            <p className="text-sm font-black uppercase tracking-wide text-teal-700">Ejemplos reales FDM</p>
+            <p className="text-sm font-black uppercase tracking-wide text-teal-700">Galería comentada FDM</p>
             <h1 className="mt-3 max-w-4xl text-4xl font-black leading-tight text-slate-950 sm:text-5xl">
-              Casos prácticos de impresión 3D para aprender de piezas reales
+              Piezas impresas en 3D: qué puede observarse y qué falta por medir
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-600">
-              Una selección de piezas impresas en 3D con objetivos de diseño, puntos de revisión y aprendizajes técnicos. La idea es enseñar cómo se analiza una pieza antes de imprimirla, no solo mostrar una galería bonita.
+              Esta página documenta fotografías propias y separa las observaciones visibles de las prestaciones que exigirían medidas o ensayos. No presenta estas piezas como casos validados cuando faltan datos de máquina, material o tolerancia.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link className="rounded-md bg-slate-950 px-5 py-3 text-sm font-black text-white hover:bg-blue-800" href="/impresion-3d-personalizada">
@@ -84,9 +84,9 @@ export default function PracticalCasesPage() {
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid gap-5 md:grid-cols-3">
           {[
-            ["Qué se analiza", "Uso previsto, forma, escala, tolerancias, orientación, soportes, material, acabado y probabilidad de fallo."],
-            ["Qué no se promete", "No se inventan ensayos, certificaciones ni resistencias no comprobadas. Las piezas críticas requieren validación específica."],
-            ["Cómo usar estos ejemplos", "Úsalos como guía para preparar un encargo, revisar una pieza CAD o detectar problemas antes de laminar."]
+            ["Qué se observa", "Geometría, proporción, acabado visible, accesos, apoyos y zonas que convendría revisar."],
+            ["Qué no puede inferirse", "Material, tolerancia, resistencia o durabilidad no se atribuyen cuando no existe una medida o ensayo documentado."],
+            ["Cómo usar la galería", "Como lista de preguntas para preparar una prueba real, no como sustituto de datos de fabricación."]
           ].map(([title, text]) => (
             <article key={title} className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
               <h2 className="text-xl font-black text-slate-950">{title}</h2>
@@ -99,7 +99,7 @@ export default function PracticalCasesPage() {
       <section className="bg-white py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="text-sm font-black uppercase tracking-wide text-teal-700">Análisis pieza a pieza</p>
-          <h2 className="mt-2 text-3xl font-black text-slate-950">Ocho ejemplos con criterios técnicos</h2>
+          <h2 className="mt-2 text-3xl font-black text-slate-950">Ocho piezas fotografiadas con una ficha de observación</h2>
           <div className="mt-8 grid gap-6">
             {portfolioItems.map((item, index) => (
               <article id={`caso-${index + 1}`} key={item.title} className="grid overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm lg:grid-cols-[0.8fr_1.2fr]">
@@ -112,7 +112,7 @@ export default function PracticalCasesPage() {
                   <p className="mt-3 text-sm leading-6 text-slate-600">{item.description}</p>
                   <div className="mt-5 grid gap-3 rounded-lg border border-slate-200 bg-slate-50 p-4 text-sm leading-6 text-slate-700 md:grid-cols-3">
                     <div>
-                      <p className="font-black text-slate-950">Material orientativo</p>
+                      <p className="font-black text-slate-950">Material</p>
                       <p className="mt-1">{item.material}</p>
                     </div>
                     <div>
@@ -138,14 +138,6 @@ export default function PracticalCasesPage() {
                       <p className="mt-2 text-sm leading-6 text-slate-600">{item.lesson}</p>
                     </div>
                   </div>
-                  {item.slug ? (
-                    <Link
-                      className="mt-5 inline-flex rounded-md bg-slate-950 px-4 py-2 text-sm font-black text-white hover:bg-blue-800"
-                      href={`/casos-practicos-impresion-3d/${item.slug}`}
-                    >
-                      Leer el análisis completo
-                    </Link>
-                  ) : null}
                 </div>
               </article>
             ))}
@@ -155,9 +147,9 @@ export default function PracticalCasesPage() {
 
       <section className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 lg:grid-cols-[1fr_0.9fr] lg:px-8">
         <div className="article-body">
-          <h2>Qué diferencia un caso práctico de una galería</h2>
+          <h2>Qué diferencia esta ficha de un caso validado</h2>
           <p>
-            Una galería solo enseña piezas terminadas. Un caso práctico útil explica por qué se imprimió la pieza, qué material puede tener sentido, qué zonas conviene revisar y qué límite técnico no debe ignorarse. Por eso cada ejemplo incluye objetivo, revisión, aprendizaje y puntos críticos.
+            Una ficha comentada puede señalar geometría, acabado y preguntas de revisión. Un caso validado necesita además material confirmado, impresora, perfil, cotas nominales y reales, iteraciones y resultados. Esos datos no se sustituyen con una fotografía.
           </p>
           <h2>Cómo valorar si una pieza es buena candidata para FDM</h2>
           <p>

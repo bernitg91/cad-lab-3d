@@ -3,17 +3,15 @@ import Link from "next/link";
 import { notFound, permanentRedirect } from "next/navigation";
 import { AdSlot } from "@/components/AdSlot";
 import { ArticleCard } from "@/components/ArticleCard";
-import { ArticleFigure } from "@/components/ArticleFigure";
 import { ArticlePhoto } from "@/components/ArticlePhoto";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CopyLinkButton } from "@/components/CopyLinkButton";
 import { ExploreMore } from "@/components/Newsletter";
 import { RecommendedResources } from "@/components/RecommendedResources";
 import { TableOfContents } from "@/components/TableOfContents";
-import { formatDate, getAllArticles, getArchivedArticleRedirect, getArticleBySlug, getRelatedArticles } from "@/lib/articles";
+import { formatDate, getAllArticleSlugs, getArchivedArticleRedirect, getArticleBySlug, getRelatedArticles } from "@/lib/articles";
 import { getArticleSupport } from "@/lib/article-support";
 import { getArticlePhoto } from "@/lib/article-photos";
-import { getArticleVisuals } from "@/lib/article-visuals";
 import { MarkdownContent } from "@/lib/markdown";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 import { createPageMetadata, jsonLd } from "@/lib/seo";
@@ -23,7 +21,7 @@ type PageProps = {
 };
 
 export function generateStaticParams() {
-  return getAllArticles().map((article) => ({ slug: article.slug }));
+  return getAllArticleSlugs().map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -45,7 +43,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     path: `/blog/${article.slug}`,
     type: "article",
     publishedTime: article.date,
-    authors: [article.author],
+    authors: [siteConfig.authorName],
     image: photo.image,
     imageAlt: photo.alt
   });
@@ -61,17 +59,6 @@ export default async function ArticlePage({ params }: PageProps) {
   const relatedArticles = getRelatedArticles(article);
   const support = getArticleSupport(article.slug);
   const photo = getArticlePhoto(article.slug);
-  const visuals = getArticleVisuals(article);
-  const contentSections = article.content.split(/(?=^##\s)/m);
-  const introduction = contentSections[0] ?? "";
-  const bodySections = contentSections.slice(1);
-  const firstBoundary = Math.max(1, Math.ceil(bodySections.length / 4));
-  const secondBoundary = Math.max(firstBoundary + 1, Math.ceil(bodySections.length / 2));
-  const thirdBoundary = Math.max(secondBoundary + 1, Math.ceil((bodySections.length * 3) / 4));
-  const firstContent = [introduction, ...bodySections.slice(0, firstBoundary)].join("").trim();
-  const secondContent = bodySections.slice(firstBoundary, secondBoundary).join("").trim();
-  const thirdContent = bodySections.slice(secondBoundary, thirdBoundary).join("").trim();
-  const fourthContent = bodySections.slice(thirdBoundary).join("").trim();
   const photoCreatorType = photo.licenseCode === "Contenido propio" || photo.creator === "USDAgov" || photo.sourceName === "NASA"
     ? "Organization"
     : "Person";
@@ -84,8 +71,8 @@ export default async function ArticlePage({ params }: PageProps) {
     datePublished: article.date,
     dateModified: article.updatedDate || article.date,
     author: {
-      "@type": "Organization",
-      name: siteConfig.name,
+      "@type": siteConfig.authorName === siteConfig.name ? "Organization" : "Person",
+      name: siteConfig.authorName,
       url: absoluteUrl("/sobre-mi")
     },
     publisher: {
@@ -107,18 +94,7 @@ export default async function ArticlePage({ params }: PageProps) {
         creator: { "@type": photoCreatorType, name: photo.creator },
         license: photo.licenseUrl,
         acquireLicensePage: absoluteUrl("/licencias-imagenes")
-      },
-      ...visuals.map((visual) => ({
-        "@type": "ImageObject",
-        url: absoluteUrl(visual.image),
-        contentUrl: absoluteUrl(visual.image),
-        width: visual.width,
-        height: visual.height,
-        caption: visual.caption,
-        creditText: visual.credit,
-        creator: { "@type": "Organization", name: siteConfig.name },
-        acquireLicensePage: absoluteUrl("/licencias-imagenes")
-      }))
+      }
     ],
     inLanguage: "es-ES"
   };
@@ -167,7 +143,7 @@ export default async function ArticlePage({ params }: PageProps) {
                 </>
               ) : null}
               <span aria-hidden="true">·</span>
-              <Link className="hover:text-blue-700" href="/sobre-mi">{article.author}</Link>
+              <Link className="hover:text-blue-700" href="/sobre-mi">{siteConfig.authorName}</Link>
               <span aria-hidden="true">·</span>
               <span>{article.readingTime}</span>
             </div>
@@ -182,7 +158,7 @@ export default async function ArticlePage({ params }: PageProps) {
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[minmax(0,760px)_300px] lg:justify-center lg:gap-10 lg:px-8">
         <aside className="order-first grid content-start gap-5 lg:order-last lg:sticky lg:top-28 lg:self-start">
           <TableOfContents headings={article.headings} />
-          <div className="hidden lg:block"><RecommendedResources /></div>
+          <div className="hidden lg:block"><RecommendedResources categorySlug={article.categorySlug} /></div>
         </aside>
         <div className="min-w-0 lg:order-first">
           <aside className="mb-10 border-l-4 border-blue-700 bg-blue-50 p-6 sm:p-7">
@@ -190,24 +166,12 @@ export default async function ArticlePage({ params }: PageProps) {
             <p className="mt-3 text-lg font-bold leading-8 text-slate-950">{support.insight.takeaway}</p>
           </aside>
 
-          <MarkdownContent content={firstContent} />
-
-          <ArticleFigure visual={visuals[0]} label="Vista técnica" reference={`${article.slug}-01`} />
-
-          {secondContent ? <MarkdownContent content={secondContent} /> : null}
-
-          <ArticleFigure visual={visuals[1]} label="Proceso" reference={`${article.slug}-02`} />
+          <MarkdownContent content={article.content} />
 
           <AdSlot
             clientId={process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT}
             slot={process.env.NEXT_PUBLIC_ADSENSE_ARTICLE_MID_SLOT}
           />
-
-          {thirdContent ? <MarkdownContent content={thirdContent} /> : null}
-
-          <ArticleFigure visual={visuals[2]} label="Comprobaciones" reference={`${article.slug}-03`} />
-
-          {fourthContent ? <MarkdownContent content={fourthContent} /> : null}
 
           <section className="mt-10 border border-teal-200 bg-teal-50/70 p-6 sm:p-7">
             <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-teal-800">Nota de taller</p>
@@ -259,9 +223,9 @@ export default async function ArticlePage({ params }: PageProps) {
           ) : null}
           <section className="mt-10 rounded-lg border border-slate-200 bg-slate-50 p-6">
             <p className="text-sm font-black uppercase tracking-wide text-teal-700">Autoría y revisión</p>
-            <h2 className="mt-2 text-xl font-black text-slate-950">Contenido preparado por CAD Lab 3D</h2>
+            <h2 className="mt-2 text-xl font-black text-slate-950">{siteConfig.authorName}</h2>
             <p className="mt-3 text-sm leading-6 text-slate-600">
-              Esta guía se apoya en práctica con CAD e impresión FDM, documentación técnica y fuentes oficiales. Los valores de tolerancia, temperatura o resistencia son orientativos y deben validarse con la impresora, el material y la geometría reales.
+              Responsable editorial de esta guía sobre {article.category.toLowerCase()}. Revisión material: {formatDate(article.updatedDate || article.date)}. Las referencias específicas y los límites de la explicación se muestran en la propia página.
             </p>
             <div className="mt-4 flex flex-wrap gap-4 text-sm font-bold">
               <Link className="text-blue-700 hover:text-blue-900" href="/sobre-mi">Sobre el proyecto</Link>

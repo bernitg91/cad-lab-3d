@@ -3,7 +3,7 @@ export const siteConfig = {
   defaultUrl: "https://cadlab3d.com",
   description:
     "Tutoriales, recursos y guías prácticas sobre CAD, diseño industrial, impresión 3D, materiales y proyectos técnicos universitarios.",
-  author: "CAD Lab 3D",
+  authorName: process.env.NEXT_PUBLIC_AUTHOR_NAME || "CAD Lab 3D",
   contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "bbernat.torres@gmail.com",
   locale: "es_ES"
 };

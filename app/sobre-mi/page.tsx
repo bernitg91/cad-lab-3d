@@ -10,13 +10,17 @@ export const metadata: Metadata = createPageMetadata({
 });
 
 export default function AboutPage() {
+  const publicAuthor = siteConfig.authorName === siteConfig.name
+    ? "la persona responsable del proyecto"
+    : siteConfig.authorName;
+
   return (
     <section className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
       <p className="text-sm font-black uppercase tracking-wide text-teal-700">Quién prepara el contenido</p>
       <h1 className="mt-3 text-4xl font-black text-slate-950">Sobre CAD Lab 3D</h1>
       <div className="mt-8 space-y-5 text-lg leading-8 text-slate-600">
         <p>
-          CAD Lab 3D está a cargo de un estudiante de ingeniería en diseño industrial interesado en CAD, impresión 3D FDM, simulación y desarrollo de producto. La web reúne apuntes de trabajo, pruebas, recursos y explicaciones que resultan útiles al preparar piezas y proyectos técnicos.
+          CAD Lab 3D está a cargo de {publicAuthor}, estudiante de ingeniería en diseño industrial con interés en CAD, impresión 3D FDM, simulación y desarrollo de producto. La web reúne apuntes de trabajo, recursos y explicaciones que resultan útiles al preparar piezas y proyectos técnicos.
         </p>
         <p>
           El contenido parte de problemas concretos: una pieza que no encaja, un STL mal exportado, una orientación débil, una memoria sin trazabilidad o un análisis FEM que necesita explicar mejor sus supuestos. Cuando se muestran piezas impresas, se utilizan fotografías propias y se separa lo observado de lo que todavía requeriría ensayo.
@@ -35,7 +39,7 @@ export default function AboutPage() {
             <li>Tutoriales de CAD, piezas FDM y documentación técnica.</li>
             <li>Guías sobre materiales, tolerancias, renders y portfolios.</li>
             <li>Recursos para informes, checklists y proyectos CAD.</li>
-            <li>Casos prácticos con piezas impresas reales y aprendizajes técnicos.</li>
+            <li>Galería de piezas reales con observaciones visuales y límites expresos.</li>
             <li>Fuentes oficiales para ampliar y comprobar la información.</li>
           </ul>
         </section>
@@ -46,7 +50,7 @@ export default function AboutPage() {
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
             <a className="rounded-md bg-teal-500 px-4 py-2 text-sm font-black text-slate-950 hover:bg-teal-300" href="/guias">Ver guías</a>
-            <a className="rounded-md border border-white/20 px-4 py-2 text-sm font-bold text-white hover:bg-white/10" href="/casos-practicos-impresion-3d">Casos prácticos</a>
+            <a className="rounded-md border border-white/20 px-4 py-2 text-sm font-bold text-white hover:bg-white/10" href="/casos-practicos-impresion-3d">Galería comentada</a>
             <a className="rounded-md border border-white/20 px-4 py-2 text-sm font-bold text-white hover:bg-white/10" href="/contacto">Contacto</a>
           </div>
         </section>

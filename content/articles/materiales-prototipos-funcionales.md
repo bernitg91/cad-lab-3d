@@ -17,7 +17,7 @@ Un prototipo funcional no tiene que reproducir siempre el material final, pero s
 
 Escribe una frase concreta antes de fabricar: «comprobar que la mano alcanza el mando», «comparar dos holguras», «verificar que la tapa puede abrirse» o «observar la deformación bajo una carga definida». Esa frase determina geometría, material y método.
 
-La diferencia entre [prototipo visual y funcional](/blog/prototipo-visual-vs-funcional) es especialmente útil aquí. Una maqueta de apariencia puede validar volumen y percepción sin representar la resistencia final. Un prototipo funcional puede ser poco atractivo y, aun así, responder mejor a una pregunta de ingeniería.
+La distinción entre prototipo visual y funcional, explicada en la [guía de documentación técnica](/guia-documentacion-tecnica), es especialmente útil aquí. Una maqueta de apariencia puede validar volumen y percepción sin representar la resistencia final. Un prototipo funcional puede ser poco atractivo y, aun así, responder mejor a una pregunta de ingeniería.
 
 ## Relacionar materiales con el tipo de prueba
 
@@ -60,7 +60,7 @@ La temperatura, humedad, radiación solar y contacto químico pueden cambiar el 
 8. Itera geometría y material: no atribuyas automáticamente el resultado a uno solo.
 9. Escala con cautela: una probeta pequeña no reproduce siempre la pieza completa.
 
-Para estimar consumo antes de cada iteración, utiliza la guía de [cálculo de peso aproximado](/blog/calcular-peso-aproximado-pieza-3d).
+Para estimar consumo antes de cada iteración, utiliza la [calculadora de peso de una pieza 3D](/calculadora-peso-pieza-3d).
 
 ## Errores frecuentes y límites
 

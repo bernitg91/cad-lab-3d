@@ -62,7 +62,7 @@ No dividas únicamente para eliminar soportes. Comprueba que la unión transmite
 8. Aplica la misma prueba: registra deformación, lugar de rotura y precisión.
 9. **Elige y documenta:** guarda captura de orientación y parámetros junto al resultado.
 
-El [relleno según tipo de pieza](/blog/relleno-impresion-3d-segun-pieza) puede afinar el perfil después de decidir orientación y paredes.
+La guía de [paredes, perímetros y tapas en FDM](/blog/paredes-perimetros-tapas-fdm) puede afinar el perfil después de decidir orientación y envolvente.
 
 ## Errores frecuentes y límites
 

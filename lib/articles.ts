@@ -1,14 +1,15 @@
 import fs from "node:fs";
 import path from "node:path";
+import articleRedirects from "@/content/article-redirects.json";
 import type { Article, ArticleMeta } from "@/types/article";
 export { formatDate } from "@/lib/date";
 
 const articlesDirectory = path.join(process.cwd(), "content/articles");
 
-const archivedArticleRedirects: Record<string, string> = {};
+const archivedArticleRedirects: Record<string, string> = articleRedirects;
 
 function parseFrontmatter(fileContent: string) {
-  const match = fileContent.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+  const match = fileContent.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
 
   if (!match) {
     throw new Error("Article is missing frontmatter");
@@ -65,7 +66,11 @@ function getArticleFiles(): Article[] {
 }
 
 export function getAllArticles(): Article[] {
-  return getArticleFiles();
+  return getArticleFiles().filter((article) => !archivedArticleRedirects[article.slug]);
+}
+
+export function getAllArticleSlugs() {
+  return getArticleFiles().map((article) => article.slug);
 }
 
 export function getArticleBySlug(slug: string) {

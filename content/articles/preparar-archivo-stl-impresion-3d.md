@@ -27,7 +27,7 @@ Anota una cota fácil de localizar —por ejemplo, la longitud total o el diáme
 
 El STL aproxima las superficies mediante triángulos. Una malla demasiado gruesa convierte los cilindros en polígonos visibles y puede alterar una superficie de ajuste. **Una malla extremadamente densa aumenta el peso del archivo y ralentiza el manejo sin añadir detalle fabricable**.
 
-No existe un único ajuste válido para todas las piezas. Revisa la desviación o tolerancia de exportación que ofrece tu CAD y observa una curva crítica ampliada. El contorno debería verse continuo a la escala final, pero no necesitas millones de triángulos para una pieza dominada por caras planas. Si compartirás el diseño para que otra persona lo modifique, acompaña el STL con un formato neutro siguiendo la guía para [preparar un archivo STEP](/blog/preparar-archivo-step-compartir-cad): el STL no conserva operaciones, cotas ni intención paramétrica.
+No existe un único ajuste válido para todas las piezas. Revisa la desviación o tolerancia de exportación que ofrece tu CAD y observa una curva crítica ampliada. El contorno debería verse continuo a la escala final, pero no necesitas millones de triángulos para una pieza dominada por caras planas. Si compartirás el diseño para que otra persona lo modifique, acompaña el STL con un formato neutro y aplica las comprobaciones de [errores al exportar archivos CAD](/blog/errores-exportar-archivos-cad): el STL no conserva operaciones, cotas ni intención paramétrica.
 
 ## 3. Valida el archivo en el laminador
 
@@ -49,7 +49,7 @@ Una cara ausente, un hueco inesperado o una reparación automática suelen apunt
 
 Usa nombres con pieza y revisión, como `soporte_sensor_rev03.stl`, y evita variantes ambiguas como `final2`. Guarda juntos el CAD fuente, el STL enviado y una captura del laminador con la orientación prevista. Si otra persona va a imprimir, indica unidades esperadas, material, perfil o restricciones relevantes y las caras donde no conviene colocar soportes.
 
-El archivo debe pasar además el [checklist antes de mandar una pieza a imprimir](/blog/checklist-mandar-pieza-imprimir-3d). Así separas la responsabilidad del diseño, la exportación y la preparación de máquina.
+El archivo debe pasar además el [checklist antes de mandar una pieza a imprimir](/checklist-impresion-3d). Así separas la responsabilidad del diseño, la exportación y la preparación de máquina.
 
 ## 5. Errores y límites del formato STL
 

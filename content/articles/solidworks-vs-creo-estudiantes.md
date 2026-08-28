@@ -30,13 +30,13 @@ SolidWorks suele resultar directo para construir las primeras piezas y localizar
 
 Ambos programas permiten crear un mal árbol de operaciones. Un croquis sin restricciones, referencias frágiles y redondeos introducidos demasiado pronto causarán problemas independientemente del logotipo. Para evaluar una herramienta, observa qué fácil te resulta expresar la **intención de diseño**: qué debe permanecer centrado, qué dimensión gobierna una familia y qué caras no deberían usarse como referencia.
 
-Si todavía no distingues entre editar operaciones y empujar geometría, revisa [modelado paramétrico frente a modelado directo](/blog/modelado-parametrico-vs-directo). Ese fundamento explica más sobre la robustez del archivo que una lista de comandos.
+Si todavía no distingues entre editar operaciones y empujar geometría, revisa la [guía de CAD paramétrico](/guia-cad-parametrico). Ese fundamento explica más sobre la robustez del archivo que una lista de comandos.
 
 ### Ensamblajes y planos
 
 **No limites la prueba a una pieza**. Crea un conjunto pequeño, sustituye un componente, revisa interferencias y genera un plano asociado. Después cambia una dimensión principal y observa qué relaciones y vistas se actualizan. La gestión ordenada de referencias importa cuando el proyecto crece.
 
-Para practicar documentación, usa la guía sobre [planos técnicos desde un modelo CAD](/blog/preparar-planos-tecnicos-modelo-cad). Saber obtener una hoja legible es transferible a ambos entornos.
+Para practicar documentación, usa la [guía de documentación técnica](/guia-documentacion-tecnica). Saber obtener una hoja legible es transferible a ambos entornos.
 
 ## 3. El mejor primer programa depende del contexto
 
@@ -58,7 +58,7 @@ Valora cuántas operaciones se rompen, si entiendes por qué fallan y cuánto ta
 
 ### Qué documentar del ejercicio
 
-Guarda capturas del árbol, una vista del ensamblaje y el plano final. Anota una decisión que tomaste de forma distinta en cada programa. Este material puede incorporarse a un [portfolio técnico de diseño industrial](/blog/crear-portfolio-tecnico-diseno-industrial) si explica aprendizaje y no solo muestra dos resultados idénticos.
+Guarda capturas del árbol, una vista del ensamblaje y el plano final. Anota una decisión que tomaste de forma distinta en cada programa. Este material puede incorporarse a la estructura de la [guía de documentación técnica](/guia-documentacion-tecnica) si explica aprendizaje y no solo muestra dos resultados idénticos.
 
 ## 5. Fundamentos que sí se transfieren
 

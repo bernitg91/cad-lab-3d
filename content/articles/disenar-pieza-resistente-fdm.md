@@ -39,9 +39,9 @@ En agujeros atornillados, deja material suficiente alrededor y piensa en cómo s
 
 ## Elige relleno, material y perfil como sistema
 
-El relleno estabiliza paredes y distribuye cargas, pero **su porcentaje no predice por sí solo la resistencia**. El patrón, orientación, perímetros y tapas alteran el resultado. Revisa [cómo elegir relleno según la pieza](/blog/relleno-impresion-3d-segun-pieza) y compara cambios manteniendo las demás variables constantes.
+El relleno estabiliza paredes y distribuye cargas, pero **su porcentaje no predice por sí solo la resistencia**. El patrón, orientación, perímetros y tapas alteran el resultado. Revisa [paredes, perímetros y tapas en FDM](/blog/paredes-perimetros-tapas-fdm) y compara cambios manteniendo las demás variables constantes.
 
-PETG, ABS, Nylon o formulaciones reforzadas pueden aportar ventajas, pero también exigen secado, temperatura, ventilación o boquillas compatibles. Una capa mal adherida anula la ventaja teórica del material. Elige con [la comparativa PLA, PETG, ABS y Nylon](/blog/diferencias-pla-petg-abs-nylon) y la ficha concreta del fabricante.
+PETG, ABS, Nylon o formulaciones reforzadas pueden aportar ventajas, pero también exigen secado, temperatura, ventilación o boquillas compatibles. Una capa mal adherida anula la ventaja teórica del material. Apóyate en la guía para [elegir filamento en piezas funcionales](/blog/elegir-filamento-piezas-funcionales) y en la ficha concreta del fabricante.
 
 Para piezas funcionales, **prioriza un perfil estable y suficiente adhesión entre capas** sobre un acabado superficial perfecto. Reduce ventilación o aumenta temperatura solo dentro de rangos seguros y comprobados para tu equipo y filamento.
 

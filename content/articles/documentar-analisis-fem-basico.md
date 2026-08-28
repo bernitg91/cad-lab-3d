@@ -23,7 +23,7 @@ Indica también qué no pretende resolver. Un modelo elástico estático no cara
 
 Incluye una vista limpia del modelo y enumera detalles eliminados, simetrías, cuerpos simplificados y contactos. **Cada simplificación debe tener un motivo**: reducir coste de cálculo, evitar detalles no estructurales o representar solo una región.
 
-La guía para [simplificar geometría antes de FEM](/blog/simplificar-geometria-antes-fem) ayuda a eliminar detalles sin borrar el camino de carga. Si sustituyes un tornillo por una unión rígida o una superficie por un apoyo ideal, explica cómo puede afectar a la rigidez y a las tensiones locales.
+La [guía de simulación FEM](/guia-simulacion-fem) ayuda a eliminar detalles sin borrar el camino de carga. Si sustituyes un tornillo por una unión rígida o una superficie por un apoyo ideal, explica cómo puede afectar a la rigidez y a las tensiones locales.
 
 ## Crea trazabilidad de las entradas
 
@@ -65,7 +65,7 @@ Cada figura necesita **variable, unidades, escala, deformada real o amplificada 
 6. Comprobaciones independientes.
 7. Limitaciones, conclusión y siguiente validación.
 
-Integra esta estructura en [cómo preparar un informe técnico universitario](/blog/preparar-informe-tecnico-universitario) y conserva las decisiones del proyecto con [documentación de diseño industrial](/blog/documentar-proyecto-diseno-industrial).
+Integra esta estructura y conserva las decisiones del proyecto con la [guía de documentación técnica](/guia-documentacion-tecnica).
 
 ## Checklist y errores frecuentes
 

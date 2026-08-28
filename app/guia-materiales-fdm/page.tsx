@@ -90,7 +90,7 @@ export default function FdmMaterialsGuidePage() {
             Imprime la misma zona crítica con dos materiales: un clip, una unión atornillada o una guía. Mantén orientación, perímetros y altura de capa. Registra masa, tiempo, ajuste, deformación y modo de fallo. No necesitas convertirlo en un ensayo de laboratorio para obtener una comparación útil dentro del proyecto.
           </p>
           <p>
-            Puedes comenzar con <Link href="/blog/elegir-filamento-piezas-funcionales">cómo elegir filamento para piezas funcionales</Link> y ampliar la comparación en <Link href="/blog/diferencias-pla-petg-abs-nylon">PLA, PETG, ABS y Nylon</Link>. El <Link href="/selector-material-impresion-3d">selector de material</Link> sirve para ordenar requisitos, no para sustituir la ficha del fabricante.
+            Puedes comenzar con <Link href="/blog/elegir-filamento-piezas-funcionales">cómo elegir filamento para piezas funcionales</Link> y continuar con el <Link href="/selector-material-impresion-3d">selector de material</Link>. Ambos sirven para ordenar requisitos, no para sustituir la ficha del fabricante.
           </p>
 
           <h2>Errores que invalidan una comparación</h2>

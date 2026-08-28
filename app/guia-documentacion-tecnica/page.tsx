@@ -68,7 +68,7 @@ export default function TechnicalDocumentationGuidePage() {
             <li>Detalle de un fallo y de la modificación que produjo.</li>
           </ul>
           <p>
-            Las imágenes propias de los <Link href="/casos-practicos-impresion-3d">casos prácticos de impresión 3D</Link> muestran distintos tipos de evidencia: acabado, escala, geometría, unión y aplicación. Una fotografía imperfecta puede ser más útil que un render si documenta un problema real.
+            Las imágenes propias de la <Link href="/casos-practicos-impresion-3d">galería comentada de impresión 3D</Link> muestran acabado, escala, geometría y uniones visibles. Se describen como observaciones fotográficas, no como ensayos medidos. Una fotografía imperfecta puede ser más útil que un render si documenta un problema real.
           </p>
 
           <h2>Planos, renders y archivos finales</h2>
@@ -76,7 +76,7 @@ export default function TechnicalDocumentationGuidePage() {
             El plano comunica fabricación e inspección; el render comunica forma, material y uso; el prototipo comunica comportamiento. No son sustitutos. Usa cada recurso para la pregunta que resuelve. En portfolio, una secuencia equilibrada puede incluir vista general, detalle técnico, plano simplificado y fotografía del prototipo.
           </p>
           <p>
-            La guía de <Link href="/blog/renders-tecnicos-portfolio">renders técnicos para portfolio</Link> ayuda a ordenar cámaras e iluminación. Para informes académicos, consulta <Link href="/blog/preparar-informe-tecnico-universitario">cómo preparar un informe técnico universitario</Link>.
+            La <Link href="/casos-practicos-impresion-3d">galería comentada</Link> muestra cómo documentar una pieza sin atribuirle propiedades no medidas. Para estructurar planos, renders e informes, consulta la <Link href="/guia-documentacion-tecnica">guía de documentación técnica</Link>.
           </p>
 
           <h2>Control de versiones sencillo</h2>

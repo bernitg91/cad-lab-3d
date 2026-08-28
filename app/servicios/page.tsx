@@ -106,7 +106,7 @@ export default function ServicesPage() {
             Ir a contacto
           </Link>
           <Link className="rounded-md border border-white/20 px-5 py-3 text-sm font-bold text-white hover:bg-white/10" href="/casos-practicos-impresion-3d">
-            Ver casos prácticos
+            Ver galería comentada
           </Link>
         </div>
       </div>

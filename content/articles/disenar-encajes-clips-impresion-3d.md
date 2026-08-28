@@ -26,7 +26,7 @@ Anota al menos:
 - posibilidad de acceder con un dedo o herramienta;
 - pieza reemplazable si aparece desgaste.
 
-Si el producto debe abrirse para mantenimiento, conviene valorar tornillos o una solución híbrida. La guía para [diseñar piezas desmontables y reparables](/blog/disenar-piezas-desmontables-reparables) ayuda a decidir si un clip es realmente la unión adecuada.
+Si el producto debe abrirse para mantenimiento, conviene valorar tornillos o una solución híbrida. La [guía de CAD paramétrico](/guia-cad-parametrico) ayuda a revisar la intención de diseño y a decidir si un clip es realmente la unión adecuada.
 
 ## Diseña una flexión controlada
 
@@ -42,7 +42,7 @@ La rampa de entrada convierte el movimiento de montaje en flexión. Una pendient
 
 El clip necesita **espacio para flexar sin chocar con la carcasa**. Revisa el recorrido completo, no solo las posiciones inicial y final. Redondea o chaflana las entradas para compensar pequeñas desviaciones y evita que la primera capa forme parte de una superficie de ajuste crítica si puede expandirse.
 
-Las medidas dependen de impresora, boquilla, material y orientación. Empieza con una matriz de holguras en torno al ajuste previsto y valida el resultado frío. La guía de [tolerancias para piezas impresas en 3D](/blog/tolerancias-piezas-impresas-3d) explica por qué copiar una cifra aislada suele fallar.
+Las medidas dependen de impresora, boquilla, material y orientación. Empieza con una matriz de holguras en torno al ajuste previsto y valida el resultado frío. Las [pruebas de tolerancia FDM](/blog/pruebas-tolerancia-fdm) explican por qué copiar una cifra aislada suele fallar.
 
 ## Orientación y material del clip
 

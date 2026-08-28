@@ -113,7 +113,7 @@ export default function HomePage() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link className="focus-ring rounded-md bg-teal-400 px-5 py-3 text-sm font-black text-slate-950 hover:bg-cyan-300" href="/guias">Empezar por una guía</Link>
-              <Link className="focus-ring rounded-md border border-white/20 px-5 py-3 text-sm font-bold text-white hover:border-cyan-300 hover:bg-white/5" href="/blog">Explorar 42 artículos</Link>
+              <Link className="focus-ring rounded-md border border-white/20 px-5 py-3 text-sm font-bold text-white hover:border-cyan-300 hover:bg-white/5" href="/blog" prefetch={false}>Explorar {articles.length} artículos</Link>
             </div>
           </div>
 
@@ -124,6 +124,7 @@ export default function HomePage() {
                 alt="Ilustración editorial de un proyecto CAD documentado con prototipo, planos y medidas"
                 fill
                 priority
+                fetchPriority="high"
                 sizes="(min-width: 1024px) 54vw, 100vw"
                 className="object-cover"
               />
@@ -145,7 +146,7 @@ export default function HomePage() {
             [String(articles.length), "artículos revisados"],
             ["5", "rutas temáticas"],
             ["4", "herramientas abiertas"],
-            ["4", "casos documentados"]
+            [String(portfolioItems.length), "piezas comentadas"]
           ].map(([value, label]) => (
             <div key={label} className="px-4 py-5 text-center sm:px-6">
               <p className="font-display text-3xl font-black text-slate-950">{value}</p>
@@ -251,8 +252,8 @@ export default function HomePage() {
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-18">
         <div className="flex flex-col gap-4 border-b border-slate-300 pb-6 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="font-mono text-xs font-semibold uppercase tracking-[0.15em] text-teal-800">Últimas publicaciones</p>
-            <h2 className="mt-2 font-display text-4xl font-black uppercase leading-none text-slate-950 sm:text-5xl">La biblioteca sigue creciendo en profundidad</h2>
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.15em] text-teal-800">Biblioteca revisada</p>
+            <h2 className="mt-2 font-display text-4xl font-black uppercase leading-none text-slate-950 sm:text-5xl">Artículos con una tarea concreta</h2>
           </div>
           <Link className="text-sm font-bold text-blue-800 hover:text-blue-950" href="/blog">Buscar por tema →</Link>
         </div>
@@ -265,14 +266,14 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
             <div className="lg:sticky lg:top-28">
-              <p className="font-mono text-xs font-semibold uppercase tracking-[0.15em] text-teal-800">Evidencia propia</p>
-              <h2 className="mt-3 font-display text-4xl font-black uppercase leading-none text-slate-950 sm:text-5xl">Piezas reales, límites claros</h2>
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.15em] text-teal-800">Fotografía propia</p>
+              <h2 className="mt-3 font-display text-4xl font-black uppercase leading-none text-slate-950 sm:text-5xl">Piezas fotografiadas, límites claros</h2>
               <p className="mt-5 max-w-lg text-base leading-7 text-slate-600">Las fotografías permiten observar geometría, acabado y uso. No atribuimos resistencia, material o precisión si no están medidos.</p>
-              <Link className="mt-6 inline-flex border-b-2 border-blue-700 pb-1 text-sm font-black text-blue-800" href="/casos-practicos-impresion-3d">Ver todos los casos →</Link>
+              <Link className="mt-6 inline-flex border-b-2 border-blue-700 pb-1 text-sm font-black text-blue-800" href="/casos-practicos-impresion-3d">Ver la galería comentada →</Link>
             </div>
             <div className="grid gap-5 sm:grid-cols-2">
               {portfolioItems.slice(0, 4).map((item, index) => (
-                <Link key={item.title} href={item.slug ? `/casos-practicos-impresion-3d/${item.slug}` : "/casos-practicos-impresion-3d"} className={`group overflow-hidden border border-slate-200 bg-slate-50 ${index === 0 ? "sm:col-span-2" : ""}`}>
+                <Link key={item.title} href={`/casos-practicos-impresion-3d#caso-${index + 1}`} className={`group overflow-hidden border border-slate-200 bg-slate-50 ${index === 0 ? "sm:col-span-2" : ""}`}>
                   <div className={`relative overflow-hidden bg-slate-100 ${index === 0 ? "aspect-[16/8]" : "aspect-[4/3]"}`}>
                     <Image src={item.image} alt={item.alt} fill sizes={index === 0 ? "(min-width: 1024px) 58vw, 100vw" : "(min-width: 640px) 50vw, 100vw"} className="object-cover transition duration-500 group-hover:scale-[1.03]" />
                   </div>

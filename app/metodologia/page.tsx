@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { getAllArticles } from "@/lib/articles";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
@@ -32,6 +33,8 @@ const criteria = [
 ];
 
 export default function MethodologyPage() {
+  const publishedArticleCount = getAllArticles().length;
+
   return (
     <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
       <p className="text-sm font-black uppercase tracking-wide text-teal-700">Calidad editorial</p>
@@ -62,9 +65,17 @@ export default function MethodologyPage() {
         <p>
           El contenido se revisa cuando se detectan errores, cambia una herramienta o una página se solapa con otra. En ese último caso se consolida en una guía más completa en lugar de mantener varias versiones casi iguales. Los enlaces y descargas se comprueban durante la revisión del sitio.
         </p>
+        <h2>Selección y consolidación</h2>
+        <p>
+          La biblioteca mantiene {publishedArticleCount} artículos diferenciados. Las publicaciones que repetían la misma intención se han retirado de los listados y redirigen a la guía, herramienta o artículo más útil. El objetivo no es aumentar el contador de páginas, sino conservar una respuesta clara para cada tarea.
+        </p>
+        <h2>Niveles de evidencia</h2>
+        <p>
+          Una fuente oficial sirve para contrastar funciones, terminología o recomendaciones generales. Una fotografía propia permite observar geometría y acabado, pero no demuestra por sí sola material, tolerancia, resistencia o durabilidad. Solo se considera un caso validado cuando existen datos de proceso, medidas o ensayos documentados.
+        </p>
         <h2>Uso de ejemplos prácticos</h2>
         <p>
-          Las páginas de servicios y casos prácticos muestran piezas impresas reales para aportar contexto técnico. Las descripciones se mantienen prudentes: explican objetivo, revisión y aprendizaje, pero no prometen resistencias, certificaciones o resultados que no se hayan validado.
+          La galería muestra piezas impresas reales para aportar contexto visual. Sus fichas se mantienen prudentes: explican qué puede observarse y qué comprobación faltaría, sin presentarlas como ensayos o casos validados cuando esos datos no existen.
         </p>
         <h2>Fuentes externas</h2>
         <p>
@@ -77,7 +88,7 @@ export default function MethodologyPage() {
           Ver guías
         </Link>
         <Link className="rounded-md border border-slate-300 px-5 py-3 text-sm font-black text-slate-800 hover:border-blue-300 hover:text-blue-700" href="/casos-practicos-impresion-3d">
-          Ver casos prácticos
+          Ver galería comentada
         </Link>
         <Link className="rounded-md border border-slate-300 px-5 py-3 text-sm font-black text-slate-800 hover:border-blue-300 hover:text-blue-700" href="/contacto">
           Enviar corrección o sugerencia

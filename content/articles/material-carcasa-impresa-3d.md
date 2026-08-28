@@ -32,11 +32,11 @@ Esta tabla orienta la primera selección, pero las formulaciones comerciales y l
 | Nylon | importan tenacidad, desgaste o clips repetidos | absorción de humedad, flexibilidad y control dimensional |
 | TPU | se necesita una funda, junta o absorción de impacto | poca rigidez y dificultad en puentes o paredes finas |
 
-**No conviertas esta comparación en una clasificación absoluta**. Consulta fichas técnicas del filamento real y revisa la [comparativa de PLA, PETG, ABS y nylon](/blog/diferencias-pla-petg-abs-nylon) antes de decidir.
+**No conviertas esta comparación en una clasificación absoluta**. Consulta fichas técnicas del filamento real y revisa cómo [elegir filamento para piezas funcionales](/blog/elegir-filamento-piezas-funcionales) antes de decidir.
 
 ## Diseñar pared, ventilación y temperatura juntas
 
-La resistencia térmica no depende solo del nombre del polímero. Una pared larga, fina y precargada por tornillos puede deformarse antes que una geometría rígida. Distribuye espesores, evita masas aisladas y añade radios en transiciones. Para conectar el CAD con la extrusión, usa la guía de [espesores mínimos en plástico](/blog/espesores-minimos-piezas-plastico).
+La resistencia térmica no depende solo del nombre del polímero. Una pared larga, fina y precargada por tornillos puede deformarse antes que una geometría rígida. Distribuye espesores, evita masas aisladas y añade radios en transiciones. Para conectar el CAD con la extrusión, usa la [guía de materiales FDM](/guia-materiales-fdm).
 
 Si la carcasa contiene electrónica, **no cierres ventilaciones únicamente por estética**. Estima dónde entra y sale aire, deja distancia a componentes calientes y evita que una rejilla debilite la zona atornillada. La impresión 3D no concede automáticamente aislamiento eléctrico, resistencia al fuego ni estanqueidad: esas propiedades requieren materiales clasificados, diseño específico y validación apropiada.
 
@@ -52,7 +52,7 @@ Un clip combina material, longitud flexible, espesor, radio y orientación de ca
 
 ### Tapa y base
 
-La holgura entre mitades depende de máquina, material y orientación. **No uses un ajuste nominal**. Añade referencias de centrado que no sobredefinan el ensamblaje y deja acceso de herramienta. Si habrá mantenimiento, aplica criterios de [diseño reparable](/blog/disenar-piezas-desmontables-reparables).
+La holgura entre mitades depende de máquina, material y orientación. **No uses un ajuste nominal**. Añade referencias de centrado que no sobredefinan el ensamblaje y deja acceso de herramienta. Si habrá mantenimiento, aplica los criterios de revisión de la [guía de CAD paramétrico](/guia-cad-parametrico).
 
 ## Proceso práctico de selección
 
