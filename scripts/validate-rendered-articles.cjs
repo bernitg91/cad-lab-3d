@@ -96,11 +96,21 @@ for (const slug of slugs) {
       throw new Error(`Rendered article ${slug} must distinguish the reference from a firsthand test`);
     }
   } else if (illustration?.kind === "original-diagram") {
-    if (!html.includes("Sin fotografía de proceso")) {
-      throw new Error(`Rendered article ${slug} must disclose that it has no process photograph`);
+    if (!html.includes("no documenta una prueba real")) {
+      throw new Error(`Rendered article ${slug} must distinguish the recreation from a documented test`);
     }
-    if (!html.includes(illustration.image)) throw new Error(`Rendered article ${slug} is missing its labeled technical illustration`);
-    if (!html.includes("Lámina técnica original")) throw new Error(`Rendered article ${slug} is missing the illustration label`);
+    if (!html.includes(illustration.editorialImage)) throw new Error(`Rendered article ${slug} is missing its editorial recreation PNG`);
+    if (!html.includes("Recreación editorial fotorrealista")) {
+      throw new Error(`Rendered article ${slug} is missing the editorial recreation label`);
+    }
+    if (!html.includes(illustration.editorialMethod)) {
+      throw new Error(`Rendered article ${slug} is missing its AI/editorial recreation disclosure`);
+    }
+    if (!/recreaci(?:ó|&oacute;|&#xF3;|&#243;)n/i.test(html) || !/(?:\bIA\b|inteligencia artificial)/i.test(html)) {
+      throw new Error(`Rendered article ${slug} must explicitly disclose that the editorial recreation uses AI`);
+    }
+    if (!html.includes(illustration.image)) throw new Error(`Rendered article ${slug} is missing its complementary technical SVG`);
+    if (!html.includes("Lámina técnica complementaria")) throw new Error(`Rendered article ${slug} is missing the complementary illustration label`);
     if (!html.includes(illustration.method)) throw new Error(`Rendered article ${slug} is missing the illustration-method disclosure`);
     for (const guideItem of illustration.readingGuide) {
       if (!html.includes(guideItem)) throw new Error(`Rendered article ${slug} is missing a reading-guide item`);
@@ -112,4 +122,4 @@ for (const slug of slugs) {
 
 const originalDiagramCount = illustrationManifest.filter((entry) => entry.kind === "original-diagram").length;
 const referenceCount = illustrationManifest.length - originalDiagramCount;
-console.log(`Rendered article audit passed: ${slugs.length} curated pages distinguish documentary photographs, ${referenceCount} licensed references and ${originalDiagramCount} original technical diagrams; ${Object.keys(redirects).length} overlapping articles redirect to stronger resources.`);
+console.log(`Rendered article audit passed: ${slugs.length} curated pages distinguish documentary photographs, ${referenceCount} licensed references, ${originalDiagramCount} editorial recreations and ${originalDiagramCount} companion technical diagrams; ${Object.keys(redirects).length} overlapping articles redirect to stronger resources.`);

@@ -6,6 +6,7 @@ const projectRoot = path.resolve(__dirname, "..");
 const manifestPath = path.join(projectRoot, "content", "article-illustrations.json");
 const technicalDirectory = path.join(projectRoot, "public", "images", "technical-illustrations");
 const referenceDirectory = path.join(projectRoot, "public", "images", "article-references");
+const editorialDirectory = path.join(projectRoot, "public", "images", "editorial-recreations");
 const articlesDirectory = path.join(projectRoot, "content", "articles");
 const expectedLicenseUrls = new Map([
   ["CC BY 2.0", "https://creativecommons.org/licenses/by/2.0/"],
@@ -89,6 +90,7 @@ function readSvgDimensions(buffer, relativePath) {
 if (!fs.existsSync(manifestPath)) fail("falta content/article-illustrations.json");
 if (!fs.existsSync(technicalDirectory)) fail("falta public/images/technical-illustrations");
 if (!fs.existsSync(referenceDirectory)) fail("falta public/images/article-references");
+if (!fs.existsSync(editorialDirectory)) fail("falta public/images/editorial-recreations");
 
 const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
 if (!Array.isArray(manifest) || manifest.length !== 7) fail(`se esperaban 7 registros y hay ${manifest.length}`);
@@ -107,6 +109,7 @@ const seenHashes = new Set();
 const seenSources = new Set();
 let originalDiagramCount = 0;
 let referenceCount = 0;
+let editorialRecreationCount = 0;
 let totalBytes = 0;
 
 for (const entry of manifest) {
@@ -138,6 +141,43 @@ for (const entry of manifest) {
       fail(`${entry.slug}: la guía de lectura debe contener tres indicaciones específicas`);
     }
     if (entry.creator || entry.licenseCode) fail(`${entry.slug}: un esquema original no debe afirmar una licencia externa`);
+
+    for (const field of ["editorialImage", "editorialAlt", "editorialCaption", "editorialSha256", "editorialMethod"]) {
+      requireText(entry, field);
+    }
+    editorialRecreationCount += 1;
+    if (!entry.editorialImage.startsWith("/images/editorial-recreations/") || !entry.editorialImage.endsWith(".png")) {
+      fail(`${entry.slug}: editorialImage debe ser un PNG bajo /images/editorial-recreations/`);
+    }
+    if (seenImages.has(entry.editorialImage)) fail(`${entry.slug}: ruta editorial duplicada: ${entry.editorialImage}`);
+    seenImages.add(entry.editorialImage);
+    if (entry.editorialWidth !== 1672 || entry.editorialHeight !== 941) {
+      fail(`${entry.slug}: la recreación editorial debe declarar 1672x941 px`);
+    }
+    if (!/^[a-f0-9]{64}$/.test(entry.editorialSha256)) fail(`${entry.slug}: editorialSha256 inválido`);
+    if (!/recreaci[oó]n/i.test(entry.editorialMethod) || !/(?:\bIA\b|inteligencia artificial)/i.test(entry.editorialMethod)) {
+      fail(`${entry.slug}: editorialMethod debe identificar la recreación y el uso de IA`);
+    }
+
+    const editorialFilePath = path.join(projectRoot, "public", entry.editorialImage.replace(/^\//, ""));
+    if (path.dirname(path.resolve(editorialFilePath)) !== path.resolve(editorialDirectory)) {
+      fail(`${entry.slug}: editorialImage sale de la biblioteca de recreaciones editoriales`);
+    }
+    if (!fs.existsSync(editorialFilePath)) fail(`${entry.slug}: falta ${entry.editorialImage}`);
+    const editorialBuffer = fs.readFileSync(editorialFilePath);
+    if (editorialBuffer.length < 50_000 || editorialBuffer.length > 3_000_000) {
+      fail(`${entry.slug}: la recreación editorial debe pesar entre 50 KB y 3 MB`);
+    }
+    const editorialRelativePath = path.relative(projectRoot, editorialFilePath).replaceAll("\\", "/");
+    const editorialDimensions = readPngDimensions(editorialBuffer, editorialRelativePath);
+    if (editorialDimensions.width !== 1672 || editorialDimensions.height !== 941) {
+      fail(`${entry.slug}: ${editorialRelativePath} mide ${editorialDimensions.width}x${editorialDimensions.height}; se esperan 1672x941`);
+    }
+    const editorialHash = crypto.createHash("sha256").update(editorialBuffer).digest("hex");
+    if (editorialHash !== entry.editorialSha256) fail(`${entry.slug}: editorialSha256 no coincide`);
+    if (seenHashes.has(editorialHash)) fail(`${entry.slug}: hash editorial duplicado`);
+    seenHashes.add(editorialHash);
+    totalBytes += editorialBuffer.length;
   } else if (entry.kind === "licensed-reference-media") {
     referenceCount += 1;
     expectedDirectory = referenceDirectory;
@@ -177,12 +217,16 @@ for (const entry of manifest) {
 }
 
 if (originalDiagramCount !== 4 || referenceCount !== 3) fail(`la mezcla debe ser 4 láminas originales y 3 referencias; hay ${originalDiagramCount} y ${referenceCount}`);
+if (editorialRecreationCount !== 4) fail(`se esperaban 4 recreaciones editoriales y hay ${editorialRecreationCount}`);
 
-for (const directory of [technicalDirectory, referenceDirectory]) {
+const editorialFiles = fs.readdirSync(editorialDirectory).filter((name) => fs.statSync(path.join(editorialDirectory, name)).isFile());
+if (editorialFiles.length !== 4) fail(`se esperaban 4 PNG editoriales y se encontraron ${editorialFiles.length}`);
+
+for (const directory of [technicalDirectory, referenceDirectory, editorialDirectory]) {
   for (const filename of fs.readdirSync(directory).filter((name) => fs.statSync(path.join(directory, name)).isFile())) {
     const relative = `/${path.relative(path.join(projectRoot, "public"), path.join(directory, filename)).replaceAll("\\", "/")}`;
     if (!seenImages.has(relative)) fail(`archivo no inventariado: ${relative}`);
   }
 }
 
-console.log(`Article illustration audit passed: ${originalDiagramCount} original vector diagrams, ${referenceCount} licensed references, unique files and verified SHA-256 hashes, ${(totalBytes / 1024 / 1024).toFixed(2)} MB total.`);
+console.log(`Article illustration audit passed: ${originalDiagramCount} original vector diagrams, ${editorialRecreationCount} editorial PNG recreations, ${referenceCount} licensed references, unique files and verified SHA-256 hashes, ${(totalBytes / 1024 / 1024).toFixed(2)} MB total.`);

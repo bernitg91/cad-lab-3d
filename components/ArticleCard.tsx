@@ -11,15 +11,20 @@ export function ArticleCard({ article }: { article: ArticleMeta }) {
   const showPhoto = isDocumentaryArticlePhoto(photo);
   const isFirsthandPhoto = isFirsthandArticlePhoto(photo);
   const illustration = getArticleIllustration(article.slug);
-  const visual = showPhoto && photo ? photo : illustration;
+  const isEditorialRecreation = illustration?.kind === "original-diagram";
+  const illustrationVisual = isEditorialRecreation
+    ? { image: illustration.editorialImage, alt: illustration.editorialAlt }
+    : illustration;
+  const visual = showPhoto && photo ? photo : illustrationVisual;
+  const isPhotographicVisual = showPhoto || isEditorialRecreation;
   const visualLabel = isFirsthandPhoto
     ? "Foto propia"
     : showPhoto
       ? "Foto con licencia"
       : illustration?.kind === "licensed-reference-media"
         ? "Referencia con licencia"
-        : illustration
-          ? "Esquema técnico"
+        : isEditorialRecreation
+          ? "Recreación editorial"
           : undefined;
 
   return (
@@ -50,18 +55,20 @@ export function ArticleCard({ article }: { article: ArticleMeta }) {
             href={`/blog/${article.slug}`}
             aria-label={`Leer ${article.title}`}
             className={`relative hidden shrink-0 overflow-hidden sm:block ${
-              showPhoto
-                ? "aspect-square w-28 bg-slate-100"
-                : "aspect-video w-40 border border-slate-200 bg-[#f3efe5]"
+              isPhotographicVisual
+                ? isEditorialRecreation
+                  ? "aspect-video w-40 border border-slate-200 bg-slate-100"
+                  : "aspect-square w-28 bg-slate-100"
+                : "aspect-video w-40 border border-slate-200 bg-slate-950"
             }`}
           >
             <Image
               src={visual.image}
               alt={visual.alt}
               fill
-              sizes={showPhoto ? "112px" : "160px"}
+              sizes={showPhoto && !isEditorialRecreation ? "112px" : "160px"}
               unoptimized={visual.image.endsWith(".svg")}
-              className={`${showPhoto ? "object-cover" : "object-contain"} transition duration-300 group-hover:scale-[1.03]`}
+              className={`${isPhotographicVisual ? "object-cover" : "object-contain"} transition duration-300 group-hover:scale-[1.03]`}
             />
           </Link>
         ) : null}

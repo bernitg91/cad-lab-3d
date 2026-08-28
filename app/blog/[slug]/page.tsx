@@ -52,12 +52,12 @@ const editorialNotes: Record<CategorySlug, string> = {
 
 const editorialNotesBySlug: Record<string, string> = {
   "calibrar-impresora-3d-piezas-funcionales": "La secuencia va de la primera capa a una pieza de control para no cambiar varios parámetros a la vez. La fotografía solo permite observar la zona de deposición; no corresponde a mi impresora ni acredita una calibración propia.",
-  "como-empezar-creo-parametric-desde-cero": "El recorrido usa una escuadra sencilla para practicar croquis, extrusión, taladros y redondeos con un historial legible. La lámina muestra la lógica de regeneración; no pretende imitar una captura real de Creo.",
-  "documentar-analisis-fem-basico": "Esta nota nace de un fallo frecuente en las memorias: enseñar el contorno de colores y omitir las condiciones que lo producen. Por eso la lámina separa entrada, malla, salida y verificación, con valores expresamente didácticos.",
+  "como-empezar-creo-parametric-desde-cero": "El recorrido usa una escuadra sencilla para practicar croquis, extrusión, taladros y redondeos con un historial legible. La recreación aporta contexto de mesa de trabajo y la lámina explica la lógica de regeneración; ninguna documenta una sesión real de Creo.",
+  "documentar-analisis-fem-basico": "Esta nota nace de un fallo frecuente en las memorias: enseñar el contorno de colores y omitir las condiciones que lo producen. La recreación solo plantea físicamente el caso de carga; la lámina separa entrada, malla, salida y verificación sin fingir un cálculo realizado.",
   "elegir-filamento-piezas-funcionales": "La elección parte del uso de la pieza —temperatura, impacto, humedad y repetición—, no del color de la bobina. La foto documenta el formato del filamento, pero no permite identificar el polímero ni sus propiedades.",
-  "errores-exportar-archivos-cad": "Aquí distingo tres entregables que suelen mezclarse: sólido para seguir editando, malla para fabricar y plano para comunicar. Cada rama de la lámina tiene controles distintos porque un archivo que abre no necesariamente conserva escala o geometría.",
+  "errores-exportar-archivos-cad": "Aquí distingo tres entregables que suelen mezclarse: sólido para seguir editando, malla para fabricar y plano para comunicar. La recreación contextualiza una entrega y la lámina detalla sus controles; no se atribuyen a un archivo real comprobaciones que no se han conservado.",
   "evitar-warping-impresion-3d": "El diagnóstico se ordena por mecanismo térmico, adhesión y geometría antes de proponer cambios de perfil. La figura científica sirve para observar el fenómeno en ABS; no se presenta como una prueba realizada para este cuaderno.",
-  "pruebas-tolerancia-fdm": "La ficha propone imprimir una serie corta bajo condiciones registradas y clasificarla solo después del montaje. Los cinco diámetros son ejemplos de preparación: todos permanecen sin ensayar y no se publican como compensaciones válidas.",
+  "pruebas-tolerancia-fdm": "La ficha propone imprimir una serie corta bajo condiciones registradas y clasificarla solo después del montaje. Tanto el cupón recreado como los cinco diámetros de la lámina son ejemplos sin ensayar y no se publican como compensaciones válidas.",
   "disenar-encajes-clips-impresion-3d": "La foto permite ver un adaptador pequeño y su abertura, pero no conserva una medición de holgura. La guía se centra por eso en cómo preparar una probeta y repetir el encaje antes de trasladarlo a una pieza mayor.",
   "disenar-pieza-resistente-fdm": "La resistencia se explica siguiendo la trayectoria de carga y la continuidad entre capas, paredes y nervios. El panel fotografiado aporta contexto geométrico; sin material, orientación y ensayo registrados no se usa como prueba mecánica.",
   "errores-diseno-piezas-impresion-3d": "Los errores se agrupan por lo que puede revisarse antes de laminar: escala, paredes, apoyos, puentes y orientación. La imagen externa muestra piezas de prueba reales, pero no aporta los parámetros con los que fueron fabricadas.",
@@ -231,11 +231,11 @@ export default async function ArticlePage({ params }: PageProps) {
             <>
               <aside className="mt-8 max-w-4xl border-y border-slate-300 py-4 text-sm leading-6 text-slate-600">
                 <span className="font-bold text-slate-950">
-                  {illustration.kind === "licensed-reference-media" ? "Referencia externa." : "Sin fotografía de proceso."}
+                  {illustration.kind === "licensed-reference-media" ? "Referencia externa." : "Recreación editorial fotorrealista."}
                 </span>{" "}
                 {illustration.kind === "licensed-reference-media"
                   ? "La imagen siguiente ilustra el proceso o el fenómeno; no documenta una prueba realizada para este artículo."
-                  : "La lámina siguiente es un esquema explicativo; no documenta una prueba realizada."}
+                  : "La escena siguiente está asistida por IA y revisada manualmente; no documenta una prueba real. Debajo se conserva una lámina técnica complementaria para explicar el concepto."}
               </aside>
               <ArticleIllustration illustration={illustration} articleTitle={article.title} hero />
             </>

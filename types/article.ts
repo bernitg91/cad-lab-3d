@@ -54,6 +54,13 @@ export type ArticleIllustration = ArticleIllustrationBase & (
   | {
       kind: "original-diagram";
       method: "Dibujo vectorial original y revisión técnica";
+      editorialImage: string;
+      editorialAlt: string;
+      editorialCaption: string;
+      editorialWidth: number;
+      editorialHeight: number;
+      editorialSha256: string;
+      editorialMethod: "Recreación editorial fotorrealista asistida por IA y revisión humana";
       createdAt: string;
       readingGuide: [string, string, string];
     }

@@ -23,7 +23,7 @@ const criteria = [
   },
   {
     title: "Evidencia propia",
-    text: "Cuando se muestran servicios o ejemplos de impresión 3D, se usan piezas reales y se explica qué se aprende de ellas sin inventar ensayos ni testimonios."
+    text: "Cuando se muestran servicios o ejemplos de impresión 3D, las piezas reales se distinguen de las recreaciones conceptuales. Estas últimas nunca se cuentan como evidencia propia ni como ensayos realizados."
   },
   {
     title: "Revisión editorial",
@@ -68,11 +68,14 @@ export default function MethodologyPage() {
         </p>
         <h2>Niveles de evidencia</h2>
         <p>
-          Una fuente oficial sirve para contrastar funciones, terminología o recomendaciones generales. Una fotografía propia permite observar geometría y acabado, pero no demuestra por sí sola material, tolerancia, resistencia o durabilidad. Solo se considera un caso validado cuando existen datos de proceso, medidas o ensayos documentados.
+          Una fuente oficial sirve para contrastar funciones, terminología o recomendaciones generales. Una fotografía documental permite observar geometría y acabado, pero no demuestra por sí sola material, tolerancia, resistencia o durabilidad. Una recreación editorial tampoco demuestra que la escena, la pieza o la prueba hayan existido. Solo se considera un caso validado cuando existen datos de proceso, medidas o ensayos documentados.
         </p>
         <h2>Fotografías e ilustraciones</h2>
         <p>
-          Las fotografías se reservan para piezas o referencias que realmente existen y conservan su crédito. Las láminas vectoriales se dibujan para una explicación concreta y se rotulan como esquemas conceptuales: ayudan a leer una secuencia, una comparación o una causa, pero no sustituyen una captura del proceso ni se presentan como resultados medidos. Su procedencia está resumida en <Link href="/licencias-imagenes">licencias y créditos de imágenes</Link>.
+          Las fotografías documentales se reservan para piezas o referencias que realmente existen y conservan su crédito. Las cuatro recreaciones editoriales fotorrealistas están asistidas por IA y se identifican expresamente como escenas conceptuales: aportan contexto, pero no son fotografías de pruebas reales, capturas de procesos ejecutados, prototipos documentados ni resultados calculados.
+        </p>
+        <p>
+          Antes de publicarlas se revisan manualmente la geometría, el número y la posición de los elementos, los materiales, el proceso representado, las luces, las sombras y los posibles artefactos generativos. La revisión reduce errores visuales, pero no convierte una recreación en evidencia. Cada una mantiene además una lámina vectorial rotulada que explica el concepto sin fingir datos medidos. La clasificación y la procedencia de todos estos recursos están resumidas en <Link href="/licencias-imagenes">licencias y créditos de imágenes</Link>.
         </p>
         <h2>Uso de ejemplos prácticos</h2>
         <p>
