@@ -35,7 +35,7 @@ function renderInline(text: string) {
 function parseTable(block: string) {
   const rows = block
     .trim()
-    .split("\n")
+    .split(/\r?\n/)
     .map((row) => row.trim().replace(/^\||\|$/g, "").split("|").map((cell) => cell.trim()));
 
   if (rows.length < 2 || !rows[1].every((cell) => /^:?-{3,}:?$/.test(cell))) return null;
@@ -44,7 +44,7 @@ function parseTable(block: string) {
 }
 
 export function MarkdownContent({ content }: { content: string }) {
-  const blocks = content.split(/\n\n+/);
+  const blocks = content.split(/\r?\n(?:\r?\n)+/);
 
   return (
     <div className="article-body">
@@ -95,7 +95,7 @@ export function MarkdownContent({ content }: { content: string }) {
         if (block.match(/^- /m)) {
           return (
             <ul key={index}>
-              {block.split("\n").map((item) => (
+              {block.split(/\r?\n/).map((item) => (
                 <li key={item}>{renderInline(item.replace(/^- /, ""))}</li>
               ))}
             </ul>
@@ -105,7 +105,7 @@ export function MarkdownContent({ content }: { content: string }) {
         if (block.match(/^\d+\. /m)) {
           return (
             <ol key={index}>
-              {block.split("\n").map((item) => (
+              {block.split(/\r?\n/).map((item) => (
                 <li key={item}>{renderInline(item.replace(/^\d+\. /, ""))}</li>
               ))}
             </ol>

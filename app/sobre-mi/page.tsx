@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { createPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
@@ -10,63 +11,79 @@ export const metadata: Metadata = createPageMetadata({
 });
 
 export default function AboutPage() {
-  const publicAuthor = siteConfig.authorName === siteConfig.name
-    ? "la persona responsable del proyecto"
-    : siteConfig.authorName;
+  const hasPublicName = siteConfig.authorName !== siteConfig.name;
 
   return (
-    <section className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
-      <p className="text-sm font-black uppercase tracking-wide text-teal-700">Quién prepara el contenido</p>
-      <h1 className="mt-3 text-4xl font-black text-slate-950">Sobre CAD Lab 3D</h1>
-      <div className="mt-8 space-y-5 text-lg leading-8 text-slate-600">
-        <p>
-          CAD Lab 3D está a cargo de {publicAuthor}, estudiante de ingeniería en diseño industrial con interés en CAD, impresión 3D FDM, simulación y desarrollo de producto. La web reúne apuntes de trabajo, recursos y explicaciones que resultan útiles al preparar piezas y proyectos técnicos.
-        </p>
-        <p>
-          El contenido parte de problemas concretos: una pieza que no encaja, un STL mal exportado, una orientación débil, una memoria sin trazabilidad o un análisis FEM que necesita explicar mejor sus supuestos. Cuando se muestran piezas impresas, se utilizan fotografías propias y se separa lo observado de lo que todavía requeriría ensayo.
-        </p>
-        <p>
-          No se publican certificaciones, testimonios ni resultados de resistencia que no puedan respaldarse. Las cifras de proceso se presentan como orientaciones y se contrastan con documentación oficial, porque una misma recomendación puede cambiar con material, impresora, geometría o versión del software.
-        </p>
-        <p>
-          Para correcciones, dudas o propuestas relacionadas con el proyecto puedes escribir a <a className="font-bold text-blue-700 hover:text-blue-900" href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a>.
-        </p>
-      </div>
-      <div className="mt-10 grid gap-5 md:grid-cols-2">
-        <section className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
-          <h2 className="text-2xl font-black text-slate-950">Qué encontrarás en esta web</h2>
-          <ul className="mt-4 grid gap-2 text-sm leading-6 text-slate-600">
-            <li>Tutoriales de CAD, piezas FDM y documentación técnica.</li>
-            <li>Guías sobre materiales, tolerancias, renders y portfolios.</li>
-            <li>Recursos para informes, checklists y proyectos CAD.</li>
-            <li>Galería de piezas reales con observaciones visuales y límites expresos.</li>
-            <li>Fuentes oficiales para ampliar y comprobar la información.</li>
-          </ul>
-        </section>
-        <section className="rounded-lg bg-slate-950 p-6 text-white">
-          <h2 className="text-2xl font-black">Empieza por las guías</h2>
-          <p className="mt-3 text-sm leading-6 text-slate-300">
-            Si llegas por primera vez, las guías agrupan los contenidos por flujo de trabajo y evitan saltar entre temas sin contexto.
-          </p>
-          <div className="mt-5 flex flex-wrap gap-3">
-            <a className="rounded-md bg-teal-500 px-4 py-2 text-sm font-black text-slate-950 hover:bg-teal-300" href="/guias">Ver guías</a>
-            <a className="rounded-md border border-white/20 px-4 py-2 text-sm font-bold text-white hover:bg-white/10" href="/casos-practicos-impresion-3d">Galería comentada</a>
-            <a className="rounded-md border border-white/20 px-4 py-2 text-sm font-bold text-white hover:bg-white/10" href="/contacto">Contacto</a>
+    <>
+      <section className="border-b border-slate-200 bg-white">
+        <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:px-8 lg:py-16">
+          <div>
+            <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-teal-800">Quién escribe</p>
+            <h1 className="mt-4 font-display text-5xl font-black leading-[0.94] text-slate-950 sm:text-6xl">CAD Lab 3D es mi cuaderno público de trabajo</h1>
+            <div className="mt-6 space-y-4 text-lg leading-8 text-slate-600">
+              <p>
+                {hasPublicName ? <>Me llamo {siteConfig.authorName} y soy</> : <>Soy</>} estudiante de Ingeniería en Diseño Industrial, con interés en CAD, impresión 3D FDM, simulación y desarrollo de producto. Esta web no intenta parecer una revista ni un laboratorio comercial.
+              </p>
+              <p>
+                La uso para ordenar preguntas que aparecen al preparar una pieza o una entrega: por qué no encaja, qué orientación tiene sentido, qué debe quedar registrado y qué todavía no puedo afirmar.
+              </p>
+            </div>
+          </div>
+          <figure className="border border-slate-300 bg-[#eef2f6] p-3">
+            <div className="relative aspect-[4/3] overflow-hidden bg-slate-200">
+              <Image
+                src="/images/impresion-3d-personalizada/panel-prototipo-tecnico-fdm.jpg"
+                alt="Mano sosteniendo un panel técnico gris impreso en 3D"
+                fill
+                priority
+                sizes="(min-width: 1024px) 44vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <figcaption className="border-t border-slate-300 p-4 text-sm leading-6 text-slate-600">
+              Fotografía propia de una pieza del cuaderno. Permite observar el panel y sus relieves; no demuestra material, rigidez ni precisión dimensional.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+        <div className="grid gap-8 md:grid-cols-2">
+          <section className="border-t-2 border-slate-950 pt-5">
+            <h2 className="font-display text-3xl font-black text-slate-950">Qué sí encontrarás</h2>
+            <ul className="mt-5 grid gap-3 text-base leading-7 text-slate-600">
+              <li>Guías de CAD, impresión FDM, materiales y documentación.</li>
+              <li>Herramientas sencillas para estimar y revisar antes de fabricar.</li>
+              <li>Fotografías propias con observaciones limitadas a lo visible.</li>
+              <li>Fuentes oficiales y enlaces para comprobar la información.</li>
+            </ul>
+          </section>
+          <section className="border-t-2 border-orange-600 pt-5">
+            <h2 className="font-display text-3xl font-black text-slate-950">Qué no voy a fingir</h2>
+            <ul className="mt-5 grid gap-3 text-base leading-7 text-slate-600">
+              <li>Ensayos, medidas o materiales que no se hayan conservado.</li>
+              <li>Certificaciones, testimonios o experiencia profesional inexistente.</li>
+              <li>Una cifra universal cuando depende de máquina, perfil y geometría.</li>
+              <li>Que una ilustración editorial sea una prueba realizada en el taller.</li>
+            </ul>
+          </section>
+        </div>
+
+        <section className="mt-12 grid gap-8 border-y border-slate-300 py-8 lg:grid-cols-[0.8fr_1.2fr]">
+          <h2 className="font-display text-4xl font-black leading-none text-slate-950">Cómo uso este cuaderno</h2>
+          <div className="space-y-4 text-base leading-7 text-slate-600">
+            <p>Cuando preparo un artículo, intento responder a una sola tarea y separar la recomendación general de aquello que exigiría una prueba real. Si el contenido se solapa con otra guía, prefiero consolidarlo.</p>
+            <p>Las revisiones corrigen enlaces, límites y explicaciones. Una fecha de revisión no significa que se haya realizado un ensayo nuevo; cuando exista evidencia propia, deberá aparecer junto al método y los datos.</p>
+            <p>Puedes consultar <Link className="font-bold text-blue-800" href="/metodologia">cómo preparo el contenido</Link>, revisar las <Link className="font-bold text-blue-800" href="/fuentes">fuentes técnicas</Link> o escribir a <a className="font-bold text-blue-800" href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a>.</p>
           </div>
         </section>
-      </div>
-      <section className="article-body mt-10 rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
-        <h2>Cómo se trabaja el contenido</h2>
-        <p>
-          Cada artículo intenta responder a una situación frecuente: preparar un STL, elegir tolerancias, justificar una decisión en una memoria o estimar el coste de una pieza. Por eso las guías incluyen ejemplos aplicados, errores frecuentes, criterios de revisión y enlaces a recursos relacionados.
-        </p>
-        <p>
-          Si una recomendación depende de material, impresora, escala, software o nivel de exigencia, se indica como orientación y no como regla absoluta. En proyectos críticos siempre conviene validar con pruebas, documentación técnica o revisión profesional.
-        </p>
-        <p>
-          Puedes consultar la <Link href="/metodologia">metodología editorial</Link> para entender cómo se revisan las guías, y la página de <Link href="/fuentes">fuentes técnicas</Link> para comprobar las referencias principales.
-        </p>
+
+        <div className="mt-10 flex flex-wrap gap-3">
+          <Link className="bg-slate-950 px-5 py-3 text-sm font-black text-white hover:bg-blue-800" href="/guias">Empezar por las guías</Link>
+          <Link className="border border-slate-300 bg-white px-5 py-3 text-sm font-bold text-slate-800 hover:border-blue-400" href="/casos-practicos-impresion-3d">Ver las piezas fotografiadas</Link>
+          <Link className="border border-slate-300 bg-white px-5 py-3 text-sm font-bold text-slate-800 hover:border-blue-400" href="/contacto">Contacto</Link>
+        </div>
       </section>
-    </section>
+    </>
   );
 }

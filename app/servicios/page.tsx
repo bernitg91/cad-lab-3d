@@ -41,7 +41,24 @@ const services = [
   }
 ];
 
-const process = ["Brief", "Modelado o revisión", "Entrega", "Ajustes"];
+const process = [
+  {
+    title: "Entender el encargo",
+    text: "Reviso el uso, las medidas, el formato disponible, el plazo y aquello que no puede fallar."
+  },
+  {
+    title: "Delimitar el trabajo",
+    text: "Se concreta qué archivo se prepara, qué comprobaciones entran y qué datos debe aportar quien encarga la pieza."
+  },
+  {
+    title: "Preparar y enseñar",
+    text: "Trabajo sobre el modelo o documento y comparto una entrega que permita revisar geometría, formato y decisiones."
+  },
+  {
+    title: "Corregir lo acordado",
+    text: "Los ajustes se aplican sobre observaciones concretas; una ampliación de alcance se valora aparte antes de continuar."
+  }
+];
 
 export default function ServicesPage() {
   return (
@@ -69,12 +86,10 @@ export default function ServicesPage() {
         <h2 className="text-2xl font-black text-slate-950">Proceso de trabajo</h2>
         <div className="mt-6 grid gap-4 md:grid-cols-4">
           {process.map((step, index) => (
-            <div key={step} className="rounded-md bg-slate-50 p-4">
+            <div key={step.title} className="border-t-2 border-slate-950 py-4">
               <p className="text-xs font-black uppercase tracking-wide text-teal-700">Paso {index + 1}</p>
-              <h3 className="mt-2 font-black text-slate-950">{step}</h3>
-              <p className="mt-2 text-sm leading-6 text-slate-600">
-                Flujo simple para entender alcance, trabajar sobre archivos claros y revisar el resultado con criterio.
-              </p>
+              <h3 className="mt-2 font-black text-slate-950">{step.title}</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-600">{step.text}</p>
             </div>
           ))}
         </div>

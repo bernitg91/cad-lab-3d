@@ -42,7 +42,7 @@ export function createPageMetadata({
       ...(type === "article" ? { publishedTime, authors } : {})
     },
     twitter: {
-      card: "summary_large_image",
+      card: socialImage ? "summary_large_image" : "summary",
       title: title === siteConfig.name ? siteConfig.name : `${title} | ${siteConfig.name}`,
       description,
       ...(socialImage ? { images: [{ url: socialImage, alt: imageAlt }] } : {})

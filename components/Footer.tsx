@@ -20,7 +20,7 @@ const resourceLinks = [
 
 const projectLinks = [
   ["Sobre CAD Lab 3D", "/sobre-mi"],
-  ["Metodología editorial", "/metodologia"],
+  ["Cómo se prepara", "/metodologia"],
   ["Fuentes técnicas", "/fuentes"],
   ["Preguntas frecuentes", "/preguntas-frecuentes"],
   ["Licencias de imágenes", "/licencias-imagenes"],
@@ -48,11 +48,11 @@ export function Footer() {
               <Image src="/brand/cadlab3d-mark.webp" alt="" width={54} height={54} className="h-14 w-14 object-contain" />
               <span>
                 <span className="block font-display text-2xl font-black uppercase tracking-wide text-white">CAD Lab 3D</span>
-                <span className="block font-mono text-[9px] uppercase tracking-[0.15em] text-cyan-300">Diseña · fabrica · comprueba</span>
+                <span className="block font-mono text-[9px] uppercase tracking-[0.15em] text-cyan-300">Cuaderno de diseño y fabricación</span>
               </span>
             </Link>
             <p className="mt-5 max-w-sm text-sm leading-6 text-slate-400">
-              Publicación técnica en español sobre CAD, diseño para fabricación, impresión 3D y validación de proyectos. Explicamos decisiones, límites y formas de comprobar el resultado.
+              Cuaderno personal en español sobre CAD, diseño industrial e impresión 3D. Reúne guías, herramientas y piezas fotografiadas sin presentar como medido lo que todavía no lo está.
             </p>
           </div>
           <div>
@@ -64,7 +64,7 @@ export function Footer() {
             <FooterLinks items={resourceLinks} />
           </div>
           <div>
-            <p className="font-mono text-xs font-semibold uppercase tracking-[0.14em] text-white">Confianza</p>
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.14em] text-white">Proyecto</p>
             <FooterLinks items={projectLinks} />
           </div>
         </div>

@@ -50,8 +50,8 @@ function getArticleFiles(): Article[] {
       const { meta, content } = parseFrontmatter(fileContent);
       const readingMinutes = Math.max(1, Math.ceil(content.split(/\s+/).filter(Boolean).length / 210));
       const headings = Array.from(content.matchAll(/^(##|###)\s+(.+)$/gm)).map((heading) => ({
-        id: slugifyHeading(heading[2]),
-        text: heading[2],
+        id: slugifyHeading(heading[2].trim()),
+        text: heading[2].trim(),
         level: heading[1] === "##" ? 2 : 3
       })) as Article["headings"];
 

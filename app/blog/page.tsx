@@ -14,14 +14,14 @@ export default function BlogPage() {
 
   return (
     <>
-      <section className="technical-grid border-b border-slate-200 bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-18">
+      <section className="border-b border-slate-200 bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
           <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-teal-800">
-            Biblioteca técnica · {articles.length} artículos
+            Artículos y notas de trabajo
           </p>
-          <h1 className="mt-3 max-w-4xl font-display text-5xl font-black uppercase leading-[0.92] text-slate-950 sm:text-6xl">Biblioteca de decisiones CAD y fabricación</h1>
+          <h1 className="mt-3 max-w-4xl font-display text-5xl font-black leading-[0.94] text-slate-950 sm:text-6xl">Problemas concretos entre el modelo, la impresora y la entrega</h1>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-600">
-            Busca por problema, material o fase del proyecto. Cada guía explica qué revisar, cómo comprobarlo y qué límite no conviene ocultar.
+            Busca por problema, material o fase del proyecto. Algunos textos parten de una pieza fotografiada; otros ordenan documentación técnica y dejan claro qué faltaría comprobar en la práctica.
           </p>
         </div>
       </section>

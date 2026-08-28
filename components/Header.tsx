@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getAllArticles } from "@/lib/articles";
 
 const navItems = [
   { href: "/guia-cad-parametrico", label: "Diseño CAD" },
@@ -12,15 +11,13 @@ const navItems = [
 ];
 
 export function Header() {
-  const articleCount = getAllArticles().length;
-
   return (
     <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur-xl">
       <div className="border-b border-slate-800 bg-[#091625] text-slate-300">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-1.5 text-[11px] font-semibold sm:px-6 lg:px-8">
-          <p className="font-mono uppercase tracking-[0.12em]">{articleCount} artículos técnicos · piezas y fuentes enlazadas</p>
+          <p className="font-mono uppercase tracking-[0.12em]">Cuaderno de CAD, FDM y documentación técnica</p>
           <div className="hidden items-center gap-4 sm:flex">
-            <Link className="hover:text-cyan-300" href="/metodologia">Cómo revisamos</Link>
+            <Link className="hover:text-cyan-300" href="/sobre-mi">Quién escribe</Link>
             <Link className="hover:text-cyan-300" href="/contacto">Contacto</Link>
           </div>
         </div>
@@ -30,7 +27,7 @@ export function Header() {
           <Image src="/brand/cadlab3d-mark.webp" alt="" width={44} height={44} priority className="h-11 w-11 object-contain" />
           <span className="leading-none">
             <span className="block font-display text-[1.48rem] font-black uppercase tracking-[0.025em] text-slate-950">CAD Lab 3D</span>
-            <span className="mt-0.5 block font-mono text-[9px] font-semibold uppercase tracking-[0.13em] text-slate-500">Diseño · fabricación · validación</span>
+            <span className="mt-0.5 block font-mono text-[9px] font-semibold uppercase tracking-[0.13em] text-slate-500">Cuaderno de diseño y fabricación</span>
           </span>
         </Link>
 

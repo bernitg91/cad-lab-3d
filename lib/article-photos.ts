@@ -19,3 +19,11 @@ export function getArticlePhoto(slug: string): ArticlePhoto {
 export function getAllArticlePhotos(): ArticlePhoto[] {
   return [...articlePhotos];
 }
+
+export function isFirsthandArticlePhoto(photo: ArticlePhoto): boolean {
+  return !photo.openverseId && photo.originalUrl.includes("/images/impresion-3d-personalizada/");
+}
+
+export function isDocumentaryArticlePhoto(photo: ArticlePhoto): boolean {
+  return Boolean(photo.openverseId) || isFirsthandArticlePhoto(photo);
+}

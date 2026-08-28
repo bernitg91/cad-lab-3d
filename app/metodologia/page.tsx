@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getAllArticles } from "@/lib/articles";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Metodología editorial",
-  description: "Cómo se revisan y estructuran los contenidos de CAD Lab 3D sobre CAD, impresión 3D, materiales, FEM y documentación técnica.",
+  title: "Cómo preparo el contenido",
+  description: "Cómo preparo y reviso los apuntes de CAD Lab 3D sobre CAD, impresión 3D, materiales, FEM y documentación técnica.",
   path: "/metodologia"
 });
 
@@ -33,14 +32,12 @@ const criteria = [
 ];
 
 export default function MethodologyPage() {
-  const publishedArticleCount = getAllArticles().length;
-
   return (
     <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
-      <p className="text-sm font-black uppercase tracking-wide text-teal-700">Calidad editorial</p>
-      <h1 className="mt-3 max-w-3xl text-4xl font-black text-slate-950">Metodología editorial de CAD Lab 3D</h1>
+      <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.15em] text-teal-800">Detrás de cada apunte</p>
+      <h1 className="mt-3 max-w-3xl font-display text-5xl font-black leading-none text-slate-950">Cómo preparo el contenido de CAD Lab 3D</h1>
       <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-600">
-        CAD Lab 3D publica contenido técnico para estudiantes, perfiles junior y personas que trabajan con CAD, impresión 3D FDM, materiales, simulación básica y documentación de proyectos. Esta página explica cómo se organiza y revisa el contenido para mantenerlo útil.
+        Escribo para estudiantes, perfiles junior y personas que trabajan con CAD, impresión 3D FDM, materiales, simulación básica y documentación. Esta página explica qué intento comprobar y dónde están los límites del cuaderno.
       </p>
 
       <div className="mt-8 grid gap-5 md:grid-cols-2">
@@ -67,7 +64,7 @@ export default function MethodologyPage() {
         </p>
         <h2>Selección y consolidación</h2>
         <p>
-          La biblioteca mantiene {publishedArticleCount} artículos diferenciados. Las publicaciones que repetían la misma intención se han retirado de los listados y redirigen a la guía, herramienta o artículo más útil. El objetivo no es aumentar el contador de páginas, sino conservar una respuesta clara para cada tarea.
+          Las publicaciones que repetían la misma intención se han retirado de los listados y redirigen a la guía, herramienta o artículo más útil. El objetivo no es aumentar un contador de páginas, sino conservar una respuesta clara para cada tarea.
         </p>
         <h2>Niveles de evidencia</h2>
         <p>

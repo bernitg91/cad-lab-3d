@@ -18,8 +18,8 @@ export function ArticlePhoto({ photo, articleTitle, hero = false }: ArticlePhoto
     <figure
       className={
         hero
-          ? "calibration-rail mx-auto mt-10 max-w-5xl pl-4"
-          : "my-12 overflow-hidden border border-slate-200 bg-white shadow-lg shadow-slate-950/5"
+          ? "mx-auto mt-10 max-w-5xl border-t-2 border-slate-950 pt-3"
+          : "my-12 overflow-hidden border-t-2 border-slate-950 bg-white pt-3"
       }
       aria-describedby={creditId}
       data-photo-src={photo.image}
@@ -35,18 +35,18 @@ export function ArticlePhoto({ photo, articleTitle, hero = false }: ArticlePhoto
           fetchPriority={hero ? "high" : "auto"}
           className="max-h-[680px] w-full object-contain"
         />
-        <span className="absolute left-0 top-0 bg-slate-950/90 px-3 py-2 font-mono text-[9px] font-bold uppercase tracking-[0.14em] text-cyan-200 backdrop-blur-sm">
+        <span className="absolute left-0 top-0 bg-slate-950/90 px-3 py-2 font-mono text-[9px] font-bold uppercase tracking-[0.14em] text-cyan-200">
           {photo.openverseId ? "Fotografía de referencia" : isOwnPhysicalPhoto ? "Fotografía propia de la pieza" : "Ilustración editorial propia"}
           {articleTitle ? <span className="sr-only"> del artículo {articleTitle}</span> : null}
         </span>
-        <span className="absolute bottom-0 right-0 bg-white/95 px-3 py-2 font-mono text-[9px] font-bold uppercase tracking-[0.12em] text-slate-800 backdrop-blur-sm">
+        <span className="absolute bottom-0 right-0 bg-white/95 px-3 py-2 font-mono text-[9px] font-bold uppercase tracking-[0.12em] text-slate-800">
           {photo.licenseCode}
         </span>
       </div>
 
       <figcaption
         id={creditId}
-        className="border-x border-b border-slate-200 bg-white px-5 py-4 text-left text-sm leading-6 text-slate-600 sm:px-7"
+        className="border-x border-b border-slate-200 bg-white px-5 py-4 text-left text-sm leading-6 text-slate-600 sm:px-6"
       >
         <p>{photo.caption}</p>
         <p className="mt-2 font-mono text-[10px] leading-5 text-slate-600">

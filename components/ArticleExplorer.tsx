@@ -20,7 +20,7 @@ export function ArticleExplorer({ articles }: { articles: ArticleMeta[] }) {
 
   return (
     <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-      <div className="grid gap-3 rounded-lg border border-slate-200 bg-white p-4 shadow-sm md:grid-cols-[1fr_260px]">
+      <div className="grid gap-3 border-y border-slate-300 bg-white py-5 md:grid-cols-[1fr_260px]">
         <label className="grid gap-2 text-sm font-semibold text-slate-700">
           Buscar artículos
           <input
@@ -49,7 +49,7 @@ export function ArticleExplorer({ articles }: { articles: ArticleMeta[] }) {
       <p className="mt-5 text-sm font-semibold text-slate-600" aria-live="polite">
         {filteredArticles.length} {filteredArticles.length === 1 ? "artículo" : "artículos"}
       </p>
-      <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-8 grid gap-x-8 md:grid-cols-2">
         {filteredArticles.map((article) => (
           <ArticleCard key={article.slug} article={article} />
         ))}
