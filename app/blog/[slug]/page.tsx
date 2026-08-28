@@ -62,7 +62,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     publishedTime: article.date,
     authors: [siteConfig.authorName],
     image: showPhoto ? photo.image : undefined,
-    imageAlt: showPhoto ? photo.alt : undefined
+    imageAlt: showPhoto ? photo.alt : undefined,
+    imageWidth: showPhoto ? photo.width : undefined,
+    imageHeight: showPhoto ? photo.height : undefined
   });
 }
 

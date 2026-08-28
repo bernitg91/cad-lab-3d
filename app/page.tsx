@@ -11,7 +11,9 @@ export const metadata: Metadata = createPageMetadata({
   title: siteConfig.name,
   description: siteConfig.description,
   path: "/",
-  image: "/images/impresion-3d-personalizada/adaptador-aro-funcional-fdm.jpg"
+  image: "/images/impresion-3d-personalizada/adaptador-aro-funcional-fdm.jpg",
+  imageWidth: 1050,
+  imageHeight: 1400
 });
 
 const entryPoints = [
@@ -95,12 +97,7 @@ export default function HomePage() {
       "@type": "WebSite",
       name: siteConfig.name,
       url: absoluteUrl("/"),
-      description: siteConfig.description,
-      potentialAction: {
-        "@type": "SearchAction",
-        target: `${absoluteUrl("/blog")}?q={search_term_string}`,
-        "query-input": "required name=search_term_string"
-      }
+      description: siteConfig.description
     }
   ];
 
