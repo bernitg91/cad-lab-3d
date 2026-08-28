@@ -1,6 +1,5 @@
 "use client";
 
-import Script from "next/script";
 import { usePathname } from "next/navigation";
 
 const monetizableStaticPaths = new Set([
@@ -36,10 +35,9 @@ export function AdSenseScript({ enabled, articlePaths }: AdSenseScriptProps) {
   }
 
   return (
-    <Script
+    <script
       id="google-adsense"
       async
-      strategy="afterInteractive"
       crossOrigin="anonymous"
       src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${clientId}`}
     />
