@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
 import { portfolioItems } from "@/lib/portfolio";
@@ -106,20 +105,26 @@ export default function Custom3DPrintingPage() {
               </Link>
             </div>
           </div>
-          <div className="rounded-lg border border-slate-200 bg-white p-5 shadow-xl">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-md bg-slate-100">
-              <Image
-                src="/images/impresion-3d-personalizada/soporte-relojes-fdm.jpg"
-                alt="Soporte personalizado para relojes impreso en 3D"
-                fill
-                priority
-                sizes="(min-width: 1024px) 42vw, 100vw"
-                className="object-cover"
-              />
+          <div className="border border-slate-300 bg-[#091625] p-5 text-white shadow-xl sm:p-6">
+            <p className="font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-cyan-300">Brief mínimo antes de fabricar</p>
+            <div className="mt-5 divide-y divide-white/15 border-y border-white/15">
+              {[
+                ["Entrada", "Archivo o medidas", "STL · STEP · croquis"],
+                ["Revisión", "Uso y restricciones", "Carga · calor · montaje"],
+                ["Prueba", "Riesgo principal", "Encaje · pared · orientación"],
+                ["Salida", "Pieza documentada", "Material · perfil · versión"]
+              ].map(([stage, title, detail], index) => (
+                <div key={stage} className="grid grid-cols-[28px_74px_1fr] gap-3 py-4">
+                  <span className="font-mono text-[10px] font-bold text-orange-300">{String(index + 1).padStart(2, "0")}</span>
+                  <span className="font-mono text-[9px] font-bold uppercase tracking-[0.1em] text-slate-400">{stage}</span>
+                  <span>
+                    <span className="block text-sm font-black text-white">{title}</span>
+                    <span className="mt-1 block text-xs text-slate-300">{detail}</span>
+                  </span>
+                </div>
+              ))}
             </div>
-            <p className="mt-4 text-xs leading-5 text-slate-500">
-              Servicio orientado a piezas FDM no críticas. Antes de imprimir se revisan límites de material, geometría, resistencia y tolerancias.
-            </p>
+            <p className="mt-4 text-xs leading-5 text-slate-400">Cada fotografía se reserva para una sola publicación; esta página explica el servicio mediante el proceso.</p>
           </div>
         </div>
       </section>
@@ -138,27 +143,23 @@ export default function Custom3DPrintingPage() {
       <section className="bg-white py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div>
-            <p className="text-sm font-black uppercase tracking-wide text-teal-700">Piezas reales impresas</p>
-            <h2 className="mt-2 text-3xl font-black text-slate-950">Ejemplos de trabajos y prototipos FDM</h2>
+            <p className="text-sm font-black uppercase tracking-wide text-teal-700">Piezas documentadas</p>
+            <h2 className="mt-2 text-3xl font-black text-slate-950">Ejemplos de encargos y prototipos FDM</h2>
             <p className="mt-4 max-w-3xl text-sm leading-6 text-slate-600">
-              Estas imágenes muestran piezas reales impresas en 3D como referencia de capacidades: soportes, objetos funcionales, prototipos, pruebas de forma y piezas decorativas. Cada encargo se revisa según uso, material, tolerancias y viabilidad de fabricación.
+              El registro reúne soportes, objetos funcionales, prototipos, pruebas de forma y piezas decorativas. Para evitar fotografías repetidas, aquí se resume el tipo de trabajo; la observación visual completa queda en su única publicación asignada.
             </p>
           </div>
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {portfolioItems.map((item) => (
-              <article key={item.title} className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
-                <div className="relative aspect-[4/5] bg-slate-100">
-                  <Image
-                    src={item.image}
-                    alt={item.alt}
-                    fill
-                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                    className="object-cover"
-                  />
+            {portfolioItems.map((item, index) => (
+              <article key={item.title} className="border-t-2 border-slate-950 bg-white p-4 shadow-sm">
+                <div className="flex items-center justify-between border-b border-slate-200 pb-3 font-mono text-[9px] font-bold uppercase tracking-[0.12em]">
+                  <span className="text-teal-800">Tipo de pieza</span>
+                  <span className="text-orange-700">{String(index + 1).padStart(2, "0")}</span>
                 </div>
-                <div className="p-4">
+                <div className="pt-4">
                   <h3 className="font-black text-slate-950">{item.title}</h3>
                   <p className="mt-2 text-sm leading-6 text-slate-600">{item.description}</p>
+                  <p className="mt-4 font-mono text-[9px] uppercase leading-5 text-slate-500">Revisar: {item.criticalPoints.join(" · ")}</p>
                 </div>
               </article>
             ))}

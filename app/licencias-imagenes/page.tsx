@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { getAllArticleIllustrations } from "@/lib/article-illustrations";
@@ -71,8 +70,11 @@ export default function ImageLicensesPage() {
   const originalDiagramCount = illustrations.filter((illustration) => illustration.kind === "original-diagram").length;
   const editorialRecreationCount = originalDiagramCount;
   const licensedReferenceCount = illustrations.length - originalDiagramCount;
-  const articleTitles = new Map(
-    publishedArticles.map((article) => [article.slug, article.title])
+  const articleDetails = new Map(
+    publishedArticles.map((article) => [
+      article.slug,
+      { title: article.title, category: article.category }
+    ])
   );
   const licenseCounts = new Map<ArticlePhotoLicenseCode, number>();
 
@@ -125,57 +127,69 @@ export default function ImageLicensesPage() {
             Recreaciones revisadas, esquemas rotulados y fuentes verificables
           </h2>
           <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-600">
-            Cuatro temas conceptuales utilizan una recreación fotorrealista asistida por IA y revisada manualmente para aportar contexto visual. No representan una prueba, una medición, un prototipo documentado ni un resultado calculado. Cada una conserva además su lámina SVG rotulada como explicación técnica complementaria. Los temas físicos usan fotografías o figuras externas cuando existe una fuente comercialmente reutilizable.
+            Este registro es deliberadamente textual: cada recurso visual se muestra una sola vez, dentro de su artículo. Aquí quedan documentados su categoría, método, crédito y límites sin repetir la imagen. Las cuatro recreaciones están asistidas por IA y revisadas manualmente; no representan una prueba, una medición, un prototipo documentado ni un resultado calculado.
           </p>
         </div>
 
         <ol className="mt-6 grid list-none gap-4 p-0 md:grid-cols-2">
-          {illustrations.map((illustration, index) => (
-            <li key={illustration.slug} className="overflow-hidden border border-slate-200 bg-white shadow-sm">
-              <div className={`relative aspect-[16/9] ${illustration.kind === "licensed-reference-media" ? "bg-slate-950" : "bg-slate-100"}`}>
-                <Image
-                  src={illustration.kind === "licensed-reference-media" ? illustration.image : illustration.editorialImage}
-                  alt={illustration.kind === "licensed-reference-media" ? illustration.alt : illustration.editorialAlt}
-                  fill
-                  sizes="(min-width: 768px) 45vw, 100vw"
-                  unoptimized={illustration.kind === "licensed-reference-media" && illustration.image.endsWith(".svg")}
-                  className={illustration.kind === "licensed-reference-media" ? "object-contain" : "object-cover"}
+          {illustrations.map((illustration, index) => {
+            const article = articleDetails.get(illustration.slug);
+            const isLicensedReference = illustration.kind === "licensed-reference-media";
+
+            return (
+              <li key={illustration.slug} className="relative border-t-2 border-slate-950 bg-white py-5 pl-5 pr-2">
+                <span
+                  className={`absolute left-0 top-5 h-14 w-1 ${isLicensedReference ? "bg-teal-600" : "bg-orange-600"}`}
+                  aria-hidden="true"
                 />
-              </div>
-              <div className="p-5">
-                <p className="font-mono text-[10px] font-bold uppercase tracking-[0.12em] text-teal-700">
-                  {String(index + 1).padStart(2, "0")} · {illustration.kind === "licensed-reference-media" ? "Referencia con licencia" : "Recreación editorial revisada"}
-                </p>
-                <h3 className="mt-2 font-display text-xl font-black leading-tight text-slate-950">
-                  <Link className="hover:text-blue-800" href={`/blog/${illustration.slug}`}>{illustration.title}</Link>
+                <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 font-mono text-[9px] font-bold uppercase tracking-[0.12em]">
+                  <span className="text-teal-800">
+                    Recurso {String(index + 1).padStart(2, "0")} · {article?.category ?? "Artículo técnico"}
+                  </span>
+                  <span className={isLicensedReference ? "text-blue-700" : "text-orange-700"}>
+                    {isLicensedReference ? "Referencia con licencia" : "Recreación + lámina SVG"}
+                  </span>
+                </div>
+                <h3 className="mt-3 font-display text-2xl font-black leading-tight text-slate-950">
+                  {article?.title ?? illustration.title}
                 </h3>
-                <p className="mt-2 text-sm leading-6 text-slate-600">
-                  {illustration.kind === "licensed-reference-media" ? illustration.caption : illustration.editorialCaption}
+                <p className="mt-3 text-sm leading-6 text-slate-600">
+                  <span className="font-bold text-slate-950">
+                    {isLicensedReference ? `${illustration.title}.` : "Escena editorial conceptual."}
+                  </span>{" "}
+                  {isLicensedReference ? illustration.caption : illustration.editorialCaption}
                 </p>
-                {illustration.kind === "licensed-reference-media" ? (
-                  <p className="mt-3 font-mono text-[10px] leading-5 text-slate-500">
-                    <a className="font-bold text-blue-700 underline" href={illustration.creatorUrl} target="_blank" rel="noreferrer">{illustration.creator}</a>
-                    {" · "}<a className="font-bold text-blue-700 underline" href={illustration.sourceUrl} target="_blank" rel="noreferrer">{illustration.sourceName}</a>
-                    {" · "}<a className="font-bold text-blue-700 underline" href={illustration.licenseUrl} target="_blank" rel="noreferrer">{illustration.licenseCode}</a>
-                    {" · "}<a className="font-bold text-blue-700 underline" href={illustration.licenseVerificationUrl} target="_blank" rel="noreferrer">comprobación</a>
+                {isLicensedReference ? (
+                  <p className="mt-4 border-l border-slate-300 pl-4 font-mono text-[10px] leading-5 text-slate-600">
+                    Crédito: <a className="font-bold text-blue-700 underline decoration-blue-300 underline-offset-2 hover:text-blue-900" href={illustration.creatorUrl} target="_blank" rel="noreferrer">{illustration.creator}</a>
+                    {" · Fuente: "}<a className="font-bold text-blue-700 underline decoration-blue-300 underline-offset-2 hover:text-blue-900" href={illustration.sourceUrl} target="_blank" rel="noreferrer">{illustration.sourceName}</a>
+                    {" · "}<a className="font-bold text-blue-700 underline decoration-blue-300 underline-offset-2 hover:text-blue-900" href={illustration.licenseUrl} target="_blank" rel="noreferrer">{illustration.licenseCode}</a>
+                    {" · "}<a className="font-bold text-blue-700 underline decoration-blue-300 underline-offset-2 hover:text-blue-900" href={illustration.licenseVerificationUrl} target="_blank" rel="noreferrer">verificación</a>
                     {" del "}{formatVerifiedDate(illustration.verifiedAt)}
                   </p>
                 ) : (
-                  <div className="mt-3 space-y-2">
-                    <p className="text-xs leading-5 text-slate-600">
-                      Recreación fotorrealista asistida por IA y revisada manualmente. Es una escena conceptual y no constituye evidencia de una prueba, una medición o un resultado real.
+                  <div className="mt-4 border-l border-slate-300 pl-4">
+                    <p className="font-mono text-[10px] leading-5 text-slate-600">
+                      Método: {illustration.editorialMethod} · revisión del {formatVerifiedDate(illustration.createdAt)}
                     </p>
-                    <p className="font-mono text-[10px] leading-5 text-slate-500">
-                      {illustration.editorialMethod} · revisada el {formatVerifiedDate(illustration.createdAt)}
-                    </p>
-                    <p className="text-xs leading-5 text-slate-600">
-                      Se conserva la <a className="font-bold text-blue-700 underline decoration-blue-300 underline-offset-2 hover:text-blue-900" href={illustration.image} target="_blank" rel="noreferrer">lámina técnica SVG complementaria</a>, preparada mediante {illustration.method.toLowerCase()}.
+                    <p className="mt-2 text-xs leading-5 text-slate-600">
+                      No constituye evidencia de una prueba o resultado real. La lámina «{illustration.title}» se preparó mediante {illustration.method.toLowerCase()} y conserva la explicación rotulada del concepto.
                     </p>
                   </div>
                 )}
-              </div>
-            </li>
-          ))}
+                <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-slate-200 pt-3 text-sm font-black">
+                  <Link className="text-blue-700 hover:text-blue-900" href={`/blog/${illustration.slug}`}>
+                    Abrir el artículo →
+                  </Link>
+                  {!isLicensedReference ? (
+                    <a className="text-teal-700 hover:text-teal-950" href={illustration.image} target="_blank" rel="noreferrer">
+                      Abrir lámina SVG →
+                    </a>
+                  ) : null}
+                </div>
+              </li>
+            );
+          })}
         </ol>
       </section>
 
@@ -221,85 +235,56 @@ export default function ImageLicensesPage() {
           </h2>
           <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-600">
             Los enlaces conducen al artículo, al perfil de la persona autora,
-            a la página original de la fotografía y al texto completo de la licencia. Cada registro corresponde a la imagen que se muestra actualmente en ese artículo.
+            a la página original de la fotografía y al texto completo de la licencia. Las fichas no reproducen la imagen: cada fotografía permanece visible exclusivamente en su artículo.
           </p>
         </div>
 
         <ol className="mt-6 grid list-none gap-4 p-0 md:grid-cols-2">
-          {photos.map((photo, index) => (
-            <li
-              key={photo.slug}
-              id={`credito-${photo.slug}`}
-              className="border border-slate-200 bg-white p-5 shadow-sm [contain-intrinsic-size:320px] [content-visibility:auto]"
-            >
-              <div className="flex items-start gap-4">
+          {photos.map((photo, index) => {
+            const article = articleDetails.get(photo.slug);
+            const isOwnPhoto = photo.licenseCode === "Contenido propio";
+
+            return (
+              <li
+                key={photo.slug}
+                id={`credito-${photo.slug}`}
+                className="relative border-t-2 border-slate-950 bg-white py-5 pl-5 pr-2 [contain-intrinsic-size:320px] [content-visibility:auto]"
+              >
                 <span
-                  className="mt-0.5 shrink-0 font-mono text-xs font-bold text-teal-700"
+                  className={`absolute left-0 top-5 h-14 w-1 ${isOwnPhoto ? "bg-orange-600" : "bg-teal-600"}`}
                   aria-hidden="true"
-                >
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <div className="min-w-0">
-                  <h3 className="font-display text-lg font-black leading-snug text-slate-950">
-                    <Link
-                      className="underline decoration-blue-300 underline-offset-4 hover:text-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-500"
-                      href={`/blog/${photo.slug}`}
-                    >
-                      {articleTitles.get(photo.slug) ?? photo.slug}
-                    </Link>
-                  </h3>
-                  <p className="mt-2 text-sm leading-6 text-slate-600">
-                    <span className="font-bold text-slate-900">{photo.title}</span>
-                    {" · Imagen de "}
-                    <a
-                      className="text-blue-700 underline decoration-blue-300 underline-offset-2 hover:text-blue-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-500"
-                      href={photo.creatorUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {photo.creator}
-                    </a>
-                  </p>
-                  <p className="mt-2 font-mono text-[10px] leading-5 text-slate-600">
-                    Fuente: {" "}
-                    <a
-                      className="font-bold text-blue-700 underline decoration-blue-300 underline-offset-2 hover:text-blue-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-500"
-                      href={photo.sourceUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {photo.sourceName}
-                    </a>
-                    {" · "}
-                    <a
-                      className="font-bold text-blue-700 underline decoration-blue-300 underline-offset-2 hover:text-blue-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-500"
-                      href={photo.licenseUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {photo.licenseCode}
-                    </a>
-                    {" · Verificada el "}
-                    <time dateTime={photo.verifiedAt}>
-                      {formatVerifiedDate(photo.verifiedAt)}
-                    </time>
-                    {" · "}
-                    <a
-                      className="font-bold text-blue-700 underline decoration-blue-300 underline-offset-2 hover:text-blue-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-500"
-                      href={photo.licenseVerificationUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      comprobación
-                    </a>
-                  </p>
-                  <p className="mt-2 text-xs leading-5 text-slate-600">
-                    {photo.changes}
-                  </p>
+                />
+                <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 font-mono text-[9px] font-bold uppercase tracking-[0.12em]">
+                  <span className="text-teal-800">
+                    Foto {String(index + 1).padStart(2, "0")} · {article?.category ?? "Artículo técnico"}
+                  </span>
+                  <span className={isOwnPhoto ? "text-orange-700" : "text-blue-700"}>
+                    {isOwnPhoto ? "Fotografía propia" : "Fotografía con licencia"}
+                  </span>
                 </div>
-              </div>
-            </li>
-          ))}
+                <h3 className="mt-3 font-display text-2xl font-black leading-tight text-slate-950">
+                  {article?.title ?? photo.slug}
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">
+                  <span className="font-bold text-slate-950">{photo.title}.</span>{" "}
+                  {photo.caption}
+                </p>
+                <p className="mt-4 border-l border-slate-300 pl-4 font-mono text-[10px] leading-5 text-slate-600">
+                  Crédito: <a className="font-bold text-blue-700 underline decoration-blue-300 underline-offset-2 hover:text-blue-900" href={photo.creatorUrl} target="_blank" rel="noreferrer">{photo.creator}</a>
+                  {" · Fuente: "}<a className="font-bold text-blue-700 underline decoration-blue-300 underline-offset-2 hover:text-blue-900" href={photo.sourceUrl} target="_blank" rel="noreferrer">{photo.sourceName}</a>
+                  {" · "}<a className="font-bold text-blue-700 underline decoration-blue-300 underline-offset-2 hover:text-blue-900" href={photo.licenseUrl} target="_blank" rel="noreferrer">{photo.licenseCode}</a>
+                  {" · "}<a className="font-bold text-blue-700 underline decoration-blue-300 underline-offset-2 hover:text-blue-900" href={photo.licenseVerificationUrl} target="_blank" rel="noreferrer">verificación</a>
+                  {" del "}<time dateTime={photo.verifiedAt}>{formatVerifiedDate(photo.verifiedAt)}</time>
+                </p>
+                <p className="mt-3 text-xs leading-5 text-slate-600">Tratamiento editorial: {photo.changes}</p>
+                <div className="mt-5 border-t border-slate-200 pt-3">
+                  <Link className="text-sm font-black text-blue-700 hover:text-blue-900" href={`/blog/${photo.slug}`}>
+                    Abrir el artículo →
+                  </Link>
+                </div>
+              </li>
+            );
+          })}
         </ol>
       </section>
 

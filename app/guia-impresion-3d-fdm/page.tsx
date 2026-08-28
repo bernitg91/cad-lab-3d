@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { portfolioItems } from "@/lib/portfolio";
 import { createPageMetadata, jsonLd } from "@/lib/seo";
@@ -115,20 +114,23 @@ export default function FdmGuidePage() {
               </Link>
             </div>
           </div>
-          <div className="rounded-lg border border-slate-200 bg-white p-5 shadow-xl">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-md bg-slate-100">
-              <Image
-                src="/images/impresion-3d-personalizada/pieza-decorativa-azul-fdm.jpg"
-                alt="Pieza azul impresa en FDM con patrón por capas"
-                fill
-                priority
-                sizes="(min-width: 1024px) 42vw, 100vw"
-                className="object-cover"
-              />
+          <div className="border border-slate-300 bg-[#091625] p-5 text-white shadow-xl sm:p-6">
+            <p className="font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-cyan-300">Cadena de decisión FDM</p>
+            <div className="mt-5 grid grid-cols-[36px_1fr] border-y border-white/15">
+              {[
+                ["CAD", "Espesor · radios · encajes"],
+                ["MAT", "Temperatura · impacto · flexión"],
+                ["ORI", "Capas · soportes · cara visible"],
+                ["SLI", "Paredes · relleno · trayectorias"],
+                ["CHK", "Primera capa · medida · registro"]
+              ].map(([mark, detail], index) => (
+                <div key={mark} className={`contents ${index > 0 ? "[&>*]:border-t [&>*]:border-white/15" : ""}`}>
+                  <span className="py-4 font-mono text-[9px] font-bold text-orange-300">{mark}</span>
+                  <span className="py-4 text-sm text-slate-200">{detail}</span>
+                </div>
+              ))}
             </div>
-            <p className="mt-4 text-sm leading-6 text-slate-600">
-              El acabado por capas no es solo una limitación: también permite leer orientación, continuidad de perímetros y estabilidad de impresión.
-            </p>
+            <p className="mt-4 text-xs leading-5 text-slate-400">La guía se apoya en decisiones trazables; las fotografías quedan reservadas a sus artículos y no se duplican como decoración.</p>
           </div>
         </div>
       </section>
@@ -259,12 +261,13 @@ export default function FdmGuidePage() {
           </p>
 
           <div className="not-prose my-8 grid gap-5 sm:grid-cols-2">
-            {portfolioItems.slice(0, 2).map((item) => (
-              <Link key={item.title} href="/casos-practicos-impresion-3d" className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm hover:border-blue-300">
-                <div className="relative aspect-[4/3] bg-slate-100">
-                  <Image src={item.image} alt={item.alt} fill sizes="(min-width: 768px) 36vw, 100vw" className="object-cover" />
+            {portfolioItems.slice(0, 2).map((item, index) => (
+              <Link key={item.title} href="/casos-practicos-impresion-3d" className="border-t-2 border-slate-950 bg-white p-4 shadow-sm hover:border-blue-700">
+                <div className="flex items-center justify-between border-b border-slate-200 pb-3 font-mono text-[9px] font-bold uppercase tracking-[0.12em]">
+                  <span className="text-teal-800">Ficha relacionada</span>
+                  <span className="text-orange-700">{String(index + 1).padStart(2, "0")}</span>
                 </div>
-                <div className="p-4">
+                <div className="pt-4">
                   <h3 className="font-black text-slate-950">{item.title}</h3>
                   <p className="mt-2 text-sm leading-6 text-slate-600">{item.description}</p>
                 </div>

@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev --webpack",
-    "build": "node scripts/validate-article-photos.cjs && node scripts/validate-article-illustrations.cjs && next build --webpack && node scripts/validate-rendered-articles.cjs",
+    "build": "node scripts/validate-article-photos.cjs && node scripts/validate-article-illustrations.cjs && next build --webpack && node scripts/validate-visible-image-uniqueness.cjs && node scripts/validate-rendered-articles.cjs",
     "start": "next start",
     "lint": "next lint",
     "validate:article-photos": "node scripts/validate-article-photos.cjs",
     "validate:article-illustrations": "node scripts/validate-article-illustrations.cjs",
+    "validate:visible-image-uniqueness": "node scripts/validate-visible-image-uniqueness.cjs",
     "validate:rendered-articles": "node scripts/validate-rendered-articles.cjs"
   },
   "dependencies": {

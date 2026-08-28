@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { createPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
@@ -29,21 +28,31 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
-          <figure className="border border-slate-300 bg-[#eef2f6] p-3">
-            <div className="relative aspect-[4/3] overflow-hidden bg-slate-200">
-              <Image
-                src="/images/impresion-3d-personalizada/panel-prototipo-tecnico-fdm.jpg"
-                alt="Mano sosteniendo un panel técnico gris impreso en 3D"
-                fill
-                priority
-                sizes="(min-width: 1024px) 44vw, 100vw"
-                className="object-cover"
-              />
+          <aside aria-label="Criterio editorial de la bitácora" className="border border-slate-300 bg-[#091625] text-white">
+            <div className="flex items-center justify-between border-b border-white/20 px-5 py-3 font-mono text-[10px] font-semibold uppercase tracking-[0.15em] text-cyan-300 sm:px-6">
+              <span>Bitácora · criterio 01</span>
+              <span className="text-slate-400">Documento vivo</span>
             </div>
-            <figcaption className="border-t border-slate-300 p-4 text-sm leading-6 text-slate-600">
-              Fotografía propia de una pieza del cuaderno. Permite observar el panel y sus relieves; no demuestra material, rigidez ni precisión dimensional.
-            </figcaption>
-          </figure>
+            <div className="p-5 sm:p-6 lg:p-7">
+              <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-orange-300">Antes de publicar</p>
+              <h2 className="mt-3 font-display text-4xl font-black leading-[0.96]">Una nota debe mostrar también sus límites.</h2>
+              <dl className="mt-7 divide-y divide-white/20 border-y border-white/20">
+                <div className="grid gap-2 py-4 sm:grid-cols-[118px_1fr] sm:gap-5">
+                  <dt className="font-mono text-[10px] font-semibold uppercase tracking-[0.13em] text-cyan-300">Qué documenta</dt>
+                  <dd className="text-sm leading-6 text-slate-300">El problema, la decisión tomada, la fuente consultada y la información disponible.</dd>
+                </div>
+                <div className="grid gap-2 py-4 sm:grid-cols-[118px_1fr] sm:gap-5">
+                  <dt className="font-mono text-[10px] font-semibold uppercase tracking-[0.13em] text-cyan-300">Qué no afirma</dt>
+                  <dd className="text-sm leading-6 text-slate-300">Ensayos no realizados, precisión no medida ni experiencia profesional que no existe.</dd>
+                </div>
+                <div className="grid gap-2 py-4 sm:grid-cols-[118px_1fr] sm:gap-5">
+                  <dt className="font-mono text-[10px] font-semibold uppercase tracking-[0.13em] text-cyan-300">Cómo se revisa</dt>
+                  <dd className="text-sm leading-6 text-slate-300">Se comprueban enlaces, fechas, unidades y límites; una corrección queda integrada en la guía.</dd>
+                </div>
+              </dl>
+              <p className="mt-5 border-l-2 border-orange-500 pl-4 font-mono text-[10px] font-semibold uppercase leading-5 tracking-[0.12em] text-slate-300">Estado editorial · publicable cuando distingue dato, inferencia y pendiente</p>
+            </div>
+          </aside>
         </div>
       </section>
 
@@ -54,7 +63,7 @@ export default function AboutPage() {
             <ul className="mt-5 grid gap-3 text-base leading-7 text-slate-600">
               <li>Guías de CAD, impresión FDM, materiales y documentación.</li>
               <li>Herramientas sencillas para estimar y revisar antes de fabricar.</li>
-              <li>Fotografías propias con observaciones limitadas a lo visible.</li>
+              <li>Casos prácticos con observaciones limitadas a la evidencia disponible.</li>
               <li>Fuentes oficiales y enlaces para comprobar la información.</li>
             </ul>
           </section>
@@ -80,7 +89,7 @@ export default function AboutPage() {
 
         <div className="mt-10 flex flex-wrap gap-3">
           <Link className="bg-slate-950 px-5 py-3 text-sm font-black text-white hover:bg-blue-800" href="/guias">Empezar por las guías</Link>
-          <Link className="border border-slate-300 bg-white px-5 py-3 text-sm font-bold text-slate-800 hover:border-blue-400" href="/casos-practicos-impresion-3d">Ver las piezas fotografiadas</Link>
+          <Link className="border border-slate-300 bg-white px-5 py-3 text-sm font-bold text-slate-800 hover:border-blue-400" href="/casos-practicos-impresion-3d">Revisar los casos prácticos</Link>
           <Link className="border border-slate-300 bg-white px-5 py-3 text-sm font-bold text-slate-800 hover:border-blue-400" href="/contacto">Contacto</Link>
         </div>
       </section>
