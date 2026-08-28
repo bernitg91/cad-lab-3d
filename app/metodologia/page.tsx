@@ -70,6 +70,10 @@ export default function MethodologyPage() {
         <p>
           Una fuente oficial sirve para contrastar funciones, terminología o recomendaciones generales. Una fotografía propia permite observar geometría y acabado, pero no demuestra por sí sola material, tolerancia, resistencia o durabilidad. Solo se considera un caso validado cuando existen datos de proceso, medidas o ensayos documentados.
         </p>
+        <h2>Fotografías e ilustraciones</h2>
+        <p>
+          Las fotografías se reservan para piezas o referencias que realmente existen y conservan su crédito. Las láminas vectoriales se dibujan para una explicación concreta y se rotulan como esquemas conceptuales: ayudan a leer una secuencia, una comparación o una causa, pero no sustituyen una captura del proceso ni se presentan como resultados medidos. Su procedencia está resumida en <Link href="/licencias-imagenes">licencias y créditos de imágenes</Link>.
+        </p>
         <h2>Uso de ejemplos prácticos</h2>
         <p>
           La galería muestra piezas impresas reales para aportar contexto visual. Sus fichas se mantienen prudentes: explican qué puede observarse y qué comprobación faltaría, sin presentarlas como ensayos o casos validados cuando esos datos no existen.

@@ -4,6 +4,7 @@ const path = require("node:path");
 const projectRoot = path.resolve(__dirname, "..");
 const articlesDirectory = path.join(projectRoot, "content", "articles");
 const photoManifestPath = path.join(projectRoot, "content", "article-photos.json");
+const illustrationManifestPath = path.join(projectRoot, "content", "article-illustrations.json");
 const redirectsPath = path.join(projectRoot, "content", "article-redirects.json");
 const renderedDirectory = path.join(projectRoot, ".next", "server", "app", "blog");
 
@@ -26,7 +27,22 @@ if (allSlugs.length !== 42) throw new Error(`Expected 42 source articles, found 
 
 const photoManifest = JSON.parse(fs.readFileSync(photoManifestPath, "utf8"));
 const photosBySlug = new Map(photoManifest.map((photo) => [photo.slug, photo]));
-if (photosBySlug.size !== allSlugs.length) throw new Error("Photo manifest does not contain exactly one entry per source article");
+const illustrationManifest = JSON.parse(fs.readFileSync(illustrationManifestPath, "utf8"));
+const illustrationsBySlug = new Map(illustrationManifest.map((illustration) => [illustration.slug, illustration]));
+if (photosBySlug.size !== 10) throw new Error(`Expected 10 documentary photo entries, found ${photosBySlug.size}`);
+if (illustrationsBySlug.size !== 7) throw new Error(`Expected 7 article illustration entries, found ${illustrationsBySlug.size}`);
+for (const slug of photosBySlug.keys()) {
+  if (!slugs.includes(slug)) throw new Error(`Photo manifest contains an inactive article: ${slug}`);
+  if (illustrationsBySlug.has(slug)) throw new Error(`Article ${slug} has both a documentary photo and a replacement illustration`);
+}
+for (const slug of illustrationsBySlug.keys()) {
+  if (!slugs.includes(slug)) throw new Error(`Illustration manifest contains an inactive article: ${slug}`);
+}
+for (const slug of slugs) {
+  if (!photosBySlug.has(slug) && !illustrationsBySlug.has(slug)) {
+    throw new Error(`Active article ${slug} has neither a documentary photo nor an illustration`);
+  }
+}
 
 function slugifyHeading(text) {
   return text
@@ -43,7 +59,7 @@ for (const slug of slugs) {
   if (!fs.existsSync(htmlPath)) throw new Error(`Missing rendered article: ${slug}`);
   const html = fs.readFileSync(htmlPath, "utf8");
   const photo = photosBySlug.get(slug);
-  if (!photo) throw new Error(`Rendered article ${slug} has no photo manifest entry`);
+  const illustration = illustrationsBySlug.get(slug);
   const source = sourceBySlug.get(slug);
   const headingIds = Array.from(source.matchAll(/^(?:##|###)\s+(.+)$/gm)).map((match) => slugifyHeading(match[1].trim()));
   if (html.includes("<p>## ") || html.includes("<p>### ")) {
@@ -54,7 +70,13 @@ for (const slug of slugs) {
       throw new Error(`Rendered article ${slug} is missing heading anchor #${headingId}`);
     }
   }
-  const isDocumentaryPhoto = Boolean(photo.openverseId) || photo.originalUrl.includes("/images/impresion-3d-personalizada/");
+  if (html.includes("He preparado este texto para ordenar una decisión concreta")) {
+    throw new Error(`Rendered article ${slug} still contains the repeated legacy author note`);
+  }
+  if (!html.includes("Revisión editorial:")) {
+    throw new Error(`Rendered article ${slug} is missing its category-specific editorial note`);
+  }
+  const isDocumentaryPhoto = Boolean(photo && (photo.openverseId || photo.originalUrl.includes("/images/impresion-3d-personalizada/")));
 
   if (isDocumentaryPhoto) {
     if (!html.includes(photo.image)) throw new Error(`Rendered article ${slug} is missing its documentary WebP photo`);
@@ -62,9 +84,32 @@ for (const slug of slugs) {
     if (!html.includes(photo.licenseCode)) throw new Error(`Rendered article ${slug} is missing photo license text`);
     if (!html.includes(photo.sourceUrl)) throw new Error(`Rendered article ${slug} is missing photo source URL`);
     if (!html.includes(photo.licenseUrl)) throw new Error(`Rendered article ${slug} is missing photo license URL`);
-  } else if (!html.includes("Sin fotografía de proceso")) {
-    throw new Error(`Rendered article ${slug} must disclose that it has no process photograph`);
+  } else if (illustration?.kind === "licensed-reference-media") {
+    if (!html.includes("Referencia externa")) throw new Error(`Rendered article ${slug} must identify its external reference`);
+    if (!html.includes(illustration.image)) throw new Error(`Rendered article ${slug} is missing its licensed reference image`);
+    if (!html.includes(illustration.creator)) throw new Error(`Rendered article ${slug} is missing reference creator credit`);
+    if (!html.includes(illustration.sourceUrl)) throw new Error(`Rendered article ${slug} is missing reference source URL`);
+    if (!html.includes(illustration.licenseCode) || !html.includes(illustration.licenseUrl)) {
+      throw new Error(`Rendered article ${slug} is missing reference license details`);
+    }
+    if (!html.includes("no documenta una prueba realizada para este artículo")) {
+      throw new Error(`Rendered article ${slug} must distinguish the reference from a firsthand test`);
+    }
+  } else if (illustration?.kind === "original-diagram") {
+    if (!html.includes("Sin fotografía de proceso")) {
+      throw new Error(`Rendered article ${slug} must disclose that it has no process photograph`);
+    }
+    if (!html.includes(illustration.image)) throw new Error(`Rendered article ${slug} is missing its labeled technical illustration`);
+    if (!html.includes("Lámina técnica original")) throw new Error(`Rendered article ${slug} is missing the illustration label`);
+    if (!html.includes(illustration.method)) throw new Error(`Rendered article ${slug} is missing the illustration-method disclosure`);
+    for (const guideItem of illustration.readingGuide) {
+      if (!html.includes(guideItem)) throw new Error(`Rendered article ${slug} is missing a reading-guide item`);
+    }
+  } else {
+    throw new Error(`Rendered article ${slug} has no valid documentary or illustrative visual`);
   }
 }
 
-console.log(`Rendered article audit passed: ${slugs.length} curated pages distinguish documentary photographs from editorial illustrations; ${Object.keys(redirects).length} overlapping articles redirect to stronger resources.`);
+const originalDiagramCount = illustrationManifest.filter((entry) => entry.kind === "original-diagram").length;
+const referenceCount = illustrationManifest.length - originalDiagramCount;
+console.log(`Rendered article audit passed: ${slugs.length} curated pages distinguish documentary photographs, ${referenceCount} licensed references and ${originalDiagramCount} original technical diagrams; ${Object.keys(redirects).length} overlapping articles redirect to stronger resources.`);

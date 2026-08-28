@@ -2,22 +2,35 @@ import Image from "next/image";
 import Link from "next/link";
 import { getCategoryGuidePath } from "@/lib/categories";
 import { formatDate } from "@/lib/date";
-import { getArticlePhoto, isFirsthandArticlePhoto } from "@/lib/article-photos";
+import { getArticleIllustration } from "@/lib/article-illustrations";
+import { getArticlePhoto, isDocumentaryArticlePhoto, isFirsthandArticlePhoto } from "@/lib/article-photos";
 import type { ArticleMeta } from "@/types/article";
 
 export function ArticleCard({ article }: { article: ArticleMeta }) {
   const photo = getArticlePhoto(article.slug);
-  const showPhoto = isFirsthandArticlePhoto(photo);
+  const showPhoto = isDocumentaryArticlePhoto(photo);
+  const isFirsthandPhoto = isFirsthandArticlePhoto(photo);
+  const illustration = getArticleIllustration(article.slug);
+  const visual = showPhoto && photo ? photo : illustration;
+  const visualLabel = isFirsthandPhoto
+    ? "Foto propia"
+    : showPhoto
+      ? "Foto con licencia"
+      : illustration?.kind === "licensed-reference-media"
+        ? "Referencia con licencia"
+        : illustration
+          ? "Esquema técnico"
+          : undefined;
 
   return (
     <article className="group flex h-full flex-col border-t-2 border-slate-950 bg-white py-5">
-      <div className={`flex flex-1 gap-5 ${showPhoto ? "items-start" : ""}`}>
+      <div className={`flex flex-1 gap-5 ${visual ? "items-start" : ""}`}>
         <div className="flex min-w-0 flex-1 flex-col">
           <div className="flex flex-wrap items-center gap-2 font-mono text-[9px] font-semibold uppercase tracking-[0.12em] text-teal-800">
             <Link href={getCategoryGuidePath(article.categorySlug)} className="hover:text-teal-950">
               {article.category}
             </Link>
-            {showPhoto ? <span className="text-orange-700">Foto propia</span> : null}
+            {visualLabel ? <span className="text-orange-700">{visualLabel}</span> : null}
           </div>
           <h2 className="mt-3 font-display text-[1.85rem] font-black leading-[1.03] text-slate-950">
             <Link href={`/blog/${article.slug}`} className="group-hover:text-blue-700">
@@ -32,14 +45,23 @@ export function ArticleCard({ article }: { article: ArticleMeta }) {
             </Link>
           </div>
         </div>
-        {showPhoto ? (
-          <Link href={`/blog/${article.slug}`} aria-label={`Leer ${article.title}`} className="relative hidden aspect-square w-28 shrink-0 overflow-hidden bg-slate-100 sm:block">
+        {visual ? (
+          <Link
+            href={`/blog/${article.slug}`}
+            aria-label={`Leer ${article.title}`}
+            className={`relative hidden shrink-0 overflow-hidden sm:block ${
+              showPhoto
+                ? "aspect-square w-28 bg-slate-100"
+                : "aspect-video w-40 border border-slate-200 bg-[#f3efe5]"
+            }`}
+          >
             <Image
-              src={photo.image}
-              alt={photo.alt}
+              src={visual.image}
+              alt={visual.alt}
               fill
-              sizes="112px"
-              className="object-cover transition duration-300 group-hover:scale-[1.03]"
+              sizes={showPhoto ? "112px" : "160px"}
+              unoptimized={visual.image.endsWith(".svg")}
+              className={`${showPhoto ? "object-cover" : "object-contain"} transition duration-300 group-hover:scale-[1.03]`}
             />
           </Link>
         ) : null}

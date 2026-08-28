@@ -5,8 +5,12 @@ const path = require("node:path");
 const projectRoot = path.resolve(__dirname, "..");
 const articlesDirectory = path.join(projectRoot, "content", "articles");
 const manifestPath = path.join(projectRoot, "content", "article-photos.json");
+const redirectsPath = path.join(projectRoot, "content", "article-redirects.json");
+const illustrationManifestPath = path.join(projectRoot, "content", "article-illustrations.json");
 const photosDirectory = path.join(projectRoot, "public", "images", "article-photos");
 const expectedArticleCount = 42;
+const expectedActiveArticleCount = 17;
+const expectedPhotoCount = 10;
 
 const allowedLicenses = new Map([
   ["CC0 1.0", "https://creativecommons.org/publicdomain/zero/1.0/"],
@@ -47,8 +51,8 @@ function readManifest() {
   }
 
   if (!Array.isArray(manifest)) fail("content/article-photos.json debe contener un array");
-  if (manifest.length !== expectedArticleCount) {
-    fail(`se esperaban ${expectedArticleCount} entradas en el manifiesto y se encontraron ${manifest.length}`);
+  if (manifest.length !== expectedPhotoCount) {
+    fail(`se esperaban ${expectedPhotoCount} entradas en el manifiesto y se encontraron ${manifest.length}`);
   }
 
   return manifest;
@@ -120,18 +124,40 @@ function readWebpDimensions(buffer, relativePath) {
 const articleSlugs = readArticleSlugs();
 const manifest = readManifest();
 const manifestSlugs = manifest.map((entry) => entry.slug).sort();
+const redirects = JSON.parse(fs.readFileSync(redirectsPath, "utf8"));
+const illustrationManifest = JSON.parse(fs.readFileSync(illustrationManifestPath, "utf8"));
+if (!redirects || Array.isArray(redirects) || typeof redirects !== "object") fail("content/article-redirects.json debe contener un objeto");
+if (!Array.isArray(illustrationManifest)) fail("content/article-illustrations.json debe contener un array");
+
+const redirectedSlugs = new Set(Object.keys(redirects));
+const activeArticleSlugs = articleSlugs.filter((slug) => !redirectedSlugs.has(slug));
+const illustrationSlugs = new Set(illustrationManifest.map((entry) => entry.slug));
+const expectedPhotoSlugs = activeArticleSlugs.filter((slug) => !illustrationSlugs.has(slug)).sort();
+
+if (activeArticleSlugs.length !== expectedActiveArticleCount) {
+  fail(`se esperaban ${expectedActiveArticleCount} artículos activos y se encontraron ${activeArticleSlugs.length}`);
+}
+for (const slug of redirectedSlugs) {
+  if (!articleSlugs.includes(slug)) fail(`la redirección usa un slug desconocido: ${slug}`);
+}
+for (const slug of illustrationSlugs) {
+  if (!activeArticleSlugs.includes(slug)) fail(`la ilustración no corresponde a un artículo activo: ${slug}`);
+}
+if (expectedPhotoSlugs.length !== expectedPhotoCount) {
+  fail(`se esperaban ${expectedPhotoCount} artículos activos con fotografía y se encontraron ${expectedPhotoSlugs.length}`);
+}
 
 if (new Set(manifestSlugs).size !== manifestSlugs.length) fail("hay slugs duplicados en el manifiesto fotográfico");
-if (manifestSlugs.join("\n") !== articleSlugs.join("\n")) {
-  const missing = articleSlugs.filter((slug) => !manifestSlugs.includes(slug));
-  const unknown = manifestSlugs.filter((slug) => !articleSlugs.includes(slug));
-  fail(`los slugs del manifiesto no coinciden con los artículos; faltan: ${missing.join(", ") || "ninguno"}; sobran: ${unknown.join(", ") || "ninguno"}`);
+if (manifestSlugs.join("\n") !== expectedPhotoSlugs.join("\n")) {
+  const missing = expectedPhotoSlugs.filter((slug) => !manifestSlugs.includes(slug));
+  const unknown = manifestSlugs.filter((slug) => !expectedPhotoSlugs.includes(slug));
+  fail(`los slugs fotográficos no coinciden con los artículos activos sin ilustración; faltan: ${missing.join(", ") || "ninguno"}; sobran: ${unknown.join(", ") || "ninguno"}`);
 }
 
 if (!fs.existsSync(photosDirectory)) fail("falta public/images/article-photos");
 const directoryFiles = fs.readdirSync(photosDirectory).filter((name) => fs.statSync(path.join(photosDirectory, name)).isFile());
-if (directoryFiles.length !== expectedArticleCount) {
-  fail(`se esperaban ${expectedArticleCount} archivos fotográficos y se encontraron ${directoryFiles.length}`);
+if (directoryFiles.length !== expectedPhotoCount) {
+  fail(`se esperaban ${expectedPhotoCount} archivos fotográficos y se encontraron ${directoryFiles.length}`);
 }
 
 const requiredTextFields = [
@@ -231,8 +257,8 @@ for (const filename of directoryFiles) {
   if (!expectedFiles.has(filename)) fail(`archivo no inventariado en la biblioteca: public/images/article-photos/${filename}`);
 }
 
-if (hashes.size !== expectedArticleCount) fail(`se esperaban ${expectedArticleCount} hashes SHA-256 únicos y se encontraron ${hashes.size}`);
+if (hashes.size !== expectedPhotoCount) fail(`se esperaban ${expectedPhotoCount} hashes SHA-256 únicos y se encontraron ${hashes.size}`);
 
 console.log(
-  `Article photo audit passed: ${articleSlugs.length} articles, ${manifest.length} manifest entries, ${directoryFiles.length} WebP files, ${hashes.size} unique SHA-256 hashes, ${(totalBytes / 1024 / 1024).toFixed(2)} MB total.`
+  `Article photo audit passed: ${articleSlugs.length} source articles, ${activeArticleSlugs.length} active articles, ${manifest.length} documentary photos, ${directoryFiles.length} WebP files, ${hashes.size} unique SHA-256 hashes, ${(totalBytes / 1024 / 1024).toFixed(2)} MB total.`
 );

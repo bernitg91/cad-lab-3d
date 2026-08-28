@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Flujo técnico para exportar archivos CAD</title>
+  <desc id="desc">Un modelo maestro se bifurca en un sólido STEP o Parasolid, una malla STL o 3MF y un plano PDF o DWG. Cada salida muestra sus controles específicos.</desc>
+  <defs>
+    <pattern id="dotGrid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#b7c6d2" opacity="0.34"/>
+    </pattern>
+    <pattern id="hatch" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+      <line x1="0" y1="0" x2="0" y2="12" stroke="#1c6b89" stroke-width="2" opacity="0.16"/>
+    </pattern>
+    <marker id="arrowBlue" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M1 1 11 6 1 11Z" fill="#1b5f8e"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M1 1 11 6 1 11Z" fill="#19846f"/>
+    </marker>
+    <marker id="arrowOrange" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M1 1 11 6 1 11Z" fill="#d96c2d"/>
+    </marker>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#173247" flood-opacity="0.10"/>
+    </filter>
+    <style>
+      .sans { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; }
+      .ink { fill: #102f46; }
+      .muted { fill: #526b7c; }
+      .outline { stroke: #153f5d; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+      .fine { stroke: #456a82; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+      .centerline { stroke: #7a9aad; stroke-width: 2; stroke-dasharray: 11 8 2 8; }
+      .label { font-size: 20px; font-weight: 800; letter-spacing: .09em; }
+      .body { font-size: 23px; font-weight: 640; }
+      .small { font-size: 18px; font-weight: 650; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" fill="#f6f5ef"/>
+  <rect width="1600" height="900" fill="url(#dotGrid)"/>
+  <path d="M54 174H1546" stroke="#9eb2c0" stroke-width="2"/>
+
+  <g class="sans">
+    <text x="58" y="55" class="mono" font-size="18" font-weight="800" letter-spacing="3.4" fill="#19846f">CAD · INTERCAMBIO · DOCUMENTACIÓN</text>
+    <text x="58" y="110" font-size="47" font-weight="860" class="ink">Exportar sin perder la intención del diseño</text>
+    <text x="58" y="148" font-size="23" font-weight="560" class="muted">Un modelo maestro; tres entregables y tres verificaciones distintas.</text>
+    <g transform="translate(1262 48)">
+      <path d="M0 0h280v76H20L0 56Z" fill="#e7f3ef" stroke="#19846f" stroke-width="2.5"/>
+      <text x="28" y="30" class="mono" font-size="16" font-weight="800" letter-spacing="2" fill="#176c5d">FLUJO DE ENTREGA</text>
+      <text x="28" y="57" font-size="21" font-weight="760" fill="#102f46">ejemplo verificable</text>
+    </g>
+  </g>
+
+  <!-- Modelo maestro -->
+  <g transform="translate(58 208)" filter="url(#softShadow)">
+    <path d="M0 28 28 0h426l28 28v552l-28 28H28L0 580Z" fill="#fffdf8" stroke="#8fa9b9" stroke-width="3"/>
+    <path d="M0 28 28 0h426l28 28v68H0Z" fill="#e9f1f5"/>
+    <circle cx="31" cy="28" r="6" fill="#d96c2d"/>
+    <circle cx="51" cy="28" r="6" fill="#e7ad3a"/>
+    <circle cx="71" cy="28" r="6" fill="#19846f"/>
+    <text x="99" y="35" class="sans label" fill="#153f5d">MODELO MAESTRO</text>
+    <text x="28" y="79" class="mono" font-size="17" font-weight="700" fill="#526b7c">SOPORTE_MOTOR · R07 · mm</text>
+
+    <!-- Pieza axonométrica -->
+    <g transform="translate(38 123)">
+      <polygon points="25,322 217,244 394,305 200,389" fill="#cfe5ec" class="outline"/>
+      <polygon points="25,322 25,352 198,423 200,389" fill="#a9ccd8" class="outline"/>
+      <polygon points="200,389 394,305 394,337 198,423" fill="#91b9c8" class="outline"/>
+
+      <path d="M104 307V118L151 67l155 55v194l-107 47Z" fill="#e9f2f4" class="outline"/>
+      <path d="M104 118 151 67l155 55-49 54Z" fill="#d4e8ed" class="outline"/>
+      <path d="M257 176 306 122v194l-107 47V174Z" fill="#bdd9e1" class="outline"/>
+      <path d="M104 307 199 363V174l-95-34Z" fill="url(#hatch)" class="outline"/>
+
+      <ellipse cx="153" cy="225" rx="60" ry="72" fill="#f6f5ef" class="outline"/>
+      <ellipse cx="153" cy="225" rx="39" ry="49" fill="#96bdca" class="outline"/>
+      <ellipse cx="153" cy="225" rx="22" ry="29" fill="#f6f5ef" class="fine"/>
+      <line x1="74" y1="225" x2="229" y2="225" class="centerline"/>
+      <line x1="153" y1="140" x2="153" y2="310" class="centerline"/>
+
+      <path d="M139 72V35l42-17 49 17v63" fill="#d4e8ed" class="outline"/>
+      <ellipse cx="181" cy="35" rx="42" ry="17" fill="#eef6f6" class="outline"/>
+      <ellipse cx="181" cy="35" rx="22" ry="9" fill="#9fc6d2" class="fine"/>
+
+      <path d="M105 288 65 331h48l47-23M244 316l42 15 48-23h-43" fill="none" class="outline"/>
+      <ellipse cx="76" cy="337" rx="12" ry="6" fill="#f6f5ef" class="fine"/>
+      <ellipse cx="319" cy="320" rx="12" ry="6" fill="#f6f5ef" class="fine"/>
+      <path d="M90 124 74 105M315 125l29-10M345 265l28 8" class="fine" fill="none"/>
+      <text x="19" y="91" class="mono" font-size="16" font-weight="800" fill="#1b5f8e">SÓLIDO PARAMÉTRICO</text>
+      <text x="276" y="91" class="mono" font-size="15" font-weight="800" fill="#526b7c">REV. 07</text>
+    </g>
+
+    <g transform="translate(28 531)" class="sans">
+      <rect width="426" height="48" rx="24" fill="#102f46"/>
+      <circle cx="25" cy="24" r="9" fill="#49c2a8"/>
+      <text x="45" y="31" font-size="19" font-weight="760" fill="#ffffff">Fuente única de geometría y revisión</text>
+    </g>
+  </g>
+
+  <!-- Distribuidor -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M540 510H595" stroke="#5c7b8e" stroke-width="8"/>
+    <circle cx="600" cy="510" r="14" fill="#102f46" stroke="#f6f5ef" stroke-width="5"/>
+    <path d="M606 504C646 504 632 285 687 285" stroke="#19846f" stroke-width="7" marker-end="url(#arrowGreen)"/>
+    <path d="M607 510H687" stroke="#d96c2d" stroke-width="7" marker-end="url(#arrowOrange)"/>
+    <path d="M606 516C646 516 632 735 687 735" stroke="#1b5f8e" stroke-width="7" marker-end="url(#arrowBlue)"/>
+  </g>
+
+  <!-- Salida sólida -->
+  <g transform="translate(704 202)" class="sans" filter="url(#softShadow)">
+    <path d="M0 18 18 0h806l18 18v158l-18 18H18L0 176Z" fill="#f0f8f5" stroke="#6eb4a5" stroke-width="3"/>
+    <rect x="0" y="0" width="12" height="194" rx="6" fill="#19846f"/>
+    <text x="36" y="41" class="mono label" fill="#176c5d">01 · SÓLIDO DE INTERCAMBIO</text>
+    <text x="36" y="76" font-size="31" font-weight="840" fill="#102f46">STEP · Parasolid</text>
+
+    <g transform="translate(300 34)">
+      <polygon points="52,0 109,27 58,56 0,28" fill="#d1eee5" stroke="#19846f" stroke-width="3"/>
+      <polygon points="0,28 58,56 58,118 0,88" fill="#b7dfd3" stroke="#19846f" stroke-width="3"/>
+      <polygon points="58,56 109,27 109,87 58,118" fill="#8fc8b8" stroke="#19846f" stroke-width="3"/>
+      <path d="M20 39 78 10M35 101l0-56M58 56l51 31" fill="none" stroke="#176c5d" stroke-width="2" opacity=".55"/>
+    </g>
+
+    <g transform="translate(460 30)" font-size="20" font-weight="730" fill="#21475c">
+      <g transform="translate(0 0)"><circle cx="12" cy="13" r="12" fill="#19846f"/><path d="m6 13 4 4 8-9" fill="none" stroke="#fff" stroke-width="3"/><text x="34" y="20">unidades confirmadas</text></g>
+      <g transform="translate(0 45)"><circle cx="12" cy="13" r="12" fill="#19846f"/><path d="m6 13 4 4 8-9" fill="none" stroke="#fff" stroke-width="3"/><text x="34" y="20">topología válida</text></g>
+      <g transform="translate(0 90)"><circle cx="12" cy="13" r="12" fill="#19846f"/><path d="m6 13 4 4 8-9" fill="none" stroke="#fff" stroke-width="3"/><text x="34" y="20">cuerpos y nombres revisados</text></g>
+    </g>
+  </g>
+
+  <!-- Salida malla -->
+  <g transform="translate(704 427)" class="sans" filter="url(#softShadow)">
+    <path d="M0 18 18 0h806l18 18v158l-18 18H18L0 176Z" fill="#fff5ed" stroke="#e6a278" stroke-width="3"/>
+    <rect x="0" y="0" width="12" height="194" rx="6" fill="#d96c2d"/>
+    <text x="36" y="41" class="mono label" fill="#b95420">02 · MALLA PARA FABRICAR</text>
+    <text x="36" y="76" font-size="31" font-weight="840" fill="#102f46">STL · 3MF</text>
+
+    <g transform="translate(288 31)" fill="none" stroke="#c45d27" stroke-width="2.5" stroke-linejoin="round">
+      <path d="M10 108 25 35 78 5l58 35-9 80-64 18Z" fill="#f6cbb1" opacity=".38" stroke-width="3.5"/>
+      <path d="m25 35 53 30 58-25M78 5v60l-15 73M10 108l68-43 49 55M25 35l38 103M78 65l58-25M10 108l117 12"/>
+      <path d="m25 35 111 5M78 5 10 108M78 5l49 115" opacity=".7"/>
+      <g fill="#d96c2d" stroke="none"><circle cx="10" cy="108" r="4"/><circle cx="25" cy="35" r="4"/><circle cx="78" cy="5" r="4"/><circle cx="136" cy="40" r="4"/><circle cx="127" cy="120" r="4"/><circle cx="63" cy="138" r="4"/><circle cx="78" cy="65" r="4"/></g>
+    </g>
+
+    <g transform="translate(460 30)" font-size="20" font-weight="730" fill="#21475c">
+      <g transform="translate(0 0)"><circle cx="12" cy="13" r="12" fill="#d96c2d"/><path d="m6 13 4 4 8-9" fill="none" stroke="#fff" stroke-width="3"/><text x="34" y="20">escala y dimensión principal</text></g>
+      <g transform="translate(0 45)"><circle cx="12" cy="13" r="12" fill="#d96c2d"/><path d="m6 13 4 4 8-9" fill="none" stroke="#fff" stroke-width="3"/><text x="34" y="20">normales orientadas</text></g>
+      <g transform="translate(0 90)"><circle cx="12" cy="13" r="12" fill="#d96c2d"/><path d="m6 13 4 4 8-9" fill="none" stroke="#fff" stroke-width="3"/><text x="34" y="20">malla cerrada y laminada</text></g>
+    </g>
+  </g>
+
+  <!-- Salida plano -->
+  <g transform="translate(704 652)" class="sans" filter="url(#softShadow)">
+    <path d="M0 18 18 0h806l18 18v158l-18 18H18L0 176Z" fill="#eef5fa" stroke="#78a5c2" stroke-width="3"/>
+    <rect x="0" y="0" width="12" height="194" rx="6" fill="#1b5f8e"/>
+    <text x="36" y="41" class="mono label" fill="#1b5f8e">03 · PLANO DE CONTROL</text>
+    <text x="36" y="76" font-size="31" font-weight="840" fill="#102f46">PDF · DWG</text>
+
+    <g transform="translate(276 23)">
+      <path d="M0 0h164v144H0Z" fill="#fff" stroke="#1b5f8e" stroke-width="3"/>
+      <path d="M125 0h39v39" fill="#d5e6f0" stroke="#1b5f8e" stroke-width="2"/>
+      <circle cx="51" cy="48" r="27" fill="none" stroke="#1b5f8e" stroke-width="3"/>
+      <circle cx="51" cy="48" r="11" fill="none" stroke="#1b5f8e" stroke-width="2"/>
+      <path d="M19 96h68v25H19ZM101 49h37v55h-37Z" fill="none" stroke="#1b5f8e" stroke-width="2.5"/>
+      <path d="M8 133h148M95 112v32M51 14v68M13 48h76" class="centerline"/>
+      <text x="105" y="134" class="mono" font-size="12" font-weight="800" fill="#1b5f8e">R07</text>
+    </g>
+
+    <g transform="translate(460 30)" font-size="20" font-weight="730" fill="#21475c">
+      <g transform="translate(0 0)"><circle cx="12" cy="13" r="12" fill="#1b5f8e"/><path d="m6 13 4 4 8-9" fill="none" stroke="#fff" stroke-width="3"/><text x="34" y="20">vistas suficientes</text></g>
+      <g transform="translate(0 45)"><circle cx="12" cy="13" r="12" fill="#1b5f8e"/><path d="m6 13 4 4 8-9" fill="none" stroke="#fff" stroke-width="3"/><text x="34" y="20">cotas y unidades legibles</text></g>
+      <g transform="translate(0 90)"><circle cx="12" cy="13" r="12" fill="#1b5f8e"/><path d="m6 13 4 4 8-9" fill="none" stroke="#fff" stroke-width="3"/><text x="34" y="20">revisión coincide con el modelo</text></g>
+    </g>
+  </g>
+
+  <g class="sans" transform="translate(58 846)">
+    <circle cx="11" cy="11" r="10" fill="#d96c2d"/>
+    <text x="34" y="18" font-size="19" font-weight="700" fill="#526b7c">Antes de enviar: abre cada archivo fuera del programa original y confirma que representa la misma revisión.</text>
+  </g>
+</svg>

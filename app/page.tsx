@@ -82,6 +82,7 @@ export default function HomePage() {
   const articles = getAllArticles();
   const leadStory = articles.find((article) => article.slug === "disenar-encajes-clips-impresion-3d") ?? articles[0];
   const leadPhoto = getArticlePhoto(leadStory.slug);
+  if (!leadPhoto) throw new Error("Missing lead story photo");
   const latestArticles = articles.filter((article) => article.slug !== leadStory.slug).slice(0, 5);
   const structuredData = [
     {

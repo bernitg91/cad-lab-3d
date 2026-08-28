@@ -1,0 +1,230 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Serie de ensayo de tolerancias FDM</title>
+  <desc id="desc">Una ficha de ensayo registra máquina, material y orientación. Cinco probetas comparan un pasador de diez milímetros con agujeros de holgura creciente y dejan pendiente la clasificación del ajuste. Los valores se marcan como ejemplos no universales.</desc>
+  <defs>
+    <pattern id="paperGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#8ba6b8" stroke-width="1.25" opacity="0.17"/>
+      <circle cx="0" cy="0" r="2" fill="#5f8298" opacity="0.28"/>
+    </pattern>
+    <pattern id="diagBlue" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#1b5f8e" stroke-width="2" opacity="0.16"/>
+    </pattern>
+    <pattern id="diagGreen" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#19846f" stroke-width="2" opacity="0.16"/>
+    </pattern>
+    <marker id="arrowDim" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto-start-reverse" markerUnits="strokeWidth">
+      <path d="M1 5 9 1 7 5 9 9Z" fill="#d96c2d"/>
+    </marker>
+    <marker id="arrowZ" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M1 1 10 5.5 1 10Z" fill="#19846f"/>
+    </marker>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#173247" flood-opacity="0.10"/>
+    </filter>
+    <style>
+      .sans { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; }
+      .ink { fill: #102f46; }
+      .muted { fill: #526b7c; }
+      .outline { stroke: #153f5d; stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; }
+      .fine { stroke: #58798e; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+      .centerline { stroke: #7c9aab; stroke-width: 1.8; stroke-dasharray: 10 7 2 7; }
+      .label { font-size: 19px; font-weight: 820; letter-spacing: .09em; }
+      .body { font-size: 21px; font-weight: 650; }
+      .small { font-size: 17px; font-weight: 680; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" fill="#f7f5ee"/>
+  <rect width="1600" height="900" fill="url(#paperGrid)"/>
+  <path d="M54 174H1546" stroke="#9eb2c0" stroke-width="2"/>
+
+  <g class="sans">
+    <text x="58" y="55" class="mono" font-size="18" font-weight="800" letter-spacing="3.4" fill="#1b5f8e">FDM · AJUSTE · REGISTRO DE ENSAYO</text>
+    <text x="58" y="110" font-size="47" font-weight="860" class="ink">Una holgura se ensaya; no se adivina</text>
+    <text x="58" y="148" font-size="23" font-weight="560" class="muted">Mismo pasador, varias probetas y todas las condiciones anotadas.</text>
+    <g transform="translate(1169 48)">
+      <path d="M0 0h373v78H24L0 54Z" fill="#fff0e5" stroke="#d96c2d" stroke-width="2.5"/>
+      <circle cx="32" cy="39" r="14" fill="#d96c2d"/>
+      <text x="27" y="46" font-size="20" font-weight="900" fill="#fff">!</text>
+      <text x="58" y="31" class="mono" font-size="15" font-weight="850" letter-spacing="1.5" fill="#b95420">VALORES ILUSTRATIVOS</text>
+      <text x="58" y="57" font-size="20" font-weight="760" fill="#102f46">no son una regla universal</text>
+    </g>
+  </g>
+
+  <!-- Ficha de condiciones -->
+  <g transform="translate(58 205)" filter="url(#softShadow)">
+    <path d="M0 26 26 0h300l26 26v566l-26 26H26L0 592Z" fill="#fffdf8" stroke="#7f9bad" stroke-width="3"/>
+    <path d="M0 26 26 0h300l26 26v76H0Z" fill="#dceaf1"/>
+    <path d="M122 0v24h108V0" fill="#a9c6d5" stroke="#58798e" stroke-width="3"/>
+    <text x="28" y="48" class="sans label" fill="#1b5f8e">FICHA DE EJEMPLO</text>
+    <text x="28" y="78" class="mono" font-size="16" font-weight="760" fill="#526b7c">SERIE TOL-01 · 5 PROBETAS</text>
+
+    <g transform="translate(28 132)" class="sans">
+      <text x="0" y="0" class="mono" font-size="15" font-weight="820" letter-spacing="1.5" fill="#19846f">CONDICIONES REGISTRADAS</text>
+      <g transform="translate(0 28)">
+        <text x="0" y="19" class="small" fill="#526b7c">Máquina</text>
+        <text x="135" y="19" class="body" fill="#102f46">FDM-01</text>
+        <path d="M0 34h296" stroke="#c3d0d8" stroke-width="2"/>
+      </g>
+      <g transform="translate(0 82)">
+        <text x="0" y="19" class="small" fill="#526b7c">Material</text>
+        <text x="135" y="19" class="body" fill="#102f46">PLA · lote A</text>
+        <path d="M0 34h296" stroke="#c3d0d8" stroke-width="2"/>
+      </g>
+      <g transform="translate(0 136)">
+        <text x="0" y="19" class="small" fill="#526b7c">Boquilla</text>
+        <text x="135" y="19" class="body" fill="#102f46">0,40 mm</text>
+        <path d="M0 34h296" stroke="#c3d0d8" stroke-width="2"/>
+      </g>
+      <g transform="translate(0 190)">
+        <text x="0" y="19" class="small" fill="#526b7c">Altura capa</text>
+        <text x="135" y="19" class="body" fill="#102f46">0,20 mm</text>
+        <path d="M0 34h296" stroke="#c3d0d8" stroke-width="2"/>
+      </g>
+      <g transform="translate(0 244)">
+        <text x="0" y="19" class="small" fill="#526b7c">Orientación</text>
+        <text x="135" y="19" class="body" fill="#102f46">agujero en Z</text>
+        <path d="M0 34h296" stroke="#c3d0d8" stroke-width="2"/>
+      </g>
+      <g transform="translate(0 298)">
+        <text x="0" y="19" class="small" fill="#526b7c">Pasador P1</text>
+        <text x="135" y="19" class="body" fill="#102f46">Ø10,00 mm</text>
+        <path d="M0 34h296" stroke="#c3d0d8" stroke-width="2"/>
+      </g>
+
+      <!-- Cubo de orientación -->
+      <g transform="translate(18 340)">
+        <polygon points="44,0 87,22 44,45 0,22" fill="#d8eee8" class="outline"/>
+        <polygon points="0,22 44,45 44,94 0,70" fill="#b8ded3" class="outline"/>
+        <polygon points="44,45 87,22 87,70 44,94" fill="#91c9ba" class="outline"/>
+        <path d="M44 30V-26" stroke="#19846f" stroke-width="4" marker-end="url(#arrowZ)"/>
+        <text x="52" y="-8" class="mono" font-size="19" font-weight="900" fill="#19846f">Z</text>
+        <text x="112" y="34" font-size="18" font-weight="760" fill="#102f46">Eje del agujero</text>
+        <text x="112" y="61" font-size="18" font-weight="650" fill="#526b7c">paralelo a Z</text>
+      </g>
+
+      <g transform="translate(0 440)">
+        <rect width="296" height="46" rx="23" fill="#102f46"/>
+        <text x="20" y="29" font-size="17" font-weight="760" fill="#fff">Registra tus valores reales</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Pasador patrón -->
+  <g transform="translate(450 205)" class="sans">
+    <text x="0" y="24" class="mono label" fill="#1b5f8e">PASADOR P1 · Ø10,00 mm</text>
+    <g transform="translate(343 4)">
+      <path d="M0 19h120v42H0Z" fill="#b8cfdb" stroke="#153f5d" stroke-width="3"/>
+      <ellipse cx="0" cy="40" rx="17" ry="21" fill="#dce8ee" stroke="#153f5d" stroke-width="3"/>
+      <ellipse cx="120" cy="40" rx="17" ry="21" fill="#8eafc0" stroke="#153f5d" stroke-width="3"/>
+      <path d="M17 19h20M17 61h20" stroke="#58798e" stroke-width="2"/>
+    </g>
+    <path d="M492 44h628" stroke="#7f9bad" stroke-width="3" stroke-dasharray="12 10"/>
+    <text x="1090" y="24" text-anchor="end" class="mono" font-size="16" font-weight="780" fill="#526b7c">MISMO PASADOR EN TODA LA SERIE</text>
+  </g>
+
+  <!-- Serie de probetas -->
+  <g transform="translate(438 292)" class="sans">
+    <!-- A1 -->
+    <g transform="translate(0 0)" filter="url(#softShadow)">
+      <path d="M0 30 30 0h138l28 28v315l-22 22H22L0 343Z" fill="#fff7f1" stroke="#dc8a59" stroke-width="3"/>
+      <path d="M0 30 30 0h138l28 28v54H0Z" fill="#f8d9c4"/>
+      <text x="20" y="48" class="mono label" fill="#b95420">A1 · Ø10,10</text>
+      <circle cx="98" cy="172" r="56" fill="#f6f5ee" stroke="#153f5d" stroke-width="4"/>
+      <circle cx="98" cy="172" r="47" fill="#9ab8c8" stroke="#153f5d" stroke-width="3"/>
+      <circle cx="98" cy="172" r="34" fill="url(#diagBlue)" stroke="#58798e" stroke-width="2"/>
+      <path d="M24 172h148M98 96v151" class="centerline"/>
+      <path d="M48 244h100" stroke="#d96c2d" stroke-width="2.5" marker-start="url(#arrowDim)" marker-end="url(#arrowDim)"/>
+      <text x="50" y="275" class="mono" font-size="16" font-weight="800" fill="#b95420">c = 0,10 mm</text>
+      <rect x="18" y="302" width="160" height="44" rx="22" fill="#102f46"/>
+      <text x="98" y="330" text-anchor="middle" font-size="17" font-weight="850" fill="#fff">SIN ENSAYAR</text>
+    </g>
+
+    <!-- A2 -->
+    <g transform="translate(214 0)" filter="url(#softShadow)">
+      <path d="M0 30 30 0h138l28 28v315l-22 22H22L0 343Z" fill="#fff7f1" stroke="#dc8a59" stroke-width="3"/>
+      <path d="M0 30 30 0h138l28 28v54H0Z" fill="#f8d9c4"/>
+      <text x="20" y="48" class="mono label" fill="#b95420">A2 · Ø10,20</text>
+      <circle cx="98" cy="172" r="59" fill="#f6f5ee" stroke="#153f5d" stroke-width="4"/>
+      <circle cx="98" cy="172" r="47" fill="#9ab8c8" stroke="#153f5d" stroke-width="3"/>
+      <circle cx="98" cy="172" r="34" fill="url(#diagBlue)" stroke="#58798e" stroke-width="2"/>
+      <path d="M22 172h152M98 94v155" class="centerline"/>
+      <path d="M46 244h104" stroke="#d96c2d" stroke-width="2.5" marker-start="url(#arrowDim)" marker-end="url(#arrowDim)"/>
+      <text x="50" y="275" class="mono" font-size="16" font-weight="800" fill="#b95420">c = 0,20 mm</text>
+      <rect x="18" y="302" width="160" height="44" rx="22" fill="#102f46"/>
+      <text x="98" y="330" text-anchor="middle" font-size="17" font-weight="850" fill="#fff">SIN ENSAYAR</text>
+    </g>
+
+    <!-- A3 -->
+    <g transform="translate(428 0)" filter="url(#softShadow)">
+      <path d="M0 30 30 0h138l28 28v315l-22 22H22L0 343Z" fill="#f1f9f6" stroke="#68aa9b" stroke-width="3"/>
+      <path d="M0 30 30 0h138l28 28v54H0Z" fill="#cae8df"/>
+      <text x="20" y="48" class="mono label" fill="#176c5d">A3 · Ø10,30</text>
+      <circle cx="98" cy="172" r="62" fill="#f6f5ee" stroke="#153f5d" stroke-width="4"/>
+      <circle cx="98" cy="172" r="47" fill="#9ab8c8" stroke="#153f5d" stroke-width="3"/>
+      <circle cx="98" cy="172" r="34" fill="url(#diagBlue)" stroke="#58798e" stroke-width="2"/>
+      <path d="M20 172h156M98 92v159" class="centerline"/>
+      <path d="M44 244h108" stroke="#19846f" stroke-width="2.5" marker-start="url(#arrowDim)" marker-end="url(#arrowDim)"/>
+      <text x="50" y="275" class="mono" font-size="16" font-weight="800" fill="#176c5d">c = 0,30 mm</text>
+      <rect x="14" y="302" width="168" height="44" rx="22" fill="#102f46"/>
+      <text x="98" y="330" text-anchor="middle" font-size="17" font-weight="850" fill="#fff">SIN ENSAYAR</text>
+    </g>
+
+    <!-- A4 -->
+    <g transform="translate(642 0)" filter="url(#softShadow)">
+      <path d="M0 30 30 0h138l28 28v315l-22 22H22L0 343Z" fill="#f1f9f6" stroke="#68aa9b" stroke-width="3"/>
+      <path d="M0 30 30 0h138l28 28v54H0Z" fill="#cae8df"/>
+      <text x="20" y="48" class="mono label" fill="#176c5d">A4 · Ø10,40</text>
+      <circle cx="98" cy="172" r="65" fill="#f6f5ee" stroke="#153f5d" stroke-width="4"/>
+      <circle cx="98" cy="172" r="47" fill="#9ab8c8" stroke="#153f5d" stroke-width="3"/>
+      <circle cx="98" cy="172" r="34" fill="url(#diagBlue)" stroke="#58798e" stroke-width="2"/>
+      <path d="M18 172h160M98 90v163" class="centerline"/>
+      <path d="M42 244h112" stroke="#19846f" stroke-width="2.5" marker-start="url(#arrowDim)" marker-end="url(#arrowDim)"/>
+      <text x="50" y="275" class="mono" font-size="16" font-weight="800" fill="#176c5d">c = 0,40 mm</text>
+      <rect x="14" y="302" width="168" height="44" rx="22" fill="#102f46"/>
+      <text x="98" y="330" text-anchor="middle" font-size="17" font-weight="850" fill="#fff">SIN ENSAYAR</text>
+    </g>
+
+    <!-- A5 -->
+    <g transform="translate(856 0)" filter="url(#softShadow)">
+      <path d="M0 30 30 0h138l28 28v315l-22 22H22L0 343Z" fill="#f0f6fa" stroke="#76a4c1" stroke-width="3"/>
+      <path d="M0 30 30 0h138l28 28v54H0Z" fill="#d5e7f1"/>
+      <text x="20" y="48" class="mono label" fill="#1b5f8e">A5 · Ø10,50</text>
+      <circle cx="98" cy="172" r="68" fill="#f6f5ee" stroke="#153f5d" stroke-width="4"/>
+      <circle cx="98" cy="172" r="47" fill="#9ab8c8" stroke="#153f5d" stroke-width="3"/>
+      <circle cx="98" cy="172" r="34" fill="url(#diagBlue)" stroke="#58798e" stroke-width="2"/>
+      <path d="M16 172h164M98 88v167" class="centerline"/>
+      <path d="M40 244h116" stroke="#1b5f8e" stroke-width="2.5" marker-start="url(#arrowDim)" marker-end="url(#arrowDim)"/>
+      <text x="50" y="275" class="mono" font-size="16" font-weight="800" fill="#1b5f8e">c = 0,50 mm</text>
+      <rect x="18" y="302" width="160" height="44" rx="22" fill="#102f46"/>
+      <text x="98" y="330" text-anchor="middle" font-size="17" font-weight="850" fill="#fff">SIN ENSAYAR</text>
+    </g>
+  </g>
+
+  <!-- Lectura y fórmula -->
+  <g transform="translate(438 692)" class="sans">
+    <path d="M0 18 18 0h473l18 18v116l-18 18H18L0 134Z" fill="#fffdf8" stroke="#9eb2c0" stroke-width="3"/>
+    <text x="24" y="36" class="mono label" fill="#1b5f8e">HOLGURA DIAMETRAL</text>
+    <text x="24" y="80" font-size="28" font-weight="840" fill="#102f46">c = Ø agujero − Ø pasador</text>
+    <text x="24" y="111" font-size="17" font-weight="650" fill="#526b7c">Registra también la sensación de ajuste;</text>
+    <text x="24" y="135" font-size="17" font-weight="650" fill="#526b7c">la cota nominal no basta.</text>
+  </g>
+
+  <g transform="translate(969 692)" class="sans">
+    <path d="M0 18 18 0h541l18 18v116l-18 18H18L0 134Z" fill="#eef4f6" stroke="#9eb2c0" stroke-width="3"/>
+    <text x="24" y="36" class="mono label" fill="#176c5d">SECUENCIA REPRODUCIBLE</text>
+    <g transform="translate(24 60)" font-size="18" font-weight="750" fill="#102f46">
+      <circle cx="16" cy="16" r="16" fill="#1b5f8e"/><text x="16" y="22" text-anchor="middle" fill="#fff">1</text><text x="43" y="22">imprime</text>
+      <circle cx="145" cy="16" r="16" fill="#1b5f8e"/><text x="145" y="22" text-anchor="middle" fill="#fff">2</text><text x="172" y="22">deja enfriar</text>
+      <circle cx="322" cy="16" r="16" fill="#19846f"/><text x="322" y="22" text-anchor="middle" fill="#fff">3</text><text x="349" y="22">prueba</text>
+      <circle cx="445" cy="16" r="16" fill="#d96c2d"/><text x="445" y="22" text-anchor="middle" fill="#fff">4</text><text x="472" y="22">anota</text>
+    </g>
+    <text x="24" y="121" font-size="19" font-weight="650" fill="#526b7c">Repite la serie si cambia máquina, material, perfil u orientación.</text>
+  </g>
+
+  <g class="sans" transform="translate(58 852)">
+    <circle cx="10" cy="-3" r="10" fill="#19846f"/>
+    <text x="34" y="4" font-size="18" font-weight="700" fill="#526b7c">Serie pendiente: prueba cada muestra, clasifícala como apretada, deslizante o suelta y registra el resultado real.</text>
+  </g>
+</svg>
