@@ -2,6 +2,7 @@
 
 import type { ChangeEvent } from "react";
 import { useMemo, useState } from "react";
+import { pieceCount } from "@/lib/calculations";
 
 type MaterialOption = "PLA" | "PETG" | "TPU" | "ABS" | "ASA" | "Nylon" | "Otro";
 
@@ -184,7 +185,7 @@ function buildBudgetText(state: CalculatorState, result: CalculationResult) {
     `Máquina/desgaste: ${formatEuro(result.machineCost)}`,
     `Mano de obra: ${formatEuro(result.laborCost)}`,
     `Riesgo de fallo: ${formatEuro(result.failureCost)}`,
-    `Margen: ${formatEuro(result.profit)}`,
+    `Recargo sobre coste: ${formatEuro(result.profit)}`,
     ...(state.showVat ? [`IVA: ${formatEuro(result.vatAmount)}`] : []),
     `Total por pieza: ${formatEuro(result.unitPrice)}`,
     "",
@@ -203,7 +204,7 @@ export function PrintCostCalculator() {
   function updateNumber(name: keyof CalculatorState, value: number, min = 0) {
     setState((current) => ({
       ...current,
-      [name]: clampNumber(value, min)
+      [name]: name === "quantity" ? pieceCount(value) : clampNumber(value, min)
     }));
   }
 
@@ -256,7 +257,7 @@ export function PrintCostCalculator() {
     ["Máquina/desgaste", result.machineCost],
     ["Mano de obra", result.laborCost],
     ["Riesgo de fallo", result.failureCost],
-    ["Margen", result.profit],
+    ["Recargo sobre coste", result.profit],
     ...(state.showVat ? ([["IVA", result.vatAmount]] as [string, number][]) : []),
     ["Total", result.unitPrice]
   ] as [string, number][];
@@ -269,7 +270,7 @@ export function PrintCostCalculator() {
             <p className="text-sm font-black uppercase tracking-wide text-teal-700">Datos de impresión</p>
             <h2 id="calculadora" className="text-2xl font-black text-slate-950">Calcula un presupuesto FDM</h2>
             <p className="max-w-3xl text-sm leading-6 text-slate-600">
-              Ajusta material, consumo, horas de máquina, mano de obra, riesgo, margen e IVA. Los resultados se recalculan automáticamente.
+              Ajusta material, consumo, horas de máquina, mano de obra, riesgo, recargo e IVA. Los resultados se recalculan automáticamente.
             </p>
           </div>
 
@@ -303,7 +304,7 @@ export function PrintCostCalculator() {
             <NumberField label="Tiempo de postprocesado" name="postProcessingMinutes" unit="min" value={state.postProcessingMinutes} help="Lijado, soportes, montaje, inserts, revisión, embalaje u otros acabados." step="1" onChange={updateNumber} />
             <NumberField label="Coste de máquina / desgaste" name="machineRate" unit="€/h" value={state.machineRate} help="Amortización de impresora, boquilla, cama, mantenimiento y recambios." onChange={updateNumber} />
             <NumberField label="Riesgo de fallo" name="failureRate" unit="%" value={state.failureRate} help="Margen técnico para cubrir repeticiones, fallos de adhesión o errores de impresión." onChange={updateNumber} />
-            <NumberField label="Margen comercial" name="profitMargin" unit="%" value={state.profitMargin} onChange={updateNumber} />
+            <NumberField label="Recargo sobre coste" name="profitMargin" unit="%" value={state.profitMargin} help="Un 30 % añade 30 € a cada 100 € de coste. No es un margen del 30 % sobre el precio de venta." onChange={updateNumber} />
             <NumberField label="IVA" name="vatRate" unit="%" value={state.vatRate} onChange={updateNumber} />
             <NumberField label="Cantidad de piezas" name="quantity" value={state.quantity} min={1} step="1" onChange={updateNumber} />
           </div>
@@ -338,7 +339,7 @@ export function PrintCostCalculator() {
               Descargar presupuesto
             </button>
           </div>
-          {copyStatus ? <p className="mt-4 rounded-md bg-teal-50 p-3 text-sm font-semibold text-teal-800">{copyStatus}</p> : null}
+          <p role="status" className="mt-4 text-sm font-semibold text-teal-800">{copyStatus}</p>
         </form>
 
         <aside className={`rounded-lg border border-slate-200 bg-white p-5 shadow-sm lg:sticky lg:top-28 ${recalculated ? "ring-4 ring-teal-100" : ""}`} aria-live="polite">
@@ -355,7 +356,7 @@ export function PrintCostCalculator() {
           <div className="mt-5 grid grid-cols-2 gap-3">
             <Metric label="Precio total del lote" value={formatEuro(result.totalPrice)} />
             <Metric label="Coste real de fabricación" value={formatEuro(result.realCost)} />
-            <Metric label="Margen estimado" value={formatEuro(result.profit)} />
+            <Metric label="Recargo estimado" value={formatEuro(result.profit)} />
             <Metric label="Tiempo de impresión" value={`${result.printHours.toFixed(2)} h`} />
           </div>
 

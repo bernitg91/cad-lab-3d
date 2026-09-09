@@ -4,13 +4,17 @@
   "private": true,
   "scripts": {
     "dev": "next dev --webpack",
-    "build": "node scripts/validate-article-photos.cjs && node scripts/validate-article-illustrations.cjs && next build --webpack && node scripts/validate-visible-image-uniqueness.cjs && node scripts/validate-rendered-articles.cjs",
+    "build": "npm run lint && npm test && node scripts/validate-article-photos.cjs && node scripts/validate-article-illustrations.cjs && next build --webpack && node scripts/validate-visible-image-uniqueness.cjs && node scripts/validate-rendered-articles.cjs && node scripts/validate-site.cjs && node scripts/validate-internal-links.cjs",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint app components lib types next.config.ts --max-warnings=0",
     "validate:article-photos": "node scripts/validate-article-photos.cjs",
     "validate:article-illustrations": "node scripts/validate-article-illustrations.cjs",
     "validate:visible-image-uniqueness": "node scripts/validate-visible-image-uniqueness.cjs",
-    "validate:rendered-articles": "node scripts/validate-rendered-articles.cjs"
+    "validate:rendered-articles": "node scripts/validate-rendered-articles.cjs",
+    "test": "node --experimental-strip-types --test tests/*.test.mjs",
+    "typecheck": "tsc --noEmit",
+    "validate:site": "node scripts/validate-site.cjs",
+    "validate:internal-links": "node scripts/validate-internal-links.cjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
@@ -20,14 +24,22 @@
     "three": "0.185.1"
   },
   "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@next/eslint-plugin-next": "16.3.4",
     "@next/swc-wasm-nodejs": "16.3.4",
     "@types/node": "22.15.17",
     "@types/react": "19.0.12",
     "@types/react-dom": "19.0.4",
     "@types/three": "0.185.4",
     "autoprefixer": "10.4.21",
+    "eslint": "10.10.0",
+    "eslint-plugin-react-hooks": "7.1.1",
     "postcss": "8.5.28",
     "tailwindcss": "3.4.17",
-    "typescript": "5.8.3"
+    "typescript": "5.8.3",
+    "typescript-eslint": "8.70.0"
+  },
+  "engines": {
+    "node": "24.x"
   }
 }

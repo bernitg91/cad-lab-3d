@@ -2,6 +2,7 @@
 
 import type { ChangeEvent } from "react";
 import { useMemo, useState } from "react";
+import { filamentLengthMeters, pieceCount } from "@/lib/calculations";
 
 type Material = "PLA" | "PETG" | "TPU" | "ABS" | "ASA" | "Nylon" | "Otro";
 
@@ -105,12 +106,12 @@ export function WeightEstimator() {
       solidWeight,
       printedWeight,
       totalWeight,
-      filamentMeters: printedWeight / 2.98
+      filamentMeters: filamentLengthMeters(printedWeight, density)
     };
   }, [state]);
 
   function updateNumber(name: keyof State, value: number, min = 0, max = Number.POSITIVE_INFINITY) {
-    setState((current) => ({ ...current, [name]: clamp(value, min, max) }));
+    setState((current) => ({ ...current, [name]: name === "quantity" ? pieceCount(value) : clamp(value, min, max) }));
   }
 
   function updateMaterial(event: ChangeEvent<HTMLSelectElement>) {
@@ -171,10 +172,10 @@ export function WeightEstimator() {
               Copiar estimación
             </button>
           </div>
-          {message ? <p className="mt-4 rounded-md bg-teal-50 p-3 text-sm font-semibold text-teal-800">{message}</p> : null}
+          <p role="status" className="mt-4 text-sm font-semibold text-teal-800">{message}</p>
         </form>
 
-        <aside className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm lg:sticky lg:top-28">
+        <aside aria-live="polite" className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm lg:sticky lg:top-28">
           <p className="text-sm font-black uppercase tracking-wide text-teal-700">Resultado</p>
           <h2 className="mt-2 text-2xl font-black text-slate-950">Peso estimado</h2>
           <div className="mt-5 rounded-lg bg-slate-950 p-5 text-white">
@@ -184,7 +185,7 @@ export function WeightEstimator() {
           </div>
           <div className="mt-5 grid gap-3">
             <Metric label="Peso si fuera maciza" value={formatGrams(result.solidWeight)} />
-            <Metric label="Filamento aproximado por pieza" value={`${result.filamentMeters.toLocaleString("es-ES", { maximumFractionDigits: 1 })} m`} />
+            <Metric label="Filamento de 1,75 mm por pieza" value={result.filamentMeters === null ? "Introduce una densidad mayor que cero" : `${result.filamentMeters.toLocaleString("es-ES", { maximumFractionDigits: 1 })} m`} />
             <Metric label="Densidad usada" value={`${state.density} g/cm3`} />
           </div>
           <p className="mt-4 text-xs leading-5 text-slate-500">Estimación orientativa. El peso real depende del laminador, número de paredes, ancho de línea, purgas, soportes y material real.</p>

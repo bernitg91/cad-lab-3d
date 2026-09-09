@@ -95,7 +95,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     ? photo
     : illustration && isLicensedReferenceMedia(illustration)
       ? illustration
-      : undefined;
+      : illustration?.kind === "original-diagram"
+        ? { image: illustration.editorialImage, alt: illustration.editorialAlt, width: illustration.editorialWidth, height: illustration.editorialHeight }
+        : undefined;
 
   return createPageMetadata({
     title: article.title,
@@ -103,6 +105,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     path: `/blog/${article.slug}`,
     type: "article",
     publishedTime: article.date,
+    modifiedTime: article.updatedDate || article.date,
     authors: [siteConfig.authorName],
     image: socialVisual?.image,
     imageAlt: socialVisual?.alt,
@@ -155,6 +158,17 @@ export default async function ArticlePage({ params }: PageProps) {
       creditText: `${illustration.title} — ${illustration.creator}`,
       license: illustration.licenseUrl,
       acquireLicensePage: absoluteUrl("/licencias-imagenes")
+    }
+  ] : illustration?.kind === "original-diagram" ? [
+    {
+      "@type": "ImageObject",
+      url: absoluteUrl(illustration.editorialImage),
+      contentUrl: absoluteUrl(illustration.editorialImage),
+      width: illustration.editorialWidth,
+      height: illustration.editorialHeight,
+      caption: illustration.editorialCaption,
+      creditText: "CAD Lab 3D · Recreación editorial asistida por IA, sin ensayo documentado",
+      creator: { "@type": "Organization", name: siteConfig.name }
     }
   ] : undefined;
   const articleJsonLd = {

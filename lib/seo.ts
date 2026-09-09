@@ -7,6 +7,7 @@ type SeoOptions = {
   path: string;
   type?: "website" | "article";
   publishedTime?: string;
+  modifiedTime?: string;
   authors?: string[];
   image?: string;
   imageAlt?: string;
@@ -20,6 +21,7 @@ export function createPageMetadata({
   path,
   type = "website",
   publishedTime,
+  modifiedTime,
   authors,
   image,
   imageAlt,
@@ -27,7 +29,10 @@ export function createPageMetadata({
   imageHeight
 }: SeoOptions): Metadata {
   const url = absoluteUrl(path);
-  const socialImage = image ? absoluteUrl(image) : undefined;
+  const socialImage = absoluteUrl(image || siteConfig.socialImage.image);
+  const visualAlt = image ? imageAlt : siteConfig.socialImage.alt;
+  const visualWidth = image ? imageWidth : siteConfig.socialImage.width;
+  const visualHeight = image ? imageHeight : siteConfig.socialImage.height;
 
   return {
     title,
@@ -45,17 +50,17 @@ export function createPageMetadata({
       ...(socialImage ? {
         images: [{
           url: socialImage,
-          alt: imageAlt,
-          ...(imageWidth && imageHeight ? { width: imageWidth, height: imageHeight } : {})
+          alt: visualAlt,
+          ...(visualWidth && visualHeight ? { width: visualWidth, height: visualHeight } : {})
         }]
       } : {}),
-      ...(type === "article" ? { publishedTime, authors } : {})
+      ...(type === "article" ? { publishedTime, modifiedTime, authors } : {})
     },
     twitter: {
       card: socialImage ? "summary_large_image" : "summary",
       title: title === siteConfig.name ? siteConfig.name : `${title} | ${siteConfig.name}`,
       description,
-      ...(socialImage ? { images: [{ url: socialImage, alt: imageAlt }] } : {})
+      images: [{ url: socialImage, alt: visualAlt }]
     }
   };
 }

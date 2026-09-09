@@ -28,7 +28,7 @@ html {
 :root { --cad-ink: #14243d; --cad-blue: #2254d7; --cad-cyan: #81dded; --cad-paper: #f7f9fc; --cad-muted: #566579; --cad-line: #d7e0eb; }
 button, a { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
 button { font: inherit; cursor: pointer; }
-a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible { outline: 3px solid #2254d7; outline-offset: 5px; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible { outline: 3px solid #2254d7; outline-offset: 5px; }
 main { min-width: 0; }
 main h1, main h2, main h3 { font-family: var(--font-display), sans-serif; }
 .cad-header { position: sticky; top: 0; z-index: 50; height: 88px; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 0 4.5%; background: rgba(255,255,255,.96); border-bottom: 1px solid var(--cad-line); backdrop-filter: blur(18px); }
@@ -155,8 +155,10 @@ main h1, main h2, main h3 { font-family: var(--font-display), sans-serif; }
 .cad-practice .article-body h2 { font-weight: 500; letter-spacing: -.04em; }
 .cad-practice .article-body a { color: var(--cad-blue); text-decoration: underline; text-underline-offset: 3px; }
 .cad-practice-note { padding: 22px 25px; border-left: 3px solid #2254d7; background: #eaf1fc; margin: 30px 0; font-size: 15px; line-height: 1.85; }
-.cad-reduced { height: auto; }
-.cad-reduced .cad-sticky { position: relative; top: 0; }
+@media(prefers-reduced-motion:reduce) {
+  .cad-experience { height: auto; }
+  .cad-sticky { position: relative; top: 0; }
+}
 @media(min-width:1600px) { .cad-sticky { max-width: 1750px; margin: auto; } .cad-hero-copy { padding-top: 35px; } .cad-model-viewport { min-height: 420px; } }
 @media(max-height:820px) and (min-width:900px) { .cad-experience { height: auto; } .cad-sticky { position: relative; top: 0; } .cad-hero-copy h1 { font-size: clamp(60px,6.2vw,95px); } .cad-model-viewport { min-height: 330px; } }
 @media(max-width:1150px) { .cad-desktop-nav { gap: 20px; } .cad-header { gap: 16px; padding-inline: 3%; } .cad-brand>span { font-size: 23px; } .cad-header-action { gap: 17px; padding: 13px; } .cad-section { padding: 80px 5.5%; } .cad-actions { gap: 17px; } .cad-hero-description { font-size: 16px; } .cad-model-viewport { min-height: 310px; } .cad-learning-grid { gap: 25px; } .cad-lab-layout { gap: 7%; } }

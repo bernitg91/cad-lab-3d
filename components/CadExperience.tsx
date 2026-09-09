@@ -43,7 +43,7 @@ export function CadExperience() {
   }, [manual, reduced]);
 
   return (
-    <section ref={section} className={`cad-experience ${reduced ? "cad-reduced" : ""}`} aria-label="Del diseño CAD a la impresión 3D">
+    <section ref={section} className="cad-experience" aria-label="Del diseño CAD a la impresión 3D">
       <div className="cad-sticky">
         <div className="cad-hero-grid">
           <div className="cad-hero-copy">

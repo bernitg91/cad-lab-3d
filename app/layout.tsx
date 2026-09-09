@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   authors: [{ name: siteConfig.authorName, url: `${siteConfig.defaultUrl}/sobre-mi` }],
-  robots: isPreviewDeployment() ? { index: false, follow: false } : undefined,
+  robots: isPreviewDeployment() ? { index: false, follow: false } : { googleBot: { "max-image-preview": "large" } },
   other: process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT ? { "google-adsense-account": process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT } : undefined,
   openGraph: {
     type: "website",

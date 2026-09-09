@@ -33,7 +33,7 @@ export default function CookiesPage() {
         </p>
         <h2>Cómo cambiar preferencias</h2>
         <p><PrivacyChoices /></p>
-        <p>Cuando Google ofrece un mensaje de consentimiento para tu ubicación, el enlace «Opciones de privacidad» permite volver a abrirlo. También puedes gestionar la personalización en <a href="https://myadcenter.google.com/">Mi centro de anuncios de Google</a> y consultar <a href="https://policies.google.com/technologies/cookies?hl=es">qué cookies utiliza Google</a>.</p>
+        <p>El enlace «Opciones de privacidad» vuelve a abrir el mensaje de Google cuando está disponible para tu ubicación. Si hace falta, te lleva primero al inicio para cargarlo. Si el panel no aparece, comprueba que tu navegador permite cargar las herramientas de Google; su disponibilidad también depende de tu ubicación. Puedes gestionar la personalización en <a href="https://myadcenter.google.com/">Mi centro de anuncios de Google</a> y consultar <a href="https://policies.google.com/technologies/cookies?hl=es">qué cookies utiliza Google</a>.</p>
         <p>
           Además de las opciones de consentimiento que aparezcan en el sitio, puedes revisar la configuración de privacidad del navegador para bloquear, eliminar o limitar cookies. Si bloqueas cookies no esenciales, el contenido seguirá siendo accesible, aunque algunas mediciones o funciones externas podrían no operar igual.
         </p>

@@ -6,7 +6,7 @@ import { absoluteUrl, siteConfig } from "@/lib/site";
 
 const pageTitle = "Calculadora de precio de impresión 3D gratis";
 const pageDescription =
-  "Calcula el precio de una impresión 3D según material, gramos, tiempo de impresión, electricidad, mano de obra, fallos, margen e IVA. Herramienta gratuita para presupuestar piezas 3D.";
+  "Calcula el precio de una impresión 3D según material, gramos, tiempo de impresión, electricidad, mano de obra, fallos, recargo e IVA. Herramienta gratuita para presupuestar piezas 3D.";
 
 const faqs = [
   {
@@ -17,7 +17,7 @@ const faqs = [
   {
     question: "¿Cómo se calcula el precio de una impresión 3D?",
     answer:
-      "Se suman material, electricidad, coste de máquina, mano de obra y riesgo de fallo. Después se añade el margen comercial y, si corresponde, el IVA."
+      "Se suman material, electricidad, coste de máquina, mano de obra y riesgo de fallo. Después se añade el recargo sobre coste y, si corresponde, el IVA."
   },
   {
     question: "¿Cuánto se cobra por hora de impresión 3D?",
@@ -45,9 +45,9 @@ const faqs = [
       "Normalmente pesa menos que el material, el tiempo de máquina o la mano de obra, pero en impresiones largas y con cama caliente puede tener un impacto apreciable."
   },
   {
-    question: "¿Qué margen debería aplicar?",
+    question: "¿Cómo se aplica el recargo sobre coste?",
     answer:
-      "Depende de tu coste real, mercado y nivel de servicio. Un margen orientativo puede empezar alrededor del 20-40 %, pero debe ajustarse al riesgo, la calidad exigida y el tipo de cliente."
+      "Se aplica al coste calculado antes del IVA. Por ejemplo, un coste de 100 € con un recargo del 30 % da un precio de 130 € sin IVA. El beneficio representa entonces el 23,08 % del precio de venta. El porcentaje elegido depende de tus costes, riesgo y nivel de servicio."
   }
 ];
 
@@ -121,7 +121,7 @@ export default function PrintPriceCalculatorPage() {
             Calculadora de precio de impresión 3D
           </h1>
           <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-600">
-            Calcula el coste real de una pieza impresa en 3D teniendo en cuenta material, tiempo de máquina, electricidad, mano de obra, desgaste, fallos, margen comercial e IVA.
+            Calcula el coste real de una pieza impresa en 3D teniendo en cuenta material, tiempo de máquina, electricidad, mano de obra, desgaste, fallos, recargo sobre coste e IVA.
           </p>
           <p className="mt-4 max-w-3xl rounded-lg border border-blue-100 bg-blue-50 p-4 text-sm leading-6 text-blue-950">
             Pensada para impresión 3D FDM con PLA, PETG, TPU, ABS, ASA, Nylon u otros materiales. Los valores iniciales son orientativos y puedes adaptarlos a tu impresora, taller o presupuesto.
@@ -141,7 +141,7 @@ function SeoContent() {
       <div className="article-body">
         <h2>Cómo calcular el precio de una impresión 3D</h2>
         <p>
-          El precio de una impresión 3D no depende solo de los gramos de filamento. Para presupuestar con criterio hay que considerar material, tiempo de máquina, electricidad, mano de obra, desgaste, fallos, margen comercial e impuestos cuando correspondan.
+          El precio de una impresión 3D no depende solo de los gramos de filamento. Para presupuestar con criterio hay que considerar material, tiempo de máquina, electricidad, mano de obra, desgaste, fallos, recargo sobre coste e impuestos cuando correspondan.
         </p>
         <p>
           Esta calculadora está orientada a FDM y ayuda a separar cada concepto para no cobrar una pieza por debajo de su coste real. También resulta útil para comparar materiales, estimar lotes y explicar un presupuesto a un cliente.
@@ -150,7 +150,7 @@ function SeoContent() {
         <h2>Fórmula para calcular el coste de una pieza impresa en 3D</h2>
         <p>Una fórmula práctica para empezar es:</p>
         <p>
-          <strong>Precio = material + electricidad + máquina + mano de obra + riesgo de fallo + margen + IVA</strong>
+          <strong>Precio = material + electricidad + máquina + mano de obra + riesgo de fallo + recargo + IVA</strong>
         </p>
         <p>
           La fórmula no sustituye el criterio técnico, pero evita el error habitual de cobrar solo el filamento. En piezas complejas, el tiempo de preparación y postprocesado puede pesar tanto como el material.
@@ -223,7 +223,7 @@ function SeoContent() {
 
         <h2>Ejemplo de cálculo</h2>
         <p>
-          Imagina una pieza de PLA de 80 g con 5 horas de impresión, 10 minutos de preparación, mano de obra a 15 €/h, 10 % de riesgo de fallo y 30 % de margen. Con un filamento de 20 €/kg, electricidad a 0,25 €/kWh, impresora de 150 W y desgaste de 1 €/h, el coste aproximado sería:
+          Imagina una pieza de PLA de 80 g con 5 horas de impresión, 10 minutos de preparación, mano de obra a 15 €/h, 10 % de riesgo de fallo y 30 % de recargo sobre coste. Con un filamento de 20 €/kg, electricidad a 0,25 €/kWh, impresora de 150 W y desgaste de 1 €/h, el coste aproximado sería:
         </p>
         <ul>
           <li>Material: 1,60 €</li>
@@ -231,7 +231,7 @@ function SeoContent() {
           <li>Máquina/desgaste: 5,00 €</li>
           <li>Mano de obra: 2,50 €</li>
           <li>Riesgo de fallo aproximado: 0,93 €</li>
-          <li>Margen aproximado: 3,06 €</li>
+          <li>Recargo sobre coste: 3,06 €</li>
         </ul>
         <p>
           El precio sin IVA estaría alrededor de 13,28 €. Con IVA del 21 %, el precio orientativo sería aproximadamente 16,07 € por unidad.

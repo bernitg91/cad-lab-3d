@@ -4,7 +4,24 @@ import { absoluteUrl } from "@/lib/site";
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUpdatedAt = new Date("2026-08-20");
+  // Editorial revision dates, never the current build time.
+  const revisedPages: Record<string, string> = {
+    "": "2026-09-09",
+    "/blog": "2026-09-09",
+    "/laboratorio-tolerancias-fdm": "2026-09-09",
+    "/recursos": "2026-09-09",
+    "/calculadora-precio-impresion-3d": "2026-09-09",
+    "/calculadora-peso-pieza-3d": "2026-09-09",
+    "/selector-material-impresion-3d": "2026-09-09",
+    "/casos-practicos-impresion-3d": "2026-09-09",
+    "/impresion-3d-personalizada": "2026-09-09",
+    "/licencias-imagenes": "2026-09-09",
+    "/sobre-mi": "2026-09-09",
+    "/contacto": "2026-09-09",
+    "/aviso-legal": "2026-09-09",
+    "/politica-privacidad": "2026-09-09",
+    "/politica-cookies": "2026-09-09"
+  };
   const staticPages = [
     "",
     "/blog",
@@ -38,7 +55,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...staticPages.map((page) => ({
       url: absoluteUrl(page || "/"),
-      lastModified: ["", "/laboratorio-tolerancias-fdm", "/recursos", "/sobre-mi", "/contacto", "/aviso-legal", "/politica-privacidad", "/politica-cookies"].includes(page) ? new Date("2026-09-09") : siteUpdatedAt
+      ...(revisedPages[page] ? { lastModified: new Date(revisedPages[page]) } : {})
     })),
     ...getAllArticles().map((article) => ({
       url: absoluteUrl(`/blog/${article.slug}`),

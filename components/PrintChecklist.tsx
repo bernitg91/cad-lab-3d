@@ -111,7 +111,7 @@ export function PrintChecklist() {
               Descargar .txt
             </button>
           </div>
-          {message ? <p className="mt-4 rounded-md bg-teal-50 p-3 text-sm font-semibold text-teal-800">{message}</p> : null}
+          <p role="status" className="mt-4 text-sm font-semibold text-teal-800">{message}</p>
         </aside>
       </div>
     </section>

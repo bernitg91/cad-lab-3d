@@ -4,6 +4,12 @@ export const siteConfig = {
   description:
     "Aprende diseño CAD e impresión 3D con guías prácticas, modelos paramétricos descargables, calculadoras y análisis de piezas reales.",
   authorName: "Bernat Torres Guasch",
+  socialImage: {
+    image: "/images/article-photos/disenar-encajes-clips-impresion-3d.webp",
+    width: 900,
+    height: 1200,
+    alt: "Adaptador circular negro impreso en 3D, del archivo propio de CAD Lab 3D"
+  },
   contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "bbernat.torres@gmail.com",
   locale: "es_ES"
 };

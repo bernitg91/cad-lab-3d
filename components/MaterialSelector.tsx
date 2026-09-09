@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { eligibleMaterials } from "@/lib/calculations";
 
 type Option = "baja" | "media" | "alta";
 type Material = {
@@ -88,7 +89,7 @@ export function MaterialSelector() {
       material.summary = material.notes.slice(0, 2).join(" ");
     }
 
-    return materials.sort((a, b) => b.score - a.score);
+    return eligibleMaterials(materials, flexible).sort((a, b) => b.score - a.score);
   }, [detail, easyPrint, flexible, heat, impact, outdoor]);
 
   const winner = results[0];
@@ -109,9 +110,10 @@ export function MaterialSelector() {
           </div>
         </form>
 
-        <aside className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm lg:sticky lg:top-28">
+        <aside aria-live="polite" className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm lg:sticky lg:top-28">
           <p className="text-sm font-black uppercase tracking-wide text-teal-700">Recomendación</p>
           <h2 className="mt-2 text-3xl font-black text-slate-950">{winner.name}</h2>
+          {flexible && <p className="mt-3 rounded-md bg-blue-50 p-3 text-sm leading-6 text-blue-900">La flexibilidad es un requisito: entre estos materiales solo se propone TPU. Comprueba la dureza y la ficha del grado concreto{outdoor || heat === "alta" ? ", especialmente su resistencia al exterior y a la temperatura de uso" : ""}. La facilidad de impresión o el detalle no sustituyen esa comprobación.</p>}
           <p className="mt-3 text-sm leading-6 text-slate-600">{winner.summary || "Ajusta los criterios para obtener una recomendación más concreta."}</p>
           <div className="mt-5 grid gap-3">
             {results.slice(0, 4).map((material) => (

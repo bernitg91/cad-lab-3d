@@ -6,7 +6,7 @@ Producción actual: `https://cadlab3d.com`.
 
 ## Requisitos
 
-- Node.js 20 o superior recomendado.
+- Node.js 24 LTS (también utilizado en CI y producción).
 - npm.
 
 ## Instalación
@@ -36,7 +36,6 @@ Crea `.env.local` a partir de `.env.example`:
 ```bash
 NEXT_PUBLIC_SITE_URL=https://cadlab3d.com
 NEXT_PUBLIC_CONTACT_EMAIL=bbernat.torres@gmail.com
-NEXT_PUBLIC_AUTHOR_NAME=
 NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=
 NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT=
 NEXT_PUBLIC_ADSENSE_HOME_FEED_SLOT=
@@ -50,7 +49,7 @@ VERCEL_URL=
 
 `NEXT_PUBLIC_CONTACT_EMAIL` define el email mostrado en contacto, páginas legales y formularios de servicios. El formulario prepara un email con `mailto:` para que el usuario lo revise antes de enviarlo.
 
-`NEXT_PUBLIC_AUTHOR_NAME` permite publicar el nombre real del responsable editorial cuando este autorice hacerlo. Si queda vacío, la firma visible continúa siendo `CAD Lab 3D`; no uses nombres o credenciales inventados.
+El responsable editorial confirmado es Bernat Torres Guasch y se configura en `lib/site.ts`.
 
 `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` publica la metaetiqueta de verificación de Google Search Console. Configúrala solo con el token que entregue la propiedad real del dominio.
 
@@ -197,7 +196,9 @@ npm audit
 npm outdated
 ```
 
-No uses `npm audit fix --force` si propone bajar Next a una versión antigua o romper el proyecto. En este proyecto se prioriza estabilidad con Next moderno. La revisión actual muestra 2 avisos moderados internos de Next relacionados con `postcss`; el arreglo automático propone un cambio rompiente, así que se documenta y se revisará cuando exista una actualización segura.
+No uses `npm audit fix --force` para resolver un aviso sin revisar su impacto. La auditoría del 9 de septiembre de 2026 no detectó vulnerabilidades conocidas; ese resultado corresponde a esa fecha y al lockfile revisado.
+
+`npm run build` ejecuta ESLint, las pruebas de cálculo, las comprobaciones de imágenes, la compilación de Next y las validaciones de SEO y enlaces. La CI utiliza `npm ci` y bloquea vulnerabilidades altas o críticas. `npm run validate:site` y `npm run validate:internal-links` permiten repetir los controles sobre una compilación existente. Consultar `technical-maintenance.md` para el alcance y mantenimiento.
 
 ## Preparar para publicar
 

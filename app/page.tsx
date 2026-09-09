@@ -36,11 +36,11 @@ export default function HomePage() {
     <CadExperience />
     <section className="cad-section cad-photo-story" aria-labelledby="primera-capa-title">
       <VisualFigure visual={getArticleVisual("calibrar-impresora-3d-piezas-funcionales")!} href="/blog/calibrar-impresora-3d-piezas-funcionales" className="cad-process-photo" sizes="(max-width: 899px) 90vw, 58vw" caption="Detalle real de la deposición de la primera capa. Fotografía de referencia externa." />
-      <div className="cad-photo-story-copy"><p className="cad-eyebrow">EL DISEÑO TOCA LA MESA</p><h2>Todo empieza<br />con una<br /><span>buena primera capa.</span></h2><p>El modelo pone la forma. La impresión pone a prueba las decisiones: apoyo, orientación, recorrido y unión entre capas.</p><Link href="/blog/calibrar-impresora-3d-piezas-funcionales" className="cad-text-link">Preparar la primera impresión <span aria-hidden="true">↗</span></Link></div>
+      <div className="cad-photo-story-copy"><p className="cad-eyebrow">EL DISEÑO TOCA LA MESA</p><h2 id="primera-capa-title">Todo empieza<br />{" "}con una<br />{" "}<span>buena primera capa.</span></h2><p>El modelo pone la forma. La impresión pone a prueba las decisiones: apoyo, orientación, recorrido y unión entre capas.</p><Link href="/blog/calibrar-impresora-3d-piezas-funcionales" className="cad-text-link">Preparar la primera impresión <span aria-hidden="true">↗</span></Link></div>
     </section>
     <section id="aprende" className="cad-section cad-intro">
       <p className="cad-eyebrow">APRENDER HACIENDO</p>
-      <h2>Entre el archivo y el objeto<br />hay decisiones.<br /><span>Aquí las hacemos comprensibles.</span></h2>
+      <h2>Entre el archivo y el objeto<br />{" "}hay decisiones.<br />{" "}<span>Aquí las hacemos comprensibles.</span></h2>
       <div className="cad-intro-bottom"><p>CAD Lab 3D es un proyecto personal de aprendizaje en diseño industrial y fabricación digital. Un lugar para entender cómo se modela una pieza, por qué falla una impresión y qué merece la pena comprobar.</p><Link href="/sobre-mi" className="cad-text-link">Conoce el proyecto <span aria-hidden="true">↗</span></Link></div>
       <div className="cad-learning-grid">{routes.map(route => <article className="cad-learning-card" key={route.mark}>
         <div className="cad-card-top"><span className="cad-eyebrow">{route.label}</span><span className="cad-card-mark" aria-hidden="true">{route.mark}</span></div>

@@ -4,11 +4,16 @@ import { useEffect, useRef, useState } from "react";
 
 type Props = { stage: number; paused: boolean; angle: number };
 
-export function CadModel(props: Props) {
+export function CadModel({ stage, paused, angle }: Props) {
   const mount = useRef<HTMLDivElement>(null);
-  const settings = useRef(props);
+  const settings = useRef({ stage, paused, angle });
+  const requestRender = useRef<() => void>(() => {});
   const [status, setStatus] = useState<"loading" | "ready" | "fallback">("loading");
-  settings.current = props;
+
+  useEffect(() => {
+    settings.current = { stage, paused, angle };
+    requestRender.current();
+  }, [stage, paused, angle]);
 
   useEffect(() => {
     let disposed = false;
@@ -73,15 +78,15 @@ export function CadModel(props: Props) {
       const grid = new THREE.GridHelper(6,24,0x9bb5d0,0xb4c8db); grid.position.y=-0.151; grid.scale.z=0.83; scene.add(grid);
       const axes = new THREE.AxesHelper(0.85); axes.position.set(-2.8,-0.14,2.1); scene.add(axes);
 
-      let visible = true, frame = 0, lastTime = 0, rotation = -0.35, previousKey = "";
+      let visible = true, frame = 0, lastTime = 0, rotation = -0.35, contextLost = false;
+      const schedule = () => {
+        if (!disposed && !contextLost && visible && !document.hidden && !frame) frame = requestAnimationFrame(render);
+      };
       const render = (time: number) => {
-        frame = requestAnimationFrame(render);
-        if (!visible || document.hidden) { lastTime=time; return; }
+        frame = 0;
+        if (!visible || document.hidden || disposed || contextLost) return;
         const s=settings.current;
-        const stateKey=`${s.stage}:${s.angle}:${s.paused}`;
-        const elapsed=Math.min((time-lastTime)/1000,0.05); lastTime=time;
-        if(s.paused && previousKey===stateKey) return;
-        previousKey=stateKey;
+        const elapsed=lastTime ? Math.min((time-lastTime)/1000,0.05) : 0; lastTime=time;
         if(!s.paused) rotation+=elapsed*0.085;
         group.rotation.y=rotation+s.angle*Math.PI/4;
         solid.visible=s.stage!==1;
@@ -91,21 +96,28 @@ export function CadModel(props: Props) {
         blue.opacity=s.stage===0?0.72:1;
         blue.transparent=s.stage===0;
         renderer.render(scene,camera);
+        if (!s.paused) schedule();
       };
+      const invalidate = () => { lastTime = 0; schedule(); };
+      const stop = () => { cancelAnimationFrame(frame); frame = 0; lastTime = 0; };
+      requestRender.current = invalidate;
       const resize = () => {
         const width=element.clientWidth, height=element.clientHeight;
         if(!width||!height) return;
         renderer.setSize(width,height); camera.aspect=width/height;
         camera.position.set(7.8,8.2,10.5).multiplyScalar(width/height<0.8?1.28:1);
-        camera.updateProjectionMatrix(); previousKey="";
+        camera.updateProjectionMatrix(); invalidate();
       };
       const observer = new ResizeObserver(resize); observer.observe(element);
-      const intersection=new IntersectionObserver(([entry])=>{visible=entry.isIntersecting; previousKey="";}); intersection.observe(element);
-      const lost=(event:Event)=>{event.preventDefault(); setStatus("fallback"); cancelAnimationFrame(frame);};
+      const intersection=new IntersectionObserver(([entry])=>{visible=entry.isIntersecting; if (visible) invalidate(); else stop();}); intersection.observe(element);
+      const visibility = () => { if (document.hidden) stop(); else invalidate(); };
+      document.addEventListener("visibilitychange", visibility);
+      const lost=(event:Event)=>{event.preventDefault(); contextLost = true; setStatus("fallback"); stop();};
       renderer.domElement.addEventListener("webglcontextlost",lost);
-      resize(); frame=requestAnimationFrame(render); setStatus("ready");
+      resize(); schedule(); setStatus("ready");
       cleanup=()=>{
-        cancelAnimationFrame(frame); observer.disconnect(); intersection.disconnect();
+        stop(); requestRender.current = () => {}; observer.disconnect(); intersection.disconnect();
+        document.removeEventListener("visibilitychange", visibility);
         renderer.domElement.removeEventListener("webglcontextlost",lost);
         const geometries=new Set<InstanceType<typeof THREE.BufferGeometry>>();
         const materials=new Set<InstanceType<typeof THREE.Material>>();
