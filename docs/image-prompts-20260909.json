@@ -1,0 +1,27 @@
+{
+  "date": "2026-09-09",
+  "tool": "built-in image_gen.imagegen",
+  "purpose": "AI product concepts; not evidence of real fabrication or sales.",
+  "images": [
+    {
+      "key": "drawer-organizers",
+      "prompt": "Use case: product-mockup\nAsset type: Landscape editorial concept image for a Spanish CADLAB3D guide about potential 3D printed products to validate for sale. This is an AI concept, not evidence of real fabrication or sales.\nScene: a partly open shallow light wood drawer on a tidy desk.\nSubject: modular drawer organizers made of separate navy blue and light grey FDM printed rectangular trays, realistic small rounded corners and uniform wall thickness, arranged side by side. Everyday unbranded pens in one long tray and a small group of real screws in another; one empty tray demonstrates modularity. Clear plausible geometry and real desktop scale.\nStyle: photorealistic product photography, visible subtle fine FDM layer lines on the plastic surfaces, natural bright side light, restrained low clutter.\nComposition: one coherent three-quarter overhead landscape photograph, approximately 1536 by 1024 pixels, product centered and wholly visible.\nConstraints: no people, logos, brands, watermarks, text, captions, collages or labels.",
+      "asset": "/images/library/drawer-organizers.webp"
+    },
+    {
+      "key": "desk-sign",
+      "prompt": "Use case: product-mockup\nAsset type: Landscape editorial concept image for a Spanish CADLAB3D guide about potential 3D printed products to validate for sale. This is an AI concept, not evidence of real fabrication or sales.\nScene: a tidy understated reception desk in pale wood, calm neutral background.\nSubject: one freestanding custom desk sign holder with a simple wide cobalt FDM printed base and an ivory interchangeable rectangular nameplate slotted securely into it. The nameplate is completely blank. Beside it lies a second blank interchangeable ivory nameplate to demonstrate replacement. Practical manufacturable geometry, small rounded edges, uniform thickness, realistic desk sign scale, fine visible horizontal FDM layer lines.\nStyle: photorealistic editorial product photography with natural bright side light, crisp tactile plastic, low clutter.\nComposition: single coherent landscape image, approximately 1536 by 1024 pixels, three-quarter eye-level view with the whole sign and second plate visible.\nConstraints: absolutely no visible text, letters or markings on either nameplate; no people, logos, brands, watermarks, captions or collage.",
+      "asset": "/images/library/desk-sign.webp"
+    },
+    {
+      "key": "tool-holders",
+      "prompt": "Use case: product-mockup\nAsset type: Landscape editorial concept image for a Spanish CADLAB3D guide about potential 3D printed products to validate for sale. This is an AI concept, not evidence of real fabrication or sales.\nScene: a simple light neutral workshop pegboard mounted vertically on the wall above a clear pale workbench.\nSubject: modular wall mounted small-tool holders and cable hooks made of muted cobalt FDM printed plastic with fine visible layer lines. One compact holder securely supports a few unbranded small screwdrivers and pliers; two separate sturdy rounded hooks support a neatly looped black cable. Parts have realistic attachment points, modest scale, plausible uniform wall thickness and manufacturable geometry.\nStyle: photorealistic editorial product photography, natural bright side light, practical tidy workshop atmosphere, low clutter.\nComposition: one coherent landscape scene, approximately 1536 by 1024 pixels, near-frontal three-quarter view, full arrangement visible.\nConstraints: no brands, people, logos, watermarks, captions, text, impossible floating tools or collage.",
+      "asset": "/images/library/tool-holders.webp"
+    },
+    {
+      "key": "plant-labels",
+      "prompt": "Use case: product-mockup\nAsset type: Landscape editorial concept image for a Spanish CADLAB3D guide about potential 3D printed products to validate for sale. This is an AI concept, not evidence of real fabrication or sales.\nScene: a bright tidy potting area beside a window, pale work surface and a few small potted herbs in plain simple pots with drainage saucers.\nSubject: a set of terracotta-colored FDM printed plant labels with completely blank rectangular label faces and simple pointed stakes. Several loose labels lie neatly beside the herbs, and one label is planted in the soil of a small herb pot. Realistic small scale, practical single-piece flat printable geometry, slightly rounded corners, fine visible FDM layer lines. The drainage saucers keep the setting dry and believable.\nStyle: photorealistic editorial product photography, natural bright side light, gentle shadows, low clutter.\nComposition: one coherent landscape scene, approximately 1536 by 1024 pixels, three-quarter close view showing both blank faces and stakes clearly.\nConstraints: no visible text or embossed markings on any label, no people, brands, logos, watermarks, captions, collage or overly elaborate plant-label shapes.",
+      "asset": "/images/library/plant-labels.webp"
+    }
+  ]
+}

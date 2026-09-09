@@ -136,6 +136,17 @@ function readPhotoFamilies() {
     const family = familyByPath.get(preview.source) ?? preview.source;
     addFamilyMember(preview.image, family, ownerByFamily.get(family));
   }
+  const media = JSON.parse(fs.readFileSync(path.join(projectRoot, "content/editorial-media.json"), "utf8"));
+  const mediaKeys = new Set();
+  for (const item of media) {
+    if (mediaKeys.has(item.key)) fail("clave editorial repetida: " + item.key);
+    mediaKeys.add(item.key);
+    const file = path.join(projectRoot, "public", item.image);
+    if (!fs.existsSync(file)) fail("falta imagen editorial: " + item.image);
+    if (crypto.createHash("sha256").update(fs.readFileSync(file)).digest("hex") !== item.sha256) fail("hash editorial incorrecto: " + item.image);
+    if (!item.alt || !item.creator || item.width < 1 || item.height < 1) fail("metadatos editoriales incompletos: " + item.key);
+    if (item.kind !== "ai-concept" && (!item.licenseUrl || !item.sourceUrl || !item.originalUrl)) fail("crédito editorial incompleto: " + item.key);
+  }
   return { familyByPath, ownerByFamily };
 }
 

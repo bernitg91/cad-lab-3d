@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { guideArticles } from "@/lib/guide-articles";
 import { ArticleCard } from "@/components/ArticleCard";
 import { getAllArticles } from "@/lib/articles";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Guías técnicas de CAD, FDM, materiales y FEM",
-  description: "Guías completas para modelar, imprimir, seleccionar materiales, simular y documentar proyectos técnicos.",
+  title: "Guías de CAD, renderizado e impresión 3D",
+  description: "Compara programas CAD y de renderizado, filamento, resina, polvo y metal. Aprende a fabricar, calcular costes y preparar productos para vender.",
   path: "/guias"
 });
 
 const guides = [
+  ...guideArticles.map(guide => ({ title: guide.title, href: guide.href!, text: guide.description })),
   { title: "Resolver fallos FDM", href: "/solucionar-problemas-impresion-3d", text: "Identifica el síntoma, comprueba una causa cada vez y valida el cambio con una muestra pequeña." },
   { title: "Impresión 3D FDM", href: "/guia-impresion-3d-fdm", text: "Desde el diseño y el STL hasta orientación, laminado, calibración, coste y control final." },
   { title: "Materiales FDM", href: "/guia-materiales-fdm", text: "Decide entre PLA, PETG, TPU, ABS, ASA y Nylon con criterios de uso y fabricación." },
@@ -33,7 +35,7 @@ export default function GuidesPage() {
       <div className="mt-10 divide-y divide-slate-200 border-y border-slate-200">
         {guides.map((guide, index) => (
           <Link key={guide.href} href={guide.href} className="group grid gap-3 py-7 md:grid-cols-[80px_280px_1fr] md:items-center">
-            <span className="text-sm font-black text-teal-700">0{index + 1}</span>
+            <span className="text-sm font-black text-teal-700">{String(index + 1).padStart(2, "0")}</span>
             <h2 className="text-2xl font-black text-slate-950 group-hover:text-blue-700">{guide.title}</h2>
             <p className="text-sm leading-6 text-slate-600">{guide.text}</p>
           </Link>

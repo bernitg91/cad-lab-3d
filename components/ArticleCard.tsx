@@ -6,12 +6,14 @@ import { getArticlePhoto, isDocumentaryArticlePhoto } from "@/lib/article-photos
 import type { ArticleMeta } from "@/types/article";
 import { VisualFigure } from "@/components/VisualFigure";
 import { getArticleVisual } from "@/lib/visuals";
+import { getEditorialVisual } from "@/lib/editorial-media";
 
 export function ArticleCard({ article }: { article: ArticleMeta }) {
   const photo = getArticlePhoto(article.slug);
   const showPhoto = isDocumentaryArticlePhoto(photo);
   const illustration = getArticleIllustration(article.slug);
-  const visual = getArticleVisual(article.slug);
+  const href = article.href ?? `/blog/${article.slug}`;
+  const visual = article.editorialMedia ? getEditorialVisual(article.editorialMedia) : getArticleVisual(article.slug);
   const visualLabel = showPhoto
     ? "Pieza fotografiada"
     : illustration?.kind === "original-diagram"
@@ -24,9 +26,9 @@ export function ArticleCard({ article }: { article: ArticleMeta }) {
     <article className="group relative flex h-full flex-col border-t-2 border-slate-950 bg-white py-5 pl-5 pr-1">
       <span className="absolute left-0 top-5 h-12 w-1 bg-teal-600" aria-hidden="true" />
       <div className="flex min-w-0 flex-1 flex-col">
-        {visual && <VisualFigure visual={visual} href={`/blog/${article.slug}`} className="cad-index-photo" />}
+        {visual && <VisualFigure visual={visual} href={href} className="cad-index-photo" />}
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-xs font-semibold uppercase tracking-[0.12em]">
-          <Link href={getCategoryGuidePath(article.categorySlug)} className="text-teal-800 hover:text-teal-950">
+          <Link href={article.href ?? getCategoryGuidePath(article.categorySlug)} className="text-teal-800 hover:text-teal-950">
             {article.category}
           </Link>
           {visualLabel ? (
@@ -34,7 +36,7 @@ export function ArticleCard({ article }: { article: ArticleMeta }) {
           ) : null}
         </div>
         <h2 className="mt-3 font-display text-[1.85rem] font-black leading-[1.03] text-slate-950">
-          <Link href={`/blog/${article.slug}`} className="group-hover:text-blue-700">
+          <Link href={href} className="group-hover:text-blue-700">
             {article.title}
           </Link>
         </h2>
@@ -43,8 +45,8 @@ export function ArticleCard({ article }: { article: ArticleMeta }) {
           <span className="font-mono text-xs font-semibold uppercase tracking-[0.1em] text-slate-500">
             Publicado el {formatDate(article.date)}
           </span>
-          <Link className="shrink-0 text-sm font-black text-blue-700 hover:text-blue-900" href={`/blog/${article.slug}`}>
-            Abrir nota →
+          <Link className="shrink-0 text-sm font-black text-blue-700 hover:text-blue-900" href={href}>
+            Leer →
           </Link>
         </div>
       </div>

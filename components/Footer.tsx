@@ -3,12 +3,15 @@ import Link from "next/link";
 import { PrivacyChoices } from "@/components/PrivacyChoices";
 
 const learningLinks = [
+  ["Tipos de impresoras 3D", "/tipos-impresoras-3d"],
+  ["Qué vender con impresión 3D", "/que-vender-impresion-3d"],
+  ["Programas de modelado", "/programas-modelado-3d"],
+  ["KeyShot frente a Blender", "/keyshot-vs-blender-renderizado"],
+  ["Filamento frente a resina", "/filamento-vs-resina"],
+  ["Impresión en polvo: SLS y MJF", "/impresion-3d-polvo-sls-mjf"],
+  ["Impresión 3D de metal", "/impresion-3d-metal"],
   ["Resolver fallos de impresión", "/solucionar-problemas-impresion-3d"],
-  ["CAD paramétrico", "/guia-cad-parametrico"],
-  ["Impresión 3D FDM", "/guia-impresion-3d-fdm"],
-  ["Materiales FDM", "/guia-materiales-fdm"],
-  ["Simulación FEM", "/guia-simulacion-fem"],
-  ["Documentación técnica", "/guia-documentacion-tecnica"]
+  ["Todas las guías técnicas", "/guias"]
 ];
 
 const resourceLinks = [

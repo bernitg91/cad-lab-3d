@@ -3,6 +3,13 @@
 import { usePathname } from "next/navigation";
 
 const monetizableStaticPaths = new Set([
+  "/tipos-impresoras-3d",
+  "/filamento-vs-resina",
+  "/impresion-3d-polvo-sls-mjf",
+  "/impresion-3d-metal",
+  "/programas-modelado-3d",
+  "/keyshot-vs-blender-renderizado",
+  "/que-vender-impresion-3d",
   "/",
   "/guia-cad-parametrico",
   "/guia-impresion-3d-fdm",

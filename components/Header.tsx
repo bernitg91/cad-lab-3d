@@ -4,9 +4,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 const navItems = [
-  { href: "/guia-cad-parametrico", label: "Diseño CAD" },
-  { href: "/guia-impresion-3d-fdm", label: "Impresión 3D" },
-  { href: "/solucionar-problemas-impresion-3d", label: "Resolver fallos" },
+  { href: "/tipos-impresoras-3d", label: "Impresoras" },
+  { href: "/que-vender-impresion-3d", label: "Qué vender" },
+  { href: "/programas-modelado-3d", label: "CAD y render" },
   { href: "/blog", label: "Artículos" }
 ];
 export function Header() {

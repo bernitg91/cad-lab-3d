@@ -30,7 +30,7 @@ export function ArticleExplorer({ articles }: { articles: ArticleMeta[] }) {
             value={query}
             type="search"
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="Ej. filamento, FEM, Creo..."
+            placeholder="Ej. Blender, resina, metal, vender..."
             className="h-11 rounded-md border border-slate-300 px-3 text-base outline-none focus:border-blue-600 focus:ring-4 focus:ring-blue-100"
           />
         </label>

@@ -10,7 +10,8 @@ const chapters = [
   { name: "Comprueba", view: "Pieza completa", title: "La medida real cierra el diseño.", text: "Una cota en pantalla no garantiza un ajuste. Imprime una probeta, mide y registra el resultado antes de fabricar la pieza definitiva.", href: "/laboratorio-tolerancias-fdm", link: "Descargar la probeta", note: "Modelo didáctico. No representa una pieza fabricada ni ensayada." }
 ];
 
-export function CadExperience() {
+export function CadExperience({ embedded = false }: { embedded?: boolean }) {
+  const Heading = embedded ? "h2" : "h1";
   const section = useRef<HTMLElement>(null);
   const [stage, setStage] = useState(0);
   const [paused, setPaused] = useState(false);
@@ -43,12 +44,12 @@ export function CadExperience() {
   }, [manual, reduced]);
 
   return (
-    <section ref={section} className="cad-experience" aria-label="Del diseño CAD a la impresión 3D">
+    <section ref={section} className={`cad-experience${embedded ? " cad-experience-embedded" : ""}`} aria-label="Del diseño CAD a la impresión 3D">
       <div className="cad-sticky">
         <div className="cad-hero-grid">
           <div className="cad-hero-copy">
             <p className="cad-eyebrow"><span className="cad-dot" /> DISEÑO CAD · IMPRESIÓN 3D</p>
-            <h1>De la idea.<br />Al modelo.<br /><span>A tu pieza.</span></h1>
+            <Heading>De la idea.<br />Al modelo.<br /><span>A tu pieza.</span></Heading>
             <p className="cad-hero-description">Aprende a diseñar piezas que puedas fabricar. Guías claras, herramientas útiles y decisiones explicadas paso a paso.</p>
             <div className="cad-actions">
               <Link className="cad-button cad-button-primary" href="/guias">Explorar las guías <span aria-hidden="true">↗</span></Link>

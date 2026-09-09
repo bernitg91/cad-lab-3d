@@ -6,6 +6,7 @@ import { getAllArticlePhotos } from "@/lib/article-photos";
 import { getAllArticles } from "@/lib/articles";
 import { createPageMetadata } from "@/lib/seo";
 import type { ArticlePhotoLicenseCode } from "@/types/article";
+import { editorialMedia } from "@/lib/editorial-media";
 import { portfolioItems } from "@/lib/portfolio";
 
 export const metadata: Metadata = createPageMetadata({
@@ -100,7 +101,7 @@ export default function ImageLicensesPage() {
   }
 
   return (
-    <main className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
       <Breadcrumbs
         items={[
           { label: "Licencias de imágenes" }
@@ -118,6 +119,20 @@ export default function ImageLicensesPage() {
           Las fotografías externas conservan autor, fuente y licencia; el material propio indica su método y sus límites. Esta página reúne <strong className="font-extrabold text-slate-950">{photos.length} fotografías documentales</strong>, <strong className="font-extrabold text-slate-950">{editorialRecreationCount} recreaciones editoriales fotorrealistas</strong>, <strong className="font-extrabold text-slate-950">{originalDiagramCount} láminas técnicas</strong> y <strong className="font-extrabold text-slate-950">{licensedReferenceCount} referencias con licencia</strong> que se muestran en los artículos activos.
         </p>
       </header>
+
+      <section className="mt-10 border-y border-slate-300 py-8" aria-labelledby="new-media">
+        <h2 id="new-media" className="font-display text-3xl font-bold text-slate-950">Fotografías, capturas y conceptos de las nuevas guías</h2>
+        <p className="mt-4 text-base leading-7 text-slate-600">Este registro adicional reúne {editorialMedia.length} imágenes de impresoras, programas, renders y conceptos de producto. Las fotografías y capturas externas conservan su licencia. Los cuatro conceptos asistidos por IA se identifican como ilustraciones y no documentan productos fabricados.</p>
+        <p className="mt-3 text-sm leading-6 text-slate-600">CC BY-SA permite el uso comercial con atribución y exige conservar la misma licencia en las adaptaciones de la imagen. Las versiones WebP de esas imágenes se ofrecen bajo la licencia indicada en cada ficha; esto no cambia la licencia del texto ni del conjunto de la web.</p>
+        <div className="mt-7 grid gap-x-8 gap-y-6 md:grid-cols-2">{editorialMedia.map(item => <article key={item.key} id={"media-" + item.key} className="scroll-mt-24 border-t border-slate-300 pt-5">
+          <h3 className="text-xl font-bold text-slate-950">{item.title}</h3>
+          <p className="mt-3 text-sm leading-6 text-slate-600">{item.caption}</p>
+          <p className="mt-3 text-sm leading-6">Autoría: <strong>{item.creator}</strong> · {item.licenseUrl ? <a className="text-blue-700 underline" href={item.licenseUrl}>{item.license}</a> : item.license}</p>
+          <p className="mt-2 text-sm leading-6 text-slate-600">{item.changes} Registro del {formatVerifiedDate(item.verifiedAt)}.</p>
+          {"additionalLicenseUrl" in item && item.additionalLicenseUrl && <p className="mt-2 text-sm"><a className="text-blue-700 underline" href={item.additionalLicenseUrl}>Licencia adicional del software mostrado</a></p>}
+          <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm font-semibold text-blue-700">{item.sourceUrl && <a href={item.sourceUrl} className="underline">Fuente y verificación</a>}{item.originalUrl && <a href={item.originalUrl} className="underline">Archivo de origen</a>}<a href={item.image} className="underline">Versión web</a></div>
+        </article>)}</div>
+      </section>
 
       <section id="archivo-propio" className="mt-10 border-y border-slate-300 py-8">
         <h2 className="font-display text-3xl font-bold text-slate-950">El archivo de piezas de CAD Lab 3D</h2>
@@ -301,6 +316,6 @@ export default function ImageLicensesPage() {
         Si detectas una atribución incompleta o un cambio en las condiciones de
         una fuente, indícalo desde la página de <Link className="font-bold text-blue-700 underline decoration-blue-300 underline-offset-2 hover:text-blue-900" href="/contacto">contacto</Link>. Revisaremos el registro y la imagen publicada.
       </aside>
-    </main>
+    </div>
   );
 }

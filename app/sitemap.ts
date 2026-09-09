@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllArticles } from "@/lib/articles";
+import { topicGuides } from "@/lib/topic-guides";
 import { absoluteUrl } from "@/lib/site";
 export const dynamic = "force-static";
 
@@ -61,6 +62,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: absoluteUrl(page || "/"),
       ...(revisedPages[page] ? { lastModified: new Date(revisedPages[page]) } : {})
     })),
+    ...[...topicGuides.map(guide => "/" + guide.slug), "/que-vender-impresion-3d"].map(page => ({ url: absoluteUrl(page), lastModified: new Date("2026-09-09") })),
     ...getAllArticles().map((article) => ({
       url: absoluteUrl(`/blog/${article.slug}`),
       lastModified: new Date(article.updatedDate || article.date)

@@ -19,6 +19,9 @@ export type ArticleMeta = {
   readingTime: string;
   author: string;
   featured?: boolean;
+  href?: string;
+  editorialMedia?: string;
+  goals?: string[];
 };
 
 export type Article = ArticleMeta & {

@@ -4,7 +4,9 @@ export const readingGoals = [
   { id: "empezar", label: "Empezar" },
   { id: "resolver", label: "Resolver un fallo" },
   { id: "comparar", label: "Comparar opciones" },
-  { id: "disenar", label: "Diseñar una pieza" }
+  { id: "disenar", label: "Diseñar una pieza" },
+  { id: "renderizar", label: "Renderizar" },
+  { id: "vender", label: "Preparar una venta" }
 ];
 
 const goalArticles: Record<string, string[]> = {
@@ -15,7 +17,7 @@ const goalArticles: Record<string, string[]> = {
 };
 
 export function matchesReadingGoal(article: ArticleMeta, goal: string) {
-  return goal === "todos" || (goalArticles[goal]?.includes(article.slug) ?? false);
+  return goal === "todos" || (article.goals?.includes(goal) ?? false) || (goalArticles[goal]?.includes(article.slug) ?? false);
 }
 
 export function normalizeSearch(text: string) {
