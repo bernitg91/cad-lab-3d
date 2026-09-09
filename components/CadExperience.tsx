@@ -28,7 +28,7 @@ export function CadExperience({ embedded = false }: { embedded?: boolean }) {
   }, []);
 
   useEffect(() => {
-    if (manual || reduced) return;
+    if (embedded || manual || reduced) return;
     let frame = 0;
     const update = () => {
       cancelAnimationFrame(frame);
@@ -41,7 +41,7 @@ export function CadExperience({ embedded = false }: { embedded?: boolean }) {
     };
     window.addEventListener("scroll", update, { passive: true });
     return () => { cancelAnimationFrame(frame); window.removeEventListener("scroll", update); };
-  }, [manual, reduced]);
+  }, [embedded, manual, reduced]);
 
   return (
     <section ref={section} className={`cad-experience${embedded ? " cad-experience-embedded" : ""}`} aria-label="Del diseño CAD a la impresión 3D">

@@ -1,3 +1,4 @@
+import "./diagnosis.css";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { printProblems } from "@/lib/print-problems";

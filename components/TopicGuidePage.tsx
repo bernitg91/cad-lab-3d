@@ -1,3 +1,4 @@
+import "@/app/topic-guides.css";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { VisualFigure } from "@/components/VisualFigure";
@@ -11,7 +12,7 @@ export function TopicGuidePage({ guide }: { guide: TopicGuide }) {
     <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd({ "@context": "https://schema.org", "@type": "TechArticle", headline: guide.title, description: guide.description, mainEntityOfPage: absoluteUrl(`/${guide.slug}`), author: { "@type": "Person", name: siteConfig.authorName, url: absoluteUrl("/sobre-mi") }, inLanguage: "es-ES", datePublished: "2026-09-09", dateModified: "2026-09-09" })} />
     <Breadcrumbs items={[{ label: "Guías", href: "/guias" }, { label: guide.shortTitle }]} />
     <header className="cad-topic-header"><p className="cad-eyebrow">{guide.category}</p><h1>{guide.title}</h1><p>{guide.lead}</p><div className="cad-topic-byline">Por <Link href="/sobre-mi">{siteConfig.authorName}</Link> · <time dateTime="2026-09-09">9 de septiembre de 2026</time></div></header>
-    <div className="cad-topic-cover"><VisualFigure visual={getEditorialVisual(guide.heroMedia)} className="cad-mag-photo cad-mag-photo-contain" sizes="(max-width: 800px) 90vw, 65vw" caption={guide.heroCaption} eager /><aside><p className="cad-eyebrow">PARA DECIDIR</p><p>{guide.takeaway}</p><Link href="/recursos">Herramientas para tu proyecto</Link></aside></div>
+    <div className="cad-topic-cover"><VisualFigure visual={getEditorialVisual(guide.heroMedia)} className="cad-mag-photo cad-mag-photo-contain" sizes="(max-width: 800px) 90vw, 65vw" caption={guide.heroCaption} frameRatio={16 / 10} eager /><aside><p className="cad-eyebrow">PARA DECIDIR</p><p>{guide.takeaway}</p><Link href="/recursos">Herramientas para tu proyecto</Link></aside></div>
     <div className="cad-topic-layout"><nav className="cad-topic-index" aria-label="En esta guía"><strong>En esta guía</strong>{guide.sections.map(section => <a key={section.id} href={`#${section.id}`}>{section.title}</a>)}<a href="#referencias">Fuentes y criterio editorial</a></nav>
       <div className="cad-topic-body">{guide.sections.map(section => <section id={section.id} key={section.id}>
         <h2>{section.title}</h2>

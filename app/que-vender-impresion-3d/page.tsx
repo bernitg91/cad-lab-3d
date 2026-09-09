@@ -1,3 +1,4 @@
+import "@/app/topic-guides.css";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { VisualFigure } from "@/components/VisualFigure";

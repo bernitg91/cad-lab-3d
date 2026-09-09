@@ -26,6 +26,7 @@ const utilityFont = IBM_Plex_Mono({
   subsets: ["latin"],
   weight: ["500", "600"],
   variable: "--font-utility",
+  preload: false,
   display: "swap"
 });
 
@@ -63,6 +64,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 
   return (
     <html lang="es" className={`${bodyFont.variable} ${displayFont.variable} ${utilityFont.variable}`}>
+      <head>{isProductionDeployment() && <link rel="preconnect" href="https://fundingchoicesmessages.google.com" />}</head>
       <body>
         <AdSenseScript
           enabled={isProductionDeployment()}

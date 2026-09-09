@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import Script from "next/script";
 
 const monetizableStaticPaths = new Set([
   "/tipos-impresoras-3d",
@@ -43,8 +44,9 @@ export function AdSenseScript({ enabled, articlePaths }: AdSenseScriptProps) {
   }
 
   return (
-    <script
+    <Script
       id="google-adsense"
+      strategy="lazyOnload"
       async
       crossOrigin="anonymous"
       src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${clientId}`}

@@ -9,6 +9,20 @@ export function CadModel({ stage, paused, angle }: Props) {
   const settings = useRef({ stage, paused, angle });
   const requestRender = useRef<() => void>(() => {});
   const [status, setStatus] = useState<"loading" | "ready" | "fallback">("loading");
+  const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    const element = mount.current;
+    if (!element) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setActive(true);
+        observer.disconnect();
+      }
+    }, { rootMargin: "200px" });
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     settings.current = { stage, paused, angle };
@@ -16,6 +30,7 @@ export function CadModel({ stage, paused, angle }: Props) {
   }, [stage, paused, angle]);
 
   useEffect(() => {
+    if (!active) return;
     let disposed = false;
     let cleanup = () => {};
     const element = mount.current;
@@ -130,7 +145,7 @@ export function CadModel({ stage, paused, angle }: Props) {
       };
     }).catch(()=> { if(!disposed) setStatus("fallback"); });
     return ()=>{disposed=true;cleanup();};
-  }, []);
+  }, [active]);
 
   return <div className="cad-model-viewport" role="img" aria-label="Modelo tridimensional didáctico de una brida rectangular con cuatro taladros y un alojamiento central. Las vistas muestran su geometría, capas y volumen completo.">
     <div className="cad-canvas" ref={mount} />

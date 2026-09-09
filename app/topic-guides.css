@@ -1,0 +1,50 @@
+
+.cad-topic-page { max-width: 1280px; margin: auto; padding: 38px 5% 70px; }
+.cad-topic-header { max-width: 1000px; margin: 35px 0; }
+.cad-topic-header h1 { font-size: clamp(2.3rem,4.6vw,4.4rem); font-weight: 600; line-height: 1.1; letter-spacing: -.045em; margin: 18px 0; }
+.cad-topic-header > p:last-of-type { max-width: 850px; font-size: 1.125rem; line-height: 1.85; color: #52627a; }
+.cad-topic-byline { font-size: .875rem; line-height: 1.8; color: #52627a; margin-top: 20px; }
+.cad-topic-byline a { color: #1649a6; text-decoration: underline; text-underline-offset: 3px; }
+.cad-topic-cover { display: grid; grid-template-columns: minmax(0,2fr) minmax(220px,1fr); gap: 32px; align-items: start; }
+.cad-topic-cover .cad-mag-photo .cad-photo-link { aspect-ratio: 16/10; }
+.cad-topic-cover aside { border-top: 3px solid #235ecb; padding: 22px 0; }
+.cad-topic-cover aside > p:not(.cad-eyebrow) { font-size: 1.25rem; line-height: 1.65; margin: 18px 0; }
+.cad-topic-cover aside a { font-size: 1rem; line-height: 1.6; color: #1649a6; text-decoration: underline; }
+.cad-topic-layout { display: grid; grid-template-columns: 230px minmax(0,1fr); gap: 50px; align-items: start; margin-top: 40px; }
+.cad-topic-index { border-top: 1px solid #c6d4e4; padding-top: 22px; display: grid; gap: 17px; }
+.cad-topic-index strong { font-size: 1rem; }
+.cad-topic-index a { font-size: .875rem; line-height: 1.65; color: #1649a6; text-decoration: underline; text-underline-offset: 4px; }
+.cad-topic-body { min-width: 0; }
+.cad-topic-body > section { padding: 24px 0 35px; border-bottom: 1px solid #d6e0e8; scroll-margin-top: 110px; }
+.cad-topic-body h2, .cad-selling-ideas > h2 { font-size: clamp(1.6rem,2.7vw,2.25rem); font-weight: 600; line-height: 1.25; letter-spacing: -.025em; margin-bottom: 22px; }
+.cad-topic-body p, .cad-topic-body li { font-size: 1rem; line-height: 1.9; color: #40546f; }
+.cad-topic-body p { margin: 18px 0; }
+.cad-topic-body ul, .cad-topic-body ol { padding-left: 24px; margin: 22px 0; }
+.cad-topic-body ul { list-style: disc; } .cad-topic-body ol { list-style: decimal; }
+.cad-topic-body li { padding-left: 6px; margin: 12px 0; }
+.cad-topic-body a:not(.cad-photo-link):not(.cad-photo-credit) { color: #1649a6; text-decoration: underline; text-underline-offset: 4px; }
+.cad-topic-body .cad-photo { margin: 24px 0; }
+.cad-topic-body .cad-photo figcaption { font-size: .875rem; line-height: 1.7; }
+.cad-topic-table { overflow: auto; border: 1px solid #c6d4e4; margin: 26px 0; }
+.cad-topic-table table { min-width: 610px; width: 100%; border-collapse: collapse; text-align: left; font-size: .9375rem; line-height: 1.7; }
+.cad-topic-table th, .cad-topic-table td { padding: 16px; vertical-align: top; border-bottom: 1px solid #dce5ef; }
+.cad-topic-table thead { background: #12345f; color: white; }
+.cad-topic-table tbody th { background: #edf2f8; min-width: 120px; }
+.cad-topic-table tfoot { font-weight: 700; background: #e6eef9; }
+.cad-topic-links { display: grid; gap: 12px; margin-top: 24px; font-size: 1rem; font-weight: 600; line-height: 1.65; }
+.cad-topic-references { background: #edf2f8; padding: 24px !important; margin-top: 30px; }
+.cad-selling-index { display: flex; flex-wrap: wrap; gap: 12px 24px; border-block: 1px solid #c6d4e4; padding: 20px 0; font-size: 1rem; color: #1649a6; font-weight: 600; }
+.cad-selling-index a { text-decoration: underline; text-underline-offset: 5px; }
+.cad-selling-note { font-size: .9375rem; line-height: 1.85; color: #52627a; margin: 24px 0 36px; }
+.cad-product-detail-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 48px 36px; }
+.cad-product-detail-grid article { min-width: 0; scroll-margin-top: 110px; }
+.cad-product-detail-grid h3 { font-size: 1.65rem; font-weight: 600; line-height: 1.25; margin: 20px 0 15px; letter-spacing: -.025em; }
+.cad-product-detail-grid article > p { font-size: 1rem; line-height: 1.85; color: #40546f; }
+.cad-product-detail-grid dl { margin-top: 20px; }
+.cad-product-detail-grid dl > div { border-top: 1px solid #c6d4e4; padding: 13px 0; }
+.cad-product-detail-grid dt { font-size: .875rem; font-weight: 700; color: #163b70; margin-bottom: 5px; }
+.cad-product-detail-grid dd { font-size: 1rem; line-height: 1.75; color: #52627a; }
+.cad-selling-reading { max-width: 850px; margin: 55px auto 0; }
+@media (max-width: 1050px) { .cad-topic-layout { grid-template-columns: 190px minmax(0,1fr); gap: 30px; } }
+@media (max-width: 800px) { .cad-topic-cover, .cad-topic-layout { grid-template-columns: 1fr; } .cad-topic-index { grid-template-columns: 1fr 1fr; gap: 14px 22px; } .cad-topic-index strong { grid-column: 1/-1; } .cad-topic-cover aside { padding: 18px; background: #edf2f8; } }
+@media (max-width: 560px) { .cad-product-detail-grid { grid-template-columns: 1fr; } .cad-topic-page { padding-inline: 6%; } .cad-topic-index { grid-template-columns: 1fr; } }
