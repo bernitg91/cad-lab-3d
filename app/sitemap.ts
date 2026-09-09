@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllArticles } from "@/lib/articles";
 import { absoluteUrl } from "@/lib/site";
+export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUpdatedAt = new Date("2026-08-20");
@@ -8,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/blog",
     "/recursos",
+    "/laboratorio-tolerancias-fdm",
     "/calculadora-precio-impresion-3d",
     "/calculadora-peso-pieza-3d",
     "/selector-material-impresion-3d",
@@ -36,7 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...staticPages.map((page) => ({
       url: absoluteUrl(page || "/"),
-      lastModified: siteUpdatedAt
+      lastModified: ["", "/laboratorio-tolerancias-fdm", "/recursos", "/sobre-mi", "/contacto", "/aviso-legal", "/politica-privacidad", "/politica-cookies"].includes(page) ? new Date("2026-09-09") : siteUpdatedAt
     })),
     ...getAllArticles().map((article) => ({
       url: absoluteUrl(`/blog/${article.slug}`),

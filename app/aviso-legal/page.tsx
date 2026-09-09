@@ -16,10 +16,10 @@ export default function LegalNoticePage() {
         <p>
           CAD Lab 3D es una web informativa sobre CAD, diseño industrial, impresión 3D, simulación y documentación técnica. Esta página resume las condiciones generales de uso del sitio.
         </p>
-        <p><strong>Última actualización:</strong> 20 de agosto de 2026.</p>
+        <p><strong>Última actualización:</strong> 9 de septiembre de 2026.</p>
         <h2>Titularidad</h2>
         <p>
-          CAD Lab 3D actúa como responsable editorial del contenido publicado en este dominio. Para consultas sobre titularidad, correcciones, retirada de contenido o colaboración, utiliza la página de contacto o escribe a <a href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a>.
+          El titular y responsable editorial de CAD Lab 3D es {siteConfig.authorName}. Para consultas sobre titularidad, correcciones, retirada de contenido o colaboración, utiliza la página de contacto o escribe a <a href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a>.
         </p>
         <h2>Contenido</h2>
         <p>

@@ -12,7 +12,7 @@ import { getArticleSupport } from "@/lib/article-support";
 import { getArticleIllustration, isLicensedReferenceMedia } from "@/lib/article-illustrations";
 import { getArticlePhoto, isDocumentaryArticlePhoto } from "@/lib/article-photos";
 import { MarkdownContent } from "@/lib/markdown";
-import { absoluteUrl, siteConfig } from "@/lib/site";
+import { absoluteUrl, isProductionDeployment, siteConfig } from "@/lib/site";
 import { createPageMetadata, jsonLd } from "@/lib/seo";
 import type { CategorySlug } from "@/types/article";
 
@@ -260,7 +260,7 @@ export default async function ArticlePage({ params }: PageProps) {
 
           <MarkdownContent content={article.content} />
 
-          <AdSlot
+          <AdSlot enabled={isProductionDeployment()}
             clientId={process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT}
             slot={process.env.NEXT_PUBLIC_ADSENSE_ARTICLE_MID_SLOT}
           />
@@ -310,7 +310,7 @@ export default async function ArticlePage({ params }: PageProps) {
               </ol>
             </nav>
           ) : null}
-          <AdSlot
+          <AdSlot enabled={isProductionDeployment()}
             clientId={process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT}
             slot={process.env.NEXT_PUBLIC_ADSENSE_ARTICLE_END_SLOT}
           />

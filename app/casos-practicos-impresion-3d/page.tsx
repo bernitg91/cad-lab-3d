@@ -58,7 +58,7 @@ export default function PracticalCasesPage() {
               Ocho piezas, ocho preguntas de fabricación
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-600">
-              Este índice separa lo que puede observarse de las prestaciones que exigirían medidas o ensayos. Las fotografías no se duplican aquí: cada recurso visual queda reservado a una sola publicación.
+              Soportes, cajas, adaptadores y piezas decorativas. Cada ficha reúne observaciones de diseño y preguntas para preparar una impresión. Abre el análisis de cada pieza para ver su fotografía y los detalles.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link className="rounded-md bg-slate-950 px-5 py-3 text-sm font-black text-white hover:bg-blue-800" href="/impresion-3d-personalizada">
@@ -70,7 +70,7 @@ export default function PracticalCasesPage() {
             </div>
           </div>
           <div className="border border-slate-300 bg-[#091625] p-5 text-white sm:p-6">
-            <p className="font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-cyan-300">Protocolo de lectura · sin miniaturas repetidas</p>
+            <p className="font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-cyan-300">Cómo leer una pieza</p>
             <div className="mt-5 divide-y divide-white/15 border-y border-white/15">
               {[
                 ["01", "Observar", "Geometría y acabado visible"],
@@ -106,7 +106,7 @@ export default function PracticalCasesPage() {
       <section className="bg-white py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="text-sm font-black uppercase tracking-wide text-teal-700">Análisis pieza a pieza</p>
-          <h2 className="mt-2 text-3xl font-black text-slate-950">Ocho fichas y un registro todavía incompleto</h2>
+          <h2 className="mt-2 text-3xl font-black text-slate-950">Qué podemos aprender de cada pieza</h2>
           <div className="mt-8 grid gap-6">
             {portfolioItems.map((item, index) => (
               <article id={`caso-${index + 1}`} key={item.title} className="grid overflow-hidden border-t-2 border-slate-950 bg-white lg:grid-cols-[150px_1fr]">
@@ -116,7 +116,7 @@ export default function PracticalCasesPage() {
                   <p className="mt-4 border-t border-slate-300 pt-3 font-mono text-[9px] uppercase leading-5 text-slate-600">{item.material}</p>
                 </div>
                 <div className="p-5 sm:p-6">
-                  <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-teal-800">Registro técnico · ficha incompleta</p>
+                  <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-teal-800">Análisis de geometría y uso</p>
                   <h3 className="mt-2 text-2xl font-black text-slate-950">{item.title}</h3>
                   <p className="mt-3 text-sm leading-6 text-slate-600">{item.description}</p>
                   <div className="mt-5 grid gap-3 border-y border-slate-200 py-4 text-sm leading-6 text-slate-700 md:grid-cols-3">

@@ -2,8 +2,8 @@ export const siteConfig = {
   name: "CAD Lab 3D",
   defaultUrl: "https://cadlab3d.com",
   description:
-    "Cuaderno en español sobre CAD, diseño industrial e impresión 3D: guías, herramientas y piezas fotografiadas con límites claros.",
-  authorName: process.env.NEXT_PUBLIC_AUTHOR_NAME || "CAD Lab 3D",
+    "Aprende diseño CAD e impresión 3D con guías prácticas, modelos paramétricos descargables, calculadoras y análisis de piezas reales.",
+  authorName: "Bernat Torres Guasch",
   contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "bbernat.torres@gmail.com",
   locale: "es_ES"
 };

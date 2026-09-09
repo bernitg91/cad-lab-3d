@@ -9,14 +9,15 @@ declare global {
 }
 
 type AdSlotProps = {
+  enabled?: boolean;
   clientId?: string;
   slot?: string;
   label?: string;
   className?: string;
 };
 
-export function AdSlot({ clientId, slot, label = "Publicidad", className = "" }: AdSlotProps) {
-  const active = Boolean(clientId?.startsWith("ca-pub-") && slot && /^\d+$/.test(slot));
+export function AdSlot({ enabled = false, clientId, slot, label = "Publicidad", className = "" }: AdSlotProps) {
+  const active = Boolean(enabled && clientId?.startsWith("ca-pub-") && slot && /^\d+$/.test(slot));
 
   useEffect(() => {
     if (!active) return;

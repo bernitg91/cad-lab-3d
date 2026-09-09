@@ -14,7 +14,7 @@ const monetizableStaticPaths = new Set([
   "/selector-material-impresion-3d",
   "/checklist-impresion-3d",
   "/glosario",
-  "/casos-practicos-impresion-3d"
+  "/laboratorio-tolerancias-fdm"
 ]);
 
 function isMonetizablePath(pathname: string, articlePaths: string[]) {

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { createPageMetadata } from "@/lib/seo";
+import { PrivacyChoices } from "@/components/PrivacyChoices";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Política de cookies",
@@ -15,7 +16,7 @@ export default function CookiesPage() {
         <p>
           CAD Lab 3D utiliza tecnologías técnicas y de medición para mantener el sitio y conocer el rendimiento de sus páginas. El código de Google AdSense puede estar presente para verificar el dominio y mostrar publicidad únicamente cuando el sitio sea autorizado.
         </p>
-        <p><strong>Última actualización:</strong> 20 de agosto de 2026.</p>
+        <p><strong>Última actualización:</strong> 9 de septiembre de 2026.</p>
         <h2>Cookies técnicas</h2>
         <p>Ayudan al funcionamiento básico del sitio y a recordar preferencias esenciales.</p>
         <h2>Analítica sin cookies</h2>
@@ -31,6 +32,8 @@ export default function CookiesPage() {
           Google AdSense puede usar cookies y tecnologías similares para personalizar anuncios, limitar la frecuencia de visualización, medir anuncios y evitar fraude una vez aprobado el sitio. Google y otros proveedores externos pueden usar cookies para publicar anuncios basados en visitas anteriores a este sitio u otros sitios. Puedes consultar y gestionar opciones de consentimiento cuando el mensaje correspondiente esté disponible.
         </p>
         <h2>Cómo cambiar preferencias</h2>
+        <p><PrivacyChoices /></p>
+        <p>Cuando Google ofrece un mensaje de consentimiento para tu ubicación, el enlace «Opciones de privacidad» permite volver a abrirlo. También puedes gestionar la personalización en <a href="https://myadcenter.google.com/">Mi centro de anuncios de Google</a> y consultar <a href="https://policies.google.com/technologies/cookies?hl=es">qué cookies utiliza Google</a>.</p>
         <p>
           Además de las opciones de consentimiento que aparezcan en el sitio, puedes revisar la configuración de privacidad del navegador para bloquear, eliminar o limitar cookies. Si bloqueas cookies no esenciales, el contenido seguirá siendo accesible, aunque algunas mediciones o funciones externas podrían no operar igual.
         </p>

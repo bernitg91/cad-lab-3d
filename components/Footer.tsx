@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { PrivacyChoices } from "@/components/PrivacyChoices";
 
 const learningLinks = [
   ["CAD paramétrico", "/guia-cad-parametrico"],
@@ -10,6 +11,7 @@ const learningLinks = [
 ];
 
 const resourceLinks = [
+  ["Probeta de tolerancias · descarga", "/laboratorio-tolerancias-fdm"],
   ["Calculadora de precio", "/calculadora-precio-impresion-3d"],
   ["Calculadora de peso", "/calculadora-peso-pieza-3d"],
   ["Selector de material", "/selector-material-impresion-3d"],
@@ -52,7 +54,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-5 max-w-sm text-sm leading-6 text-slate-400">
-              Cuaderno personal en español sobre CAD, diseño industrial e impresión 3D. Reúne guías, herramientas y piezas fotografiadas sin presentar como medido lo que todavía no lo está.
+              Diseño CAD e impresión 3D, desde el primer croquis hasta la pieza. Guías prácticas, recursos editables y herramientas para aprender haciendo.
             </p>
           </div>
           <div>
@@ -73,6 +75,7 @@ export function Footer() {
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-6 text-xs leading-6 text-slate-300 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
           <p>© {new Date().getFullYear()} CAD Lab 3D · Contenido educativo; valida siempre materiales, medidas y requisitos reales.</p>
           <ul className="flex flex-wrap gap-x-4 gap-y-2">
+            <li><PrivacyChoices /></li>
             <li><Link className="hover:text-white" href="/politica-privacidad">Privacidad</Link></li>
             <li><Link className="hover:text-white" href="/politica-cookies">Cookies</Link></li>
             <li><Link className="hover:text-white" href="/aviso-legal">Aviso legal</Link></li>

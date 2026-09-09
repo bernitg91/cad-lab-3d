@@ -11,6 +11,13 @@ export const metadata: Metadata = createPageMetadata({
 
 const resources = [
   {
+    title: "Probeta paramétrica de tolerancias FDM",
+    description: "Modelo OpenSCAD original de cinco agujeros, tabla de diseño y registro CSV para medir tus propios ajustes.",
+    href: "/laboratorio-tolerancias-fdm",
+    downloadHref: "/descargas/probeta-tolerancias-fdm.scad",
+    cta: "Abrir la práctica"
+  },
+  {
     title: "Guía completa de impresión 3D FDM",
     description: "Ruta práctica para revisar diseño, material, laminador, costes, errores frecuentes y checklist antes de imprimir.",
     href: "/guia-impresion-3d-fdm",

@@ -19,9 +19,9 @@ export default function BlogPage() {
           <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-teal-800">
             Artículos y notas de trabajo
           </p>
-          <h1 className="mt-3 max-w-4xl font-display text-5xl font-black leading-[0.94] text-slate-950 sm:text-6xl">Problemas concretos entre el modelo, la impresora y la entrega</h1>
+          <h1 className="mt-3 max-w-4xl font-display text-5xl font-semibold leading-[1.08] tracking-tight text-slate-950 sm:text-6xl">Diseñar mejor empieza<br />con una buena pregunta.</h1>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-600">
-            Busca por problema, material o fase del proyecto. Algunos textos parten de una pieza fotografiada; otros ordenan documentación técnica y dejan claro qué faltaría comprobar en la práctica.
+            Busca por problema, material o fase del proyecto. Encontrarás guías sobre modelado CAD, impresión FDM, selección de materiales y documentación, con fuentes y ejemplos para llevarlos a tu trabajo.
           </p>
         </div>
       </section>

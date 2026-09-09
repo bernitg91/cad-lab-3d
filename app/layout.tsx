@@ -1,23 +1,23 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Barlow_Condensed, IBM_Plex_Mono, Source_Sans_3 } from "next/font/google";
+import { Space_Grotesk, IBM_Plex_Mono, Manrope } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { AdSenseScript } from "@/components/AdSenseScript";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { getAllArticles } from "@/lib/articles";
-import { getSiteUrl, isProductionDeployment, siteConfig } from "@/lib/site";
+import { getSiteUrl, isPreviewDeployment, isProductionDeployment, siteConfig } from "@/lib/site";
 
-const bodyFont = Source_Sans_3({
+const bodyFont = Manrope({
   subsets: ["latin"],
   variable: "--font-body",
   display: "swap"
 });
 
-const displayFont = Barlow_Condensed({
+const displayFont = Space_Grotesk({
   subsets: ["latin"],
-  weight: ["600", "700", "800", "900"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-display",
   display: "swap"
 });
@@ -36,6 +36,9 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`
   },
   description: siteConfig.description,
+  authors: [{ name: siteConfig.authorName, url: `${siteConfig.defaultUrl}/sobre-mi` }],
+  robots: isPreviewDeployment() ? { index: false, follow: false } : undefined,
+  other: process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT ? { "google-adsense-account": process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT } : undefined,
   openGraph: {
     type: "website",
     locale: siteConfig.locale,
@@ -74,7 +77,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Header />
         <main id="contenido">{children}</main>
         <Footer />
-        <Analytics />
+        {isProductionDeployment() ? <Analytics /> : null}
       </body>
     </html>
   );

@@ -14,6 +14,7 @@ export default function ContactPage() {
     <section className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
       <div>
         <p className="text-sm font-black uppercase tracking-wide text-teal-700">Contacto</p>
+        <p className="mt-4 font-semibold text-slate-700">{siteConfig.authorName} · CAD Lab 3D</p>
         <h1 className="mt-3 text-4xl font-black text-slate-950">Hablemos de CAD, impresión 3D o proyectos técnicos</h1>
         <p className="mt-4 text-lg leading-8 text-slate-600">
           Envía consultas sobre modelado CAD, preparación de piezas, documentación técnica, colaboraciones o propuestas de contenido para CAD Lab 3D.

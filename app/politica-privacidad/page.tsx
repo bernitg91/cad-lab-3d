@@ -14,10 +14,10 @@ export default function PrivacyPage() {
       <p>
         CAD Lab 3D es un proyecto informativo sobre CAD, diseño industrial, impresión 3D y documentación técnica. Esta política explica qué datos pueden tratarse al navegar por el sitio, usar formularios o interactuar con servicios de terceros.
       </p>
-      <p><strong>Última actualización:</strong> 20 de agosto de 2026.</p>
+      <p><strong>Última actualización:</strong> 9 de septiembre de 2026.</p>
       <h2>Responsable del sitio</h2>
       <p>
-        El responsable editorial del sitio es CAD Lab 3D. Para consultas relacionadas con privacidad, contenido o ejercicio de derechos, utiliza la página de contacto o escribe a <a href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a>.
+        El responsable del sitio es {siteConfig.authorName}, titular de CAD Lab 3D. Para consultas relacionadas con privacidad, contenido o ejercicio de derechos, utiliza la página de contacto o escribe a <a href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a>.
       </p>
       <h2>Datos que podrían tratarse</h2>
       <p>
@@ -37,6 +37,7 @@ export default function PrivacyPage() {
       <p>
         En usuarios del Espacio Económico Europeo, Reino Unido y Suiza, la publicidad personalizada y otras cookies no esenciales deben gestionarse mediante una plataforma o mecanismo de consentimiento compatible con la normativa aplicable y con los requisitos de Google cuando se muestren anuncios.
       </p>
+      <p>Puedes consultar <a href="https://policies.google.com/technologies/partner-sites?hl=es">cómo utiliza Google la información de los sitios que usan sus servicios</a>, su <a href="https://policies.google.com/privacy?hl=es">política de privacidad</a> y <a href="https://myadcenter.google.com/">Mi centro de anuncios</a> para gestionar la personalización. La información sobre medición sin cookies está en la <a href="https://vercel.com/docs/analytics/privacy-policy">documentación de privacidad de Vercel Web Analytics</a>. El mensaje de consentimiento de Google, cuando esté disponible, permite consultar los proveedores y revisar las opciones aplicables.</p>
       <h2>Enlaces de afiliado</h2>
       <p>
         Algunos contenidos podrían incluir enlaces recomendados o de afiliado. Cuando se activen, se indicará de forma visible y transparente.

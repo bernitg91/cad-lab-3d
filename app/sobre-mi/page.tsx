@@ -18,10 +18,10 @@ export default function AboutPage() {
         <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:px-8 lg:py-16">
           <div>
             <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-teal-800">Quién escribe</p>
-            <h1 className="mt-4 font-display text-5xl font-black leading-[0.94] text-slate-950 sm:text-6xl">CAD Lab 3D es mi cuaderno público de trabajo</h1>
+            <h1 className="mt-4 font-display text-5xl font-semibold leading-[1.08] tracking-tight text-slate-950 sm:text-6xl">Soy Bernat.<br />Aprendo diseñando y comparto el proceso.</h1>
             <div className="mt-6 space-y-4 text-lg leading-8 text-slate-600">
               <p>
-                {hasPublicName ? <>Me llamo {siteConfig.authorName} y soy</> : <>Soy</>} estudiante de Ingeniería en Diseño Industrial, con interés en CAD, impresión 3D FDM, simulación y desarrollo de producto. Esta web no intenta parecer una revista ni un laboratorio comercial.
+                {hasPublicName ? <>Me llamo {siteConfig.authorName} y soy</> : <>Soy</>} estudiante de Ingeniería en Diseño Industrial, con interés en CAD, impresión 3D FDM, simulación y desarrollo de producto. En CAD Lab 3D comparto guías, recursos y preguntas que aparecen al pasar del modelo a la fabricación.
               </p>
               <p>
                 La uso para ordenar preguntas que aparecen al preparar una pieza o una entrega: por qué no encaja, qué orientación tiene sentido, qué debe quedar registrado y qué todavía no puedo afirmar.
@@ -68,12 +68,12 @@ export default function AboutPage() {
             </ul>
           </section>
           <section className="border-t-2 border-orange-600 pt-5">
-            <h2 className="font-display text-3xl font-black text-slate-950">Qué no voy a fingir</h2>
+            <h2 className="font-display text-3xl font-black text-slate-950">Cómo interpretar los ejemplos</h2>
             <ul className="mt-5 grid gap-3 text-base leading-7 text-slate-600">
-              <li>Ensayos, medidas o materiales que no se hayan conservado.</li>
-              <li>Certificaciones, testimonios o experiencia profesional inexistente.</li>
-              <li>Una cifra universal cuando depende de máquina, perfil y geometría.</li>
-              <li>Que una ilustración editorial sea una prueba realizada en el taller.</li>
+              <li>Las cotas de diseño se distinguen de las medidas realizadas.</li>
+              <li>Las fotografías documentan la geometría y el acabado que muestran.</li>
+              <li>Los ajustes dependen de la máquina, el perfil y la pieza concreta.</li>
+              <li>Las ilustraciones editoriales y los modelos didácticos están identificados.</li>
             </ul>
           </section>
         </div>

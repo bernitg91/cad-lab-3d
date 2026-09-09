@@ -5,7 +5,7 @@ description: "Método para crear pruebas de tolerancia en impresión 3D FDM y aj
 category: "Impresión 3D"
 categorySlug: "impresion-3d"
 date: "2026-05-11"
-updatedDate: "2026-08-20"
+updatedDate: "2026-09-09"
 readingTime: "5 min"
 author: "CAD Lab 3D"
 featured: false
@@ -66,3 +66,8 @@ Si la pieza va a soportar carga, recuerda que la holgura es solo una parte del p
 Usar una probeta de PLA para decidir una pieza final en PETG, cambiar simultáneamente material y orientación o medir solo una muestra produce conclusiones débiles. La humedad, el desgaste, la calibración y la forma del encaje pueden alterar el resultado con el tiempo.
 
 **Una prueba de tolerancias no crea una regla universal**. Crea una referencia documentada para un proceso concreto. Guarda la pieza etiquetada y repite la prueba cuando cambie una variable importante; así tendrás una biblioteca de fabricación más útil que una tabla genérica.
+
+
+## Descarga una probeta y registra tus medidas
+
+Puedes utilizar la [práctica de tolerancias FDM de CAD Lab 3D](/laboratorio-tolerancias-fdm): incluye un modelo OpenSCAD original de cinco agujeros, la tabla de cotas de diseño y un CSV vacío para registrar resultados. La geometría se entrega como ejercicio didáctico; no se atribuyen ensayos ni ajustes garantizados.
