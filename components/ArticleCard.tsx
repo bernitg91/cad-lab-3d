@@ -4,11 +4,14 @@ import { formatDate } from "@/lib/date";
 import { getArticleIllustration } from "@/lib/article-illustrations";
 import { getArticlePhoto, isDocumentaryArticlePhoto } from "@/lib/article-photos";
 import type { ArticleMeta } from "@/types/article";
+import { VisualFigure } from "@/components/VisualFigure";
+import { getArticleVisual } from "@/lib/visuals";
 
 export function ArticleCard({ article }: { article: ArticleMeta }) {
   const photo = getArticlePhoto(article.slug);
   const showPhoto = isDocumentaryArticlePhoto(photo);
   const illustration = getArticleIllustration(article.slug);
+  const visual = getArticleVisual(article.slug);
   const visualLabel = showPhoto
     ? "Pieza fotografiada"
     : illustration?.kind === "original-diagram"
@@ -21,6 +24,7 @@ export function ArticleCard({ article }: { article: ArticleMeta }) {
     <article className="group relative flex h-full flex-col border-t-2 border-slate-950 bg-white py-5 pl-5 pr-1">
       <span className="absolute left-0 top-5 h-12 w-1 bg-teal-600" aria-hidden="true" />
       <div className="flex min-w-0 flex-1 flex-col">
+        {visual && <VisualFigure visual={visual} href={`/blog/${article.slug}`} className="cad-index-photo" />}
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-xs font-semibold uppercase tracking-[0.12em]">
           <Link href={getCategoryGuidePath(article.categorySlug)} className="text-teal-800 hover:text-teal-950">
             {article.category}

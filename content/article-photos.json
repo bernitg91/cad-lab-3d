@@ -208,7 +208,7 @@
     "height": 640,
     "sha256": "fd3d4e10878d6fb37b6ddd0ec3464303b891a91fcbee23f3e04bb37e31a50b14",
     "openverseId": "83e2beb5-72da-4ca2-b6e5-ff0e14111ffc",
-    "title": "3D Printer",
+    "title": "3d printer",
     "creator": "Kristin Hardwick",
     "creatorUrl": "https://www.kristinhardwick.com",
     "sourceName": "StockSnap",
@@ -220,6 +220,6 @@
     "licenseVerificationUrl": "https://stocksnap.io/license",
     "licenseVerificationMethod": "Ficha individual registrada por Openverse y licencia general CC0 oficial de StockSnap.",
     "changes": "Convertida a WebP y redimensionada; las tarjetas pueden mostrar un encuadre visual adaptado.",
-    "verifiedAt": "2026-08-20"
+    "verifiedAt": "2026-09-09"
   }
 ]

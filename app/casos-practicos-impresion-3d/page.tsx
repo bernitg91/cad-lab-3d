@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { portfolioItems } from "@/lib/portfolio";
+import { getPortfolioVisual } from "@/lib/visuals";
+import { VisualFigure } from "@/components/VisualFigure";
 import { createPageMetadata, jsonLd } from "@/lib/seo";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
@@ -23,6 +25,7 @@ export default function PracticalCasesPage() {
         "@type": "CreativeWork",
         name: item.title,
         description: item.description,
+        image: absoluteUrl(getPortfolioVisual(item.image, item.alt).image),
         url: `${absoluteUrl("/casos-practicos-impresion-3d")}#caso-${index + 1}`
       }
     }))
@@ -58,7 +61,7 @@ export default function PracticalCasesPage() {
               Ocho piezas, ocho preguntas de fabricación
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-600">
-              Soportes, cajas, adaptadores y piezas decorativas. Cada ficha reúne observaciones de diseño y preguntas para preparar una impresión. Abre el análisis de cada pieza para ver su fotografía y los detalles.
+              Soportes, cajas, adaptadores y piezas decorativas fotografiadas para CAD Lab 3D. Cada ficha reúne la imagen original, observaciones de diseño y preguntas para preparar una impresión.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link className="rounded-md bg-slate-950 px-5 py-3 text-sm font-black text-white hover:bg-blue-800" href="/impresion-3d-personalizada">
@@ -109,8 +112,9 @@ export default function PracticalCasesPage() {
           <h2 className="mt-2 text-3xl font-black text-slate-950">Qué podemos aprender de cada pieza</h2>
           <div className="mt-8 grid gap-6">
             {portfolioItems.map((item, index) => (
-              <article id={`caso-${index + 1}`} key={item.title} className="grid overflow-hidden border-t-2 border-slate-950 bg-white lg:grid-cols-[150px_1fr]">
+              <article id={`caso-${index + 1}`} key={item.title} className="cad-gallery-case grid overflow-hidden border-t-2 border-slate-950 bg-white lg:grid-cols-[0.85fr_1.4fr]">
                 <div className="border-b border-slate-200 bg-[#eef2f6] p-5 lg:border-b-0 lg:border-r">
+                  <VisualFigure visual={getPortfolioVisual(item.image, item.alt)} href={item.image} className="cad-case-photo" sizes="(max-width: 1023px) 90vw, 440px" caption="Abrir la fotografía original en tamaño completo." />
                   <p className="font-mono text-[9px] font-bold uppercase tracking-[0.14em] text-teal-800">Ficha de pieza</p>
                   <p className="mt-2 font-display text-6xl font-black leading-none text-slate-950">{String(index + 1).padStart(2, "0")}</p>
                   <p className="mt-4 border-t border-slate-300 pt-3 font-mono text-[9px] uppercase leading-5 text-slate-600">{item.material}</p>

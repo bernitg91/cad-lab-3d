@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
 import { portfolioItems } from "@/lib/portfolio";
+import { getPortfolioVisual } from "@/lib/visuals";
+import { VisualFigure } from "@/components/VisualFigure";
 import { createPageMetadata, jsonLd } from "@/lib/seo";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
@@ -124,7 +126,7 @@ export default function Custom3DPrintingPage() {
                 </div>
               ))}
             </div>
-            <p className="mt-4 text-xs leading-5 text-slate-400">Cada fotografía se reserva para una sola publicación; esta página explica el servicio mediante el proceso.</p>
+            <p className="mt-4 text-sm leading-6 text-slate-300">El punto de partida es la función de la pieza. Las medidas y condiciones de uso ayudan a preparar una propuesta concreta.</p>
           </div>
         </div>
       </section>
@@ -143,15 +145,16 @@ export default function Custom3DPrintingPage() {
       <section className="bg-white py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div>
-            <p className="text-sm font-black uppercase tracking-wide text-teal-700">Piezas documentadas</p>
-            <h2 className="mt-2 text-3xl font-black text-slate-950">Ejemplos de encargos y prototipos FDM</h2>
+            <p className="text-sm font-black uppercase tracking-wide text-teal-700">Fotografías propias</p>
+            <h2 className="mt-2 text-3xl font-black text-slate-950">Piezas y prototipos del archivo de CAD Lab 3D</h2>
             <p className="mt-4 max-w-3xl text-sm leading-6 text-slate-600">
-              El registro reúne soportes, objetos funcionales, prototipos, pruebas de forma y piezas decorativas. Para evitar fotografías repetidas, aquí se resume el tipo de trabajo; la observación visual completa queda en su única publicación asignada.
+              Soportes, objetos funcionales, pruebas de forma y piezas decorativas. Abre la ficha de cada pieza para ver la fotografía completa y los puntos de diseño que merece la pena revisar.
             </p>
           </div>
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {portfolioItems.map((item, index) => (
               <article key={item.title} className="border-t-2 border-slate-950 bg-white p-4 shadow-sm">
+                <VisualFigure visual={getPortfolioVisual(item.image, item.alt)} href={`/casos-practicos-impresion-3d#caso-${index + 1}`} className="cad-service-photo" sizes="(max-width: 640px) 90vw, (max-width: 1023px) 45vw, 260px" />
                 <div className="flex items-center justify-between border-b border-slate-200 pb-3 font-mono text-[9px] font-bold uppercase tracking-[0.12em]">
                   <span className="text-teal-800">Tipo de pieza</span>
                   <span className="text-orange-700">{String(index + 1).padStart(2, "0")}</span>
@@ -160,6 +163,7 @@ export default function Custom3DPrintingPage() {
                   <h3 className="font-black text-slate-950">{item.title}</h3>
                   <p className="mt-2 text-sm leading-6 text-slate-600">{item.description}</p>
                   <p className="mt-4 font-mono text-[9px] uppercase leading-5 text-slate-500">Revisar: {item.criticalPoints.join(" · ")}</p>
+                  <Link href={`/casos-practicos-impresion-3d#caso-${index + 1}`} className="cad-card-link">Ver ficha <span aria-hidden="true">↗</span></Link>
                 </div>
               </article>
             ))}

@@ -1,5 +1,6 @@
 const fs = require("node:fs");
 const path = require("node:path");
+const crypto = require("node:crypto");
 
 const projectRoot = path.resolve(__dirname, "..");
 const renderedDirectory = path.join(projectRoot, ".next", "server", "app");
@@ -7,7 +8,7 @@ const photoManifestPath = path.join(projectRoot, "content", "article-photos.json
 const siteOrigin = "https://cadlab3d.com";
 
 function fail(message) {
-  throw new Error(`[visible image uniqueness] ${message}`);
+  throw new Error(`[visible images] ${message}`);
 }
 
 function decodeHtmlAttribute(value) {
@@ -126,6 +127,15 @@ function readPhotoFamilies() {
     }
   }
 
+  const previews = JSON.parse(fs.readFileSync(path.join(projectRoot, "content/image-previews.json"), "utf8"));
+  for (const preview of previews) {
+    const original = path.join(projectRoot, "public", preview.source);
+    const optimized = path.join(projectRoot, "public", preview.image);
+    if (!fs.existsSync(original) || !fs.existsSync(optimized)) fail(`falta la fuente o miniatura de ${preview.source}`);
+    if (crypto.createHash("sha256").update(fs.readFileSync(optimized)).digest("hex") !== preview.sha256) fail(`hash incorrecto de ${preview.image}`);
+    const family = familyByPath.get(preview.source) ?? preview.source;
+    addFamilyMember(preview.image, family, ownerByFamily.get(family));
+  }
   return { familyByPath, ownerByFamily };
 }
 
@@ -149,6 +159,10 @@ for (const htmlPath of htmlFiles) {
     const imagePath = normalizeImageSource(source);
     if (!imagePath) continue;
 
+    if (!fs.existsSync(path.join(projectRoot, "public", imagePath))) fail(`${route}: imagen inexistente ${imagePath}`);
+    if (!/\salt\s*=\s*["'][^"']+["']/i.test(tag)) fail(`${route}: falta el texto alternativo en ${imagePath}`);
+    if (!/\swidth="[1-9]\d*"/.test(tag) || !/\sheight="[1-9]\d*"/.test(tag)) fail(`${route}: falta reservar dimensiones para ${imagePath}`);
+
     const family = familyByPath.get(imagePath) ?? imagePath;
     occurrences.push({
       family,
@@ -162,9 +176,12 @@ for (const htmlPath of htmlFiles) {
 
 const occurrencesByFamily = new Map();
 for (const occurrence of occurrences) {
-  const familyOccurrences = occurrencesByFamily.get(occurrence.family) ?? [];
+  // The original photos can now be reused on the homepage, library and gallery.
+  // Different encodings of the same photo still count as duplicates on ONE page.
+  const key = `${occurrence.route}:${occurrence.family}`;
+  const familyOccurrences = occurrencesByFamily.get(key) ?? [];
   familyOccurrences.push(occurrence);
-  occurrencesByFamily.set(occurrence.family, familyOccurrences);
+  occurrencesByFamily.set(key, familyOccurrences);
 }
 
 const reusedFamilies = [...occurrencesByFamily.entries()].filter(([, familyOccurrences]) => familyOccurrences.length > 1);
@@ -176,10 +193,10 @@ if (reusedFamilies.length > 0) {
       .join("\n");
     return `${family}${owner}\n${uses}`;
   });
-  fail(`${reusedFamilies.length} imágenes o familias visuales aparecen en más de un <img>:\n${details.join("\n")}`);
+  fail(`${reusedFamilies.length} imágenes o familias visuales se repiten dentro de una misma página:\n${details.join("\n")}`);
 }
 
 const routesWithImages = new Set(occurrences.map((occurrence) => occurrence.route));
 console.log(
-  `Visible image uniqueness passed: ${occurrences.length} visible /images/ images across ${routesWithImages.size} routes; no image reuse detected.`
+  `Visible image checks passed: ${occurrences.length} images across ${routesWithImages.size} routes; files, preview hashes, alt text, dimensions and per-page uniqueness verified.`
 );

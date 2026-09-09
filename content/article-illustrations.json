@@ -3,7 +3,7 @@
     "slug": "calibrar-impresora-3d-piezas-funcionales",
     "kind": "licensed-reference-media",
     "image": "/images/article-references/calibrar-impresora-3d-piezas-funcionales-v2.jpg",
-    "title": "Primera capa durante una impresión FDM",
+    "title": "3D Printer",
     "alt": "Fotografía de primer plano de una boquilla FDM depositando la primera capa sobre cinta azul en la cama de impresión",
     "caption": "La imagen permite observar la zona donde se decide la adhesión inicial; no documenta la calibración de la máquina del autor.",
     "width": 4000,
@@ -20,7 +20,7 @@
     "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
     "licenseVerificationUrl": "https://commons.wikimedia.org/wiki/File:3D_Printer_-_the_first_layer(16661915478).jpg",
     "changes": "Copia del archivo original sin recortes; Next.js genera variantes de tamaño y compresión para la web.",
-    "verifiedAt": "2026-08-28"
+    "verifiedAt": "2026-09-09"
   },
   {
     "slug": "como-empezar-creo-parametric-desde-cero",
@@ -76,7 +76,7 @@
     "slug": "elegir-filamento-piezas-funcionales",
     "kind": "licensed-reference-media",
     "image": "/images/article-references/elegir-filamento-piezas-funcionales-v2.jpg",
-    "title": "Bobina de filamento en un soporte impreso",
+    "title": "Universal stand-alone filament spool holder (Fully 3D-printable) v10",
     "alt": "Fotografía de una bobina blanca de filamento FDM colocada sobre un soporte de sobremesa impreso en 3D",
     "caption": "La bobina sirve como referencia visual del formato de suministro; la fotografía no identifica la familia del polímero ni demuestra sus propiedades.",
     "width": 5184,
@@ -93,7 +93,7 @@
     "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
     "licenseVerificationUrl": "https://commons.wikimedia.org/wiki/File:3D_Printing_Filament.jpg",
     "changes": "Copia del archivo original sin recortes; Next.js genera variantes de tamaño y compresión para la web.",
-    "verifiedAt": "2026-08-28"
+    "verifiedAt": "2026-09-09"
   },
   {
     "slug": "errores-exportar-archivos-cad",

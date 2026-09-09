@@ -166,6 +166,40 @@ main h1, main h2, main h3 { font-family: var(--font-display), sans-serif; }
 @media(prefers-reduced-motion:no-preference) { .cad-hero-copy { animation: cad-enter .75s both; } .cad-model-panel { animation: cad-enter .9s .1s both; } .cad-button, .cad-header-action { transition: background .2s, color .2s; } @keyframes cad-enter { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } } }
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
 
+.cad-photo { min-width: 0; margin: 0; }
+.cad-photo-link { display: block; overflow: hidden; background: #dce5ef; }
+.cad-photo-image { display: block; width: 100%; height: auto; }
+.cad-photo figcaption { padding: 12px 0; font-size: 12px; line-height: 1.7; color: #566579; }
+.cad-photo-caption { display: block; margin-bottom: 5px; }
+.cad-photo-credit { text-decoration: underline; text-decoration-color: #a6b6cc; text-underline-offset: 3px; }
+.cad-photo-credit:hover { color: #2254d7; }
+.cad-photo-story { display: grid; grid-template-columns: 1.35fr 1fr; gap: 6%; align-items: center; padding-block: 65px; }
+.cad-process-photo .cad-photo-link { aspect-ratio: 4 / 3; }
+.cad-process-photo .cad-photo-image { height: 100%; object-fit: cover; object-position: 61% 50%; }
+.cad-photo-story-copy h2 { font-size: clamp(36px,3.8vw,60px); margin-top: 25px; }
+.cad-photo-story-copy>p:not(.cad-eyebrow) { color: var(--cad-muted); font-size: 16px; line-height: 1.85; margin: 25px 0; }
+.cad-piece-section { background: #e6edf6; }
+.cad-piece-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 32px; }
+.cad-piece-grid>article { min-width: 0; display: flex; flex-direction: column; }
+.cad-piece-photo .cad-photo-link { aspect-ratio: 3 / 4; }
+.cad-piece-photo .cad-photo-image { height: 100%; object-fit: cover; }
+.cad-piece-grid>article>.cad-eyebrow { font-size: 12px; color: #315cac; margin: 15px 0; }
+.cad-piece-grid h3 { font-size: clamp(24px,2.3vw,34px); font-weight: 500; line-height: 1.2; letter-spacing: -.045em; }
+.cad-piece-grid>article>p:not(.cad-eyebrow) { font-size: 16px; line-height: 1.85; color: var(--cad-muted); margin: 20px 0; }
+.cad-gallery-button { margin-top: 40px; }
+.cad-reading-photo { margin-bottom: 22px; }
+.cad-reading-photo .cad-photo-link, .cad-index-photo .cad-photo-link { aspect-ratio: 4 / 3; }
+.cad-reading-photo .cad-photo-image, .cad-index-photo .cad-photo-image { height: 100%; object-fit: contain; background: #dce5ef; }
+.cad-index-photo { margin: -20px 0 20px -20px; }
+.cad-index-photo figcaption { padding-left: 20px; }
+.cad-case-photo { margin-bottom: 20px; }
+.cad-case-photo .cad-photo-image { max-height: 570px; object-fit: contain; }
+.cad-service-photo { margin-bottom: 15px; }
+.cad-service-photo .cad-photo-link { aspect-ratio: 3 / 4; }
+.cad-service-photo .cad-photo-image { height: 100%; object-fit: cover; }
+@media(max-width:899px) { .cad-photo-story { grid-template-columns: 1fr; gap: 30px; } .cad-photo-story-copy h2 br { display: none; } .cad-piece-grid { gap: 22px; } }
+@media(max-width:640px) { .cad-photo-story { padding-block: 45px; } .cad-piece-grid { grid-template-columns: 1fr; gap: 40px; } .cad-piece-grid h3 { font-size: 29px; } .cad-piece-photo .cad-photo-link { aspect-ratio: 4 / 5; } }
+
 body {
   margin: 0;
   overflow-x: clip;

@@ -6,6 +6,7 @@ import { getAllArticlePhotos } from "@/lib/article-photos";
 import { getAllArticles } from "@/lib/articles";
 import { createPageMetadata } from "@/lib/seo";
 import type { ArticlePhotoLicenseCode } from "@/types/article";
+import { portfolioItems } from "@/lib/portfolio";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Licencias y créditos de imágenes",
@@ -47,7 +48,7 @@ const licenseExplanations: {
     code: "Contenido propio",
     title: "Contenido preparado para CADLAB3D",
     description:
-      "Recreaciones editoriales fotorrealistas asistidas por IA y láminas técnicas preparadas para este sitio. Las recreaciones están revisadas y se identifican como conceptuales: no documentan pruebas, mediciones ni resultados reales. Su inclusión aquí no concede por sí sola permiso para reutilizarlas fuera de CADLAB3D."
+      "Fotografías originales del archivo de piezas de CADLAB3D, láminas técnicas y recreaciones editoriales asistidas por IA. Cada tipo se identifica por separado. Las recreaciones son conceptuales y no documentan pruebas reales. La publicación de material propio no concede por sí sola permiso para reutilizarlo fuera de CADLAB3D."
   }
 ];
 
@@ -118,6 +119,13 @@ export default function ImageLicensesPage() {
         </p>
       </header>
 
+      <section id="archivo-propio" className="mt-10 border-y border-slate-300 py-8">
+        <h2 className="font-display text-3xl font-bold text-slate-950">El archivo de piezas de CAD Lab 3D</h2>
+        <p className="mt-4 max-w-3xl text-base leading-7 text-slate-600">Estas ocho fotografías originales se conservan y publican como contenido propio bajo la responsabilidad editorial de Bernat Torres Guasch. Aparecen en la galería de piezas, en el servicio de impresión personalizada y, como selección, en la portada y los artículos relacionados.</p>
+        <ul className="mt-5 grid gap-3 text-sm sm:grid-cols-2">{portfolioItems.map((item, index) => <li key={item.image}><Link href={`/casos-practicos-impresion-3d#caso-${index + 1}`} className="font-semibold text-blue-700 underline underline-offset-4">{item.title}</Link>{" · "}<a href={item.image} className="text-slate-600 underline underline-offset-4">Original</a></li>)}</ul>
+        <p className="mt-5 max-w-3xl text-sm leading-6 text-slate-600">Las versiones web se redimensionan y comprimen; algunas miniaturas adaptan el encuadre al espacio disponible. Los originales siguen accesibles. Una fotografía permite observar una pieza, pero el material y las propiedades mecánicas solo se atribuyen cuando están documentados.</p>
+      </section>
+
       <section aria-labelledby="illustration-register" className="mt-12">
         <div className="border-b border-slate-300 pb-4">
           <p className="font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-slate-600">
@@ -127,7 +135,7 @@ export default function ImageLicensesPage() {
             Recreaciones revisadas, esquemas rotulados y fuentes verificables
           </h2>
           <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-600">
-            Este registro es deliberadamente textual: cada recurso visual se muestra una sola vez, dentro de su artículo. Aquí quedan documentados su categoría, método, crédito y límites sin repetir la imagen. Las cuatro recreaciones están asistidas por IA y revisadas manualmente; no representan una prueba, una medición, un prototipo documentado ni un resultado calculado.
+            Aquí quedan documentados la categoría, el método, el crédito y los límites de cada recurso. Las miniaturas de portada y de los índices enlazan a este mismo registro. Las cuatro recreaciones están asistidas por IA y revisadas manualmente; no representan una prueba, una medición, un prototipo documentado ni un resultado calculado.
           </p>
         </div>
 
@@ -137,7 +145,7 @@ export default function ImageLicensesPage() {
             const isLicensedReference = illustration.kind === "licensed-reference-media";
 
             return (
-              <li key={illustration.slug} className="relative border-t-2 border-slate-950 bg-white py-5 pl-5 pr-2">
+              <li key={illustration.slug} id={`credito-${illustration.slug}`} className="relative border-t-2 border-slate-950 bg-white py-5 pl-5 pr-2">
                 <span
                   className={`absolute left-0 top-5 h-14 w-1 ${isLicensedReference ? "bg-teal-600" : "bg-orange-600"}`}
                   aria-hidden="true"
@@ -177,6 +185,7 @@ export default function ImageLicensesPage() {
                     </p>
                   </div>
                 )}
+                {isLicensedReference && <p className="mt-3 text-xs leading-5 text-slate-600">Tratamiento editorial: {illustration.changes} Las miniaturas se redimensionan y comprimen a WebP; su encuadre puede adaptarse al contenedor.</p>}
                 <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-slate-200 pt-3 text-sm font-black">
                   <Link className="text-blue-700 hover:text-blue-900" href={`/blog/${illustration.slug}`}>
                     Abrir el artículo →
@@ -235,7 +244,7 @@ export default function ImageLicensesPage() {
           </h2>
           <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-600">
             Los enlaces conducen al artículo, al perfil de la persona autora,
-            a la página original de la fotografía y al texto completo de la licencia. Las fichas no reproducen la imagen: cada fotografía permanece visible exclusivamente en su artículo.
+            a la página original de la fotografía y al texto completo de la licencia. Las fotografías pueden aparecer como miniaturas en la portada y en los índices; su procedencia y condiciones siguen siendo las que figuran en este registro.
           </p>
         </div>
 
