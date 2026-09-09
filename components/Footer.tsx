@@ -3,6 +3,7 @@ import Link from "next/link";
 import { PrivacyChoices } from "@/components/PrivacyChoices";
 
 const learningLinks = [
+  ["Resolver fallos de impresión", "/solucionar-problemas-impresion-3d"],
   ["CAD paramétrico", "/guia-cad-parametrico"],
   ["Impresión 3D FDM", "/guia-impresion-3d-fdm"],
   ["Materiales FDM", "/guia-materiales-fdm"],

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CadExperience } from "@/components/CadExperience";
+import { TaskRoutes } from "@/components/TaskRoutes";
 import { VisualFigure } from "@/components/VisualFigure";
 import { getArticleVisual, getPortfolioVisual } from "@/lib/visuals";
 import { portfolioItems } from "@/lib/portfolio";
@@ -34,6 +35,7 @@ export default function HomePage() {
       { "@context": "https://schema.org", "@type": "WebSite", name: siteConfig.name, url: absoluteUrl("/"), description: siteConfig.description }
     ])} />
     <CadExperience />
+    <TaskRoutes />
     <section className="cad-section cad-photo-story" aria-labelledby="primera-capa-title">
       <VisualFigure visual={getArticleVisual("calibrar-impresora-3d-piezas-funcionales")!} href="/blog/calibrar-impresora-3d-piezas-funcionales" className="cad-process-photo" sizes="(max-width: 899px) 90vw, 58vw" caption="Detalle real de la deposición de la primera capa. Fotografía de referencia externa." />
       <div className="cad-photo-story-copy"><p className="cad-eyebrow">EL DISEÑO TOCA LA MESA</p><h2 id="primera-capa-title">Todo empieza<br />{" "}con una<br />{" "}<span>buena primera capa.</span></h2><p>El modelo pone la forma. La impresión pone a prueba las decisiones: apoyo, orientación, recorrido y unión entre capas.</p><Link href="/blog/calibrar-impresora-3d-piezas-funcionales" className="cad-text-link">Preparar la primera impresión <span aria-hidden="true">↗</span></Link></div>

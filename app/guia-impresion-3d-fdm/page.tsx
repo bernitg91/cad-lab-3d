@@ -145,6 +145,7 @@ export default function FdmGuidePage() {
             <li><a className="font-bold hover:text-blue-700" href="#laminador">Laminador</a></li>
             <li><a className="font-bold hover:text-blue-700" href="#costes">Costes</a></li>
             <li><a className="font-bold hover:text-blue-700" href="#errores">Errores frecuentes</a></li>
+            <li><Link className="font-bold text-blue-700 underline underline-offset-4" href="/solucionar-problemas-impresion-3d">Diagnóstico por síntomas</Link></li>
             <li><a className="font-bold hover:text-blue-700" href="#faq">Preguntas frecuentes</a></li>
           </ul>
         </aside>

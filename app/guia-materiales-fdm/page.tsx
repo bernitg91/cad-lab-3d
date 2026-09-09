@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ArticleNextStep } from "@/components/ArticleNextStep";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 import { createPageMetadata, jsonLd } from "@/lib/seo";
 
@@ -45,7 +46,7 @@ export default function FdmMaterialsGuidePage() {
         </div>
       </section>
 
-      <main className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
         <section className="overflow-x-auto rounded-lg border border-slate-200 bg-white">
           <table className="w-full min-w-[700px] text-left text-sm">
             <thead className="bg-slate-950 text-white"><tr><th className="p-4">Material</th><th className="p-4">Uso orientativo</th><th className="p-4">Atención principal</th></tr></thead>
@@ -112,7 +113,8 @@ export default function FdmMaterialsGuidePage() {
             Elige primero una familia de material por entorno y función. Después confirma que tu equipo puede imprimirla con estabilidad y valida la zona crítica en pequeño. Una decisión bien documentada vale más que una lista de materiales ordenada de “peor” a “mejor”.
           </p>
         </div>
-      </main>
+        <ArticleNextStep slug="guia-materiales-fdm" category="materiales" />
+      </div>
     </>
   );
 }

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound, permanentRedirect } from "next/navigation";
 import { AdSlot } from "@/components/AdSlot";
+import { ArticleNextStep } from "@/components/ArticleNextStep";
 import { ArticleIllustration } from "@/components/ArticleIllustration";
 import { ArticlePhoto } from "@/components/ArticlePhoto";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -273,6 +274,7 @@ export default async function ArticlePage({ params }: PageProps) {
           </aside>
 
           <MarkdownContent content={article.content} />
+          <ArticleNextStep slug={article.slug} category={article.categorySlug} />
 
           <AdSlot enabled={isProductionDeployment()}
             clientId={process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT}

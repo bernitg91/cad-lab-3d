@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 const navItems = [
   { href: "/guia-cad-parametrico", label: "Diseño CAD" },
   { href: "/guia-impresion-3d-fdm", label: "Impresión 3D" },
-  { href: "/laboratorio-tolerancias-fdm", label: "Laboratorio" },
+  { href: "/solucionar-problemas-impresion-3d", label: "Resolver fallos" },
   { href: "/blog", label: "Artículos" }
 ];
 export function Header() {

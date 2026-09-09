@@ -6,6 +6,7 @@ const monetizableStaticPaths = new Set([
   "/",
   "/guia-cad-parametrico",
   "/guia-impresion-3d-fdm",
+  "/solucionar-problemas-impresion-3d",
   "/guia-materiales-fdm",
   "/guia-simulacion-fem",
   "/guia-documentacion-tecnica",

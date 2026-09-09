@@ -8,6 +8,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const revisedPages: Record<string, string> = {
     "": "2026-09-09",
     "/blog": "2026-09-09",
+    "/solucionar-problemas-impresion-3d": "2026-09-09",
+    "/guias": "2026-09-09",
+    "/guia-materiales-fdm": "2026-09-09",
     "/laboratorio-tolerancias-fdm": "2026-09-09",
     "/recursos": "2026-09-09",
     "/calculadora-precio-impresion-3d": "2026-09-09",
@@ -25,6 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
     "",
     "/blog",
+    "/solucionar-problemas-impresion-3d",
     "/recursos",
     "/laboratorio-tolerancias-fdm",
     "/calculadora-precio-impresion-3d",

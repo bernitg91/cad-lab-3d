@@ -11,6 +11,7 @@ export const metadata: Metadata = createPageMetadata({
 });
 
 const guides = [
+  { title: "Resolver fallos FDM", href: "/solucionar-problemas-impresion-3d", text: "Identifica el síntoma, comprueba una causa cada vez y valida el cambio con una muestra pequeña." },
   { title: "Impresión 3D FDM", href: "/guia-impresion-3d-fdm", text: "Desde el diseño y el STL hasta orientación, laminado, calibración, coste y control final." },
   { title: "Materiales FDM", href: "/guia-materiales-fdm", text: "Decide entre PLA, PETG, TPU, ABS, ASA y Nylon con criterios de uso y fabricación." },
   { title: "CAD paramétrico", href: "/guia-cad-parametrico", text: "Organiza croquis, referencias, árbol, ensamblajes, planos y exportaciones fiables." },
@@ -22,7 +23,7 @@ export default function GuidesPage() {
   const articles = getAllArticles();
 
   return (
-    <main className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
       <p className="text-sm font-black uppercase tracking-wide text-teal-700">Rutas de aprendizaje</p>
       <h1 className="mt-3 max-w-4xl text-4xl font-black text-slate-950">Guías para estudiar, diseñar, fabricar y documentar con criterio</h1>
       <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-600">
@@ -57,6 +58,6 @@ export default function GuidesPage() {
         <Link className="border-l-4 border-teal-500 bg-slate-950 p-6 text-white" href="/casos-practicos-impresion-3d"><h2 className="text-xl font-black">Casos prácticos</h2><p className="mt-2 text-sm leading-6 text-slate-300">Fotografías propias y observaciones de piezas impresas.</p></Link>
         <Link className="border-l-4 border-teal-500 bg-slate-950 p-6 text-white" href="/fuentes"><h2 className="text-xl font-black">Fuentes técnicas</h2><p className="mt-2 text-sm leading-6 text-slate-300">Documentación oficial utilizada para contrastar las guías.</p></Link>
       </section>
-    </main>
+    </div>
   );
 }
